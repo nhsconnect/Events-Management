@@ -11,7 +11,7 @@ site_title: Events Management Service (EMS)
 company_name: NHS Digital
 # this appears in the footer
 
-github_editme_path: /edit/develop/
+#github_editme_path: /edit/develop/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 #disqus: true
