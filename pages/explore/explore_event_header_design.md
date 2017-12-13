@@ -7,7 +7,7 @@ permalink: explore_event_header_design.html
 summary: "The event header design for use with EMS event messages"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. More detail is given in [Guide Versioning](/overview_guide_versioning.html). It is advised not to develop against these specifications until a formal announcement has been made." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
 
 ## Background ##
 Each event will carry a standard set of data to act as an event "header" (to help identify the patient, publisher, and actual event).

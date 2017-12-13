@@ -7,7 +7,7 @@ permalink: explore_fhir_profiles.html
 summary: "The FHIR profiles used for EMS event messages"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. More detail is given in [Guide Versioning](/overview_guide_versioning.html). It is advised not to develop against these specifications until a formal announcement has been made." %} 
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %} 
 
 ## Background ##
 The EMS Event Message Bundle will carry a combination of resources to form the specific event message, the FHIR profiles that have been developed to inform these resources are listed below. More on their use within each event message can be found in Messages. 

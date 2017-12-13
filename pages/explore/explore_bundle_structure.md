@@ -7,7 +7,7 @@ permalink: explore_bundle_structure.html
 summary: "The structure of the bundle used for EMS event messages"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. More detail is given in [Guide Versioning](/overview_guide_versioning.html). It is advised not to develop against these specifications until a formal announcement has been made." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
 
 ## Background ##
 To enable a standardised structure to carry information regarding communication requirements within the scope of the Events Management Service, the EMS Message Bundle and the EMS Message Header combine to make up the initial EMS event message bundle. 
