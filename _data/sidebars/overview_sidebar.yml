@@ -1,0 +1,176 @@
+entries:
+- title: Events Management Service (EMS)  
+  product: Events Management Service (EMS) 
+  version: Experimental
+  levels: one
+  folders:
+
+  - title: Overview
+    output: web
+    folderitems:
+    - title: Introduction
+      url: /index.html
+      output: web, pdf
+      type: homepage
+    - title: The Journey
+      url: /overview_the_journey.html
+      output: web
+    - title: Guide Versioning
+      url: /overview_guide_versioning.html
+      output: web
+    - title: Release Notes
+      url: /overview_release_notes.html
+      output: web
+    - title: Glossary
+      url: /overview_glossary.html
+      output: web
+
+  - title: Messaging Architecture
+    output: web,pdf
+    folderitems:
+    - title: Overview
+      url: /explore.html
+      output: web
+      type: homepage
+    - title: Bundle Structure
+      url: /explore_bundle_structure.html
+      output: web
+    - title: Event Header Design
+      url: /explore_event_header_design.html
+      output: web
+    - title: FHIR Profiles
+      url: /explore_fhir_profiles.html
+      output: web
+#      subfolders:
+#      - title: Work Flow
+#        url: /workflow.html
+#        output: web
+#        subfolderitems:
+#        - title: Overview
+#          url: /explore_workflow_overview.html
+#          output: web
+#        - title: Encounter
+#          url: /workflow_encounter.html
+#          output: web
+  - title: Messages
+    output: web,pdf
+    folderitems:
+    - title: Overview
+      url: /explore.html
+      output: web
+      type: homepage
+      subfolders:
+      - title: National Failsafe
+        url: /explore.html
+        output: web
+        subfolderitems:
+        - title: National Failsafe Alert
+          url: /explore_national_failsafe_alert.html
+          output: web
+      - title: Personal Demographics Service (PDS) Updates
+ #       url: /explore.html
+        output: web
+        subfolderitems:
+        - title: PDS Birth Notification
+          url: /explore_pds_birth_notification.html
+          output: web
+        - title: PDS Communication Preferences
+          url: /explore_pds_communication_preferences.html
+          output: web
+        - title: PDS Related Person
+          url: /explore_pds_related_person.html
+          output: web
+        - title: PDS Demographics
+          url: /explore_pds_demographics.html
+          output: web		  
+        - title: PDS Change Of Address
+          url: /explore_pds_change_of_address.html
+          output: web
+        - title: PDS Change of GP
+          url: /explore_pds_change_of_gp.html
+          output: web
+        - title: PDS Flags
+          url: /explore_pds_flags.html
+          output: web
+        - title: PDS Person Death
+          url: /explore_pds_person_death.html
+          output: web
+
+
+#  - title: Example Scenarios
+#    url: /engage_scenario.html
+#    output: web
+#    folderitems:
+#    - title: Richard Smith
+#      url: /engage_richard_smith.html
+#      output: web, pdf
+#      type: homepage
+
+#  - title: Design & Build
+#    output: web
+#    folderitems:
+#    - title: Overview
+#      url: /test.html
+#      output: web
+#    - title: Patterns / Topology
+#      url: /test_patterns.html
+#      output: web
+#    - title: Access
+#      url: /test_access.html
+#      output: web
+#    - title: Security
+#      url: /test_security.html
+#      output: web
+#    - title: Test Data
+#      url: /test_data.html
+#      output: web
+
+  - title: Assure
+    output: web
+    folderitems:
+    - title: Overview
+      url: /assure.html
+      output: web
+#    - title: Access
+#      url: /assure_access.html
+#      output: web
+#    - title: Security
+#      url: /assure_security.html
+#      output: web
+#    - title: End To End
+#      url: /assure_end_to_end.html
+#      output: web
+
+  - title: Deploy
+    output: web
+    folderitems:
+    - title: Overview
+      url: /deploy.html
+      output: web
+#    - title: Access
+#      url: /deploy_access.html
+#      output: web
+#    - title: Security
+#      url: /deploy_security.html
+#      output: web
+
+  - title: Help & Support
+    output: web
+    folderitems:
+    - title: Communication Channels
+      url: /support_communications.html
+      output: web
+      subfolders:
+      - title: Where Else Can I Look?
+        output: web
+        subfolderitems:
+#        - title: Community
+#          url: /support_community.html
+#          output: web
+        - title: FHIR Tools
+          url: /support_fhirtools.html
+          output: web
+#        - title: Referenced Documentation
+#          url: /support_referencedocumentation.html
+#          output: web
+
