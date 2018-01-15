@@ -9,28 +9,31 @@ summary: "The FHIR profiles used for the PDS Birth Notification event message bu
 
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
 
-## PDS Birth Notification event message bundle ##
-
+## FHIR Profiles ##
 The PDS Birth Notification event message bundle is expected to include a combination of the following resources to support the event header and data item requirements:
+
+{% include important.html content="The links below will refer to the StructureDefinition url applied to the FHIR profile, which are not yet active. For queries please refer to the Help and Support section." %} 
 
 | PDS Birth Notification Event Message Bundle                           |
 |-----------------------------------------------------------------------|
-| EMS-Bundle                                                            |
-| EMS-MessageHeader-1                                                   |
-| CareConnect-Organization-1                                            |
-| EMS-HealthcareService-1                                               |
-| CareConnect-Baby-Patient-1                                            |
-| EMS-Communication-1                                                   |
-| CareConnect-Mother-Patient-1                                          |
-| PDS-GPRegistration-EpisodeOfCare-1                                    |
-| CareConnect-PDS-BirthWeight-Observation-1                             |
-| CareConnect-PDS-GestationAge-Observation-1                            |
-| CareConnect-PDS-NumberOfBirths-Observation-1                          |
-| CareConnect-PDS-StillbornIndicator-Observation-1                      |
-| CareConnect-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1 |
-| CareConnect-PDS-DeliveryPlace-Organization-1                          |
-| CareConnect-Practitioner-1                                            |
-| CareConnect-PDS-RegisteringAuthority-Organization-1                   |
+| [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                                                          |
+| [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                                                   |
+| [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)                                            |
+| [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                                                 |
+| [CareConnect-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Baby-Patient-1)                                            |
+| [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                                                   |
+| [CareConnect-Mother-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Mother-Patient-1)                                          |
+| [PDS-GPRegistration-EpisodeOfCare-1](https://fhir.nhs.uk/STU3/StructureDefinition/PDS-GPRegistration-EpisodeOfCare-1)                                    |
+| [CareConnect-PDS-NumberOfBirths-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-NumberOfBirths-Observation-1)                             |
+| [CareConnect-PDS-GestationAge-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-GestationAge-Observation-1)                            |
+| [CareConnect-PDS-NumberOfBirths-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-NumberOfBirths-Observation-1)                          |
+| [CareConnect-PDS-StillbornIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-StillBornIndicator-Observation-1)                      |
+| [CareConnect-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1) |
+| [CareConnect-PDS-DeliveryPlace-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-DeliveryPlace-Organization-1)                          |
+| [CareConnect-PDS-RegisteringAuthority-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-RegisteringAuthority-Organization-1)                   |
+| [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)                                            |
+
+## Data item requirements  ##
 
 The data item requirements are expected to be fulfilled as below:
 

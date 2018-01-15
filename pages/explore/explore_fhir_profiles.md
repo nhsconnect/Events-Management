@@ -21,94 +21,101 @@ If further constraints are applied to support specific requirements, resources s
 
 ## FHIR Profiles developed for EMS ##
 
+{% include important.html content="The links below will refer to the StructureDefinition url applied to the FHIR profile, which are not yet active. For queries please refer to the Help and Support section." %} 
+
 | **StructureDefinitions**                                               |
 |-----------------------------------------------------------------------|
-| EMS-Bundle-1                                                          |
-| EMS-MessageHeader-1                                                   |
-| EMS-HealthcareService-1                                               |
-| PDS-PreviousGPRegistration-EpisodeOfCare-1                            |
-| FailsafeAlert-Task-1                                                  |
-| EMS-Communication-1                                                   |
-| CareConnect-PDS-Flag-1                                                |
-| CareConnect-Baby-Patient-1                                            |
-| CareConnect-Mother-Patient-1                                          |
-| CareConnect-PDS-GestationAge-Observation-1                            |
-| CareConnect-PDS-BirthWeight-Observation-1                             |
-| CareConnect-PDS-NumberOfBirths-Observation-1                          |
-| CareConnect-PDS-StillbornIndicator-Observation-1                      |
-| CareConnect-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1 |
-| CareConnect-PDS-DeliveryPlace-Organization-1                          |
-| CareConnect-PDS-RegisteringAuthority-Organization-1                   |
-| PDS-DeathNotification-Communication-1                                 |
-| PDS-RelatedPerson-1                                                   |
+| [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                                                          |
+| [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                                                   |
+| [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                                               |
+| [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                                                   |
+| [FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/FailsafeAlert-Task-1)                                                  |
+| [CareConnect-PDS-Flag-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Flag-1)                                                |
+| [CareConnect-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Baby-Patient-1)                                            |
+| [CareConnect-Mother-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Mother-Patient-1)                                          |
+| [CareConnect-PDS-GestationAge-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-GestationAge-Observation-1)                            |
+| [CareConnect-PDS-BirthWeight-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-BirthWeight-Observation-1)                             |
+| [CareConnect-PDS-NumberOfBirths-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-NumberOfBirths-Observation-1)                          |
+| [CareConnect-PDS-StillbornIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-StillBornIndicator-Observation-1)                      |
+| [CareConnect-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1) |
+| [CareConnect-PDS-DeliveryPlace-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-DeliveryPlace-Organization-1)                          |
+| [CareConnect-PDS-RegisteringAuthority-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-RegisteringAuthority-Organization-1)                   |
+| [PDS-DeathNotification-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/PDS-PersonDeath-Communication-1)                                 |
+| [PDS-GPRegistration-EpisodeOfCare-1](https://fhir.nhs.uk/STU3/StructureDefinition/PDS-GPRegistration-EpisodeOfCare-1)                            |
+| [PDS-RelatedPerson-1](https://fhir.nhs.uk/STU3/StructureDefinition/PDS-RelatedPerson-1)                                                   |
 
 | **Extensions**                                              |
 |---------------------------------------------------------|
-| Extension-EMS-MessageEventType-1                        |
-| Extension-FailsafeAlert-SeverityLevel-1                 |
-| Extension-FailsafeAlert-EscalationLevel-1               |
-| Extension-PDS-DeathNotificationStatus-1                 |
-| Extension-PDS-DeathCauseComment-1                       |
-| Extension-PDS-DeathCauseIdentificationMethod-1          |
-| Extension-PDS-DeathLocationType-1                       |
-| Extension-PDS-ContactRanking-1                          |
-| Extension-PDS-NextOfKinIndicator-1                      |
-| Extension-PDS-CorrespondenceIndicator-1                 |
-| Extension-PDS-CallCentreCallBackConsent-1               |
-| Extension-PDS-PreferredContactMethod-1                  |
-| Extension-PDS-PreferredContactTimes-1                   |
-| Extension-PDS-PreferredWrittenCommunicationFormat-1     |
-| Extension-PDS-RelatedPersonRole-1                       |
-| Extension-CareConnect-PDS-NHSCommunication-1            |
-| Extension-CareConnect-PDS-NHSNumberVerificationStatus-1 |
+| [Extension-EMS-MessageEventType-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-EMS-MessageEventType-1)                        |
+| [Extension-FailsafeAlert-SeverityLevel-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-FailsafeAlert-SeverityLevel-1)                 |
+| [Extension-FailsafeAlert-EscalationLevel-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-FailsafeAlert-EscalationLevel-1)               |
+| [Extension-CareConnect-PDS-NHSCommunication-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-PDS-NHSCommunication-1)            |
+| [Extension-CareConnect-PDS-NHSNumberVerificationStatus-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-PDS-NHSNumberVerificationStatus-1) |
+| [Extension-PDS-CallCentreCallBackConsent-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-CallCentreCallBackConsent-1)               |
+| [Extension-PDS-ContactRanking-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-ContactRanking-1)                          |
+| [Extension-PDS-CorrespondenceIndicator-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-CopyCorrespondenceIndicator-1)                 |
+| [Extension-PDS-DeathNotificationStatus-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-DeathNotificationStatus-1)                 |
+| [Extension-PDS-DeathCauseComment-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-DeathCauseComment-1)                       |
+| [Extension-PDS-DeathCauseIdentificationMethod-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-DeathCauseIdentificationMethod-1)          |
+| [Extension-PDS-DeathLocationType-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-DeathLocationType-1)                       |
+| [Extension-PDS-NextOfKinIndicator-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-NextOfKinIndicator-1)                      |
+| [Extension-PDS-PreferredContactMethod-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-PreferredContactMethod-1)                  |
+| [Extension-PDS-PreferredContactTimes-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-PreferredContactTimes-1)                   |
+| [Extension-PDS-PreferredWrittenCommunicationFormat-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-PreferredWrittenCommunicationFormat-1)     |
+| [Extension-PDS-RelatedPersonRole-1 ](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-PDS-RelatedPersonRole-1)                      |
+
 
 | **ValueSets**                                     |
 |-----------------------------------------------|
-| EMS-EventType-1                               |
-| EMS-HealthcareServiceType-1                   |
-| EMS-MessageEventType-1                        |
-| FailsafeAlert-SeverityLevel-1                 |
-| FailsafeAlert-EscalationLevel-1               |
-| FailsafeAlert-ServiceToAction-1               |
-| FailsafeAlert-Reason-1                        |
-| FailsafeAlert-ActionRequired-1                |
-| PDS-RelatedPerson-Role-1                      |
-| PDS-CallCentreCallbackConsent-1               |
-| PDS-PreferredContactMethod-1                  |
-| PDS-PreferredWrittenCommunicationFormat-1     |
-| PDS-DeathNotificationStatus-1                 |
-| PDS-DeathCauseIdentificationMethod-1          |
-| PDS-DeathLocationType-1                       |
-| PDS-InformationSensitivityIndicator-1         |
-| PDS-ReasonForRemoval-1                        |
-| PDS-StillBornIndicator-1                      |
-| PDS-SuspectedCongenitalAbnormalityIndicator-1 |
-| PDS-DeliveryPlaceType-1                       |
-| PDS-RegisteringAuthorityType-1                |
+| [EMS-EventType-1](https://fhir.nhs.uk/STU3/ValueSet/EMS-EventType-1)                               |
+| [EMS-HealthcareServiceType-1](https://fhir.nhs.uk/STU3/ValueSet/EMS-HealthcareServiceType-1)                   |
+| [EMS-MessageEventType-1](https://fhir.nhs.uk/STU3/ValueSet/EMS-MessageEventType-1)                        |
+| [FailsafeAlert-SeverityLevel-1](https://fhir.nhs.uk/STU3/ValueSet/FailsafeAlert-SeverityLevel-1)                 |
+| [FailsafeAlert-EscalationLevel-1](https://fhir.nhs.uk/STU3/ValueSet/FailsafeAlert-EscalationLevel-1)               |
+| [FailsafeAlert-ServiceToAction-1](https://fhir.nhs.uk/STU3/ValueSet/FailsafeAlert-ServiceToAction-1)               |
+| [FailsafeAlert-Reason-1](https://fhir.nhs.uk/STU3/ValueSet/FailsafeAlert-Reason-1)                        |
+| [FailsafeAlert-ActionRequired-1](https://fhir.nhs.uk/STU3/ValueSet/FailsafeAlert-ActionRequired-1)                |
+| [PDS-CallCentreCallbackConsent-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-CallCentreCallBackConsent-1)               |
+| [PDS-DeathCauseIdentificationMethod-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-DeathCauseIdentificationMethod-1)          |
+| [PDS-DeathLocationType-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-DeathLocationType-1)                       |
+| [PDS-DeathNotificationStatus-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-DeathNotificationStatus-1)                 |
+| [PDS-DeliveryPlaceType-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-DeliveryPlaceType-1)                       |
+| [PDS-InformationSensitivityIndicator-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-InformationSensitivityIndicator-1)         |
+| [PDS-PreferredContactMethod-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-PreferredContactMethod-1)                  |
+| [PDS-PreferredWrittenCommunicationFormat-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-PreferredWrittenCommunicationFormat-1)     |
+| [PDS-ReasonForRemoval-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-ReasonForRemoval-1)                        |
+| [PDS-RegisteringAuthorityType-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-RegisteringAuthorityType-1)                |
+| [PDS-RelatedPerson-Role-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-RelatedPersonRole-1)                      |
+| [PDS-RelationshipType-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-RelationshipType-1)                      |
+| [PDS-StillBornIndicator-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-StillBornIndicator-1)                      |
+| [PDS-SuspectedCongenitalAbnormalityIndicator-1](https://fhir.nhs.uk/STU3/ValueSet/PDS-SuspectedCongenitalAbnormalityIndicator-1) |
+
+
 
 | **CodeSystems**                                 |
 |-----------------------------------------------|
-| EMS-EventType-1                               |
-| EMS-HealthcareServiceType-1                   |
-| EMS-MessageEventType-1                        |
-| FailsafeAlert-SeverityLevel-1                 |
-| FailsafeAlert-EscalationLevel-1               |
-| FailsafeAlert-ServiceToAction-1               |
-| FailsafeAlert-Reason-1                        |
-| FailsafeAlert-ActionRequired-1                |
-| PDS-RelatedPerson-Role-1                      |
-| PDS-CallCentreCallbackConsent-1               |
-| PDS-PreferredContactMethod-1                  |
-| PDS-PreferredWrittenCommunicationFormat-1     |
-| PDS-DeathNotificationStatus-1                 |
-| PDS-DeathCauseIdentificationMethod-1          |
-| PDS-DeathLocationType-1                       |
-| PDS-InformationSensitivityIndicator-1         |
-| PDS-ReasonForRemoval-1                        |
-| PDS-StillBornIndicator-1                      |
-| PDS-SuspectedCongenitalAbnormalityIndicator-1 |
-| PDS-DeliveryPlaceType-1                       |
-| PDS-RegisteringAuthorityType-1                |
+| [EMS-EventType-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)                               |
+| [EMS-HealthcareServiceType-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-HealthcareServiceType-1)                   |
+| [EMS-MessageEventType-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-MessageEventType-1)                        |
+| [FailsafeAlert-SeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/FailsafeAlert-SeverityLevel-1)                 |
+| [FailsafeAlert-EscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/FailsafeAlert-EscalationLevel-1)               |
+| [FailsafeAlert-ServiceToAction-1](https://fhir.nhs.uk/STU3/CodeSystem/FailsafeAlert-ServiceToAction-1)               |
+| [FailsafeAlert-Reason-1](https://fhir.nhs.uk/STU3/CodeSystem/FailsafeAlert-Reason-1)                        |
+| [FailsafeAlert-ActionRequired-1](https://fhir.nhs.uk/STU3/CodeSystem/FailsafeAlert-ActionRequired-1)                |
+| [PDS-CallCentreCallbackConsent-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-CallCentreCallBackConsent-1)               |
+| [PDS-DeathCauseIdentificationMethod-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-DeathCauseIdentificationMethod-1)          |
+| [PDS-DeathLocationType-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-DeathLocationType-1)                       |
+| [PDS-DeathNotificationStatus-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-DeathNotificationStatus-1)                 |
+| [PDS-DeliveryPlaceType-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-DeliveryPlaceType-1)                       |
+| [PDS-InformationSensitivityIndicator-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-InformationSensitivityIndicator-1)         |
+| [PDS-PreferredContactMethod-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-PreferredContactMethod-1)                  |
+| [PDS-PreferredWrittenCommunicationFormat-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-PreferredWrittenCommunicationFormat-1)     |
+| [PDS-ReasonForRemoval-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-ReasonForRemoval-1)                        |
+| [PDS-RegisteringAuthorityType-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-RegisteringAuthorityType-1)                |
+| [PDS-RelatedPerson-Role-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-RelatedPersonRole-1)                      |
+| [PDS-RelationshipType-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-RelationshipType-1)                      |
+| [PDS-StillBornIndicator-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-StillBornIndicator-1)                      |
+| [PDS-SuspectedCongenitalAbnormalityIndicator-1](https://fhir.nhs.uk/STU3/CodeSystem/PDS-SuspectedCongenitalAbnormalityIndicator-1) |
 
 
 
