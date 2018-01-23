@@ -125,12 +125,12 @@ entries:
 #      url: /test_data.html
 #      output: web
 
-  - title: Assure
-    output: web
-    folderitems:
-    - title: Overview
-      url: /assure.html
-      output: web
+#  - title: Assure
+#    output: web
+#    folderitems:
+#    - title: Overview
+#      url: /assure.html
+#      output: web
 #    - title: Access
 #      url: /assure_access.html
 #      output: web
@@ -141,12 +141,12 @@ entries:
 #      url: /assure_end_to_end.html
 #      output: web
 
-  - title: Deploy
-    output: web
-    folderitems:
-    - title: Overview
-      url: /deploy.html
-      output: web
+#  - title: Deploy
+#    output: web
+#    folderitems:
+#    - title: Overview
+#      url: /deploy.html
+#      output: web
 #    - title: Access
 #      url: /deploy_access.html
 #      output: web
