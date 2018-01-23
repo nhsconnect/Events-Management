@@ -96,7 +96,7 @@ sidebars:
 - appointments_sidebar
 - tasks_sidebar
 
-description: "This Events Management System implementation guide supports the publishing of event messages held across settings through the use of nationally defined messaging components."
+description: "This Events Management Service implementation guide supports the publishing of event messages held across settings through the use of nationally defined messaging components."
 # the description is used in the feed.xml file
 
 sitemap: true

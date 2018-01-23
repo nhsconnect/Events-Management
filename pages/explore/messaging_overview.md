@@ -15,7 +15,7 @@ The Events Management Service is based on a Publish and Subscribe messaging patt
 
 **Events**
 
-The event originator will construct an event message, as outlined in this implementation guide. Event messages will be sent over the NHS Message Exchange for Social Care and Health (MESH) to the Events Management System hub. 
+The event originator will construct an event message, as outlined in this implementation guide. Event messages will be sent over the NHS Message Exchange for Social Care and Health (MESH) to the Events Management Service hub. 
 
 For further information relating to MESH see [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
 
