@@ -10,6 +10,10 @@ summary: "Communication channels to assist with FHIR API development."
 ## Questions and Comments ##
 For questions and comments about this documentation please email the <a href="mailto:interoperabilityteam@nhs.net?subject=Events%20Management%20Service%20FHIR%20Specification">Interoperability Team</a>.
 
+## Glossary of Terms ##
+
+A glossary of terms used by NHS Digital specifications can be found on the [NHS Developer Network](https://developer.nhs.uk/library/glossary/).
+
 ## [INTEROPen](http://www.interopen.org/)
 
 FHIR Messaging components specified within this site have been developed by NHS Digital and use CareConnect profiles created in collaboration with the INTEROPen community. 
