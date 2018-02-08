@@ -1,6 +1,6 @@
 entries:
-- title: National Events Management Service (EMS)  
-  product: National Events Management Service (EMS) 
+- title: Events Management Service (EMS)  
+  product: Events Management Service (EMS) 
   version: Experimental
   levels: one
   folders:

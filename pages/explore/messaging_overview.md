@@ -7,15 +7,15 @@ permalink: explore.html
 summary: "Overview of the Messaging Architecture section"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis.  It is advised not to develop against these specifications until a formal announcement has been made." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis.  It is advised not to develop against these specifications until a formal announcement has been made." %}
 
 **Message Patterns and Message Structure**
 
-The National Events Management Service is based on a Publish and Subscribe messaging pattern. Events are created by services such as the National Population Failsafe or Patient Demographics Service. The events are published to a national child health hub. The national hub manages subscriptions to the published events.
+The Events Management Service is based on a Publish and Subscribe messaging pattern. Events are created by services such as the National Population Failsafe or Patient Demographics Service. The events are published to a national child health hub. The national hub manages subscriptions to the published events.
 
 **Events**
 
-The event originator will construct an event message, as outlined in this implementation guide. Event messages will be sent over the NHS Message Exchange for Social Care and Health (MESH) to the National Events Management Service hub. 
+The event originator will construct an event message, as outlined in this implementation guide. Event messages will be sent over the NHS Message Exchange for Social Care and Health (MESH) to the Events Management Service hub. 
 
 For further information relating to MESH see [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
 

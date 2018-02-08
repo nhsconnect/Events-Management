@@ -4,7 +4,7 @@ keywords: development,overview
 tags: [explanation]
 sidebar: overview_sidebar
 permalink: overview_the_journey.html
-summary: The journey outlines the approach of developing FHIR profiles for NEMS and the journey taken to define and mature the messaging solution.
+summary: The journey outlines the approach of developing FHIR profiles for EMS and the journey taken to define and mature the messaging solution.
 ---
 
 {% include important.html content="All phases outlined below are indicative and subject to on-going review." %}

@@ -7,7 +7,7 @@ permalink: explore_pds_flags.html
 summary: "The FHIR profiles used for the PDS Flags event message bundle"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
 
 ## FHIR Profiles ##
 
@@ -17,12 +17,12 @@ The PDS Flags event message bundle is expected to include a combination of the f
 
 | PDS Flags Event Message Bundle   |
 |----------------------------------|
-| [NEMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-Bundle-1)                              |
-| [NEMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-MessageHeader-1)                       |
+| [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                              |
+| [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                       |
 | [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)                |
-| [NEMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-HealthcareService-1)                   |
+| [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                   |
 | [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)                     |
-| [NEMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-Communication-1)                       |
+| [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                       |
 | [CareConnect-PDS-Flag-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Flag-1)           |
 
 ## Data item requirements  ##
@@ -35,7 +35,7 @@ The data item requirements are expected to be fulfilled as below:
 | Reason for Removal                | CareConnect-Flag-1  | code         | Required                    |
 | Business Effective from date      | CareConnect-Flag-1  | period.start | Required                    |
 | Business Effective to date        | CareConnect-Flag-1  | period.end   | Required                    |
-| Requested date                    | NEMS-Communication-1 | authoredOn   | Required                    |
+| Requested date                    | EMS-Communication-1 | authoredOn   | Required                    |
 
 
 
