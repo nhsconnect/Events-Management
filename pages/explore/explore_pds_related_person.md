@@ -31,7 +31,7 @@ The data item requirements are expected to be fulfilled as below:
 
 | PDS Related Person data item name              | FHIR Resource       | FHIR element                                     | Mandatory/Optional/Required |
 |------------------------------------------------|---------------------|--------------------------------------------------|-----------------------------|
-| Related Person Role                            | PDS-RelatedPerson-1 | category                                         | Mandatory                   |
+| Related Person Role                            | PDS-RelatedPerson-1 | extension relatedPersonRole                                         | Mandatory                   |
 | Relationship type                              | PDS-RelatedPerson-1 | relationship                                     | Mandatory                   |
 | NHS Number                                     | PDS-RelatedPerson-1 | identifier using NHSNumber slice                 | Required                    |
 | Contact ranking                                | PDS-RelatedPerson-1 | extension contactRanking                         | Required                    |
