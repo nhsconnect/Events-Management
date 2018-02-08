@@ -4,17 +4,17 @@ keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: foundations_sidebar
 permalink: explore_bundle_structure.html
-summary: "The structure of the bundle used for EMS event messages"
+summary: "The structure of the bundle used for NEMS event messages"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
 
 ## Background ##
-To enable a standardised structure to carry information regarding communication requirements within the scope of the Events Management Service, the EMS Message Bundle and the EMS Message Header combine to make up the initial EMS event message bundle. 
+To enable a standardised structure to carry information regarding communication requirements within the scope of the National Events Management Service, the NEMS Message Bundle and the NEMS Message Header combine to make up the initial NEMS event message bundle. 
 
-## The EMS Event Message Bundle Structure ##
+## The NEMS Event Message Bundle Structure ##
 
-The diagram below demonstrates the components needed to meet the initial EMS Event Message Bundle structure depending on the nature of the event being represented.
+The diagram below demonstrates the components needed to meet the initial NEMS Event Message Bundle structure depending on the nature of the event being represented.
 
 <img src="images/explore/emsbundlestructure.png" style="width:50%;max-width: 50%;">
 

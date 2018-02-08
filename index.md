@@ -1,5 +1,5 @@
 ---
-title: Introduction to Events Management Service
+title: Introduction to National Events Management Service
 keywords: homepage
 tags: [overview]
 sidebar: overview_sidebar
@@ -7,11 +7,11 @@ permalink: index.html
 toc: false
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis.  It is advised not to develop against these specifications until a formal announcement has been made." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis.  It is advised not to develop against these specifications until a formal announcement has been made." %}
 
 ## Introduction ##
 
-The Events Management Service (EMS) Specification supports the following communications:
+The National Events Management Service (NEMS) Specification supports the following communications:
 
 - **National Failsafe** this event message is intended to support both population tracking and population screening. It will alert  parents and professionals if the standard programme of care is not delivered or undertaken as expected.
 - **Patient Demographics Service (PDS) Updates** these event messages will issue updates to demographic information held by the PDS.

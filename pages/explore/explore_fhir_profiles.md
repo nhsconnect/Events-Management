@@ -4,31 +4,31 @@ keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: foundations_sidebar
 permalink: explore_fhir_profiles.html
-summary: "The FHIR profiles used for EMS event messages"
+summary: "The FHIR profiles used for NEMS event messages"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %} 
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %} 
 
 ## Background ##
-The EMS Event Message Bundle will carry a combination of resources to form the specific event message, the FHIR profiles that have been developed to inform these resources are listed below. More on their use within each event message can be found in Messages. 
+The NEMS Event Message Bundle will carry a combination of resources to form the specific event message, the FHIR profiles that have been developed to inform these resources are listed below. More on their use within each event message can be found in Messages. 
 
 These FHIR profiles will be published to the [FHIR Reference Server](https://fhir.nhs.uk) on the [NHS Developer Network](https://developer.nhs.uk/) when formal release is confirmed.
 
-## Use of CareConnect profiles in EMS ##
+## Use of CareConnect profiles in NEMS ##
 Where listed, resources should conform to [the CareConnect FHIR profiles developed by INTEROPen](http://www.interopen.org/fhir-resource-profiles/). 
 
 If further constraints are applied to support specific requirements, resources should conform to the profiles derived from the CareConnect profile.
 
-## FHIR Profiles developed for EMS ##
+## FHIR Profiles developed for NEMS ##
 
 {% include important.html content="The links below will refer to the StructureDefinition url applied to the FHIR profile, which are not yet active. For queries please refer to the Help and Support section." %} 
 
 | **StructureDefinitions**                                               |
 |-----------------------------------------------------------------------|
-| [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                                                          |
-| [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                                                   |
-| [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                                               |
-| [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                                                   |
+| [NEMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-Bundle-1)                                                          |
+| [NEMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-MessageHeader-1)                                                   |
+| [NEMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-HealthcareService-1)                                               |
+| [NEMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-Communication-1)                                                   |
 | [FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/FailsafeAlert-Task-1)                                                  |
 | [CareConnect-PDS-Flag-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Flag-1)                                                |
 | [CareConnect-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Baby-Patient-1)                                            |
@@ -67,9 +67,9 @@ If further constraints are applied to support specific requirements, resources s
 
 | **ValueSets**                                     |
 |-----------------------------------------------|
-| [EMS-EventType-1](https://fhir.nhs.uk/STU3/ValueSet/EMS-EventType-1)                               |
-| [EMS-HealthcareServiceType-1](https://fhir.nhs.uk/STU3/ValueSet/EMS-HealthcareServiceType-1)                   |
-| [EMS-MessageEventType-1](https://fhir.nhs.uk/STU3/ValueSet/EMS-MessageEventType-1)                        |
+| [NEMS-EventType-1](https://fhir.nhs.uk/STU3/ValueSet/NEMS-EventType-1)                               |
+| [NEMS-HealthcareServiceType-1](https://fhir.nhs.uk/STU3/ValueSet/NEMS-HealthcareServiceType-1)                   |
+| [NEMS-MessageEventType-1](https://fhir.nhs.uk/STU3/ValueSet/NEMS-MessageEventType-1)                        |
 | [FailsafeAlert-SeverityLevel-1](https://fhir.nhs.uk/STU3/ValueSet/FailsafeAlert-SeverityLevel-1)                 |
 | [FailsafeAlert-EscalationLevel-1](https://fhir.nhs.uk/STU3/ValueSet/FailsafeAlert-EscalationLevel-1)               |
 | [FailsafeAlert-ServiceToAction-1](https://fhir.nhs.uk/STU3/ValueSet/FailsafeAlert-ServiceToAction-1)               |
@@ -94,9 +94,9 @@ If further constraints are applied to support specific requirements, resources s
 
 | **CodeSystems**                                 |
 |-----------------------------------------------|
-| [EMS-EventType-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)                               |
-| [EMS-HealthcareServiceType-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-HealthcareServiceType-1)                   |
-| [EMS-MessageEventType-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-MessageEventType-1)                        |
+| [NEMS-EventType-1](https://fhir.nhs.uk/STU3/CodeSystem/NEMS-EventType-1)                               |
+| [NEMS-HealthcareServiceType-1](https://fhir.nhs.uk/STU3/CodeSystem/NEMS-HealthcareServiceType-1)                   |
+| [NEMS-MessageEventType-1](https://fhir.nhs.uk/STU3/CodeSystem/NEMS-MessageEventType-1)                        |
 | [FailsafeAlert-SeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/FailsafeAlert-SeverityLevel-1)                 |
 | [FailsafeAlert-EscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/FailsafeAlert-EscalationLevel-1)               |
 | [FailsafeAlert-ServiceToAction-1](https://fhir.nhs.uk/STU3/CodeSystem/FailsafeAlert-ServiceToAction-1)               |

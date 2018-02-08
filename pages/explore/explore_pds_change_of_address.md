@@ -7,7 +7,7 @@ permalink: explore_pds_change_of_address.html
 summary: "The FHIR profiles used for the PDS Change of Address event message bundle"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
 
 ## FHIR Profiles ##
 
@@ -17,12 +17,12 @@ The PDS Change of Address Bundle is expected to include a combination of the fol
 
 | PDS Change of Address Event Message Bundle |
 |--------------------------------------------|
-| [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                              |
-| [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                       |
+| [NEMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-Bundle-1)                              |
+| [NEMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-MessageHeader-1)                       |
 | [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)                |
-| [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                   |
+| [NEMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-HealthcareService-1)                   |
 | [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)                     |
-| [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                       |
+| [NEMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/NEMS-Communication-1)                       |
 
 ## Data item requirements  ##
 
@@ -47,7 +47,7 @@ The data item requirements are expected to be fulfilled as below:
 | Previous Address Effective From Date |                       | address.period.start | Required                    |
 | Previous Address Effective To Date   | CareConnect-Patient-1 | address.period.end   | Required                    |
 | Country of Birth                     | CareConnect-Patient-1 | birthPlace           | Mandatory                   |
-| Notified date                        | EMS-Communication-1   | sent                 | Optional                    |
+| Notified date                        | NEMS-Communication-1   | sent                 | Optional                    |
 
 
 
