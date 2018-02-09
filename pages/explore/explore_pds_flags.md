@@ -23,7 +23,7 @@ The PDS Flags event message bundle is expected to include a combination of the f
 | [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                   |
 | [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)                     |
 | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                       |
-| [CareConnect-PDS-Flag-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-PDS-Flag-1)           |
+| [CareConnect-EMS-PDS-Flag-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Flag-1)           |
 
 ## Data item requirements  ##
 
@@ -31,10 +31,10 @@ The data item requirements are expected to be fulfilled as below:
 
 | PDS Flags data item name          | FHIR Resource       | FHIR element | Mandatory/Optional/Required |
 |-----------------------------------|---------------------|--------------|-----------------------------|
-| Information Sensitivity Indicator | CareConnect-Flag-1  | category     | Required                    |
-| Reason for Removal                | CareConnect-Flag-1  | code         | Required                    |
-| Business Effective from date      | CareConnect-Flag-1  | period.start | Required                    |
-| Business Effective to date        | CareConnect-Flag-1  | period.end   | Required                    |
+| Information Sensitivity Indicator | CareConnect-EMS-PDS-Flag-1  | category     | Required                    |
+| Reason for Removal                | CareConnect-EMS-PDS-Flag-1  | code         | Required                    |
+| Business Effective from date      | CareConnect-EMS-PDS-Flag-1  | period.start | Required                    |
+| Business Effective to date        | CareConnect-EMS-PDS-Flag-1  | period.end   | Required                    |
 | Requested date                    | EMS-Communication-1 | authoredOn   | Required                    |
 
 

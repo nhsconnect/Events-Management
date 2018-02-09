@@ -22,7 +22,7 @@ The Failsafe Alert event message bundle is expected to include a combination of 
 | [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                   |
 | [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)                     |
 | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                       |
-| [FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/FailsafeAlert-Task-1)                      |
+| [EMS-FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlert-Task-1)                      |
 
 ## Data item requirements  ##
 
@@ -31,9 +31,9 @@ The data item requirements are expected to be fulfilled as below:
 | Failsafe Alert data item | FHIR profile               | FHIR element                     | Mandatory/Required/Optional |
 |--------------------------|----------------------------|----------------------------------|-----------------------------|
 | Alerter                  | CareConnect-Organization-1 |                                  | Mandatory                   |
-| Date and Time raised     | FailsafeAlert-Task-1       | authoredOn                       | Mandatory                   |
-| Severity Level           | FailsafeAlert-Task-1       | severityLevel                    | Mandatory                   |
-| Escalation level         | FailsafeAlert-Task-1       | escalationLevel                  | Mandatory                   |
+| Date and Time raised     | EMS-FailsafeAlert-Task-1       | authoredOn                       | Mandatory                   |
+| Severity Level           | EMS-FailsafeAlert-Task-1       | severityLevel                    | Mandatory                   |
+| Escalation level         | EMS-FailsafeAlert-Task-1       | escalationLevel                  | Mandatory                   |
 | Family Name              | CareConnect-Patient-1      | name.family                      | Mandatory                   |
 | First Given Name         | CareConnect-Patient-1      | name.given                       | Mandatory                   |
 | Person Birth Date        | CareConnect-Patient-1      | birthDate                        | Mandatory                   |
@@ -41,13 +41,13 @@ The data item requirements are expected to be fulfilled as below:
 | Gender                   | CareConnect-Patient-1      | gender                           | Mandatory                   |
 | Post Code                | CareConnect-Patient-1      | address.postalCode               | Mandatory                   |
 | GP Practice              | CareConnect-Patient-1      | generalPractitioner              | Optional                    |
-| Condition ID             | FailsafeAlert-Task-1       | task.reason                      | Required                    |
-| Condition Description    | FailsafeAlert-Task-1       | task.reason.display              | Required                    |
-| Reason for alert         | FailsafeAlert-Task-1       | task.reason.display              | Required                    |
-| Service needed to action | FailsafeAlert-Task-1       | task.performerType               | Required                    |
-| Action Required          | FailsafeAlert-Task-1       | task.code                        | Required                    |
-| Action Required by Date  | FailsafeAlert-Task-1       | task.restriction.period.end      | Required                    |
-| Readable Format          | FailsafeAlert-Task-1       | task.description                 | Required                    |
+| Condition ID             | EMS-FailsafeAlert-Task-1       | task.reason                      | Required                    |
+| Condition Description    | EMS-FailsafeAlert-Task-1       | task.reason.display              | Required                    |
+| Reason for alert         | EMS-FailsafeAlert-Task-1       | task.reason.display              | Required                    |
+| Service needed to action | EMS-FailsafeAlert-Task-1       | task.performerType               | Required                    |
+| Action Required          | EMS-FailsafeAlert-Task-1       | task.code                        | Required                    |
+| Action Required by Date  | EMS-FailsafeAlert-Task-1       | task.restriction.period.end      | Required                    |
+| Readable Format          | EMS-FailsafeAlert-Task-1       | task.description                 | Required                    |
 
 
 
