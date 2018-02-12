@@ -19,9 +19,9 @@ The PDS Demographics event message bundle is expected to include a combination o
 |---------------------------------------|
 | [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                              |
 | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                       |
-| [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)                |
+| [CareConnect-EMS-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Organization-1)                |
 | [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                   |
-| [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)                     |
+| [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)                     |
 | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                       |
 
 ## Data item requirements  ##
@@ -30,25 +30,25 @@ The data item requirements are expected to be fulfilled as below:
 
 | PDS Demographics data item name                                       | FHIR Resource         | FHIR element                           | Mandatory/Optional/Required |
 |----------------------------------------------------------------|-----------------------|----------------------------------------|-----------------------------|
-| Local Patient Identifier                                       | CareConnect-Patient-1 | identifier using localIdentifier slice | Mandatory                   |
-| NHS Number                                                     | CareConnect-Patient-1 | identifier using NHSNumber slice       | Mandatory                   |
+| Local Patient Identifier                                       | CareConnect-EMS-Patient-1 | identifier using localIdentifier slice | Mandatory                   |
+| NHS Number                                                     | CareConnect-EMS-Patient-1 | identifier using NHSNumber slice       | Mandatory                   |
 | Temporary NHS number issued by an NHAIS registration authority |                       | not yet profiled                       | Required                    |
 | Name Type                                                      |                       | not yet profiled                       | Mandatory                   |
-| Family Name                                                    | CareConnect-Patient-1 | name.family                            | Mandatory                   |
-| First Given Name                                               | CareConnect-Patient-1 | name.given                             | Mandatory                   |
-| Other given names (s)                                          | CareConnect-Patient-1 | name.given                             | Required                    |
-| Name prefix                                                    | CareConnect-Patient-1 | name.prefix                            | Required                    |
-| Name Suffix                                                    | CareConnect-Patient-1 | name.suffix                            | Required                    |
-| Business Effective from date                                   | CareConnect-Patient-1 | name.period                            | Mandatory                   |
-| Business Effective to date                                     | CareConnect-Patient-1 | name.period                            | Required                    |
-| Gender                                                         | CareConnect-Patient-1 | gender                                 | Mandatory                   |
+| Family Name                                                    | CareConnect-EMS-Patient-1 | name.family                            | Mandatory                   |
+| First Given Name                                               | CareConnect-EMS-Patient-1 | name.given                             | Mandatory                   |
+| Other given names (s)                                          | CareConnect-EMS-Patient-1 | name.given                             | Required                    |
+| Name prefix                                                    | CareConnect-EMS-Patient-1 | name.prefix                            | Required                    |
+| Name Suffix                                                    | CareConnect-EMS-Patient-1 | name.suffix                            | Required                    |
+| Business Effective from date                                   | CareConnect-EMS-Patient-1 | name.period                            | Mandatory                   |
+| Business Effective to date                                     | CareConnect-EMS-Patient-1 | name.period                            | Required                    |
+| Gender                                                         | CareConnect-EMS-Patient-1 | gender                                 | Mandatory                   |
 | Notified date                                                  | EMS-Communication-1   | sent                                   | Required                    |
-| Person birth date                                              | CareConnect-Patient-1 | birthDate                              | Required                    |
-| Delivery Time                                                  | CareConnect-Patient-1 | patient-birthTime                      | Required                    |
+| Person birth date                                              | CareConnect-EMS-Patient-1 | birthDate                              | Required                    |
+| Delivery Time                                                  | CareConnect-EMS-Patient-1 | patient-birthTime                      | Required                    |
 | Notified date                                                  | EMS-Communication-1   | sent                                   | Required                    |
-| Town of Birth                                                  | CareConnect-Patient-1 | birthPlace                             | Required                    |
-| County of Birth                                                | CareConnect-Patient-1 | birthPlace                             | Required                    |
-| Country of Birth                                               | CareConnect-Patient-1 | birthPlace                             | Required                    |
+| Town of Birth                                                  | CareConnect-EMS-Patient-1 | birthPlace                             | Required                    |
+| County of Birth                                                | CareConnect-EMS-Patient-1 | birthPlace                             | Required                    |
+| Country of Birth                                               | CareConnect-EMS-Patient-1 | birthPlace                             | Required                    |
 | Notified date                                                  | EMS-Communication-1   | sent                                   | Required                    |
 
 

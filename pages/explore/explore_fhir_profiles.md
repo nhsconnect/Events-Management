@@ -31,7 +31,7 @@ If further constraints are applied to support specific requirements, resources s
 | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                                                   |
 | [EMS-FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlert-Task-1)                                                  |
 | [CareConnect-EMS-PDS-Flag-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Flag-1)                                                |
-| [CareConnect-PDS-EMS-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Baby-Patient-1)                                            |
+| [CareConnect-EMS-PDS-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Baby-Patient-1)                                            |
 | [CareConnect-EMS-PDS-Mother-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Mother-Patient-1)                                          |
 | [CareConnect-EMS-PDS-GestationAge-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-GestationAge-Observation-1)                            |
 | [CareConnect-EMS-PDS-BirthWeight-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-BirthWeight-Observation-1)                             |

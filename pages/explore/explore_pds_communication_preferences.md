@@ -19,9 +19,9 @@ The PDS Communication Preferences event message bundle is expected to include a 
 |----------------------------------------------------|
 | [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                              |
 | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                       |
-| [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)                |
+| [CareConnect-EMS-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Organization-1)                |
 | [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                   |
-| [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)                     |
+| [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)                     |
 | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                       |
 
 ## Data item requirements  ##
@@ -30,8 +30,8 @@ The data item requirements are expected to be fulfilled as below:
 
 | PDS Communication Preferences data item name | FHIR Resource         | FHIR element                         | Mandatory/Optional/Required |
 |----------------------------------------------|-----------------------|--------------------------------------|-----------------------------|
-| Language                                     | CareConnect-Patient-1 | nHSCommunication.language            | Mandatory                   |
-| Interpreter Required Indicator               | CareConnect-Patient-1 | nHSCommunication.interpreterRequired | mandatory                   |
+| Language                                     | CareConnect-EMS-Patient-1 | nHSCommunication.language            | Mandatory                   |
+| Interpreter Required Indicator               | CareConnect-EMS-Patient-1 | nHSCommunication.interpreterRequired | mandatory                   |
 
 
 

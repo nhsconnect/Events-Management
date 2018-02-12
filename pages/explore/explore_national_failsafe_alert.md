@@ -18,9 +18,9 @@ The Failsafe Alert event message bundle is expected to include a combination of 
 |-------------------------------------------|
 | [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                              |
 | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                       |
-| [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)                |
+| [CareConnect-EMS-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Organization-1)                |
 | [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                   |
-| [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)                     |
+| [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)                     |
 | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                       |
 | [EMS-FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlert-Task-1)                      |
 
@@ -30,17 +30,17 @@ The data item requirements are expected to be fulfilled as below:
 
 | Failsafe Alert data item | FHIR profile               | FHIR element                     | Mandatory/Required/Optional |
 |--------------------------|----------------------------|----------------------------------|-----------------------------|
-| Alerter                  | CareConnect-Organization-1 |                                  | Mandatory                   |
+| Alerter                  | CareConnect-EMS-Organization-1 |                                  | Mandatory                   |
 | Date and Time raised     | EMS-FailsafeAlert-Task-1       | authoredOn                       | Mandatory                   |
 | Severity Level           | EMS-FailsafeAlert-Task-1       | severityLevel                    | Mandatory                   |
 | Escalation level         | EMS-FailsafeAlert-Task-1       | escalationLevel                  | Mandatory                   |
-| Family Name              | CareConnect-Patient-1      | name.family                      | Mandatory                   |
-| First Given Name         | CareConnect-Patient-1      | name.given                       | Mandatory                   |
-| Person Birth Date        | CareConnect-Patient-1      | birthDate                        | Mandatory                   |
-| NHS Number               | CareConnect-Patient-1      | identifier using nhsNumber slice | Mandatory                   |
-| Gender                   | CareConnect-Patient-1      | gender                           | Mandatory                   |
-| Post Code                | CareConnect-Patient-1      | address.postalCode               | Mandatory                   |
-| GP Practice              | CareConnect-Patient-1      | generalPractitioner              | Optional                    |
+| Family Name              | CareConnect-EMS-Patient-1      | name.family                      | Mandatory                   |
+| First Given Name         | CareConnect-EMS-Patient-1      | name.given                       | Mandatory                   |
+| Person Birth Date        | CareConnect-EMS-Patient-1      | birthDate                        | Mandatory                   |
+| NHS Number               | CareConnect-EMS-Patient-1      | identifier using nhsNumber slice | Mandatory                   |
+| Gender                   | CareConnect-EMS-Patient-1      | gender                           | Mandatory                   |
+| Post Code                | CareConnect-EMS-Patient-1      | address.postalCode               | Mandatory                   |
+| GP Practice              | CareConnect-EMS-Patient-1      | generalPractitioner              | Optional                    |
 | Condition ID             | EMS-FailsafeAlert-Task-1       | task.reason                      | Required                    |
 | Condition Description    | EMS-FailsafeAlert-Task-1       | task.reason.display              | Required                    |
 | Reason for alert         | EMS-FailsafeAlert-Task-1       | task.reason.display              | Required                    |

@@ -18,9 +18,9 @@ The PDS Birth Notification event message bundle is expected to include a combina
 |-----------------------------------------------------------------------|
 | [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                                                          |
 | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                                                   |
-| [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)                                            |
+| [CareConnect-EMS-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Organization-1)                                            |
 | [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                                                 |
-| [CareConnect-PDS-EMS-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Baby-Patient-1)                                            |
+| [CareConnect-EMS-PDS-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Baby-Patient-1)                                            |
 | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                                                   |
 | [CareConnect-EMS-PDS-Mother-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Mother-Patient-1)                                          |
 | [EMS-PDS-GPRegistration-EpisodeOfCare-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-PDS-GPRegistration-EpisodeOfCare-1)                                    |
@@ -31,7 +31,7 @@ The PDS Birth Notification event message bundle is expected to include a combina
 | [CareConnect-EMS-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1) |
 | [CareConnect-EMS-PDS-DeliveryPlace-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-DeliveryPlace-Organization-1)                          |
 | [CareConnect-EMS-PDS-RegisteringAuthority-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-RegisteringAuthority-Organization-1)                   |
-| [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)                                            |
+| [CareConnect-EMS-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Practitioner-1)                                            |
 
 ## Data item requirements  ##
 
@@ -76,23 +76,23 @@ The data item requirements are expected to be fulfilled as below:
 | Mothers Family Name                        | CareConnect-EMS-PDS-Mother-Patient-1                    | name.family                                       | Mandatory                   |
 | Mothers First Given Name                   | CareConnect-EMS-PDS-Mother-Patient-1                    | name.given                                        | Mandatory                   |
 | Mothers Second Given Name                  | CareConnect-EMS-PDS-Mother-Patient-1                    | name.given                                        | Required                    |
-| Mothers Primary Care Identifier            | CareConnect-Organization-1                          | identifier using appropriate ODS identifier slice | Required                    |
+| Mothers Primary Care Identifier            | CareConnect-EMS-Organization-1                          | identifier using appropriate ODS identifier slice | Required                    |
 | Business Effective From Date               | EMS-PDS-GPRegistration-EpisodeOfCare-1                  | period.start                                      | Required                    |
 | Business Effective To Date                 | EMS-PDS-GPRegistration-EpisodeOfCare-1                  | period.end                                        | Required                    |
 | Patient Care Provision Type                |                                                     | not yet profiled                                  | Mandatory                   |
-| Mothers GP Practice Name                   | CareConnect-Organization-1                          | name                                              | Required                    |
-| Senior Partner Code                        | CareConnect-Practitioner-1                          | identifier                                        | Required                    |
-| Senior Partner Name                        | CareConnect-Practitioner-1                          | name                                              | Required                    |
-| GP Practice Line                           | CareConnect-Organization-1                          | address.line                                      | Mandatory                   |
-| GP Postcode                                | CareConnect-Organization-1                          | address.postalCode                                | Required                    |
-| Partner Child Health Organisation Code     | CareConnect-Organization-1                          | identifier                                        | Mandatory                   |
-| Responsible Child Health Organisation Code | CareConnect-Organization-1                          | identifier                                        | Mandatory                   |
+| Mothers GP Practice Name                   | CareConnect-EMS-Organization-1                          | name                                              | Required                    |
+| Senior Partner Code                        | CareConnect-EMS-Practitioner-1                          | identifier                                        | Required                    |
+| Senior Partner Name                        | CareConnect-EMS-Practitioner-1                          | name                                              | Required                    |
+| GP Practice Line                           | CareConnect-EMS-Organization-1                          | address.line                                      | Mandatory                   |
+| GP Postcode                                | CareConnect-EMS-Organization-1                          | address.postalCode                                | Required                    |
+| Partner Child Health Organisation Code     | CareConnect-EMS-Organization-1                          | identifier                                        | Mandatory                   |
+| Responsible Child Health Organisation Code | CareConnect-EMS-Organization-1                          | identifier                                        | Mandatory                   |
 | Ethnic Category                            | CareConnect-EMS-PDS-Baby-Patient-1                      | ethnicCategory                                    | Mandatory                   |
 | Delivery Place Code                        | CareConnect-EMS-PDS-DeliveryPlace-Organization-1        | identifier using appropriate ODS identifier slice | Required                    |
 | Delivery Place Name                        | CareConnect-EMS-PDS-DeliveryPlace-Organization-1        | name                                              | Required                    |
-| Notifying Person Family Name               | CareConnect-Practitioner-1                          | name.family                                       | Mandatory                   |
-| First Given Name                           | CareConnect-Practitioner-1                          | name.given                                        | Mandatory                   |
-| Second Name Given                          | CareConnect-Practitioner-1                          | name.given                                        | Required                    |
+| Notifying Person Family Name               | CareConnect-EMS-Practitioner-1                          | name.family                                       | Mandatory                   |
+| First Given Name                           | CareConnect-EMS-Practitioner-1                          | name.given                                        | Mandatory                   |
+| Second Name Given                          | CareConnect-EMS-Practitioner-1                          | name.given                                        | Required                    |
 | Registering Authority Type                 | CareConnect-EMS-PDS-RegisteringAuthority-Organization-1 | type                                              | Mandatory                   |
 | Organisation Identifier                    | CareConnect-EMS-PDS-RegisteringAuthority-Organization-1 | identifier using appropriate ODS identifier slice | Mandatory                   |
 
