@@ -35,7 +35,7 @@ The data item requirements are expected to be fulfilled as below:
 | Reason for Removal                | CareConnect-EMS-PDS-Flag-1  | code         | Required                    |
 | Business Effective from date      | CareConnect-EMS-PDS-Flag-1  | period.start | Required                    |
 | Business Effective to date        | CareConnect-EMS-PDS-Flag-1  | period.end   | Required                    |
-| Requested date                    | EMS-Communication-1 | authoredOn   | Required                    |
+| Requested date                    | EMS-Communication-1 | sent           | Required                    |
 
 
 
