@@ -67,7 +67,7 @@ entries:
         - title: National Failsafe Alert
           url: /explore_national_failsafe_alert.html
           output: web
-         - title: National Failsafe Alert Nullify Request
+        - title: National Failsafe Alert Nullify Request
           url: /explore_national_failsafe_alert_nullify.html
           output: web
       - title: Personal Demographics Service (PDS) Updates
