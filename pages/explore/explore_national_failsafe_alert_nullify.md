@@ -31,14 +31,14 @@ The data item requirements are expected to be fulfilled as below:
 
 | Failsafe Alert data item | FHIR profile               | FHIR element                     | Mandatory/Required/Optional |
 |--------------------------|----------------------------|----------------------------------|-----------------------------|
-| Service                  | CareConnect-EMS-Organization-1 |                                  | Optional                   |
+| Nullifying Service                  | CareConnect-EMS-Organization-1 |                                  | Optional                   |
 | Date and Time raised     | EMS-NullifyFailsafeAlert-Task-1       | authoredOn                       | Optional                   |
-| Reason            | EMS-NullifyFailsafeAlert-Task-1       | reason                    |        Optional            |
-| Description         | EMS-NullifyFailsafeAlert-Task-1       | description                  |     Optional               |
+| Nullification Reason            | EMS-NullifyFailsafeAlert-Task-1       | reason                    |        Optional            |
+| other reason for nullification         | EMS-NullifyFailsafeAlert-Task-1       | description                  |     Optional               |
 | User              | CareConnect-EMS-Practitioner-1      | name.family                      | Optional                   |
 | SDS Job Role Name         | CareConnect-EMS-PractitionerRole-1      | code                       | Optional                   |
 | Originating Failsafe Alert        | EMS-FailsafeAlert-Task-1      |                        | Optional                   |
-| Nullify Period               | EMS-NullifyFailsafeAlert-Task-1      |restriction.period | Optional                  |
+| Time Period               | EMS-NullifyFailsafeAlert-Task-1      |restriction.period | Optional                  |
 
 
 
