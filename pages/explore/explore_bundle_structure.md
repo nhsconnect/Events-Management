@@ -24,7 +24,7 @@ The root class of the MessageHeader is fulfilled using the 'focus' element in th
 
 - for clinical events, the 'focus' will reference an [Encounter](http://hl7.org/fhir/encounter.html)
 - for informational alerts or updates, the 'focus' will reference a [Communication](http://hl7.org/fhir/communication.html) resource
-- fror any other events yet to be scoped, the 'focus' may be any FHIR resource where the 'subject' element is fulfilled by a reference to a [Patient](http://hl7.org/fhir/patient.html) resource.
+- fror any other events yet to be scoped, it is expected that the 'focus' may be any FHIR resource where the 'subject' element is fulfilled by a reference to a [Patient](http://hl7.org/fhir/patient.html) resource.
 
 
 

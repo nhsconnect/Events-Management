@@ -7,6 +7,10 @@ sidebar: overview_sidebar
 permalink: support_communications.html
 summary: "Communication channels to assist with FHIR API development."
 ---
+
+## FHIR ##
+The FHIR profiles for this specification have been developed using the [FHIR Release STU3](https://www.hl7.org/fhir/STU3/index.html) specification.
+
 ## Questions and Comments ##
 For questions and comments about this documentation please email the <a href="mailto:interoperabilityteam@nhs.net?subject=Events%20Management%20Service%20FHIR%20Specification">Interoperability Team</a>.
 

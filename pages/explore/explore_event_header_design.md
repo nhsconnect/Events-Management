@@ -9,12 +9,10 @@ summary: "The event header design for use with EMS event messages"
 
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
 
-## Background ##
-Each event will carry a standard set of data to act as an event "header" (to help identify the patient, publisher, and actual event).
+## Event header information ##
+Each event message will carry a standard set of event header information to help identify the patient, publisher, and actual event, etc.
 
-## The EMS Event Header Design ##
-
-This standard header consists of the following items and their corresponding FHIR profiles and elements:
+This event header information must of the following items and their corresponding FHIR profiles and elements:
 
 | Requirement                                                         | Cardinality                           | FHIR Profile                                                                                                                  | FHIR element                                                                |
 |---------------------------------------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -32,7 +30,7 @@ This standard header consists of the following items and their corresponding FHI
 | When the event was published                                        | 1..1                                  | EMS-MessageHeader-1                                                                                                           | timestamp                                                                   |
 | An originator/publisher unique publication reference                | 1..1                                  | EMS-MessageHeader-1                                                                                                           | The resource identifier for the MessageHeader, which will use a UUID format |
 
-The remaining resources in the bundle depend on the event message type, see the [Messages](/explore/explore.html) section for more information.
+The remaining resources in the bundle depend on the event message type, see the [Messages](explore.html) section for more information.
 
 
 
