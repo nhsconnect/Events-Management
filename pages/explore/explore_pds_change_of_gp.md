@@ -35,6 +35,8 @@ The data item requirements are expected to be fulfilled as below:
 | Commissioning organisation of current GP  | CareConnect-EMS-Organization-1 | identifier using ODS Code | Mandatory                   |
 | Previous GP Practice Code                 | CareConnect-EMS-Organization-1 | identifier using ODS Code | Mandatory                   |
 | Commissioning organisation of previous GP | CareConnect-EMS-Organization-1 | identifier using ODS Code | Mandatory                   |
-
-
+| Business Effective from date                 | EMS-PDS-GPRegistration-EpisodeOfCare-1 | period.start | Mandatory                   |
+| Business Effective to date | EMS-PDS-GPRegistration-EpisodeOfCare-1 | period.end | Optional                   |
+| System Effective from date                 | EMS-PDS-GPRegistration-EpisodeOfCare-1 | period.start | Mandatory                   |
+| System Effective to date | EMS-PDS-GPRegistration-EpisodeOfCare-1 | period.end | Optional                   |
 
