@@ -77,24 +77,24 @@ entries:
         - title: PDS Birth Notification
           url: /explore_pds_birth_notification.html
           output: web
-        - title: PDS Communication Preferences
-          url: /explore_pds_communication_preferences.html
-          output: web
-        - title: PDS Related Person
-          url: /explore_pds_related_person.html
-          output: web
-        - title: PDS Demographics
-          url: /explore_pds_demographics.html
-          output: web		  
+#        - title: PDS Communication Preferences
+#          url: /explore_pds_communication_preferences.html
+#          output: web
+#        - title: PDS Related Person
+#          url: /explore_pds_related_person.html
+#          output: web
+#        - title: PDS Demographics
+#          url: /explore_pds_demographics.html
+#          output: web		  
         - title: PDS Change Of Address
           url: /explore_pds_change_of_address.html
           output: web
         - title: PDS Change of GP
           url: /explore_pds_change_of_gp.html
           output: web
-        - title: PDS Flags
-          url: /explore_pds_flags.html
-          output: web
+#        - title: PDS Flags
+#          url: /explore_pds_flags.html
+#          output: web
         - title: PDS Person Death
           url: /explore_pds_person_death.html
           output: web
