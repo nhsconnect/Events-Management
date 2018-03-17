@@ -66,7 +66,7 @@ The data item requirements are expected to be fulfilled as below:
 | Communication Contact string               | CareConnect-EMS-PDS-Baby-Patient-1                      | telecom.value                                     | Mandatory                   |
 | Business Effective From Date               | CareConnect-EMS-PDS-Baby-Patient-1                      | telecom.period.start                              | Required                    |
 | Business Effective To Date                 | CareConnect-EMS-PDS-Baby-Patient-1                      | telecom.period.end                                | Required                    |
-| Birth Order                                | CareConnect-EMS-PDS-Baby-Patient-1                      | multipleBirth[x]                                  | Mandatory                   |
+| Birth Order                                | CareConnect-EMS-PDS-Baby-Patient-1                      | multipleBirthInteger                                  | Mandatory                   |
 | Birth Weight                               | CareConnect-EMS-PDS-BirthWeight-Observation-1           | valueQuantity                                     | Mandatory                   |
 | Town of Birth                              | CareConnect-EMS-PDS-Baby-Patient-1                      | birthPlace                                        | Required                    |
 | County or District of Birth                | CareConnect-EMS-PDS-Baby-Patient-1                      | birthPlace                                        | Required                    |
