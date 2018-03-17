@@ -61,15 +61,14 @@ entries:
       type: homepage
       subfolders:
       - title: Events Management Service
-        url: /explore.html
+#        url: /explore.html
         output: web
         subfolderitems:
         - title: Event Message Rejection
           url: /explore_ems_event_rejection.html
           output: web
-      subfolders:
       - title: National Failsafe
-        url: /explore.html
+#        url: /explore.html
         output: web
         subfolderitems:
         - title: National Failsafe Alert
