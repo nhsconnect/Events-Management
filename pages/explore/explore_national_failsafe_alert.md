@@ -14,7 +14,7 @@ The Failsafe Alert event message bundle is expected to include a combination of 
 
 {% include important.html content="The links below will refer to the StructureDefinition url applied to the FHIR profile, which are not yet active. For queries please refer to the Help and Support section." %} 
 
-| Failsafe Alert Event Message Bundle       |
+| National Failsafe Alert Event Message Bundle       |
 |-------------------------------------------|
 | [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)                              |
 | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                       |

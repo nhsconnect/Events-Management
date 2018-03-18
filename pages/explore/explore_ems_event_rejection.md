@@ -28,7 +28,7 @@ The EMS Event Message Rejection message bundle will include a combination of the
 
 The data item requirements are expected to be fulfilled as below:
 
-| EMS Event Message Rejection item       | FHIR resource                   | element               |
+| EMS Event Message Rejection item       | FHIR profile                   | FHIR element               |
 |----------------------|---------------------------------|-----------------------|
 | Alerter              | EMS-Communication-1             | sender                |
 | Date and Time raised | EMS-Communication-1             | sent                  |
