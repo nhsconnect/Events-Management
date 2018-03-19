@@ -40,20 +40,20 @@ The data item requirements are expected to be fulfilled as below:
 | PDS Birth Notification data item name                   | FHIR Resource                                       | FHIR element                                      | Mandatory/Optional/Required |
 |--------------------------------------------|-----------------------------------------------------|---------------------------------------------------|-----------------------------|
 | NHS Number                                 | CareConnect-EMS-PDS-Baby-Patient-1                      | identifier using NHS Number slice                 | Mandatory                   |
-| Name Type                                  | CareConnect-EMS-PDS-Baby-Patient-1                      | name.use                                          |                             |
-| Family Name                                | CareConnect-EMS-PDS-Baby-Patient-1                      | name.family                                       | Required                    |
-| First Given Name                           | CareConnect-EMS-PDS-Baby-Patient-1                      | name.given                                        | Required                    |
-| Other given names (s)                      | CareConnect-EMS-PDS-Baby-Patient-1                      | name.given                                        | Required                    |
-| Name prefix                                | CareConnect-EMS-PDS-Baby-Patient-1                      | name.prefix                                       | Required                    |
-| Name Suffix                                | CareConnect-EMS-PDS-Baby-Patient-1                      | name.suffix                                       | Required                    |
-| Name Business Effective from date          | CareConnect-EMS-PDS-Baby-Patient-1                      | name.period.start                                 | Required                    |
-| Name Business Effective to date            | CareConnect-EMS-PDS-Baby-Patient-1                      | name.period.end                                   | Required                    |
+| Name Type                                  | CareConnect-EMS-PDS-Baby-Patient-1                      | name.use (official)                                         |                             |
+| Family Name                                | CareConnect-EMS-PDS-Baby-Patient-1                      | name.family (official)                                      | Required                    |
+| First Given Name                           | CareConnect-EMS-PDS-Baby-Patient-1                      | name.given (official)                                        | Required                    |
+| Other given names (s)                      | CareConnect-EMS-PDS-Baby-Patient-1                      | name.given (official)                                        | Required                    |
+| Name prefix                                | CareConnect-EMS-PDS-Baby-Patient-1                      | name.prefix (official)                                       | Required                    |
+| Name Suffix                                | CareConnect-EMS-PDS-Baby-Patient-1                      | name.suffix (official)                                       | Required                    |
+| Name Business Effective from date          | CareConnect-EMS-PDS-Baby-Patient-1                      | name.period.start (official)                                 | Required                    |
+| Name Business Effective to date            | CareConnect-EMS-PDS-Baby-Patient-1                      | name.period.end (official)                                   | Required                    |
 | Gender                                     | CareConnect-EMS-PDS-Baby-Patient-1                      | gender                                            | Mandatory                   |
 | Person birth date                          | CareConnect-EMS-PDS-Baby-Patient-1                      | birthDate                                         | Mandatory                   |
 | Delivery Time                              | CareConnect-EMS-PDS-Baby-Patient-1                      | birthDate.patient-birthTime                       | Mandatory                   |
 | Death Date                                 | CareConnect-EMS-PDS-Baby-Patient-1                      | deceased.dateTime                                 | Required                    |
 | Death Time                                 | CareConnect-EMS-PDS-Baby-Patient-1                      | deceased.dateTime                                 | Required                    |
-| Status of Death Notification               |                                                     | not yet profiled                                  | Required                    |
+| Status of Death Notification               | CareConnect-EMS-PDS-Baby-Patient-1                      | deathNotificationStatus (extension)                                | Required                    |
 | Current Address Type                       | CareConnect-EMS-PDS-Baby-Patient-1                      | address.use                                       | Mandatory                   |
 | Address Line                               | CareConnect-EMS-PDS-Baby-Patient-1                      | address.line                                      | Mandatory                   |
 | Postcode                                   | CareConnect-EMS-PDS-Baby-Patient-1                      | address.postalCode                                | Required                    |
@@ -71,12 +71,12 @@ The data item requirements are expected to be fulfilled as below:
 | Town of Birth                              | CareConnect-EMS-PDS-Baby-Patient-1                      | birthPlace                                        | Required                    |
 | County or District of Birth                | CareConnect-EMS-PDS-Baby-Patient-1                      | birthPlace                                        | Required                    |
 | Country of Birth                           | CareConnect-EMS-PDS-Baby-Patient-1                      | birthPlace                                        | Required                    |
-| Mother's NHS Number                        | CareConnect-EMS-PDS-Mother-Patient-1                    | identifier using NHS Number slice                 | Required                    |
+| Mother's NHS Number                        | CareConnect-EMS-PDS-Mother-Patient-1                    | identifier (nHSNumber)                 | Required                    |
 | Mothers Date of Birth                      | CareConnect-EMS-PDS-Mother-Patient-1                    | birthDate                                         | Required                    |
 | Mothers Family Name                        | CareConnect-EMS-PDS-Mother-Patient-1                    | name.family                                       | Mandatory                   |
 | Mothers First Given Name                   | CareConnect-EMS-PDS-Mother-Patient-1                    | name.given                                        | Mandatory                   |
 | Mothers Second Given Name                  | CareConnect-EMS-PDS-Mother-Patient-1                    | name.given                                        | Required                    |
-| Mothers Primary Care Identifier            | CareConnect-EMS-Organization-1                          | identifier using appropriate ODS identifier slice | Required                    |
+| Mothers Primary Care Identifier            | CareConnect-EMS-Organization-1                          | identifier (oDSIdentifier) | Required                    |
 | Business Effective From Date               | EMS-PDS-GPRegistration-EpisodeOfCare-1                  | period.start                                      | Required                    |
 | Business Effective To Date                 | EMS-PDS-GPRegistration-EpisodeOfCare-1                  | period.end                                        | Required                    |
 | Patient Care Provision Type                |                                                     | not yet profiled                                  | Mandatory                   |
