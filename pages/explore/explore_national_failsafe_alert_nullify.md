@@ -22,7 +22,7 @@ The National Failsafe Alert Nullify Request event message bundle is expected to 
 | [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                   |
 | [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)                     |
 | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                       |
-| [EMS-NullifyFailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-NullifyFailsafeAlert-Task-1)                      |
+| [EMS-FailsafeAlertNullify-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlertNullify-Task-1)                      |
 | [EMS-FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlert-Task-1)                      |
 
 ## Data item requirements  ##
@@ -32,13 +32,13 @@ The data item requirements are expected to be fulfilled as below:
 | National Failsafe Alert Nullify Request data item | FHIR profile               | FHIR element                     | Mandatory/Required/Optional |
 |--------------------------|----------------------------|----------------------------------|-----------------------------|
 | Nullifying Service                  | CareConnect-EMS-Organization-1 |                                  | Optional                   |
-| Date and Time raised     | EMS-NullifyFailsafeAlert-Task-1       | authoredOn                       | Optional                   |
+| Date and Time raised     | EMS-FailsafeAlertNullify-Task-1       | authoredOn                       | Optional                   |
 | Nullification Reason            | EMS-NullifyFailsafeAlert-Task-1       | reason                    |        Optional            |
-| other reason for nullification         | EMS-NullifyFailsafeAlert-Task-1       | description                  |     Optional               |
+| other reason for nullification         | EMS-FailsafeAlertNullify-Task-1       | description                  |     Optional               |
 | User              | CareConnect-EMS-Practitioner-1      | name.family                      | Optional                   |
 | SDS Job Role Name         | CareConnect-EMS-PractitionerRole-1      | code                       | Optional                   |
 | Originating Failsafe Alert        | EMS-FailsafeAlert-Task-1      |                        | Optional                   |
-| Time Period               | EMS-NullifyFailsafeAlert-Task-1      |restriction.period | Optional                  |
+| Time Period               | EMS-FailsafeAlertNullify-Task-1      |restriction.period | Optional                  |
 
 
 

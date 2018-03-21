@@ -67,8 +67,8 @@ entries:
 #        url: /explore.html
         output: web
         subfolderitems:
-        - title: Event Message Rejection
-          url: /explore_ems_event_rejection.html
+        - title: Event Message Response
+          url: /explore_ems_event_response.html
           output: web
       - title: National Failsafe
 #        url: /explore.html
