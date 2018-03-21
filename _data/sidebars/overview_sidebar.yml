@@ -38,7 +38,7 @@ entries:
     - title: Event Header Design
       url: /explore_event_header_design.html
       output: web
-    - title: CareConnect 
+    - title: CareConnect FHIR Profiles 
       url: /explore_careconnect.html
       output: web
 #    - title: FHIR Profiles
