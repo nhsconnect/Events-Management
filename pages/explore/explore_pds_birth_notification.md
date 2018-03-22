@@ -46,26 +46,14 @@ The data item requirements are expected to be fulfilled as below:
 | Other given names (s)                      | CareConnect-EMS-PDS-Baby-Patient-1                      | name.given (official)                                        | Required                    |
 | Name prefix                                | CareConnect-EMS-PDS-Baby-Patient-1                      | name.prefix (official)                                       | Required                    |
 | Name Suffix                                | CareConnect-EMS-PDS-Baby-Patient-1                      | name.suffix (official)                                       | Required                    |
-| Name Business Effective from date          | CareConnect-EMS-PDS-Baby-Patient-1                      | name.period.start (official)                                 | Required                    |
-| Name Business Effective to date            | CareConnect-EMS-PDS-Baby-Patient-1                      | name.period.end (official)                                   | Required                    |
 | Gender                                     | CareConnect-EMS-PDS-Baby-Patient-1                      | gender                                            | Mandatory                   |
 | Person birth date                          | CareConnect-EMS-PDS-Baby-Patient-1                      | birthDate                                         | Mandatory                   |
 | Delivery Time                              | CareConnect-EMS-PDS-Baby-Patient-1                      | birthDate.patient-birthTime                       | Mandatory                   |
 | Death Date                                 | CareConnect-EMS-PDS-Baby-Patient-1                      | deceased.dateTime                                 | Required                    |
 | Death Time                                 | CareConnect-EMS-PDS-Baby-Patient-1                      | deceased.dateTime                                 | Required                    |
 | Status of Death Notification               | CareConnect-EMS-PDS-Baby-Patient-1                      | deathNotificationStatus (extension)                                | Required                    |
-| Current Address Type                       | CareConnect-EMS-PDS-Baby-Patient-1                      | address.use                                       | Mandatory                   |
 | Address Line                               | CareConnect-EMS-PDS-Baby-Patient-1                      | address.line                                      | Mandatory                   |
 | Postcode                                   | CareConnect-EMS-PDS-Baby-Patient-1                      | address.postalCode                                | Required                    |
-| PAF Key                                    |                                                     | not yet profiled                                  | Optional                    |
-| Address Description                        |                                                     | not yet profiled                                  | Required                    |
-| Business Effective From Date               | CareConnect-EMS-PDS-Baby-Patient-1                      | address.period.start                              | Required                    |
-| Business Effective To Date                 | CareConnect-EMS-PDS-Baby-Patient-1                      | address.period.end                                | Required                    |
-| Telecom Usage                              | CareConnect-EMS-PDS-Baby-Patient-1                      | telecom.use                                       | Required                    |
-| Communication Contact Method               | CareConnect-EMS-PDS-Baby-Patient-1                      | telecom.system                                    | Required                    |
-| Communication Contact string               | CareConnect-EMS-PDS-Baby-Patient-1                      | telecom.value                                     | Mandatory                   |
-| Business Effective From Date               | CareConnect-EMS-PDS-Baby-Patient-1                      | telecom.period.start                              | Required                    |
-| Business Effective To Date                 | CareConnect-EMS-PDS-Baby-Patient-1                      | telecom.period.end                                | Required                    |
 | Birth Order                                | CareConnect-EMS-PDS-Baby-Patient-1                      | multipleBirthInteger                                  | Mandatory                   |
 | Birth Weight                               | CareConnect-EMS-PDS-BirthWeight-Observation-1           | valueQuantity                                     | Mandatory                   |
 | Town of Birth                              | CareConnect-EMS-PDS-Baby-Patient-1                      | birthPlace                                        | Required                    |
@@ -79,12 +67,7 @@ The data item requirements are expected to be fulfilled as below:
 | Mothers Primary Care Identifier            | CareConnect-EMS-Organization-1                          | identifier (oDSIdentifier) | Required                    |
 | Business Effective From Date               | EMS-PDS-GPRegistration-EpisodeOfCare-1                  | period.start                                      | Required                    |
 | Business Effective To Date                 | EMS-PDS-GPRegistration-EpisodeOfCare-1                  | period.end                                        | Required                    |
-| Patient Care Provision Type                |                                                     | not yet profiled                                  | Mandatory                   |
 | Mothers GP Practice Name                   | CareConnect-EMS-Organization-1                          | name                                              | Required                    |
-| Senior Partner Code                        | CareConnect-EMS-Practitioner-1                          | identifier                                        | Required                    |
-| Senior Partner Name                        | CareConnect-EMS-Practitioner-1                          | name                                              | Required                    |
-| GP Practice Line                           | CareConnect-EMS-Organization-1                          | address.line                                      | Mandatory                   |
-| GP Postcode                                | CareConnect-EMS-Organization-1                          | address.postalCode                                | Required                    |
 | Partner Child Health Organisation Code     | CareConnect-EMS-Organization-1                          | identifier                                        | Mandatory                   |
 | Responsible Child Health Organisation Code | CareConnect-EMS-Organization-1                          | identifier                                        | Mandatory                   |
 | Ethnic Category                            | CareConnect-EMS-PDS-Baby-Patient-1                      | ethnicCategory                                    | Mandatory                   |
