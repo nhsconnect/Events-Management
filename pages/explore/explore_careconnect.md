@@ -1,4 +1,4 @@
----
+﻿---
 title: CareConnect - STU3 FHIR 
 keywords:  messaging, bundles
 tags: [fhir,messaging]
@@ -25,7 +25,7 @@ This Beta specification release adopts the following CareConnect STU3 FHIR profi
 - CareConnect-PractitionerRole-1
 
 
-The Beta specification release also adopts the **draft** **'CareConnect-Observation-1'** STU3 FHIR profile and any supporting artefacts. This has been developed by NHS Digital as part of an exercise to uplift the CareConnect DSTU2 FHIR Profiles published by INTEROPen to an STU3 equivalent, within a [feature branch](https://github.com/HL7-UK/CareConnect-profiles/tree/feature/interopen) on the [HL7-UK github repository](https://github.com/HL7-UK/CareConnect-profiles-STU3).
+The Beta specification release also adopts the **draft** **'CareConnect-Observation-1'** STU3 FHIR profile and any supporting artefacts. This has been developed by NHS Digital as part of an exercise to uplift the CareConnect DSTU2 FHIR Profiles published by INTEROPen to an STU3 equivalent, within a [feature branch](https://github.com/nhsconnect/CareConnect-profiles/tree/feature/stu3) on the [NHSConnect CareConnect profiles github repository](https://github.com/nhsconnect/CareConnect-profiles).
 
 Level 3 profiles have been developed with reference to the INTEROPen document [Deriving-CareConnect-Profiles](https://docs.google.com/document/d/1Fe6_w78BiNKwAnmsJi0-oQe7TRc2VpFqUQGpdpbkn7s/edit#heading=h.v4n7w91x36ud).
 
