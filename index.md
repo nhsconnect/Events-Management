@@ -18,4 +18,4 @@ The Events Management Service (EMS) Specification supports the following communi
 - **Patient Demographics Service (PDS) Updates** these event messages will issue updates made to demographic information held by the PDS.
 - **Digital Child Health** event messages containing information meaningful to those managing the personal health of themselves or their families, those professionals providing direct care to children and young people and those managing the health of populations. 
 
-The FHIR profiles in this specification have been developed to explore the event message design options using the [Digital Child Health Event Catalogue Specification](https://nhsconnect.github.io/Digital-Child-Health-STU3/) as a use case. 
+The FHIR profiles in this specification have been developed to explore the event message design options using the [Digital Child Health Event Catalogue Specification](https://nhsconnect.github.io/Digital-Child-Health/) as a use case. 
