@@ -1,9 +1,10 @@
-﻿---
-title: CareConnect - STU3 FHIR 
+---
+title: CareConnect FHIR Profiles
 keywords:  messaging, bundles
 tags: [fhir,messaging]
-sidebar: foundations_sidebar
-permalink: explore_careconnect.html
+toc: false
+sidebar: overview_sidebar
+permalink: support_careconnect.html
 summary: "Clarification on the application of CareConnect STU3 FHIR profiles for Events Management Service (EMS) event messages"
 ---
 

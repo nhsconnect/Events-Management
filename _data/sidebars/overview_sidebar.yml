@@ -38,9 +38,6 @@ entries:
     - title: Event Header Design
       url: /explore_event_header_design.html
       output: web
-    - title: CareConnect FHIR Profiles 
-      url: /explore_careconnect.html
-      output: web
 #    - title: FHIR Profiles
 #      url: /explore_fhir_profiles.html
 #      output: web
@@ -170,8 +167,11 @@ entries:
   - title: Help & Support
     output: web
     folderitems:
-    - title: Communication Channels
-      url: /support_communications.html
+    - title: About
+      url: /support_about.html
+      output: web
+    - title: CareConnect FHIR Profiles 
+      url: /support_careconnect.html
       output: web
       subfolders:
       - title: Where Else Can I Look?
