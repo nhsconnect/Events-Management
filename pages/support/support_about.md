@@ -24,6 +24,6 @@ FHIR Messaging components specified within this site have been developed by NHS 
 
 The INTEROPen vision is to create a library of nationally defined HL7® FHIR® resources and interaction patterns that implementers can adopt to simplify integration and interoperability within UK health and social care.
 
-See C[areConnect FHIR Profiles](support_careconnect.html) for further clarification on the use of CareConnect FHIR profiles within this specification.
+See [CareConnect FHIR Profiles](support_careconnect.html) for further clarification on the use of CareConnect FHIR profiles within this specification.
 
 Find out more on the [INTEROPen website](http://interopen.org/).

@@ -31,7 +31,3 @@ The Beta specification release also adopts the **draft** **'CareConnect-Observat
 Level 3 profiles have been developed with reference to the INTEROPen document [Deriving-CareConnect-Profiles](https://docs.google.com/document/d/1Fe6_w78BiNKwAnmsJi0-oQe7TRc2VpFqUQGpdpbkn7s/edit#heading=h.v4n7w91x36ud).
 
 
-
-
-
-

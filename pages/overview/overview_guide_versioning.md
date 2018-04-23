@@ -9,7 +9,7 @@ summary: An overview of this implementation guide is versioned.
 
 ## Experimental ##
 
-This implementation guide is in currently in an **Experimental** state. This means that changes and releases are occurring regularly.
+This implementation guidance is the **Beta** release to support the development of the Events Management Service event messages. 
 
 ## Semantic Versioning ##
 
