@@ -10,6 +10,6 @@ This Events Management Service (EMS) Specification supports the following commun
 
 ## References ##
 
-[Implementation Guide for Digital Child Health event messaging using the DSTU2 FHIR Specification](https://data.developer.nhs.uk/specifications/dch-alpha/Chapter.1.About/index.html) **Alpha**
+[Health Developer Network - Events Management Service](https://developer.nhs.uk/library/interoperability/events-management-service/)
 
-[Implementation Guide for Digital Child Health event messaging using the STU3 FHIR Specification](https://nhsconnect.github.io/Digital-Child-Health-STU3/) **Work in progress for Beta release**
+[Health Developer Network - Digital Child Health](https://developer.nhs.uk/library/interoperability/digital-child-health/)
