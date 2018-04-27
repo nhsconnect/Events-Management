@@ -8,8 +8,6 @@ permalink: support_careconnect.html
 summary: "Clarification on the application of CareConnect STU3 FHIR profiles for Events Management Service (EMS) event messages"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
-
 ## Background ##
 FHIR Messaging components specified within this site have been developed by NHS Digital and where applicable, use CareConnect profiles created in collaboration with the [INTEROPen](http://interopen.org) community. 
 

@@ -7,13 +7,9 @@ permalink: explore_pds_change_of_address.html
 summary: "The FHIR profiles used for the PDS Change of Address event message bundle"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
-
 ## FHIR Profiles ##
 
 The PDS Change of Address Bundle is expected to include a combination of the following resources to support the event header and data item requirements:
-
-{% include important.html content="The links below will refer to the StructureDefinition url applied to the FHIR profile, which are not yet active. For queries please refer to the Help and Support section." %} 
 
 | PDS Change of Address Event Message Bundle |
 |--------------------------------------------|

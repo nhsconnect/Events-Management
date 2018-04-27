@@ -7,8 +7,6 @@ permalink: explore.html
 summary: "Overview of the Messaging Architecture section"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis.  It is advised not to develop against these specifications until a formal announcement has been made." %}
-
 **Message Patterns and Message Structure**
 
 The Events Management Service is based on a Publish and Subscribe messaging pattern. Events are created by services such as the National Population Failsafe or Patient Demographics Service. The events are published to a national events hub, which also manages subscriptions to the published events.

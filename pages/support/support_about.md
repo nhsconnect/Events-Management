@@ -8,8 +8,10 @@ permalink: support_about.html
 summary: "Additional information about this specification to assist with FHIR API development."
 ---
 
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented in the [Release Notes](overview_release_notes.html) section." %}
+
 ## FHIR ##
-The FHIR profiles for this specification have been developed using the [FHIR Release STU3](https://www.hl7.org/fhir/STU3/index.html) specification.
+The FHIR profiles for this specification have been developed using the [FHIR Release STU3](https://www.hl7.org/fhir/STU3/index.html) specification, and the [Digital Child Health Events Alpha Specification](https://data.developer.nhs.uk/specifications/dch-alpha/Chapter.1.About/index.html) as a use case. 
 
 ## Questions and Comments ##
 For questions and comments about this documentation please email the <a href="mailto:interoperabilityteam@nhs.net?subject=Events%20Management%20Service%20FHIR%20Specification">Interoperability Team</a>.

@@ -7,8 +7,6 @@ permalink: index.html
 toc: false
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis.  It is advised not to develop against these specifications until a formal announcement has been made." %}
-
 ## Introduction ##
 
 The Events Management Service (EMS) Specification supports the following communications:
@@ -18,4 +16,4 @@ The Events Management Service (EMS) Specification supports the following communi
 - **Patient Demographics Service (PDS) Updates** these event messages will issue updates made to demographic information held by the PDS.
 - **Digital Child Health** event messages containing information meaningful to those managing the personal health of themselves or their families, those professionals providing direct care to children and young people and those managing the health of populations. 
 
-The FHIR profiles in this specification have been developed to explore the event message design options using the [Digital Child Health Event Catalogue Specification](https://nhsconnect.github.io/Digital-Child-Health/) as a use case. 
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented in the [Release Notes](overview_release_notes.html) section." %}

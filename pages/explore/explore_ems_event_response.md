@@ -7,12 +7,8 @@ permalink: explore_ems_event_response.html
 summary: "The FHIR profiles used for the EMS Event Message Response Event Message Bundle"
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. It is advised not to develop against these specifications until a formal announcement has been made." %}
-
 ## FHIR Profiles ##
 The EMS Event Message Response message bundle will include a combination of the following resources to convey a success or failure response to an event message received by the Events Management Service:
-
-{% include important.html content="The links below will refer to the StructureDefinition url applied to the FHIR profile, which are not yet active. For queries please refer to the Help and Support section." %} 
 
 | EMS Event Message Response Event Message Bundle       |
 |-------------------------------------------|
