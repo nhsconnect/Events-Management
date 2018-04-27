@@ -15,7 +15,7 @@ The INTEROPen vision is to create a library of nationally defined HL7® FHIR® r
 
 ## Application of CareConnect STU3 FHIR profiles for Events Management Service ##
 
-This Beta specification release includes Level 3 profiles based on the the following CareConnect STU3 FHIR profiles and their supporting artefacts, which have been published following INTEROPen curation on the [HL7-UK github repository](https://github.com/HL7-UK/CareConnect-profiles-STU3/):
+This Beta specification release includes FHIR profiles derived from the following CareConnect STU3 FHIR profiles and their supporting artefacts, which have been published following INTEROPen curation on the [HL7-UK github repository](https://github.com/HL7-UK/CareConnect-profiles-STU3/):
 
 - CareConnect-Location-1
 - CareConnect-Organization-1
@@ -23,9 +23,6 @@ This Beta specification release includes Level 3 profiles based on the the follo
 - CareConnect-Practitioner-1
 - CareConnect-PractitionerRole-1
 
-This Beta specification release also includes Level 3 profiles using the **draft** **'CareConnect-Observation-1'** STU3 FHIR profile and any supporting artefacts. This has been developed by NHS Digital as part of an exercise to uplift the CareConnect DSTU2 FHIR Profiles published by INTEROPen to an STU3 equivalent, within a [feature branch](https://github.com/nhsconnect/CareConnect-profiles/tree/feature/stu3) on the [NHSConnect CareConnect profiles github repository](https://github.com/nhsconnect/CareConnect-profiles).
+This Beta specification release also includes FHIR profiles derived from the **draft** **'CareConnect-Observation-1'** STU3 FHIR profile and any supporting artefacts. This has been developed by NHS Digital as part of an exercise to uplift the CareConnect DSTU2 FHIR Profiles published by INTEROPen to an STU3 equivalent, within a [feature branch](https://github.com/nhsconnect/CareConnect-profiles/tree/feature/stu3) on the [NHSConnect CareConnect profiles github repository](https://github.com/nhsconnect/CareConnect-profiles). 
 
-Level 3 profiles have been developed with reference to the INTEROPen document [Deriving-CareConnect-Profiles](https://docs.google.com/document/d/1Fe6_w78BiNKwAnmsJi0-oQe7TRc2VpFqUQGpdpbkn7s/edit#heading=h.v4n7w91x36ud).
-
-
-
+Derived FHIR profiles have been developed with reference to the INTEROPen document ['Deriving-CareConnect-Profiles'](https://docs.google.com/document/d/1Fe6_w78BiNKwAnmsJi0-oQe7TRc2VpFqUQGpdpbkn7s/edit#heading=h.v4n7w91x36ud).
