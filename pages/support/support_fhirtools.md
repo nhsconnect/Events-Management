@@ -82,7 +82,7 @@ There is no affiliation between INTEROPen and any of the suppliers listed below.
   </div>
 </div>
 
-## [FHIR Plugin for Notepad++](http://www.healthintersections.com.au/FhirServer/fhirnpp.htm)
+## [FHIR Plugin for Notepad++](http://www.healthintersections.com.au/?p=2386)
 
 <div style="display:flex;flex-wrap:wrap;padding:0 0 1em 0">
   <div style="flex:3 1 60%;padding:0 0 1em 0;">
