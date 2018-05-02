@@ -1,7 +1,7 @@
 entries:
 - title: Events Management Service (EMS)  
   product: Events Management Service (EMS) 
-  version: Beta
+  version: 1.0.0-Beta
   levels: one
   folders:
 
