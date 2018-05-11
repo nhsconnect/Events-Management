@@ -55,8 +55,8 @@ entries:
   - title: Messages
     output: web,pdf
     folderitems:
-    - title: Overview
-      url: /explore.html
+    - title: Example Messages
+      url: /explore_example_messages.html
       output: web
       type: homepage
       subfolders:
