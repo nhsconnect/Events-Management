@@ -9,6 +9,17 @@ summary: Summary release notes of the versions released in Events Management Ser
 
 This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented here.
 
+## Beta 2.0.0 ##
+Following stakeholder feedback, this implementation guidance has been updated as follows:
+ - **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAllertNullify-Task-1
+
+FHIR Profiles - 
+
+- EMS-FailsafeAllertNullify-Task-1 - upversioned to 2.0.0
+	- focus.reference changed to 1..1 to mandate originating Failsafe Alert
+- CodeSystem-EMS-FailsafeAlertReason-1 - upversioned to 2.0.0
+	- display names for codes updated to align with specification.
+
 ## Beta 1.0.1 ##
 This implementation guidance has been updated to include a guidance page for accessing example messages.
  
