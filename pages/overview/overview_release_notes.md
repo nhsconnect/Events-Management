@@ -15,9 +15,9 @@ Following stakeholder feedback, this implementation guidance has been updated as
 
 FHIR Profiles - 
 
-- EMS-FailsafeAllertNullify-Task-1 - upversioned to 2.0.0
+- **EMS-FailsafeAllertNullify-Task-1** - upversioned to 2.0.0
 	- focus.reference changed to 1..1 to mandate originating Failsafe Alert
-- CodeSystem-EMS-FailsafeAlertReason-1 - upversioned to 2.0.0
+- **CodeSystem-EMS-FailsafeAlertReason-1** - upversioned to 2.0.0
 	- display names for codes updated to align with specification.
 
 ## Beta 1.0.1 ##
