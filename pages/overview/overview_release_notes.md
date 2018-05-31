@@ -20,6 +20,8 @@ FHIR Profiles -
 - **CodeSystem-EMS-FailsafeAlertReason-1** - upversioned to 2.0.0
 	- display names for codes updated to align with specification.
 
+Added page [Versioning](explore_event_versioning.html) to clarify versioning of event instances and event definitions.
+
 ## Beta 1.0.1 ##
 This implementation guidance has been updated to include a guidance page for accessing example messages.
  
