@@ -11,14 +11,42 @@ This site is under active development by NHS Digital and is intended to provide 
 
 ## Beta 2.0.0 ##
 Following stakeholder feedback, this implementation guidance has been updated as follows:
+
+ - **National Failsafe Alert** 
+	- GP Practice - changed to Required
+	- Condition ID - changed to Mandatory
+	- Condition Description - changed to Mandatory
+	- Reason for alert - changed to Mandatory
+	- Service needed to action - changed to Mandatory
+	- Provider needed to action - new Mandatory item
+	- Action Required - changed to Mandatory
+	- Action required By Date - changed to Optional
+	- Readable Format - changed to Mandatory
+
  - **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAllertNullify-Task-1
 
 FHIR Profiles - 
 
-- **EMS-FailsafeAllertNullify-Task-1** - upversioned to 2.0.0
+- [EMS-FailsafeAllertNullify-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAllertNullify-Task-1) - upversioned to 2.0.0
 	- focus.reference changed to 1..1 to mandate originating Failsafe Alert
-- **CodeSystem-EMS-FailsafeAlertReason-1** - upversioned to 2.0.0
+	- code, code.coding changed to 1..1
+	- description changed to 1..1
+	- performerType, performerType.coding changed to 1..1
+	- owner changed to 1..1
+	- reason, reason.coding changed to 1..1
+- [EMS-FailsafeAlertReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertReason-1) - CodeSystem upversioned to 2.0.0
 	- display names for codes updated to align with specification.
+- [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 2.0.0: 
+	- 'EMS-MessageHeader-1.id' is now 1..1
+	- 'EMS-MessageHeader-1.responsible.reference' is now 1..1
+- [EMS-FailsafeAlertEscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertEscalationLevel-1) - upversioned to 2.0.0
+	- codes updated to use numeric values
+- [EMS-FailsafeAlertSeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertSeverityLevel-1) - upversioned to 2.0.0
+	- codes updated to use numeric values
+
+Examples - 
+- all 'EMS-FailsafeAlert-Bundle' example instances updated to reflect the changes above.
+
 
 Added page [Versioning](explore_event_versioning.html) to clarify versioning of event instances and event definitions.
 
@@ -31,3 +59,6 @@ This Beta release includes implementation guidance to support the development of
 - EMS Event Message Response
 - National Failsafe Alert and Failsafe Nullify event messages
 - Patient Demographics Service Updates event messages
+
+
+

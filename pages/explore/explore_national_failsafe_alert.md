@@ -36,14 +36,15 @@ The data item requirements are expected to be fulfilled as below:
 | NHS Number               | CareConnect-EMS-Patient-1      | identifier using nhsNumber slice | Mandatory                   |
 | Gender                   | CareConnect-EMS-Patient-1      | gender                           | Mandatory                   |
 | Post Code                | CareConnect-EMS-Patient-1      | address.postalCode               | Mandatory                   |
-| GP Practice              | CareConnect-EMS-Patient-1      | generalPractitioner              | Optional                    |
+| GP Practice              | CareConnect-EMS-Patient-1      | generalPractitioner              | Required                    |
 | Condition ID             | EMS-FailsafeAlert-Task-1       | task.reason                      | Required                    |
 | Condition Description    | EMS-FailsafeAlert-Task-1       | task.reason.display              | Required                    |
 | Reason for alert         | EMS-FailsafeAlert-Task-1       | task.reason.display              | Required                    |
 | Service needed to action | EMS-FailsafeAlert-Task-1       | task.performerType               | Required                    |
+| Provider needed to action| EMS-FailsafeAlert-Task-1       | task.owner               | Required                    |
 | Action Required          | EMS-FailsafeAlert-Task-1       | task.code                        | Required                    |
-| Action Required by Date  | EMS-FailsafeAlert-Task-1       | task.restriction.period.end      | Required                    |
-| Readable Format          | EMS-FailsafeAlert-Task-1       | task.description                 | Required                    |
+| Action Required by Date  | EMS-FailsafeAlert-Task-1       | task.restriction.period.end      | Optional                    |
+| Readable Format          | EMS-FailsafeAlert-Task-1       | task.description                 | Mandatory                    |
 
 
 

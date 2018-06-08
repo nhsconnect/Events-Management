@@ -32,7 +32,7 @@ Event receivers SHOULD also check that updated events with different content als
 
 ## Versioning of Event Definitions ##
 
-When updating the national definitions (FHIR profiles) for events, we will follow the following general principles:
+When updating the national definitions (i.e. FHIR profiles with an **Active** status) for events, we will follow the following general principles:
 
 - Avoid breaking changes wherever possible.
 - Ensure breaking changes are a new major version of the event definition (using Semantic Versioning as per the general [policy for FHIR versioning](https://developer.nhs.uk/apis/fhir-policy/versioning.html)).
