@@ -27,6 +27,8 @@ Following stakeholder feedback, this implementation guidance has been updated as
 
 FHIR Profiles - 
 
+- [EMS-FailsafeAlertEscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertEscalationLevel-1) - upversioned to 2.0.0
+	- codes updated to use numeric values
 - [EMS-FailsafeAllertNullify-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAllertNullify-Task-1) - upversioned to 2.0.0
 	- focus.reference changed to 1..1 to mandate originating Failsafe Alert
 	- code, code.coding changed to 1..1
@@ -34,19 +36,18 @@ FHIR Profiles -
 	- performerType, performerType.coding changed to 1..1
 	- owner changed to 1..1
 	- reason, reason.coding changed to 1..1
+- [EMS-FailsafeAlertNullifyReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertNullifyReason-1) - CodeSystem upversioned to 2.0.0
+	- codes updated to align with specification.
 - [EMS-FailsafeAlertReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertReason-1) - CodeSystem upversioned to 2.0.0
 	- display names for codes updated to align with specification.
+- [EMS-FailsafeAlertSeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertSeverityLevel-1) - upversioned to 2.0.0
+	- codes updated to use numeric values
 - [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 2.0.0: 
 	- 'EMS-MessageHeader-1.id' is now 1..1
 	- 'EMS-MessageHeader-1.responsible.reference' is now 1..1
-- [EMS-FailsafeAlertEscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertEscalationLevel-1) - upversioned to 2.0.0
-	- codes updated to use numeric values
-- [EMS-FailsafeAlertSeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertSeverityLevel-1) - upversioned to 2.0.0
-	- codes updated to use numeric values
 
 Examples - 
-- all 'EMS-FailsafeAlert-Bundle' example instances updated to reflect the changes above.
-
+- all relevant example instances updated to reflect the changes above.
 
 Added page [Versioning](explore_event_versioning.html) to clarify versioning of event instances and event definitions.
 
