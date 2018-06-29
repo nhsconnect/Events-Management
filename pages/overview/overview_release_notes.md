@@ -9,7 +9,7 @@ summary: Summary release notes of the versions released in Events Management Ser
 
 This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented here.
 
-## Beta 2.0.0 ##
+## Beta 1.1.0 ##
 Following stakeholder feedback, this implementation guidance has been updated as follows:
 
  - **National Failsafe Alert** 
@@ -23,26 +23,32 @@ Following stakeholder feedback, this implementation guidance has been updated as
 	- Action required By Date - changed to Optional
 	- Readable Format - changed to Mandatory
 
- - **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAllertNullify-Task-1
+ - **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAlertNullify-Task-1
 
 FHIR Profiles - 
 
-- [EMS-FailsafeAlertEscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertEscalationLevel-1) - upversioned to 2.0.0
+- [EMS-FailsafeAlertEscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertEscalationLevel-1) - upversioned to 1.1.0
 	- codes updated to use numeric values
-- [EMS-FailsafeAllertNullify-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAllertNullify-Task-1) - upversioned to 2.0.0
+- [EMS-FailsafeAlertNullify-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlertNullify-Task-1) - upversioned to 1.1.0
 	- focus.reference changed to 1..1 to mandate originating Failsafe Alert
 	- code, code.coding changed to 1..1
 	- description changed to 1..1
 	- performerType, performerType.coding changed to 1..1
 	- owner changed to 1..1
 	- reason, reason.coding changed to 1..1
-- [EMS-FailsafeAlertNullifyReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertNullifyReason-1) - CodeSystem upversioned to 2.0.0
+- [EMS-FailsafeAllert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAllert-Task-1) - upversioned to 1.1.0
+	- code, code.coding changed to 1..1
+	- description changed to 1..1
+	- performerType, performerType.coding changed to 1..1
+	- owner changed to 1..1
+	- reason, reason.coding changed to 1..1
+- [EMS-FailsafeAlertNullifyReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertNullifyReason-1) - CodeSystem upversioned to 1.1.0
 	- codes updated to align with specification.
-- [EMS-FailsafeAlertReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertReason-1) - CodeSystem upversioned to 2.0.0
+- [EMS-FailsafeAlertReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertReason-1) - CodeSystem upversioned to 1.1.0
 	- display names for codes updated to align with specification.
-- [EMS-FailsafeAlertSeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertSeverityLevel-1) - upversioned to 2.0.0
+- [EMS-FailsafeAlertSeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertSeverityLevel-1) - upversioned to 1.1.0
 	- codes updated to use numeric values
-- [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 2.0.0: 
+- [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 1.1.0: 
 	- 'EMS-MessageHeader-1.id' is now 1..1
 	- 'EMS-MessageHeader-1.responsible.reference' is now 1..1
 
