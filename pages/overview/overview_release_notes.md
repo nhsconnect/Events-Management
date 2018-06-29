@@ -48,7 +48,7 @@ FHIR Profiles -
 	- display names for codes updated to align with specification.
 - [EMS-FailsafeAlertSeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertSeverityLevel-1) - upversioned to 1.1.0
 	- codes updated to use numeric values
-- [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 1.1.0: 
+- [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 1.1.0 
 	- 'EMS-MessageHeader-1.id' is now 1..1
 	- 'EMS-MessageHeader-1.responsible.reference' is now 1..1
 
