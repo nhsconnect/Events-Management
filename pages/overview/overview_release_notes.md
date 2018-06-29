@@ -27,6 +27,8 @@ Following stakeholder feedback, this implementation guidance has been updated as
 
 FHIR Profiles - 
 
+- [CareConnect-EMS-PDS-Mother-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Mother-Patient-1) - upversioned to 1.1.0
+	- 'generalPractitioner' corrected to 1..1
 - [EMS-FailsafeAlertEscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertEscalationLevel-1) - upversioned to 1.1.0
 	- codes updated to use numeric values
 - [EMS-FailsafeAlertNullify-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlertNullify-Task-1) - upversioned to 1.1.0
