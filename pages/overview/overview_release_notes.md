@@ -10,9 +10,9 @@ summary: Summary release notes of the versions released in Events Management Ser
 This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented here.
 
 ## Beta 1.1.0 ##
-Following stakeholder feedback, this implementation guidance has been updated as follows:
+Following stakeholder feedback and INTEROPen curation, this implementation guidance has been updated as follows:
 
- - **National Failsafe Alert** 
+- **National Failsafe Alert** - changes to data item requirements
 	- GP Practice - changed to Required
 	- Condition ID - changed to Mandatory
 	- Condition Description - changed to Mandatory
@@ -23,12 +23,18 @@ Following stakeholder feedback, this implementation guidance has been updated as
 	- Action required By Date - changed to Optional
 	- Readable Format - changed to Mandatory
 
- - **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAlertNullify-Task-1
+- **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAlertNullify-Task-1
 
-FHIR Profiles - 
-
+**FHIR Profiles**
+- [CareConnect-EMS-PDS-DeliveryPlace-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-DeliveryPlace-Organization-1) - upversioned to 1.1.0
+	 - valueCodeableConcept.coding.display is 0..1
 - [CareConnect-EMS-PDS-Mother-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Mother-Patient-1) - upversioned to 1.1.0
-	- 'generalPractitioner' corrected to 1..1
+	- generalPractitioner corrected to 1..1
+	- added 'Extension-CareConnect-RegistrationDetails-1' to share GP registration period information
+- [CareConnect-EMS-PDS-StillBornIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-StillBornIndicator-Observation-1) - upversioned to 1.1.0
+	- valueCodeableConcept.coding.display is 0..1
+- [CareConnect-EMS-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1) - upversioned to 1.1.0
+	- type.coding.display is 0..1
 - [EMS-FailsafeAlertEscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertEscalationLevel-1) - upversioned to 1.1.0
 	- codes updated to use numeric values
 - [EMS-FailsafeAlertNullify-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlertNullify-Task-1) - upversioned to 1.1.0
@@ -38,7 +44,7 @@ FHIR Profiles -
 	- performerType, performerType.coding changed to 1..1
 	- owner changed to 1..1
 	- reason, reason.coding changed to 1..1
-- [EMS-FailsafeAllert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAllert-Task-1) - upversioned to 1.1.0
+- [EMS-FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlert-Task-1) - upversioned to 1.1.0
 	- code, code.coding changed to 1..1
 	- description changed to 1..1
 	- performerType, performerType.coding changed to 1..1
@@ -51,11 +57,20 @@ FHIR Profiles -
 - [EMS-FailsafeAlertSeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertSeverityLevel-1) - upversioned to 1.1.0
 	- codes updated to use numeric values
 - [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 1.1.0 
-	- 'EMS-MessageHeader-1.id' is now 1..1
-	- 'EMS-MessageHeader-1.responsible.reference' is now 1..1
+	- id is now 1..1
+	- responsible.reference is now 1..1
+- EMS-PDS-GPRegistration-EpisodeOfCare-1 - profile removed and replaced with extension'Extension-CareConnect-RegistrationDetails-1' to share GP registration period information
 
-Examples - 
-- all relevant example instances updated to reflect the changes above.
+
+- Following INTEROPen curation, the following Level 3 profiles have been removed and replaced with Level 2 CareConnect profiles:
+	- CareConnect-EMS-Organisation-1
+	- CareConnect-EMS-Practitioner-1
+	- CareConnect-EMS-PractitionerRole-1
+
+All FHIR profiles referencing these profiles have been updated and upversioned to reflect this change.
+
+**Examples** 
+- all relevant example instances updated to reflect all of the changes above.
 
 Added page [Versioning](explore_event_versioning.html) to clarify versioning of event instances and event definitions.
 
