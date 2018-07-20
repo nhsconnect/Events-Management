@@ -70,6 +70,21 @@ entries:
         - title: Event Message Response
           url: /explore_ems_event_response.html
           output: web
+
+      - title: Subscription Management
+        output: web
+        subfolderitems:
+        - title: Overview
+          url: /explore_subscriptions.html
+          output: web
+        - title: Create Subscriptions
+          url: /explore_create_subscription.html
+          output: web
+        - title: Manage Subscriptions
+          url: /explore_manage_subscriptions.html
+          output: web
+
+
       - title: National Failsafe
 #        url: /explore.html
         output: web
