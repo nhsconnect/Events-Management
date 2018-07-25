@@ -7,6 +7,14 @@ permalink: explore_create_subscription.html
 summary: ""
 ---
 
+## Pre-requisites ##
+
+Before a subscription can be created on the NEMS, the following must be in place:
+
+- The submitting system will have to go through national assurance and be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
+- All requests will include a JWT with information about the requesting system and user (see [here](https://developer.nhs.uk/apis/spine-core/security_jwt.html) for details).
+- Any NHS numbers submitted in a subscription request have been traced against PDS (see [here](https://developer.nhs.uk/apis/spine-core/pds_overview.html) for details).
+
 ## Creating a Subscription ##
 
 To create a subscription, a client will POST a FHIR subscription resource to the EMS FHIR endpoint.
@@ -20,10 +28,6 @@ For example:
 ```
 {
   "resourceType": "Subscription",
-  "id": "caa70405-7880-4be2-9a3e-ee34973a0920",
-  "meta": {
-    "lastUpdated": "2018-05-25T00:00:00Z"
-  },
   "status": "requested",
   "end": "2021-01-01T00:00:00Z",
   "reason": "Health visiting service responsible for Lancashire",
@@ -40,12 +44,10 @@ For example:
 
 ### Subscription Information ###
 
-| Requirement                                                         | Cardinality                           | FHIR element                                                                |
-|---------------------------------------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| Requirement                                | Cardinality  | FHIR element         |
+|--------------------------------------------|--------------|----------------------|
 | The status of the subscription (initially this will always be "requested" until the subscription is reviewed and activated   | 1..1   | status   |
 | Contact details 
-| Date the subscription was last updated | 0..1 | meta.lastUpdated |
-| Identifier for the subscription | 1..1 | id |
 | End date/time for subscription if relevant (e.g. for a temporary subscription). If not provided the subscription will be pepertual and not expire. | 0..1 | end |
 | The reason for creating the subscription (human readable description). Used primarily for reviewing the subscription in order to make it active, and also for patients / services to review what subscriptions exist and why they were created. | 1..1 | reason |
 | Criteria to match events against for this subscription - see below for examples | 1..1 | criteria |
@@ -53,8 +55,17 @@ For example:
 | The specific endpoint (initially MESH mailbox ID) to deliver to | 1..1 | channel.endpoint |
 | Additional parameters for the endpoint (initially this would be the MESH workflow ID) | 0..1 | channel.header |
 
-
 **NOTE: In the base profile, endpoint and header are optional - do we need to profile it to make them mandatory?**
+
+Once submitted, additional metadata will automatically be added to the Subscription resource by the NEMS:
+
+| Requirement                                | Cardinality  | FHIR element         |
+|--------------------------------------------|--------------|----------------------|
+| Identifier for the subscription.           | 1..1         | id |
+| Date the subscription was last updated     | 0..1         | meta.lastUpdated |
+| Version ID for the subscription resource.  | 0..1         | meta.versionId |
+
+The above fields MUST NOT be included in the create request and can only be added by the NEMS (see Create Example below).
 
 ### Criteria Components ###
 
@@ -67,7 +78,7 @@ For example:
 | eventcode=[CODE]       | This is the type of event to subscribe to. <br/>For example: **&eventcode=CH006&eventcode=CH012&eventcode=CH014** |
 
 
-### Criteria Examples ###
+## Criteria Examples ##
 
 
 TBC
@@ -75,16 +86,33 @@ TBC
 
 ## Create Subscription Example ##
 
-Create Subscription Request
-
-HTTP request:
+**HTTP request:**
 
 ```
 POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
+
+{
+  "resourceType": "Subscription",
+  "status": "requested",
+  "end": "2021-01-01T00:00:00Z",
+  "reason": "Health visiting service responsible for Lancashire",
+  "criteria": [SEE BELOW FOR EXAMPLES],
+  "channel": {
+    "type": "mesh",
+    "endpoint": "",
+    "header": ""
+  }
+}
 ```
 
-Request body:
+**Response:**
 
-See examples here [TO BE PROVIDED]
+Assuming the subscription has been successfully received by Spine, it will assign an ID for the subscription. The HTTP response will be a "201 Created" HTTP status code, and SHALL also return a Location header which contains the new Logical Id and Version Id of the created Subscription resource:
 
+```
+HTTP 200 OK
+Date: Fri, 25 May 2018 16:09:50 GMT
+Last-Modified: Sat, 02 Feb 2013 12:02:47 GMT
+ETag: W/"25777f7d-27bc"
+```
 
