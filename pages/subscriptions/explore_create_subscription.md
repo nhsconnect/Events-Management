@@ -25,7 +25,7 @@ The subscription will be submitted as a FHIR Subscription resource.
 
 For example:
 
-```
+```json
 {
   "resourceType": "Subscription",
   "status": "requested",
@@ -90,7 +90,7 @@ The above fields MUST NOT be included in the create request and can only be adde
 
 **HTTP request:**
 
-```
+```json
 POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 
 {
@@ -98,7 +98,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
   "status": "requested",
   "end": "2021-01-01T00:00:00Z",
   "reason": "Health visiting service responsible for Lancashire",
-  "criteria": [SEE BELOW FOR EXAMPLES],
+  "criteria": "/Bundle?type=message&orgcode=X2458&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003&eventcode=PDS004",
   "channel": {
     "type": "mesh",
     "endpoint": "",
@@ -111,7 +111,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 
 Assuming the subscription has been successfully received by Spine, it will assign an ID for the subscription. The HTTP response will be a "201 Created" HTTP status code, and SHALL also return a Location header which contains the new ID of the created Subscription resource:
 
-```
+```json
 HTTP 201 Created
 Date: Fri, 25 May 2018 16:09:50 GMT
 Last-Modified: Fri, 25 May 2018 16:09:50 GMT
