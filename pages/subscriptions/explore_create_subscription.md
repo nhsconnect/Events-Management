@@ -63,26 +63,28 @@ Once submitted, additional metadata will automatically be added to the Subscript
 |--------------------------------------------|--------------|----------------------|
 | Identifier for the subscription.           | 1..1         | id |
 | Date the subscription was last updated     | 0..1         | meta.lastUpdated |
-| Version ID for the subscription resource.  | 0..1         | meta.versionId |
 
 The above fields MUST NOT be included in the create request and can only be added by the NEMS (see Create Example below).
 
 ### Criteria Components ###
 
 | Component              | Description |
+| ---------------------- | ----------- |
 | /Bundle?type=message   | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
 | orgcode=[CODE]         | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
 | nhsnumber=[IDENTIFIER] | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [IDENTIFIER] is the ODS code for the organisation. <br/>For example: **&nhsnumber=https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]** |
 | subject=[IDENTIFIER]   | This is used for Explicit Subscriptions for an individual subject. The [IDENTIFIER] is the NHS Number for the subject. <br/>For example: **&subject=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]** |
 | subject-age=[AGE]      | This is a filter to only match events for sujects who's age meets the criteria supplied. <br/>For example: **&subject-age=lt19&subject-age=gt5** |
-| eventcode=[CODE]       | This is the type of event to subscribe to. <br/>For example: **&eventcode=CH006&eventcode=CH012&eventcode=CH014** |
+| eventcode=[CODE]       | This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003** |
 
 
 ## Criteria Examples ##
 
-
-TBC
-
+| Scenario                             | Subscribing Organisation | Subscription Type | Critera String                     |
+|--------------------------------------|--------------------------|-------------------|------------------------------------|
+| A child health service subscribing to four PDS events | CHO (Org: X2458)         | Rule based (Geographical) | /Bundle?type=message <br/>&orgcode=X2458<br/>&eventcode=PDS001<br/>&eventcode=PDS002<br/>&eventcode=PDS003<br/>&eventcode=PDS004 |
+| A GP practice subscribing to death notification PDS events for patients registered in their practice | GP Practice (Org: E84678) | Rule based (Registered Org) | /Bundle?type=message <br/>&orgcode=E84678<br/>&eventcode=PDS004 |
+| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message <br/>&nhsnumber=9434765919<br/>&eventcode=PDS002 |
 
 ## Create Subscription Example ##
 
@@ -107,12 +109,12 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 
 **Response:**
 
-Assuming the subscription has been successfully received by Spine, it will assign an ID for the subscription. The HTTP response will be a "201 Created" HTTP status code, and SHALL also return a Location header which contains the new Logical Id and Version Id of the created Subscription resource:
+Assuming the subscription has been successfully received by Spine, it will assign an ID for the subscription. The HTTP response will be a "201 Created" HTTP status code, and SHALL also return a Location header which contains the new ID of the created Subscription resource:
 
 ```
-HTTP 200 OK
+HTTP 201 Created
 Date: Fri, 25 May 2018 16:09:50 GMT
-Last-Modified: Sat, 02 Feb 2013 12:02:47 GMT
-ETag: W/"25777f7d-27bc"
+Last-Modified: Fri, 25 May 2018 16:09:50 GMT
+Location: https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a4851-8720-4b49-b978-bdcf7102388c
 ```
 
