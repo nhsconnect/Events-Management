@@ -123,7 +123,9 @@ entries:
         - title: PDS Person Death
           url: /explore_pds_person_death.html
           output: web
-
+    - title: Error Handling
+      url: /explore_errors.html
+      output: web
 
 #  - title: Example Scenarios
 #    url: /engage_scenario.html
