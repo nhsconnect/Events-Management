@@ -10,6 +10,15 @@ summary: Summary release notes of the versions released in Events Management Ser
 This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented here.
 
 ## Beta 1.1.0 ##
+
+**Subscription API**
+
+The specification has been updated to include a section on [Subscription Management](explore_subscriptions.html).
+
+**Error Handling**
+
+The specification has been updated to include guidance on [Error Handling](explore_errors.html).
+
 Following stakeholder feedback and INTEROPen curation, this implementation guidance has been updated as follows:
 
 - **National Failsafe Alert** - changes to data item requirements
