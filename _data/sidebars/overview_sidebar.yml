@@ -21,9 +21,9 @@ entries:
     - title: Release Notes
       url: /overview_release_notes.html
       output: web
-#    - title: Glossary
-#      url: /overview_glossary.html
-#      output: web
+    - title: Glossary
+      url: /overview_glossary.html
+      output: web
 
   - title: Messaging Architecture
     output: web,pdf

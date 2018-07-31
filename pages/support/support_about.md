@@ -1,4 +1,4 @@
----
+﻿---
 title: Help & Support - About 
 keywords: support, communications, community 
 tags: [support]
@@ -15,10 +15,6 @@ The FHIR profiles for this specification have been developed using the [FHIR Rel
 
 ## Questions and Comments ##
 For questions and comments about this documentation please email the <a href="mailto:interoperabilityteam@nhs.net?subject=Events%20Management%20Service%20FHIR%20Specification">Interoperability Team</a>.
-
-## Glossary of Terms ##
-
-A glossary of terms used by NHS Digital specifications can be found on the [NHS Developer Network](https://developer.nhs.uk/library/glossary/).
 
 ## [INTEROPen](http://www.interopen.org/)
 
