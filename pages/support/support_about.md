@@ -1,4 +1,4 @@
-﻿---
+---
 title: Help & Support - About 
 keywords: support, communications, community 
 tags: [support]
@@ -16,7 +16,7 @@ The FHIR profiles for this specification have been developed using the [FHIR Rel
 ## Questions and Comments ##
 For questions and comments about this documentation please email the <a href="mailto:interoperabilityteam@nhs.net?subject=Events%20Management%20Service%20FHIR%20Specification">Interoperability Team</a>.
 
-## [INTEROPen](http://www.interopen.org/)
+## [INTEROPen](http://www.interopen.org)
 
 FHIR Messaging components specified within this site have been developed by NHS Digital and use CareConnect profiles created in collaboration with the INTEROPen community. 
 
@@ -24,4 +24,4 @@ The INTEROPen vision is to create a library of nationally defined HL7® FHIR® r
 
 See [CareConnect FHIR Profiles](support_careconnect.html) for further clarification on the use of CareConnect FHIR profiles within this specification.
 
-Find out more on the [INTEROPen website](http://interopen.org/).
+Find out more on the [INTEROPen website](http://interopen.org).
