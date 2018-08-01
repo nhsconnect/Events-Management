@@ -68,8 +68,6 @@ Following stakeholder feedback and INTEROPen curation, this implementation guida
 - [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 1.1.0 
 	- id is now 1..1
 	- responsible.reference is now 1..1
-- EMS-PDS-GPRegistration-EpisodeOfCare-1 - profile removed and replaced with extension'Extension-CareConnect-RegistrationDetails-1' to share GP registration period information
-
 
 - Following INTEROPen curation, the following Level 3 profiles have been removed and replaced with Level 2 CareConnect profiles:
 	- CareConnect-EMS-Organisation-1
