@@ -13,6 +13,8 @@ To enable a standardised structure to carry information within the scope of the 
 
 <img src="images/explore/emsbundlestructure.png" style="width:50%;max-width: 50%;">
 
+This is consistent with the [FHIR specification for the Bundle resource](http://hl7.org/fhir/bundle.html#message), which states that 'A message bundle (type = "message") consists of a series of entries, the first of which is a MessageHeader.'  
+
 **MessageHeader focus**
 
 The root class of the MessageHeader is fulfilled using the 'focus' element in the resource. This will reference the appropriate resource depending on the following conditions:
