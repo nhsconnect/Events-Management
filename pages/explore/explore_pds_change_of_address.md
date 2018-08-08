@@ -42,9 +42,6 @@ The data item requirements are expected to be fulfilled as below:
 | Previous Address Description         |                       | not yet profiled     | Mandatory                   |
 | Previous Address Effective From Date |                       | address.period.start | Required                    |
 | Previous Address Effective To Date   | CareConnect-EMS-Patient-1 | address.period.end   | Required                    |
-| Country of Birth                     | CareConnect-EMS-Patient-1 | birthPlace           | Mandatory                   |
-| Notified date                        | EMS-Communication-1   | sent                 | Optional                    |
-
 
 
 

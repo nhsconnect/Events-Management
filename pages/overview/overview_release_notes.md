@@ -33,7 +33,7 @@ Following stakeholder feedback and INTEROPen curation, this implementation guida
 	- Readable Format - changed to Mandatory
 
 - **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAlertNullify-Task-1
-
+- **PDS Change of Address** - removed Country of Birth and notified date - not listed in specification
 **FHIR Profiles**
 - [CareConnect-EMS-PDS-DeliveryPlace-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-DeliveryPlace-Organization-1) - upversioned to 1.1.0
 	 - valueCodeableConcept.coding.display is 0..1
