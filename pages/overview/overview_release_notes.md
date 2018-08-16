@@ -13,7 +13,9 @@ This site is under active development by NHS Digital and is intended to provide 
 
 **Subscription API**
 
-The specification has been updated to include a section on [Subscription Management](explore_subscriptions.html).
+The specification has been updated to include a section on [Subscription Management](explore_subscriptions.html). 
+
+THE EMS Event Message Bundle Structure page has been update to include clarification on the use of absolute URL references to Organization resources via the [FHIR ODS Lookup API](https://developer.nhs.uk/apis/ods).
 
 **Error Handling**
 

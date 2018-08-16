@@ -29,8 +29,13 @@ The following components are then added to the initial EMS Event Message Bundle 
 
 <img src="images/explore/emsheaderitems.png" style="width:75%;max-width:75%;">
 
+**Organisation resources in EMS Event Message Bundle Structure**
+
+Where possible, the EMS bundle will contain contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html).
+
 ## The EMS Event Message Bundle Structure with EMS Data Items ##
 
 Finally, using the [National Failsafe Alert](explore_national_failsafe_alert.html) as an example, the following components are added to the EMS Event Message Bundle structure in order to fulfill the data item requirements specific to the event.
 
 <img src="images/explore/emsdataitems.png" style="width:90%;max-width:90%;">
+
