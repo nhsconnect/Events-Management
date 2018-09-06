@@ -30,6 +30,7 @@ Content-type: application/json+fhir
   "id": "ea0a4851-8720-4b49-b978-bdcf7102388c",
   "meta": {
     "lastUpdated": "2018-05-26T00:00:00+00:00",
+    "versionID": "25777f7d-27bc",
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"
     ]

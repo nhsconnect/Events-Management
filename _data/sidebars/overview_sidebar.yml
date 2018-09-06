@@ -66,30 +66,13 @@ entries:
       output: web
       type: homepage
       subfolders:
-      - title: Events Management Service
-#        url: /explore.html
-        output: web
-        subfolderitems:
-        - title: Event Message Response
-          url: /explore_ems_event_response.html
-          output: web
-
-#  - title: Subscription Management
-#    output: web,pdf
-#    folderitems:
-#    - title: Overview
-#      url: /explore_subscriptions.html
-#      output: web
-#      type: homepage
-#    - title: Create Subscriptions
-#      url: /explore_create_subscription.html
-#      output: web
-#    - title: Manage Subscriptions
-#      url: /explore_manage_subscription.html
-#      output: web
-
+#      - title: Events Management Service
+#        output: web
+#        subfolderitems:
+#        - title: Event Message Response
+#          url: /explore_ems_event_response.html
+#          output: web
       - title: National Failsafe
-#        url: /explore.html
         output: web
         subfolderitems:
         - title: National Failsafe Alert
@@ -141,7 +124,25 @@ entries:
       url: /explore_manage_subscription.html
       output: web
 
-      
+  - title: Event Publication
+    output: web,pdf
+    folderitems:
+    - title: Event Publisher Requirements
+      url: /publication_requirements.html
+      output: web
+      type: homepage
+    - title: Event Publication API
+      url: /publication_publish.html
+      output: web
+
+  - title: Event Receiver Requirements
+    output: web,pdf
+    folderitems:
+    - title: Overview
+      url: /receiver_requirements.html
+      output: web
+      type: homepage
+
 #  - title: Example Scenarios
 #    url: /engage_scenario.html
 #    output: web

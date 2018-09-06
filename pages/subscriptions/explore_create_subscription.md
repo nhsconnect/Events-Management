@@ -38,14 +38,15 @@ The Subscription resource will conform to the [EMS-Subscription-1](https://fhir.
 
 Once submitted, additional metadata will automatically be added to the Subscription resource by the EMS:
 
-| Requirement                                | Cardinality  | FHIR element         |
-|--------------------------------------------|--------------|----------------------|
-| Identifier for the subscription.           | 1..1         | id |
-| Date the subscription was last updated     | 0..1         | meta.lastUpdated |
+| Requirement                                         | Cardinality  | FHIR element         |
+|-----------------------------------------------------|--------------|----------------------|
+| Identifier for the subscription.                    | 1..1         | id                   |
+| Date the subscription was last updated              | 0..1         | meta.lastUpdated     |
+| The ID for the specific version of the subscription | 0..1         | meta.versionId       |
 
 The create request MUST NOT include the fields above, as they can only be added by the EMS (see Create Example below).
 
-On completion, the status of the Subscription resource will be changed by the EMS to 'active'.
+Once the subscription has been created it may require IG review prior to becoming active, at which point the status of the Subscription resource will be changed by the EMS to 'active'.
 
 ### Criteria Components ###
 
@@ -55,7 +56,6 @@ The criteria element of the Subscription will use the FHIR search string format 
 | ---------------------- | ----------- |
 | /Bundle?type=message   | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
 | orgcode=[CODE]         | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
-| nhsnumber=[IDENTIFIER] | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [IDENTIFIER] is the ODS code for the organisation. <br/>For example: **&nhsnumber=https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]** |
 | subject=[IDENTIFIER]   | This is used for Explicit Subscriptions for an individual subject. The [IDENTIFIER] is the NHS Number for the subject. <br/>For example: **&subject=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]** |
 | subject-age=[AGE]      | This is a filter to only match events where the age of the subject meets the criteria supplied. <br/>For example: **&subject-age=lt19&subject-age=gt5** |
 | eventcode=[CODE]       | This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003** |
@@ -108,6 +108,7 @@ Assuming the subscription has been successfully received by Spine, it will assig
 HTTP 201 Created
 Date: Fri, 25 May 2018 16:09:50 GMT
 Last-Modified: Fri, 25 May 2018 16:09:50 GMT
+ETag: W/"25777f7d-27bc"
 Location: https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a4851-8720-4b49-b978-bdcf7102388c
 ```
 
