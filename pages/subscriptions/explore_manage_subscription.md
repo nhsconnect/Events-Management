@@ -44,10 +44,10 @@ Content-type: application/json+fhir
     }
   ],
   "reason": "Health visiting service responsible for Leeds",
-  "criteria": "Bundle?type=message&MessageHeader?event=PDS001&MessageHeader?event=PDS001",
+  "criteria": "/Bundle?type=message&orgcode=X2458&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003&eventcode=PDS004",
   "channel": {
-    "type": "message",
-    "endpoint": "urn:nhs-uk:addressing:ods:RR8"
+    "type": "mesh",
+    "endpoint": "Mailbox1234"
   }
 }
 ```

@@ -34,7 +34,6 @@ The Subscription resource will conform to the [EMS-Subscription-1](https://fhir.
 | Criteria to match events against for this subscription - see below for examples | 1..1 | criteria |
 | The delivery channel to use to deliver the event to the subscriber (currently only "mesh" is supported) | 1..1 | channel.type |
 | The specific endpoint (initially MESH mailbox ID) to deliver to | 1..1 | channel.endpoint |
-| Additional parameters for the endpoint (initially this would be the MESH workflow ID) | 0..1 | channel.header |
 
 Once submitted, additional metadata will automatically be added to the Subscription resource by the EMS:
 
@@ -92,10 +91,10 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
     }
   ],
   "reason": "Health visiting service responsible for Leeds",
-  "criteria": "Bundle?type=message&MessageHeader?event=PDS001&MessageHeader?event=PDS001",
+  "criteria": "/Bundle?type=message&orgcode=X2458&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003&eventcode=PDS004",
   "channel": {
-    "type": "message",
-    "endpoint": "urn:nhs-uk:addressing:ods:RR8"
+    "type": "mesh",
+    "endpoint": "Mailbox1234"
   }
 }
 ```
