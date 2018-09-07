@@ -16,7 +16,7 @@ The specification has been updated to include guidance sections for
 - [Event Publication](publication_requirements.html)
 - [Event Receiver Requirements](/receiver_requirements.html) 
 
-THE EMS Event Message Bundle Structure page has been update to include clarification on the use of absolute URL references to Organization resources via the [FHIR ODS Lookup API](https://developer.nhs.uk/apis/ods).
+The EMS Event Message Bundle Structure page has been update to include clarification on the use of absolute URL references to Organization resources via the [FHIR ODS Lookup API](https://developer.nhs.uk/apis/ods).
 
 **Error Handling**
 
