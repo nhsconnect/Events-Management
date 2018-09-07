@@ -11,9 +11,9 @@ toc: false
 
 This Events Management Service (EMS) Specification provides the following functional requirements for managing event messages:
 
-	- [Subscription Management](explore_subscriptions.html).
+	- [Subscription Management](explore_subscriptions.html)
 	- [Event Publication](publication_requirements.html)
-	- [Event Receiver Requirements](/receiver_requirements.html) 
+	- [Event Receiver Requirements](receiver_requirements.html) 
 
 The specification also details the FHIR components required to fulfill the data item requirements of the following communications published or received by the Events Management Service:
 
