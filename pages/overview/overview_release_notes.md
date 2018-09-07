@@ -7,13 +7,14 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in Events Management Service Implementation Guide
 ---
 
-This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented here.
+This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented here.
 
 ## Beta 1.1.0 ##
 
-**Subscription API**
-
-The specification has been updated to include a section on [Subscription Management](explore_subscriptions.html). 
+The specification has been updated to include guidance sections for
+- [Subscription Management](explore_subscriptions.html).
+- [Event Publication](publication_requirements.html)
+- [Event Receiver Requirements](/receiver_requirements.html) 
 
 THE EMS Event Message Bundle Structure page has been update to include clarification on the use of absolute URL references to Organization resources via the [FHIR ODS Lookup API](https://developer.nhs.uk/apis/ods).
 
@@ -36,47 +37,12 @@ Following stakeholder feedback and INTEROPen curation, this implementation guida
 
 - **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAlertNullify-Task-1
 - **PDS Change of Address** - removed Country of Birth and notified date - not listed in specification
-**FHIR Profiles**
-- [CareConnect-EMS-PDS-DeliveryPlace-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-DeliveryPlace-Organization-1) - upversioned to 1.1.0
-	 - valueCodeableConcept.coding.display is 0..1
-- [CareConnect-EMS-PDS-Mother-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Mother-Patient-1) - upversioned to 1.1.0
-	- generalPractitioner corrected to 1..1
-	- added 'Extension-CareConnect-RegistrationDetails-1' to share GP registration period information
-- [CareConnect-EMS-PDS-StillBornIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-StillBornIndicator-Observation-1) - upversioned to 1.1.0
-	- valueCodeableConcept.coding.display is 0..1
-- [CareConnect-EMS-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1) - upversioned to 1.1.0
-	- type.coding.display is 0..1
-- [EMS-FailsafeAlertEscalationLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertEscalationLevel-1) - upversioned to 1.1.0
-	- codes updated to use numeric values
-- [EMS-FailsafeAlertNullify-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlertNullify-Task-1) - upversioned to 1.1.0
-	- focus.reference changed to 1..1 to mandate originating Failsafe Alert
-	- code, code.coding changed to 1..1
-	- description changed to 1..1
-	- performerType, performerType.coding changed to 1..1
-	- owner changed to 1..1
-	- reason, reason.coding changed to 1..1
-- [EMS-FailsafeAlert-Task-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-FailsafeAlert-Task-1) - upversioned to 1.1.0
-	- code, code.coding changed to 1..1
-	- description changed to 1..1
-	- performerType, performerType.coding changed to 1..1
-	- owner changed to 1..1
-	- reason, reason.coding changed to 1..1
-- [EMS-FailsafeAlertNullifyReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertNullifyReason-1) - CodeSystem upversioned to 1.1.0
-	- codes updated to align with specification.
-- [EMS-FailsafeAlertReason-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertReason-1) - CodeSystem upversioned to 1.1.0
-	- display names for codes updated to align with specification.
-- [EMS-FailsafeAlertSeverityLevel-1](https://fhir.nhs.uk/STU3/CodeSystem/EMS-FailsafeAlertSeverityLevel-1) - upversioned to 1.1.0
-	- codes updated to use numeric values
-- [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) - upversioned to 1.1.0 
-	- id is now 1..1
-	- responsible.reference is now 1..1
+- **PDS Change of GP** - ODS identifiers for current and previous GPs and Commissioning organisations changed from Mandatory to Required
 
 - Following INTEROPen curation, the following Level 3 profiles have been removed and replaced with Level 2 CareConnect profiles:
 	- CareConnect-EMS-Organisation-1
 	- CareConnect-EMS-Practitioner-1
 	- CareConnect-EMS-PractitionerRole-1
-
-All FHIR profiles referencing these profiles have been updated and upversioned to reflect this change.
 
 **Examples** 
 - all relevant example instances updated to reflect all of the changes above.
