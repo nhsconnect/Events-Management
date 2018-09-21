@@ -20,32 +20,12 @@ The EMS Event Message Bundle Structure page has been update to include clarifica
 
 **Error Handling**
 
-The specification has been updated to include guidance on [Error Handling](explore_errors.html).
+The specification has been updated to include guidance on [Error Handling](explore_errors.html), replacing the EMS Event Message Response.
 
-Following stakeholder feedback and INTEROPen curation, this implementation guidance has been updated as follows:
+The Messages section has been removed. This content has been redesigned and with separate FHIR message specifications have been created for this content:
 
-- **National Failsafe Alert** - changes to data item requirements
-	- GP Practice - changed to Required
-	- Condition ID - changed to Mandatory
-	- Condition Description - changed to Mandatory
-	- Reason for alert - changed to Mandatory
-	- Service needed to action - changed to Mandatory
-	- Provider needed to action - new Mandatory item
-	- Action Required - changed to Mandatory
-	- Action required By Date - changed to Optional
-	- Readable Format - changed to Mandatory
-
-- **National Failsafe Alert Nullify Request** - Nullification Reason corrected to refer to EMS-FailsafeAlertNullify-Task-1
-- **PDS Change of Address** - removed Country of Birth and notified date - not listed in specification
-- **PDS Change of GP** - ODS identifiers for current and previous GPs and Commissioning organisations changed from Mandatory to Required
-
-- Following INTEROPen curation, the following Level 3 profiles have been removed and replaced with Level 2 CareConnect profiles:
-	- CareConnect-EMS-Organisation-1
-	- CareConnect-EMS-Practitioner-1
-	- CareConnect-EMS-PractitionerRole-1
-
-**Examples** 
-- all relevant example instances updated to reflect all of the changes above.
+- [National Population Failsafe Management](https://developer.nhs.uk/library/interoperability/national-failsafe) 
+- [Demographic Update Event Messages](https://developer.nhs.uk/library/interoperability/demographic-updates)  
 
 Added page [Versioning](explore_event_versioning.html) to clarify versioning of event instances and event definitions.
 

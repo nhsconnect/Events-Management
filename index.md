@@ -15,11 +15,10 @@ This Events Management Service (EMS) Specification provides the following functi
 - [Event Publication](publication_requirements.html)
 - [Event Receiver Requirements](receiver_requirements.html) 
 
-The specification also details the FHIR components required to fulfill the data item requirements of the following communications published or received by the Events Management Service:
+Examples of event messages this specification is intended to support include
 
-- **National Population Failsafe** including the National Failsafe Alert and National Failsafe Alert Nullify Request.
-- **Patient Demographics Service (PDS) Updates** event messages will issue updates made to demographic information held by the PDS.
+- [National Population Failsafe Management](https://developer.nhs.uk/library/interoperability/national-failsafe) 
+- [Demographic Update Event Messages](https://developer.nhs.uk/library/interoperability/demographic-updates) 
+- [Digital Child Health](https://developer.nhs.uk/library/interoperability/digital-child-health) 
 
-Additionally, the Events Management Service will manage [Digital Child Health](https://developer.nhs.uk/library/interoperability/digital-child-health) event messages containing information meaningful to those managing the personal health of themselves or their families, professionals providing direct care to children and young people and those managing the health of populations. 
-
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the FHIR messaging components for the Events Management Service, and remains subject to review. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. Changes to this specification following the initial beta release will be documented in the [Release Notes](overview_release_notes.html) section." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide the functional requirements for the Events Management Service, and remains subject to review. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. Changes to this specification following the initial beta release will be documented in the [Release Notes](overview_release_notes.html) section." %}
