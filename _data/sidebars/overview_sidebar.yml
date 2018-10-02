@@ -44,9 +44,6 @@ entries:
     - title: Error Handling
       url: /explore_error_handling.html
       output: web
-    - title: Example Messages
-      url: /explore_example_messages.html
-      output: web
 #    - title: FHIR Profiles
 #      url: /explore_fhir_profiles.html
 #      output: web
