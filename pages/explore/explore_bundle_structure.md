@@ -35,7 +35,7 @@ Where possible, the EMS bundle will contain an absolute URL reference to an Orga
 
 ## The EMS Event Message Bundle Structure with EMS Data Items ##
 
-Finally, using the [National Failsafe Alert](explore_national_failsafe_alert.html) as an example, the following components are added to the EMS Event Message Bundle structure in order to fulfill the data item requirements specific to the event.
+Finally, using the National Failsafe Alert for [National Population Failsafe Management (NPFM)](https://developer.nhs.uk/apis/npfm-beta) as an example, the following components are added to the EMS Event Message Bundle structure in order to fulfill the data item requirements specific to the event.
 
 <img src="images/explore/emsdataitems.png" style="width:90%;max-width:90%;">
 

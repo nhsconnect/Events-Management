@@ -44,7 +44,7 @@ An example of resources required to form the header component of the event messa
 - [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)
 
 
-See [Bundle Structure]((explore_bundle_structure.html)) for a visual representation of the header component.
+See [Bundle Structure](explore_bundle_structure.html) for a visual representation of the header component.
 
 
 
