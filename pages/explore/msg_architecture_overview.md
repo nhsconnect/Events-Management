@@ -3,7 +3,7 @@ title: Messaging Architecture Overview
 keywords:  messaging
 tags: [fhir,messaging]
 sidebar: foundations_sidebar
-permalink: explore.html
+permalink: explore_msg_architecture_overview.html
 summary: "Overview of the Messaging Architecture section"
 ---
 
@@ -22,11 +22,3 @@ Onward delivery to subscribers will initially be over MESH, although other deliv
 The diagram shows an example of an event message being published to the hub. The hub manages subscriptions to these publications (in accordance with the Hub Registration Authority):
 
 <img src="images/overview/Events.png" style="width:80%;max-width: 80%;">
-
-**Event message data item requirement notation**
-
-Each event message will detail the information requirements applicable to each data item requirement, these are described as: 
-
-**Mandatory:** should always be included in the electronic communication. Where there is no information then the message will contain appropriate coded text to identify this.   
-**Required:** where information should be recorded (and communicated) if available.           
-**Optional:** where local decisions can be made about whether or not to communicate the information 

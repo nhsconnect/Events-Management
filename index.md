@@ -9,13 +9,13 @@ toc: false
 
 ## Introduction ##
 
-This Events Management Service (EMS) Specification provides the following functional requirements for managing event messages:
+This Events Management Service (EMS) Implementation Guide provides the following functional requirements for managing event messages:
 
 - [Subscription Management](explore_subscriptions.html)
 - [Event Publication](publication_requirements.html)
 - [Event Receiver Requirements](receiver_requirements.html) 
 
-Examples of event messages this specification is intended to support include
+Event Message Implementation Guides currently supported by EMS are:
 
 - [National Population Failsafe Management](https://developer.nhs.uk/library/interoperability/national-failsafe) 
 - [Demographic Update Event Messages](https://developer.nhs.uk/library/interoperability/demographic-updates) 

@@ -3,7 +3,7 @@ title: Error Handling
 keywords: errors
 tags: [fhir,errors]
 sidebar: overview_sidebar
-permalink: explore_errors.html
+permalink: explore_error_handling.html
 summary: "Error Handling"
 ---
 
@@ -12,8 +12,6 @@ summary: "Error Handling"
 When calls are made into the national Events Management Service as synchronous FHIR calls (either when submitting an event to the service, or when creating or updating subscriptions), any errors that occur will be immediately returned in the response to the call, and will use the standard Spine OperationOutcome profile used across all Spine services.
 
 Details of this outcome resource are detailed in the Spine Core FHIR framework [here](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html).
-
-Additionally, the Events Management Service will return an [Event Message Response](explore_ems_event_response.html) to convey a technical validation success or failure response to an event message received.
 
 ## Onward Delivery via MESH ##
 

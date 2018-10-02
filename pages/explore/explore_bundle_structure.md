@@ -31,7 +31,7 @@ The following components are then added to the initial EMS Event Message Bundle 
 
 **Organisation resources in EMS Event Message Bundle Structure**
 
-Where possible, the EMS bundle will contain contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html).
+Where possible, the EMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html).
 
 ## The EMS Event Message Bundle Structure with EMS Data Items ##
 

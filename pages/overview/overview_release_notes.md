@@ -1,3 +1,6 @@
+
+
+----------
 ---
 title: Release Notes
 keywords: development, versioning
@@ -7,11 +10,19 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in Events Management Service Implementation Guide
 ---
 
-This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this specification following the initial beta release will be documented here.
+This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
 ## Beta 1.1.0 ##
 
-The specification has been updated to include guidance sections for
+**About** - renamed to **Contact Us** - this page has been updated to share contact information. Guidance around FHIR profiles for event messages has been removed as it is not within the scope of this Implementation Guide. 
+
+**Event Header Design** renamed to **Event Header Information** - this page has been updated to include references to FHIR profiles in use, and include further clarification.
+
+**Messaging Overview** removed **Event message data item requirement notation** section.
+ 
+**Overview** text edited to refer to Implementation Guides and not specifications. 
+
+The Implementation Guide has been updated to include guidance sections for
 - [Subscription Management](explore_subscriptions.html).
 - [Event Publication](publication_requirements.html)
 - [Event Receiver Requirements](/receiver_requirements.html) 
@@ -20,9 +31,9 @@ The EMS Event Message Bundle Structure page has been update to include clarifica
 
 **Error Handling**
 
-The specification has been updated to include guidance on [Error Handling](explore_errors.html), replacing the EMS Event Message Response.
+The Implementation Guide has been updated to include guidance on [Error Handling](explore_error_handling.html), replacing the EMS Event Message Response.
 
-The Messages section has been removed. This content has been redesigned and individual FHIR message specifications have been created for this content:
+The Messages section has been removed. This content has been redesigned and individual FHIR Event Message Implementation Guides have been created for this content:
 
 - [National Population Failsafe Management](https://developer.nhs.uk/library/interoperability/national-failsafe) 
 - [Demographic Update Event Messages](https://developer.nhs.uk/library/interoperability/demographic-updates)  
@@ -30,7 +41,7 @@ The Messages section has been removed. This content has been redesigned and indi
 Added page [Versioning](explore_event_versioning.html) to clarify versioning of event instances and event definitions.
 
 ## Beta 1.0.1 ##
-This implementation guidance has been updated to include a guidance page for accessing example messages.
+This implementation guide has been updated to include a guidance page for accessing example messages.
  
 ## Beta 1.0.0 ##
 This Beta release includes implementation guidance to support the development of the following aspects of the Events Management Service:

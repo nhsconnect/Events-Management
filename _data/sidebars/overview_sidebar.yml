@@ -29,11 +29,11 @@ entries:
     output: web,pdf
     folderitems:
     - title: Overview
-      url: /explore.html
+      url: /explore_msg_architecture_overview.html
       output: web
       type: homepage
-    - title: Event Header Design
-      url: /explore_event_header_design.html
+    - title: Event Header Information
+      url: /explore_event_header_information.html
       output: web
     - title: Bundle Structure
       url: /explore_bundle_structure.html
@@ -42,7 +42,7 @@ entries:
       url: /explore_event_versioning.html
       output: web
     - title: Error Handling
-      url: /explore_errors.html
+      url: /explore_error_handling.html
       output: web
     - title: Example Messages
       url: /explore_example_messages.html
@@ -155,8 +155,8 @@ entries:
   - title: Help & Support
     output: web
     folderitems:
-    - title: About
-      url: /support_about.html
+    - title: Contact Us
+      url: /support_contact.html
       output: web
       subfolders:
       - title: Where Else Can I Look?
