@@ -32,11 +32,11 @@ entries:
       url: /explore_msg_architecture_overview.html
       output: web
       type: homepage
-    - title: Event Header Information
-      url: /explore_event_header_information.html
-      output: web
     - title: Bundle Structure
       url: /explore_bundle_structure.html
+      output: web
+    - title: Event Header Information
+      url: /explore_event_header_information.html
       output: web
     - title: Versioning
       url: /explore_event_versioning.html
