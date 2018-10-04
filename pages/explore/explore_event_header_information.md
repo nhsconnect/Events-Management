@@ -45,7 +45,7 @@ The patient resource included in the event message SHALL conform to the [CareCon
 | identifier | 1..1 | Patient NHS Number SHALL be included within the `nhsNumber` identifier slice |
 | name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the `official` name element slice |
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
-| birthDate.Extension(patient-brithTime) | 1..1 | patient-birthTime extension SHALL be included within the patient resource |
+| birthDate.Extension(patient-brithTime) | 0..1 | patient-birthTime extension SHALL be included within the patient resource |
 
 
 ## CareConnect-Organization-1
