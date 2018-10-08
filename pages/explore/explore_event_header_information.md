@@ -9,7 +9,7 @@ summary: "The standard event header information applicable to Events Management 
 
 ## Event Header Information ##
 
-Each event message will carry a standard set of event header information. The event header information items for communication event messages and their corresponding FHIR profiles and elements are detailed below.
+Each event message will carry a standard set of event header information. This page details the FHIR profiles and elements required for the event header information, and which event header information requirements they support.
 
 
 ![Event Header Resources Img](images\msg_architecture\event_header_information_bundle.png)
@@ -49,9 +49,16 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 ## CareConnect-Organization-1
 
-The organization resource included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+Multiple organization resources MAY be included as part of the event header information to fulfill the following event header information requirements:
+
+- to convey the service provider which originated the event
+- to identify the publisher of the event
+
+{% include important.html content="Where possible, resources within the EMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the FHIR ODS Lookup API Implementation guide rather than including the organization resource within the event message bundle." %}
+
+The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| | | |
+| name | 1..1 | A human readable name for the organization SHALL be included in the organization resource |
 
