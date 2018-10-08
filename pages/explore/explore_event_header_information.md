@@ -49,7 +49,7 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 ## CareConnect-Organization-1
 
-Multiple organization resources MAY be included as part of the event header information to fulfill the following event header information requirements:
+Multiple organization resources MAY be included as part of the event header information to fulfill the following requirements:
 
 - to convey the service provider which originated the event
 - to identify the publisher of the event
