@@ -28,12 +28,12 @@ The Subscription resource will conform to the [EMS-Subscription-1](https://fhir.
 | Requirement                                | Cardinality  | FHIR element         |
 |--------------------------------------------|--------------|----------------------|
 | The status of the subscription (initially this will always be "requested" until the subscription is reviewed and activated   | 1..1   | status   |
-| Contact details - at least one instance, with the mandatory instance sharing the ODS code of the Organisation requesting the subscription |1..*| contact |
+| Contact details - at least one instance, with the mandatory instance sharing the ODS code of the Organisation requesting the subscription |1..*| contact | |
 | End date/time for subscription if relevant (e.g. for a temporary subscription). If not provided the subscription will be perpertual and not expire. | 0..1 | end |
 | The reason for creating the subscription (human readable description). Used primarily for reviewing the subscription in order to make it active, and also for patients / services to review what subscriptions exist and why they were created. | 1..1 | reason |
 | Criteria to match events against for this subscription - see below for examples | 1..1 | criteria |
-| The delivery channel to use to deliver the event to the subscriber (currently only "mesh" is supported) | 1..1 | channel.type |
-| The specific endpoint (initially MESH mailbox ID) to deliver to | 1..1 | channel.endpoint |
+| The delivery channel to use to deliver the event to the subscriber (currently only "message" is supported). **NOTE: In this case "message" refers to the use of MESH for as a delivery channel.** | 1..1 | channel.type |
+| The specific endpoint (initially MESH mailbox ID) to deliver to.<br/>**NOTE: The ODS code associated with the mailbox MUST match the code in the contact section of the subscription** | 1..1 | channel.endpoint |
 
 Once submitted, additional metadata will automatically be added to the Subscription resource by the EMS:
 
@@ -54,18 +54,26 @@ The criteria element of the Subscription will use the FHIR search string format 
 | Component              | Description |
 | ---------------------- | ----------- |
 | /Bundle?type=message   | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
-| orgcode=[CODE]         | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
+| subscriptionRuleType=[CODE] | Type of subscription rule to apply for generic/geographical subscriptions (e.g. Universal Health Visitor, Registered GP, etc) |
+| subscriptionRuleCode=[CODE] | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
 | subject=[IDENTIFIER]   | This is used for Explicit Subscriptions for an individual subject. The [IDENTIFIER] is the NHS Number for the subject. <br/>For example: **&subject=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]** |
 | subject-age=[AGE]      | This is a filter to only match events where the age of the subject meets the criteria supplied. <br/>For example: **&subject-age=lt19&subject-age=gt5** |
 | eventcode=[CODE]       | This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003** |
 
+### Subscription Rule Types ###
+
+There is a fixed set of subscription rule types to cater for different types of organisational boundaries and cohorts. These are likely to grow over time as requirements become clear.
+
+Each rule type is also associated with a specific set of events that are pertinent to that type of rule. Subscriptions using a particular rule type can ONLY include event types that are within the list of events for that type.
+
+NOTE: The specific catalogue of subscription rule types, and which events are associated with each will be published here once finalised.
 
 ## Criteria Examples ##
 
 | Scenario                             | Subscribing Organisation | Subscription Type | Criteria String                     |
 |--------------------------------------|--------------------------|-------------------|------------------------------------|
-| A child health service subscribing to four PDS events | CHO (Org: X2458)         | Rule based (Geographical) | /Bundle?type=message <br/>&orgcode=X2458<br/>&eventcode=PDS001<br/>&eventcode=PDS002<br/>&eventcode=PDS003<br/>&eventcode=PDS004 |
-| A GP practice subscribing to death notification PDS events for patients registered in their practice | GP Practice (Org: E84678) | Rule based (Registered Org) | /Bundle?type=message <br/>&orgcode=E84678<br/>&eventcode=PDS004 |
+| A child health service subscribing to four PDS events | CHRD (Org: X2458)         | Rule based (Geographical) | /Bundle?type=message <br/>&subscriptionRuleType=CHRD <br/>&subscriptionRuleCode=X2458 <br/>&eventcode=PDS001<br/>&eventcode=PDS002<br/>&eventcode=PDS003<br/>&eventcode=PDS004 |
+| A GP practice subscribing to death notification PDS events for patients registered in their practice | GP Practice (Org: E84678) | Rule based (Registered Org) | /Bundle?type=message <br/>&subscriptionRuleType=GP <br/>&subscriptionRuleCode=E84678<br/>&eventcode=PDS004 |
 | A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message <br/>&nhsnumber=9434765919<br/>&eventcode=PDS002 |
 
 ## Create Subscription Example ##
@@ -81,7 +89,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"
     ]
-  },
+  }
   "status": "requested",
   "contact": [
     {
@@ -91,7 +99,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
     }
   ],
   "reason": "Health visiting service responsible for Leeds",
-  "criteria": "/Bundle?type=message&orgcode=X2458&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003&eventcode=PDS004",
+  "criteria": "/Bundle?type=message&subscriptionRuleType=CHRD&subscriptionRuleCode=X2458&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003&eventcode=PDS004",
   "channel": {
     "type": "mesh",
     "endpoint": "Mailbox1234"

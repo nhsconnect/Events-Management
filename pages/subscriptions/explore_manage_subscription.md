@@ -7,6 +7,14 @@ permalink: explore_manage_subscription.html
 summary: "How to update and delete subscriptions"
 ---
 
+## Pre-requisites ##
+
+Before a subscription can be managed/updated the following must be in place:
+
+- The submitting system will require national assurance and be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
+- All requests will include a JWT with information about the requesting system and user (see [here](https://developer.nhs.uk/apis/spine-core/security_jwt.html) for details).
+- Any NHS numbers submitted in a subscription request will have been traced against PDS (see [here](https://developer.nhs.uk/apis/spine-core/pds_overview.html) for details).
+
 ## Retrieving a Subscription ##
 
 To retrieve a specific subscription, the client will need to use the ID that was allocated to the subscription when it was created (see [Create Subscription](explore_create_subscription.html))
