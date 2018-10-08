@@ -54,7 +54,8 @@ Multiple organization resources MAY be included as part of the event header info
 - to convey the service provider which originated the event
 - to identify the publisher of the event
 
-{% include important.html content="Where possible, resources within the EMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the FHIR ODS Lookup API Implementation guide rather than including the organization resource within the event message bundle." %}
+{% include important.html content="Where possible, resources within the EMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html) rather than including the organization resource within the event message bundle." %}
+
 
 The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
