@@ -51,14 +51,14 @@ Once the subscription has been created it may require IG review prior to becomin
 
 The criteria element of the Subscription will use the FHIR search string format using the following components:
 
-| Component              | Description |
-| ---------------------- | ----------- |
-| /Bundle?type=message   | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
-| subscriptionRuleType=[CODE] | Type of subscription rule to apply for generic/geographical subscriptions (e.g. Universal Health Visitor, Registered GP, etc) |
-| subscriptionRuleCode=[CODE] | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
-| subject=[IDENTIFIER]   | This is used for Explicit Subscriptions for an individual subject. The [IDENTIFIER] is the NHS Number for the subject. <br/>For example: **&subject=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]** |
-| subject-age=[AGE]      | This is a filter to only match events where the age of the subject meets the criteria supplied. <br/>For example: **&subject-age=lt19&subject-age=gt5** |
-| eventcode=[CODE]       | This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003** |
+| Component                       | Description |
+| ------------------------------- | ----------- |
+| /Bundle?type=message            | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
+| subscriptionRuleType=[CODE]     | Type of subscription rule to apply for generic/geographical subscriptions (e.g. Universal Health Visitor, Registered GP, etc) |
+| Organisation.identifier=[CODE]  | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
+| Patient.identifier=[IDENTIFIER] | This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]** |
+| Patient.age=[AGE]               | This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>For example: **&Patient.age=lt19&Patient.age=gt5** |
+| MessageHeader.event=[CODE]      | This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** |
 
 ### Subscription Rule Types ###
 
@@ -72,9 +72,9 @@ NOTE: The specific catalogue of subscription rule types, and which events are as
 
 | Scenario                             | Subscribing Organisation | Subscription Type | Criteria String                     |
 |--------------------------------------|--------------------------|-------------------|------------------------------------|
-| A child health service subscribing to four PDS events | CHRD (Org: X2458)         | Rule based (Geographical) | /Bundle?type=message <br/>&subscriptionRuleType=CHRD <br/>&subscriptionRuleCode=X2458 <br/>&eventcode=PDS001<br/>&eventcode=PDS002<br/>&eventcode=PDS003<br/>&eventcode=PDS004 |
-| A GP practice subscribing to death notification PDS events for patients registered in their practice | GP Practice (Org: E84678) | Rule based (Registered Org) | /Bundle?type=message <br/>&subscriptionRuleType=GP <br/>&subscriptionRuleCode=E84678<br/>&eventcode=PDS004 |
-| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message <br/>&nhsnumber=9434765919<br/>&eventcode=PDS002 |
+| A child health service subscribing to four PDS events | CHRD (Org: X2458)         | Rule based (Geographical) | /Bundle?type=message <br/>&subscriptionRuleType=CHRD <br/>&Organisation.identifier=X2458 <br/>&MessageHeader.event=PDS001<br/>&MessageHeader.event=PDS002<br/>&MessageHeader.event=PDS003<br/>&MessageHeader.event=PDS004 |
+| A GP practice subscribing to death notification PDS events for patients registered in their practice | GP Practice (Org: E84678) | Rule based (Registered Org) | /Bundle?type=message <br/>&subscriptionRuleType=GP <br/>&Organisation.identifier=E84678<br/>&MessageHeader.event=PDS004 |
+| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message <br/>&Patient.identifier=9434765919<br/>&MessageHeader.event=PDS002 |
 
 ## Create Subscription Example ##
 
@@ -99,9 +99,9 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
     }
   ],
   "reason": "Health visiting service responsible for Leeds",
-  "criteria": "/Bundle?type=message&subscriptionRuleType=CHRD&subscriptionRuleCode=X2458&eventcode=PDS001&eventcode=PDS002&eventcode=PDS003&eventcode=PDS004",
+  "criteria": "/Bundle?type=message&subscriptionRuleType=CHRD&Organisation.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004",
   "channel": {
-    "type": "mesh",
+    "type": "message",
     "endpoint": "Mailbox1234"
   }
 }
