@@ -7,56 +7,33 @@ permalink: overview_guide_versioning.html
 summary: An overview of this implementation guide is versioned.
 ---
 
-## Version number standard ##
+## Experimental ##
 
-The specification version number is based on the [Semantic Versioning 2.0.0](https://semver.org/#spec-item-9) standard.
+This implementation guidance is the **Beta** release to support the development of the Events Management Service event messages. 
 
-![Semantic versioning diagram](images/overview/semantic-versioning.png)
+## Semantic Versioning ##
 
-When an updated specification is released, the version number is incremented as follows:
+Given a version number MAJOR.MINOR.PATCH, increment the:
 
-- **Major** version will be incremented when a *breaking change* has been made to the specification
-- **Minor** version will be incremented when a *non-breaking change* has been made to the specification
-- **Patch** version will be incremented when a *non-breaking bug fixes* has been made to the specification
+- MAJOR version when you make incompatible API changes,
+- MINOR version when you add functionality in a backwards-compatible manner, and
+- PATCH version when you make backwards-compatible bug fixes.
 
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-## Types of change ##
+A pre-release version MAY be denoted by appending a hyphen (refer to [Semantic Versioning - Item 9](http://semver.org/#spec-item-9){:target="_blank"})
 
-### Breaking changes ###
+For examples: 1.0.0-alpha.1 is a valid pre-release version.
 
-**Breaking changes** are those changes made to the specification which:
+## Pre-release Labels ##
 
-- require a supplier to update their implementation to interact with the APIs which they have already implemented. Additional functionality is usually not a breaking change if the old functionality can still be used.
-- require a supplier to update their subscriber implementation to continue consuming the event messages which they have already implemented. Additional event messages may not be breaking if they do not affect he consumption of event messages from previous versions of the specification.
+These labels will be taken from the GDS development process stages, and will be one of:
 
+ - **Experimental**: Early development/POC version of an API for early sight during discovery
+ - **Alpha**: Initial test APIs, likely to change substantially, or be discontinued as the project develops
+ - **Beta**: APIs that are still under active development and subject to change, but that are likely to progress into a live API
+ - **Release Candidate**: APIs that are largely complete, unlikely to change substantially, but still need further testing before becoming live
+ - **Live**: Release live APIs
+ - **Discontinued**: APIs which have been discontinued and should not be used for new development.
 
-### Non-breaking changes ###
-
-**Non-breaking changes** are: 
-
-- changes made to the specification that do not require a supplier to update their API implementation if they wish to continue using their current functionality
-- changes made to the specification that do not require a subscriber to make changes to their implementation to continue consuming event messages they currently consume 
-- changes to the specification that add guidance or clarifications but do not change the requirements within the specification
-
-### Non-breaking bug fixes ###
-
-**Non-breaking bug fixes** are corrections to the specification such as spelling mistakes, removal of contradictory wording, minor additional clarifications.
-
-
-## Pre-release (draft) labels ##
-
-When a **pre-release label** is appended to the version number with a hyphen it indicates the specificaction is still in draft, or has been discontinued.
-
-{% include important.html content="The pre-release label is used to indicate that a specification is in draft (or has been discontinued), it **does not** indicate that suppliers have made a pre-release version of the event publishers and consumers." %}
-
-The pre-release labels used are as follows:
-
-| Pre-release Label | Example            | Description |
-|-------------------|--------------------|-------------|
-| `experimental`    | 1.1.0-experimental | Early development/POC version of an API for early sight during discovery. |
-| `alpha`           | 1.1.0-alpha        | Initial test APIs, likely to change substantially, or be discontinued as the project develops. |
-| `beta`            | 1.1.0-beta         | APIs that are still under active development and subject to change, but that are likely to progress into a live API. |
-| `rc`              | 1.1.0-rc           | APIs that are largely complete, unlikely to change substantially, but still need further testing before becoming live. |
-| *(no label)*      | 1.1.0              | The APIs Live and this version of the specification is now fixed (immutable), further changes require a new version number. |
-| `discontinued`    | 1.1.0-discontinued | APIs which have been discontinued and should not be used for new development. |
 
