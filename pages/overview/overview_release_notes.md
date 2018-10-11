@@ -1,6 +1,3 @@
-
-
-----------
 ---
 title: Release Notes
 keywords: development, versioning
@@ -11,6 +8,14 @@ summary: Summary release notes of the versions released in Events Management Ser
 ---
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
+
+## Beta 1.2.0 ##
+
+**Create Subscription** - Added subscriptionRuleType and subscriptionRuleCode to the criteria for generic subscriptions. 
+
+**Manage Subscription** - Added pre-requisites.
+
+**Search for Subscription** - Added a page to describe how to search for subscriptions by ODS code of a subscribing organisation.
 
 ## Beta 1.1.0 ##
 
