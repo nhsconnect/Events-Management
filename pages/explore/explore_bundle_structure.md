@@ -29,7 +29,7 @@ The following components are then added to the initial EMS Event Message Bundle 
 
 <img src="images/explore/emsheaderitems.png" style="width:75%;max-width:75%;">
 
-**Organisation resources in EMS Event Message Bundle Structure**
+**Organization resources in EMS Event Message Bundle Structure**
 
 Where possible, the EMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html).
 

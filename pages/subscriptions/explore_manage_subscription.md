@@ -52,7 +52,7 @@ Content-type: application/json+fhir
     }
   ],
   "reason": "Health visiting service responsible for Leeds",
-  "criteria": "/Bundle?type=message&Organisation.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004",
+  "criteria": "/Bundle?type=message&Organization.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004",
   "channel": {
     "type": "message",
     "endpoint": "Mailbox1234"
