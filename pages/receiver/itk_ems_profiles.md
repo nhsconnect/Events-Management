@@ -13,7 +13,7 @@ The FHIR profiles for the [ITK Messaging Distribution](https://developer.nhs.uk/
 
 An XML example representation is available at [ITK-EMS-PDSBirthNotification-MessageBundle-Example-1](https://fhir.nhs.uk/STU3/Examples/ITK-EMS-PDSBirthNotification-MessageBundle-Example-1.xml).
 
-**ITK-Message-Bundle-1**
+## ITK-Message-Bundle-1 ##
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ An XML example representation is available at [ITK-EMS-PDSBirthNotification-Mess
 | identifier | 1..1 | Persistent identifier for the bundle |
 | entry | 0..* | entries for [ITK-MessageHeader-2](https://fhir.nhs.uk/STU3/StructureDefinition/ITK-MessageHeader-2) and [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) resources|
 
-**ITK-MessageHeader-2**
+## ITK-MessageHeader-2 ##
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -34,7 +34,7 @@ An XML example representation is available at [ITK-EMS-PDSBirthNotification-Mess
 | source | 1..1 | Message source application |
 | focus | 0..1 | The actual content of the message i.e. [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) |
 
-**Extension-ITK-MessageHandling-2**
+## Extension-ITK-MessageHandling-2 ##
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
