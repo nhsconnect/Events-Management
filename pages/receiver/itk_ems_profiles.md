@@ -43,4 +43,4 @@ An XML example representation is available at [ITK-EMS-PDSBirthNotification-Mess
 | extension (RecipientType) | 1..1 | Indicates the type of recipient - represented a 'FI - For Information' |
 | extension (MessageDefinition) | 1..1 | Reference to a URL for the MessageDefinition for the payload, i.e. [ITK-EMS-MessageDefinition-1](https://fhir.nhs.uk/STU3/MessageDefinition/ITK-EMS-MessageDefinition-1) |
 | extension (SenderReference) | 1..1 | A reference that the sender includes i.e. the traceID |
-| extension (LocalExtension) | 1..1 | Additional Content defined by implementations - a string value of 'None'|
+| extension (LocalExtension) | 1..1 | Additional Content defined by implementations - represented as a string value of 'None'|
