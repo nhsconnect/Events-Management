@@ -94,6 +94,9 @@ entries:
       url: /receiver_requirements.html
       output: web
       type: homepage
+    - title: ITK3 FHIR Profiles
+      url: /itk_ems_profiles.html
+      output: web
 
 #  - title: Example Scenarios
 #    url: /engage_scenario.html

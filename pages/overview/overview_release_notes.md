@@ -11,11 +11,15 @@ This site is under active development by NHS Digital and is intended to provide 
 
 ## Beta 1.2.0 ##
 
-**Create Subscription** - Added subscriptionRuleType and subscriptionRuleCode to the criteria for generic subscriptions. 
+**Create Subscription** - Added:
+- subscriptionRuleType to the criteria for generic subscriptions
+- references to Search Parameters applicable to the criteria.
 
 **Manage Subscription** - Added pre-requisites.
 
 **Search for Subscription** - Added a page to describe how to search for subscriptions by ODS code of a subscribing organisation.
+
+**Receiver Requirements** - Added guidance on FHIR representation of an event message bundle using the ITK3 Messaging Distribution wrapper.
 
 ## Beta 1.1.0 ##
 
