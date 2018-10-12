@@ -2,7 +2,7 @@
 title: Messaging Architecture Overview
 keywords:  messaging
 tags: [fhir,messaging]
-sidebar: foundations_sidebar
+sidebar: overview_sidebar
 permalink: explore_msg_architecture_overview.html
 summary: "Overview of the Messaging Architecture section"
 ---

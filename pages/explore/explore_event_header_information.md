@@ -2,54 +2,64 @@
 title: EMS Event Header Information
 keywords:  messaging, bundles
 tags: [fhir,messaging]
-sidebar: foundations_sidebar
+sidebar: overview_sidebar
 permalink: explore_event_header_information.html
 summary: "The standard event header information applicable to Events Management Service EMS event messages"
 ---
 
 ## Event Header Information ##
 
-Each event message will carry a standard set of event header information. The event header information items for communication event messages and their corresponding FHIR profiles and elements are detailed below.
-
-## Event Header Information - Communications ##
-
-| Requirement                                                         | Cardinality                           | FHIR Profile                                                                                                                  | FHIR element                                                                |
-|---------------------------------------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| Who this event is about e.g. NHS number, name, DOB                  | 1..1                                  | [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)                                                                                                         |                                                                             |
-| NHS Number                                                          | 1..1                                  | [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)                                                                                                                      | identifier using 'nhsNumber' slice                                            |
-| Date of Birth                                                       | 1..1                                  | [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)                                                                                                                      | birthDate and patient-birthTime extension                                   |
-| Name                                                                | 1..1                                  | [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)                                                                                                                      | name using 'official' slice                                                                       |
-| The type of event e.g. PDS Birth Notification, Failsafe Alert                   | 1..1                                  | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                                                                                                           | event                                                                       |
-| The service which originated the event e.g. PDS, Failsafe           | 0..1  | [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)                                                                                                       | type                                                                        |
-| The service provider which originated the event                     | 0..1  | [CareConnect-Organisation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) |                                                  |
-| The IT system which holds the information that originated the event | 1..1                                  | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                                                                                                           | source                                                                      |
-| The location in which the event occurred                            | 0..1  | [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)                                                 |                                                       |
-| When the communication occurred                               | 1..1                                  | [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)                                                                                     | sent                |
-| The publisher of the event                                          | 1..1                                  | [CareConnect-Organisation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)                                                                                                            |            |
-| When the event was published                                        | 1..1                                  | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                                                                                                          | timestamp                                                                   |
-| An originator/publisher unique publication reference                | 1..1                                  | [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)                                                                                                            | The resource identifier for the MessageHeader, which will use a UUID format |
+Each event message will carry a standard set of event header information. This page details the FHIR profiles and elements required for the event header information, and which event header information requirements they support.
 
 
-## Event header Information - Resources ##
-
-An example of resources required to form the header component of the event message is given below, note there may be variations depending on the requirements of each event message:
-
-- [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)
-- [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)
-- [CareConnect-Organisation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) representing the Service Provider
-- [CareConnect-Organisation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) representing the Publisher
-- [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1)
-- [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)
-- [CareConnect-EMS-Patient](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)
-- [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1)
+![Event Header Resources Img](images\msg_architecture\event_header_information_bundle.png)
 
 
-See [Bundle Structure](explore_bundle_structure.html) for a visual representation of the header component.
+## EMS-MessageHeader-1
+
+The messageHeader resource included as part of the event message should conform to the [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| id | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
+| event | 1..1 | The type of event e.g. PDS Birth Notification, Failsafe Alert |
+| timestamp | 1..1 | When the event was published |
+| source | 1..1 | The IT system which holds the information that originated the event |
 
 
+## EMS-Communication-1
+
+The Communication resource included in the event message SHALL conform to the [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| sent | 1..1 | When the communication occurred |
 
 
+## CareConnect-EMS-Patient-1
+
+The patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| identifier | 1..1 | Patient NHS Number SHALL be included within the `nhsNumber` identifier slice |
+| name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the `official` name element slice |
+| birthDate | 1..1 | The patient birth date shall be included in the patient resource |
 
 
+## CareConnect-Organization-1
 
+Multiple organization resources MAY be included as part of the event header information to fulfill the following requirements:
+
+- to convey the service provider which originated the event
+- to identify the publisher of the event
+
+{% include important.html content="Where possible, resources within the EMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html) rather than including the organization resource within the event message bundle." %}
+
+
+The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| name | 1..1 | A human readable name for the organization SHALL be included in the organization resource |
 

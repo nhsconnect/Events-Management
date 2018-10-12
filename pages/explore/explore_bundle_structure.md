@@ -2,7 +2,7 @@
 title: Bundle Structure
 keywords:  messaging, bundles
 tags: [fhir,messaging]
-sidebar: foundations_sidebar
+sidebar: overview_sidebar
 permalink: explore_bundle_structure.html
 summary: "The structure of the bundle used for EMS event messages"
 ---

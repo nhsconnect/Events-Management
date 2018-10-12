@@ -2,7 +2,7 @@
 title: Event Versioning Approach
 keywords:  messaging, versioning
 tags: [fhir,versioning]
-sidebar: foundations_sidebar
+sidebar: overview_sidebar
 permalink: explore_event_versioning.html
 summary: "How to manage versions of event definitions and event instances"
 ---
