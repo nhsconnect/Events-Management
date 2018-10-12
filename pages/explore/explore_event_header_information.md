@@ -9,11 +9,26 @@ summary: "The standard event header information applicable to Events Management 
 
 ## Event Header Information ##
 
-Each event message will carry a standard set of event header information. This page details the FHIR profiles and elements required for the event header information, and which event header information requirements they support.
+Each event message will carry a standard set of event header information:
 
+|---------------------------------------------------------------------|
+| Who this event is about e.g. NHS number, name, DOB                  |
+| NHS Number                                                          |
+| Date of Birth                                                       |
+| Name                                                                |
+| The type of event e.g. PDS Birth Notification, Failsafe Alert       |
+| The service which originated the event e.g. PDS, Failsafe           |
+| The service provider which originated the event                     |
+| The IT system which holds the information that originated the event |
+| The location in which the event occurred                            |
+| When the communication occurred                                     |
+| The publisher of the event                                          |
+| When the event was published                                        |
+| An originator/publisher unique publication reference                |
+
+This page details the FHIR profiles and elements required for the event header information, and which event header information requirements they support.
 
 ![Event Header Resources Img](images\msg_architecture\event_header_information_bundle.png)
-
 
 ## EMS-MessageHeader-1
 

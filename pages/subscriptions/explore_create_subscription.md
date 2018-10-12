@@ -54,10 +54,10 @@ The criteria element of the Subscription will use the FHIR search string format 
 | Component                       | Description |
 | ------------------------------- | ----------- |
 | /Bundle?type=message            | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
-| subscriptionRuleType=[CODE]     | Type of subscription rule to apply for generic/geographical subscriptions (e.g. Universal Health Visitor, Registered GP, etc). <br />For more detail see the Search Parameter [EMS Subscription Rule Type](https://fhir.nhs.uk/STU3/SearchParameter/EMS-SubscriptionRuleType-1)  |
+| subscriptionRuleType=[CODE]     | Type of subscription rule to apply for generic/geographical subscriptions (e.g. Universal Health Visitor, Registered GP, etc). For example: **&subscriptionRuleType=CHRD**<br />For more detail see the Search Parameter [EMS Subscription Rule Type](https://fhir.nhs.uk/STU3/SearchParameter/EMS-SubscriptionRuleType-1)  |
 | Organisation.identifier=[CODE]  | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
-| Patient.identifier=[IDENTIFIER] | This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**<br /> For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
-| Patient.age=[AGE]               | This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>For example: **&Patient.age=lt19&Patient.age=gt5** |
+| Patient.identifier=[IDENTIFIER] | This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**|
+| Patient.age=[AGE]               | This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>For example: **&Patient.age=lt19&Patient.age=gt5** <br /> For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
 | MessageHeader.event=[CODE]      | This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** |
 
 ### Subscription Rule Types ###
