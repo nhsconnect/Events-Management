@@ -7,18 +7,44 @@ permalink: explore_msg_architecture_overview.html
 summary: "Overview of the Messaging Architecture section"
 ---
 
-**Message Patterns and Message Structure**
+## Events Message Flow
 
-The Events Management Service is based on a Publish and Subscribe messaging pattern. Events are created by services such as the National Population Failsafe or Patient Demographics Service. The events are published to a national events hub, which also manages subscriptions to the published events.
+The diagram below shows the high level requirements of an Events Management Service (EMS) as well as the role of the EMS within the interaction between publishers and subscribers.
 
-**Events**
+<img src="images/explore/msg_architecture_overview.png" style="max-width:900px;" >
 
-The event originator will construct an event message, as outlined in this implementation guide. Event messages will be sent into the Events Management Service hub using a simple [FHIR Event Publication API](publication_publish.html).
+1. A subscriber subscribes to event messages by event types or patient identifier using the [Subscription](explore_create_subscription.html) API
+2. A successful subscription request will return a conformation of the subscription creation
+3. A publisher will generate an event message and send it to the EMS
+4. The EMS will validate the sent event message and return an accepted response to the publisher
+5. The EMS takes the event messages and matches the content of the event message to the subscriptions. For each subscription which matches the event message being processed the EMS will send the event message to the subscriber
+
+
+## Messaging Pattern
+
+The Events Management Service (EMS) is based on a Publish and Subscribe messaging pattern, where:
+
+- a publisher sends an event message to the messaging service without being concerned who will receive the message
+- a subscriber is a system which would like to receive event messages that match a set of criteria such as matching a specific event type or the patient having a specific identifier
+
+
+## Publishers
+
+Event messages are created by services such as the National Population Failsafe, the Spine Patient Demographics Service, a hospital, a child health service and are constructed inlined with this event message implementation guide.
+
+The event massages have a common [Event Header Information](explore_event_header_information.html) structure which allows the receiving system of the event message to identify the patient this event relates to, the type of event message it is and some other meta data about the event message such as the originating organisation.
+
+Once the publisher has constructed the event message they use the EMS [publish API](publication_publish.html) to send the event message to the EMS. If the event message is valid the EMS will return an accepted response to the publisher before continuing to process the event message internally.
+
+
+## Subscribers
+
+A subscriber can use the [subscription API](explore_create_subscription.html) within the EMS to request that event messages are sent to them. The subscription API allows the subscriber to specify rules around what messages they wish to receive and how they want to receive the event messages.
+
+{% include important.html content="Subscribers will only receive event messages published to the EMS after their subscription has been created within the EMS. Any event messages that were processed by the EMS before the subscription was created will not be sent to the subscriber as the EMS does not store previously processed event messages." %}
+
+
+## Delivery Of Event Messages
 
 Onward delivery to subscribers will initially be over MESH, although other delivery channels may be developed in future if there is a demand for them. For further information relating to MESH see [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
 
-**Events Diagram**
-
-The diagram shows an example of an event message being published to the hub. The hub manages subscriptions to these publications (in accordance with the Hub Registration Authority):
-
-<img src="images/overview/Events.png" style="width:80%;max-width: 80%;">

@@ -14,6 +14,9 @@ This site is under active development by NHS Digital and is intended to provide 
 [Introduction to Events Management Service](index.html)
 - Updated all content with new wording, added a diagram and added a short description to the linked event message implementation guides.
 
+[Messaging Architecture Overview](explore_msg_architecture_overview.html)
+- Updated information with more detail around publishers and subscribers
+
 
 ## Beta 1.2.0 ##
 
