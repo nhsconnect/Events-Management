@@ -36,7 +36,7 @@ The Subscription resource will conform to the [EMS-Subscription-1](https://fhir.
 | The specific endpoint (initially MESH mailbox ID) to deliver to.<br/>**NOTE: The ODS code associated with the mailbox MUST match the code in the contact section of the subscription** | 1..1 | channel.endpoint |
 
 Once submitted, additional metadata will automatically be added to the Subscription resource by the EMS:
-F
+
 | Requirement                                         | Cardinality  | FHIR element         |
 |-----------------------------------------------------|--------------|----------------------|
 | Identifier for the subscription.                    | 1..1         | id                   |
