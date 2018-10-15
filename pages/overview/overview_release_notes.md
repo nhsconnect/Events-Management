@@ -9,6 +9,12 @@ summary: Summary release notes of the versions released in Events Management Ser
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
+## Beta 1.3.0 ##
+
+[Introduction to Events Management Service](index.html)
+- Updated all content with new wording, added a diagram and added a short description to the linked event message implementation guides.
+
+
 ## Beta 1.2.0 ##
 
 **Create Subscription** - Added:
