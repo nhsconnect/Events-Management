@@ -20,26 +20,26 @@ Before an event can be published, the following must be in place:
 
 ### Request
 
-To send an event message to the Event Mangement Service (EMS) the publisher MUST:
+To send an event message to the Event Mangement Service the publisher MUST:
 
-- construct an event message which conforms to the generic EMS message architecture requirements within this specification and one of the event message implementation guides listed on the [Introduction to Events Management Service](index.html#event-message-implementation-guides) page.
-- POST the event message to the Event Management Service via the "$process-message" FHIR operation endpoint
-
-NOTE: The constructed event message SHALL NOT include any ITK3 wrappers elements as these are added by the EMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html)).
+1. construct an event message which conforms to the [EMS message architecture requirements](explore_bundle_structure.html) within this specification and one of the event message implementation guides listed on the [Introduction to Events Management Service](index.html#event-message-implementation-guides) page.
+2. POST the event message to the Event Management Service via the "$process-message" FHIR operation endpoint on the Spine
 
 ```http
 POST /$process-message
 ```
 
+{% include important.html content="The constructed event message SHALL NOT include any ITK3 wrappers elements as these are added by the EMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html))." %}
+
 ### Response
 
-The Event Managemnet Service (EMS) will perform validation on the event message it recieves from the publisher and will return a:
+The Event Managemnet Service will perform validation on the event message it recieves from the publisher and will return a:
 
 - ```HTTP 202 Accepted``` response when the event message successfully passes validation
 - an `OperationOutcome` FHIR resource containing error information when the event message fails validation. The OperationOutcome resource will contain one of the [standard error codes](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html).
 
 
-## Delivery of the event message to subscribers ##
+## Onward Delivery of the event message to subscribers ##
 
 After a successful validation of the event message and the response has been sent back to the publisher, the Event Management Service will continue to process the event message, looking for subscribers who are interested in the event and forwarding it onto them.
 
