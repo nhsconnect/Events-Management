@@ -79,11 +79,7 @@ entries:
   - title: Event Publication
     output: web,pdf
     folderitems:
-    - title: Event Publisher Requirements
-      url: /publication_requirements.html
-      output: web
-      type: homepage
-    - title: Event Publication API
+    - title: Publish Event Message
       url: /publication_publish.html
       output: web
 

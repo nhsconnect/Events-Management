@@ -1,10 +1,10 @@
 ---
-title: Event Publication API Details
+title: Publish an Event Message
 keywords:  messaging, publication
 tags: [fhir,messaging,publication]
 sidebar: overview_sidebar
 permalink: publication_publish.html
-summary: "API for publishing events into the EMS"
+summary: "Requirements for publishing event messages into the EMS"
 ---
 
 ## Pre-requisites ##
@@ -15,13 +15,38 @@ Before an event can be published, the following must be in place:
 - All requests will include a JWT with information about the requesting system and user (see [here](https://developer.nhs.uk/apis/spine-core/security_jwt.html) for details).
 - Any NHS numbers submitted in events MUST have been traced against PDS (see [here](https://developer.nhs.uk/apis/spine-core/pds_overview.html) for details).
 
-## API for publishing an event message ##
 
-Events published into the Spine (acting as a national event management service), will be in the form of a FHIR message, so will be POSTed using a $process-message operation into a Spine URL. The message will then be validated, and any errors returned in an OperationOutcome response. If the message is successfully validated, a ```HTTP 202 Accepted``` will be returned, and the Spine will then continue processing any subscriptions for onward delivery.
+## Publishing an event message ##
+
+### Request
+
+To send an event message to the Event Mangement Service (EMS) the publisher MUST:
+
+- construct an event message which conforms to the generic EMS message architecture requirements within this specification and one of the event message implementation guides listed on the [Introduction to Events Management Service](index.html#event-message-implementation-guides) page.
+- POST the event message to the Event Management Service via the "$process-message" FHIR operation endpoint
+
+NOTE: The constructed event message SHALL NOT include any ITK3 wrappers elements as these are added by the EMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html)).
+
+```http
+POST /$process-message
+```
+
+### Response
+
+The Event Managemnet Service (EMS) will perform validation on the event message it recieves from the publisher and will return a:
+
+- ```HTTP 202 Accepted``` response when the event message successfully passes validation
+- an `OperationOutcome` FHIR resource containing error information when the event message fails validation. The OperationOutcome resource will contain one of the [standard error codes](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html).
+
+
+## Delivery of the event message to subscribers ##
+
+After a successful validation of the event message and the response has been sent back to the publisher, the Event Management Service will continue to process the event message, looking for subscribers who are interested in the event and forwarding it onto them.
+
 
 ## Publish Event Example ##
 
-**HTTP Request:**
+### Request
 
 The event message is included in the body of the POST request:
 
@@ -76,7 +101,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/$process-message HTTP/1.1
 </Bundle>
 ```
 
-**Response:**
+### Response
 
 If successfully received and validated, the response is:
 
@@ -84,6 +109,4 @@ If successfully received and validated, the response is:
 HTTP 202 Accepted
 Date: Fri, 25 May 2018 16:09:50 GMT
 ```
-
-Any errors will be returned in an OperationOutcome and will use the [standard error codes](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) used across all Spine APIs.
 
