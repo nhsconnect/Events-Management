@@ -20,7 +20,7 @@ Before an event can be published, the following must be in place:
 
 ### Request
 
-To send an event message to the Event Mangement Service the publisher MUST:
+To send an event message to the Event Management Service the publisher MUST:
 
 1. construct an event message which conforms to the [EMS message architecture requirements](explore_bundle_structure.html) within this specification and one of the event message implementation guides listed on the [Introduction to Events Management Service](index.html#event-message-implementation-guides) page.
 2. POST the event message to the Event Management Service via the "$process-message" FHIR operation endpoint on the Spine
@@ -33,15 +33,15 @@ POST /$process-message
 
 ### Response
 
-The Event Managemnet Service will perform validation on the event message it recieves from the publisher and will return a:
+The Event Management Service will perform validation on the event message it receives from the publisher and will return:
 
-- ```HTTP 202 Accepted``` response when the event message successfully passes validation
+- a ```HTTP 202 Accepted``` response when the event message successfully passes validation
 - an `OperationOutcome` FHIR resource containing error information when the event message fails validation. The OperationOutcome resource will contain one of the [standard error codes](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html).
 
 
 ## Onward Delivery of the event message to subscribers ##
 
-After a successful validation of the event message and the response has been sent back to the publisher, the Event Management Service will continue to process the event message, looking for subscribers who are interested in the event and forwarding it onto them.
+After successful validation of the event message and the Event Management Service (EMS) returning the accepted response back to the publisher, the EMS will continue to process the event message, looking for subscribers who are interested in the event and forwarding it onto them.
 
 
 ## Publish Event Example ##
