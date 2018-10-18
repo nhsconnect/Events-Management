@@ -54,32 +54,31 @@ The event message is included in the body of the POST request:
 POST https://clinicals.spineservices.nhs.uk/STU3/$process-message HTTP/1.1
 
 <Bundle xmlns="http://hl7.org/fhir">
-	<id value="f14bbabb-0592-4b58-96b1-93dbb6631106"/>
 	<meta>
-		<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/DCH-Bundle-1"/>
+		<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1"/>
 	</meta>
 	<type value="message"/>
-			<entry>
+	<entry>
 		<fullUrl value="urn:uuid:b9c63b5e-a88e-47d3-9d45-081ebe9e48b5"/>
 		<resource>
 			<MessageHeader>
 				<id value="b9c63b5e-a88e-47d3-9d45-081ebe9e48b5"/>
 				<meta>
-					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/DCH-MessageHeader-1"/>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1"/>
 				</meta>
-				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-DCH-MessageEventType-1">
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-EMS-MessageEventType-1">
 					<valueCodeableConcept>
 						<coding>
-							<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-MessageEventType-1"/>
+							<system value="https://fhir.nhs.uk/STU3/CodeSystem/EMS-MessageEventType-1"/>
 							<code value="new"/>
 							<display value="New event message"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
 				<event>
-					<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEventType-1"/>
-					<code value="CH002"/>
-					<display value="Admission Details"/>
+					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1"/>
+					<code value="PDS002"/>
+					<display value="PDS Change of Address"/>
 				</event>
 				<timestamp value="2017-11-01T15:00:00+00:00"/>
 				<source>
@@ -87,7 +86,6 @@ POST https://clinicals.spineservices.nhs.uk/STU3/$process-message HTTP/1.1
 				</source>
 				<responsible>
 					<reference value="urn:uuid:e04e172e-db43-4ff3-a30a-9d574f693d96"/>
-					<display value="UNIVERSITY HOSPITAL OF NORTH DURHAM"/>
 				</responsible>
 				<focus>
 					<reference value="urn:uuid:58df44c5-2b01-4425-bd9a-985ac73152d0"/>
