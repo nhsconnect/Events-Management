@@ -31,7 +31,7 @@ The Subscription resource will conform to the [EMS-Subscription-1](https://fhir.
 | Contact details - at least one instance, with the mandatory instance sharing the ODS code of the Organization requesting the subscription |1..*| contact | |
 | End date/time for subscription if relevant (e.g. for a temporary subscription). If not provided the subscription will be perpertual and not expire. | 0..1 | end |
 | The reason for creating the subscription (human readable description). Used primarily for reviewing the subscription in order to make it active, and also for patients / services to review what subscriptions exist and why they were created. | 1..1 | reason |
-| Criteria to match events against for this subscription - see below for examples. <br/>**NOTE: the criteria will not be used as part of a RESTful operation** | 1..1 | criteria |
+| Criteria to match events against for this subscription - see below for examples. <br/>**NOTE: the criteria will not be used for running searches.** | 1..1 | criteria |
 | The delivery channel to use to deliver the event to the subscriber (currently only "message" is supported). <br/>**NOTE: In this case "message" refers to the use of MESH for as a delivery channel.** | 1..1 | channel.type |
 | The specific endpoint (initially MESH mailbox ID) to deliver to.<br/>**NOTE: The ODS code associated with the mailbox MUST match the code in the contact section of the subscription** | 1..1 | channel.endpoint |
 
