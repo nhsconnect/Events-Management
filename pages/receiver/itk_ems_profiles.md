@@ -20,7 +20,7 @@ An XML example representation is available at [ITK-EMS-PDSBirthNotification-Mess
 | id | 0..1 | Logical id of this artifact |
 | meta | 0..1 | Metadata about the resource |
 | identifier | 1..1 | Persistent identifier for the bundle |
-| entry | 0..* | entries for [ITK-MessageHeader-2](https://fhir.nhs.uk/STU3/StructureDefinition/ITK-MessageHeader-2) and [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) resources|
+| entry | 2..2 | entries for [ITK-MessageHeader-2](https://fhir.nhs.uk/STU3/StructureDefinition/ITK-MessageHeader-2) and [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) resources|
 
 ## ITK-MessageHeader-2 ##
 
@@ -32,15 +32,15 @@ An XML example representation is available at [ITK-EMS-PDSBirthNotification-Mess
 | event | 1..1 | Code for the event this message represents, e.g. 'ITK011M - ITK Events Management Service'  |
 | timestamp | 1..1 | Time that the message was sent |
 | source | 1..1 | Message source application |
-| focus | 0..1 | The actual content of the message i.e. [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) |
+| focus | 1..1 | The actual content of the message i.e. [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) |
 
 ## Extension-ITK-MessageHandling-2 ##
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| extension (BusAckRequested) | 1..1 | Populated when sender requires a business level response to be returned - represented as 'false'|
-| extension (InfAckRequested) | 1..1 | Populated when sender requires an infrastructure level response to be returned - represented as 'false' |
-| extension (RecipientType) | 1..1 | Indicates the type of recipient - represented a 'FI - For Information' |
+| extension (BusAckRequested) | 1..1 | Populated when sender requires a business level response to be returned. Currently EMS will only send the element with a fixed value of 'false'.|
+| extension (InfAckRequested) | 1..1 | Populated when sender requires an infrastructure level response to be returned. Currently EMS will only send the element with a fixed value of 'false'. |
+| extension (RecipientType) | 1..1 | Indicates the type of recipient. Currently EMS will only send the element with a fixed value of 'FI - For Information' |
 | extension (MessageDefinition) | 1..1 | Reference to a URL for the MessageDefinition for the payload, i.e. [ITK-EMS-MessageDefinition-1](https://fhir.nhs.uk/STU3/MessageDefinition/ITK-EMS-MessageDefinition-1) |
 | extension (SenderReference) | 1..1 | A reference that the sender includes, i.e. the traceID |
-| extension (LocalExtension) | 1..1 | Additional Content defined by implementations - represented as a string value of 'None'|
+| extension (LocalExtension) | 1..1 | Additional Content defined by implementations. Currently EMS will only send the element with a fixed value of 'None'|
