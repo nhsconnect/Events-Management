@@ -25,4 +25,4 @@ The original event is shown in green in the above diagram, with the ITK3 wrapper
 
 The ITK3 wrapper allow for the sending system to specify if it requires positive acknowledgements and/or errors responses to be returned, along with the information required to make these acknowledgments.
 
-There are currently no requirements defined for the Events Management Service to receive or act upon failures in consuming systems, but there may be a business need to allow additional tracking for specific events. To allow for this additional tracking of events receiving systems MUST implement the receiver behaviours defined in the [ITK3 Messaging Distribution](https://developer.nhs.uk/apis/itk3messagedistribution) specification.
+There are currently no requirements defined for the Events Management Service to receive or act upon failures in consuming systems, but there may be a business need to allow additional tracking for specific events. To allow for this additional tracking of events receiving systems **MUST** implement the receiver behaviours defined in the [ITK3 Messaging Distribution](https://developer.nhs.uk/apis/itk3messagedistribution) specification.
