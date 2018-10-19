@@ -20,7 +20,7 @@ An XML example representation is available at [ITK-EMS-PDSBirthNotification-Mess
 | id | 0..1 | Logical id of this artifact |
 | meta | 0..1 | Metadata about the resource |
 | identifier | 1..1 | Persistent identifier for the bundle |
-| entry | 2..2 | entries for [ITK-MessageHeader-2](https://fhir.nhs.uk/STU3/StructureDefinition/ITK-MessageHeader-2) and [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) resources|
+| entry | 2..* | entries for [ITK-MessageHeader-2](https://fhir.nhs.uk/STU3/StructureDefinition/ITK-MessageHeader-2) and [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) resources|
 
 ## ITK-MessageHeader-2 ##
 
