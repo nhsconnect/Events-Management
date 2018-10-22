@@ -17,13 +17,17 @@ Before a subscription can be created the following must be in place:
 
 ## Creating a Subscription ##
 
-To create a subscription, a client will POST a FHIR Subscription resource to the EMS FHIR endpoint.
+To create a subscription, a client MUST:
+1. construct a Subscription resource conforming to the [EMS-Subscription-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1) FHIR profile and additional population guidance on this page
+2. POST the constructed EMS-Subscription-1 resource to the EMS FHIR endpoint on the Spine
 
-### Subscription Resource ###
+```http
+POST /subscription
+```
 
-The Subscription resource will conform to the [EMS-Subscription-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1) FHIR profile. 
+{% include important.html content="Currently the Events Mangement Service only supports interactions and event messages formatted in XML, JSON SHALL NOT be used when constructing and POSTing a subscription request." %}
 
-### Subscription Information ###
+### EMS-Subscription-1 resource population ###
 
 | Requirement                                | Cardinality  | FHIR element         |
 |--------------------------------------------|--------------|----------------------|
@@ -80,31 +84,26 @@ NOTE: The specific catalogue of subscription rule types, and which events are as
 
 **HTTP request:**
 
-```json
+```xml
 POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 
-{
-  "resourceType": "Subscription",
-  "meta": {
-    "profile": [
-      "https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"
-    ]
-  }
-  "status": "requested",
-  "contact": [
-    {
-      "system": "url",
-      "value": "https://directory.spineservices.nhs.uk/STU3/Organization/RR8",
-      "use": "work"
-    }
-  ],
-  "reason": "Health visiting service responsible for Leeds",
-  "criteria": "/Bundle?type=message&subscriptionRuleType=CHRD&Organization.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004",
-  "channel": {
-    "type": "message",
-    "endpoint": "Mailbox1234"
-  }
-}
+<Subscription xmlns="http://hl7.org/fhir">
+	<meta>
+		<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"/>
+	</meta>
+	<status value="requested"/>
+	<contact>
+		<system value="url"/>
+		<value value="https://directory.spineservices.nhs.uk/STU3/Organization/RR8"/>
+		<use value="work"/>
+	</contact>
+	<reason value="Health visiting service responsible for Leeds"/>
+	<criteria value="/Bundle?type=message&subscriptionRuleType=CHRD&Organization.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004" />
+	<channel>
+		<type value="message"/>
+		<endpoint value="Mailbox1234"/>
+	</channel>
+</Subscription>
 ```
 
 **Response:**

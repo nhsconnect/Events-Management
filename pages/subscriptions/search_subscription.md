@@ -28,51 +28,49 @@ GET https://clinicals.spineservices.nhs.uk/STU3/Subscription?contact=RR8
 
 **Response:**
 
-```json
+{% include important.html content="Currently the Events Mangement Service only supports XML formatting." %}
+
+```xml
 HTTP 200 OK
 Date: Sat, 26 May 2018 12:34:11 GMT
 Content-type: application/json+fhir
 
-{
-  "resourceType": "Bundle",
-  "id": "a59a404d-54fd-440a",
-  "meta": {
-    "lastUpdated": "2018-05-26T12:34:11Z"
-  },
-  "type": "searchset",
-  "total": 1,
-  "link": [
-    {
-      "relation": "self",
-      "url": "https://clinicals.spineservices.nhs.uk/STU3?contact=RR8"
-    }
-  ],
-  "entry": [
-    {
-      "resourceType": "Subscription",
-      "id": "ea0a4851-8720-4b49-b978-bdcf7102388c",
-      "meta": {
-        "lastUpdated": "2018-05-26T00:00:00+00:00",
-        "versionID": "25777f7d-27bc",
-        "profile": [
-          "https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"
-        ]
-      },
-      "status": "active",
-      "contact": [
-        {
-          "system": "url",
-          "value": "https://directory.spineservices.nhs.uk/STU3/Organization/RR8",
-          "use": "work"
-        }
-      ],
-      "reason": "Health visiting service responsible for Leeds",
-      "criteria": "/Bundle?type=message&Organization.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004",
-      "channel": {
-        "type": "message",
-        "endpoint": "Mailbox1234"
-      }
-  ]
-}
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="a59a404d-54fd-440a"/>
+	<meta>
+		<lastUpdated value="2018-05-26T12:34:11Z"/>
+	</meta>
+	<type value="searchset"/>
+	<total value="1"/>
+	<link>
+		<relation value="self"/>
+		<url value="https://clinicals.spineservices.nhs.uk/STU3?contact=RR8"/>
+	</link>
+	<entry>
+		<fullUrl value="https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a4851-8720-4b49-b978-bdcf7102388c"/> 
+		<resource>
+			<Subscription>
+				<id value="ea0a4851-8720-4b49-b978-bdcf7102388c"/>
+				<meta>
+					<lastUpdated value="2018-05-26T00:00:00+00:00"/>
+					<versionID value="25777f7d-27bc"/>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"/>
+				</meta>
+				<status value="active"/>
+				<contact>
+					<system value="url"/>
+					<value value="https://directory.spineservices.nhs.uk/STU3/Organization/RR8"/>
+					<use value="work"/>
+				</contact>
+				<reason value="Health visiting service responsible for Leeds"/>
+				<criteria value="/Bundle?type=message&Organization.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004"/>
+				<channel>
+					<type value="message"/>
+					<endpoint value="Mailbox1234"/>
+				</channel>
+			</Subscription>
+		</resource>
+	</entry>
+</Bundle>
 ```
 
