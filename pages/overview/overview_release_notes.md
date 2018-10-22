@@ -17,6 +17,18 @@ This site is under active development by NHS Digital and is intended to provide 
 [Messaging Architecture Overview](explore_msg_architecture_overview.html)
 - Updated information with more detail around publishers and subscribers
 
+[Subscriptions Overview](explore_subscriptions.html)
+- Added additional information around multiple subscription matches for a single event message
+
+[Create Subscription](explore_create_subscription.html)
+- Changes page layout
+- Added note around only supporting XML
+- updated example to be XML
+
+[Search for Subscriptions](search_subscription.html)
+- Added note around only support for XML
+- Updated example to be XML
+
 
 ## Beta 1.2.0 ##
 
