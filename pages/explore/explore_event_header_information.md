@@ -36,10 +36,13 @@ The messageHeader resource included as part of the event message should conform 
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
+| extension(eventMessageType) | 1..1 | The type value which shall appear in this element will be defined within the seperate event message implementation guide for each of the event messages as the value will depend on the life cycle of the specific event message. |
 | id | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
-| event | 1..1 | The type of event e.g. PDS Birth Notification, Failsafe Alert |
-| timestamp | 1..1 | When the event was published |
+| event | 1..1 | The type of event as specified within the event message implementation guides, e.g. PDS Birth Notification, Failsafe Alert |
 | source | 1..1 | The IT system which holds the information that originated the event |
+| source.name | 1..1 | A human readable name for the IT system which holds the information that originated the event |
+| responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
+| focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
 
 
 ## EMS-Communication-1
@@ -48,7 +51,9 @@ The Communication resource included in the event message SHALL conform to the [E
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
+| status | 1..1 | The status element will be specified within the specific event message implementation guide as it will relate the the event message life cycle. |
 | sent | 1..1 | When the communication occurred |
+| payload | 1..1 | The payload element will reference a resource relating to the event message. The event message implementation guide will define what resource should be referenced for each event message. |
 
 
 ## CareConnect-EMS-Patient-1
@@ -60,6 +65,7 @@ The patient resource included in the event message SHALL conform to the [CareCon
 | identifier | 1..1 | Patient NHS Number SHALL be included within the `nhsNumber` identifier slice |
 | name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the `official` name element slice |
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
+| address | 0..* | If an address is included in the patient resource the publisher **SHALL** included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
 
 
 ## CareConnect-Organization-1
@@ -72,9 +78,10 @@ Multiple organization resources MAY be included as part of the event header info
 {% include important.html content="Where possible, resources within the EMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html) rather than including the organization resource within the event message bundle." %}
 
 
-The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+The organization resources referenced from within the event message SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | name | 1..1 | A human readable name for the organization SHALL be included in the organization resource |
-
+| identifier | 1..1 | The organization ODS code SHALL be included within the `odsOrganizationCode` identifier slice |
+| telecom | 1..* | The organization resource shall include a contact number for the organization |

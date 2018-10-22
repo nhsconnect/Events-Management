@@ -11,26 +11,30 @@ This site is under active development by NHS Digital and is intended to provide 
 
 ## Beta 1.3.0 ##
 
-[Introduction to Events Management Service](index.html)
-- Updated all content with new wording, added a diagram and added a short description to the linked event message implementation guides.
-
-[Messaging Architecture Overview](explore_msg_architecture_overview.html)
-- Updated information with more detail around publishers and subscribers
-
-[Subscriptions Overview](explore_subscriptions.html)
-- Added additional information around multiple subscription matches for a single event message
-
 [Create Subscription](explore_create_subscription.html)
 - Changes page layout
 - Added note around only supporting XML
 - updated example to be XML
 
+[EMS Event Header Information](explore_event_header_information.html)
+- Added additional population guidance and requirements around which fields should be populated with what.
+
+[Introduction to Events Management Service](index.html)
+- Updated all content with new wording, added a diagram and added a short description to the linked event message implementation guides.
+
+[Manage Subscription](explore_manage_subscription.html)
+- Updated example to be XML and added note about only XML support
+
+[Messaging Architecture Overview](explore_msg_architecture_overview.html)
+- Updated information with more detail around publishers and subscribers
+
 [Search for Subscriptions](search_subscription.html)
 - Added note around only support for XML
 - Updated example to be XML
 
-[Manage Subscription](explore_manage_subscription.html)
-- Updated example to be XML and added note about only XML support
+[Subscriptions Overview](explore_subscriptions.html)
+- Added additional information around multiple subscription matches for a single event message
+
 
 ## Beta 1.2.0 ##
 
