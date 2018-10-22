@@ -29,6 +29,8 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added note around only support for XML
 - Updated example to be XML
 
+[Manage Subscription](explore_manage_subscription.html)
+- Updated example to be XML and added note about only XML support
 
 ## Beta 1.2.0 ##
 

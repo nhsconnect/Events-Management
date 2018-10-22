@@ -22,7 +22,7 @@ To search for a subscription for a specific ODS code, a standard FHIR search ope
 
 **HTTP request:**
 
-```json
+```http
 GET https://clinicals.spineservices.nhs.uk/STU3/Subscription?contact=RR8
 ```
 
