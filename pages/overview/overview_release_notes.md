@@ -19,6 +19,9 @@ This site is under active development by NHS Digital and is intended to provide 
 [EMS Event Header Information](explore_event_header_information.html)
 - Added additional population guidance and requirements around which fields should be populated with what.
 
+Error Handling
+- Removed this page as the content is now specified in more detail on the interaction specific pages, [Publish an Event Message](publication_publish.html) and [Event Receiver Requirements](receiver_requirements.html#itk3-acknowledgements-and-errors)
+
 [Introduction to Events Management Service](index.html)
 - Updated all content with new wording, added a diagram and added a short description to the linked event message implementation guides.
 
