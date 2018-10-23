@@ -35,6 +35,9 @@ This site is under active development by NHS Digital and is intended to provide 
 [Subscriptions Overview](explore_subscriptions.html)
 - Added additional information around multiple subscription matches for a single event message
 
+Versioning
+- Removed this versioning page as it contained incorrect and missleading information. Any details which need to be included will be added to the other spec versioning page.
+
 
 ## Beta 1.2.0 ##
 

@@ -38,9 +38,6 @@ entries:
     - title: Event Header Information
       url: /explore_event_header_information.html
       output: web
-    - title: Versioning
-      url: /explore_event_versioning.html
-      output: web
     - title: Error Handling
       url: /explore_error_handling.html
       output: web
