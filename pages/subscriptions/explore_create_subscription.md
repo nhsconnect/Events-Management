@@ -29,23 +29,23 @@ POST /subscription
 
 ### EMS-Subscription-1 resource population ###
 
-| Requirement                                | Cardinality  | FHIR element         |
-|--------------------------------------------|--------------|----------------------|
-| The status of the subscription (initially this will always be "requested" until the subscription is reviewed and activated   | 1..1   | status   |
-| Contact details - at least one instance, with the mandatory instance sharing the ODS code of the Organization requesting the subscription |1..*| contact | |
-| End date/time for subscription if relevant (e.g. for a temporary subscription). If not provided the subscription will be perpertual and not expire. | 0..1 | end |
-| The reason for creating the subscription (human readable description). Used primarily for reviewing the subscription in order to make it active, and also for patients / services to review what subscriptions exist and why they were created. | 1..1 | reason |
-| Criteria to match events against for this subscription - see below for examples. <br/>**NOTE: Currently, the criteria cannot be used for searching.** | 1..1 | criteria |
-| The delivery channel to use to deliver the event to the subscriber (currently only "message" is supported). <br/>**NOTE: In this case "message" refers to the use of MESH for as a delivery channel.** | 1..1 | channel.type |
-| The specific endpoint (initially MESH mailbox ID) to deliver to.<br/>**NOTE: The ODS code associated with the mailbox MUST match the code in the contact section of the subscription** | 1..1 | channel.endpoint |
+| FHIR element | Cardinality | Requirement |
+| --- | --- | --- |
+| status | 1..1 | The status of the subscription (initially this will always be "requested" until the subscription is reviewed and activated |
+| contact | 1..* | Contact details for the subscription. <br/><br/>The first instance of the `contact` element within the Subscription resource SHALL represent the organization requesting the subscription. The element SHALL contain the organisation ODS Code which matches the MESH mailbox ID specified in the `channel.endpoint` element. <br/><br/>Additional contact elements included within the Subscription resource will be stored and returned by when managing the subscriptions but will not be validated as part of the business rules. |
+| end | 0..1 | End date/time for subscription if relevant (e.g. for a temporary subscription). If not provided the subscription will be perpertual and not expire. |
+| reason | 1..1 | The reason for creating the subscription (human readable description). Used primarily for reviewing the subscription in order to make it active, and also for patients / services to review what subscriptions exist and why they were created. |
+| criteria | 1..1 | Criteria to match events against for this subscription - see below for examples. <br/>**NOTE: Currently, the criteria cannot be used for searching.** |
+| channel.type | 1..1 | The delivery channel to use to deliver the event to the subscriber (currently only "message" is supported). <br/>**NOTE: In this case "message" refers to the use of MESH for as a delivery channel.** |
+| channel.endpoint | 1..1 | The specific endpoint (initially MESH mailbox ID) to deliver to.<br/>**NOTE: The ODS code associated with the mailbox MUST match the ODS code within the first instance of the `contact` element of the Subscription resource.** |
 
 Once submitted, additional metadata will automatically be added to the Subscription resource by the EMS:
 
-| Requirement                                         | Cardinality  | FHIR element         |
-|-----------------------------------------------------|--------------|----------------------|
-| Identifier for the subscription.                    | 1..1         | id                   |
-| Date the subscription was last updated              | 0..1         | meta.lastUpdated     |
-| The ID for the specific version of the subscription | 0..1         | meta.versionId       |
+| FHIR element | Cardinality | Requirement |
+| --- | --- | --- |
+| id | 1..1 | Identifier for the subscription |
+| meta.lastUpdated | 0..1 | Date the subscription was last updated |
+| meta.versionId | 0..1 | The ID for the specific version of the subscription |
 
 The create request MUST NOT include the fields above, as they can only be added by the EMS (see Create Example below).
 
@@ -55,14 +55,14 @@ Once the subscription has been created it may require IG review prior to becomin
 
 The criteria element of the Subscription will use the FHIR search string format using the following components:
 
-| Component                       | Description |
-| ------------------------------- | ----------- |
-| /Bundle?type=message            | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
-| subscriptionRuleType=[CODE]     | Type of subscription rule to apply for generic/geographical subscriptions (e.g. Universal Health Visitor, Registered GP, etc). For example: **&subscriptionRuleType=CHRD**<br />For more detail see the Search Parameter [EMS Subscription Rule Type](https://fhir.nhs.uk/STU3/SearchParameter/EMS-SubscriptionRuleType-1)  |
-| Organization.identifier=[CODE]  | This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
-| Patient.identifier=[IDENTIFIER] | This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**|
-| Patient.age=[AGE]               | This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>For example: **&Patient.age=lt19&Patient.age=gt5** <br /> For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
-| MessageHeader.event=[CODE]      | This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** |
+| Component                       | Explicit Subscription Cardinality | Generic Subscription Cardinality | Description |
+| ------------------------------- | --- | --- | ----------- |
+| /Bundle?type=message            | 1..1 | TBC | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
+| subscriptionRuleType=[CODE]     | 0..0 | TBC |  Type of subscription rule to apply for generic/geographical subscriptions (e.g. Universal Health Visitor, Registered GP, etc). For example: **&subscriptionRuleType=CHRD**<br />For more detail see the Search Parameter [EMS Subscription Rule Type](https://fhir.nhs.uk/STU3/SearchParameter/EMS-SubscriptionRuleType-1)  |
+| Organization.identifier=[CODE]  | 0..0 | TBC |  This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
+| Patient.identifier=[IDENTIFIER] | 1..1 | 0..0 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**|
+| Patient.age=[AGE]               | 2..2 | TBC |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>For example: **&Patient.age=lt19&Patient.age=gt5** <br /> For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
+| MessageHeader.event=[CODE]      | 1..* | 1..* |  This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** |
 
 ### Subscription Rule Types ###
 
