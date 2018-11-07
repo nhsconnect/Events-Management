@@ -31,8 +31,8 @@ The specific event messages which have been defined for use through the NEMS can
 | Implementation Guide | Description | Date Events Available |
 | --- | --- | --- |
 | [Demographic Update Event Messages](https://developer.nhs.uk/library/interoperability/demographic-updates) | Specification for demographic events published by the Spine, such as birth notification and demographic change notification. | March 2019 |
-| [Digital Child Health](https://developer.nhs.uk/library/interoperability/digital-child-health) | This specification contains the event messages defined by the Digital Child Health program to support the care of children. | May 2019 - TBC 2020<br/>(see guide for specific events) |
-| [National Population Failsafe Management](https://developer.nhs.uk/library/interoperability/national-failsafe) | Specification containing information around the national population failsafe functionality and the event messages the service will publish to the EMS. | TBC |
+| [Digital Child Health](https://developer.nhs.uk/library/interoperability/digital-child-health) | This specification contains the event messages defined by the Digital Child Health program to support the care of children. | May 2019 to<br/>TBC 2020<br/>(see guide for specific events) |
+| [National Population Failsafe Management](https://developer.nhs.uk/library/interoperability/national-failsafe) | Specification containing information around the national population failsafe functionality and the event messages the service will publish to the EMS. | TBC 2019 |
 
 The `Date events available` column in the table is the date when the events specified within the implementation guide will be supported by the NEMS. This date does not indicate that suppliers will be publishing the event messages, only that the NEMS will accept the event message from the publishers and will distribute the event messages to the subscribers.
 
