@@ -77,5 +77,5 @@ Date: Sat, 26 May 2018 12:52:12 GMT
 
 ## Updating a Subscription ##
 
-The Events Management Service will not mantain versions of Subscriptions, so any changes to a subscription will require that the existing subscription is deleted, and a new one created.
+The National Events Management Service will not mantain versions of Subscriptions, so any changes to a subscription will require that the existing subscription is deleted, and a new one created.
 

@@ -28,6 +28,6 @@ A rule-based subscription relates to where a subscriber wishes to receive all pu
 
 ### Multiple matched subscriptions ###
 
-A subscriber may create a number of different subscriptions, some explicit and some generic. If an event message published to the Events Management Service (EMS) matches multiple subscriptions for a single receiving MESH mailbox the EMS will only send one copy of the event message to the receiving mailbox.
+A subscriber may create a number of different subscriptions, some explicit and some generic. If an event message published to the National Events Management Service (NEMS) matches multiple subscriptions for a single receiving MESH mailbox the NEMS will only send one copy of the event message to the receiving mailbox.
 
 {% include important.html content="If a publisher sends multiple copies of the same event message, subscribers of this event will receive a copy of the event message for each repeated send by the publisher." %}

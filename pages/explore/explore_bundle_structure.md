@@ -4,12 +4,12 @@ keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
 permalink: explore_bundle_structure.html
-summary: "The structure of the bundle used for EMS event messages"
+summary: "The structure of the bundle used for NEMS event messages"
 ---
 
-## The EMS Event Message Bundle Structure ##
+## The NEMS Event Message Bundle Structure ##
 
-To enable a standardised structure to carry information within the scope of the Events Management Service, the EMS Message Bundle and the EMS Message Header combine to make up the initial event message bundle structure: 
+To enable a standardised structure to carry information within the scope of the National Events Management Service, the NEMS Message Bundle and the NEMS Message Header combine to make up the initial event message bundle structure: 
 
 <img src="images/explore/emsbundlestructure.png" style="width:50%;max-width: 50%;">
 
@@ -23,19 +23,19 @@ The root class of the MessageHeader is fulfilled using the 'focus' element in th
 - for information alerts or updates, the 'focus' will reference a [Communication](http://hl7.org/fhir/communication.html) resource
 - for any other events yet to be scoped, it is expected that the 'focus' may be any FHIR resource where the 'subject' element is fulfilled by a reference to a [Patient](http://hl7.org/fhir/patient.html) resource.
 
-## The EMS Event Message Bundle Structure with Event Header Items ##
+## The NEMS Event Message Bundle Structure with Event Header Items ##
 
-The following components are then added to the initial EMS Event Message Bundle structure in order to fulfill the [event header requirement](explore_event_header_design.html).
+The following components are then added to the initial NEMS Event Message Bundle structure in order to fulfill the [event header requirement](explore_event_header_design.html).
 
 <img src="images/explore/emsheaderitems.png" style="width:75%;max-width:75%;">
 
-**Organization resources in EMS Event Message Bundle Structure**
+**Organization resources in NEMS Event Message Bundle Structure**
 
-Where possible, the EMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html).
+Where possible, the NEMS bundle will contain an absolute URL reference to an Organization resource, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html).
 
-## The EMS Event Message Bundle Structure with EMS Data Items ##
+## The NEMS Event Message Bundle Structure with NEMS Data Items ##
 
-Finally, using the National Failsafe Alert for [National Population Failsafe Management (NPFM)](https://developer.nhs.uk/apis/npfm-beta) as an example, the following components are added to the EMS Event Message Bundle structure in order to fulfill the data item requirements specific to the event.
+Finally, using the National Failsafe Alert for [National Population Failsafe Management (NPFM)](https://developer.nhs.uk/apis/npfm-beta) as an example, the following components are added to the NEMS Event Message Bundle structure in order to fulfill the data item requirements specific to the event.
 
 <img src="images/explore/emsdataitems.png" style="width:90%;max-width:90%;">
 

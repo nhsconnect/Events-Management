@@ -1,10 +1,10 @@
 ---
-title: EMS Event Header Information
+title: NEMS Event Header Information
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
 permalink: explore_event_header_information.html
-summary: "The standard event header information applicable to Events Management Service EMS event messages"
+summary: "The standard event header information applicable to National Events Management Service event messages"
 ---
 
 ## Event Header Information ##

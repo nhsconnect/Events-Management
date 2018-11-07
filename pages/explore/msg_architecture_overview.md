@@ -9,20 +9,20 @@ summary: "Overview of the Messaging Architecture section"
 
 ## Events Message Flow
 
-The diagram below shows the high level requirements of an Events Management Service (EMS) as well as the role of the EMS within the interaction between publishers and subscribers.
+The diagram below shows the high level requirements of an National Events Management Service (NEMS) as well as the role of the NEMS within the interaction between publishers and subscribers.
 
 <img src="images/explore/msg_architecture_overview.png" style="max-width:900px;" >
 
 1. A subscriber subscribes to event messages by event types or patient identifier using the [Subscription](explore_create_subscription.html) API
 2. A successful subscription request will return a conformation of the subscription creation
-3. A publisher will generate an event message and send it to the EMS
-4. The EMS will validate the sent event message and return an accepted response to the publisher
-5. The EMS takes the event messages and matches the content of the event message to the subscriptions. For each subscription which matches the event message being processed the EMS will send the event message to the subscriber
+3. A publisher will generate an event message and send it to the NEMS
+4. The NEMS will validate the sent event message and return an accepted response to the publisher
+5. The NEMS takes the event messages and matches the content of the event message to the subscriptions. For each subscription which matches the event message being processed the NEMS will send the event message to the subscriber
 
 
 ## Messaging Pattern
 
-The Events Management Service (EMS) is based on a Publish and Subscribe messaging pattern, where:
+The National Events Management Service (NEMS) is based on a Publish and Subscribe messaging pattern, where:
 
 - a publisher sends an event message to the messaging service without being concerned who will receive the message
 - a subscriber is a system which would like to receive event messages that match a set of criteria such as matching a specific event type or the patient having a specific identifier
@@ -34,14 +34,14 @@ Event messages are created by services such as the National Population Failsafe,
 
 The event massages have a common [Event Header Information](explore_event_header_information.html) structure which allows the receiving system of the event message to identify the patient this event relates to, the type of event message it is and some other meta data about the event message such as the originating organisation.
 
-Once the publisher has constructed the event message they use the EMS [publish API](publication_publish.html) to send the event message to the EMS. If the event message is valid the EMS will return an accepted response to the publisher before continuing to process the event message internally.
+Once the publisher has constructed the event message they use the NEMS [publish API](publication_publish.html) to send the event message to the NEMS. If the event message is valid the NEMS will return an accepted response to the publisher before continuing to process the event message internally.
 
 
 ## Subscribers
 
-A subscriber can use the [subscription API](explore_create_subscription.html) within the EMS to request that event messages are sent to them. The subscription API allows the subscriber to specify rules around what messages they wish to receive and how they want to receive the event messages.
+A subscriber can use the [subscription API](explore_create_subscription.html) within the NEMS to request that event messages are sent to them. The subscription API allows the subscriber to specify rules around what messages they wish to receive and how they want to receive the event messages.
 
-{% include important.html content="Subscribers will only receive event messages published to the EMS after their subscription has been created within the EMS. Any event messages that were processed by the EMS before the subscription was created will not be sent to the subscriber as the EMS does not store previously processed event messages." %}
+{% include important.html content="Subscribers will only receive event messages published to the NEMS after their subscription has been created within the NEMS. Any event messages that were processed by the NEMS before the subscription was created will not be sent to the subscriber as the NEMS does not store previously processed event messages." %}
 
 
 ## Delivery Of Event Messages

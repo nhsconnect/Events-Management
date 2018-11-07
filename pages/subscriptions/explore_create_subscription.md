@@ -19,13 +19,13 @@ Before a subscription can be created the following must be in place:
 
 To create a subscription, a client MUST:
 1. construct a Subscription resource conforming to the [EMS-Subscription-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1) FHIR profile and additional population guidance on this page
-2. POST the constructed EMS-Subscription-1 resource to the EMS FHIR endpoint on the Spine
+2. POST the constructed EMS-Subscription-1 resource to the NEMS FHIR endpoint on the Spine
 
 ```http
 POST /subscription
 ```
 
-{% include important.html content="Currently the Events Mangement Service only supports interactions and event messages formatted in XML, JSON SHALL NOT be used when constructing and POSTing a subscription request." %}
+{% include important.html content="Currently the National Events Mangement Service only supports interactions and event messages formatted in XML, JSON SHALL NOT be used when constructing and POSTing a subscription request." %}
 
 ### EMS-Subscription-1 resource population ###
 
@@ -39,7 +39,7 @@ POST /subscription
 | channel.type | 1..1 | The delivery channel to use to deliver the event to the subscriber (currently only "message" is supported). <br/>**NOTE: In this case "message" refers to the use of MESH for as a delivery channel.** |
 | channel.endpoint | 1..1 | The specific endpoint (initially MESH mailbox ID) to deliver to.<br/>**NOTE: The ODS code associated with the mailbox MUST match the ODS code within the first instance of the `contact` element of the Subscription resource.** |
 
-Once submitted, additional metadata will automatically be added to the Subscription resource by the EMS:
+Once submitted, additional metadata will automatically be added to the Subscription resource by the NEMS:
 
 | FHIR element | Cardinality | Requirement |
 | --- | --- | --- |
@@ -47,9 +47,9 @@ Once submitted, additional metadata will automatically be added to the Subscript
 | meta.lastUpdated | 0..1 | Date the subscription was last updated |
 | meta.versionId | 0..1 | The ID for the specific version of the subscription |
 
-The create request MUST NOT include the fields above, as they can only be added by the EMS (see Create Example below).
+The create request MUST NOT include the fields above, as they can only be added by the NEMS (see Create Example below).
 
-Once the subscription has been created it may require IG review prior to becoming active, at which point the status of the Subscription resource will be changed by the EMS to 'active'.
+Once the subscription has been created it may require IG review prior to becoming active, at which point the status of the Subscription resource will be changed by the NEMS to 'active'.
 
 ### Criteria Components ###
 

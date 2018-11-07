@@ -4,7 +4,7 @@ keywords:  messaging, publication
 tags: [fhir,messaging,publication]
 sidebar: overview_sidebar
 permalink: publication_publish.html
-summary: "Requirements for publishing event messages into the EMS"
+summary: "Requirements for publishing event messages into the NEMS"
 ---
 
 ## Pre-requisites ##
@@ -20,20 +20,20 @@ Before an event can be published, the following must be in place:
 
 ### Request
 
-To send an event message to the Event Management Service the publisher MUST:
+To send an event message to the National Events Management Service (NEMS) the publisher MUST:
 
-1. construct an event message which conforms to the [EMS message architecture requirements](explore_bundle_structure.html) within this specification and one of the event message implementation guides listed on the [Introduction to Events Management Service](index.html#event-message-implementation-guides) page.
-2. POST the event message to the Event Management Service via the "$process-message" FHIR operation endpoint on the Spine
+1. construct an event message which conforms to the [NEMS message architecture requirements](explore_bundle_structure.html) within this specification and one of the event message implementation guides listed on the [Introduction to National Events Management Service](index.html#event-message-implementation-guides) page.
+2. POST the event message to the National Events Management Service via the "$process-message" FHIR operation endpoint on the Spine
 
 ```http
 POST /$process-message
 ```
 
-{% include important.html content="The constructed event message SHALL NOT include any ITK3 wrappers elements as these are added by the EMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html))." %}
+{% include important.html content="The constructed event message SHALL NOT include any ITK3 wrappers elements as these are added by the NEMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html))." %}
 
 ### Response
 
-The Event Management Service will perform validation on the event message it receives from the publisher and will return:
+The National Events Management Service will perform validation on the event message it receives from the publisher and will return:
 
 - a ```HTTP 202 Accepted``` response when the event message successfully passes validation
 - an `OperationOutcome` FHIR resource containing error information when the event message fails validation. The OperationOutcome resource will contain one of the [standard error codes](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html).
@@ -41,7 +41,7 @@ The Event Management Service will perform validation on the event message it rec
 
 ## Onward Delivery of the event message to subscribers ##
 
-After successful validation of the event message and the Event Management Service (EMS) returning the accepted response back to the publisher, the EMS will continue to process the event message, looking for subscribers who are interested in the event and forwarding it onto them.
+After successful validation of the event message and the National Events Management Service returning the accepted response back to the publisher, the NEMS will continue to process the event message, looking for subscribers who are interested in the event and forwarding it onto them.
 
 
 ## Publish Event Example ##
