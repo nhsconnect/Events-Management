@@ -27,6 +27,7 @@ The National Events Management Service (NEMS) is based on a Publish and Subscrib
 - a publisher sends an event message to the messaging service without being concerned who will receive the message
 - a subscriber is a system which would like to receive event messages that match a set of criteria such as matching a specific event type or the patient having a specific identifier
 
+More information around the messaging pattern is available on the NHS Digital developer network [Integration Patterns](https://developer.nhs.uk/library/architecture/integration-patterns/) pages.
 
 ## Publishers
 
@@ -46,5 +47,5 @@ A subscriber can use the [subscription API](explore_create_subscription.html) wi
 
 ## Delivery Of Event Messages
 
-Onward delivery to subscribers will initially be over MESH, although other delivery channels may be developed in future if there is a demand for them. For further information relating to MESH see [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
+Onward delivery to subscribers will be over MESH. For further information relating to MESH see [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
 
