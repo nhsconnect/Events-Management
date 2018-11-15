@@ -51,34 +51,26 @@ The create request MUST NOT include the fields above, as they can only be added 
 
 Once the subscription has been created it may require IG review prior to becoming active, at which point the status of the Subscription resource will be changed by the NEMS to 'active'.
 
+
 ### Criteria Components ###
 
 The criteria element of the Subscription will use the FHIR search string format using the following components:
 
-| Component                       | Explicit Subscription Cardinality | Generic Subscription Cardinality | Description |
-| ------------------------------- | --- | --- | ----------- |
-| /Bundle?type=message            | 1..1 | TBC | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
-| subscriptionRuleType=[CODE]     | 0..0 | TBC |  Type of subscription rule to apply for generic/geographical subscriptions (e.g. Universal Health Visitor, Registered GP, etc). For example: **&subscriptionRuleType=CHRD**<br />For more detail see the Search Parameter [EMS Subscription Rule Type](https://fhir.nhs.uk/STU3/SearchParameter/EMS-SubscriptionRuleType-1)  |
-| Organization.identifier=[CODE]  | 0..0 | TBC |  This is used for Rule-Based (Generic) Subscriptions to specify the organisation code that represents the organisation (or the geography the organisation covers). The [CODE] is the ODS code for the organisation. For example: *https://fhir.nhs.uk/Id/ods-organization-code\|[ODSCode]* |
-| Patient.identifier=[IDENTIFIER] | 1..1 | 0..0 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**|
-| Patient.age=[AGE]               | 0..2 | TBC |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>Examples:<br/> - **&Patient.age=lt14**<br/> - **&Patient.age=gt60**<br/> - **&Patient.age=gt5&Patient.age=lt19** <br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
-| MessageHeader.event=[CODE]      | 1..* | 1..* |  This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** |
+| Component                       | Cardinality | Description |
+| ------------------------------- | --- | ----------- |
+| /Bundle?type=message            | 1..1 | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
+| serviceType=[CODE]     | 1..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - For GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Patient Child Health Record services |
+| Patient.identifier=[IDENTIFIER] | 1..1 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**|
+| MessageHeader.event=[CODE]      | 1..* |  This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** |
+| Patient.age=[AGE]               | 0..2 |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>Examples:<br/> - **&Patient.age=lt14**<br/> - **&Patient.age=gt60**<br/> - **&Patient.age=gt5&Patient.age=lt19** <br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
 
-### Subscription Rule Types ###
 
-There is a fixed set of subscription rule types to cater for different types of organisational boundaries and cohorts. These are likely to grow over time as requirements become clear.
-
-Each rule type is also associated with a specific set of events that are pertinent to that type of rule. Subscriptions using a particular rule type can ONLY include event types that are within the list of events for that type.
-
-NOTE: The specific catalogue of subscription rule types, and which events are associated with each will be published here once finalised.
 
 ## Criteria Examples ##
 
 | Scenario                             | Subscribing Organisation | Subscription Type | Criteria String                     |
 |--------------------------------------|--------------------------|-------------------|------------------------------------|
-| A child health service subscribing to four PDS events | CHRD (Org: X2458)         | Rule based (Geographical) | /Bundle?type=message <br/>&subscriptionRuleType=CHRD <br/>&Organization.identifier=X2458 <br/>&MessageHeader.event=PDS001<br/>&MessageHeader.event=PDS002<br/>&MessageHeader.event=PDS003<br/>&MessageHeader.event=PDS004 |
-| A GP practice subscribing to death notification PDS events for patients registered in their practice | GP Practice (Org: E84678) | Rule based (Registered Org) | /Bundle?type=message <br/>&subscriptionRuleType=GP <br/>&Organization.identifier=E84678<br/>&MessageHeader.event=PDS004 |
-| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message <br/>&Patient.identifier=9434765919<br/>&MessageHeader.event=PDS002 |
+| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message<br/>&serviceType=GP<br/>&Patient.identifier=9434765919<br/>&MessageHeader.event=PDS002 |
 
 ## Create Subscription Example ##
 
@@ -98,7 +90,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 		<use value="work"/>
 	</contact>
 	<reason value="Health visiting service responsible for Leeds"/>
-	<criteria value="/Bundle?type=message&subscriptionRuleType=CHRD&Organization.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004" />
+	<criteria value="/Bundle?type=message<br/>&serviceType=UHV<br/>&Patient.identifier=9434765919<br/>&MessageHeader.event=PDS002" />
 	<channel>
 		<type value="message"/>
 		<endpoint value="Mailbox1234"/>
