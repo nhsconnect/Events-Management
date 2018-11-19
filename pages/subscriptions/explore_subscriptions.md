@@ -14,7 +14,7 @@ To receive event messages a consumer will need to subscribe to events they want 
 
 ### Explicit Subscriptions ###
 
-An explicit subscription relates to where a subscriber wishes to receive events for a particular set of records, for example, a Pharmacist wishing to view Hospital admission events for a set of Patients. In this case the subscription would be for a set of NHS numbers. 
+An explicit subscription relates to where a subscriber wishes to receive events for a particular set of records, for example, a Pharmacist wishing to view Hospital admission events for a set of Patients. In this case the subscriptions would be for a set of NHS numbers. 
 
 Explicit event message subscriptions for patients can be created using the Subscription API, using the [Create Subscription](explore_create_subscription.html) interaction. The organizations MESH mailbox must be configured to receive the required event message types as per the requirements on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
 
