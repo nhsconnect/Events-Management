@@ -56,6 +56,16 @@ The Communication resource included in the event message SHALL conform to the [E
 | payload | 1..1 | The payload element will reference a resource relating to the event message. The event message implementation guide will define what resource should be referenced for each event message. |
 
 
+## EMS-HealthcareService-1
+
+The HealthcareService resource included in the event message SHALL conform to the [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| providedBy | 1..1 | A reference to an organization resource representing the managing organisation of the service which triggered this event message. |
+| type | 1..1 | This element SHALL represent the ServiceType of the organisation that triggered the publication of the event message. |
+
+
 ## CareConnect-EMS-Patient-1
 
 The patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
