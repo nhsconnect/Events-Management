@@ -11,7 +11,7 @@ summary: "Overview of the Messaging Architecture section"
 
 The diagram below shows the high level requirements of an National Events Management Service (NEMS) as well as the role of the NEMS within the interaction between publishers and subscribers.
 
-<img src="images/explore/msg_architecture_overview.png" style="max-width:900px;" >
+<a href="images/explore/msg_architecture_overview.png" target="_blank"><img src="images/explore/msg_architecture_overview.png"></a>
 
 1. A subscriber subscribes to event messages by event types or patient identifier using the [Subscription](explore_create_subscription.html) API
 2. A successful subscription request will return a conformation of the subscription creation

@@ -27,8 +27,10 @@ Each event message will carry a standard set of event header information:
 
 This page details the FHIR profiles and elements required for the event header information, and which event header information requirements they support.
 
-<img src="images/msg_architecture/event_header_information_bundle.png">
-
+<div style="text-align:center; margin-bottom:20px" >
+	<a href="images/msg_architecture/event_header_information_bundle.png" target="_blank"><img src="images/msg_architecture/event_header_information_bundle.png"></a>
+	Event Message Bundle - Header Resources <a href="images/msg_architecture/event_header_information_bundle.png" target="_blank">(open in new TAB)</a>
+</div>
 
 ## EMS-MessageHeader-1
 
