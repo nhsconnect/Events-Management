@@ -36,7 +36,7 @@ POST /$process-message
 The National Events Management Service will perform validation on the event message it receives from the publisher and will return:
 
 - a ```HTTP 202 Accepted``` response when the event message successfully passes validation
-- an `OperationOutcome` FHIR resource containing error information when the event message fails validation. The OperationOutcome resource will contain one of the [standard error codes](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html).
+- an `OperationOutcome` FHIR resource containing error information when the event message fails validation. The OperationOutcome resource will contain one of the [Spine ErrorOrWarning Codes](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) and conform to the structure set out in the [Spine Core FHIR](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) specification.
 
 
 ## Onward Delivery of the event message to subscribers ##

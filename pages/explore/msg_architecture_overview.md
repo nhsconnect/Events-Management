@@ -17,7 +17,7 @@ The diagram below shows the high level requirements of an National Events Manage
 2. A successful subscription request will return a conformation of the subscription creation
 3. A publisher will generate an event message and send it to the NEMS
 4. The NEMS will validate the sent event message and return an accepted response to the publisher
-5. The NEMS takes the event messages and matches the content of the event message to the subscriptions. For each subscription which matches the event message being processed the NEMS will send the event message to the subscriber via MESH
+5. The NEMS takes the event messages and matches the content of the event message to the subscriptions. For each event message which matches the subscription criteria the NEMS will send the event message to the subscriber via MESH
 
 
 ## Messaging Pattern
