@@ -30,9 +30,9 @@ There are currently no requirements defined for the National Events Management S
 
 ## MESH mailbox configuration ##
 
-For an organisation to receive event messages from NEMS the MESH mailbox for that organisation will need to be configured to allow the different event messages to be received, which will require a service request to be sent to the service team at NHS Digital.
+A MESH mailbox will need to be configured for Organisations in order to be able to receive event messages from NEMS. This will require a service request to be sent to the service team at NHS Digital.
 
-If the subscribing organisation wishes to use generic subscriptions the request for creation of generic subscriptions should be submitted along with the request to enable event messages within the organisations MESH mailbox. Details of the information required to create generic subscriptions is outlined in the `Requesting generic subscriptions` section below.
+If the subscribing organisation wishes to use generic subscriptions, the request for creation of generic subscriptions should be submitted along with the MESH mailbox request. Details of the information required to create generic subscriptions is outlined in the `Requesting generic subscriptions` section below.
 
 
 ### Requesting generic subscriptions:

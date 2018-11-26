@@ -9,9 +9,9 @@ summary: "How to search for subscriptions"
 
 ## Pre-requisites ##
 
-Before a subscription can found through a search the following must be in place:
+Before a subscription can found through a search, the following must be in place:
 
-- The submitting system will require national assurance and be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
+- The submitting system will require national assurance and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
 - All requests will include a JWT with information about the requesting system and user (see [here](https://developer.nhs.uk/apis/spine-core/security_jwt.html) for details).
 
 ## Searching for a Subscription ##
@@ -28,7 +28,7 @@ GET https://clinicals.spineservices.nhs.uk/STU3/Subscription?contact=RR8
 
 **Response:**
 
-{% include important.html content="Currently the Events Mangement Service only supports XML formatting." %}
+{% include important.html content="Currently the Events Management Service only supports XML formatting." %}
 
 ```xml
 HTTP 200 OK
@@ -47,7 +47,7 @@ Content-type: application/json+fhir
 		<url value="https://clinicals.spineservices.nhs.uk/STU3?contact=RR8"/>
 	</link>
 	<entry>
-		<fullUrl value="https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a4851-8720-4b49-b978-bdcf7102388c"/> 
+		<fullUrl value="https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c"/> 
 		<resource>
 			<Subscription>
 				<id value="ea0a4851-8720-4b49-b978-bdcf7102388c"/>

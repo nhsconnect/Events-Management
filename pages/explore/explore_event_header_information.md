@@ -38,7 +38,7 @@ The messageHeader resource included as part of the event message SHALL conform t
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| extension(eventMessageType) | 1..1 | The type value which shall appear in this element will be defined within the separate event message implementation guide for each of the event messages as the value will depend on the life cycle of the specific event message. |
+| extension(eventMessageType) | 1..1 | The type value which shall appear in this element will be defined within the separate event message implementation guide for each of the event messages, as the value will depend on the life cycle of the specific event message. |
 | id | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
 | event | 1..1 | The type of event as specified within the event message implementation guides, e.g. PDS Birth Notification, Failsafe Alert |
 | source | 1..1 | The IT system which holds the information that originated the event |
@@ -101,7 +101,7 @@ Within the resource referencing out to the Organization resource, the `Reference
 
 ### Including an Organization resource
 
-Where there is a strong reason to include the Organization resource within the message bundle the following population requirements SHALL be followed:
+Where there is reason to include the Organization resource within the message bundle the following population requirements SHALL be followed:
 
 The organization resources referenced from within the event message SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
@@ -109,4 +109,4 @@ The organization resources referenced from within the event message SHALL repres
 | --- | --- | --- |
 | name | 1..1 | A human readable name for the organization SHALL be included in the organization resource |
 | identifier | 1..1 | The organization ODS code SHALL be included within the `odsOrganizationCode` identifier slice |
-| telecom | 1..* | The organization resource shall include a contact number for the organization |
+| telecom | 1..* | The organization resource SHALL include a contact number for the organization |

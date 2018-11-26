@@ -14,7 +14,7 @@ To receive event messages a consumer will need to subscribe to events they want 
 
 ### Explicit Subscriptions ###
 
-An explicit subscription relates to where a subscriber wishes to receive events for a particular set of records, for example, a Pharmacist wishing to view Hospital admission events for a set of Patients. In this case the subscriptions would be for a set of NHS numbers. 
+An explicit subscription relates to where a subscriber wishes to receive event messages with a specific requirement, for example, a Pharmacist wishing to view hospital admission events for a set of Patients. In this case the subscriptions would be for a set of NHS numbers. 
 
 Explicit event message subscriptions for patients can be created using the Subscription API, using the [Create Subscription](explore_create_subscription.html) interaction. The organizations MESH mailbox must be configured to receive the required event message types as per the requirements on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
 
@@ -23,7 +23,7 @@ Explicit event message subscriptions for patients can be created using the Subsc
 
 A rule-based subscription relates to where a subscriber wishes to receive all published events that meet a particular rule set. There are two specific types of rule-based subscription currently:
 
-- Geographical: Subscriptions that relate to individuals who reside within the geographic boundaries of a specific organisation (For example, a Health Visitor service wishing to view events for all children within a specific local authority area). 
+- Geographical: Subscriptions that relate to individuals who reside within the geographic boundaries of a specific organisation (For example, a Health Visiting Service wishing to view events for all children within a specific local authority area). 
 - Registered Org: Subscriptions that relate to individuals who are registered with a specific organisation (currently only applicable for GP organisations).
 
 Currently the Subscription API does not support the configuration of generic subscriptions. Details of any generic subscriptions required should be appended to the service request required to configure the MESH mailbox to receive event messages. This process is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
@@ -33,6 +33,6 @@ Currently the Subscription API does not support the configuration of generic sub
 
 ### Multiple matched subscriptions ###
 
-A subscriber may create a number of different subscriptions, some explicit and some generic. If an event message published to the National Events Management Service (NEMS) matches multiple subscriptions for a single receiving MESH mailbox the NEMS will only send one copy of the event message to the receiving mailbox.
+A subscriber may create a number of different subscriptions, some explicit and some generic. If an event message published to the National Events Management Service (NEMS) matches the criteria of multiple subscriptions for a single receiving MESH mailbox, the NEMS will only send one copy of the event message to the receiving mailbox.
 
 {% include important.html content="If a publisher sends multiple copies of the same event message, subscribers of this event will receive a copy of the event message for each repeated send by the publisher." %}

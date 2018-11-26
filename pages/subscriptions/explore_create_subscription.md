@@ -11,7 +11,7 @@ summary: ""
 
 Before a subscription can be created the following must be in place:
 
-- The submitting system will require national assurance and be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
+- The submitting system will require national assurance and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
 - All requests will include a JWT with information about the requesting system and user (see [here](https://developer.nhs.uk/apis/spine-core/security_jwt.html) for details).
 - Any NHS numbers submitted in a subscription request will have been traced against PDS (see [here](https://developer.nhs.uk/apis/spine-core/pds_overview.html) for details).
 
@@ -25,7 +25,7 @@ To create a subscription, a client MUST:
 POST /subscription
 ```
 
-{% include important.html content="Currently the National Events Mangement Service only supports interactions and event messages formatted in XML, JSON SHALL NOT be used when constructing and POSTing a subscription request." %}
+{% include important.html content="Currently the National Events Management Service only supports interactions and event messages formatted in XML. JSON SHALL NOT be used when constructing and POSTing a subscription request." %}
 
 ### EMS-Subscription-1 resource population ###
 
@@ -107,6 +107,6 @@ HTTP 201 Created
 Date: Fri, 25 May 2018 16:09:50 GMT
 Last-Modified: Fri, 25 May 2018 16:09:50 GMT
 ETag: W/"25777f7d-27bc"
-Location: https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a4851-8720-4b49-b978-bdcf7102388c
+Location: https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c
 ```
 
