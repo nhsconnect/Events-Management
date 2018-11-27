@@ -103,7 +103,7 @@ Within the resource referencing out to the Organization resource, the `Reference
 
 Where there is reason to include the Organization resource within the message bundle the following population requirements SHALL be followed:
 
-The organization resources referenced from within the event message SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+The organization resources included to fulfill the event header requirements SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
