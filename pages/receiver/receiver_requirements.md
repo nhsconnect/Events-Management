@@ -37,9 +37,16 @@ If the subscribing organisation wishes to use generic subscriptions, the request
 
 ### Requesting generic subscriptions:
 
-Download and complete the "Request Generic Subscriptions" spreadsheet, raise an NHS Digital service desk issue asking for the generic subscriptions to be configured.
+As part of the Private Beta NHS Digital intends to validate the generic subscription functionality by working closely with suppliers and providers to identify and configure their generic subscriptions. As part of this collaborative approach, during private beta, an interim process for submitting generic subscriptions has been implemented as follows:
 
-Details of the columns within the spreadsheet are as follows:
+1. providers start by downloading and completing the "Request Generic Subscriptions" spreadsheet
+2. once complete the provider needs to raise an NHS Digital service desk issue asking for the generic subscriptions to be configured
+3. NHS digital will validate and configure the generic subscriptions with the NEMS
+
+The intention is to use this process during the Private Beta but an improved process is planned as part of the wider roll out of NEMS service.
+
+
+More details relating to the columns within the spreadsheet are as follows:
 
 | Column | Required | Description |
 | --- | --- | --- |
