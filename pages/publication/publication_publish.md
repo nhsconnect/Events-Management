@@ -11,7 +11,7 @@ summary: "Requirements for publishing event messages into the NEMS"
 
 Before an event can be published, the following must be in place:
 
-- The submitting system will require national assurance and be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
+- The submitting system will require national assurance, and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
 - All requests will include a JWT with information about the requesting system and user (see [here](https://developer.nhs.uk/apis/spine-core/security_jwt.html) for details).
 - Any NHS numbers submitted in events MUST have been traced against PDS (see [here](https://developer.nhs.uk/apis/spine-core/pds_overview.html) for details).
 
@@ -29,7 +29,7 @@ To send an event message to the National Events Management Service (NEMS) the pu
 POST /$process-message
 ```
 
-{% include important.html content="The constructed event message SHALL NOT include any ITK3 wrappers elements as these are added by the NEMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html))." %}
+{% include important.html content="The constructed event message SHALL NOT include any ITK3 wrapper elements, as these are added by the NEMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html))." %}
 
 ### Response
 
@@ -41,8 +41,7 @@ The National Events Management Service will perform validation on the event mess
 
 ## Onward Delivery of the event message to subscribers ##
 
-After successful validation of the event message and the National Events Management Service returning the accepted response back to the publisher, the NEMS will continue to process the event message, looking for subscribers who are interested in the event and forwarding it onto them.
-
+Following successful validation and providing a ```HTTP 202 Accepted``` response the National Events Management Service will match the event message to Subscription criteria, and forward the event message to the originating Organisation for the subscription.
 
 ## Publish Event Example ##
 
@@ -103,7 +102,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/$process-message HTTP/1.1
 
 If successfully received and validated, the response is:
 
-```json
+```http
 HTTP 202 Accepted
 Date: Fri, 25 May 2018 16:09:50 GMT
 ```

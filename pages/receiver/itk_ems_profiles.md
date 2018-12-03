@@ -1,15 +1,15 @@
 ---
-title: Use of ITK3 FHIR profiles in EMS
+title: Use of ITK3 FHIR profiles in NEMS
 keywords:  messaging, receiver
 tags: [fhir,messaging,receiver]
 sidebar: overview_sidebar
 permalink: itk_ems_profiles.html
-summary: "Use of ITK3 wrapper FHIR profiles for event receivers to consume events published by the EMS"
+summary: "Use of ITK3 wrapper FHIR profiles for event receivers to consume events published by the NEMS"
 ---
 
 ## Use of ITK3 wrapper FHIR profiles##
 
-The FHIR profiles for the [ITK Messaging Distribution](https://developer.nhs.uk/apis/itk3messagedistribution) wrapper will be applied to EMS as detailed below.
+The FHIR profiles for the [ITK Messaging Distribution](https://developer.nhs.uk/apis/itk3messagedistribution) wrapper will be applied to NEMS as detailed below.
 
 An XML example representation is available at [ITK-EMS-PDSBirthNotification-MessageBundle-Example-1](https://fhir.nhs.uk/STU3/Examples/ITK-EMS-PDSBirthNotification-MessageBundle-Example-1.xml).
 
@@ -29,7 +29,7 @@ An XML example representation is available at [ITK-EMS-PDSBirthNotification-Mess
 | id | 0..1 | Logical id of this artifact |
 | meta | 0..1 | Metadata about the resource |
 | extension (ITKMessageHandling) | 1..1 | An extension to support ITK message handling (see below) |
-| event | 1..1 | Code for the event this message represents, e.g. 'ITK011M - ITK Events Management Service'  |
+| event | 1..1 | Fixed value: ITK011M (ITK Events Management Service) |
 | timestamp | 1..1 | Time that the message was sent |
 | source | 1..1 | Message source application |
 | focus | 1..1 | The actual content of the message i.e. [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) |
