@@ -40,8 +40,8 @@ The National Events Management Service will perform validation on the event mess
 
 
 ## Onward Delivery of the event message to subscribers ##
-Following successful validation and providing a ```HTTP 202 Accepted``` response the National Events Management Service will match the event message to Subscription criteria, and forward the event message to the originating Organisation for the subscription.
 
+Following successful validation and providing a ```HTTP 202 Accepted``` response the National Events Management Service will match the event message to Subscription criteria, and forward the event message to the originating Organisation for the subscription.
 
 ## Publish Event Example ##
 
