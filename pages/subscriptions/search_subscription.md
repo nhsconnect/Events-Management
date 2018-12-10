@@ -28,12 +28,10 @@ GET https://clinicals.spineservices.nhs.uk/STU3/Subscription?contact=RR8
 
 **Response:**
 
-{% include important.html content="Currently the Events Management Service only supports XML formatting." %}
-
 ```xml
 HTTP 200 OK
 Date: Sat, 26 May 2018 12:34:11 GMT
-Content-type: application/json+fhir
+Content-type: application/xml+fhir
 
 <Bundle xmlns="http://hl7.org/fhir">
 	<id value="a59a404d-54fd-440a"/>

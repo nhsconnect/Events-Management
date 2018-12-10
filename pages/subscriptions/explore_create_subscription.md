@@ -25,7 +25,7 @@ To create a subscription, a client MUST:
 POST /subscription
 ```
 
-{% include important.html content="Currently the National Events Management Service only supports interactions and event messages formatted in XML. JSON SHALL NOT be used when constructing and POSTing a subscription request." %}
+{% include important.html content="Currently the National Events Management Service (NEMS) supports JSON and XML formats for interactions with the subscription API, but currently all event messages will be forwarded to subscribers in an XML format." %}
 
 ### EMS-Subscription-1 resource population ###
 

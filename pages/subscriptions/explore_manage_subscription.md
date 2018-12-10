@@ -27,8 +27,6 @@ GET https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b97
 
 **Response:**
 
-{% include important.html content="Currently the Events Management Service only supports XML formatting." %}
-
 ```xml
 HTTP 200 OK
 Date: Sat, 26 May 2018 12:34:11 GMT
