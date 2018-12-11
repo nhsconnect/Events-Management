@@ -22,7 +22,7 @@ To create a subscription, a client MUST:
 2. POST the constructed EMS-Subscription-1 resource to the NEMS FHIR endpoint on the Spine
 
 ```http
-POST /subscription
+POST /Subscription
 ```
 
 {% include important.html content="Currently the National Events Management Service (NEMS) supports JSON and XML formats for interactions with the subscription API, but currently all event messages will be forwarded to subscribers in an XML format." %}
