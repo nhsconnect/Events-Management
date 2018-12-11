@@ -14,6 +14,12 @@ This site is under active development by NHS Digital and is intended to provide 
 [Create Subscription](explore_create_subscription.html)
 - Updated wording relating to use of JSON and XML for API's as both are supported for the publish and subscription API's, the event messages currently can only be sent to subscribers in XML
 
+[Event Receiver Requirements](receiver_requirements.html)
+- Updated wording around the configuration of MESH and the use of WorkflowIDs.
+
+[PDS Change of GP](explore_pds_change_of_gp.html)
+- Updated EpisodeOfCare resource guidance making clear that the time periods within the resource are optional.
+
 
 ## Beta 1.3.0 ##
 
