@@ -18,7 +18,6 @@ Before an event can be published, the following must be in place:
 
 ## Publishing an event message ##
 
-### Request
 
 To send an event message to the National Events Management Service (NEMS) the publisher MUST:
 
@@ -30,6 +29,18 @@ POST /$process-message
 ```
 
 {% include important.html content="The constructed event message SHALL NOT include any ITK3 wrapper elements, as these are added by the NEMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html))." %}
+
+### Request Headers ###
+
+The publishing system MUST include the following HTTP request headers when making the call to the Publish API endpoint:
+
+| Header | Description |
+| --- | --- |
+| fromASID | ASID of the system posting to the Subscription API |
+| toASID | ASID of the NEMS service |
+| InteractionID | Fixed value: `TBC` |
+
+Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
 ### Response
 

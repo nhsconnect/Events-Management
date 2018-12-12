@@ -24,6 +24,9 @@ This site is under active development by NHS Digital and is intended to provide 
 [PDS Change of GP](explore_pds_change_of_gp.html)
 - Updated EpisodeOfCare resource guidance making clear that the time periods within the resource are optional.
 
+[Publish an Event Message](publication_publish.html)
+- Added guidance around required headers for interactions with the publish API
+
 [Search for Subscriptions](search_subscription.html)
 - Added guidance around required headers for interactions with the subscription API
 
