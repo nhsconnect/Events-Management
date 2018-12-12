@@ -27,6 +27,19 @@ POST /Subscription
 
 {% include important.html content="Currently the National Events Management Service (NEMS) supports JSON and XML formats for interactions with the subscription API, but currently all event messages will be forwarded to subscribers in an XML format." %}
 
+### Request Headers ###
+
+The subscribing organisation MUST include the following HTTP request headers when making the call to the Create Subscription API endpoint:
+
+| Header | Description |
+| --- | --- |
+| fromASID | ASID of the system posting to the Subscription API |
+| toASID | ASID of the NEMS service |
+| InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:SubscriptionsApiPost` |
+
+Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
+
+
 ### EMS-Subscription-1 resource population ###
 
 | FHIR element | Cardinality | Requirement |

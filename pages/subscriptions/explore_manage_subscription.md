@@ -19,6 +19,18 @@ Before a subscription can be managed or updated, the following must be in place:
 
 To retrieve a specific subscription, the client will need to use the ID that was allocated to the subscription when it was created (see [Create Subscription](explore_create_subscription.html))
 
+### Request Headers ###
+
+The system calling the API MUST include the following HTTP request headers when making the call to the Read Subscription API endpoint:
+
+| Header | Description |
+| --- | --- |
+| fromASID | ASID of the system calling the Subscription API |
+| toASID | ASID of the NEMS service |
+| InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:SubscriptionsApiGet` |
+
+Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
+
 **HTTP request:**
 
 ```http
@@ -59,6 +71,19 @@ Content-type: application/xml+fhir
 ## Deleting a Subscription ##
 
 To delete a specific subscription, the client will need to use the ID that was allocated to the subscription when it was created (see [Create Subscriptions](explore_create_subscription.html))
+
+### Request Headers ###
+
+The system calling the API MUST include the following HTTP request headers when making the call to the Delete Subscription API endpoint:
+
+| Header | Description |
+| --- | --- |
+| fromASID | ASID of the system calling the Subscription API |
+| toASID | ASID of the NEMS service |
+| InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:SubscriptionsApiDelete` |
+
+Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
+
 
 **HTTP request:**
 

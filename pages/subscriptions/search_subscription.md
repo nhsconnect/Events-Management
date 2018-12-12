@@ -20,6 +20,19 @@ Currently, the only criteria available to search for subscriptions is the ODS co
 
 To search for a subscription for a specific ODS code, a standard FHIR search operation can be used
 
+### Request Headers ###
+
+The system calling the API MUST include the following HTTP request headers when making the call to the Search Subscription API endpoint:
+
+| Header | Description |
+| --- | --- |
+| fromASID | ASID of the system calling the Subscription API |
+| toASID | ASID of the NEMS service |
+| InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:SubscriptionsApiGet` |
+
+Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
+
+
 **HTTP request:**
 
 ```http
