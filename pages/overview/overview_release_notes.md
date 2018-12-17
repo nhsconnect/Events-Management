@@ -27,8 +27,14 @@ This site is under active development by NHS Digital and is intended to provide 
 [Publish an Event Message](publication_publish.html)
 - Added guidance around required headers for interactions with the publish API
 
+[Publisher Information Governance](publication_ig.html)
+- Added new page with new requirements
+
 [Search for Subscriptions](search_subscription.html)
 - Added guidance around required headers for interactions with the subscription API
+
+[Subscriber Information Governance](subscription_ig.html)
+- Added new page with new requirements
 
 
 ## Beta 1.3.0 ##
