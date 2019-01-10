@@ -85,6 +85,17 @@ The criteria element of the Subscription will use the FHIR search string format 
 |--------------------------------------|--------------------------|-------------------|------------------------------------|
 | A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message<br/>&serviceType=GP<br/>&Patient.identifier=9434765919<br/>&MessageHeader.event=PDS002 |
 
+
+## Error Handling ##
+
+If an error occurs when the NEMS processes the subscription request, a HTTP error status code will be returned along with an `OperationOutcome` FHIR resource within the payload. The OperationOutcome resource will contain one of the [Spine ErrorOrWarning Codes](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) and conform to the structure set out in the [Spine Core FHIR](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) specification.
+
+
+## Response ##
+
+When a subscription request is successfully received by the NEMS, the Subscription will be assigned a logical ID and the NEMS will return a HTTP status code of "201 Created", along with a `Location` header containing the new ID of the created Subscription resource.
+
+
 ## Create Subscription Example ##
 
 **HTTP request:**
@@ -111,10 +122,6 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 </Subscription>
 ```
 
-**Response:**
-
-Assuming the subscription has been successfully received by Spine, it will assign an ID for the subscription. The HTTP response will be a "201 Created" HTTP status code, and SHALL also return a Location header which contains the new ID of the created Subscription resource:
-
 ```json
 HTTP 201 Created
 Date: Fri, 25 May 2018 16:09:50 GMT
@@ -122,4 +129,3 @@ Last-Modified: Fri, 25 May 2018 16:09:50 GMT
 ETag: W/"25777f7d-27bc"
 Location: https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c
 ```
-

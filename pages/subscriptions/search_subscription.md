@@ -18,7 +18,13 @@ Before a subscription can found through a search, the following must be in place
 
 Currently, the only criteria available to search for subscriptions is the ODS code of the organisation that creates/owns the subscription (held in the contact.value field in the subscription).
 
-To search for a subscription for a specific ODS code, a standard FHIR search operation can be used
+### HTTP Request ###
+
+To search for a subscription for a specific ODS code, a standard FHIR search operation can be used:
+
+```http
+GET /Subscription?contact=[ODS_Code]
+```
 
 ### Request Headers ###
 
@@ -33,13 +39,27 @@ The system calling the API MUST include the following HTTP request headers when 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
 
-**HTTP request:**
+
+## Error Handling ##
+
+If an error occurs while trying to process the request the NEMS will return a HTTP error code along with an `OperationOutcome` FHIR resource within the payload. The OperationOutcome resource will contain one of the [Spine ErrorOrWarning Codes](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) and conform to the structure set out in the [Spine Core FHIR](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) specification.
+
+
+## Response ##
+
+A successful request will result in:
+
+- a HTTP status code of `200`
+- a FHIR `Bundle` resource within the payload containing all the subscription resources matching the search parameters. The subscription resources returned SHALL conform to the [EMS-Subscription-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1) FHIR profile.
+
+If no subscription resources are found matching the search parameters then a 200 response and FHIR Bundle resource will still be returned but the returned bundle resource will contain no subscriptions.
+
+
+## Search Subscription Example ##
 
 ```http
 GET https://clinicals.spineservices.nhs.uk/STU3/Subscription?contact=RR8
 ```
-
-**Response:**
 
 ```xml
 HTTP 200 OK

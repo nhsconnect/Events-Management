@@ -15,11 +15,20 @@ Before a subscription can be managed or updated, the following must be in place:
 - All requests will include a JWT with information about the requesting system and user (see [here](https://developer.nhs.uk/apis/spine-core/security_jwt.html) for details).
 - Any NHS numbers submitted in a subscription request will have been traced against PDS (see [here](https://developer.nhs.uk/apis/spine-core/pds_overview.html) for details).
 
-## Retrieving a Subscription ##
+# Retrieving a Subscription #
 
 To retrieve a specific subscription, the client will need to use the ID that was allocated to the subscription when it was created (see [Create Subscription](explore_create_subscription.html))
 
-### Request Headers ###
+## HTTP Request ##
+
+To read a subscription by its logical ID, a standard FHIR read operation can be used:
+
+```http
+GET /Subscription/[Subscription_Logical_ID]
+```
+
+
+## Request Headers ##
 
 The system calling the API MUST include the following HTTP request headers when making the call to the Read Subscription API endpoint:
 
@@ -31,13 +40,24 @@ The system calling the API MUST include the following HTTP request headers when 
 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
-**HTTP request:**
+
+## Error Handling ##
+
+If an error occurs while trying to process the request the NEMS will return a HTTP error code along with an `OperationOutcome` FHIR resource within the payload. The OperationOutcome resource will contain one of the [Spine ErrorOrWarning Codes](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) and conform to the structure set out in the [Spine Core FHIR](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) specification.
+
+
+## Response ##
+
+Where a subscription is found for the logical ID the response will be:
+- a HTTP status code of 200
+- a payload containing the requested `Subscription` resource. The subscription resource returned SHALL conform to the [EMS-Subscription-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1) FHIR profile.
+
+
+## Retrieve Subscription Example ##
 
 ```http
 GET https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c
 ```
-
-**Response:**
 
 ```xml
 HTTP 200 OK
@@ -68,11 +88,19 @@ Content-type: application/xml+fhir
 ```
 
 
-## Deleting a Subscription ##
+# Deleting a Subscription #
 
-To delete a specific subscription, the client will need to use the ID that was allocated to the subscription when it was created (see [Create Subscriptions](explore_create_subscription.html))
+To delete a specific subscription, the client will need to use the Logical ID that was allocated to the subscription when it was created (see [Create Subscriptions](explore_create_subscription.html))
 
-### Request Headers ###
+## HTTP request ##
+
+To delete a subscription by its logical ID, a standard FHIR delete operation can be used:
+
+```http
+DELETE /Subscription/[Subscription_Logical_ID]
+```
+
+## Request Headers ##
 
 The system calling the API MUST include the following HTTP request headers when making the call to the Delete Subscription API endpoint:
 
@@ -85,20 +113,30 @@ The system calling the API MUST include the following HTTP request headers when 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
 
-**HTTP request:**
+## Error Handling ##
+
+If an error occurs while trying to process the request the NEMS will return a HTTP error code along with an `OperationOutcome` FHIR resource within the payload. The OperationOutcome resource will contain one of the [Spine ErrorOrWarning Codes](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) and conform to the structure set out in the [Spine Core FHIR](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) specification.
+
+
+## Response ##
+
+Where a subscription is found for the logical ID and is deleted by the NEMS, the response will be:
+- a HTTP status code of `200`.
+
+
+## Delete Subscription Example ##
 
 ```http
 DELETE https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c
 ```
-
-**Response:**
 
 ```http
 HTTP 200 OK
 Date: Sat, 26 May 2018 12:52:12 GMT
 ```
 
-## Updating a Subscription ##
 
-The National Events Management Service will not mantain versions of Subscriptions, so any changes to a subscription will require that the existing subscription is deleted, and a new one created.
+# Updating a Subscription #
+
+The National Events Management Service will not maintain versions of Subscriptions, so any changes to a subscription will require that the existing subscription is deleted, and a new one created.
 
