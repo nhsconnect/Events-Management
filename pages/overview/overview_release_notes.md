@@ -15,6 +15,7 @@ This site is under active development by NHS Digital and is intended to provide 
 - Updated wording relating to use of JSON and XML for API's as both are supported for the publish and subscription API's, the event messages currently can only be sent to subscribers in XML
 - Added guidance around required headers for interactions with the subscription API
 - Added information around error responses
+- Updated serviceType subscription criteria to be optional
 
 [Event Receiver Requirements](receiver_requirements.html)
 - Updated wording around the configuration of MESH and the use of WorkflowIDs.
