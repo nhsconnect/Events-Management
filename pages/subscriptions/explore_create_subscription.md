@@ -72,7 +72,7 @@ The criteria element of the Subscription will use the FHIR search string format 
 | Component                       | Cardinality | Description |
 | ------------------------------- | --- | ----------- |
 | /Bundle?type=message            | 1..1 | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
-| serviceType=[CODE]     | 1..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Personal Child Health Record services |
+| serviceType=[CODE]     | 0..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Personal Child Health Record services |
 | Patient.identifier=[IDENTIFIER] | 1..1 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**|
 | MessageHeader.event=[CODE]      | 1..* |  This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** <br/> is an expression to specify events where the MessageHeader.event is of type PDS001, PDS002 or PDS003 |
 | Patient.age=[AGE]               | 0..2 |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>Examples:<br/> - **&Patient.age=lt14**<br/> - **&Patient.age=gt60**<br/> - **&Patient.age=gt5&Patient.age=lt19** <br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
@@ -93,7 +93,11 @@ If an error occurs when the NEMS processes the subscription request, a HTTP erro
 
 ## Response ##
 
-When a subscription request is successfully received by the NEMS, the Subscription will be assigned a logical ID and the NEMS will return a HTTP status code of "201 Created", along with a `Location` header containing the new ID of the created Subscription resource.
+When a subscription request is successfully received by the NEMS, the Subscription will be assigned a logical ID and the NEMS will return:
+- a HTTP status code of `201 Created`
+- a `Location` header containing the new logical ID of the created Subscription resource
+
+No payload will be returned with the successful response.
 
 
 ## Create Subscription Example ##
