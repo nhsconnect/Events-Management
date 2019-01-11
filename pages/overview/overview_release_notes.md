@@ -34,8 +34,7 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added new page with new requirements
 
 [Search for Subscriptions](search_subscription.html)
-- Added guidance around required headers for interactions with the subscription API
-- Added information around error responses
+- REMOVED - this has not been implemented yet so has been removed until it is implemented
 
 [Subscriber Information Governance](subscription_ig.html)
 - Added new page with new requirements
