@@ -7,7 +7,7 @@ permalink: itk_ems_profiles.html
 summary: "Use of ITK3 wrapper FHIR profiles for event receivers to consume events published by the NEMS"
 ---
 
-## Use of ITK3 wrapper FHIR profiles##
+## Use of ITK3 wrapper FHIR profiles ##
 
 The FHIR profiles for the [ITK Messaging Distribution](https://developer.nhs.uk/apis/itk3messagedistribution) wrapper will be applied to NEMS as detailed below.
 

@@ -22,10 +22,23 @@ To create a subscription, a client MUST:
 2. POST the constructed EMS-Subscription-1 resource to the NEMS FHIR endpoint on the Spine
 
 ```http
-POST /subscription
+POST /Subscription
 ```
 
 {% include important.html content="Currently the National Events Management Service (NEMS) supports JSON and XML formats for interactions with the subscription API, but currently all event messages will be forwarded to subscribers in an XML format." %}
+
+### Request Headers ###
+
+The subscribing organisation MUST include the following HTTP request headers when making the call to the Create Subscription API endpoint:
+
+| Header | Description |
+| --- | --- |
+| fromASID | ASID of the system posting to the Subscription API |
+| toASID | ASID of the NEMS service |
+| InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:SubscriptionsApiPost` |
+
+Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
+
 
 ### EMS-Subscription-1 resource population ###
 
@@ -59,7 +72,7 @@ The criteria element of the Subscription will use the FHIR search string format 
 | Component                       | Cardinality | Description |
 | ------------------------------- | --- | ----------- |
 | /Bundle?type=message            | 1..1 | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
-| serviceType=[CODE]     | 1..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Personal Child Health Record services |
+| serviceType=[CODE]     | 0..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Personal Child Health Record services |
 | Patient.identifier=[IDENTIFIER] | 1..1 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**|
 | MessageHeader.event=[CODE]      | 1..* |  This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** <br/> is an expression to specify events where the MessageHeader.event is of type PDS001, PDS002 or PDS003 |
 | Patient.age=[AGE]               | 0..2 |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>Examples:<br/> - **&Patient.age=lt14**<br/> - **&Patient.age=gt60**<br/> - **&Patient.age=gt5&Patient.age=lt19** <br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
@@ -71,6 +84,21 @@ The criteria element of the Subscription will use the FHIR search string format 
 | Scenario                             | Subscribing Organisation | Subscription Type | Criteria String                     |
 |--------------------------------------|--------------------------|-------------------|------------------------------------|
 | A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message<br/>&serviceType=GP<br/>&Patient.identifier=9434765919<br/>&MessageHeader.event=PDS002 |
+
+
+## Error Handling ##
+
+If an error occurs when the NEMS processes the subscription request, a HTTP error status code will be returned along with an `OperationOutcome` FHIR resource within the payload. The OperationOutcome resource will contain one of the [Spine ErrorOrWarning Codes](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) and conform to the structure set out in the [Spine Core FHIR](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) specification.
+
+
+## Response ##
+
+When a subscription request is successfully received by the NEMS, the Subscription will be assigned a logical ID and the NEMS will return:
+- a HTTP status code of `201 Created`
+- a `Location` header containing the new logical ID of the created Subscription resource
+
+No payload will be returned with the successful response.
+
 
 ## Create Subscription Example ##
 
@@ -90,17 +118,13 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 		<use value="work"/>
 	</contact>
 	<reason value="Health visiting service responsible for Leeds"/>
-	<criteria value="/Bundle?type=message<br/>&serviceType=UHV<br/>&Patient.identifier=9434765919<br/>&MessageHeader.event=PDS002" />
+	<criteria value="/Bundle?type=message&serviceType=UHV&Patient.identifier=9434765919&MessageHeader.event=PDS002" />
 	<channel>
 		<type value="message"/>
 		<endpoint value="Mailbox1234"/>
 	</channel>
 </Subscription>
 ```
-
-**Response:**
-
-Assuming the subscription has been successfully received by Spine, it will assign an ID for the subscription. The HTTP response will be a "201 Created" HTTP status code, and SHALL also return a Location header which contains the new ID of the created Subscription resource:
 
 ```json
 HTTP 201 Created
@@ -109,4 +133,3 @@ Last-Modified: Fri, 25 May 2018 16:09:50 GMT
 ETag: W/"25777f7d-27bc"
 Location: https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c
 ```
-

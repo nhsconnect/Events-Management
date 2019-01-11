@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 1.3.0-Beta
+  version: 1.4.0-Beta
   levels: one
   folders:
 
@@ -12,9 +12,6 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-#    - title: The Journey
-#      url: /overview_the_journey.html
-#      output: web
     - title: Guide Versioning
       url: /overview_guide_versioning.html
       output: web
@@ -38,20 +35,6 @@ entries:
     - title: Event Header Information
       url: /explore_event_header_information.html
       output: web
-#    - title: FHIR Profiles
-#      url: /explore_fhir_profiles.html
-#      output: web
-#      subfolders:
-#      - title: Work Flow
-#        url: /workflow.html
-#        output: web
-#        subfolderitems:
-#        - title: Overview
-#          url: /explore_workflow_overview.html
-#          output: web
-#        - title: Encounter
-#          url: /workflow_encounter.html
-#          output: web
 
   - title: Subscription Management
     output: web,pdf
@@ -60,12 +43,15 @@ entries:
       url: /explore_subscriptions.html
       output: web
       type: homepage
+    - title: Information Governance
+      url: /subscription_ig.html
+      output: web
     - title: Create Subscription
       url: /explore_create_subscription.html
       output: web
-    - title: Search for Subscription
-      url: /search_subscription.html
-      output: web
+#    - title: Search for Subscription // Temp removed as not been built in Bundle 1A
+#      url: /search_subscription.html
+#      output: web
     - title: Manage Subscription
       url: /explore_manage_subscription.html
       output: web
@@ -73,6 +59,9 @@ entries:
   - title: Event Publication
     output: web,pdf
     folderitems:
+    - title: Information Governance
+      url: /publication_ig.html
+      output: web
     - title: Publish Event Message
       url: /publication_publish.html
       output: web
@@ -88,63 +77,6 @@ entries:
       url: /itk_ems_profiles.html
       output: web
 
-#  - title: Example Scenarios
-#    url: /engage_scenario.html
-#    output: web
-#    folderitems:
-#    - title: Richard Smith
-#      url: /engage_richard_smith.html
-#      output: web, pdf
-#      type: homepage
-
-#  - title: Design & Build
-#    output: web
-#    folderitems:
-#    - title: Overview
-#      url: /test.html
-#      output: web
-#    - title: Patterns / Topology
-#      url: /test_patterns.html
-#      output: web
-#    - title: Access
-#      url: /test_access.html
-#      output: web
-#    - title: Security
-#      url: /test_security.html
-#      output: web
-#    - title: Test Data
-#      url: /test_data.html
-#      output: web
-
-#  - title: Assure
-#    output: web
-#    folderitems:
-#    - title: Overview
-#      url: /assure.html
-#      output: web
-#    - title: Access
-#      url: /assure_access.html
-#      output: web
-#    - title: Security
-#      url: /assure_security.html
-#      output: web
-#    - title: End To End
-#      url: /assure_end_to_end.html
-#      output: web
-
-#  - title: Deploy
-#    output: web
-#    folderitems:
-#    - title: Overview
-#      url: /deploy.html
-#      output: web
-#    - title: Access
-#      url: /deploy_access.html
-#      output: web
-#    - title: Security
-#      url: /deploy_security.html
-#      output: web
-
   - title: Help & Support
     output: web
     folderitems:
@@ -155,13 +87,7 @@ entries:
       - title: Where Else Can I Look?
         output: web
         subfolderitems:
-#        - title: Community
-#          url: /support_community.html
-#          output: web
         - title: FHIR Tools
           url: /support_fhirtools.html
           output: web
-#        - title: Referenced Documentation
-#          url: /support_referencedocumentation.html
-#          output: web
 
