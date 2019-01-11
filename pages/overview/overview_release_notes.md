@@ -9,7 +9,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
-## Beta 1.4.0 ##
+## 1.4.0-Beta ##
 
 [Create Subscription](explore_create_subscription.html)
 - Updated wording relating to use of JSON and XML for API's as both are supported for the publish and subscription API's, the event messages currently can only be sent to subscribers in XML
@@ -40,7 +40,7 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added new page with new requirements
 
 
-## Beta 1.3.0 ##
+## 1.3.0-Beta ##
 
 [Create Subscription](explore_create_subscription.html)
 - Changes page layout
@@ -73,7 +73,7 @@ Versioning
 - Removed this versioning page as it contained incorrect and missleading information. Any details which need to be included will be added to the other spec versioning page.
 
 
-## Beta 1.2.0 ##
+## 1.2.0-Beta ##
 
 **Create Subscription** - Added:
 - subscriptionRuleType to the criteria for generic subscriptions
@@ -85,7 +85,7 @@ Versioning
 
 **Receiver Requirements** - Added guidance on FHIR representation of an event message bundle using the ITK3 Messaging Distribution wrapper.
 
-## Beta 1.1.0 ##
+## 1.1.0-Beta ##
 
 **About** - renamed to **Contact Us** - this page has been updated to share contact information. Guidance around FHIR profiles for event messages has been removed as it is not within the scope of this Implementation Guide. 
 
@@ -113,10 +113,10 @@ The Messages section has been removed. This content has been redesigned and indi
 
 Added page [Versioning](explore_event_versioning.html) to clarify versioning of event instances and event definitions.
 
-## Beta 1.0.1 ##
+## 1.0.1-Beta ##
 This implementation guide has been updated to include a guidance page for accessing example messages.
  
-## Beta 1.0.0 ##
+## 1.0.0-Beta ##
 This Beta release includes implementation guidance to support the development of the following aspects of the National Events Management Service:
 
 - NEMS Event Message Response
