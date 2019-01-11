@@ -49,9 +49,9 @@ entries:
     - title: Create Subscription
       url: /explore_create_subscription.html
       output: web
-    - title: Search for Subscription
-      url: /search_subscription.html
-      output: web
+#    - title: Search for Subscription // Temp removed as not been built in Bundle 1A
+#      url: /search_subscription.html
+#      output: web
     - title: Manage Subscription
       url: /explore_manage_subscription.html
       output: web
