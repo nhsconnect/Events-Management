@@ -46,6 +46,9 @@ entries:
     - title: Information Governance
       url: /subscription_ig.html
       output: web
+    - title: Generic API Guidance
+      url: /subscription_general_api_guidance.html
+      output: web
     - title: Create Subscription
       url: /explore_create_subscription.html
       output: web
@@ -61,6 +64,9 @@ entries:
     folderitems:
     - title: Information Governance
       url: /publication_ig.html
+      output: web
+    - title: Generic API Guidance
+      url: /publication_general_api_guidance.html
       output: web
     - title: Publish Event Message
       url: /publication_publish.html
