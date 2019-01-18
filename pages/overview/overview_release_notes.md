@@ -13,6 +13,7 @@ This site is under active development by NHS Digital and is intended to provide 
 
 [Create Subscription](explore_create_subscription.html)
 - Moved the Pre-requisites section to the "Generic Subscription API Guidance" page
+- Corrected text in criteria element of the example xml to encode characters as required to be valid xml
 
 [Generic Publication API Guidance](publication_general_api_guidance.html)
 - Page added with additional information around MIME types and JWT population for the publish API
@@ -22,6 +23,7 @@ This site is under active development by NHS Digital and is intended to provide 
 
 [Manage Subscription](explore_manage_subscription.html)
 - Moved the Pre-requisites section to the "Generic Subscription API Guidance" page
+- Corrected text in criteria element of the example xml to encode characters as required to be valid xml
 
 [Publish an Event Message](publication_publish.html)
 - Moved the Pre-requisites section to the "Generic Publication API Guidance" page

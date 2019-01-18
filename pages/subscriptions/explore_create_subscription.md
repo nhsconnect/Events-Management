@@ -114,7 +114,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 		<use value="work"/>
 	</contact>
 	<reason value="Health visiting service responsible for Leeds"/>
-	<criteria value="/Bundle?type=message&serviceType=UHV&Patient.identifier=9434765919&MessageHeader.event=PDS002" />
+	<criteria value="/Bundle?type=message&amp;serviceType=UHV&amp;Patient.identifier=9434765919&amp;MessageHeader.event=PDS002" />
 	<channel>
 		<type value="message"/>
 		<endpoint value="Mailbox1234"/>
