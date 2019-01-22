@@ -69,9 +69,9 @@ The criteria element of the Subscription will use the FHIR search string format 
 | ------------------------------- | --- | ----------- |
 | /Bundle?type=message            | 1..1 | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
 | serviceType=[CODE]     | 0..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Personal Child Health Record services |
-| Patient.identifier=[IDENTIFIER] | 1..1 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: **&Patient.identifier=http://fhir.nhs.net/Id/nhs-number\|[NHS Number]**|
-| MessageHeader.event=[CODE]      | 1..* |  This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: **&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003** <br/> is an expression to specify events where the MessageHeader.event is of type PDS001, PDS002 or PDS003 |
-| Patient.age=[AGE]               | 0..2 |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>Examples:<br/> - **&Patient.age=lt14**<br/> - **&Patient.age=gt60**<br/> - **&Patient.age=gt5&Patient.age=lt19** <br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
+| Patient.identifier=[IDENTIFIER] | 1..1 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: "```&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|[NHS Number]```" |
+| MessageHeader.event=[CODE]      | 1..* |  This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: "```&amp;MessageHeader.event=PDS001&amp;MessageHeader.event=PDS002&amp;MessageHeader.event=PDS003```" <br/> is an expression to specify events where the MessageHeader.event is of type PDS001, PDS002 or PDS003 |
+| Patient.age=[AGE]               | 0..2 |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>Examples:<br/> - "```&amp;Patient.age=lt14```"<br/> - "```&amp;Patient.age=gt60```"<br/> - "```&amp;Patient.age=gt5&amp;Patient.age=lt19```" <br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
 
 
 
@@ -79,7 +79,7 @@ The criteria element of the Subscription will use the FHIR search string format 
 
 | Scenario                             | Subscribing Organisation | Subscription Type | Criteria String                     |
 |--------------------------------------|--------------------------|-------------------|------------------------------------|
-| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | /Bundle?type=message<br/>&serviceType=GP<br/>&Patient.identifier=9434765919<br/>&MessageHeader.event=PDS002 |
+| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | ```/Bundle?type=message<br/>&amp;serviceType=GP<br/>&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919<br/>&amp;MessageHeader.event=PDS002``` |
 
 
 ## Error Handling ##
@@ -114,7 +114,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 		<use value="work"/>
 	</contact>
 	<reason value="Health visiting service responsible for Leeds"/>
-	<criteria value="/Bundle?type=message&amp;serviceType=UHV&amp;Patient.identifier=9434765919&amp;MessageHeader.event=PDS002" />
+	<criteria value="/Bundle?type=message&amp;serviceType=UHV&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919&amp;MessageHeader.event=PDS002" />
 	<channel>
 		<type value="message"/>
 		<endpoint value="Mailbox1234"/>
