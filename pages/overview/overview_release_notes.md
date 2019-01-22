@@ -9,6 +9,12 @@ summary: Summary release notes of the versions released in National Events Manag
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
+## 1.4.0-Beta (22/01/2019) ##
+
+[Create Subscription](explore_create_subscription.html)
+- Corrected examples to use the encoded `&amp;` rather than the `&` character as required to be valid xml.
+
+
 ## 1.4.0-Beta (17/01/2019) ##
 
 [Create Subscription](explore_create_subscription.html)
