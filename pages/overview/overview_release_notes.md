@@ -14,6 +14,8 @@ This site is under active development by NHS Digital and is intended to provide 
 [Create Subscription](explore_create_subscription.html)
 - Corrected examples to use the encoded `&amp;` rather than the `&` character as required to be valid xml.
 
+[Generic Publication API Guidance](publication_general_api_guidance.html)
+- Added detail around the content type required for publishing event messages.
 
 ## 1.4.0-Beta (17/01/2019) ##
 
