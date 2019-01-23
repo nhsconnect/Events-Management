@@ -31,7 +31,7 @@ The specific event messages which have been defined for use through the NEMS can
 
 | Implementation Guide | Description | Date Events Available |
 | --- | --- | --- |
-| [Demographic Update Event Messages](https://developer.nhs.uk/apis/demographicupdates-beta/) | Specification for demographic events published by the Spine, such as birth notification and demographic change notification. | March 2019 |
+| [Demographic Update Event Messages](https://developer.nhs.uk/apis/demographicupdates-120-rc/) | Specification for demographic events published by the Spine, such as birth notification and demographic change notification. | March 2019 |
 | [Digital Child Health](https://developer.nhs.uk/apis/dch-beta/) | This specification contains the event messages defined by the Digital Child Health program to support the care of children. | May 2019 to<br/>TBC 2020<br/>(see guide for specific events) |
 | [National Population Failsafe Management](https://developer.nhs.uk/apis/npfm-beta/) | Specification containing information around the national population failsafe functionality and the event messages the service will publish to the EMS. | TBC 2019 |
 
