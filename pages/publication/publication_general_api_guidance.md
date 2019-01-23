@@ -38,12 +38,10 @@ All requests to the Publication API SHALL include a JWT with information about t
 The supported MIME-types for the NEMS, for use in the "Content-Type" and "Accept" headers are:
 
 - application/fhir+xml
-- application/fhir+json
 - application/fhir+xml;charset=utf-8
-- application/fhir+json;charset=utf-8
 - application/xml+fhir
-- application/json+fhir
 - application/xml+fhir;charset=utf-8
-- application/json+fhir;charset=utf-8
 
 Where the MIME-type is not supplied the NEMS will default to `application/xml+fhir;charset=utf-8`
+
+{% include important.html content="Currently the National Events Management Service (NEMS) only supports XML for interactions with the publish API, therefore any event message published to NEMS must have a `Content-Type` containing one of the XML format above." %}
