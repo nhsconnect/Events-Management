@@ -9,7 +9,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
-## 1.4.0-Beta (22/01/2019) ##
+## 1.4.3-Beta (22/01/2019) ##
 
 [Create Subscription](explore_create_subscription.html)
 - Corrected examples to use the encoded `&amp;` rather than the `&` character as required to be valid xml.
@@ -17,7 +17,7 @@ This site is under active development by NHS Digital and is intended to provide 
 [Generic Publication API Guidance](publication_general_api_guidance.html)
 - Added detail around the content type required for publishing event messages.
 
-## 1.4.0-Beta (17/01/2019) ##
+## 1.4.2-Beta (17/01/2019) ##
 
 [Create Subscription](explore_create_subscription.html)
 - Moved the Pre-requisites section to the "Generic Subscription API Guidance" page
@@ -36,7 +36,7 @@ This site is under active development by NHS Digital and is intended to provide 
 [Publish an Event Message](publication_publish.html)
 - Moved the Pre-requisites section to the "Generic Publication API Guidance" page
 
-## 1.4.0-Beta (15/01/2019) ##
+## 1.4.1-Beta (15/01/2019) ##
 
 [Create Subscription](explore_create_subscription.html)
 - Updated the wording within the "EMS-Subscription-1 resource population" table to make the expectations around the `contact` element more clear.
