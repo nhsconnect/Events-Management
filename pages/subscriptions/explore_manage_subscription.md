@@ -66,7 +66,7 @@ Content-type: application/xml+fhir
 	<id value="ea0a485187204b49b978bdcf7102388c"/>
 	<meta>
 		<lastUpdated value="2018-05-26T00:00:00+00:00"/>
-		<versionID value="25777f7d-27bc"/>
+		<versionId value="25777f7d-27bc"/>
 		<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"/>
 	</meta>
 	<status value="active"/>
