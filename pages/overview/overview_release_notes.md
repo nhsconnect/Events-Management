@@ -9,6 +9,17 @@ summary: Summary release notes of the versions released in National Events Manag
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
+## 1.5.0-Beta ##
+
+[Introduction to National Events Management Service](index.html)
+- Updated DCH spec link to the release candidate spec rather than the beta spec.
+- Added information highlighting the intended use cases and what is considered an event.
+- Added information pointing to National Record Locator (NRL) for record retrieval.
+
+[Supported Event Messages](overview_supported_events.html)
+- Added page to indicate which event messages are currently supported by the NEMS.
+
+
 ## 1.4.3-Beta (22/01/2019) ##
 
 [Create Subscription](explore_create_subscription.html)

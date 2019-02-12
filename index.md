@@ -27,12 +27,33 @@ The NEMS is designed to be a generic transport mechanism which can support a var
 
 The specific event messages which have been defined for use through the NEMS can be found in the Event Message Implementation Guides listed below. If the event messages currently defined do not meet your needs you can contact us using the details on the [Help & Support](support_contact.html) page to discuss how NEMS could be enhanced to meet your requirements.
 
+
+## What Are NEMS Events
+
+### Events
+
+The NEMS is designed to allow a provider to share that an event has occurred for a patient, without knowing who might be interested in that information. The NEMS is intended for use where an event may result in immediate action by another provider. 
+
+**For example:**
+1. A patient is admitted to hospital and as a result of their registration within the hospital system a 'Hospital Admission' event is sent to the NEMS.
+2. A subscriber to the 'Hospital Admission' event is a health visitor service who provides care for that patient, therefore the NEMS forwards the 'Hospital Admission' event to the health visiting service.
+3. When the health visiting service receives the 'Hospital Admission' event they can make appropriate changes to the scheduled home visit with that patient and make better use of the health visitors time.
+
+This sort of use cases would be considered an event and a suitable use of the NEMS.
+
+### Not Events
+
+Where a provider records an encounter or information for a patient which would be useful for other providers but where that data is not identified as something which would result in immediate action by another provider, this would not be considered an event or appropriate for sharing over the NEMS. There is complimentary Spine service along side the NEMS called the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrls/index.html) which is designed to make this data available. The NRL is a collection of pointers to patient information within other systems. The pointers within NRL contain the information required to retrieve the patient information from the original source when it is required.
+
+
 ## Event Message Implementation Guides
+
+The following implementation guides give detail around the content and use of the event messages proposed by different programs. The [Supported Event Messages](overview_supported_events.html) page list the event messages currently supported by the NEMS for publication and subscription.
 
 | Implementation Guide | Description | Date Events Available |
 | --- | --- | --- |
 | [Demographic Update Event Messages](https://developer.nhs.uk/apis/demographicupdates-120-rc/) | Specification for demographic events published by the Spine, such as birth notification and demographic change notification. | March 2019 |
-| [Digital Child Health](https://developer.nhs.uk/apis/dch-beta/) | This specification contains the event messages defined by the Digital Child Health program to support the care of children. | May 2019 to<br/>TBC 2020<br/>(see guide for specific events) |
+| [Digital Child Health](https://nhsconnect.github.io/Digital-Child-Health-STU3/) | This specification contains the event messages defined by the Digital Child Health program to support the care of children. | May 2019 to<br/>TBC 2020<br/>(see guide for specific events) |
 | [National Population Failsafe Management](https://developer.nhs.uk/apis/npfm-beta/) | Specification containing information around the national population failsafe functionality and the event messages the service will publish to the EMS. | TBC 2019 |
 
 The `Date events available` column in the table is the date when the events specified within the implementation guide will be supported by the NEMS. This date does not indicate that suppliers will be publishing the event messages, only that the NEMS will accept the event message from the publishers and will distribute the event messages to the subscribers. The dates included are indicative of the current timeline for development but may change depending on priorities and feedback during development.
