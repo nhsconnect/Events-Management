@@ -48,7 +48,7 @@ Where a provider records an encounter or information for a patient which would b
 
 ## Event Message Implementation Guides
 
-The following implementation guides give detail around the content and use of the event messages proposed by different programs. The [Supported Event Messages](overview_supported_events.html) page list the event messages currently supported by the NEMS for publication and subscription.
+The following implementation guides give detail around the content and use of the event messages defined by different programs. The [Supported Event Messages](overview_supported_events.html) page list the event messages currently supported by the NEMS for publication and subscription.
 
 | Implementation Guide | Description | Date Events Available |
 | --- | --- | --- |
