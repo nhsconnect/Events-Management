@@ -12,6 +12,9 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
+    - title: Supported Event Messages
+      url: /overview_supported_events.html
+      output: web
     - title: Guide Versioning
       url: /overview_guide_versioning.html
       output: web

@@ -29,6 +29,8 @@ The specific event messages which have been defined for use through the NEMS can
 
 ## Event Message Implementation Guides
 
+The following implementation guides give detail around the content and use of the event messages proposed by different programs. The [Supported Event Messages](overview_supported_events.html) page list the event messages currently supported by the NEMS for publication and subscription.
+
 | Implementation Guide | Description | Date Events Available |
 | --- | --- | --- |
 | [Demographic Update Event Messages](https://developer.nhs.uk/apis/demographicupdates-120-rc/) | Specification for demographic events published by the Spine, such as birth notification and demographic change notification. | March 2019 |
