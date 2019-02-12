@@ -26,6 +26,6 @@ The following event messages are supported by the NEMS for either publication an
 
 | Event | Implementation Guide | Publication API | Subscription API | Date Available |
 |---|---|:---:|:---:|---|
-| [Newborn Hearing](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_newborn_hearing.html) | Digital Child Health | &#9989; | &#9989; | TBC |
-| [Physical Examination](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_physical_examination.html) | Digital Child Health | &#9989; | &#9989; | TBC |
-| [Vaccinations](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_vaccination_administration.html) | Digital Child Health | &#9989; | &#9989; | TBC |
+| [Newborn Hearing](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_newborn_hearing.html) | Digital Child Health | &#9989; | &#9989; | July 2019 |
+| [Physical Examination](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_physical_examination.html) | Digital Child Health | &#9989; | &#9989; | July 2019 |
+| [Vaccinations](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_vaccination_administration.html) | Digital Child Health | &#9989; | &#9989; | July 2019 |
