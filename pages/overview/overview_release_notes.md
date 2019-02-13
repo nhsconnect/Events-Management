@@ -19,6 +19,9 @@ This site is under active development by NHS Digital and is intended to provide 
 [Messaging Architecture Overview](explore_msg_architecture_overview.html)
 - Added additional wording to `Delivery Of Event Messages` section of the page, linking to the `Event Receiver Requirements` within the spec.
 
+[Publish an Event Message](publication_publish.html)
+- Added the `What data to publisher` section to outline some requirements around when to publish data and highlight the risk that a publisher may receive back their own published event message.
+
 [Supported Event Messages](overview_supported_events.html)
 - Added page to indicate which event messages are currently supported by the NEMS.
 
