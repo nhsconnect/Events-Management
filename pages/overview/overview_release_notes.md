@@ -16,6 +16,9 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added information highlighting the intended use cases and what is considered an event.
 - Added information pointing to National Record Locator (NRL) for record retrieval.
 
+[Messaging Architecture Overview](explore_msg_architecture_overview.html)
+- Added additional wording to `Delivery Of Event Messages` section of the page, linking to the `Event Receiver Requirements` within the spec.
+
 [Supported Event Messages](overview_supported_events.html)
 - Added page to indicate which event messages are currently supported by the NEMS.
 
