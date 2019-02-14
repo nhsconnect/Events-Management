@@ -7,7 +7,7 @@ permalink: publication_publish.html
 summary: "Requirements for publishing event messages into the NEMS"
 ---
 
-## What data to publisher
+## What data to publish
 
 To protect data quality of information passing through the NEMS:
 
