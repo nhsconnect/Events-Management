@@ -11,6 +11,9 @@ This site is under active development by NHS Digital and is intended to provide 
 
 ## 1.5.0-Beta ##
 
+[Event Header Information](explore_event_header_information.html)
+- Made page content more generic rather than being PDS event message orientated to allow for the variation in FHIR resources within the DCH event messages.
+
 [Introduction to National Events Management Service](index.html)
 - Updated DCH spec link to the release candidate spec rather than the beta spec.
 - Added information highlighting the intended use cases and what is considered an event.
