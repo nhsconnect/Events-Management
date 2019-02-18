@@ -45,7 +45,7 @@ The publishing system MUST include the following HTTP request headers when makin
 | --- | --- |
 | fromASID | ASID of the system posting to the Subscription API |
 | toASID | ASID of the NEMS service |
-| InteractionID | Fixed value: `TBC` |
+| InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:PublicationApiPost` |
 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 

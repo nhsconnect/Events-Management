@@ -24,6 +24,7 @@ This site is under active development by NHS Digital and is intended to provide 
 
 [Publish an Event Message](publication_publish.html)
 - Added the `What data to publisher` section to outline some requirements around when to publish data and highlight the risk that a publisher may receive back their own published event message.
+- Added the fixed value for the `InteractionID` http header.
 
 [Supported Event Messages](overview_supported_events.html)
 - Added page to indicate which event messages are currently supported by the NEMS.
