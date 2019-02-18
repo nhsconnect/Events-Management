@@ -72,7 +72,7 @@ entries:
       url: /publication_publish.html
       output: web
 
-  - title: Event Receiver Requirements
+  - title: Event Receiver
     output: web,pdf
     folderitems:
     - title: Overview
