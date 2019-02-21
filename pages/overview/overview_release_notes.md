@@ -9,7 +9,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
-## 1.5.0-Beta ##
+## 1.5.0-Beta (21/02/2019) ##
 
 [Event Header Information](explore_event_header_information.html)
 - Made page content more generic rather than being PDS event message orientated to allow for the variation in FHIR resources within the DCH event messages.
