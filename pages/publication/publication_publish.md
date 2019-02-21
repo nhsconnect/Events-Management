@@ -7,6 +7,17 @@ permalink: publication_publish.html
 summary: "Requirements for publishing event messages into the NEMS"
 ---
 
+## What data to publish
+
+To protect data quality of information passing through the NEMS:
+
+- Event messages published to the NEMS MUST only contain event information originating from the publishing system. Publishers should not re-publish event information they receive from other providers.
+
+- The NEMS event message forwarding functionality is designed to send event messages based on subscription criteria and does not perform any message routing or filtering based on who the publishing and subscribing systems are. Therefore it is possible that a system/provider publishing an event message may receive back their own event message, if the subscription criteria is met for one or more of their subscriptions.
+
+  Due to the wide variety of system architectures used by provider it is impractical and possibly unsafe to filter out these message loops centrally within the NEMS, therefore it is the responsibility of the system/provider to filter out these loop back messages where necessary to avoid duplicate data being created within their system.
+
+
 ## Pre-requisites ##
 
 In addition to the guidance on this page the guidance and requirement on the [Generic Publication API Guidance](publication_general_api_guidance.html) page SHALL be followed when using the NEMS publication API.
@@ -34,7 +45,7 @@ The publishing system MUST include the following HTTP request headers when makin
 | --- | --- |
 | fromASID | ASID of the system posting to the Subscription API |
 | toASID | ASID of the NEMS service |
-| InteractionID | Fixed value: `TBC` |
+| InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:PublicationApiPost` |
 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 

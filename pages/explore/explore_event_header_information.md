@@ -1,5 +1,5 @@
 ---
-title: NEMS Event Header Information
+title: Event Header Information
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
@@ -11,30 +11,22 @@ summary: "The standard event header information applicable to National Events Ma
 
 Each event message will carry a standard set of event header information:
 
-|---------------------------------------------------------------------|
-| Patient NHS Number                                                  |
-| Patient Date of Birth                                               |
-| Patient Name                                                        |
-| The type of event e.g. PDS Birth Notification, Failsafe Alert       |
-| The service which originated the event e.g. PDS, Failsafe           |
-| The service provider which originated the event                     |
-| The IT system which holds the information that originated the event |
-| The location in which the event occurred                            |
-| When the communication occurred                                     |
-| The publisher of the event                                          |
-| When the event was published                                        |
-| An originator/publisher unique publication reference                |
+- Patient NHS Number
+- Patient Details
+- The type of event e.g. PDS Birth Notification, Failsafe Alert
+- Details of the service which published the event e.g. PDS, Failsafe
+- When the event was published
 
-This page details the FHIR profiles and elements required for the event header information, and which event header information requirements they support.
+This page provides an overview of the core FHIR profiles and elements required for as part of the event header information. Additional guidance and requirements are outlined in the event message specific [implementation guides](index.html#event-message-implementation-guides) for additional resources required in the [event messages](overview_supported_events.html).
 
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/msg_architecture/event_header_information_bundle.png" target="_blank"><img src="images/msg_architecture/event_header_information_bundle.png"></a>
 	Event Message Bundle - Header Resources <a href="images/msg_architecture/event_header_information_bundle.png" target="_blank">(open in new TAB)</a>
 </div>
 
-## EMS-MessageHeader-1
+## MessageHeader
 
-The messageHeader resource included as part of the event message SHALL conform to the [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
+The messageHeader resource included as part of the event message SHALL conform to the profiled FHIR resource referenced in the event message implementation guide for the specific event message. The following population requirements shall also be followed:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -47,30 +39,14 @@ The messageHeader resource included as part of the event message SHALL conform t
 | focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
 
 
-## EMS-Communication-1
+## Resource
 
-The Communication resource included in the event message SHALL conform to the [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| status | 1..1 | The status element will be specified within the specific event message implementation guide as it will relate the event message life cycle. |
-| sent | 1..1 | When the communication occurred |
-| payload | 1..1 | The payload element will reference a resource relating to the event message. The event message implementation guide will define what resource should be referenced for each event message. |
+The FHIR resource referenced by the `focus` element within the `MessageHeader` will be defined within the individual event message implementation guides for the event message being published. This resource will contain a `subject` element pointing to a Patient resource which represents the patient who is the focus of the event message.
 
 
-## EMS-HealthcareService-1
+## Patient
 
-The HealthcareService resource included in the event message SHALL conform to the [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| providedBy | 1..1 | A reference to an organization resource representing the managing organisation of the service which triggered this event message. |
-| type | 1..1 | This element SHALL represent the ServiceType of the organisation that triggered the publication of the event message. |
-
-
-## CareConnect-EMS-Patient-1
-
-The patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+The patient resource included in the event message SHALL conform to the profiled FHIR resource referenced in the event message implementation guide for the specific event message. The following population requirements shall also be followed:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -103,7 +79,7 @@ Within the resource referencing out to the Organization resource, the `Reference
 
 Where there is reason to include the Organization resource within the message bundle the following population requirements SHALL be followed:
 
-The organization resources included to fulfill the event header requirements SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+The organization resources included to fulfill the event header requirements SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the profiled FHIR resource referenced in the event message implementation guide for the specific event message. The following population requirements shall also be followed:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |

@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 1.4.3-Beta
+  version: 1.5.0-Beta
   levels: one
   folders:
 
@@ -12,14 +12,14 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
+    - title: Supported Event Messages
+      url: /overview_supported_events.html
+      output: web
     - title: Guide Versioning
       url: /overview_guide_versioning.html
       output: web
     - title: Release Notes
       url: /overview_release_notes.html
-      output: web
-    - title: Glossary
-      url: /overview_glossary.html
       output: web
 
   - title: Messaging Architecture
@@ -72,7 +72,7 @@ entries:
       url: /publication_publish.html
       output: web
 
-  - title: Event Receiver Requirements
+  - title: Event Receiver
     output: web,pdf
     folderitems:
     - title: Overview
