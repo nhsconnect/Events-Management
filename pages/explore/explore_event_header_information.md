@@ -24,9 +24,15 @@ This page provides an overview of the core FHIR profiles and elements required f
 	Event Message Bundle - Header Resources <a href="images/msg_architecture/event_header_information_bundle.png" target="_blank">(open in new TAB)</a>
 </div>
 
-## MessageHeader
 
-The messageHeader resource included as part of the event message SHALL conform to the profiled FHIR resource referenced in the event message implementation guide for the specific event message. The following population requirements shall also be followed:
+## EMS-Bundle-1
+
+The event Bundle resource which contains the event message resources SHALL conform to the [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) constrained FHIR profile.
+
+
+## EMS-MessageHeader-1
+
+The MessageHeader resource included as part of the event message SHALL conform to the [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -44,9 +50,9 @@ The messageHeader resource included as part of the event message SHALL conform t
 The FHIR resource referenced by the `focus` element within the `MessageHeader` will be defined within the individual event message implementation guides for the event message being published. This resource will contain a `subject` element pointing to a Patient resource which represents the patient who is the focus of the event message.
 
 
-## Patient
+## CareConnect-EMS-Patient-1
 
-The patient resource included in the event message SHALL conform to the profiled FHIR resource referenced in the event message implementation guide for the specific event message. The following population requirements shall also be followed:
+The patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -79,7 +85,7 @@ Within the resource referencing out to the Organization resource, the `Reference
 
 Where there is reason to include the Organization resource within the message bundle the following population requirements SHALL be followed:
 
-The organization resources included to fulfill the event header requirements SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the profiled FHIR resource referenced in the event message implementation guide for the specific event message. The following population requirements shall also be followed:
+The organization resources included to fulfill the event header requirements SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
