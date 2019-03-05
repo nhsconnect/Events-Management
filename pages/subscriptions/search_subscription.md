@@ -7,26 +7,31 @@ permalink: search_subscription.html
 summary: "How to search for subscriptions"
 ---
 
-## Pre-requisites ##
+## Pre-requisites
 
-Before a subscription can found through a search, the following must be in place:
+In addition to the guidance on this page the guidance and requirement on the [Generic Subscription API Requirements](subscription_general_api_guidance.html) page SHALL be followed when using the NEMS subscription API.
 
-- The submitting system will require national assurance and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
-- All requests will include a JWT with information about the requesting system and user (see [here](https://developer.nhs.uk/apis/spine-core/security_jwt.html) for details).
 
-## Searching for a Subscription ##
+## Searching for a Subscription
 
-Currently, the only criteria available to search for subscriptions is the ODS code of the organisation that creates/owns the subscription (held in the contact.value field in the subscription).
+The subscription search API interaction allows the requesting system to search for subscriptions which match a set of optional parameters. The search will return a bundle containing all subscriptions which meet the search parameters.
 
-### HTTP Request ###
 
-To search for a subscription for a specific ODS code, a standard FHIR search operation can be used:
+### Search Parameters
+
+| Parameter | Cardinality | Description | Example |
+| --- | --- | --- | --- |
+| criteria:contains | 0..* | Search and filter based on the subscription `criteria` element containing the specified search value. | GET /Subscription?criteria:contains=[NHS_Number] |
+| channel.endpoint | 0..1 | Search and filter on the MESH mailbox id within the subscriptions. | GET /Subscription?channel.endpoint=[MESH_MAILBOX_ID] |
+| contact | 0..1 | Search and filter on Organisation ODS code. | GET /Subscription?contact=[ODS_Code] |
+
+The Search subscription API interaction allows a combination of the search parameters to be specified to help filter the result. For example:
 
 ```http
-GET /Subscription?contact=[ODS_Code]
+GET https://clinicals.spineservices.nhs.uk/STU3/Subscription?criteria%3Acontains%3D9434765919%26channel.endpoint%3DMailbox1234
 ```
-
-### Request Headers ###
+ 
+### Request Headers
 
 The system calling the API MUST include the following HTTP request headers when making the call to the Search Subscription API endpoint:
 
@@ -37,7 +42,6 @@ The system calling the API MUST include the following HTTP request headers when 
 | InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:SubscriptionsApiGet` |
 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
-
 
 
 ## Error Handling ##
@@ -62,7 +66,7 @@ GET https://clinicals.spineservices.nhs.uk/STU3/Subscription?contact=RR8
 ```
 
 ```xml
-HTTP 200 OK
+HTTP 200 OK 
 Date: Sat, 26 May 2018 12:34:11 GMT
 Content-type: application/xml+fhir
 
@@ -81,7 +85,7 @@ Content-type: application/xml+fhir
 		<fullUrl value="https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c"/> 
 		<resource>
 			<Subscription>
-				<id value="ea0a4851-8720-4b49-b978-bdcf7102388c"/>
+				<id value="ea0a485187204b49b978bdcf7102388c"/>
 				<meta>
 					<lastUpdated value="2018-05-26T00:00:00+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"/>
@@ -93,7 +97,7 @@ Content-type: application/xml+fhir
 					<use value="work"/>
 				</contact>
 				<reason value="Health visiting service responsible for Leeds"/>
-				<criteria value="/Bundle?type=message&Organization.identifier=X2458&MessageHeader.event=PDS001&MessageHeader.event=PDS002&MessageHeader.event=PDS003&MessageHeader.event=PDS004"/>
+				<criteria value="/Bundle?type=message&amp;serviceType=UHV&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919&amp;MessageHeader.event=PDS002"/>
 				<channel>
 					<type value="message"/>
 					<endpoint value="Mailbox1234"/>
@@ -101,6 +105,30 @@ Content-type: application/xml+fhir
 			</Subscription>
 		</resource>
 	</entry>
-</Bundle>
+	<entry>
+		<fullUrl value="https://clinicals.spineservices.nhs.uk/STU3/Subscription/f0963530f5e3411fb03e295399b226d9"/> 
+		<resource>
+			<Subscription>
+				<id value="f0963530f5e3411fb03e295399b226d9"/>
+				<meta>
+					<lastUpdated value="2018-11-04T00:00:00+00:00"/>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"/>
+				</meta>
+				<status value="active"/>
+				<contact>
+					<system value="url"/>
+					<value value="https://directory.spineservices.nhs.uk/STU3/Organization/RR8"/>
+					<use value="work"/>
+				</contact>
+				<reason value="Child Health service responsible for Leeds"/>
+				<criteria value="/Bundle?type=message&amp;serviceType=UHV&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9303712862&amp;MessageHeader.event=PDS002&amp;MessageHeader.event=PDS004"/>
+				<channel>
+					<type value="message"/>
+					<endpoint value="Mailbox1234"/>
+				</channel>
+			</Subscription>
+		</resource>
+	</entry>
+</Bundle> 
 ```
 
