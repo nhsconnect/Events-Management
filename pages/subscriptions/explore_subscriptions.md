@@ -24,10 +24,10 @@ Explicit subscriptions SHOULD only be active for patients under the subscribing 
 
 A rule-based subscription relates to where a subscriber wishes to receive all published events that meet a particular rule set. There are two specific types of rule-based subscription currently:
 
-- Geographical: Subscriptions that relate to individuals who reside within the geographic boundaries of a specific organisation (For example, a Health Visiting Service wishing to view events for all children within a specific local authority area). 
+- Geographical: Subscriptions that relate to individuals who reside within the geographic boundaries of a specific organisation (For example, a Health Visiting Service wishing to view events for all patients within a specific local authority area). 
 - Registered Org: Subscriptions that relate to individuals who are registered with a specific organisation (currently only applicable for GP organisations).
 
-Currently the Subscription API does not support the configuration of generic subscriptions. Details of any generic subscriptions required should be appended to the service request required to configure the MESH mailbox to receive event messages. This process is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
+Generic event message subscriptions can be created using the Subscription API, using the [Create Subscription](explore_create_subscription.html) interaction. The organizations MESH mailbox must be configured to receive the required event message types as per the requirements on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
 
 
 ## Subscription matching and message delivery ##

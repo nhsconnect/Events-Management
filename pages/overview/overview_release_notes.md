@@ -17,6 +17,9 @@ This site is under active development by NHS Digital and is intended to provide 
 [Event Receiver Requirements](receiver_requirements.html)
 - Removed the private beta manual generic subscription steps which have been replaced by its inclusion within the subscription API.
 
+[Subscriptions Overview](explore_subscriptions.html)
+- Cleaned up wording for generic subscriptions to align with the addition of generic subscriptions to the Subscription API.
+
 
 ## 1.5.2-Beta (28/02/2019) ##
 
