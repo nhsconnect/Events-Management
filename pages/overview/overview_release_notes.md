@@ -9,6 +9,15 @@ summary: Summary release notes of the versions released in National Events Manag
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
+## 1.6.0-Beta (TBC) ##
+
+[Create Subscription](explore_create_subscription.html)
+- Added the ability to create generic subscriptions through the subscription API
+
+[Event Receiver Requirements](receiver_requirements.html)
+- Removed the private beta manual generic subscription steps which have been replaced by its inclusion within the subscription API.
+
+
 ## 1.5.2-Beta (28/02/2019) ##
 
 [Generic Subscription API Guidance](subscription_general_api_guidance.html)
