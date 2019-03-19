@@ -45,7 +45,7 @@ The publishing system MUST include the following HTTP request headers when makin
 | --- | --- |
 | fromASID | ASID of the system posting to the Subscription API |
 | toASID | ASID of the NEMS service |
-| InteractionID | Dynamic value: `urn:nhs:names:services:nemspublish:[Event_Code]`<br/><br/>**[Event_Code]** must match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the [Events Specific Implementation Guides](index.html#event-message-implementation-guides). |
+| InteractionID | Value: `urn:nhs:names:services:nemspublish:[Event_Code]`<br/><br/>**[Event_Code]** SHALL match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the [Events Specific Implementation Guides](index.html#event-message-implementation-guides). |
 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
