@@ -30,7 +30,7 @@ There are currently no requirements defined for the National Events Management S
 
 ## MESH mailbox configuration ##
 
-The receiving MESH mailbox will need to be configured for each event message types the organisation wishes to receive from the NEMS. Each event message has its own WorkflowID as specified in the event message [implementation guides](index.html), within the specific event message guidance. Configuration of the MESH mailbox will require a service request to be sent to the MESH management team at NHS Digital.
+The receiving MESH mailbox will need to be configured for each event message types the organisation wishes to receive from the NEMS. Each event message has its own WorkflowID as specified in the [event message](overview_supported_events.html) specific guidance. Configuration of the MESH mailbox will require a service request to be sent to the MESH management team at NHS Digital.
 
 If the subscribing organisation wishes to use generic subscriptions, the request for setup of generic subscriptions should be submitted in addition to the request for creation or update of the MESH mailbox. Details of the information required to create generic subscriptions is outlined in the `Requesting generic subscriptions` section below.
 

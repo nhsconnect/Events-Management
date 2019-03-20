@@ -37,7 +37,7 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added information highlighting the intended use cases and what is considered an event.
 - Added information pointing to National Record Locator (NRL) for record retrieval.
 
-[Messaging Architecture Overview](explore_msg_architecture_overview.html)
+[Messaging Architecture Overview](overview_msg_architecture.html)
 - Added additional wording to `Delivery Of Event Messages` section of the page, linking to the `Event Receiver Requirements` within the spec.
 
 [Publish an Event Message](publication_publish.html)
@@ -131,7 +131,7 @@ Error Handling
 [Manage Subscription](explore_manage_subscription.html)
 - Updated example to be XML and added note about only XML support
 
-[Messaging Architecture Overview](explore_msg_architecture_overview.html)
+[Messaging Architecture Overview](overview_msg_architecture.html)
 - Updated information with more detail around publishers and subscribers
 
 [Search for Subscriptions](search_subscription.html)

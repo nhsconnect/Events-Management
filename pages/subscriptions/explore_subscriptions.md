@@ -7,7 +7,7 @@ permalink: explore_subscriptions.html
 summary: "Types of Subscription and how they are used"
 ---
 
-To receive event messages a consumer will need to subscribe to events they want to receive. The flow of event messages from publishers to subscribers is described on the [Messaging Architecture Overview](explore_msg_architecture_overview.html) page.
+To receive event messages a consumer will need to subscribe to events they want to receive. The flow of event messages from publishers to subscribers is described on the [Messaging Architecture Overview](overview_msg_architecture.html) page.
 
 
 ## Types of Subscription ##

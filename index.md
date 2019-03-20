@@ -20,7 +20,7 @@ The National Events Management Service (NEMS) is a national service implemented 
 
 The NEMS is designed to be a generic transport mechanism which can support a variety of use cases and event types from a number of different care settings. This specification focuses on the transport mechanism and the common event message elements:
 
-- [Messaging Architecture](explore_msg_architecture_overview.html)
+- [Messaging Architecture](overview_msg_architecture.html)
 - [Subscription Management](explore_subscriptions.html)
 - [Event Publication](publication_publish.html)
 - [Event Receiver Requirements](receiver_requirements.html) 
@@ -29,6 +29,8 @@ The specific event messages which have been defined for use through the NEMS can
 
 
 ## NEMS Events
+
+The [Supported Event Messages](overview_supported_events.html) page list the event messages currently supported by the NEMS for publication and subscription. When considering if the NEMS is suitable for a specific use case the following guidelines are generally followed.
 
 ### Events
 
@@ -44,19 +46,4 @@ This is the sort of use cases that would be considered an event and a suitable u
 ### None Events
 
 Where a provider records an encounter or information about a patient and the information would be useful for other providers to have access to, but where that data is not identified as something which would result in immediate action by another provider, this would not be considered an event or appropriate for sharing over the NEMS. There is complimentary Spine service along side the NEMS on Spine called the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrls/index.html) which is designed to help make this data sharing possible. The NRL is a collection of pointers to patient information within other systems. These pointers within NRL contain the information required to retrieve the patient information from the original source when it is required.
-
-
-## Event Message Implementation Guides
-
-The following implementation guides give detail around the content and use of the event messages defined by different programs. The [Supported Event Messages](overview_supported_events.html) page list the event messages currently supported by the NEMS for publication and subscription.
-
-| Implementation Guide | Description | Date Events Available |
-| --- | --- | --- |
-| [Demographic Update Event Messages](https://developer.nhs.uk/apis/demographicupdates-120-rc/) | Specification for demographic events published by the Spine, such as birth notification and demographic change notification. | March 2019 |
-| [Digital Child Health](https://nhsconnect.github.io/Digital-Child-Health-STU3/) | This specification contains the event messages defined by the Digital Child Health program to support the care of children. | May 2019 to<br/>TBC 2020<br/>(see guide for specific events) |
-| [National Population Failsafe Management](https://developer.nhs.uk/apis/npfm-beta/) | Specification containing information around the national population failsafe functionality and the event messages the service will publish to the EMS. | TBC 2019 |
-
-The `Date events available` column in the table is the date when the events specified within the implementation guide will be supported by the NEMS. This date does not indicate that suppliers will be publishing the event messages, only that the NEMS will accept the event message from the publishers and will distribute the event messages to the subscribers. The dates included are indicative of the current timeline for development but may change depending on priorities and feedback during development.
-
-Implementation guides such as `Digital Child Health` which contain a large number of events may be implemented incrementally. Events will be released for use once they have been implemented within the NEMS, while other event messages are still being developed. The Event Message Implementation Guides will contain specific detail around development and release dates for the individual event messages which are part of an incremental release process.
 

@@ -17,17 +17,19 @@ Each event message will carry a standard set of event header information:
 - Details of the service which published the event e.g. PDS, Failsafe
 - When the event was published
 
-This page provides an overview of the core FHIR profiles and elements required for as part of the event header information. Additional guidance and requirements are outlined in the event message specific [implementation guides](index.html#event-message-implementation-guides) for additional resources required in the [event messages](overview_supported_events.html).
+This page provides an overview of the core FHIR profiles and elements required for as part of the event header information. Additional guidance and requirements are outlined in the [event messages](overview_supported_events.html) specific guidance.
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/msg_architecture/event_header_information_bundle.png" target="_blank"><img src="images/msg_architecture/event_header_information_bundle.png"></a>
-	Event Message Bundle - Header Resources <a href="images/msg_architecture/event_header_information_bundle.png" target="_blank">(open in new TAB)</a>
+	<a href="images/messages/event_header_information_bundle.png" target="_blank"><img src="images/messages/event_header_information_bundle.png"></a>
+	Event Message Bundle - Header Resources <a href="images/messages/event_header_information_bundle.png" target="_blank">(open in new TAB)</a>
 </div>
 
 
 ## EMS-Bundle-1
 
-The event Bundle resource which contains the event message resources SHALL conform to the [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) constrained FHIR profile.
+The event Bundle resource which contains the event message resources SHALL conform to the [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) constrained FHIR profile and be of type `message`.
+
+This follows the [HL7 FHIR specification](http://hl7.org/fhir/bundle.html#message) for the Bundle resource when being used for messaging, which states that 'A message bundle (type = "message") consists of a series of entries, the first of which is a MessageHeader.'
 
 
 ## EMS-MessageHeader-1
