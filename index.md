@@ -25,7 +25,7 @@ The NEMS is designed to be a generic transport mechanism which can support a var
 - [Event Publication](publication_publish.html)
 - [Event Receiver Requirements](receiver_requirements.html) 
 
-The specific event messages which have been defined for use through the NEMS can be found in the Event Message Implementation Guides listed below. If the event messages currently defined do not meet your needs you can contact us using the details on the [Help & Support](support_contact.html) page to discuss how NEMS could be enhanced to meet your requirements.
+The specific event messages which have been defined for use through the NEMS can be found in the [Event Messages](overview_supported_events.html) part of this specification. If the event messages currently defined do not meet your needs you can contact us using the details on the [Help & Support](support_contact.html) page to discuss how NEMS could be enhanced to meet your requirements.
 
 
 ## NEMS Events
