@@ -46,7 +46,5 @@ A subscriber can use the [subscription API](explore_create_subscription.html) wi
 
 ## Delivery Of Event Messages
 
-Onward delivery to subscribers will be over MESH. The NEMS wraps up the published event message in an additional ITK FHIR bundle when forwarding the message over MESH, as outlined in the [Event Receiver Requirements](receiver_requirements.html) pages, to allow standard messaging controls to be used.
-
-For further information relating to MESH see [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
+Onward delivery of event messages to subscribers will be over [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
 

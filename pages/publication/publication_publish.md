@@ -35,8 +35,6 @@ To send an event message to the National Events Management Service (NEMS) the pu
 POST /$process-message
 ```
 
-{% include important.html content="The constructed event message SHALL NOT include any ITK3 wrapper elements, as these are added by the NEMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html))." %}
-
 ### Request Headers ###
 
 The publishing system MUST include the following HTTP request headers when making the call to the Publish API endpoint:
@@ -59,7 +57,7 @@ The National Events Management Service will perform validation on the event mess
 
 ## Onward Delivery of the event message to subscribers ##
 
-Following successful validation and providing a ```HTTP 202 Accepted``` response the National Events Management Service will match the event message to Subscription criteria, and forward the event message to the originating Organisation for the subscription.
+Following successful validation of the event message and the ```HTTP 202 Accepted``` response being sent to the publisher, the National Events Management Service will match the event message to Subscription criteria, and forward a copy of the event message to subscribing Organisations.
 
 ## Publish Event Example ##
 

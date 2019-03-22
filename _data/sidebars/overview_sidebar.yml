@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 1.6.0-Beta
+  version: 2.0.0-Beta
   levels: one
   folders:
 
@@ -91,9 +91,6 @@ entries:
       url: /receiver_requirements.html
       output: web
       type: homepage
-    - title: ITK3 FHIR Profiles
-      url: /itk_ems_profiles.html
-      output: web
 
   - title: Help & Support
     output: web
