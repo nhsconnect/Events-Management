@@ -29,11 +29,12 @@ In addition to the guidance on this page the guidance and requirement on the [Ge
 To send an event message to the National Events Management Service (NEMS) the publisher MUST:
 
 1. construct an event message which conforms to the [NEMS message architecture requirements](explore_event_header_information.html) within this specification.
-2. POST the event message to the National Events Management Service via the "$process-message" FHIR operation endpoint on the Spine
+2. POST the event message to the National Events Management Service via the following endpoint on the Spine. The **[Event_Code]** SHALL match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the events specific implementation guides.
 
 ```http
-POST /$process-message
+POST /Events/[event_code]
 ```
+
 
 ### Request Headers ###
 
@@ -43,7 +44,7 @@ The publishing system MUST include the following HTTP request headers when makin
 | --- | --- |
 | fromASID | ASID of the system posting to the Subscription API |
 | toASID | ASID of the NEMS service |
-| InteractionID | Value: `urn:nhs:names:services:nemspublish:[Event_Code]`<br/><br/>**[Event_Code]** SHALL match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the events specific implementation guides. |
+| InteractionID | Value: `urn:nhs:names:services:events:[Event_Code].write:2`<br/><br/>**[Event_Code]** SHALL match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the events specific implementation guides. |
 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
@@ -66,7 +67,7 @@ Following successful validation of the event message and the ```HTTP 202 Accepte
 The event message is included in the body of the POST request:
 
 ```xml
-POST https://clinicals.spineservices.nhs.uk/STU3/$process-message HTTP/1.1
+POST https://clinicals.spineservices.nhs.uk/STU3/Events/PDS002 HTTP/1.1
 
 <Bundle xmlns="http://hl7.org/fhir">
 	<meta>
