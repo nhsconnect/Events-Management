@@ -48,3 +48,37 @@ A subscriber can use the [subscription API](explore_create_subscription.html) wi
 
 Onward delivery of event messages to subscribers will be over [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
 
+
+## Event Message Sequencing
+
+Neither the NEMS or MESH guarantee that events will be sent to subscribers in the order that they are received by the NEMS via the publish API. This is common in eventing systems and the use of sequence numbers and/or timestamps to allow receivers to detect and handle out-of-order messages is best practice.
+
+For subscribers to detect and handle out-of-order messages the NEMS has included in the common event header:
+- an optional FHIR instant (time stamp with sub-second accuracy) element which represents the point in time that the change occurred which should be used for ordering messages for processing
+- an optional sequence number, to be assigned by the publisher. The sequence number shall be patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient.
+
+Event type support for out-of-order message handling and which method is the most appropriate to detect an out-of-order message will be set at a national level per event type, as part of the formal event definition.
+
+
+## Event-Lifecycle and Deprecation
+
+Changes to event definitions are a fact of life in event-based systems and therefore the NEMS has incorporated a mechanism to help manage these changes. The NHS is an extremely complex environment and keeping accurate track of who should be notified when changes are happening is likely to be extremely challenging. It is also not practical to rely on the operators of systems using NEMS to read emailed notifications or keep track of changes which we publish outside of the of the system.
+
+
+To simplify the management of event lifecycle the NEMS will:
+- including information on the event and API interaction responses to allows the fact that changes are happening or planned to be detected by the consuming system and signalled to operational teams.
+- event versioning will not be supported, I.e. there is no need for an event to carry any kind of version information. Events will be replaced wholesale by a completely new event type if they change
+
+### Mechanism
+
+The event message generic header and the publishing API response will include/return the following information when event lifecycle is changing:
+- An optional warning that the event is either:
+  - Deprecated
+  - No longer supported
+- An associated, optional date which will indicate:
+  - For deprecated events, the date on which the event will become no longer supported
+  - For no longer supported events, the date on which no new publication requests will be accepted
+- A URL to a human-readable web-page detailing the event-lifecycle changes occurring
+
+{% include important.html content="This event information will be set by NEMS and must not be populated by publishers." %}
+

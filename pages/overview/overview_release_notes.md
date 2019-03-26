@@ -14,8 +14,13 @@ This site is under active development by NHS Digital and is intended to provide 
 [Event Receiver Requirements](receiver_requirements.html)
 - Removed ITK3 Wrapper from solution
 
+[Messaging Architecture Overview](overview_msg_architecture.html)
+- Added information on Event Message Sequencing
+- Added information on Event-Lifecycle and Deprecation
+
 [Publish an Event Message](publication_publish.html)
 - Updated request header `interactionID` requirement
+
 
 
 ## 1.5.2-Beta (28/02/2019) ##

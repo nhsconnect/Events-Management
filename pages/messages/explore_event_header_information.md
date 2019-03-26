@@ -7,7 +7,7 @@ permalink: explore_event_header_information.html
 summary: "The standard event header information applicable to National Events Management Service event messages"
 ---
 
-## Event Header Information ##
+## Event Header Information
 
 Each event message will carry a standard set of event header information:
 
