@@ -9,10 +9,18 @@ summary: Summary release notes of the versions released in National Events Manag
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
-## 1.6.0-Beta () ##
+## 2.0.0-Beta () ##
+
+[Event Receiver Requirements](receiver_requirements.html)
+- Removed ITK3 Wrapper from solution
+
+[Messaging Architecture Overview](overview_msg_architecture.html)
+- Added information on Event Message Sequencing
+- Added information on Event-Lifecycle and Deprecation
 
 [Publish an Event Message](publication_publish.html)
 - Updated request header `interactionID` requirement
+- Updated publish URL
 
 
 ## 1.5.2-Beta (28/02/2019) ##
@@ -37,7 +45,7 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added information highlighting the intended use cases and what is considered an event.
 - Added information pointing to National Record Locator (NRL) for record retrieval.
 
-[Messaging Architecture Overview](explore_msg_architecture_overview.html)
+[Messaging Architecture Overview](overview_msg_architecture.html)
 - Added additional wording to `Delivery Of Event Messages` section of the page, linking to the `Event Receiver Requirements` within the spec.
 
 [Publish an Event Message](publication_publish.html)
@@ -131,7 +139,7 @@ Error Handling
 [Manage Subscription](explore_manage_subscription.html)
 - Updated example to be XML and added note about only XML support
 
-[Messaging Architecture Overview](explore_msg_architecture_overview.html)
+[Messaging Architecture Overview](overview_msg_architecture.html)
 - Updated information with more detail around publishers and subscribers
 
 [Search for Subscriptions](search_subscription.html)

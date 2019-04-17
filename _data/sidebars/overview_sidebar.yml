@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 1.6.0-Beta
+  version: 2.0.0-Beta
   levels: one
   folders:
 
@@ -12,8 +12,8 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-    - title: Supported Event Messages
-      url: /overview_supported_events.html
+    - title: Messaging Architecture
+      url: /overview_msg_architecture.html
       output: web
     - title: Guide Versioning
       url: /overview_guide_versioning.html
@@ -21,21 +21,33 @@ entries:
     - title: Release Notes
       url: /overview_release_notes.html
       output: web
-
-  - title: Messaging Architecture
-    output: web,pdf
+      
+  - title: Event Messages
+    output: web
     folderitems:
-    - title: Overview
-      url: /explore_msg_architecture_overview.html
+    - title: Supported Messages
+      url: /overview_supported_events.html
       output: web
-      type: homepage
-    - title: Bundle Structure
-      url: /explore_bundle_structure.html
-      output: web
-    - title: Event Header Information
+    - title: Message Header Information
       url: /explore_event_header_information.html
       output: web
-
+      subfolders:
+      - title: Messages
+        output: web
+        subfolderitems:
+        - title: PDS Birth Notification
+          url: /pds_birth_notification.html
+          output: web
+        - title: PDS Change of Address
+          url: /pds_change_of_address.html
+          output: web
+        - title: PDS Change of GP
+          url: /pds_change_of_gp.html
+          output: web
+        - title: PDS Death Notification
+          url: /pds_death_notification.html
+          output: web
+          
   - title: Subscription Management
     output: web,pdf
     folderitems:
@@ -59,7 +71,7 @@ entries:
       url: /explore_manage_subscription.html
       output: web
 
-  - title: Event Publication
+  - title: Event Message Publication
     output: web,pdf
     folderitems:
     - title: Information Governance
@@ -72,16 +84,13 @@ entries:
       url: /publication_publish.html
       output: web
 
-  - title: Event Receiver
+  - title: Event Message Receiver
     output: web,pdf
     folderitems:
     - title: Overview
       url: /receiver_requirements.html
       output: web
       type: homepage
-    - title: ITK3 FHIR Profiles
-      url: /itk_ems_profiles.html
-      output: web
 
   - title: Help & Support
     output: web

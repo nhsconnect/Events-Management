@@ -28,14 +28,13 @@ In addition to the guidance on this page the guidance and requirement on the [Ge
 
 To send an event message to the National Events Management Service (NEMS) the publisher MUST:
 
-1. construct an event message which conforms to the [NEMS message architecture requirements](explore_bundle_structure.html) within this specification and one of the event message implementation guides listed on the [Introduction to National Events Management Service](index.html#event-message-implementation-guides) page.
-2. POST the event message to the National Events Management Service via the "$process-message" FHIR operation endpoint on the Spine
+1. construct an event message which conforms to the [NEMS message architecture requirements](explore_event_header_information.html) within this specification.
+2. POST the event message to the National Events Management Service via the following endpoint on the Spine. The **[Event_Code]** SHALL match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the events specific implementation guides.
 
 ```http
-POST /$process-message
+POST /Events/[event_code]
 ```
 
-{% include important.html content="The constructed event message SHALL NOT include any ITK3 wrapper elements, as these are added by the NEMS before passing the event message onto subscribers (see [receiver requirements](receiver_requirements.html))." %}
 
 ### Request Headers ###
 
@@ -45,7 +44,7 @@ The publishing system MUST include the following HTTP request headers when makin
 | --- | --- |
 | fromASID | ASID of the system posting to the Subscription API |
 | toASID | ASID of the NEMS service |
-| InteractionID | Value: `urn:nhs:names:services:nemspublish:[Event_Code]`<br/><br/>**[Event_Code]** SHALL match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the [Events Specific Implementation Guides](index.html#event-message-implementation-guides). |
+| InteractionID | Value: `urn:nhs:names:services:events:[Event_Code].write:2`<br/><br/>**[Event_Code]** SHALL match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the events specific implementation guides. |
 
 Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
@@ -59,7 +58,7 @@ The National Events Management Service will perform validation on the event mess
 
 ## Onward Delivery of the event message to subscribers ##
 
-Following successful validation and providing a ```HTTP 202 Accepted``` response the National Events Management Service will match the event message to Subscription criteria, and forward the event message to the originating Organisation for the subscription.
+Following successful validation of the event message and the ```HTTP 202 Accepted``` response being sent to the publisher, the National Events Management Service will match the event message to Subscription criteria, and forward a copy of the event message to subscribing Organisations.
 
 ## Publish Event Example ##
 
@@ -68,7 +67,7 @@ Following successful validation and providing a ```HTTP 202 Accepted``` response
 The event message is included in the body of the POST request:
 
 ```xml
-POST https://clinicals.spineservices.nhs.uk/STU3/$process-message HTTP/1.1
+POST https://clinicals.spineservices.nhs.uk/STU3/Events/PDS002 HTTP/1.1
 
 <Bundle xmlns="http://hl7.org/fhir">
 	<meta>
