@@ -55,9 +55,6 @@ entries:
       url: /explore_subscriptions.html
       output: web
       type: homepage
-    - title: Information Governance
-      url: /subscription_ig.html
-      output: web
     - title: Generic API Guidance
       url: /subscription_general_api_guidance.html
       output: web
@@ -91,6 +88,9 @@ entries:
       url: /receiver_requirements.html
       output: web
       type: homepage
+    - title: Information Governance
+      url: /receiver_ig.html
+      output: web
 
   - title: Help & Support
     output: web
@@ -98,11 +98,4 @@ entries:
     - title: Contact Us
       url: /support_contact.html
       output: web
-      subfolders:
-      - title: Where Else Can I Look?
-        output: web
-        subfolderitems:
-        - title: FHIR Tools
-          url: /support_fhirtools.html
-          output: web
 
