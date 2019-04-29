@@ -29,10 +29,10 @@ In addition to the guidance on this page the guidance and requirement on the [Ge
 To send an event message to the National Events Management Service (NEMS) the publisher MUST:
 
 1. construct an event message which conforms to the [NEMS message architecture requirements](explore_event_header_information.html) within this specification.
-2. POST the event message to the National Events Management Service via the following endpoint on the Spine. The **[Event_Code]** SHALL match the event code within the MessageHeader resource of the published event message. Event codes are specified on the [Supported Event Messages](overview_supported_events.html) page and in the events specific implementation guides.
+2. POST the event message to the National Events Management Service via the "$process-message" FHIR operation endpoint on the Spine
 
 ```http
-POST /Events/[event_code]
+POST /$process-message
 ```
 
 

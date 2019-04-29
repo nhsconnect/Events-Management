@@ -20,7 +20,6 @@ This site is under active development by NHS Digital and is intended to provide 
 
 [Publish an Event Message](publication_publish.html)
 - Updated request header `interactionID` requirement
-- Updated publish URL
 
 
 ## 1.5.2-Beta (28/02/2019) ##
