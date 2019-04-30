@@ -31,9 +31,7 @@ More information around the messaging pattern is available on the NHS Digital de
 
 ## Publishers
 
-Event messages are created by services such as the National Population Failsafe, the Spine Patient Demographics Service, a hospital, a child health service and are constructed in line with this event message implementation guide.
-
-The event messages have a common [Event Header Information](explore_event_header_information.html) structure which allows the receiving system of the event message to identify the patient this event relates to, the type of event message and additional meta data about the event message such as the originating organisation.
+Event messages are created by services such as the Spine Patient Demographics Service, hospitals, child health service, etc. The event messages are constructed in line with this specification and the contained event message guidance.
 
 Once the publisher has constructed the event message they use the NEMS [publish API](publication_publish.html) to send the event message to the NEMS. If the event message is valid the NEMS will return an accepted response to the publisher before continuing to process the event message internally.
 
@@ -48,16 +46,17 @@ A subscriber can use the [subscription API](explore_create_subscription.html) wi
 
 Onward delivery of event messages to subscribers will be over [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
 
+The event messages have a common [Event Header Information](explore_event_header_information.html) structure which allows the receiving system of the event message to identify the patient this event relates to, the type of event message and additional meta data about the event message such as the originating organisation.
 
 ## Event Message Sequencing
 
-Neither the NEMS or MESH guarantee that events will be sent to subscribers in the order that they are received by the NEMS via the publish API. This is common in eventing systems and the use of sequence numbers and/or timestamps to allow receivers to detect and handle out-of-order messages is best practice.
+Neither the NEMS or MESH guarantee that events will be sent to subscribers in the order that they are received by the NEMS via the publish API. This is common in eventing systems and the use of sequence numbers and/or timestamps allows receivers to detect and handle out-of-order messages.
 
-For subscribers to detect and handle out-of-order messages the NEMS has included in the common event header:
+For subscribers to detect and handle out-of-order messages the NEMS has included in the common event header resources:
 - an optional FHIR instant (time stamp with sub-second accuracy) element which represents the point in time that the change occurred which should be used for ordering messages for processing
 - an optional sequence number, to be assigned by the publisher. The sequence number shall be patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient.
 
-Event type support for out-of-order message handling and which method is the most appropriate to detect an out-of-order message will be set at a national level per event type, as part of the formal event definition.
+Individual event support for out-of-order message handling and which method is the most appropriate to detect an out-of-order message will be set at a national level per event type, as part of the formal event definition.
 
 
 ## Event-Lifecycle and Deprecation
@@ -66,7 +65,7 @@ Changes to event definitions are a fact of life in event-based systems and there
 
 
 To simplify the management of event lifecycle the NEMS will:
-- including information on the event and API interaction responses to allows the fact that changes are happening or planned to be detected by the consuming system and signalled to operational teams.
+- including information in the event message and on the publish API interaction responses to allows the fact that changes are happening or planned to be detected by the consuming system and signalled to operational teams.
 - event versioning will not be supported, I.e. there is no need for an event to carry any kind of version information. Events will be replaced wholesale by a completely new event type if they change
 
 ### Mechanism
@@ -80,5 +79,12 @@ The event message generic header and the publishing API response will include/re
   - For no longer supported events, the date on which no new publication requests will be accepted
 - A URL to a human-readable web-page detailing the event-lifecycle changes occurring
 
-{% include important.html content="This event information will be set by NEMS and must not be populated by publishers." %}
+{% include important.html content="This deprecation information will be set by NEMS and will not be populated by publishers." %}
 
+### Example
+
+If we have a admission event with the event type code `ADM-v1` and we want to replace it with a new admission event we will create the new admission event and give it a new event type code `ADM-v2`. A deprecation warning will be added to the old `ADM-v1` event indicating when it will no longer be supported.
+ 
+There is another event with event type code `Other-Event-v1` which we are removing as it is no longer needed, therefore we deprecate it without there being a replacement event.
+
+<a href="images/overview/event_life_cycle.png" target="_blank"><img src="images/overview/event_life_cycle.png"></a>
