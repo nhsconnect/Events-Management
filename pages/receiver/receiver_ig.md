@@ -15,5 +15,5 @@ The auditing done within a receiving systems to the NEMS must contain enough inf
 
 - identify which systems have consumed data received via the NEMS
 - identify how the the data received has been used
-- identify who has has accessed the data received via the NEMS
+- identify who has had accessed the data received via the NEMS
 
