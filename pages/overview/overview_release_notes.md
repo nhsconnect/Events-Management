@@ -16,12 +16,18 @@ Release 2.0.0-Beta includes a significant spec re-structure to improve readabili
 [Event Receiver Requirements](receiver_requirements.html)
 - Removed ITK3 Wrapper from solution
 
+[Introduction to National Events Management Service](index.html)
+- Updated wording around definition of what is an event within the context of the NEMS.
+
 [Messaging Architecture Overview](overview_msg_architecture.html)
 - Added information on Event Message Sequencing
 - Added information on Event-Lifecycle and Deprecation
 
 [Publish an Event Message](publication_publish.html)
 - Updated request header `interactionID` requirement
+
+[Receiver Information Governance](receiver_ig.html)
+- Moved the Subscription IG page to the Receiver section as requirements are around audit of received events rather than around use of the subscription API.
 
 
 ## 1.5.2-Beta (28/02/2019) ##
