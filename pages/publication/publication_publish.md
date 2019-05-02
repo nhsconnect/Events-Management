@@ -28,7 +28,7 @@ In addition to the guidance on this page the guidance and requirement on the [Ge
 
 To send an event message to the National Events Management Service (NEMS) the publisher MUST:
 
-1. construct an event message which conforms to the [NEMS message architecture requirements](explore_event_header_information.html) within this specification.
+1. construct an event message which conforms to the [NEMS message architecture requirements](explore_event_header_information.html) and one of the [event message](overview_supported_events.html) specific population requirements pages.
 2. POST the event message to the National Events Management Service via the "$process-message" FHIR operation endpoint on the Spine
 
 ```http
@@ -54,6 +54,20 @@ The National Events Management Service will perform validation on the event mess
 
 - a ```HTTP 202 Accepted``` response when the event message successfully passes validation
 - an `OperationOutcome` FHIR resource containing error information when the event message fails validation. The OperationOutcome resource will contain one of the [Spine ErrorOrWarning Codes](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) and conform to the structure set out in the [Spine Core FHIR](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) specification.
+
+### Deprecation Warnings
+
+In order for the NEMS to communicate to a publisher that an event type is going to be deprecated, the NEMS will include an OperationOutcome payload along with the successful 202 Accepted response, when the event type being published is due to be deprecated.
+
+The OperationOutcome resource will containing the following extension elements, containing details of the deprecation for the published event type:
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| extension(eventLifeCycle).warningCode | 0..1 | Event life cycle warning type. |
+| extension(eventLifeCycle).dateTime | 0..1 | Date on which the event message type will be deprecated and will no longer be supported/accepted by the NEMS. |
+| extension(eventLifeCycle).url | 0..1 | Url of page giving additional detail around the deprecation of this event type. |
+
+When a message becomes deprecated the NEMS will no longer accept publication of that event message type and will return an error. For more information on event life cycle and event type deprecation can be seen on the [Messaging Architecture Overview](overview_msg_architecture.html#event-lifecycle-and-deprecation) page.
 
 
 ## Onward Delivery of the event message to subscribers ##
