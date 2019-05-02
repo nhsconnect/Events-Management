@@ -27,5 +27,5 @@ The following event messages are supported by the NEMS for either publication an
 | Event | Implementation Guide | Publication API | Subscription API | Date Available |
 |---|---|:---:|:---:|---|
 | [Newborn Hearing](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_newborn_hearing.html) | Digital Child Health | &#9989; | &#9989; | TBC 2019 |
-| [NIPE Outcome](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_nipe_outcome.html) | CH024 | &#9989; | &#9989; | TBC 2019 |
+| [NIPE Outcome](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_nipe_outcome.html) | Digital Child Health | &#9989; | &#9989; | TBC 2019 |
 | [Vaccinations](https://nhsconnect.github.io/Digital-Child-Health-STU3/explore_vaccination_administration.html) | Digital Child Health | &#9989; | &#9989; | TBC 2019 |
