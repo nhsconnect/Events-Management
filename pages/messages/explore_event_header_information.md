@@ -38,9 +38,14 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
+| extension(eventLifeCycle).warningCode | 0..1 | **Event Deprecation** - Event life cycle warning type. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
+| extension(eventLifeCycle).dateTime | 0..1 | **Event Deprecation** - Date on which the event message type will be deprecated and will no longer be supported/accepted by the NEMS. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
+| extension(eventLifeCycle).url | 0..1 | **Event Deprecation** - Url of page giving additional detail around the deprecation of this event type. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
+| meta.versionId | 0..1 | **Message Sequencing** - A sequence number for the purpose of ordering messages for processing. The sequence number must be an integer which is patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient. |
+| meta.lastUpdated | 0..1 | **Message Sequencing** - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
 | extension(eventMessageType) | 1..1 | The type value which shall appear in this element will be defined within the separate event message implementation guide for each of the event messages, as the value will depend on the life cycle of the specific event message. |
 | id | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
-| event | 1..1 | The type of event as specified within the event message implementation guides, e.g. PDS Birth Notification, Failsafe Alert |
+| event | 1..1 | **Event Type** - The type of event as specified within the event message implementation guides, e.g. PDS Birth Notification, Failsafe Alert |
 | source | 1..1 | The IT system which holds the information that originated the event |
 | source.name | 1..1 | A human readable name for the IT system which holds the information that originated the event |
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |

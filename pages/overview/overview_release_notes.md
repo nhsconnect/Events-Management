@@ -11,7 +11,7 @@ This site is under active development by NHS Digital and is intended to provide 
 
 ## 2.0.0-Beta () ##
 
-Release 2.0.0-Beta includes a significant spec re-structure to improve readability of the specification.
+{% include important.html content="Release 2.0.0-Beta includes a significant spec re-structure to improve readability of the specification." %}
 
 [Event Receiver Requirements](receiver_requirements.html)
 - Removed ITK3 Wrapper from solution

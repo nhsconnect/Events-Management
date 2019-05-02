@@ -56,13 +56,12 @@ For subscribers to detect and handle out-of-order messages the NEMS has included
 - an optional FHIR instant (time stamp with sub-second accuracy) element which represents the point in time that the change occurred which should be used for ordering messages for processing
 - an optional sequence number, to be assigned by the publisher. The sequence number shall be patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient.
 
-Individual event support for out-of-order message handling and which method is the most appropriate to detect an out-of-order message will be set at a national level per event type, as part of the formal event definition.
+Individual event support for out-of-order message handling and which method is the most appropriate to detect an out-of-order message will be set at a national level per event type, as part of the formal event definition. Additional information on which elements need to be populate can be seen on the [Event Header Information](explore_event_header_information.html) page, within the resource population guidance section for the `MessageHeader` resource.
 
 
 ## Event-Lifecycle and Deprecation
 
 Changes to event definitions are a fact of life in event-based systems and therefore the NEMS has incorporated a mechanism to help manage these changes. The NHS is an extremely complex environment and keeping accurate track of who should be notified when changes are happening is likely to be extremely challenging. It is also not practical to rely on the operators of systems using NEMS to read emailed notifications or keep track of changes which we publish outside of the of the system.
-
 
 To simplify the management of event lifecycle the NEMS will:
 - including information in the event message and on the publish API interaction responses to allows the fact that changes are happening or planned to be detected by the consuming system and signalled to operational teams.
@@ -80,6 +79,8 @@ The event message generic header and the publishing API response will include/re
 - A URL to a human-readable web-page detailing the event-lifecycle changes occurring
 
 {% include important.html content="This deprecation information will be set by NEMS and will not be populated by publishers." %}
+
+Information on which resources and elements will be used to communicate these deprecation warnings can be seen on the [Event Header Information](explore_event_header_information.html) page for deprecation warnings to subscribers and the [Publish an Event Message](publication_publish.html) page for deprecation warnings to publishers.
 
 ### Example
 
