@@ -25,14 +25,14 @@ This page provides an overview of the core FHIR profiles and elements required f
 </div>
 
 
-## EMS-Bundle-1
+## [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)
 
 The event Bundle resource which contains the event message resources SHALL conform to the [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) constrained FHIR profile and be of type `message`.
 
 This follows the [HL7 FHIR specification](http://hl7.org/fhir/bundle.html#message) for the Bundle resource when being used for messaging, which states that 'A message bundle (type = "message") consists of a series of entries, the first of which is a MessageHeader.'
 
 
-## EMS-MessageHeader-1
+## [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)
 
 The MessageHeader resource included as part of the event message SHALL conform to the [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
 
@@ -57,7 +57,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 The FHIR resource referenced by the `focus` element within the `MessageHeader` will be defined within the individual event message implementation guides for the event message being published. This resource will contain a `subject` element pointing to a Patient resource which represents the patient who is the focus of the event message.
 
 
-## CareConnect-EMS-Patient-1
+## [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)
 
 The patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
@@ -69,7 +69,7 @@ The patient resource included in the event message SHALL conform to the [CareCon
 | address | 0..* | If an address is included in the patient resource the publisher **SHALL** included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
 
 
-## CareConnect-Organization-1
+## [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
 Multiple organisations may be referenced from the event message. Organisations are included as part of the event header information to fulfil the following requirements:
 
