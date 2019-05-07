@@ -22,9 +22,7 @@ The focus of the PDS Birth Notification event message is the `CareConnect-EMS-Pa
 
 ## PDS Birth Notification Event Message Life Cycle ##
 
-The `PDS Birth Notification` event message is only ever sent once by the Spine and will be a `new` event. There is no concept of `update` or `delete` for the event message.
-
-The birth notification event will be triggered by a birth being registered on the Spine.
+The birth notification event is triggered by a birth being registered on the Spine. The `PDS Birth Notification` event message will only be sent once by the Spine and the MessageHeader resource will contain a `eventMessageType` extension with value `new`. There will be no `update` or `delete` version of this event message.
 
 
 ## Onward Delivery ##
@@ -36,12 +34,14 @@ The delivery of the PDS Birth Notification event messages to subscribers via MES
 
 ## Resource population requirements and guidance ##
 
-The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Events Management Service](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) specification.
+The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Event Header](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) requirements page.
 
 
 ### [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)
 
 The Bundle resource is the container for the event message and SHALL conform to the [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) constrained FHIR profile.
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -51,6 +51,8 @@ The Bundle resource is the container for the event message and SHALL conform to 
 ### [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)
 
 The MessageHeader resource included as part of the event message SHALL conform to the [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -63,6 +65,8 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 The Communication resource included in the event message SHALL conform to the [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
 
+| Resource Cardinality | 1..1 |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | status | 1..1 | Fixed value: `completed` |
@@ -72,6 +76,8 @@ The Communication resource included in the event message SHALL conform to the [E
 ### [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) (Mother)
 
 This Patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -87,6 +93,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 ### [CareConnect-EMS-PDS-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Baby-Patient-1) (Baby)
 
 This Patient resource included in the event message SHALL conform to the [CareConnect-EMS-PDS-Baby-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-Baby-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -107,6 +115,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 ### [CareConnect-EMS-PDS-NumberOfBirths-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-NumberOfBirths-Observation-1)
 
+| Resource Cardinality | TBC |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | valueQuantity | 1..1 | Number of Births in Confinement |
@@ -114,6 +124,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 
 ### [CareConnect-EMS-PDS-BirthWeight-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-BirthWeight-Observation-1)
+
+| Resource Cardinality | TBC |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -123,6 +135,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 ### [CareConnect-EMS-PDS-GestationAge-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-GestationAge-Observation-1)
 
+| Resource Cardinality | TBC |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | valueQuantity | 1..1 | Gestation Age of the baby |
@@ -130,6 +144,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 
 ### [CareConnect-EMS-PDS-StillbornIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-StillBornIndicator-Observation-1)
+
+| Resource Cardinality | TBC |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -139,6 +155,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 ### [CareConnect-EMS-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-SuspectedCongenitalAbnormalityIndicator-Observation-1)
 
+| Resource Cardinality | TBC |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | valueQuantity | 1..1 | Suspected Congenital Abnormality Indicator, 'code' element uses SNOMED CT code '1097291000000101 - Suspected congenital abnormality (situation)' |
@@ -146,6 +164,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 
 ### [CareConnect-EMS-PDS-DeliveryPlace-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-DeliveryPlace-Organization-1)
+
+| Resource Cardinality | TBC |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -156,6 +176,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 ### [CareConnect-EMS-PDS-RegisteringAuthority-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-RegisteringAuthority-Organization-1)
 
+| Resource Cardinality | TBC |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | type | 1..1 | Registering Authority Type |
@@ -163,6 +185,8 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 
 ### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
+
+| Resource Cardinality | TBC |
 
 The notifying person for this event message.
 
@@ -173,6 +197,8 @@ The notifying person for this event message.
 
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
+
+| Resource Cardinality | TBC |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |

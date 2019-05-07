@@ -49,12 +49,14 @@ The delivery of the PDS Death Notification event messages to subscribers via MES
 
 ## Resource population requirements and guidance ##
 
-The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Events Management Service](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) specification.
+The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Event Header](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) requirements page.
 
 
 ### [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)
 
 The Bundle resource is the container for the event message and SHALL conform to the [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) constrained FHIR profile.
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -64,6 +66,8 @@ The Bundle resource is the container for the event message and SHALL conform to 
 ### [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)
 
 The MessageHeader resource included as part of the event message SHALL conform to the [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -76,6 +80,8 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 The Communication resource included in the event message SHALL conform to the [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
 
+| Resource Cardinality | 1..1 |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | status | 1..1 | Will be populated as per the event life cycle table above. |
@@ -86,6 +92,8 @@ The Communication resource included in the event message SHALL conform to the [E
 
 The HealthcareService resource included in the event message SHALL conform to the [EMS-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
 
+| Resource Cardinality | TBC |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | providedBy | 1..1 | This will reference the source organization of the event message. For PDS events this will be a reference to an organization resource which can be retrieved using the [ODS Lookup API](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html) |
@@ -95,6 +103,8 @@ The HealthcareService resource included in the event message SHALL conform to th
 ### [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)
 
 The patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |

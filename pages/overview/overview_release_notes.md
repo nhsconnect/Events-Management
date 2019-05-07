@@ -23,6 +23,18 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added information on Event Message Sequencing
 - Added information on Event-Lifecycle and Deprecation
 
+[PDS Birth Notification](pds_birth_notification.html)
+- Added resource cardinality information to specification
+
+[PDS Change of Address](pds_change_of_address.html)
+- Added resource cardinality information to specification
+
+[PDS Change of GP](pds_change_of_gp.html)
+- Added resource cardinality information to specification
+
+[PDS death Notification](pds_death_notification.html)
+- Added resource cardinality information to specification
+
 [Publish an Event Message](publication_publish.html)
 - Updated request header `interactionID` requirement
 

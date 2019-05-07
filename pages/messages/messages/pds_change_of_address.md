@@ -22,7 +22,7 @@ The `CareConnect-EMS-Patient-1` resource within the bundle will contain two addr
 
 ## PDS Change of Address Message Life Cycle ##
 
-The `PDS Change of Address` event message is always a `new` event and there is no concept of `update` or `delete` for the event message.
+The `PDS Change of Address` event message will always contain a `eventMessageType` extension with value `new` in the MessageHeader resource. There will be no `update` or `delete` version of this event message.
 
 If a subscriber receives multiple `PDS Change of Address` event messages for the same patient, the latest event message as indicated by the `timestamp` element within the MessageHeader resource should be considered the source of truth for the patient's correct address.
 
@@ -38,12 +38,14 @@ The delivery of the PDS Change of Address event messages to subscribers via MESH
 
 ## Resource population requirements and guidance ##
 
-The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Events Management Service](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) specification.
+The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Event Header](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) requirements page.
 
 
 ### [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)
 
 The Bundle resource is the container for the event message and SHALL conform to the [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) constrained FHIR profile.
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -53,6 +55,8 @@ The Bundle resource is the container for the event message and SHALL conform to 
 ### [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)
 
 The MessageHeader resource included as part of the event message SHALL conform to the [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -65,6 +69,8 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 The Communication resource included in the event message SHALL conform to the [EMS-Communication-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
 
+| Resource Cardinality | 1..1 |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | status | 1..1 | Fixed value: `completed` |
@@ -74,6 +80,8 @@ The Communication resource included in the event message SHALL conform to the [E
 ### [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)
 
 The patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
