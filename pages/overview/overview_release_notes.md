@@ -19,6 +19,9 @@ This site is under active development by NHS Digital and is intended to provide 
 [Introduction to National Events Management Service](index.html)
 - Updated wording around definition of what is an event within the context of the NEMS.
 
+[Manage Subscription]()
+- Page divided into two separate pages for the subscription interactions, [Read Subscription](explore_read_subscription.html) and [Delete Subscription](explore_delete_subscription.html)
+
 [Messaging Architecture Overview](overview_msg_architecture.html)
 - Added information on Event Message Sequencing
 - Added information on Event-Lifecycle and Deprecation

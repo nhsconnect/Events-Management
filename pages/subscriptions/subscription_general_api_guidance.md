@@ -7,6 +7,11 @@ permalink: subscription_general_api_guidance.html
 summary: "Generic additional guidance for using the Subscription API"
 ---
 
+## Updating a Subscription
+
+The National Events Management Service does not support different versions of Subscriptions, therefore any changes to a subscription will require that the existing subscription is deleted, and a new one created.
+
+
 ## NHS Numbers
 
 Any NHS numbers used when submitting a request to the NEMS subscription API SHALL have been traced against PDS (see the [Spine Core](https://developer.nhs.uk/apis/spine-core/pds_overview.html) specification for details).

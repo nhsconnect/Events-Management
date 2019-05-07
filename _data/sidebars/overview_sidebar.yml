@@ -64,8 +64,11 @@ entries:
 #    - title: Search for Subscriptions
 #      url: /search_subscription.html
 #      output: web
-    - title: Manage Subscription
-      url: /explore_manage_subscription.html
+    - title: Read Subscription
+      url: /explore_read_subscription.html
+      output: web
+    - title: Delete Subscription
+      url: /explore_delete_subscription.html
       output: web
 
   - title: Event Message Publication
