@@ -14,6 +14,6 @@ The following requirements must be met by receiving organisations in order to me
 The auditing done within a receiving systems to the NEMS must contain enough information to:
 
 - identify which systems have consumed data received via the NEMS
-- identify how the the data received has been used
+- identify how the the data received has been used, such as has the data being consumed into the patient record, ignored, etc.
 - identify who has had accessed the data received via the NEMS
 
