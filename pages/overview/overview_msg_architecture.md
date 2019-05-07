@@ -75,7 +75,7 @@ The event message generic header and the publishing API response will include/re
   - No longer supported
 - An associated, optional date which will indicate:
   - For deprecated events, the date on which the event will become no longer supported
-  - For no longer supported events, the date on which no new publication requests will be accepted
+  - For no longer supported events, the date on which publication requests will be rejected
 - A URL to a human-readable web-page detailing the event-lifecycle changes occurring
 
 {% include important.html content="This deprecation information will be set by NEMS and will not be populated by publishers." %}
