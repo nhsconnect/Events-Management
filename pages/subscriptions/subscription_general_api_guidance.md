@@ -39,7 +39,7 @@ All requests SHALL include a JWT with information about the requesting system an
 
 ## NEMS Supported MIME-types
 
-The supported MIME-types for the NEMS, for use in the "Content-Type" and "Accept" headers are:
+The supported MIME-types for the Subscription API are:
 
 - application/fhir+xml
 - application/fhir+json
@@ -51,3 +51,5 @@ The supported MIME-types for the NEMS, for use in the "Content-Type" and "Accept
 - application/json+fhir;charset=utf-8
 
 Where the MIME-type is not supplied the NEMS will default to `application/xml+fhir;charset=utf-8`
+
+{% include important.html content="Currently the National Events Management Service (NEMS) only supports XML for interactions with the publish API and onward delivery of event messages, therefore subscribers will not receive event messages in a JSON format." %}
