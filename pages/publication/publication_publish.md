@@ -63,9 +63,9 @@ The OperationOutcome resource will containing the following extension elements, 
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| extension(eventLifeCycle).warningCode | 0..1 | Event life cycle warning type. |
-| extension(eventLifeCycle).dateTime | 0..1 | Date on which the event message type will be deprecated and will no longer be supported/accepted by the NEMS. |
-| extension(eventLifeCycle).url | 0..1 | Url of page giving additional detail around the deprecation of this event type. |
+| **TBC** extension(eventLifeCycle).warningCode | 0..1 | Event life cycle warning type. |
+| **TBC** extension(eventLifeCycle).dateTime | 0..1 | Date on which the event message type will be deprecated and will no longer be supported/accepted by the NEMS. |
+| **TBC** extension(eventLifeCycle).url | 0..1 | Url of page giving additional detail around the deprecation of this event type. |
 
 When a message becomes deprecated the NEMS will no longer accept publication of that event message type and will return an error. For more information on event life cycle and event type deprecation can be seen on the [Messaging Architecture Overview](overview_msg_architecture.html#event-lifecycle-and-deprecation) page.
 
@@ -131,10 +131,51 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Events/PDS002 HTTP/1.1
 
 ### Response
 
-If successfully received and validated, the response is:
+Successful response no deprecation warning:
 
 ```http
 HTTP 202 Accepted
 Date: Fri, 25 May 2018 16:09:50 GMT
+```
+
+
+Successful response with **deprecation** warning:
+
+```http
+HTTP 202 Accepted
+Date: Fri, 25 May 2018 16:09:50 GMT
+
+<OperationOutcome>
+        <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-LifeCycle-1">
+               <extension url="code">
+                       <valueCodeableConcept>
+                          <coding>
+                            <system value="https://fhir.nhs.uk/STU3/CodeSystem/LifeCycleStatus-1"/>
+                            <code value="deprecated"/>
+                                  <display value="Message type has been deprecated"/>
+                          </coding>
+                       </valueCodeableConcept>
+               </extension>
+               <extension url="date">
+                       <valueDate value="2019-09-05"/>
+               </extension>
+               <extension url="url">
+                       <valueUri value="https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+               </extension>
+        </extension>
+        <id value="fbefbc40-5c3e-11e9-ad9c-000c293f75a0"/> 
+        <issue> 
+                <severity value="information"/> 
+               <code value="informational"/> 
+               <diagnostics value="Published event message accepted"/>
+               <details>
+                       <coding> 
+                          <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
+                          <code value="RESOURCE_CREATED"/> 
+                          <display value="New resource created"/> 
+                       </coding> 
+               </details> 
+        </issue> 
+</OperationOutcome>
 ```
 

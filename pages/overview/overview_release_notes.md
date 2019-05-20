@@ -11,10 +11,10 @@ This site is under active development by NHS Digital and is intended to provide 
 
 ## 2.0.0-Beta () ##
 
-{% include important.html content="Release 2.0.0-Beta includes a significant spec re-structure to improve readability of the specification." %}
+{% include important.html content="Release 2.0.0-Beta includes a significant specification re-structure to improve navigation and readability." %}
 
 [Event Receiver Requirements](receiver_requirements.html)
-- Removed ITK3 Wrapper from solution
+- Removed ITK3 Wrapper from solution (**Breaking Change**)
 
 [Generic Subscription API Requirements](subscription_general_api_guidance.html)
 - Added clarification for use of MIME types
@@ -42,7 +42,7 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added resource cardinality information to specification
 
 [Publish an Event Message](publication_publish.html)
-- Updated request header `interactionID` requirement
+- Updated request header `interactionID` requirement (**Breaking Change**)
 
 [Receiver Information Governance](receiver_ig.html)
 - Moved the Subscription IG page to the Receiver section as requirements are around audit of received events rather than around use of the subscription API.

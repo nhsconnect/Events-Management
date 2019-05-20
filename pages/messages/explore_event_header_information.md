@@ -7,6 +7,8 @@ permalink: explore_event_header_information.html
 summary: "The standard event header information applicable to National Events Management Service event messages"
 ---
 
+{% include important.html content="The common message header profiled FHIR resources are currently under review and are going to changes in order to make them generic and to align with the profiles used within other NHS Digital programs. The required content of the resources is not likely to change but profiles names, value sets are likely to be re-named." %}
+
 ## Event Header Information
 
 Each event message will carry a standard set of event header information:
@@ -38,9 +40,9 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| extension(eventLifeCycle).warningCode | 0..1 | **Event Deprecation** - Event life cycle warning type. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
-| extension(eventLifeCycle).dateTime | 0..1 | **Event Deprecation** - Date on which the event message type will be deprecated and will no longer be supported/accepted by the NEMS. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
-| extension(eventLifeCycle).url | 0..1 | **Event Deprecation** - Url of page giving additional detail around the deprecation of this event type. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
+| **TBC** - extension(eventLifeCycle).warningCode | 0..1 | **Event Deprecation** - Event life cycle warning type. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
+| **TBC** - extension(eventLifeCycle).dateTime | 0..1 | **Event Deprecation** - Date on which the event message type will be deprecated and will no longer be supported/accepted by the NEMS. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
+| **TBC** - extension(eventLifeCycle).url | 0..1 | **Event Deprecation** - Url of page giving additional detail around the deprecation of this event type. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
 | meta.versionId | 0..1 | **Message Sequencing** - A sequence number for the purpose of ordering messages for processing. The sequence number must be an integer which is patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient. |
 | meta.lastUpdated | 0..1 | **Message Sequencing** - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
 | extension(eventMessageType) | 1..1 | The type value which shall appear in this element will be defined within the separate event message implementation guide for each of the event messages, as the value will depend on the life cycle of the specific event message. |
