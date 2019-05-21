@@ -12,7 +12,17 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-    - title: Messaging Architecture
+    - title: Guide Versioning
+      url: /overview_guide_versioning.html
+      output: web
+    - title: Release Notes
+      url: /overview_release_notes.html
+      output: web
+
+  - title: Messaging Architecture
+    output: web
+    folderitems:
+    - title: Overview
       url: /overview_msg_architecture.html
       output: web
     - title: Message Sequencing
@@ -23,12 +33,6 @@ entries:
       output: web
     - title: Feedback Mechanism
       url: /overview_msg_architecture_feedback.html
-      output: web
-    - title: Guide Versioning
-      url: /overview_guide_versioning.html
-      output: web
-    - title: Release Notes
-      url: /overview_release_notes.html
       output: web
       
   - title: Event Messages
