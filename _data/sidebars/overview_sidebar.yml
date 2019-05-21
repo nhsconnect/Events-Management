@@ -15,6 +15,15 @@ entries:
     - title: Messaging Architecture
       url: /overview_msg_architecture.html
       output: web
+    - title: Message Sequencing
+      url: /overview_msg_architecture_sequencing.html
+      output: web
+    - title: Lifecycle and Deprecation
+      url: /overview_msg_architecture_life_cycle.html
+      output: web
+    - title: Feedback Mechanism
+      url: /overview_msg_architecture_feedback.html
+      output: web
     - title: Guide Versioning
       url: /overview_guide_versioning.html
       output: web

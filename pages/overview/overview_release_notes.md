@@ -13,6 +13,15 @@ This site is under active development by NHS Digital and is intended to provide 
 
 {% include important.html content="Release 2.0.0-Beta includes a significant specification re-structure to improve navigation and readability." %}
 
+[Event Feedback Mechanism](overview_msg_architecture_feedback.html)
+- Added page with information on the feedback mechanism for NEMS
+
+[Event Lifecycle and Deprecation](overview_msg_architecture_life_cycle.html)
+- Added page with information on Event-Lifecycle and Deprecation
+
+[Event Message Sequencing](overview_msg_architecture_sequencing.html)
+- Added page with information on Event Message Sequencing
+
 [Event Receiver Requirements](receiver_requirements.html)
 - Removed ITK3 Wrapper from solution (**Breaking Change**)
 
@@ -24,10 +33,6 @@ This site is under active development by NHS Digital and is intended to provide 
 
 [Manage Subscription]()
 - Page divided into two separate pages for the subscription interactions, [Read Subscription](explore_read_subscription.html) and [Delete Subscription](explore_delete_subscription.html)
-
-[Messaging Architecture Overview](overview_msg_architecture.html)
-- Added information on Event Message Sequencing
-- Added information on Event-Lifecycle and Deprecation
 
 [PDS Birth Notification](pds_birth_notification.html)
 - Added resource cardinality information to specification
