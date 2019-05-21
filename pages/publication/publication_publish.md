@@ -32,7 +32,7 @@ To send an event message to the National Events Management Service (NEMS) the pu
 2. POST the event message to the National Events Management Service via the "$process-message" FHIR operation endpoint on the Spine
 
 ```http
-POST /$process-message
+POST https://demographics.spineservices.nhs.uk​/STU3/Events/1/$process-message
 ```
 
 
@@ -81,7 +81,7 @@ Following successful validation of the event message and the ```HTTP 202 Accepte
 The event message is included in the body of the POST request:
 
 ```xml
-POST https://clinicals.spineservices.nhs.uk/STU3/Events/PDS002 HTTP/1.1
+POST https://clinicals.spineservices.nhs.uk/STU3/Events/1/$process-message HTTP/1.1
 
 <Bundle xmlns="http://hl7.org/fhir">
 	<meta>
