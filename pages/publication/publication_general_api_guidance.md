@@ -9,9 +9,14 @@ summary: "Generic additional guidance for using the Publication API"
 
 ## NHS Numbers
 
-Any NHS numbers used when submitting an event to the NEMS Publication API SHALL have been traced against PDS (see the [Spine Core](https://developer.nhs.uk/apis/spine-core/pds_overview.html) specification for details).
+Any NHS numbers used within an event message published to the NEMS SHALL be traced against PDS (see the [Spine Core](https://developer.nhs.uk/apis/spine-core/pds_overview.html) specification for details) before sending it to the NEMS Publish API.
 
-The provider SHOULD aim to perform the PDS trace directly before performing the publish of the event message but SHALL have performed the PDS trace within 24 hours prior to the publish of the event message.
+Level of NHS number validation required:
+
+- Suppliers SHALL have a way of validating/independently checking that the NHS number belongs to the patients that the event is about.
+- Suppliers must be able to react to changes in a patients NHS Number and changes to their PDS record. Even if an NHS number has previously been validated, that NHS number could have since been invalidated, superseded, or similar. If a supplier cannot perform a PDS synchronisation or retrieve an NHS number for a patient, they will not be able to handle these eventualities and therefore will not be able to successfully publish events to the NEMS.
+
+The NEMS performs a standard cross-check trace but this is not so strict that it would be impossible for the NEMS to accept an NHS number and demographic details that belong to different patients. For this reason the NHS number validation performed by the NEMS does not negate the need for suppliers to validate an NHS numbers they are going to use in event messages they publish to the NEMS.
 
 
 ## Endpoint Registration

@@ -25,8 +25,12 @@ This site is under active development by NHS Digital and is intended to provide 
 [Event Receiver Requirements](receiver_requirements.html)
 - Removed ITK3 Wrapper from solution (**Breaking Change**)
 
+[Generic Publication API Requirements](publication_general_api_guidance.html)
+- Added clarification on level of NHS Number validation required for NHS numbers used in the event messages.
+
 [Generic Subscription API Requirements](subscription_general_api_guidance.html)
 - Added clarification for use of MIME types
+- Added clarification on level of NHS Number validation required for NHS numbers used in subscriptions.
 
 [Introduction to National Events Management Service](index.html)
 - Updated wording around definition of what is an event within the context of the NEMS.
