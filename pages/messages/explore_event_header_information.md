@@ -129,7 +129,7 @@ Multiple organisations may be referenced from the event message. Organisations a
 
 ### Referencing the ODS API
 
-When referencing an organisation from an event message, the publisher constructing the event message SHALL aim to use an absolute URL reference to an Organization resource stored on the Spine directory, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html), rather than including the Organization resource within the message bundle.
+When referencing an organisation from an event message, the publisher constructing the event message SHOULD use an absolute URL reference to an Organization resource stored on the Spine directory, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html), rather than including the Organization resource within the message bundle.
 
 The benefit of referencing the organisation resource on the Spine directory is that the information relating to that organisation such as contact details will be kept up to date. If the organisation information is included in the event message bundle as a resource the details for that organisation will become out of date.
 
