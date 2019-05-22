@@ -56,6 +56,8 @@ This site is under active development by NHS Digital and is intended to provide 
 [Receiver Information Governance](receiver_ig.html)
 - Moved the Subscription IG page to the Receiver section as requirements are around audit of received events rather than around use of the subscription API.
 
+[Subscriptions Overview](explore_subscriptions.html)
+- Added information to the geographical rule based subscriptions section around appropriate use of this type of subscription.
 
 ## 1.5.3-Beta (02/05/2019) ##
 
