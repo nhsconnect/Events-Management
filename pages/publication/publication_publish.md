@@ -59,13 +59,30 @@ The National Events Management Service will perform validation on the event mess
 
 In order for the NEMS to communicate to a publisher that an event type is going to be deprecated, the NEMS will include an OperationOutcome payload along with the successful 202 Accepted response, when the event type being published is due to be deprecated.
 
-The OperationOutcome resource will containing the following extension elements, containing details of the deprecation for the published event type:
+The OperationOutcome resource will containing the following elements, containing details of the deprecation for the published event type:
 
-| Element | Cardinality | Additional Guidance |
+| Element | Cardinality | Description |
 | --- | --- | --- |
-| **TBC** extension(eventLifeCycle).warningCode | 0..1 | Event life cycle warning type. |
-| **TBC** extension(eventLifeCycle).dateTime | 0..1 | Date on which the event message type will be deprecated and will no longer be supported/accepted by the NEMS. |
-| **TBC** extension(eventLifeCycle).url | 0..1 | Url of page giving additional detail around the deprecation of this event type. |
+| issue.details.coding.code | 1..1 | The event life cycle warning type. |
+| issue.diagnostics | 1..1 | Additional information about the event type deprecation including the date when the event will be deprecated and no longer supported by the NEMS and a URL where additional information about the event can be found. |
+
+**Example:**
+```xml
+<OperationOutcome>
+   <issue> 
+      <severity value="information"/> 
+      <code value="informational"/> 
+      <details>
+         <coding> 
+            <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
+            <code value="DEPRECATED"/> 
+            <display value="The operation being performed has been deprecated"/> 
+         </coding> 
+      </details> 
+      <diagnostics value="Deprecation of the PDS Birth Notification (PDS003) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+   </issue> 
+</OperationOutcome>
+```
 
 When a message becomes deprecated the NEMS will no longer accept publication of that event message type and will return an error. For more information on event life cycle and event type deprecation can be seen on the [Messaging Architecture Overview](overview_msg_architecture.html#event-lifecycle-and-deprecation) page.
 
@@ -146,36 +163,18 @@ HTTP 202 Accepted
 Date: Fri, 25 May 2018 16:09:50 GMT
 
 <OperationOutcome>
-        <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-LifeCycle-1">
-               <extension url="code">
-                       <valueCodeableConcept>
-                          <coding>
-                            <system value="https://fhir.nhs.uk/STU3/CodeSystem/LifeCycleStatus-1"/>
-                            <code value="deprecated"/>
-                                  <display value="Message type has been deprecated"/>
-                          </coding>
-                       </valueCodeableConcept>
-               </extension>
-               <extension url="date">
-                       <valueDate value="2019-09-05"/>
-               </extension>
-               <extension url="url">
-                       <valueUri value="https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
-               </extension>
-        </extension>
-        <id value="fbefbc40-5c3e-11e9-ad9c-000c293f75a0"/> 
-        <issue> 
-                <severity value="information"/> 
-               <code value="informational"/> 
-               <diagnostics value="Published event message accepted"/>
-               <details>
-                       <coding> 
-                          <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
-                          <code value="RESOURCE_CREATED"/> 
-                          <display value="New resource created"/> 
-                       </coding> 
-               </details> 
-        </issue> 
+   <issue> 
+      <severity value="information"/> 
+      <code value="informational"/> 
+      <details>
+         <coding> 
+            <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
+            <code value="DEPRECATED"/> 
+            <display value="The operation being performed has been deprecated"/> 
+         </coding> 
+      </details> 
+      <diagnostics value="Deprecation of the PDS Birth Notification (PDS003) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+   </issue> 
 </OperationOutcome>
 ```
 

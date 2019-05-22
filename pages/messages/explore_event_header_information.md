@@ -40,9 +40,6 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| **TBC** - extension(eventLifeCycle).warningCode | 0..1 | **Event Deprecation** - Event life cycle warning type. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
-| **TBC** - extension(eventLifeCycle).dateTime | 0..1 | **Event Deprecation** - Date on which the event message type will be deprecated and will no longer be supported/accepted by the NEMS. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
-| **TBC** - extension(eventLifeCycle).url | 0..1 | **Event Deprecation** - Url of page giving additional detail around the deprecation of this event type. <br/><span style="color:#ef4836">Publishers **MUST NOT** populate this element, the NEMS will add the element if required.</span> |
 | meta.versionId | 0..1 | **Message Sequencing** - A sequence number for the purpose of ordering messages for processing. The sequence number must be an integer which is patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient. |
 | meta.lastUpdated | 0..1 | **Message Sequencing** - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
 | extension(eventMessageType) | 1..1 | The type value which shall appear in this element will be defined within the separate event message implementation guide for each of the event messages, as the value will depend on the life cycle of the specific event message. |
@@ -52,6 +49,58 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | source.name | 1..1 | A human readable name for the IT system which holds the information that originated the event |
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
 | focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
+
+### Deprecation Warning
+
+When an event message type is being deprecated a deprecation warning will be included in the event message bundle. An [OperationOutcome](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) containing the following information will be included in the `bundle.entity.response.outcome` element of the `MessageHeader` entity.
+
+<span style="color:#ef4836">Publishers **MUST NOT** populate these elements, the NEMS will add deprecation warnings to the event message when required.</span>
+
+| Element | Cardinality | Description |
+| --- | --- | --- |
+| issue.details.coding.code | 1..1 | The event life cycle warning type. |
+| issue.diagnostics | 1..1 | Additional information about the event type deprecation including the date when the event will be deprecated and no longer supported by the NEMS and a URL where additional information about the event can be found. |
+
+**Example:**
+```xml
+<Bundle xmlns="http://hl7.org/fhir">
+   <!-- ... -->
+   <type value="message"/>
+   <entry>
+       <resource>
+         <MessageHeader>
+            <!-- ... -->
+            <event>
+               <system value="https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1"/>
+               <code value="PDS003"/>
+               <display value="PDS Birth Notification"/>
+            </event>
+            <!-- ... -->
+         </MessageHeader>
+      </resource>
+      <response>
+         <status value="202 Accepted" />
+         <outcome>
+            <OperationOutcome>
+               <issue> 
+                  <severity value="information"/> 
+                  <code value="informational"/> 
+                  <details>
+                     <coding> 
+                        <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
+                        <code value="DEPRECATED"/> 
+                        <display value="The operation being performed has been deprecated"/> 
+                     </coding> 
+                  </details> 
+                  <diagnostics value="Deprecation of the PDS Birth Notification (PDS003) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+               </issue> 
+            </OperationOutcome>
+         </outcome>
+      </response>
+   </entry>
+   <!-- ... Multiple entries for event content ... -->
+</Bundle>
+```
 
 
 ## Resource
