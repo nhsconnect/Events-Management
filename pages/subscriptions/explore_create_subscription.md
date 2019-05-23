@@ -44,7 +44,7 @@ Additional information about standard headers and endpoint looking is available 
 | contact | 1..* | Contact details for the subscription. <br/><br/>The first instance of the `contact` element within the Subscription resource SHALL represent the organization requesting the subscription. The element SHALL contain the organisation ODS Code which matches the MESH mailbox ID specified in the `channel.endpoint` element. The elements within the first contact element should be as follows:<br/><br/> **"use"** must have a fixed value of "*work*"<br/> **"system"** must have fixed value of "*url*"<br/> **"value"** must have the URL to the organization accessable via the ODS API, for example: <br/> "*https://directory.spineservices.nhs.uk/STU3/Organization/[Org_ODS_Code]* "<br/><br/>Additional contact elements included within the Subscription resource will be stored and returned by when managing the subscriptions but will not be validated as part of the business rules. |
 | end | 0..1 | End date/time for subscription if relevant (e.g. for a temporary subscription). If not provided the subscription will be perpertual and not expire. |
 | reason | 1..1 | The reason for creating the subscription (human readable description). Used primarily for reviewing the subscription in order to make it active, and also for patients / services to review what subscriptions exist and why they were created. |
-| criteria | 1..1 | Criteria to match events against for this subscription - see below for examples. <br/>**NOTE: Currently, the criteria cannot be used for searching.** |
+| criteria | 1..1 | Criteria to match events against for this subscription - see below for examples. |
 | channel.type | 1..1 | The delivery channel to use to deliver the event to the subscriber (currently only "message" is supported). <br/>**NOTE: In this case "message" refers to the use of MESH for as a delivery channel.** |
 | channel.endpoint | 1..1 | The specific endpoint (initially MESH mailbox ID) to deliver to.<br/>**NOTE: The ODS code associated with the mailbox MUST match the ODS code within the first instance of the `contact` element of the Subscription resource.** |
 
@@ -69,9 +69,9 @@ The criteria element of the Subscription will use the FHIR search string format 
 | ------------------------------- | --- | ----------- |
 | /Bundle?type=message            | 1..1 | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
 | serviceType=[CODE]     | 0..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Personal Child Health Record services |
-| Patient.identifier=[IDENTIFIER] | 1..1 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/>For example: "```&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|[NHS Number]```" |
-| MessageHeader.event=[CODE]      | 1..* |  This is the type of event to subscribe to (see the [EMS Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1)). <br/>For example: "```&amp;MessageHeader.event=PDS001&amp;MessageHeader.event=PDS002&amp;MessageHeader.event=PDS003```" <br/> is an expression to specify events where the MessageHeader.event is of type PDS001, PDS002 or PDS003 |
-| Patient.age=[AGE]               | 0..2 |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/>Examples:<br/> - "```&amp;Patient.age=lt14```"<br/> - "```&amp;Patient.age=gt60```"<br/> - "```&amp;Patient.age=gt5&amp;Patient.age=lt19```" <br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
+| Patient.identifier=[IDENTIFIER] | 1..1 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/><br/>For example: "```&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|[NHS Number]```" |
+| MessageHeader.event=[CODE]      | 1..* |  This is the type of event to subscribe to (see the [Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EventType-1)). <br/><br/>For example: <br/> "```&amp;MessageHeader.event=pds-birth-notification-1&amp;MessageHeader.event=vaccinations-1&amp;MessageHeader.event=pds-change-of-address-1```" <br/><br/> is an expression to specify events where the MessageHeader.event is of type "pds-birth-notification-1", "vaccinations-1" or "pds-change-of-address-1" |
+| Patient.age=[AGE]               | 0..2 |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/><br/>Examples:<br/> - "```&amp;Patient.age=lt14```"<br/> - "```&amp;Patient.age=gt60```"<br/> - "```&amp;Patient.age=gt5&amp;Patient.age=lt19```" <br/><br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
 
 
 
@@ -79,7 +79,7 @@ The criteria element of the Subscription will use the FHIR search string format 
 
 | Scenario                             | Subscribing Organisation | Subscription Type | Criteria String                     |
 |--------------------------------------|--------------------------|-------------------|------------------------------------|
-| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | ```/Bundle?type=message<br/>&amp;serviceType=GP<br/>&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919<br/>&amp;MessageHeader.event=PDS002``` |
+| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | ```/Bundle?type=message&amp;serviceType=GP&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919&amp;MessageHeader.event=pds-change-of-address-1``` |
 
 
 ## Error Handling ##
@@ -114,7 +114,7 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 		<use value="work"/>
 	</contact>
 	<reason value="Health visiting service responsible for Leeds"/>
-	<criteria value="/Bundle?type=message&amp;serviceType=UHV&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919&amp;MessageHeader.event=PDS002" />
+	<criteria value="/Bundle?type=message&amp;serviceType=UHV&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919&amp;MessageHeader.event=pds-change-of-address-1" />
 	<channel>
 		<type value="message"/>
 		<endpoint value="Mailbox1234"/>

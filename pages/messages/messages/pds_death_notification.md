@@ -72,7 +72,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | extension(eventMessageType) | 1..1 | Will be populated as per the event life cycle table above. |
-| event | 1..1 | Fixed Value: PDS004 (PDS Person Death) |
+| event | 1..1 | Fixed Value: pds-person-death-1 (PDS Person Death) |
 | focus | 1..1 | This will reference the "EMS-Communication-1" resource which contains information relating to the event message. |
 
 

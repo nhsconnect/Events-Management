@@ -61,7 +61,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | extension(eventMessageType) | 1..1 | Fixed value: `new` |
-| event | 1..1 | Fixed Value: PDS002 (PDS Change of Address) |
+| event | 1..1 | Fixed Value: pds-change-of-address-1 (PDS Change of Address) |
 | focus | 1..1 | This will reference the "EMS-Communication-1" resource which contains information relating to the event message. |
 
 

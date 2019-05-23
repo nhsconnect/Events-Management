@@ -75,7 +75,7 @@ Content-type: application/xml+fhir
 		<use value="work"/>
 	</contact>
 	<reason value="Health visiting service responsible for Leeds"/>
-	<criteria value="/Bundle?type=message&amp;Organization.identifier=X2458&amp;MessageHeader.event=PDS001&amp;MessageHeader.event=PDS002&amp;MessageHeader.event=PDS003&amp;MessageHeader.event=PDS004"/>
+	<criteria value="/Bundle?type=message&amp;Organization.identifier=X2458&amp;MessageHeader.event=pds-birth-notification-1&amp;MessageHeader.event=pds-change-of-address-1&amp;MessageHeader.event=pds-change-of-gp-1&amp;MessageHeader.event=pds-person-death-1"/>
 	<channel>
 		<type value="message"/>
 		<endpoint value="Mailbox1234"/>

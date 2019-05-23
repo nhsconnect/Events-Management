@@ -13,6 +13,9 @@ This site is under active development by NHS Digital and is intended to provide 
 
 {% include important.html content="Release 2.0.0-Beta includes a significant specification re-structure to improve navigation and readability." %}
 
+[Create Subscription](explore_create_subscription.html)
+- Updated event codes to align with new event type value set (**Breaking Change**)
+
 [Event Feedback Mechanism](overview_msg_architecture_feedback.html)
 - Added page with information on the feedback mechanism for NEMS
 
@@ -40,18 +43,25 @@ This site is under active development by NHS Digital and is intended to provide 
 
 [PDS Birth Notification](pds_birth_notification.html)
 - Added resource cardinality information to specification
+- Updated event codes to align with new event type value set (**Breaking Change**)
 
 [PDS Change of Address](pds_change_of_address.html)
 - Added resource cardinality information to specification
+- Updated event codes to align with new event type value set (**Breaking Change**)
 
 [PDS Change of GP](pds_change_of_gp.html)
 - Added resource cardinality information to specification
+- Updated event codes to align with new event type value set (**Breaking Change**)
 
 [PDS death Notification](pds_death_notification.html)
 - Added resource cardinality information to specification
+- Updated event codes to align with new event type value set (**Breaking Change**)
 
 [Publish an Event Message](publication_publish.html)
-- Updated request header `interactionID` requirement (**Breaking Change**)
+- Updated request header `interactionID` requirement
+
+[Read Subscription](explore_read_subscription.html)
+- Updated event codes to align with new event type value set
 
 [Receiver Information Governance](receiver_ig.html)
 - Moved the Subscription IG page to the Receiver section as requirements are around audit of received events rather than around use of the subscription API.

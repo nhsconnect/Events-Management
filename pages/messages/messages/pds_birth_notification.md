@@ -57,7 +57,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | extension(eventMessageType) | 1..1 | Fixed value: `new` |
-| event | 1..1 | Fixed Value: PDS003 (PDS Birth Notification) |
+| event | 1..1 | Fixed Value: pds-birth-notification-1 (PDS Birth Notification) |
 | focus | 1..1 | This will reference the "EMS-Communication-1" resource which contains information relating to the event message. |
 
 
