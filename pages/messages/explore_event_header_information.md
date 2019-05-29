@@ -52,7 +52,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 ### Deprecation Warning
 
-When an event message type is being deprecated a deprecation warning will be included in the event message bundle. An [OperationOutcome](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) containing the following information will be included in the `bundle.entity.response.outcome` element of the `MessageHeader` entity.
+When an event message type is being deprecated a deprecation warning will be included in the event message bundle. An [OperationOutcome](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) containing the following information will be included in the bundle and will be referenced in the `response` element of the `MessageHeader` entity.
 
 <span style="color:#ef4836">Publishers **MUST NOT** populate these elements, the NEMS will add deprecation warnings to the event message when required.</span>
 
@@ -76,29 +76,34 @@ When an event message type is being deprecated a deprecation warning will be inc
                <display value="PDS Birth Notification"/>
             </event>
             <!-- ... -->
+			<response>
+			   <identifier value="123456789" />
+			   <code value="ok"/>
+			   < details value="#dd8e62d5-74f5-4728-9b88-263293431c44" />
+			</response>
          </MessageHeader>
       </resource>
-      <response>
-         <status value="202 Accepted" />
-         <outcome>
-            <OperationOutcome>
+   </entry>
+   <!-- ... Multiple entries for event content ... -->
+   <entry>
+       <resource>
+			<OperationOutcome>
+			   <id value = "dd8e62d5-74f5-4728-9b88-263293431c44" />
                <issue> 
                   <severity value="information"/> 
                   <code value="informational"/> 
                   <details>
                      <coding> 
-                        <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
-                        <code value="DEPRECATED"/> 
-                        <display value="The operation being performed has been deprecated"/> 
+                        <system value="..."/> 
+                        <code value="..."/> 
+                        <display value="..."/> 
                      </coding> 
                   </details> 
-                  <diagnostics value="Deprecation of the PDS Birth Notification (PDS003) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+                  <diagnostics value="..."/>
                </issue> 
             </OperationOutcome>
-         </outcome>
-      </response>
-   </entry>
-   <!-- ... Multiple entries for event content ... -->
+		</resource>
+	</entry>
 </Bundle>
 ```
 
