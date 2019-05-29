@@ -25,7 +25,7 @@ In the `EMS-PDS-GPRegistration-EpisodeOfCare-1` resource, the `managingOrganizat
 
 The `PDS Change of GP`  event message will always contain a `eventMessageType` extension with value `new` in the MessageHeader resource. There will be no `update` or `delete` version of this event message.
 
-If a subscriber receives multiple `PDS Change of GP` event messages for the same patient, the last event message as indicated by the `timestamp` element within the MessageHeader resource should be considered the source of truth for the patients GP details.
+If a subscriber receives multiple `PDS Change of GP` event messages for the same patient, the last event message as indicated by the `meta.lastUpdated` element within the MessageHeader resource should be considered the source of truth for the patients GP details.
 
 
 ## Onward Delivery ##

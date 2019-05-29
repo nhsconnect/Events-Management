@@ -23,7 +23,7 @@ The `extension(deathNotificationStatus)` and `deceasedDateTime` elements within 
 
 The PDS Death Notification event message will be sent by the NEMS, following an update to the patient death information on PDS. This information includes the death notification status which may be updated should the patient’s death notification status change. The event message behaviour following each update to the patient’s death notification status is demonstrated in the table below:
 
-If a subscriber receives multiple `PDS Death Notification` event messages for the same patient, the latest event message as indicated by the `systemEffectiveDate` extension within the Patient resource should be considered the source of truth for the deathNotificationStatus. This is the specific dateTime on which the deathNotificationStatus was updated on PDS.
+If a subscriber receives multiple `PDS Death Notification` event messages for the same patient, the latest event message as indicated by the `meta.lastUpdated` element within the MessageHeader resource should be considered the source of truth for the deathNotificationStatus. This is the specific dateTime on which the deathNotificationStatus was updated on PDS.
 
 The below table is included to highlight the different types of Death Notification event message you may receive and the key elements within resource which help identify the type of Death Notification event message you have received. Additional guidance around the content of the FHIR resources is outlined in the `Resource population requirements and guidance` section below.
 
@@ -32,7 +32,7 @@ The below table is included to highlight the different types of Death Notificati
 | | Death notice received via an update from a local NHS Organisation such as GP or Trust | Death notice received from Registrar of Deaths | A revoke of a patient death event as the death was entered in error, the patient is NOT DEAD. |
 | **EMS-MessageHeader-1 Resource** |
 | `extension(eventMessageType)` | Fixed value: `new` | Fixed value: `new` | Fixed value: `new` |
-| `event` | Fixed value: `PDS004 (PDS Person Death)` | Fixed value: `PDS004 (PDS Person Death)` | Fixed value: `PDS004 (PDS Person Death)` |
+| `event` | Fixed value: `pds-death-notification-1` | Fixed value: `pds-death-notification-1` | Fixed value: `pds-death-notification-1` |
 | **EMS-Communication-1 Resource** |
 | `status` | Fixed value: `completed` | Fixed value: `completed` | Fixed value: `completed` |
 | **CareConnect-EMS-Patient-1** |
@@ -72,7 +72,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | extension(eventMessageType) | 1..1 | Will be populated as per the event life cycle table above. |
-| event | 1..1 | Fixed Value: pds-person-death-1 (PDS Person Death) |
+| event | 1..1 | Fixed Value: pds-death-notification-1 (PDS Death Notification) |
 | focus | 1..1 | This will reference the "EMS-Communication-1" resource which contains information relating to the event message. |
 
 
