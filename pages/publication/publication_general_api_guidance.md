@@ -9,7 +9,10 @@ summary: "Generic additional guidance for using the Publication API"
 
 ## NHS Numbers
 
-Any NHS numbers used when submitting an event to the NEMS Publication API SHALL have been traced against PDS (see the [Spine Core](https://developer.nhs.uk/apis/spine-core/pds_overview.html) specification for details).
+Any NHS Numbers included in an event message sent to the NEMS Publication API, MUST have been verified against the Spine PDS at the point of publishing or directly before publishing the event message.
+ 
+Information on how to verify an NHS Number against the Spine PDS is available on the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/pds_overview.html).
+
 
 
 ## Endpoint Registration

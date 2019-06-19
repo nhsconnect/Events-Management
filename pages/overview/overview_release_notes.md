@@ -9,6 +9,12 @@ summary: Summary release notes of the versions released in National Events Manag
 
 This site is under active development by NHS Digital and is intended to provide guidance and FHIR components for the National Events Management Service. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis, and remains subject to clinical review. Changes to this Implementation Guide following the initial beta release will be documented here.
 
+
+## 1.5.4-Beta (19/06/2019) ##
+
+[Generic Publication API Guidance](publication_general_api_guidance.html)
+- Updated specification around the use of NHS Numbers, making clear the requirement that NHS Numbers included in an event must be verified against the Spine at the point of publishing or directly before publishing an event message
+
 ## 1.5.3-Beta (02/05/2019) ##
 
 [Supported Event Messages](overview_supported_events.html)
