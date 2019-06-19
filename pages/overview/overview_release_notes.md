@@ -69,6 +69,13 @@ This site is under active development by NHS Digital and is intended to provide 
 [Subscriptions Overview](explore_subscriptions.html)
 - Added information to the geographical rule based subscriptions section around appropriate use of this type of subscription.
 
+
+## 1.5.4-Beta (19/06/2019) ##
+
+[Generic Publication API Guidance](publication_general_api_guidance.html)
+- Updated specification around the use of NHS Numbers, making clear the requirement that NHS Numbers included in an event must be verified against the Spine at the point of publishing or directly before publishing an event message
+
+
 ## 1.5.3-Beta (02/05/2019) ##
 
 [Supported Event Messages](overview_supported_events.html)
