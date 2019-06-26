@@ -7,8 +7,6 @@ permalink: explore_event_header_information.html
 summary: "The standard event header information applicable to National Events Management Service event messages"
 ---
 
-{% include important.html content="The common message header profiled FHIR resources are currently under review and are going to changes in order to make them generic and to align with the profiles used within other NHS Digital programs. The required content of the resources is not likely to change but profiles names, value sets are likely to be re-named." %}
-
 ## Event Header Information
 
 Each event message will carry a standard set of event header information:
@@ -27,16 +25,16 @@ This page provides an overview of the core FHIR profiles and elements required f
 </div>
 
 
-## [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1)
+## [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
-The event Bundle resource which contains the event message resources SHALL conform to the [EMS-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Bundle-1) constrained FHIR profile and be of type `message`.
+The event Bundle resource which contains the event message resources SHALL conform to the [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) base FHIR profile and be of type `message`.
 
 This follows the [HL7 FHIR specification](http://hl7.org/fhir/bundle.html#message) for the Bundle resource when being used for messaging, which states that 'A message bundle (type = "message") consists of a series of entries, the first of which is a MessageHeader.'
 
 
-## [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1)
+## [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
 
-The MessageHeader resource included as part of the event message SHALL conform to the [EMS-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/EMS-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
+The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -50,72 +48,15 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
 | focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
 
-### Deprecation Warning
-
-When an event message type is being deprecated a deprecation warning will be included in the event message bundle. An [OperationOutcome](https://developer.nhs.uk/apis/spine-core/resources_error_handling.html) containing the following information will be included in the bundle and will be referenced in the `response` element of the `MessageHeader` entity.
-
-<span style="color:#ef4836">Publishers **MUST NOT** populate these elements, the NEMS will add deprecation warnings to the event message when required.</span>
-
-| Element | Cardinality | Description |
-| --- | --- | --- |
-| issue.details.coding.code | 1..1 | The event life cycle warning type. |
-| issue.diagnostics | 1..1 | Additional information about the event type deprecation including the date when the event will be deprecated and no longer supported by the NEMS and a URL where additional information about the event can be found. |
-
-**Example:**
-```xml
-<Bundle xmlns="http://hl7.org/fhir">
-   <!-- ... -->
-   <type value="message"/>
-   <entry>
-       <resource>
-         <MessageHeader>
-            <!-- ... -->
-            <event>
-               <system value="https://fhir.nhs.uk/STU3/CodeSystem/EMS-EventType-1"/>
-               <code value="PDS003"/>
-               <display value="PDS Birth Notification"/>
-            </event>
-            <!-- ... -->
-			<response>
-			   <identifier value="123456789" />
-			   <code value="ok"/>
-			   < details value="#dd8e62d5-74f5-4728-9b88-263293431c44" />
-			</response>
-         </MessageHeader>
-      </resource>
-   </entry>
-   <!-- ... Multiple entries for event content ... -->
-   <entry>
-       <resource>
-			<OperationOutcome>
-			   <id value = "dd8e62d5-74f5-4728-9b88-263293431c44" />
-               <issue> 
-                  <severity value="information"/> 
-                  <code value="informational"/> 
-                  <details>
-                     <coding> 
-                        <system value="..."/> 
-                        <code value="..."/> 
-                        <display value="..."/> 
-                     </coding> 
-                  </details> 
-                  <diagnostics value="..."/>
-               </issue> 
-            </OperationOutcome>
-		</resource>
-	</entry>
-</Bundle>
-```
-
 
 ## Resource
 
 The FHIR resource referenced by the `focus` element within the `MessageHeader` will be defined within the individual event message implementation guides for the event message being published. This resource will contain a `subject` element pointing to a Patient resource which represents the patient who is the focus of the event message.
 
 
-## [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1)
+## [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
 
-The patient resource included in the event message SHALL conform to the [CareConnect-EMS-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -125,7 +66,7 @@ The patient resource included in the event message SHALL conform to the [CareCon
 | address | 0..* | If an address is included in the patient resource the publisher **SHALL** included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
 
 
-## [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1)
+## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
 Multiple organisations may be referenced from the event message. Organisations are included as part of the event header information to fulfil the following requirements:
 
@@ -148,7 +89,7 @@ Within the resource referencing out to the Organization resource, the `Reference
 
 Where there is reason to include the Organization resource within the message bundle the following population requirements SHALL be followed:
 
-The organization resources included to fulfill the event header requirements SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+The organization resources included to fulfill the event header requirements SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
