@@ -19,6 +19,10 @@ This site is under active development by NHS Digital and is intended to provide 
 [Event Feedback Mechanism](overview_msg_architecture_feedback.html)
 - Added page with information on the feedback mechanism for NEMS
 
+[Event Header Information](explore_event_header_information.html)
+- FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
+- Added information about sequencing elements in MessageHeader resource
+
 [Event Lifecycle and Deprecation](overview_msg_architecture_life_cycle.html)
 - Added page with information on Event-Lifecycle and Deprecation
 
@@ -44,18 +48,22 @@ This site is under active development by NHS Digital and is intended to provide 
 [PDS Birth Notification](pds_birth_notification.html)
 - Added resource cardinality information to specification
 - Updated event codes to align with new event type value set (**Breaking Change**)
+- FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
 
 [PDS Change of Address](pds_change_of_address.html)
 - Added resource cardinality information to specification
 - Updated event codes to align with new event type value set (**Breaking Change**)
+- FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
 
 [PDS Change of GP](pds_change_of_gp.html)
 - Added resource cardinality information to specification
 - Updated event codes to align with new event type value set (**Breaking Change**)
+- FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
 
 [PDS death Notification](pds_death_notification.html)
 - Added resource cardinality information to specification
 - Updated event codes to align with new event type value set (**Breaking Change**)
+- FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
 
 [Publish an Event Message](publication_publish.html)
 - Updated request header `interactionID` requirement
