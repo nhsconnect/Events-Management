@@ -15,7 +15,7 @@ Neither the NEMS or MESH guarantee that events will be sent to subscribers in th
 
 ## Identifying Message Order
 
-For subscribers to detect and handle out-of-order messages the NEMS has included in the common event header resources two elements which can be populated by the publisher as required:
+For subscribers to detect and handle out-of-order messages the NEMS has included, in the common event header resource, two elements which can be populated by the publisher as required:
 - an optional FHIR instant (time stamp with sub-second accuracy) element which represents the point in time that the change occurred in the publishing system that triggered the generation of the event message
 - an optional sequence number. The sequence number SHALL be patient and event-type specific and the publisher SHALL increment the sequence number each time a new event of the same type is issued by the same system for the same patient.
 

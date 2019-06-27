@@ -14,12 +14,9 @@ The National Events Management Service does not support different versions of Su
 
 ## NHS Numbers
 
-Any NHS numbers used when submitting a request to the NEMS subscription API SHALL be traced against PDS (see the [Spine Core](https://developer.nhs.uk/apis/spine-core/pds_overview.html) specification for details) before sending the request to the NEMS Subscription API .
-
-Level of NHS number validation required:
-
-- Suppliers SHALL have a way of validating/independently checking that the NHS number belongs to the patients.
-- Suppliers must be able to react to changes in a patients NHS Number and changes to their PDS record. Even if an NHS number has previously been validated, that NHS number could have since been invalidated, superseded, or similar. If a supplier cannot perform a PDS synchronisation or retrieve an NHS number for a patient, they will not be able to handle these eventualities and therefore will not be able to successfully setup subscriptions or updated subscriptions if the patients NHS Number changes.
+Any NHS Numbers included within a subscription sent to the NEMS Subscription API MUST have been verified against the Spine PDS at the point of calling the subscription API.
+ 
+Information on how to verify an NHS Number against the Spine PDS is available on the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/pds_overview.html).
 
 
 ## Endpoint Registration

@@ -93,12 +93,45 @@ When a subscription request is successfully received by the NEMS, the Subscripti
 - a HTTP status code of `201 Created`
 - a `Location` header containing the new logical ID of the created Subscription resource
 
-No payload will be returned with the successful response.
+No payload will be returned with the successful response unless the event message type being subscribed to is being deprecated.
+
+
+### Deprecation Warnings
+
+In order for the NEMS to communicate to a subscriber that an event type is deprecated, the NEMS will include an OperationOutcome payload along with the successful 201 Created response, when the event type being subscribed to is due to be deprecated. More information about deprecation can be found on the [Event Lifecycle and Deprecation](overview_msg_architecture_life_cycle.html).
+
+The OperationOutcome resource will containing the following elements, containing details of the deprecation for the published event type:
+
+| Element | Cardinality | Description |
+| --- | --- | --- |
+| issue.details.coding.code | 1..1 | The event life cycle warning type. |
+| issue.diagnostics | 1..1 | Additional information about the event type deprecation including the date when the event will be deprecated and no longer supported by the NEMS and a URL where additional information about the event can be found. |
+
+**Example:**
+```xml
+<OperationOutcome>
+   <issue> 
+      <severity value="information"/> 
+      <code value="informational"/> 
+      <details>
+         <coding> 
+            <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
+            <code value="DEPRECATED"/> 
+            <display value="The operation being performed has been deprecated"/> 
+         </coding> 
+      </details> 
+      <diagnostics value="Deprecation of the Newborn Hearing (newborn-hearing-1) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+   </issue> 
+</OperationOutcome>
+```
+
+When a message becomes deprecated the NEMS will no longer accept publication of that event message type and will return an error. For more information on event life cycle and event type deprecation can be seen on the [Messaging Architecture Overview](overview_msg_architecture.html#event-lifecycle-and-deprecation) page.
+
 
 
 ## Create Subscription Example ##
 
-**HTTP request:**
+### HTTP request ###
 
 ```xml
 POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
@@ -122,6 +155,8 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 </Subscription>
 ```
 
+### HTTP response ###
+
 ```json
 HTTP 201 Created
 Date: Fri, 25 May 2018 16:09:50 GMT
@@ -129,3 +164,29 @@ Last-Modified: Fri, 25 May 2018 16:09:50 GMT
 ETag: W/"25777f7d-27bc"
 Location: https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c
 ```
+
+Successful response with **deprecation** warning:
+
+```http
+HTTP 201 Created
+Date: Fri, 25 May 2018 16:09:50 GMT
+Last-Modified: Fri, 25 May 2018 16:09:50 GMT
+ETag: W/"25777f7d-27bc"
+Location: https://clinicals.spineservices.nhs.uk/STU3/Subscription/ea0a485187204b49b978bdcf7102388c
+
+<OperationOutcome>
+   <issue> 
+      <severity value="information"/> 
+      <code value="informational"/> 
+      <details>
+         <coding> 
+            <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
+            <code value="DEPRECATED"/> 
+            <display value="The operation being performed has been deprecated"/> 
+         </coding> 
+      </details> 
+      <diagnostics value="Deprecation of the Newborn Hearing (newborn-hearing-1) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+   </issue> 
+</OperationOutcome>
+```
+

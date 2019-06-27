@@ -26,26 +26,12 @@ If a publisher or subscriber experience an issues with the NEMS, un related to a
 
 ## Requirements
 
-Contact details for use in contacting the publisher SHALL be added to the event message by the publisher within the `Organization` resource reference from the `responsible` element within the `MessageHeader` resource and must contain the following elements:
+The publisher SHALL include either an email address or telephone number, within the following `MessageHeader` resource element:
 
 | Element | Cardinality | Description |
 | --- | --- | --- |
-| contact | 1..2 | A generic contact for all issues or two separate contact details, one for technical issues with the published event message and one for issues with data within the event message. |
-| contact.purpose.coding.code | 1..1 | A code of `generic`, `technical`, `clinical` |
-| contact.telecom.system | 1..1 |  Fixed value: `email` |
-| contact.telecom.value | 1..1 | A single email address which issues should be raised. |
+| source.contact | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for all issues with event message. |
+| source.contact.system | 1..1 | Must contain a value of `phone` or `email` matching the included contact method within the `value` element. |
+| source.contact.value | 1..1 | The phone number or email address to be used by the subscriber. |
 
-We are requiring that an email address is the initial method of contact for all issues as this allows the publishers to manage the raised issues and work them into their internal workflow. Phone is not being use as this will is more likely to create disruption for publishers and does not allow filtering of issues.
-
-To simplify standardise the issues raised by the subscribers when they get to publisher, in order to allow publishers to setup rules within their mail client and to make sure there is enough information to start addressing the issue the following requirements SHALL be followed when raising an issue with a publisher. 
-
-The email `Subject` must follow the following format:
-
-```[NHS_Number]:[Published_Message_ID]:[Published_Event_Type]:[technical/clinical]```
-
-The email content SHALL contain the following information:
-- NHS Number
-- Published event MessageID
-- Published event type
-- Description of the issue being raised, patient identifiable data should not be included for IG reasons.
-- Contact details of the person raising the issue to be used by the publish if they have any queries about the issue being raised.
+Additional information on the population of the MessageHeader resource can be seen on the [Event Header Information](explore_event_header_information.html) page

@@ -57,7 +57,7 @@ The National Events Management Service will perform validation on the event mess
 
 ### Deprecation Warnings
 
-In order for the NEMS to communicate to a publisher that an event type is going to be deprecated, the NEMS will include an OperationOutcome payload along with the successful 202 Accepted response, when the event type being published is due to be deprecated.
+In order for the NEMS to communicate to a publisher that an event type is going to be deprecated, the NEMS will include an OperationOutcome payload along with the successful 202 Accepted response, when the event type being published is due to be deprecated. More information about deprecation can be found on the [Event Lifecycle and Deprecation](overview_msg_architecture_life_cycle.html).
 
 The OperationOutcome resource will containing the following elements, containing details of the deprecation for the published event type:
 
@@ -79,7 +79,7 @@ The OperationOutcome resource will containing the following elements, containing
             <display value="The operation being performed has been deprecated"/> 
          </coding> 
       </details> 
-      <diagnostics value="Deprecation of the PDS Birth Notification (PDS003) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+      <diagnostics value="Deprecation of the Newborn Hearing (newborn-hearing-1) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
    </issue> 
 </OperationOutcome>
 ```
@@ -173,7 +173,7 @@ Date: Fri, 25 May 2018 16:09:50 GMT
             <display value="The operation being performed has been deprecated"/> 
          </coding> 
       </details> 
-      <diagnostics value="Deprecation of the PDS Birth Notification (PDS003) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+      <diagnostics value="Deprecation of the Newborn Hearing (newborn-hearing-1) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
    </issue> 
 </OperationOutcome>
 ```

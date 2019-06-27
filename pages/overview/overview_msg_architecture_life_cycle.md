@@ -8,15 +8,15 @@ summary: "Overview of event type life cycle"
 toc: false
 ---
 
-Changes to event definitions are a fact of life in event-based systems and therefore the NEMS has incorporated a mechanism to help manage these changes. The NHS is an extremely complex environment and keeping accurate track of who should be notified when changes are happening is likely to be extremely challenging. It is also not practical to rely on the operators of systems using NEMS to read emailed notifications or keep track of changes which we publish outside of their system.
+Changes to event definitions are a fact of life in event-based systems and therefore the NEMS has incorporated a mechanism to help manage these changes. The NHS is an extremely complex environment and keeping accurate track of who should be notified when changes are happening is likely to be extremely challenging.
 
 To simplify the management of event lifecycle the NEMS will:
-- including information in the event message and on the publish API interaction responses to allows the fact that changes are happening or planned to be detected by the consuming system and signalled to operational teams.
+- including information in the response to use of the subscription API and publish API to allows the fact that changes are happening or planned to be detected by the consuming system so that it can be signalled to operational teams.
 - event versioning will not be supported, I.e. there is no need for an event to carry any kind of version information. Events will be replaced wholesale by a completely new event type if they change
 
 ## Mechanism
 
-The event message generic header and the publishing API response will include/return the following information when event lifecycle is changing:
+The response from the subscription API and publishing API will include the following information when event lifecycle is changing:
 - An optional warning that the event is either:
   - Deprecated
   - No longer supported
@@ -25,9 +25,7 @@ The event message generic header and the publishing API response will include/re
   - For no longer supported events, the date on which publication requests will be rejected
 - A URL to a human-readable web-page detailing the event-lifecycle changes occurring
 
-{% include important.html content="This deprecation information will be set by NEMS and will not be populated by publishers." %}
-
-Information on which resources and elements will be used to communicate these deprecation warnings can be seen on the [Event Header Information](explore_event_header_information.html) page for deprecation warnings to subscribers and the [Publish an Event Message](publication_publish.html) page for deprecation warnings to publishers.
+Information on which resources and elements will be used to communicate these deprecation warnings can be seen on the [Create Subscription](explore_create_subscription.html) page for deprecation warnings to subscribers and the [Publish an Event Message](publication_publish.html) page for deprecation warnings to publishers.
 
 ## Example
 
