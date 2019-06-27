@@ -19,7 +19,7 @@ Specifies mandatory referencing within the Event Message Bundle.
 	<p>PDS Birth Notification Bundle <a href="images/messages/pds_birth_notification_bundle.png" target="_blank">(open in new TAB)</a></p>
 </div>
 
-The focus of the PDS Birth Notification event message is the `CareConnect-Communication-1` resource. This indicates the Patient resource, representing the mother, referenced from the event message Communication resource subject element. The baby in this birth notification is linked to the mother through the `EMS-PDS-RelatedPerson-1` resource which shows the relationship of mother to baby. Additional information about the birth is included in the bundle as observation resources which are either linked to the mother or the baby
+The focus of the PDS Birth Notification event message is the `CareConnect-Communication-1` resource. This indicates the Patient resource representing the mother, referenced via the event message Communication resource subject element. The baby in this birth notification is linked to the mother through the `CareConnect-RelatedPerson-1` resource which represents the relationship of mother to baby. Additional information about the birth is included in the bundle as observation resources which are either linked to the mother or the baby
 
 
 ## PDS Birth Notification Event Message Life Cycle ##
@@ -93,7 +93,23 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 | generalPractitioner | 0..1 | References to an organization representing the Mother's Primary Care provider, the reference organization should contain the organization ODS Code, name and relevant contact details. |
 | extension(registrationDetails).period.start | 0..1 | Date when the mother was registered with the organization. |
 | extension(registrationDetails).period.end | 0..1 | Date when the mothers registration is scheduled to end if applicable. |
-| link | 1..1 | This will reference the RelatedPerson resource representing the relationship between Mother and Baby |
+| link | 1..1 | This will reference the RelatedPerson resource representing the relationship between mother and baby |
+
+
+### [CareConnect-RelatedPerson-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-RelatedPerson-1)
+
+This RelatedPerson resource included in the event message SHALL conform to the [CareConnect-RelatedPerson-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-RelatedPerson-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| patient | 1..1 | This element will reference the Patient resource representing the baby. |
+| relationship | 1..1 | |
+| relationship.coding | 1..1 | |
+| relationship.coding.system | 1..1 | Fixed value: http://hl7.org/fhir/v3/RoleCode |
+| relationship.coding.code | 1..1 | Fixed value: NMTH |
+| relationship.coding.display | 1..1 | Fixed value: natural mother |
 
 
 ### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) (Baby)
@@ -117,6 +133,18 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 | multipleBirthInteger | 1..1 | The multiple birth indicator will be an number indicating the position in the order of births, i.e. the first baby would be `1`, a second baby for example in twins would be `2` |
 | extension(birthPlace) | 0..1 | The address of the place where the baby was born |
 | extension(ethnicCategory) | 1..1 | The ethnicity of the baby |
+
+
+### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
+
+| Resource Cardinality | TBC |
+
+The notifying practitioner for this event message.
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| name.given | 1..* | Practitioner given name(s) |
+| name.family | 1..1 | Practitioner family name |
 
 
 ### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Number Of Births)
@@ -194,7 +222,49 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 | valueCodeableConcept.coding.code | 1..1 |  |
 
 
-### [CareConnect-EMS-PDS-DeliveryPlace-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-DeliveryPlace-Organization-1)
+### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1)
+
+The Episode Of Care resources represent the association of the Patient (baby) with organisations for:
+- Delivery Place
+- Registering Authority
+- Partner Child Health Organisation
+- Responsible Child Health Organisation
+
+
+### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Delivery Place)
+| Resource Cardinality | TBC | 0..1? |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| type.coding.system | 1..1 | Fixed value: https://fhir.nhs.uk/STU3/CodeSystem/BirthEpisodeCategory-1 |
+| type.coding.value | 1..1 | Fixed value: 1097291000000101 |  
+| type.coding.display | 1..1 | Fixed value: Suspected congenital abnormality || patient | 1..1 | This will reference the **baby** patient resource. |
+| managingOrganization | 1..1 | This will reference the associated Organization resource |
+
+
+### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Registering Authority)
+
+| Resource Cardinality | TBC |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| patient | 1..1 | This will reference the **baby** patient resource. |
+| managingOrganization | 1..1 | This will reference the associated Organization resource |
+
+
+### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Partner Child Health Organisation)
+
+### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Responsible Child Health Organisation)
+
+| Resource Cardinality | TBC |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| patient | 1..1 | This will reference the **baby** patient resource. |
+| managingOrganization | 1..1 | This will reference the associated Organization resource |
+
+
+### [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) (Delivery Place)
 
 | Resource Cardinality | TBC |
 
@@ -205,7 +275,7 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 | name | 0..1 | Delivery Place Name |
 
 
-### [CareConnect-EMS-PDS-RegisteringAuthority-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-RegisteringAuthority-Organization-1)
+### [CareConnect-EMS-PDS-RegisteringAuthority-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-EMS-PDS-RegisteringAuthority-Organization-1) (Registering Authority)
 
 | Resource Cardinality | TBC |
 
@@ -213,18 +283,6 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 | --- | --- | --- |
 | type | 1..1 | Registering Authority Type |
 | identifier | 1..1 | Organisation identifier using the ODS identifier slice |
-
-
-### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
-
-| Resource Cardinality | TBC |
-
-The notifying person for this event message.
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| name.given | 1..* | Practitioner given name(s) |
-| name.family | 1..1 | Practitioner family name |
 
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
@@ -241,4 +299,10 @@ The Birth Notification event will contain organization resources containing addi
 |---|---|---|---|---|
 | Partner Child Health Organisation Code | 1..1 |
 | Responsible Child Health Organisation Code | 0..1 |
+
+
+## PDS Change of Address Example ##
+
+<script src="https://gist.github.com/IOPS-DEV/828562b2e3edaec1ed43f48645f5376a.js"></script>
+
 
