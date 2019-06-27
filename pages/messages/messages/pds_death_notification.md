@@ -73,6 +73,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
+| meta.lastUpdated | 1..1 | DateTime when the patient record was updated with the details included in this event message. This element should be used for message sequencing |
 | extension(messageEventType) | 1..1 | Will be populated as per the event life cycle table above. |
 | event | 1..1 | Fixed Value: pds-death-notification-1 (PDS Death Notification) |
 | focus | 1..1 | This will reference the "CareConnect-Communication-1" resource which contains information relating to the event message. |
