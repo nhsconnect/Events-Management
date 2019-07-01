@@ -41,8 +41,8 @@ entries:
     - title: Supported Messages
       url: /overview_supported_events.html
       output: web
-    - title: Message Header
-      url: /explore_event_header_information.html
+    - title: Generic Requirements
+      url: /explore_genreic_event_requirements.html
       output: web
       subfolders:
       - title: Messages

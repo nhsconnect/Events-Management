@@ -39,7 +39,7 @@ The delivery of the PDS Change of GP event messages to subscribers via MESH will
 
 ## Resource population requirements and guidance ##
 
-The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Event Header](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) requirements page.
+The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Generic Requirements](https://developer.nhs.uk/apis/ems-beta/explore_genreic_event_requirements.html) page.
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 

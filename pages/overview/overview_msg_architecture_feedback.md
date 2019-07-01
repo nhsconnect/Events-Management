@@ -34,4 +34,4 @@ The publisher MUST include either an email address or telephone number, within t
 | source.contact.system | 1..1 | Must contain a value of `phone` or `email` matching the included contact method within the `value` element. |
 | source.contact.value | 1..1 | The phone number or email address to be used by the subscriber. |
 
-Additional information on the population of the MessageHeader resource can be seen on the [Event Header Information](explore_event_header_information.html) page
+Additional information on the population of the MessageHeader resource can be seen on the [Generic Requirements](explore_genreic_event_requirements.html) page

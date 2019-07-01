@@ -19,7 +19,8 @@ This site is under active development by NHS Digital and is intended to provide 
 [Event Feedback Mechanism](overview_msg_architecture_feedback.html)
 - Added page with information on the feedback mechanism for NEMS
 
-[Event Header Information](explore_event_header_information.html)
+[Generic Requirements](explore_genreic_event_requirements.html)
+- Name of page and content changes to match new concept of message header, making this just generic population requirements. Name changed from `Event Header Information` -> `Generic Requirements`
 - FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
 - Added information about sequencing elements in MessageHeader resource
 - Added information about feedback contact information to MessageHeader resource
@@ -99,13 +100,13 @@ This site is under active development by NHS Digital and is intended to provide 
 
 ## 1.5.1-Beta (26/02/2019) ##
 
-[Event Header Information](explore_event_header_information.html)
+[Event Header Information](explore_genreic_event_requirements.html)
 - Corrected generic sections to align with the generic requirements for events passed through NEMS
 
 
 ## 1.5.0-Beta (21/02/2019) ##
 
-[Event Header Information](explore_event_header_information.html)
+[Event Header Information](explore_genreic_event_requirements.html)
 - Made page content more generic rather than being PDS event message orientated to allow for the variation in FHIR resources within the DCH event messages.
 
 [Introduction to National Events Management Service](index.html)
@@ -195,7 +196,7 @@ This site is under active development by NHS Digital and is intended to provide 
 - Added note around only supporting XML
 - updated example to be XML
 
-[EMS Event Header Information](explore_event_header_information.html)
+[EMS Event Header Information](explore_genreic_event_requirements.html)
 - Added additional population guidance and requirements around which fields should be populated with what.
 
 Error Handling

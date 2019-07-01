@@ -1,29 +1,32 @@
 ---
-title: Event Header Information
+title: Generic Event Message Requirements
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
-permalink: explore_event_header_information.html
-summary: "The standard event header information applicable to National Events Management Service event messages"
+permalink: explore_genreic_event_requirements.html
+summary: "These are a set of generic requirements which are applicable to all evet messages passing through the NEMS"
 ---
 
-## Event Header Information
+# Event Message Structure
 
-Each event message will carry a standard set of event header information:
+Each event message which passes through the NEMS will carry a standard set of event information to allow the receiver to identify:
+- the the patient who is the focus of the event
+- information about the provider who published the event message, including [contact details](overview_msg_architecture_feedback.html) for issues with the event message
+- information about the event that occurred
+- information to allow receivers to perform [message sequencing](overview_msg_architecture_sequencing.html)
 
-- Patient NHS Number
-- Patient Details
-- The type of event e.g. PDS Birth Notification, Failsafe Alert
-- Details of the service which published the event e.g. PDS, Failsafe
-- When the event was published
 
-This page provides an overview of the core FHIR profiles and elements required for as part of the event header information. Additional guidance and requirements are outlined in the [event messages](overview_supported_events.html) specific guidance.
+This page provides common FHIR resource population requirements for all event messages, which should be followed in addition to the requirements outlined in the individual [event message specific](overview_supported_events.html) guidance pages.
+ 
+All event messages will be wrapped in a FHIR bundle resource of type `message` and therefore will also include a `MessageHeader` resource as the first resource in the bundle.
 
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/messages/event_header_information_bundle.png" target="_blank"><img src="images/messages/event_header_information_bundle.png"></a>
-	Event Message Bundle - Header Resources <a href="images/messages/event_header_information_bundle.png" target="_blank">(open in new TAB)</a>
+	Event Message Bundle - Common Resources <a href="images/messages/event_header_information_bundle.png" target="_blank">(open in new TAB)</a>
 </div>
 
+
+# Resource Population
 
 ## [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
@@ -71,7 +74,7 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 ## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
-Multiple organisations may be referenced from the event message. Organisations are included as part of the event header information to fulfil the following requirements:
+Multiple organisations may be referenced from the event message. Organisations are included to:
 
 - to convey the service provider which originated the event
 - to identify the publisher of the event
@@ -92,7 +95,7 @@ Within the resource referencing out to the Organization resource, the `Reference
 
 Where there is reason to include the Organization resource within the message bundle the following population requirements SHALL be followed:
 
-The organization resources included to fulfill the event header requirements SHALL represent legally recognised organization which have an ODS code. The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
