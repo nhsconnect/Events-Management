@@ -45,7 +45,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | event | 1..1 | **Event Type** - The type of event as specified within the event message implementation guides, e.g. PDS Birth Notification, Failsafe Alert |
 | source | 1..1 | The IT system which holds the information that originated the event |
 | source.name | 1..1 | A human readable name for the IT system which holds the information that originated the event |
-| source.contact | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for all issues with event message. Additional requirements and information available on the [Event Feedback Mechanism](overview_msg_architecture_feedback.html) page |
+| source.contact | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for any issues with event message. Additional requirements and information available on the [Event Feedback Mechanism](overview_msg_architecture_feedback.html) page |
 | source.contact.system | 1..1 | Must contain a value of `phone` or `email` matching the included contact method within the `value` element |
 | source.contact.value | 1..1 | A phone number or email address |
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |

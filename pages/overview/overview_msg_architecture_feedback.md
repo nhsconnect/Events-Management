@@ -26,11 +26,11 @@ If a publisher or subscriber experience an issues with the NEMS, un related to a
 
 ## Requirements
 
-The publisher SHALL include either an email address or telephone number, within the following `MessageHeader` resource element:
+The publisher MUST include either an email address or telephone number, within the following `MessageHeader` resource element:
 
 | Element | Cardinality | Description |
 | --- | --- | --- |
-| source.contact | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for all issues with event message. |
+| source.contact | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for any issues with event message. |
 | source.contact.system | 1..1 | Must contain a value of `phone` or `email` matching the included contact method within the `value` element. |
 | source.contact.value | 1..1 | The phone number or email address to be used by the subscriber. |
 
