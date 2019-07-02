@@ -20,10 +20,6 @@ This page provides common FHIR resource population requirements for all event me
  
 All event messages will be wrapped in a FHIR bundle resource of type `message` and therefore will also include a `MessageHeader` resource as the first resource in the bundle.
 
-<div style="text-align:center; margin-bottom:20px" >
-	<a href="images/messages/event_header_information_bundle.png" target="_blank"><img src="images/messages/event_header_information_bundle.png"></a>
-	Event Message Bundle - Common Resources <a href="images/messages/event_header_information_bundle.png" target="_blank">(open in new TAB)</a>
-</div>
 
 
 # Resource Population
@@ -52,12 +48,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | source.contact.system | 1..1 | Must contain a value of `phone` or `email` matching the included contact method within the `value` element |
 | source.contact.value | 1..1 | A phone number or email address |
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
-| focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
-
-
-## Resource
-
-The FHIR resource referenced by the `focus` element within the `MessageHeader` will be defined within the individual event message implementation guides for the event message being published. This resource will contain a `subject` element pointing to a Patient resource which represents the patient who is the focus of the event message.
+| focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. The referenced resource will contain a `subject` element pointing to a Patient resource which represents the patient who is the focus of the event message.  |
 
 
 ## [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
