@@ -24,6 +24,7 @@ This site is under active development by NHS Digital and is intended to provide 
 - FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
 - Added information about sequencing elements in MessageHeader resource
 - Added information about feedback contact information to MessageHeader resource
+- Added required extension to the MessageHeader resource which MUST contain details of the Patient who is the focus of the event message which will be used for routing to subscribers.
 
 [Event Lifecycle and Deprecation](overview_msg_architecture_life_cycle.html)
 - Added page with information on Event-Lifecycle and Deprecation
