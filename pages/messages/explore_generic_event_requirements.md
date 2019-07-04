@@ -53,7 +53,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 ## [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
 
-The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+Patient resources included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -65,31 +65,9 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 ## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
-Multiple organisations may be referenced from the event message. Organisations are included to:
-
-- to convey the service provider which originated the event
-- to identify the publisher of the event
-
-### Referencing the ODS API
-
-When referencing an organisation from an event message, the publisher constructing the event message SHOULD use an absolute URL reference to an Organization resource stored on the Spine directory, which can be retrieved as described in the [FHIR ODS Lookup API Implementation guide](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html), rather than including the Organization resource within the message bundle.
-
-The benefit of referencing the organisation resource on the Spine directory is that the information relating to that organisation such as contact details will be kept up to date. If the organisation information is included in the event message bundle as a resource the details for that organisation will become out of date.
-
-Within the resource referencing out to the Organization resource, the `Reference` type element SHALL include:
-
-- the `reference` with the absolute url to the Organization on the ODS API
-- the `display` element within the reference with a human readable string representation of the organisation which subscribers can use if they with to display the organisation to a user
-
-
-### Including an Organization resource
-
-Where there is reason to include the Organization resource within the message bundle the following population requirements SHALL be followed:
-
-The organization resources included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+Organization resources included in event messages SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| name | 1..1 | A human readable name for the organization SHALL be included in the organization resource |
-| identifier | 1..1 | The organization ODS code SHALL be included within the `odsOrganizationCode` identifier slice |
-| telecom | 1..* | The organization resource SHALL include a contact number for the organization |
+| name | 0..1 | A human readable name for the organization SHOULD be included in the organization resource |
+| identifier | 0..1 | The organization ODS code SHOULD be included within the `odsOrganizationCode` identifier slice |
