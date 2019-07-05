@@ -12,6 +12,8 @@ The following event messages are supported by the NEMS for either publication an
 
 | &#9989; Supported | &#10060; Not Supported |
 
+Requirements and population guidance within the event message specific pages should be followed in addition to the [Generic Event Message Requirements](explore_genreic_event_requirements.html) within this specification.
+
 ### PDS Demographics Update Event Messages
 
 | Event | Event Code | Publication API | Subscription API | Date Available |
@@ -26,7 +28,7 @@ The following event messages are supported by the NEMS for either publication an
 
 | Event | Event Code | Publication API | Subscription API | Date Available |
 |---|---|:---:|:---:|---|
-| [Newborn Hearing](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_newborn_hearing.html) | newborn-hearing-1 | &#9989; | &#9989; | TBC 2019 |
-| [NIPE Outcome](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_nipe_outcome.html) | nipe-outcome-1 | &#9989; | &#9989; | TBC 2019 |
-| [Blood Spot Test Outcome](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_blood_spot_test_outcome.html) | blood-spot-test-outcome-1 | &#9989; | &#9989; | TBC 2019 |
+| [Blood Spot Test Outcome](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_blood_spot_test_outcome.html) | blood-spot-test-outcome-1 | &#9989; | &#9989; | October 2019 |
+| [Newborn Hearing](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_newborn_hearing.html) | newborn-hearing-1 | &#9989; | &#9989; | October 2019 |
+| [NIPE Outcome](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_nipe_outcome.html) | nipe-outcome-1 | &#9989; | &#9989; | October 2019 |
 | [Vaccinations](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_vaccination_administration.html) | vaccinations-1 | &#9989; | &#9989; | TBC 2019 |

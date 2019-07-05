@@ -38,11 +38,11 @@ entries:
   - title: Event Messages
     output: web
     folderitems:
-    - title: Supported Messages
-      url: /overview_supported_events.html
-      output: web
     - title: Generic Requirements
       url: /explore_genreic_event_requirements.html
+      output: web
+    - title: Supported Messages
+      url: /overview_supported_events.html
       output: web
       subfolders:
       - title: Messages
