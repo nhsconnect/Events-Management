@@ -136,15 +136,15 @@ The HealthcareService resource included in the event message SHALL conform to th
 
 ### PDS Death Notification Example ###
 
-#### PDS-PersonDeath-Bundle-Example-1a.xml ####
+#### PDS-PersonDeath-Bundle-Example-1a.xml (Formal) ####
 
 <script src="https://gist.github.com/IOPS-DEV/3fcdc7fe6af07e32850e46a2e11921e1.js"></script>
 
-#### PDS-PersonDeath-Bundle-Example-1b.xml ####
+#### PDS-PersonDeath-Bundle-Example-1b.xml (Informal) ####
 
 <script src="https://gist.github.com/IOPS-DEV/b48412da451268da3b64b86b561d402a.js"></script>
 
-#### PDS-PersonDeath-Bundle-Example-1c.xml ####
+#### PDS-PersonDeath-Bundle-Example-1c.xml (Removed) ####
 
 <script src="https://gist.github.com/IOPS-DEV/c64b91596e3553ef79783da4f1355180.js"></script>
 
