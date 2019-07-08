@@ -7,7 +7,9 @@ permalink: index.html
 toc: false
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide the functional requirements for the National Events Management Service, and remains subject to review. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. Changes to this specification following the initial beta release will be documented in the [Release Notes](overview_release_notes.html) section." %}
+{% include important.html content="This specification contains the requirements and guidance for the current version of the National Events Management Service (NEMS), for reference the previous major version of the NEMS specification is available [here](https://developer.nhs.uk/apis/ems-beta-previous/)." %}
+
+{% include warning.html content="This site is under active development by NHS Digital and is intended to provide the functional requirements for the National Events Management Service, and remains subject to review. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis. Changes to this specification following the initial beta release will be documented in the [Release Notes](overview_release_notes.html) section." %}
 
 
 <a href="images/overview/overview_message_diagram.png" target="_blank"><img src="images/overview/overview_message_diagram.png"></a>
