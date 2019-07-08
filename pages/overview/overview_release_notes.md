@@ -18,13 +18,6 @@ summary: Summary release notes of the versions released in National Events Manag
 [Event Feedback Mechanism](overview_msg_architecture_feedback.html)
 - Added page with information on the feedback mechanism for NEMS
 
-[Generic Requirements](explore_genreic_event_requirements.html)
-- Name of page and content changes to match new concept of message header, making this just generic population requirements. Name changed from `Event Header Information` -> `Generic Requirements`
-- FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
-- Added information about sequencing elements in MessageHeader resource
-- Added information about feedback contact information to MessageHeader resource
-- Added required extension to the MessageHeader resource which MUST contain details of the Patient who is the focus of the event message which will be used for routing to subscribers.
-
 [Event Lifecycle and Deprecation](overview_msg_architecture_life_cycle.html)
 - Added page with information on Event-Lifecycle and Deprecation
 
@@ -36,6 +29,13 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Generic Publication API Requirements](publication_general_api_guidance.html)
 - Added clarification on level of NHS Number validation required for NHS numbers used in the event messages.
+
+[Generic Requirements](explore_genreic_event_requirements.html)
+- Name of page and content changes to match new concept of message header, making this just generic population requirements. Name changed from `Event Header Information` -> `Generic Requirements`
+- FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
+- Added information about sequencing elements in MessageHeader resource
+- Added information about feedback contact information to MessageHeader resource (**Breaking Change**)
+- Added required extension to the MessageHeader resource which MUST contain details of the Patient who is the focus of the event message which will be used for routing to subscribers (**Breaking Change**)
 
 [Generic Subscription API Requirements](subscription_general_api_guidance.html)
 - Added clarification for use of MIME types
