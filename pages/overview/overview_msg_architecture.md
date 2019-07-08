@@ -18,20 +18,20 @@ The diagram below shows the high level requirements of an National Events Manage
 2. A successful subscription request will return a confirmation of the subscription creation
 3. A publisher will generate an event message and send it to the NEMS
 4. The NEMS will validate the sent event message and return an accepted response to the publisher
-5. The NEMS takes the event messages and matches the content of the event message to the subscriptions. For each event message which matches the subscription criteria the NEMS will send the event message to the subscriber via [MESH](https://digital.nhs.uk/message-exchange-social-care-health).
+5. The NEMS takes the event messages and matches the content of the event message to the subscriptions. For each subscription where the event message meets the subscription criteria the NEMS will send a copy of the event message to the subscriber via [MESH](https://digital.nhs.uk/message-exchange-social-care-health).
 
 ## Messaging Pattern
 
 The National Events Management Service (NEMS) is based on a Publish and Subscribe messaging pattern, where:
 
 - a publisher sends an event message to the messaging service without being concerned who will receive the message
-- a subscriber is a system which would like to receive event messages that match a set of criteria, such as matching a specific event type or the patient having a specific identifier
+- a subscriber is a system which would like to receive event messages that match a set of criteria, such as matching a specific event type or the patient having a specific identifier, but without being concerned who will publish the message
 
 More information around the messaging pattern is available on the NHS Digital developer network [Integration Patterns](https://developer.nhs.uk/library/architecture/integration-patterns) pages.
 
 ## Publishers
 
-Event messages are created by services such as the Spine Patient Demographics Service, hospitals, child health service, etc. The event messages are constructed in line with this specification and the contained event message guidance.
+Event messages are created by services such as the Spine Patient Demographics Service, hospitals, child health service, etc. The event messages are constructed in line with requirements and guidance outlined in this specification.
 
 Once the publisher has constructed the event message they use the NEMS [publish API](publication_publish.html) to send the event message to the NEMS. If the event message is valid the NEMS will return an accepted response to the publisher before continuing to process the event message internally.
 
