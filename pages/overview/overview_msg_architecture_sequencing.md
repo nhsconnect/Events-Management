@@ -10,7 +10,7 @@ toc: false
 
 When a subscriber receives a number of different event messages for a single patient, the order in which the event messages were published to the NEMS needs to be considered in order to reduce the risk of data loss and overwriting of the latest data with data from an older event message.
 
-Neither the NEMS or MESH guarantee that events will be sent to subscribers in the order that they were published, to the NEMS. This is common in eventing systems and the use of sequence numbers and/or timestamps allows receivers to detect and handle out-of-order messages.
+Neither the NEMS or MESH guarantee that events will be sent to subscribers in the order that they were published to the NEMS. This is common behaviour in eventing systems and the use of sequence numbers and/or timestamps allows receivers to detect and handle out-of-order messages.
 
 
 ## Identifying Message Order

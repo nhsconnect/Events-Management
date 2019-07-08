@@ -17,7 +17,7 @@ Each event message which passes through the NEMS will carry a standard set of ev
 
 All event messages will be wrapped in a FHIR bundle resource of type `message` and therefore will also include a `MessageHeader` resource as the first resource in the bundle.
 
-The `MessageHeader` resource will contain the extension `patient details TBC` which will contain the NHS Number, Forename, Surname and Date of Birth of the patient who is the focus of the event message. These details are mandatory and will be used by the NEMS to perform message routing when sending the event to subscribers.
+The `MessageHeader` resource will contain the NHS Number, Forename, Surname and Date of Birth of the patient who is the focus of the event message. These details are used by the NEMS to perform subscription matching for the event message.
 
 This page provides common FHIR resource population requirements for all event messages, which should be followed in addition to the requirements outlined in the individual [event message specific](overview_supported_events.html) guidance pages.
 
