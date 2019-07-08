@@ -7,10 +7,6 @@ permalink: overview_guide_versioning.html
 summary: An overview of this implementation guide is versioned.
 ---
 
-## Experimental ##
-
-This implementation guidance is the **Beta** release to support the development of the National Events Management Service event messages. 
-
 ## Semantic Versioning ##
 
 Given a version number MAJOR.MINOR.PATCH, increment the:

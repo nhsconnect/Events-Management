@@ -35,8 +35,8 @@ The [Supported Event Messages](overview_supported_events.html) page list the eve
 When considering if the NEMS is suitable for a specific use case the following criteria must be met:
 
 - those generating the information don't typically know all those who should receive it.
-- those receiving the information don't typically know who has produced it.
-- The recipient(s) need to be informed that an event has occurred and can't wait until they next access the patient's record.
+- those receiving the information don't typically know who will produced it.
+- the recipient(s) need to be informed that an event has occurred and can't wait until they next access the patient's record.
 
 Where this criteria cannot be satisfied other complimentary Spine services should be considered as an alternative mechanism for integration. One such service is the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrls/index.html) which is designed to make data sharing possible between different organisations. The NRL is a collection of pointers to patient information within other systems. The pointers within NRL contain the information required to retrieve the patient information from the original source at the point where the information is required.
 
