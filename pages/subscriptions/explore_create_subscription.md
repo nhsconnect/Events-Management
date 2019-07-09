@@ -100,10 +100,11 @@ No payload will be returned with the successful response unless the event messag
 
 In order for the NEMS to communicate to a subscriber that an event type is deprecated, the NEMS will include an OperationOutcome payload along with the successful 201 Created response, when the event type being subscribed to is due to be deprecated. More information about deprecation can be found on the [Event Lifecycle and Deprecation](overview_msg_architecture_life_cycle.html).
 
-The OperationOutcome resource will containing the following elements, containing details of the deprecation for the published event type:
+The OperationOutcome resource will contain one or more issue elements, one for each event type which is being deprecated. The following elements, containing details of the event type deprecation will be populated:
 
 | Element | Cardinality | Description |
 | --- | --- | --- |
+| issue | 1..* | One issue will be included for each event type which is being deprecated. Each issue may have a different code and supporting information. |
 | issue.details.coding.code | 1..1 | The event life cycle warning type. |
 | issue.diagnostics | 1..1 | Additional information about the event type deprecation including the date when the event will be deprecated and no longer supported by the NEMS and a URL where additional information about the event can be found. |
 
