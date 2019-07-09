@@ -11,7 +11,7 @@ summary: "Requirements for publishing event messages into the NEMS"
 
 To protect data quality of information passing through the NEMS:
 
-- Event messages published to the NEMS MUST only contain event information originating from the publishing system. Publishers should not re-publish event information they receive from other providers.
+- Event messages published to the NEMS MUST only contain event information originating from the publishing system. Publishers should not publish information they receive from other providers.
 
 - The NEMS event message forwarding functionality is designed to send event messages based on subscription criteria and does not perform any message routing or filtering based on who the publishing and subscribing systems are. Therefore it is possible that a system/provider publishing an event message may receive back their own event message, if the subscription criteria is met for one or more of their subscriptions.
 
@@ -84,7 +84,7 @@ The OperationOutcome resource will containing the following elements, containing
 </OperationOutcome>
 ```
 
-When a message becomes deprecated the NEMS will no longer accept publication of that event message type and will return an error. For more information on event life cycle and event type deprecation can be seen on the [Messaging Architecture Overview](overview_msg_architecture.html#event-lifecycle-and-deprecation) page.
+When a message becomes withdrawn as part of the event lifecycle the NEMS will no longer accept publication of that event message type and will return an error. For more information on event life cycle and event type deprecation can be seen on the [Event Lifecycle and Deprecation](overview_msg_architecture_life_cycle.html) page.
 
 
 ## Onward Delivery of the event message to subscribers ##
