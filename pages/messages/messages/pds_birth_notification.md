@@ -137,7 +137,7 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 
 ### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 1..1 |
 
 The notifying practitioner for this event message.
 
@@ -149,7 +149,7 @@ The notifying practitioner for this event message.
 
 ### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Number Of Births)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -162,7 +162,7 @@ The notifying practitioner for this event message.
 
 ### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Birth Weight)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -181,7 +181,7 @@ The notifying practitioner for this event message.
 
 ### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Gestation Age)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -194,7 +194,7 @@ The notifying practitioner for this event message.
 
 ### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Stillborn Indicator)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -209,7 +209,7 @@ The notifying practitioner for this event message.
 
 ### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Suspected Congenital Abnormality Indicator)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -232,7 +232,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 
 
 ### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Delivery Place)
-| Resource Cardinality | TBC | 0..1? |
+| Resource Cardinality | 0..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -244,7 +244,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 
 ### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Registering Authority)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -256,7 +256,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 
 ### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Partner Child Health Organisation)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 0..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -269,7 +269,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 ### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Responsible Child Health Organisation)
 
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 0..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -281,7 +281,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 
 ### [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) (Delivery Place)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 0..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -292,7 +292,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) (Registering Authority)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -302,7 +302,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) (Responsible, Sender, Partner Child Health Organisation, Responsible Child Health Organisation)
 
-| Resource Cardinality | TBC |
+| Resource Cardinality | 0..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -325,8 +325,4 @@ The HealthcareService resource included in the event message SHALL conform to th
 ## PDS Birth Notification Example ##
 
 <script src="https://gist.github.com/IOPS-DEV/baad58296da6bb0f7b06997001ded728.js"></script>
-
-
-
-
 

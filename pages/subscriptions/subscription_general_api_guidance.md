@@ -21,7 +21,7 @@ Information on how to verify an NHS Number against the Spine PDS is available on
 
 ## Endpoint Registration
 
-To use the NEMS subscription API the submitting system will require national assurance and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
+To use the NEMS subscription API the submitting system will require national assurance and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details). The endpoint ASID on which the subscription API message set is register MUST contain the ODS Codes which will be used within the subscriptions and match the MESH mailbox ODS Code.
 
 
 ## JWT
