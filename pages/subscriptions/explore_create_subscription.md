@@ -123,6 +123,18 @@ The OperationOutcome resource will contain one or more issue elements, one for e
       </details> 
       <diagnostics value="Deprecation of the Newborn Hearing (newborn-hearing-1) event type will occur on 22/06/2019, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
    </issue> 
+   <issue> 
+      <severity value="fatal"/> 
+      <code value="not-supported"/> 
+      <details>
+         <coding> 
+            <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/> 
+            <code value="NO_LONGER_SUPPORTED"/> 
+            <display value="Event message type is no longer supported"/> 
+         </coding> 
+      </details> 
+      <diagnostics value="Withdrawal of Event message type `pds-birth-notification-1` will occur on 01/01/2020, for more information go to https://developer.nhs.uk/apis/ems-beta/overview_supported_events.html"/>
+   </issue> 
 </OperationOutcome>
 ```
 
