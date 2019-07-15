@@ -302,7 +302,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) (Responsible, Sender, Partner Child Health Organisation, Responsible Child Health Organisation)
 
-| Resource Cardinality | 0..1 |
+| Resource Cardinality | 0..* |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
