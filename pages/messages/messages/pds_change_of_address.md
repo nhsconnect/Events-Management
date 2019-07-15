@@ -35,7 +35,7 @@ If a subscriber receives multiple `PDS Change of Address` event messages for the
 
 The delivery of the PDS Change of Address event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
-| MESH WorkflowID | `CHILDHEALTH_CHANGEOFADDRESS_UPDATE` |
+| MESH WorkflowID | `CHANGEOFADDRESS_UPDATE` |
 
 
 ## Resource Population Requirements and Guidance ##

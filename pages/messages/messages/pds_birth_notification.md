@@ -31,7 +31,7 @@ The birth notification event is triggered by a birth being registered on the Spi
 
 The delivery of the PDS Birth Notification event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
-| MESH WorkflowID | `CHILDHEALTH_BIRTHNOTIFICATION_UPDATE` |
+| MESH WorkflowID | `BIRTHNOTIFICATION_UPDATE` |
 
 
 ## Resource Population Requirements and Guidance ##

@@ -46,7 +46,7 @@ The below table is included to highlight the different types of Death Notificati
 
 The delivery of the PDS Death Notification event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
-| MESH WorkflowID | `CHILDHEALTH_DEATHNOTIFICATION_UPDATE` |
+| MESH WorkflowID | `DEATHNOTIFICATION_UPDATE` |
 
 
 ## Resource Population Requirements and Guidance ##
