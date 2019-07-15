@@ -52,21 +52,25 @@ summary: Summary release notes of the versions released in National Events Manag
 - Added resource cardinality information to specification
 - Updated event codes to align with new event type value set (**Breaking Change**)
 - FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
+- WorkflowID updated
 
 [PDS Change of Address](pds_change_of_address.html)
 - Added resource cardinality information to specification
 - Updated event codes to align with new event type value set (**Breaking Change**)
 - FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
+- WorkflowID updated
 
 [PDS Change of GP](pds_change_of_gp.html)
 - Added resource cardinality information to specification
 - Updated event codes to align with new event type value set (**Breaking Change**)
 - FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
+- WorkflowID updated
 
 [PDS death Notification](pds_death_notification.html)
 - Added resource cardinality information to specification
 - Updated event codes to align with new event type value set (**Breaking Change**)
 - FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
+- WorkflowID updated
 
 [Publish an Event Message](publication_publish.html)
 - Updated request header `interactionID` requirement
