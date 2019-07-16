@@ -85,8 +85,8 @@ The Encounter resource included in the event message SHALL conform to the [CareC
 | --- | --- | --- |
 | status | 1..1 | The encounter may carry a status of  `in-progress` or `finished`. The status of `in-progress` should be used where the encounter event is published at the start of the encounter where additional encounter detail will be added at a later date, such as a hospital admission. The status of `finished` should be used when the encounter event is published at the end of an encounter when all data about the encounter is available. |
 | subject | 1..1 | This will reference the patient resource representing the patient who is the subject of this event. |
-| period.start | 1..1 | Then encounter event MUST include the dateTime when the encounter started. |
-| period.end | 0..1 | Then encounter event MUST include the dateTime when the encounter ended if available or calculatable by the publisher. |
+| period.start | 1..1 | Then encounter event **MUST** include the dateTime when the encounter started. |
+| period.end | 0..1 | Then encounter event **MUST** include the dateTime when the encounter ended if available or calculatable by the publisher. |
 | type | 0..1 | Publishers **SHOULD** include the type of encounter, such as "Seen in general practitioner surgery" or "Telephone encounter" |
 | participant | 0..* | Publishers **SHOULD** include the participants who were present during the encounter. |
 
@@ -97,11 +97,7 @@ The Encounter resource included in the event message SHALL conform to the [CareC
 DocumentReference resource(s) **SHOULD** be included by the publisher in the encounter event, pointing the subscriber to an endpoint where they can retrieve the supporting information relating to the  encounter when it is required. These pointers will conform to the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) pointer model using the same classes and types. If a subscriber does not act upon an encounter event immediately after it is received then they **SHOULD** retrieve the latest pointers from NRL rather than using the pointers included in the event message as there is a risk that the pointers received in events might become or invalid. Retrieval of the supporting information using the DocumentReference pointer will use the same mechanism as required for the [NRL retrieval](https://developer.nhs.uk/apis/nrl/retrieval_overview.html)
 
 
-The pointer should point towards the same data models as NRL, there may be processing required by the subscriber to link the encounter to data they can retrieve
-
-**OR**
-
-The pointers should point towards endpoints which only return information which relates to this encounter.
+The pointers should point towards endpoints which only return information which relates to this encounter. The encounter which is retrieved by the pointer should contain an encounter with the same id as the id of the encounter in the event message.
 
 
 The DocumentReference resource(s) included in the event message SHALL conform to the [NRL-DocumentReference-1](https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1) constrained FHIR profile and the additional population guidance as per the table below:
