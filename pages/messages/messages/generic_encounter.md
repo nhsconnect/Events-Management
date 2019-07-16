@@ -7,12 +7,14 @@ permalink: generic_encounter.html
 summary: "Guidance and requirements for the Encounter event message"
 ---
 
-The encounter event is a light weight event which represent an encounter between a patient and a practitioner. The event contains minimal information but can include pointer to where subscribers can retrieve the supporting information when required. The encounter event shares the pointer model and retrieval mechanism with the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
+The encounter event is a [light weight](overview_msg_architecture_event_content.html) event which represent an encounter between a patient and a practitioner. The event contains minimal information about the encounter but also include pointers to where supporting information about the encounter can retrieved when required. The pointers included in the `encounter` event message shares the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
 
 
 ## Bundle structure
 
-Specifies mandatory referencing within the Event Message Bundle.
+The event message contains the mandatory `MessageHeader` resource as the first element of the event message as per the FHIR messaging requirements which references an `encounter` resource as the focus of the event message. This encounter resource represents the encounter which happened and should be populated as per the guidance below. The encounter resource references out to a number of different resources which add context to the event and the event message bundle includes `DocumentReference` resource which are the pointers to endpoints where the data about the encounter can be retrieved when needed.
+
+The diagram below shows the referencing between resources within the encounter message bundle:
 
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/messages/generic_encounter.png" target="_blank"><img src="images/messages/generic_encounter.png"></a>
@@ -21,9 +23,17 @@ Specifies mandatory referencing within the Event Message Bundle.
 
 ## Encounter Message Life Cycle ##
 
-The `Encounter` event message carries minimal data therefore there should be no need to send an update or delete version of the event message, therefore the event message will always contain a `messageEventType` extension with value `new` in the MessageHeader resource. There will be no `update` or `delete` version of this event message.
+The `Encounter` event message carries minimal data but to allow publishers to notify subscribers that the data available for an encounter has been updated the encounter event supports the `new`, `update` and `delete` values within the `messageEventType` extension of the `MessageHeader` resource.
 
+The Encounter event message event type should be sent as follows:
 
+| Message Event Type | Description |
+| --- | --- |
+| new | A `new` encounter event should be sent when an encounter occurs between a practitioner and a patient. |
+| update | An `update` encounter event message should be sent when any information included in or pointed to by event message is updated. To allow the information carried in the `new` event message to be linked to the information in the `update` event message the encounter resource `id` MUST be populated with the same value between the new and update versions of the event message. The `update` encounter event MUST contain all the information about the event as it does in the new event message, and not just the information which has been updated. |
+| delete | A `delete` encounter event message should be sent when the information included in or pointed to by the event message is incorrect, such as when the event was sent for the wrong patient. |
+
+If a subscriber receives multiple `Encounter` event messages for the same patient, the latest event message as indicated by the `meta.lastUpdated` element within the MessageHeader resource should be considered the source of truth for the patient's correct address.
 
 ## Onward Delivery ##
 
@@ -75,6 +85,8 @@ The Encounter resource included in the event message SHALL conform to the [CareC
 | --- | --- | --- |
 | status | 1..1 | The encounter may carry a status of  `in-progress` or `finished`. The status of `in-progress` should be used where the encounter event is published at the start of the encounter where additional encounter detail will be added at a later date, such as a hospital admission. The status of `finished` should be used when the encounter event is published at the end of an encounter when all data about the encounter is available. |
 | subject | 1..1 | This will reference the patient resource representing the patient who is the subject of this event. |
+| period.start | 1..1 | Then encounter event MUST include the dateTime when the encounter started. |
+| period.end | 0..1 | Then encounter event MUST include the dateTime when the encounter ended if available or calculatable by the publisher. |
 | type | 0..1 | Publishers **SHOULD** include the type of encounter, such as "Seen in general practitioner surgery" or "Telephone encounter" |
 | participant | 0..* | Publishers **SHOULD** include the participants who were present during the encounter. |
 
