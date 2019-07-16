@@ -59,6 +59,7 @@ summary: Summary release notes of the versions released in National Events Manag
 - Updated event codes to align with new event type value set (**Breaking Change**)
 - FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
 - WorkflowID updated
+- Added guidance about volumes and known issues with the way providers update PDS resulting in flip flopping of addresses
 
 [PDS Change of GP](pds_change_of_gp.html)
 - Added resource cardinality information to specification
