@@ -15,7 +15,7 @@ Each event message which passes through the NEMS will carry a standard set of ev
 - information about the event that occurred
 - information to allow receivers to perform [message sequencing](overview_msg_architecture_sequencing.html)
 
-All event messages will be wrapped in a FHIR bundle resource of type `message` and therefore will also include a `MessageHeader` resource as the first resource in the bundle.
+All event messages will be wrapped in a FHIR bundle resource of type `message` and therefore will also include a `MessageHeader` resource as the first resource in the bundle. Other resources included in the event message bundle may appear in any order, subscribers should not assume any set order based on the order of requirements and resources within this specification.
 
 The `MessageHeader` resource will contain the NHS Number, Forename, Surname and Date of Birth of the patient who is the focus of the event message, these details are used by the NEMS to perform subscription matching.
 

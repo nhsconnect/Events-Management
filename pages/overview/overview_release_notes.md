@@ -37,6 +37,7 @@ summary: Summary release notes of the versions released in National Events Manag
 - Added information about feedback contact information to MessageHeader resource (**Breaking Change**)
 - Added required extension to the MessageHeader resource which MUST contain details of the Patient who is the focus of the event message which will be used for routing to subscribers (**Breaking Change**)
 - Added requirement for new extension `routingDempographics` which is use by NEMS for message routing
+- Added wording to make clear that the MessageHeader will be the first resource in the bundle but other resources may appear in any order and order should not be assumed from the specification order.
 
 [Generic Subscription API Requirements](subscription_general_api_guidance.html)
 - Added clarification for use of MIME types
