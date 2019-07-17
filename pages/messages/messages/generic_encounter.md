@@ -12,9 +12,9 @@ The encounter event is a [light weight](overview_msg_architecture_event_content.
 
 ## Bundle structure
 
-The event message contains a mandatory `MessageHeader` resource as the first element of the event message as per the FHIR messaging requirements which references an `encounter` resource as the focus of the event message. This encounter resource represents the encounter which happened and should be populated as per the guidance below. The encounter resource references out to a number of different resources which add context to the event and the event message bundle includes `DocumentReference` resource which are the pointers to endpoints where the data about the encounter can be retrieved when needed.
+The event message contains a mandatory `MessageHeader` resource as the first element of the event message as per the FHIR messaging requirements which references an `encounter` resource as the focus of the event message. This encounter resource represents the encounter that happened and should be populated as per the guidance below.
 
-The diagram below shows the referencing between resources within the encounter message bundle:
+The `encounter` resource references out to a number of other resources which add context to the encounter within the event message. The event message also includes `DocumentReference` resource which are the pointers to endpoints exposed by the provider where the data, including additional clinical data, about the encounter can be retrieved when needed by the subscriber. The encounter event may contain additional resources containing supporting information for the encounter but should not be expected by subscribers. The diagram below shows the referencing between resources within the encounter message bundle:
 
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/messages/generic_encounter.png" target="_blank"><img src="images/messages/generic_encounter.png"></a>
@@ -23,15 +23,15 @@ The diagram below shows the referencing between resources within the encounter m
 
 ## Encounter Message Life Cycle ##
 
-The `Encounter` event message carries minimal data but to allow publishers to notify subscribers that the data available for an encounter has been updated the encounter event supports the `new`, `update` and `delete` values within the `messageEventType` extension of the `MessageHeader` resource.
+The `Encounter` event message is light weight and carries minimal data so the content of the event message is unlikely to change within the publishing system, but the information pointed to by the DocumentReferences within the encounter event is more likely to change within the publishers system so to allow publishers to notify subscribers that the data available for an encounter has been updated the encounter event supports all the message event types `new`, `update` and `delete` within the `messageEventType` extension of the `MessageHeader` resource.
 
-The Encounter event message event type should be sent as follows:
+The message event type should be published by publishers as follows:
 
 | Message Event Type | Description |
 | --- | --- |
 | new | A `new` encounter event should be sent when an encounter occurs between a practitioner and a patient. |
 | update | An `update` encounter event message should be sent when any information related to the encounter is updated, contained in the event message or pointed to by the event message DocumentReference.<br/><br/>The `update` encounter event MUST include the same value in the encounter `id` element as was sent in the `new` encounter event to allow the new and update events to be linked by the subscriber.<br/><br/>The `update` encounter event MUST contain all the information which was shared in the new event message, and not just the information which has been updated. Resources should not be removed in the `update` event message if they were present in the `new` event message, if an included resource is incorrect and should not have been included in the event message, it should still be included in the `update` message but the resource should contain the `status` element with the value `entered-in-error`. |
-| delete | A `delete` encounter event message should be sent when the event message was sent incorrectly and should not have been sent, such as when the event was sent for the wrong patient. All resources should still be included in the event message. |
+| delete | A `delete` encounter event message should be sent when the event message was sent incorrectly and should not have been sent, such as when the event was sent for the wrong patient. All resources should still be included in the event message. If a `delete` type of event is sent for an encounter event this MUST not be followed by any `update` type events. |
 
 If a subscriber receives multiple `Encounter` event messages for the same patient, the latest event message as indicated by the `meta.lastUpdated` element within the MessageHeader resource should be considered the source of truth for the patient's correct address.
 
@@ -75,6 +75,8 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 ### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
 
+{% include important.html content="The encounter is still under development, value sets and mandatory fields still need finalising but will probably contain information such as practice setting and type of encounter at a high level." %}
+
 The Encounter resource included in the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
@@ -91,9 +93,9 @@ The Encounter resource included in the event message SHALL conform to the [CareC
 
 
 
-### [NRL-DocumentReference-1](https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1)
+### [DocumentReference](https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1)
 
-DocumentReference resource(s) **SHOULD** be included in the event message by publishers. The DocumentReference MUST point to an endpoint where the subscriber can retrieve information specifically about the encounter contained within the event.
+DocumentReference resource(s) **SHOULD** be included in the event message by publishers. The DocumentReference MUST point to an endpoint where the subscriber can retrieve information specifically about the encounter contained within the event. Document references may point to data at different levels of granularity, they may point at an encounter as a whole or may point at specific data such as vaccinations or allergies.
 
 Included DocumentReference pointers will conform to the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) pointer model using the same classes and types. If a subscriber does not act upon an encounter event immediately after it is received then they **SHOULD** retrieve the latest pointers from NRL rather than using the pointers included in the event message to make sure the subscriber has all the latest available information for the patient. Retrieval of the supporting information using the information in the DocumentReference pointer will use the same mechanisms as required for the [NRL retrieval](https://developer.nhs.uk/apis/nrl/retrieval_overview.html)
 
