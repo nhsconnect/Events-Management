@@ -38,10 +38,10 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| extension(routingDempographics) | 1..1 | The extension MUST contain the details of the patient who is the focus of this event message. |
-| extension(routingDempographics)<br/>**.extension(nhsNumber)** | 1..1 | The extension MUST contain the patient's NHS Number identifier and is used by the NEMS for routing event messages to subscribers. |
-| extension(routingDempographics)<br/>**.extension(name)** | 1..1 | The extension MUST contain the human name element containing the patient's `given` and `family` as recognised by PDS, and match the NHS number in the routingDemographics extension. |
-| extension(routingDempographics)<br/>**.extension(birthDateTime)** | 1..1 | The extension MUST contain the patient's Date Of Birth which matches the NHS number in the routingDemographics extension. |
+| extension(routingDemographics) | 1..1 | The extension MUST contain the details of the patient who is the focus of this event message. |
+| extension(routingDemographics)<br/>**.extension(nhsNumber)** | 1..1 | The extension MUST contain the patient's NHS Number identifier and is used by the NEMS for routing event messages to subscribers. |
+| extension(routingDemographics)<br/>**.extension(name)** | 1..1 | The extension MUST contain the human name element containing the patient's `given` and `family` as recognised by PDS, and match the NHS number in the routingDemographics extension. |
+| extension(routingDemographics)<br/>**.extension(birthDateTime)** | 1..1 | The extension MUST contain the patient's Date Of Birth which matches the NHS number in the routingDemographics extension. |
 | meta.versionId | 0..1 | **Message Sequencing** - A sequence number for the purpose of ordering messages for processing. The sequence number must be an integer which is patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient. |
 | meta.lastUpdated | 0..1 | **Message Sequencing** - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
 | extension(eventMessageType) | 1..1 | The type value which shall appear in this element will be defined within the separate event message implementation guide for each of the event messages, as the value will depend on the life cycle of the specific event message. |
