@@ -7,12 +7,12 @@ permalink: generic_encounter.html
 summary: "Guidance and requirements for the Encounter event message"
 ---
 
-The encounter event is a [light weight](overview_msg_architecture_event_content.html) event which represent an encounter between a patient and a practitioner. The event contains minimal information about the encounter but also include pointers to where supporting information about the encounter can retrieved when required. The pointers included in the `encounter` event message shares the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
+The encounter event is a [light weight](overview_msg_architecture_event_content.html) event which represent an encounter between a patient and a practitioner. The event contains minimal information about what happened at the encounter but the event message includes DocumentReference resources which are pointers to where more information about the encounter can retrieved when required by the subscriber. The pointers included in the `encounter` event message shares the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
 
 
 ## Bundle structure
 
-The event message contains the mandatory `MessageHeader` resource as the first element of the event message as per the FHIR messaging requirements which references an `encounter` resource as the focus of the event message. This encounter resource represents the encounter which happened and should be populated as per the guidance below. The encounter resource references out to a number of different resources which add context to the event and the event message bundle includes `DocumentReference` resource which are the pointers to endpoints where the data about the encounter can be retrieved when needed.
+The event message contains a mandatory `MessageHeader` resource as the first element of the event message as per the FHIR messaging requirements which references an `encounter` resource as the focus of the event message. This encounter resource represents the encounter which happened and should be populated as per the guidance below. The encounter resource references out to a number of different resources which add context to the event and the event message bundle includes `DocumentReference` resource which are the pointers to endpoints where the data about the encounter can be retrieved when needed.
 
 The diagram below shows the referencing between resources within the encounter message bundle:
 
