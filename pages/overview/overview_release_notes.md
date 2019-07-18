@@ -26,6 +26,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Event Receiver Requirements](receiver_requirements.html)
 - Removed ITK3 Wrapper from solution (**Breaking Change**)
+- Added requirement highlighting risk around MESH.
 
 [Generic Publication API Requirements](publication_general_api_guidance.html)
 - Added clarification on level of NHS Number validation required for NHS numbers used in the event messages.
