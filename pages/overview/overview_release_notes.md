@@ -42,6 +42,7 @@ summary: Summary release notes of the versions released in National Events Manag
 [Generic Subscription API Requirements](subscription_general_api_guidance.html)
 - Added clarification for use of MIME types
 - Added clarification on level of NHS Number validation required for NHS numbers used in subscriptions.
+- Added additional audit requirements for use of the subscription API
 
 [Introduction to National Events Management Service](index.html)
 - Updated wording around definition of what is an event within the context of the NEMS.
