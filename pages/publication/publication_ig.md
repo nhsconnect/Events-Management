@@ -7,7 +7,7 @@ permalink: publication_ig.html
 summary: "IG Requirements for publishing event messages into the NEMS"
 ---
 
-The following audit requirements MUST be met by publishing organisations in order to meet the information governance (IG) requirements of the NEMS. These requirements are aimed at making sure that data is not shared when it should not be and that a record of shared data is available to Data Protection Officers, Caldicott Guardians and IG leads if it is required.
+The following requirements MUST be met by publishing organisations in order to meet the information governance (IG) requirements of the NEMS. These requirements are aimed at making sure that data is not shared when it should not be and that a record of shared data is available to Data Protection Officers, Caldicott Guardians and IG leads if it is required.
 
 
 ### Patient Dissent To Share
