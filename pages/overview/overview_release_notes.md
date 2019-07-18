@@ -87,6 +87,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Receiver Information Governance](receiver_ig.html)
 - Moved the Subscription IG page to the Receiver section as requirements are around audit of received events rather than around use of the subscription API.
+- Added additional detail to make clear security requirements
 
 [Subscriptions Overview](explore_subscriptions.html)
 - Added information to the geographical rule based subscriptions section around appropriate use of this type of subscription.
