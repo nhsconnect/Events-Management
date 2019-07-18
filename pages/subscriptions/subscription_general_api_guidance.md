@@ -56,3 +56,14 @@ The supported MIME-types for the Subscription API are:
 - application/json+fhir;charset=utf-8
 
 Where the MIME-type is not supplied the NEMS will default to `application/xml+fhir;charset=utf-8`
+
+
+## Audit
+
+Providers using the subscription API MUST audit all interactions with the API, including `Create`, `Read` and `Delete`.
+
+The audit data MUST include:
+
+- who or what triggered the subscription create, read or delete
+- the date and time when the subscription was created / read / deleted
+- details about the subscription such as the event type, the start and end dates for the subscriptions if included and the NHS Number the subscription was for

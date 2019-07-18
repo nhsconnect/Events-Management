@@ -80,9 +80,6 @@ entries:
     - title: Create Subscription
       url: /explore_create_subscription.html
       output: web
-#    - title: Search for Subscriptions
-#      url: /search_subscription.html
-#      output: web
     - title: Read Subscription
       url: /explore_read_subscription.html
       output: web
