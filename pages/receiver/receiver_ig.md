@@ -28,3 +28,13 @@ The access control model of the patient information system provided by the suppl
 - Role-based access control
 - Legitimate relations
 - An audit trail of access and create, amend and delete
+
+
+### Legitimate Relationship
+
+The subscribing organisation receiving events MUST ensure that a legitimate care relationship exists with a patient for whom event information is received.
+
+For IG purposes the event receiving organisation MUST have:
+- processes in place for managing legitimate relationships
+- processes in place for managing legitimate relationships which have expired
+- be able to prove the existence of a legitimate relationship on enquiry.
