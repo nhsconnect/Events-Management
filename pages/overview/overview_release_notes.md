@@ -78,6 +78,9 @@ summary: Summary release notes of the versions released in National Events Manag
 [Publish an Event Message](publication_publish.html)
 - Updated request header `interactionID` requirement
 
+[Publisher Information Governance](publication_ig.html)
+- Improved audit requirements guidance
+
 [Read Subscription](explore_read_subscription.html)
 - Updated event codes to align with new event type value set
 
