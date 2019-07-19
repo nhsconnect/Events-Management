@@ -10,7 +10,7 @@ toc: false
 
 The NEMS [messaging architecture](overview_msg_architecture.html) means that publishers of events publish without knowing which subscribers are going to receive the event message and subscribers subscribe without knowing who will be publishing the events they are subscribed to. This could make it difficult for subscribers to know who and how to contact the published when an event message they receive contains invalid or incorrect information which needs to be corrected. To address this the NEMS is mandating that contact details are included in the event message by the publisher, which can be used to raise issue relating to that specific event message.
 
-If a publisher or subscriber experience an issues with the NEMS, un related to a specific event message such as issues connecting to the publish or subscription API, these issues would follow the same processes as other Spine services and an issue would need to be raised with the National Service Desk.
+If a publisher or subscriber experience an issues with the NEMS un-related to a specific event message, such as issues connecting to the publish or subscription API, then these issues would follow the same issue processes as other Spine services where an issue would need to be raised with the National Service Desk.
 
 
 ## Process
