@@ -33,7 +33,7 @@ The subscribing organisation MUST include the following HTTP request headers whe
 | toASID | ASID of the NEMS service |
 | InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:SubscriptionsApiPost` |
 
-Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
+Additional information about standard headers and endpoints is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
 
 ### EMS-Subscription-1 resource population ###
@@ -137,9 +137,6 @@ The OperationOutcome resource will contain one or more issue elements, one for e
    </issue> 
 </OperationOutcome>
 ```
-
-When a message becomes deprecated the NEMS will no longer accept publication of that event message type and will return an error. For more information on event life cycle and event type deprecation can be seen on the [Messaging Architecture Overview](overview_msg_architecture.html#event-lifecycle-and-deprecation) page.
-
 
 
 ## Create Subscription Example ##

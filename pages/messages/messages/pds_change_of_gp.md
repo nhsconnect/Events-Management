@@ -34,12 +34,12 @@ If a subscriber receives multiple `PDS Change of GP` event messages for the same
 
 The delivery of the PDS Change of GP event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
-| MESH WorkflowID | `CHANGEOFGP-1` |
+| MESH WorkflowID | `CHANGEOFGP_1` |
 
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Generic Requirements](https://developer.nhs.uk/apis/ems-beta/explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 

@@ -25,9 +25,9 @@ If the subscribing organisation wishes to use generic subscriptions, the request
 
 As part of the Private Beta NHS Digital intends to validate the generic subscription functionality by working closely with suppliers and providers to identify and configure their generic subscriptions. As part of this collaborative approach, during private beta, an interim process for submitting generic subscriptions has been implemented as follows:
 
-1. providers start by downloading and completing the "Generic Subscriptions" spreadsheet
-2. once complete the provider needs to raise an NHS Digital service desk issue asking for the generic subscriptions to be configured
-3. NHS digital will validate and configure the generic subscriptions with the NEMS
+1. providers are sent a "Generic Subscriptions" spreadsheet to complete for the rules they would like setting up
+2. once complete the spreadsheet is sent to NHS Digital asking for the generic subscriptions to be approved and configured
+3. NHS digital will validate then configure the generic subscriptions with the NEMS
 
 The intention is to use this process during the Private Beta but an improved process is planned as part of the wider roll out of NEMS service.
 

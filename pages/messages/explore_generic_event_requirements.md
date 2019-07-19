@@ -40,7 +40,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | --- | --- | --- |
 | extension(routingDemographics) | 1..1 | The extension MUST contain the details of the patient who is the focus of this event message. |
 | extension(routingDemographics)<br/>**.extension(nhsNumber)** | 1..1 | The extension MUST contain the patient's NHS Number identifier and is used by the NEMS for routing event messages to subscribers. |
-| extension(routingDemographics)<br/>**.extension(name)** | 1..1 | The extension MUST contain the human name element containing the patient's `given` and `family` as recognised by PDS, and match the NHS number in the routingDemographics extension. |
+| extension(routingDemographics)<br/>**.extension(name)** | 1..1 | The extension MUST contain the human name element containing the patient's official `given` and `family` names as recognised by PDS, and match the NHS number in the routingDemographics extension. |
 | extension(routingDemographics)<br/>**.extension(birthDateTime)** | 1..1 | The extension MUST contain the patient's Date Of Birth which matches the NHS number in the routingDemographics extension. |
 | meta.versionId | 0..1 | **Message Sequencing** - A sequence number for the purpose of ordering messages for processing. The sequence number must be an integer which is patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient. |
 | meta.lastUpdated | 0..1 | **Message Sequencing** - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
@@ -53,7 +53,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | source.contact.system | 1..1 | Must contain a value of `phone` or `email` matching the included contact method within the `value` element |
 | source.contact.value | 1..1 | A phone number or email address |
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
-| focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. The referenced resource will contain a `subject` element pointing to a Patient resource which represents the patient who is the focus of the event message.  |
+| focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
 
 
 ## [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)

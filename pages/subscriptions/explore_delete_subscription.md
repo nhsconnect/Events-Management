@@ -34,7 +34,7 @@ The system calling the API MUST include the following HTTP request headers when 
 | toASID | ASID of the NEMS service |
 | InteractionID | Fixed value: `urn:nhs:names:services:clinicals-sync:SubscriptionsApiDelete` |
 
-Additional information about standard headers and endpoint looking is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
+Additional information about standard headers and endpoints is available in the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/build_directory.html).
 
 
 ### Error Handling
