@@ -30,7 +30,7 @@ A rule-based subscription relates to where a subscriber wishes to receive all pu
   
 - Registered Org: Subscriptions that relate to individuals who are registered with a specific organisation (currently only applicable for GP organisations).
 
-Currently the Subscription API does not support the configuration of generic subscriptions. Details of any generic subscriptions required should be appended to the service request required to configure the MESH mailbox to receive event messages. This process is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
+Currently the Subscription API does not support the configuration of generic subscriptions. Details of how to setup generic subscriptions is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
 
 ## Subscription matching and message delivery ##
 
