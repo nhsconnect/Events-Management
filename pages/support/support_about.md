@@ -13,4 +13,4 @@ summary: "Additional information about this specification to assist with FHIR AP
 
 ## Questions and Comments ##
 
-For questions and comments about this Implementation Guide please email the <a href="mailto:interoperabilityteam@nhs.net?subject=Events%20Management%20Service%20FHIR%20Specification">Interoperability Team</a>.
+For questions and comments about this Implementation Guide please email the <a href="mailto:ems@nhs.net?subject=Events%20Management%20Service%20FHIR%20Specification">NEMS Team</a>.
