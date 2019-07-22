@@ -7,6 +7,17 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.1.0-Beta () ##
+
+[Encounter](generic_encounter.html)
+- Encounter event requirements and guidance added to specification
+
+[Message Content](overview_msg_architecture_event_content.html)
+- Page added to explain message content, full fat vs light weight
+
+[Supported Event Messages](overview_supported_events.html)
+- Encounter event added to supported event messages
+
 
 ## 2.0.0-Beta (22/07/2019) ##
 
