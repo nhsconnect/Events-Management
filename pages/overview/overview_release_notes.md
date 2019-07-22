@@ -8,7 +8,7 @@ summary: Summary release notes of the versions released in National Events Manag
 ---
 
 
-## 2.0.0-Beta () ##
+## 2.0.0-Beta (22/07/2019) ##
 
 {% include important.html content="Release 2.0.0-Beta includes a significant specification re-structure to improve navigation and readability." %}
 
