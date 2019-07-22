@@ -52,7 +52,7 @@ entries:
         output: web
         subfolderitems:
         - title: Encounter
-          url: /generic_encounter.html
+          url: /encounter_1.html
           output: web
         - title: PDS Birth Notification
           url: /pds_birth_notification.html

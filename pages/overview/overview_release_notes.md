@@ -9,7 +9,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 ## 2.1.0-Beta () ##
 
-[Encounter](generic_encounter.html)
+[Encounter](encounter_1.html)
 - Encounter event requirements and guidance added to specification
 
 [Message Content](overview_msg_architecture_event_content.html)
