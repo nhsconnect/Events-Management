@@ -7,13 +7,21 @@ permalink: subscription_general_api_guidance.html
 summary: "Generic additional guidance for using the Subscription API"
 ---
 
+## Updating a Subscription
+
+The National Events Management Service does not support different versions of Subscriptions, therefore any changes to a subscription will require that the existing subscription is deleted, and a new one created.
+
+
 ## NHS Numbers
 
-Any NHS numbers used when submitting a request to the NEMS subscription API SHALL have been traced against PDS (see the [Spine Core](https://developer.nhs.uk/apis/spine-core/pds_overview.html) specification for details).
+Any NHS Numbers included within a subscription sent to the NEMS Subscription API MUST have been verified against the Spine PDS at the point of calling the subscription API.
+ 
+Information on how to verify an NHS Number against the Spine PDS is available on the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/pds_overview.html).
+
 
 ## Endpoint Registration
 
-To use the NEMS subscription API the submitting system will require national assurance and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).
+To use the NEMS subscription API the submitting system will require national assurance and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details). The endpoint ASID on which the subscription API message set is register MUST contain the ODS Codes which will be used within the subscriptions and match the MESH mailbox ODS Code.
 
 
 ## JWT
@@ -34,7 +42,9 @@ All requests SHALL include a JWT with information about the requesting system an
 
 ## NEMS Supported MIME-types
 
-The supported MIME-types for the NEMS, for use in the "Content-Type" and "Accept" headers are:
+{% include important.html content="Currently the National Events Management Service (NEMS) only supports XML for interactions with the publish API and onward delivery of event messages, therefore subscribers will not receive event messages in a JSON format." %}
+
+The supported MIME-types for the Subscription API are:
 
 - application/fhir+xml
 - application/fhir+json
@@ -46,3 +56,14 @@ The supported MIME-types for the NEMS, for use in the "Content-Type" and "Accept
 - application/json+fhir;charset=utf-8
 
 Where the MIME-type is not supplied the NEMS will default to `application/xml+fhir;charset=utf-8`
+
+
+## Audit
+
+Providers using the subscription API MUST audit all interactions with the API, including `Create`, `Read` and `Delete`.
+
+The audit data MUST include:
+
+- who or what triggered the subscription create, read or delete
+- the date and time when the subscription was created / read / deleted
+- details about the subscription such as the event type, the start and end dates for the subscriptions if included and the NHS Number the subscription was for

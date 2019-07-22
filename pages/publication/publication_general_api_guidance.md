@@ -14,7 +14,6 @@ Any NHS Numbers included in an event message sent to the NEMS Publication API, M
 Information on how to verify an NHS Number against the Spine PDS is available on the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/pds_overview.html).
 
 
-
 ## Endpoint Registration
 
 To use the NEMS Publication API the submitting system will require national assurance and must be set up as a Spine Endpoint with an associated endpoint certificate (see [here](https://developer.nhs.uk/apis/spine-core/build_endpoints.html) for details).

@@ -7,7 +7,7 @@ permalink: explore_subscriptions.html
 summary: "Types of Subscription and how they are used"
 ---
 
-To receive event messages a consumer will need to subscribe to events they want to receive. The flow of event messages from publishers to subscribers is described on the [Messaging Architecture Overview](explore_msg_architecture_overview.html) page.
+To receive event messages a consumer will need to subscribe to events they want to receive. The flow of event messages from publishers to subscribers is described on the [Messaging Architecture Overview](overview_msg_architecture.html) page.
 
 
 ## Types of Subscription ##
@@ -25,10 +25,12 @@ Explicit subscriptions SHOULD only be active for patients under the subscribing 
 A rule-based subscription relates to where a subscriber wishes to receive all published events that meet a particular rule set. There are two specific types of rule-based subscription currently:
 
 - Geographical: Subscriptions that relate to individuals who reside within the geographic boundaries of a specific organisation (For example, a Health Visiting Service wishing to view events for all children within a specific local authority area). 
+  
+  A geographical rule based subscription will result in a subscriber receiving events for any patients within the specified geographical area, therefore a subscriber wishing to use this form of subscription must demonstrate that they have a legitimate relationship with all patients in the area. If a provider is only responsible for a subset of patients within a geographical area, then geographical subscriptions are not appropriate as the provider will receive information for patients with which they do not have a legitimate relationship. In this scenario the provider should use explicit subscriptions to receive events for the patients with which they have a legitimate relationship.
+  
 - Registered Org: Subscriptions that relate to individuals who are registered with a specific organisation (currently only applicable for GP organisations).
 
-Currently the Subscription API does not support the configuration of generic subscriptions. Details of any generic subscriptions required should be appended to the service request required to configure the MESH mailbox to receive event messages. This process is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
-
+Currently the Subscription API does not support the configuration of generic subscriptions. Details of how to setup generic subscriptions is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
 
 ## Subscription matching and message delivery ##
 

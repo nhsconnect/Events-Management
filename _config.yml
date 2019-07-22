@@ -76,27 +76,12 @@ defaults:
       search: true
       sidebar: overview_sidebar
 
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: true
-      search: true
-      sidebar: overview_sidebar
-
 # these are defaults used for the frontmatter for these file types
 
 sidebars:
 - overview_sidebar
-- overview_sidebar
-- designprinciples_sidebar
-- accessrecord_sidebar
-- appointments_sidebar
-- tasks_sidebar
 
-description: "This implementation guide details the functional specification for the Events Management Service."
+description: "This implementation guide details the functional specification for the National Events Management Service."
 # the description is used in the feed.xml file
 
 sitemap: true
@@ -108,10 +93,6 @@ repository: nhsconnect/Events-Managment
 
 gist:
   noscript: false
-
-site:
-  fhirprofiles:
-    patient: "[Care Connect Patient](http://www.interopen.org/candidate-profiles/care-connect/CareConnect-Patient-1.html)"
 
 gems:
    - jekyll-github-metadata

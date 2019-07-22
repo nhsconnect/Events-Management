@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 1.5.4-Beta
+  version: 2.0.0-Beta
   levels: one
   folders:
 
@@ -12,9 +12,6 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-    - title: Supported Event Messages
-      url: /overview_supported_events.html
-      output: web
     - title: Guide Versioning
       url: /overview_guide_versioning.html
       output: web
@@ -23,19 +20,47 @@ entries:
       output: web
 
   - title: Messaging Architecture
-    output: web,pdf
+    output: web
     folderitems:
     - title: Overview
-      url: /explore_msg_architecture_overview.html
+      url: /overview_msg_architecture.html
       output: web
-      type: homepage
-    - title: Bundle Structure
-      url: /explore_bundle_structure.html
+    - title: Message Sequencing
+      url: /overview_msg_architecture_sequencing.html
       output: web
-    - title: Event Header Information
-      url: /explore_event_header_information.html
+    - title: Lifecycle and Deprecation
+      url: /overview_msg_architecture_life_cycle.html
       output: web
-
+    - title: Feedback Mechanism
+      url: /overview_msg_architecture_feedback.html
+      output: web
+      
+  - title: Event Messages
+    output: web
+    folderitems:
+    - title: Generic Requirements
+      url: /explore_genreic_event_requirements.html
+      output: web
+    - title: Supported Messages
+      url: /overview_supported_events.html
+      output: web
+      subfolders:
+      - title: Messages
+        output: web
+        subfolderitems:
+        - title: PDS Birth Notification
+          url: /pds_birth_notification.html
+          output: web
+        - title: PDS Change of Address
+          url: /pds_change_of_address.html
+          output: web
+        - title: PDS Change of GP
+          url: /pds_change_of_gp.html
+          output: web
+        - title: PDS Death Notification
+          url: /pds_death_notification.html
+          output: web
+          
   - title: Subscription Management
     output: web,pdf
     folderitems:
@@ -43,23 +68,20 @@ entries:
       url: /explore_subscriptions.html
       output: web
       type: homepage
-    - title: Information Governance
-      url: /subscription_ig.html
-      output: web
     - title: Generic API Guidance
       url: /subscription_general_api_guidance.html
       output: web
     - title: Create Subscription
       url: /explore_create_subscription.html
       output: web
-#    - title: Search for Subscriptions
-#      url: /search_subscription.html
-#      output: web
-    - title: Manage Subscription
-      url: /explore_manage_subscription.html
+    - title: Read Subscription
+      url: /explore_read_subscription.html
+      output: web
+    - title: Delete Subscription
+      url: /explore_delete_subscription.html
       output: web
 
-  - title: Event Publication
+  - title: Event Message Publication
     output: web,pdf
     folderitems:
     - title: Information Governance
@@ -72,15 +94,15 @@ entries:
       url: /publication_publish.html
       output: web
 
-  - title: Event Receiver
+  - title: Event Message Receiver
     output: web,pdf
     folderitems:
     - title: Overview
       url: /receiver_requirements.html
       output: web
       type: homepage
-    - title: ITK3 FHIR Profiles
-      url: /itk_ems_profiles.html
+    - title: Information Governance
+      url: /receiver_ig.html
       output: web
 
   - title: Help & Support
@@ -89,11 +111,4 @@ entries:
     - title: Contact Us
       url: /support_contact.html
       output: web
-      subfolders:
-      - title: Where Else Can I Look?
-        output: web
-        subfolderitems:
-        - title: FHIR Tools
-          url: /support_fhirtools.html
-          output: web
 

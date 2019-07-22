@@ -7,7 +7,7 @@ permalink: publication_ig.html
 summary: "IG Requirements for publishing event messages into the NEMS"
 ---
 
-The following requirements must be met by publishing organisations in order to meet the information governance (IG) requirements of the NEMS. These requirements are aimed at making sure that data is not shared when it should not be and that a record of shared data is available to Data Protection Officers, Caldicott Guardians and IG leads if it is required.
+The following requirements MUST be met by publishing organisations in order to meet the information governance (IG) requirements of the NEMS. These requirements are aimed at making sure that data is not shared when it should not be and that a record of shared data is available to Data Protection Officers, Caldicott Guardians and IG leads if it is required.
 
 
 ### Patient Dissent To Share
@@ -27,4 +27,10 @@ Patients have a legal right to have any incorrect data held within their record 
 
 ### Identification of Shared Data
 
-A publishing system must be able to identify the data that was published to the NEMS for any previously sent event message.
+Publishers must be able to identify what event messages have been published to the NEMS and what data was published, for any of those sent event messages.
+
+The publisher should audit or be able to identify the following data about the published event messages:
+- the 'DateTime' the event was published
+- the 'eventType' that was published
+- meta data about the event (id, sequence number, etc.)
+- what data was published (able to present the complete payload which was sent at the point of publishing including all headers and JWT)
