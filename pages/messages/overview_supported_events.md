@@ -14,7 +14,10 @@ The following event messages are supported by the NEMS for either publication an
 
 Requirements and population guidance within the event message specific pages should be followed in addition to the [Generic Event Message Requirements](explore_genreic_event_requirements.html) within this specification.
 
-### PDS Demographics Update Event Messages
+
+### Event Messages
+
+The following are event messages currently supported by the NEMS:
 
 | Event | Event Code | Publication API | Subscription API | Date Available |
 |---|---|:---:|:---:|---|
@@ -24,7 +27,9 @@ Requirements and population guidance within the event message specific pages sho
 | [PDS Death Notification](pds_death_notification.html) | pds-death-notification-1 | &#10060; | &#9989; | March 2019 |
 
 
-### Event Messages
+### DCH Event Messages
+
+The following event message are supported by the NEMS but have been defined by Digital Child Health. The event message requirements and guidance are on an external page but all generic requirements and guidance outlined within this specification still applies to these DCH events.
 
 | Event | Event Code | Publication API | Subscription API | Date Available |
 |---|---|:---:|:---:|---|
