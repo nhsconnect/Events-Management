@@ -21,6 +21,7 @@ The following are event messages currently supported by the NEMS:
 
 | Event | Event Code | Publication API | Subscription API | Date Available |
 |---|---|:---:|:---:|---|
+| [Encounter](generic_encounter.html) | encounter-1 | &#9989; | &#9989; | TBC 2019 |
 | [PDS Birth Notification](pds_birth_notification.html) | pds-birth-notification-1 | &#10060; | &#9989; | March 2019 |
 | [PDS Change of Address](pds_change_of_address.html) | pds-change-of-address-1 | &#10060; | &#9989; | March 2019 |
 | [PDS Change of GP](pds_change_of_gp.html) | pds-change-of-gp-1 | &#10060; | &#9989; | March 2019 |

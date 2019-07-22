@@ -25,6 +25,9 @@ entries:
     - title: Overview
       url: /overview_msg_architecture.html
       output: web
+    - title: Message Content
+      url: /overview_msg_architecture_event_content.html
+      output: web
     - title: Message Sequencing
       url: /overview_msg_architecture_sequencing.html
       output: web
@@ -48,6 +51,9 @@ entries:
       - title: Messages
         output: web
         subfolderitems:
+        - title: Encounter
+          url: /generic_encounter.html
+          output: web
         - title: PDS Birth Notification
           url: /pds_birth_notification.html
           output: web
