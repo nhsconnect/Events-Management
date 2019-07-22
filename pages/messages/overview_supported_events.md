@@ -29,7 +29,9 @@ The following are event messages currently supported by the NEMS:
 
 ### DCH Event Messages
 
-The following event message are supported by the NEMS but have been defined by Digital Child Health. The event message requirements and guidance are on an external page but all generic requirements and guidance outlined within this specification still applies to these DCH events.
+The following event message are supported by the NEMS but have been defined by Digital Child Health.
+
+**Note:** The requirements and guidance for these event is hosted on an external page, but all the generic requirements and guidance outlined within this specification still apply to these events.
 
 | Event | Event Code | Publication API | Subscription API | Date Available |
 |---|---|:---:|:---:|---|
