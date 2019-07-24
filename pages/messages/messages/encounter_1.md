@@ -43,7 +43,7 @@ The message event type should be published by publishers as follows:
 | Message Event Type | Description |
 | --- | --- |
 | new | A `new` encounter event should be sent when an encounter occurs between a practitioner and a patient. |
-| update | An `update` encounter event message should be sent when any information related to the encounter is updated (contained in the event message or pointed to by the DocumentReference resources within the event message).<br/><br/>The `update` encounter event MUST contain all the information which was shared in the `new` event message, and not just the information which has been updated. Resources should not be removed in the `update` event message if they were present in the `new` event message. If an included resource is incorrect and should not have been included in the event message, it should still be included in the `update` message but the resource should contain the `status` element with the value `entered-in-error` to indicate that it should not be used. |
+| update | An `update` encounter event message should be sent when any information related to the encounter is updated (contained in the event message or pointed to by the DocumentReference resources within the event message).<br/><br/>The `update` encounter event MUST contain all the information which was shared in the `new` event message, and not just the information which has been updated. Resources should not be removed in the `update` event message if they were present in the `new` event message. If an included resource is incorrect and should not have been included in the event message, it should still be included in the `update` message but the resource should contain the `status` element with the value `entered-in-error` to indicate that it should not be used. Additional resources may be added within an `update` type of event message, for example a new DocumentReference resource may be added if additional information is added to the patient record and associated with the encounter. |
 | delete | A `delete` encounter event message should be sent when the event message was sent incorrectly and should not have been sent, such as when the event was sent for the wrong patient. All resources should still be included in the event message. If a `delete` type of event is sent for an encounter event this MUST not be followed by any `update` type events for the same encounter. |
 
 If a subscriber receives multiple `Encounter` event messages for the same patient, the latest event message as indicated by the `meta.lastUpdated` element within the MessageHeader resource should be considered the source of truth for the patient's correct address.
@@ -100,26 +100,29 @@ The Encounter resource included in the event message SHALL conform to the [CareC
 | subject | 1..1 | This will reference the patient resource representing the patient who is the subject of this event. |
 | period.start | 1..1 | Then encounter event **MUST** include the dateTime when the encounter started. |
 | period.end | 0..1 | Then encounter event **MUST** include the dateTime when the encounter ended if available or calculatable by the publisher. |
-| **type** | 1..* | Publishers **MUST** include one or more SNOMED codes to indicate the type of encounter that took place. The "Encounter Type" table below highlights some generic SNOMED codes which should be used where possible.<br/><br/>The encounter event should include types describing the encounter at different levels, starting at a generic level such as patient `seend in own home` and then more specific type(s) which describe the encounter in more detail, such as `Child 6 to 8 week examination`. |
+| **type** | 1..* | Publishers **MUST** include one or more SNOMED codes to indicate the type of encounter that took place. The "Encounter Type" table below highlights some generic high level SNOMED codes which should be used where appropriate.<br/><br/>The encounter event **MUST** include a type which describes the encounter at a high level but **MAY** also include additional type elements which describing the encounter at a lower level.<br/><br/>For example the encounter might contain a high level  type such as patient `Seen in GP's surgery` and then a low level type giving more context to the encounter such as  a `Maternity booking before 15th week`. |
 | participant | 0..* | Publishers **SHOULD** include the participants who were present during the encounter. |
 
 
 #### Encounter Types
 
-The following SNOMED encounter types SHOULD be included in the `encounter` resource `type` element where appropriate. Other SNOMED codes may also be used in addition to these codes where appropriate.
+**Preferred High Level Types**
 
-**High level types**
+The following high level SNOMED encounter types SHOULD be used in the `encounter` resource `type` element where applicable, but other SNOMED codes may be used where the high level types are not appropriate. Additional SNOMED codes describing the low level type of the encounter MAY also be included in the encounter where applicable.
+
+The purpose of the high level type within the encounter is to allow subscribers from any care setting to understand the encounter to a certain level, where they might not recognise a low level more program specific types within the encounter.
 
 | Code | Description |
 | --- | --- |
-| | GP Surgery Attendance |
-| | Hospital Attendance |
-| | Home Visit |
-| | Telephone Consultation |
-| | Video Call Consultation |
+| 185202000 | Seen in GP's surgery |
+| 305907000 | Seen in day hospital |
+| 185210004 | Seen in hospital casualty |
+| 270420001 | Seen in own home |
+| 386472008 | Telephone Consultation |
+| 307321000000107 | Video-link encounter |
 
 
-**Example Low level types**
+**Example Low Level Types**
 
 | Code | Description |
 | --- | --- |
@@ -127,16 +130,13 @@ The following SNOMED encounter types SHOULD be included in the `encounter` resou
 | 6551000000108 | Maternity booking before 15th week |
 
 
-
 ### [DocumentReference](https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1)
 
-DocumentReference resource(s) **SHOULD** be included in the event message by publishers. The DocumentReference MUST point to an endpoint where the subscriber can retrieve information specifically about the encounter contained within the event. Document references may point to data at different levels of granularity, they may point at an encounter as a whole or may point at specific data such as vaccinations or allergies.
+DocumentReference resources **SHOULD** be included in the event message as pointers to endpoints where the subscriber can retrieve information specifically related to the encounter.
 
-Included DocumentReference pointers will conform to the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) pointer model using the same classes and types. If a subscriber does not act upon an encounter event immediately after it is received then they **SHOULD** retrieve the latest pointers from NRL rather than using the pointers included in the event message to make sure the subscriber has all the latest available information for the patient. Retrieval of the supporting information using the information in the DocumentReference pointer will use the same mechanisms as required for the [NRL retrieval](https://developer.nhs.uk/apis/nrl/retrieval_overview.html)
+The included DocumentReference pointers will conform to the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) pointer model using the same classes and types. These DocumentReferences may point to data at different levels of granularity, some may point at an encounter as a whole or may point at specific data such as vaccinations or allergies as defined within the NRL specification. Retrieval of the supporting information using the information in the DocumentReference pointer will use the same mechanisms as required for the [NRL retrieval](https://developer.nhs.uk/apis/nrl/retrieval_overview.html)
 
-Document references might include references to information such as allergies, medications, care plans, etc.
-
-The DocumentReference resource(s) included in the event message SHALL conform to the requirements in the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) specification and the additional population guidance as per the table below:
+The DocumentReference resource(s) included in the event message MUST conform to the requirements in the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) specification and the additional population guidance as per the table below:
 
 | Resource Cardinality | 0..* |
 
