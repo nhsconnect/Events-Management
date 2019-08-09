@@ -11,6 +11,7 @@ summary: ""
 
 In addition to the guidance on this page the guidance and requirement on the [Generic Subscription API Requirements](subscription_general_api_guidance.html) page SHALL be followed when using the NEMS subscription API.
 
+
 ## Creating a Subscription ##
 
 To create a subscription, a client MUST:

@@ -19,6 +19,29 @@ summary: Summary release notes of the versions released in National Events Manag
 - Encounter event added to supported event messages
 
 
+## 2.0.1-Beta (09/08/2019) ##
+
+[Event Message Sequencing](overview_msg_architecture_sequencing.html)
+- Improved wording around where the type of sequencing indicator will be defined for each event message to make it more clear that it will be defined per event type.
+
+[Generic Publication API Guidance](publication_general_api_guidance.html)
+- Added guidance around batch verification of NHS Numbers not being suitable to meet the NEMS requirements
+
+[Generic Subscription API Requirements](subscription_general_api_guidance.html)
+- Added guidance around batch verification of NHS Numbers not being suitable to meet the NEMS requirements
+
+[Receiver Information Governance](receiver_ig.html)
+- Moved requirements from DPIA into specification around data retention
+- Moved requirements from DPIA into specification around data being received only being used for Direct Care
+- Moved requirements from DPIA into specification around lawful basis of receiving data about a patient
+
+[Subscription Information Governance](subscription_ig.html)
+- Page added for IG requirements on the subscriber
+- Moved requirements from DPIA into specification around data being received only being used for Direct Care
+- Moved requirements from DPIA into specification around legitimate relationships for subscribers
+- Moved requirements from DPIA into specification around lawful basis of receiving data about a patient
+
+
 ## 2.0.0-Beta (22/07/2019) ##
 
 {% include important.html content="Release 2.0.0-Beta includes a significant specification re-structure to improve navigation and readability." %}

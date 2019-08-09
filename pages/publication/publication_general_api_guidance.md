@@ -13,6 +13,7 @@ Any NHS Numbers included in an event message sent to the NEMS Publication API, M
  
 Information on how to verify an NHS Number against the Spine PDS is available on the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/pds_overview.html).
 
+**Note:** The Demographics Batch Service (DBS) should not be used as it will not meet the requirement above.
 
 ## Endpoint Registration
 

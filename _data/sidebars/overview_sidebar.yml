@@ -74,6 +74,9 @@ entries:
       url: /explore_subscriptions.html
       output: web
       type: homepage
+    - title: Information Governance
+      url: /subscription_ig.html
+      output: web
     - title: Generic API Guidance
       url: /subscription_general_api_guidance.html
       output: web
