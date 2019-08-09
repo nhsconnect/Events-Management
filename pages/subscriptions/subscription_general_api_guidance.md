@@ -18,6 +18,8 @@ Any NHS Numbers included within a subscription sent to the NEMS Subscription API
  
 Information on how to verify an NHS Number against the Spine PDS is available on the [Spine Core specification](https://developer.nhs.uk/apis/spine-core/pds_overview.html).
 
+**Note:** The Demographics Batch Service (DBS) should not be used as it will not meet the requirement above.
+
 
 ## Endpoint Registration
 
@@ -57,13 +59,3 @@ The supported MIME-types for the Subscription API are:
 
 Where the MIME-type is not supplied the NEMS will default to `application/xml+fhir;charset=utf-8`
 
-
-## Audit
-
-Providers using the subscription API MUST audit all interactions with the API, including `Create`, `Read` and `Delete`.
-
-The audit data MUST include:
-
-- who or what triggered the subscription create, read or delete
-- the date and time when the subscription was created / read / deleted
-- details about the subscription such as the event type, the start and end dates for the subscriptions if included and the NHS Number the subscription was for

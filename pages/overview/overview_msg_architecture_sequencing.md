@@ -22,5 +22,5 @@ For subscribers to detect and handle out-of-order messages the NEMS has included
 
 ## Which Method To Use
 
-Individual event type support for out-of-order message handling and which method is the most appropriate to detect an out-of-order message will be set at a national level, as part of the formal event definition. Additional information on which elements to populate for message sequencing can be seen on the [Generic Requirements](explore_genreic_event_requirements.html) page, within the resource population guidance section for the `MessageHeader` resource.
+Individual event type support for out-of-order message handling and which method is the most appropriate to detect an out-of-order message will be set at a national level as part of the formal event definition and included within the requirements for each event message type. Additional information on which elements to populate for message sequencing can be seen on the [Generic Requirements](explore_genreic_event_requirements.html) page, within the resource population guidance section for the `MessageHeader` resource.
 

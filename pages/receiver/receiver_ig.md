@@ -9,6 +9,12 @@ summary: "IG Requirements for receivers of event messages"
 
 The following requirements must be met by receiving organisations in order to meet the information governance (IG) requirements of the NEMS. These requirements are aimed at making sure that data is available to Data Protection Officers, Caldicott Guardians and IG leads if it is required.
 
+
+### Data Use
+
+Any data which is received via the NEMS SHALL only be used for the purposes of direct care.
+
+
 ### Auditing
 
 The provider system must audit all event messages it attempts to process, even if the event message is discarded. The auditing done within a receiving systems must contain enough information to:
@@ -40,3 +46,13 @@ For IG purposes the event receiving organisation MUST have:
 - processes in place for managing legitimate relationships
 - processes in place for managing legitimate relationships which have expired
 - be able to prove the existence of a legitimate relationship on enquiry.
+
+
+### Lawful Basis
+
+Data received MUST only be used where there is a lawful basis for use of the data.
+
+
+### Data Retention
+
+Data received via the NEMS SHALL be kept no longer than is necessary for the purposes for which it is being processed.

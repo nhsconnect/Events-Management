@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 2.0.0-Beta
+  version: 2.0.1-Beta
   levels: one
   folders:
 
@@ -68,6 +68,9 @@ entries:
       url: /explore_subscriptions.html
       output: web
       type: homepage
+    - title: Information Governance
+      url: /subscription_ig.html
+      output: web
     - title: Generic API Guidance
       url: /subscription_general_api_guidance.html
       output: web
