@@ -1171,3 +1171,26 @@ div.box.box1 {
     fill: #4F81BD;
     fill-opacity: 0.2;
 } 
+
+.tabHeading {
+	background-color: #4b9ff1;
+	padding: 5px 10px 5px 10px;
+	color: white;
+}
+
+.tabHeading.tabActive {
+    background-color: #005eb8;
+    padding: 5px 10px 5px 10px;
+    color: white;
+}
+
+.tabBodies {
+    border: 2px solid #005eb8;
+    padding: 20px;
+	margin-top: 2px;
+}
+
+.tabPanel {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
