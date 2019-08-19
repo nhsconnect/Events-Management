@@ -33,12 +33,12 @@ A rule-based subscription relates to where a subscriber wishes to receive all pu
 Currently the Subscription API does not support the configuration of generic subscriptions. Details of how to setup generic subscriptions is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
 
 <div id="subImageContainer" >
-				<img id="sub-background" src="images/subscription/generic/background.png">
-				<img class="overlay" id="pc-ccg" src="images/subscription/generic/PostCode_CCG.png">
-				<img class="overlay" id="gp-ccg" src="images/subscription/generic/GP_CCG.png">
-				<img class="overlay" id="gp-gp" src="images/subscription/generic/GP_gp.png">
-				<img class="overlay" id="pc-la" src="images/subscription/generic/PostCode_LA.png">
-				<img class="overlay" id="hss" src="images/subscription/generic/HSS.png">
+	<img id="sub-background" src="images/subscription/generic/background.png">
+	<img class="overlay" id="pc-ccg" src="images/subscription/generic/PostCode_CCG.png">
+	<img class="overlay" id="gp-ccg" src="images/subscription/generic/GP_CCG.png">
+	<img class="overlay" id="gp-gp" src="images/subscription/generic/GP_gp.png">
+	<img class="overlay" id="pc-la" src="images/subscription/generic/PostCode_LA.png">
+	<img class="overlay" id="hss" src="images/subscription/generic/HSS.png">
 </div>
 
 <table id="subscriptionRuleTable">

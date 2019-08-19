@@ -1218,7 +1218,8 @@ img.overlay {
 }
 
 #subscriptionRuleTable {
-	width: 840px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .subTableHeading {
@@ -1230,8 +1231,12 @@ img.overlay {
 	width: 200px;
 }
 	
+.subTableHeading input[type="checkbox"] {
+	transform: scale(1.5);
+}
+
 .pc-ccg-head { background-color: #75e375; }
 .gp-ccg-head { background-color: #ff9c9c; }
-.gp-gp-head { background-color: #005eb8b5; }
+.gp-gp-head { background-color: #598ceb; }
 .pc-la-head { background-color: #e16ce1; }
 .hss-head { background-color: #eaea95; }
