@@ -76,3 +76,11 @@ $(function() {
         }
     });
 });
+
+function handleClick(checkbox, imageID) {
+	if (checkbox.checked) {
+		$("#"+imageID).css("display", "block");
+	} else {
+		$("#"+imageID).css("display", "none");
+	}
+}

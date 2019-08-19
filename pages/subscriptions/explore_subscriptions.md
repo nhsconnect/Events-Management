@@ -32,6 +32,39 @@ A rule-based subscription relates to where a subscriber wishes to receive all pu
 
 Currently the Subscription API does not support the configuration of generic subscriptions. Details of how to setup generic subscriptions is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
 
+<div id="subImageContainer" >
+				<img id="sub-background" src="images/subscription/generic/background.png">
+				<img class="overlay" id="pc-ccg" src="images/subscription/generic/PostCode_CCG.png">
+				<img class="overlay" id="gp-ccg" src="images/subscription/generic/GP_CCG.png">
+				<img class="overlay" id="gp-gp" src="images/subscription/generic/GP_gp.png">
+				<img class="overlay" id="pc-la" src="images/subscription/generic/PostCode_LA.png">
+				<img class="overlay" id="hss" src="images/subscription/generic/HSS.png">
+</div>
+
+<table id="subscriptionRuleTable">
+	<tr class="subTableHeading">
+		<th class="pc-ccg-head">Patients Postcode to CCG Code</th>
+		<th class="gp-ccg-head">Patients Registered GPs Postcode to CCG Code</th>
+		<th class="gp-gp-head">Patients Registered GP Code to GP Code</th>
+		<th class="pc-la-head">Patients Postcode to LA Code</th>
+		<th class="hss-head">National</th>
+	</tr>
+	<tr class="subTableHeading">
+		<td class="pc-ccg-head"><input type="checkbox" onclick='handleClick(this, "pc-ccg");'></td>
+		<td class="gp-ccg-head"><input type="checkbox" onclick='handleClick(this, "gp-ccg");'></td>
+		<td class="gp-gp-head"><input type="checkbox" onclick='handleClick(this, "gp-gp");'></td>
+		<td class="pc-la-head"><input type="checkbox" onclick='handleClick(this, "pc-la");'></td>
+		<td class="hss-head"><input type="checkbox" onclick='handleClick(this, "hss");'></td>
+	</tr>
+	<tr>
+		<td id="pc-ccg-detail">Matches a patients postcode to a CCG and checks to see if that matched CCG Code matches the CCG Code specified in the generic subscription rule.</td>
+		<td id="gp-ccg-detail">Matches a patients registered GPs postcode to a CCG and checks to see if that matched CCG Code matches the CCG Code specified in the generic subscription rule.</td>
+		<td id="gp-gp-detail">Matches the patients registered GP Code to the GP Code specified in the generic subscription rule.</td>
+		<td id="pc-la-detail">Matches a patients postcode to a LA and checks to see if that matched LA Code matches the LA Code specified in the generic subscription rule.</td>
+		<td id="hss-detail">The national subscription rule will send all requested events to the mailbox specified in the subscription rule.</td>
+	</tr>
+</table>
+
 ## Subscription matching and message delivery ##
 
 ### Multiple matched subscriptions ###

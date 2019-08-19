@@ -1194,3 +1194,44 @@ div.box.box1 {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+#subImageContainer {
+	width: 100%;
+	height: 440px;
+}
+
+img#sub-background {
+    height: 430px;
+    position: absolute;
+    z-index: 1;
+    padding: 0px;
+    margin: 0px;
+}
+
+img.overlay {
+	display: none;
+    position: absolute;
+    height: 430px;
+    z-index: 2;
+    padding: 0px;
+    margin: 0px;
+}
+
+#subscriptionRuleTable {
+	width: 840px;
+}
+
+.subTableHeading {
+	text-align: center;
+    vertical-align: middle;
+}
+
+.subTableHeading th {
+	width: 200px;
+}
+	
+.pc-ccg-head { background-color: #75e375; }
+.gp-ccg-head { background-color: #ff9c9c; }
+.gp-gp-head { background-color: #005eb8b5; }
+.pc-la-head { background-color: #e16ce1; }
+.hss-head { background-color: #eaea95; }
