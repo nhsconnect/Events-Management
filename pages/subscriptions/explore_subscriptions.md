@@ -43,6 +43,7 @@ Currently the Subscription API does not support the configuration of generic sub
 
 <table id="subscriptionRuleTable">
 	<tr class="subTableHeading">
+		<th></th>
 		<th class="pc-ccg-head">Patients Postcode to CCG Code</th>
 		<th class="gp-ccg-head">Patients Registered GPs Postcode to CCG Code</th>
 		<th class="gp-gp-head">Patients Registered GP Code to GP Code</th>
@@ -50,6 +51,10 @@ Currently the Subscription API does not support the configuration of generic sub
 		<th class="hss-head">National</th>
 	</tr>
 	<tr class="subTableHeading">
+		<td>
+			<button type="button" onClick="selectAllCheckboxes()">Select All</button><br/>
+			<button type="button" onClick="clearAllCheckboxes()">Clear All</button>
+		</td>
 		<td class="pc-ccg-head"><input type="checkbox" onclick='handleClick(this, "pc-ccg");'></td>
 		<td class="gp-ccg-head"><input type="checkbox" onclick='handleClick(this, "gp-ccg");'></td>
 		<td class="gp-gp-head"><input type="checkbox" onclick='handleClick(this, "gp-gp");'></td>
@@ -57,6 +62,7 @@ Currently the Subscription API does not support the configuration of generic sub
 		<td class="hss-head"><input type="checkbox" onclick='handleClick(this, "hss");'></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td id="pc-ccg-detail">Matches a patients postcode to a CCG and checks to see if that matched CCG Code matches the CCG Code specified in the generic subscription rule.</td>
 		<td id="gp-ccg-detail">Matches a patients registered GPs postcode to a CCG and checks to see if that matched CCG Code matches the CCG Code specified in the generic subscription rule.</td>
 		<td id="gp-gp-detail">Matches the patients registered GP Code to the GP Code specified in the generic subscription rule.</td>

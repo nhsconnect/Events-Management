@@ -1220,6 +1220,8 @@ img.overlay {
 #subscriptionRuleTable {
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 100%;
+	width: 100%;
 }
 
 .subTableHeading {
@@ -1240,3 +1242,8 @@ img.overlay {
 .gp-gp-head { background-color: #598ceb; }
 .pc-la-head { background-color: #e16ce1; }
 .hss-head { background-color: #eaea95; }
+
+.subTableHeading button {
+    font-size: small;
+    margin-bottom: 5px;
+}
