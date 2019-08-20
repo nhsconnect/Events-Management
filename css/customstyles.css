@@ -1224,17 +1224,8 @@ img.overlay {
 	width: 100%;
 }
 
-.subTableHeading {
-	text-align: center;
-    vertical-align: middle;
-}
-
 .subTableHeading th {
 	width: 200px;
-}
-	
-.subTableHeading input[type="checkbox"] {
-	transform: scale(1.5);
 }
 
 .pc-ccg-head { background-color: #75e375; }

@@ -35,7 +35,8 @@ Currently the Subscription API does not support the configuration of generic sub
 <div id="subImageContainer" >
 	<img id="sub-background" src="images/subscription/generic/background.png">
 	<img class="overlay" id="pc-ccg" src="images/subscription/generic/PostCode_CCG.png">
-	<img class="overlay" id="gp-ccg" src="images/subscription/generic/GP_CCG.png">
+	<img class="overlay" id="gp-ccg" src="images/subscription/generic/GP_CCG_ODSCode1.png">
+	<img class="overlay" id="gp-ccg-2" src="images/subscription/generic/GP_CCG_ODSCode2.png">
 	<img class="overlay" id="gp-gp" src="images/subscription/generic/GP_gp.png">
 	<img class="overlay" id="pc-la" src="images/subscription/generic/PostCode_LA.png">
 	<img class="overlay" id="hss" src="images/subscription/generic/HSS.png">
@@ -55,10 +56,13 @@ Currently the Subscription API does not support the configuration of generic sub
 			<button type="button" onClick="selectAllCheckboxes()">Select All</button><br/>
 			<button type="button" onClick="clearAllCheckboxes()">Clear All</button>
 		</td>
-		<td class="pc-ccg-head"><input type="checkbox" onclick='handleClick(this, "pc-ccg");'></td>
-		<td class="gp-ccg-head"><input type="checkbox" onclick='handleClick(this, "gp-ccg");'></td>
-		<td class="gp-gp-head"><input type="checkbox" onclick='handleClick(this, "gp-gp");'></td>
-		<td class="pc-la-head"><input type="checkbox" onclick='handleClick(this, "pc-la");'></td>
+		<td class="pc-ccg-head"><input type="checkbox" onclick='handleClick(this, "pc-ccg");'> ODSCode1</td>
+		<td class="gp-ccg-head">
+			<input type="checkbox" onclick='handleClick(this, "gp-ccg");'> ODSCode1<br/>
+			<input type="checkbox" onclick='handleClick(this, "gp-ccg-2");'> ODSCode2
+		</td>
+		<td class="gp-gp-head"><input type="checkbox" onclick='handleClick(this, "gp-gp");'> GP 4</td>
+		<td class="pc-la-head"><input type="checkbox" onclick='handleClick(this, "pc-la");'> LACode1</td>
 		<td class="hss-head"><input type="checkbox" onclick='handleClick(this, "hss");'></td>
 	</tr>
 	<tr>
