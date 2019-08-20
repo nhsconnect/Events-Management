@@ -7,15 +7,15 @@ permalink: encounter_1.html
 summary: "Guidance and requirements for the Encounter event message"
 ---
 
-The `encounter` event is a event message which represent an encounter between a patient and practitioner. The event message will be used in a number of different care settings for a variety of different use cases, therefore subscribers to this event need to be aware that they will receive encounter events about encounters which are not relevant to their use cases.
+The `encounter` event is a event message which represent an encounter between a patient and practitioner. The event message will be used in a number of different care settings for a variety of different use cases, therefore subscribers to this event need to be aware that they will receive encounter events which may not be relevant to their use cases.
 
 ## Event Message Content
 
-The `encounter` event is designed to be a [linked data](overview_msg_architecture_event_content.html) event message, as described on the [Message Content](overview_msg_architecture_event_content.html) page the supporting information for the event should not be included in the encounter event but rather made available by the publishers via an API and the event message should contain a pointer to where and how this API can be called to retrieve the supporting information for the encounter. Within the encounter event the pointers to additional information should be included in the form of DocumentReference resources. The DocumentReference resources that are included in the event message should shares the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
+The `encounter` event is designed to be a ["linked data"](overview_msg_architecture_event_content.html) event message, as described on the [Message Content](overview_msg_architecture_event_content.html) page, where the supporting information for the event should not be included in the encounter event but rather made available via an API and a pointer to that API should be included in the event message. Within the encounter event the pointers to supporting information should be included in the form of DocumentReference resources. The DocumentReference resources that are included in the event message should shares the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
 
-The focus of the encounter event message is an `Encounter` resource which will contain elements and references that give context to the event message.
+The focus of the event message is an `Encounter` resource which will contain elements and references that give context to the encounter event.
 
-All encounter event messages that are published to the NEMS **MUST** also be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page. Programs who choose to use this encounter event will define what they want their publishers to populate in the event message and what their subscribers should specifically look for in the event message to fulfil their use case.
+All encounter event messages that are published to the NEMS **MUST** also be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page. Programs that choose to use this encounter event will need to define additional requirement for their publishers around population of the event message and what their subscribers should specifically look for in the event message to fulfil their use case.
 
 
 ## Bundle structure
@@ -111,7 +111,7 @@ The Encounter resource included in the event message SHALL conform to the [CareC
 | --- | --- | --- |
 | period.start | 0..1 | Then encounter event **SHOULD** include the dateTime when the encounter started. |
 | period.end | 0..1 | Then encounter event **SHOULD** include the dateTime when the encounter ended if available or calculatable by the publisher. |
-| **type** | 0..* | The `type` element within the encounter **SHOULD** be used to identify the type of encounter which took place. |
+| **type** | 0..* | The `type` element within the encounter **SHOULD** be used to identify the type of encounter that took place. |
 | participant | 0..* | Publishers **SHOULD** include the participants who were present during the encounter. |
 
 
