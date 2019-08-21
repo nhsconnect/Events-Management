@@ -11,18 +11,18 @@ The `encounter` event is a event message which represent an encounter between a 
 
 ## Event Message Content
 
-The `encounter` event is designed to be a ["linked data"](overview_msg_architecture_event_content.html) event message, as described on the [Message Content](overview_msg_architecture_event_content.html) page, where the supporting information for the event should not be included in the encounter event but rather made available via an API and a pointer to that API should be included in the event message. Within the encounter event the pointers to supporting information should be included in the form of DocumentReference resources. The DocumentReference resources that are included in the event message should shares the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
+The `encounter` event is intended to be a ["linked data"](overview_msg_architecture_event_content.html) event message, as described on the [Message Content](overview_msg_architecture_event_content.html) page, where the supporting information for the event should not be included in the encounter event but rather made available via an API and the event message would contain a pointer to that API. Within the encounter event the pointers to supporting information should be included in the form of DocumentReference resources. The DocumentReference resources that are included in the event message should shares the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
 
 The focus of the event message is an `Encounter` resource which will contain elements and references that give context to the encounter event.
 
-All encounter event messages that are published to the NEMS **MUST** also be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page. Programs that choose to use this encounter event will need to define additional requirement for their publishers around population of the event message and what their subscribers should specifically look for in the event message to fulfil their use case.
+All encounter event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page. Programs that choose to use this encounter event will need to define additional requirement for their publishers around population of the event message and what their subscribers should look for in the event message to identify if the event message is relevant to their use case.
 
 
 ## Bundle structure
 
-The event message contains a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references an `encounter` resource as the focus of the event message. The encounter resource represents the encounter that happened and should be populated as per the guidance below.
+The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references an `encounter` resource as the focus of the event message. The encounter resource represents the encounter that happened and should be populated as per the guidance below.
 
-Publishers **SHOULD** include DocumentReference resources pointing to supporting information, where supporting information is available. Where there is a strong use case for including the supporting information within the event message bundle, it may be include as resources but the event message **SHOULD** also contain a pointer to where the same data can be retrieved.
+Publishers **SHOULD** include DocumentReference resources pointing to supporting information, where supporting information is available. Where there is a strong use case for including the supporting information as resources within the event message bundle, it may be include as resources but the event message **SHOULD** also contain pointers to where the same data can be retrieved.
 
 <div class="tabPanel">
 
@@ -60,8 +60,8 @@ The different types of the encounter event message should be published by publis
 | Message Event Type | Description |
 | --- | --- |
 | new | A `new` encounter event should be sent when the encounter occurs. |
-| update | An `update` encounter event message should be sent when information related to the encounter event is updated. |
-| delete | A `delete` encounter event message should be sent when the encounter event message should not be used by subscribers, such as when the event sent incorrectly and should not have been sent. |
+| update | An `update` encounter event message should be sent when information related to the encounter event has been updated. |
+| delete | A `delete` encounter event message should be used to indicate that the encounter event message should not be used by subscribers, such as when the event sent incorrectly and should not have been sent. |
 
 
 ## Onward Delivery ##
@@ -119,7 +119,7 @@ The Encounter resource included in the event message SHALL conform to the [CareC
 
 DocumentReference resources **SHOULD** be included in the event message as pointers to endpoints where the subscriber can retrieve information specifically related to the encounter.
 
-The included DocumentReference pointers should conform to the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) pointer model using the same classes and types. These DocumentReferences may point to data at different levels of granularity, some may point at an encounter as a whole or may point at specific data such as vaccinations or allergies as defined within the NRL specification. Retrieval of the supporting information using the information in the DocumentReference pointer will use the same mechanisms as required for the [NRL retrieval](https://developer.nhs.uk/apis/nrl/retrieval_overview.html)
+The included DocumentReference pointers should conform to the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) pointer model. These DocumentReferences may point to data at different levels of granularity, some may point at an encounter as a whole or may point at specific data such as vaccinations or allergies as defined within the NRL specification. Retrieval of the supporting information using the information in the DocumentReference pointer should use the same mechanisms as required for the [NRL retrieval](https://developer.nhs.uk/apis/nrl/retrieval_overview.html)
 
 The DocumentReference resource(s) included in the event message should conform to the requirements in the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) specification and the additional population guidance as per the table below:
 

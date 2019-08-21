@@ -8,7 +8,7 @@ summary: "Overview of options for event content"
 toc: false
 ---
 
-There are different ways that data can be shared between publishers and subscribers, each with their own benefits and drawbacks. This page outlines the different ways data could be shared between publishers and subscribers over the NEMS. This page also makes reference to the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/), another national Spine service which is required where a subscriber was not subscribed at the point that an event message flowed through NEMS and is interested in the information they missed.
+There are different ways that data can be shared between publishers and subscribers, each with their own benefits and drawbacks. This page outlines different ways data could be shared between publishers and subscribers over the NEMS but a combination of the different approaches is also possible. This page also makes reference to the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/), another national Spine service which is required where a subscriber was not subscribed at the point that an event message flowed through NEMS and is interested in the information they missed.
 
 When data is shared between a publisher and subscriber, whatever the mechanism, the data shared must be in a standard format and contain all information required to give the main focal bit of information context, for example a comment is unlikely to be useful unless it is in the context of something such as an observations or procedure.
 
@@ -30,7 +30,7 @@ The example diagram below shows the publisher publishing an encounter event cont
 
 ## "Linked Data" Event Message
 
-A "Linked Data" event message is an event which carries minimal data along with information on where the full set of data can be retrieved. The event message should only contain contextual information such as what type event it is, maybe where it happened and who with but none of the clinical data related to the event. To share the clinical data the event message will also includes a pointer to an API endpoint exposed by the publisher where the full set of data available can be retrieved when it is needed.
+A "Linked Data" event message is an event which carries minimal data along with information on where the full set of data can be retrieved. The event message should only contain contextual information such as what type event it is, maybe where it happened and who with but none of the clinical data related to the event. To share the clinical data the event message will include pointers to API endpoints exposed by the publisher where the full set of data available can be retrieved when it is needed.
 
 There is a potential drawback and risks associate with this event model:
 - like with a contained data event message the content of the event including the pointer to the supporting data may become out of date. The chance of this happening with the linked data event message is much lower than in a contained data event message as there is less content and the content included is only contextual information. Carrying pointers to the information rather than the information means that the subscriber will get the most up to date data when they need it, even if it has changed in the publishers system.
