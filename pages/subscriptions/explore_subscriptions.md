@@ -49,12 +49,12 @@ The following diagram and table demonstrates the way in which generic subscripti
 
 <table id="subscriptionRuleTable">
 	<tr class="subTableHeading">
-		<th></th>
-		<th class="pc-ccg-head">Patients Postcode to CCG Code</th>
-		<th class="gp-ccg-head">Patients Registered GPs Postcode to CCG Code</th>
-		<th class="gp-gp-head">Patients Registered GP Code to GP Code</th>
-		<th class="pc-la-head">Patients Postcode to LA Code</th>
-		<th class="hss-head">National</th>
+		<th>Subscription Rule</th>
+		<th class="pc-ccg-head">Patients Postcode within CCGs area of responsibility</th>
+		<th class="gp-ccg-head">Patients Registered GPs Postcode within area of CCGs area of responsibility</th>
+		<th class="gp-gp-head">Patients Registered GP Code matches GP Code</th>
+		<th class="pc-la-head">Patients Postcode within LAs area of responsibility</th>
+		<th class="hss-head">All Patients in England</th>
 	</tr>
 	<tr class="subTableHeading">
 		<td>
@@ -84,11 +84,11 @@ The following diagram and table demonstrates the way in which generic subscripti
 	</tr>
 	<tr>
 		<td></td>
-		<td id="pc-ccg-detail">Matches a patients postcode to a CCG and checks to see if that matched CCG Code matches the CCG Code specified in the generic subscription rule.</td>
-		<td id="gp-ccg-detail">Matches a patients registered GPs postcode to a CCG and checks to see if that matched CCG Code matches the CCG Code specified in the generic subscription rule.</td>
-		<td id="gp-gp-detail">Matches the patients registered GP Code to the GP Code specified in the generic subscription rule.</td>
-		<td id="pc-la-detail">Matches a patients postcode to a LA and checks to see if that matched LA Code matches the LA Code specified in the generic subscription rule.</td>
-		<td id="hss-detail">The national subscription rule will send all requested events to the mailbox specified in the subscription rule.</td>
+		<td id="pc-ccg-detail">The NEMS matches the patients home postcode, from their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
+		<td id="gp-ccg-detail">The NEMS matches the postcode of the registered GP for the patient, within their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients registered GPs postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
+		<td id="gp-gp-detail">The NEMS matches the patients registered GP Code, from their PDS record, to generic subscription rules which contain the same GP Code. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
+		<td id="pc-ccg-detail">The NEMS matches the patients home postcode, from their PDS record, to a specific LA based the areas of responsible for the different LAs. The NEMS then looks for generic subscription rules which contain an LA Code that matches the LA responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
+		<td id="hss-detail">The NEMS will match all patients who live in England to generic subscription rules which specify the rule type of National. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
 	</tr>
 </table>
 

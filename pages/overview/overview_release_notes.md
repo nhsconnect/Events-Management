@@ -12,8 +12,14 @@ summary: Summary release notes of the versions released in National Events Manag
 [Encounter](encounter_1.html)
 - Encounter event requirements and guidance added to specification
 
+[Event Receiver Requirements](receiver_requirements.html)
+- Generic subscription information moved to [Subscriptions Overview](explore_subscriptions.html) page.
+
 [Message Content](overview_msg_architecture_event_content.html)
-- Page added to explain message content, full fat vs light weight
+- Page added to explain message content, contained data, linked data and missed messages
+
+[Subscriptions Overview](explore_subscriptions.html)
+- Additional information regarding generic subscriptions added
 
 [Supported Event Messages](overview_supported_events.html)
 - Encounter event added to supported event messages
