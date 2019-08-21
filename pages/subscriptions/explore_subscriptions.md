@@ -20,17 +20,18 @@ Explicit event message subscriptions for patients can be created using the Subsc
 
 Explicit subscriptions SHOULD only be active for patients under the subscribing organisations direct care. Explicit subscriptions for a patient should be stopped when the patient leaves the subscribing organisations direct care. This can be done either by removing the explicit subscription using the Delete Subscription API interaction or by including the `end` element as part of the subscription resource.
 
+
 ### Rule-Based (Generic) Subscriptions ###
 
-A rule-based subscription relates to where a subscriber wishes to receive all published events that meet a particular rule set. There are two specific types of rule-based subscription currently:
+A rule-based subscription relates to where a subscriber wishes to receive events that meet a particular rule set rather than for a specific patient. There is currently two specific types of rule-based subscriptions:
 
-- Geographical: Subscriptions that relate to individuals who reside within the geographic boundaries of a specific organisation (For example, a Health Visiting Service wishing to view events for all children within a specific local authority area). 
+- Geographical: Subscriptions that relate to individuals who lives in or are registered with a GP that is located within the geographic boundaries of a specific organisation (For example, a Health Visiting Service wishing to view events for all children within a specific local authorities area of responsibility). 
   
   A geographical rule based subscription will result in a subscriber receiving events for any patients within the specified geographical area, therefore a subscriber wishing to use this form of subscription must demonstrate that they have a legitimate relationship with all patients in the area. If a provider is only responsible for a subset of patients within a geographical area, then geographical subscriptions are not appropriate as the provider will receive information for patients with which they do not have a legitimate relationship. In this scenario the provider should use explicit subscriptions to receive events for the patients with which they have a legitimate relationship.
   
 - Registered Org: Subscriptions that relate to individuals who are registered with a specific organisation (currently only applicable for GP organisations).
 
-Currently the Subscription API does not support the configuration of generic subscriptions. Details of how to setup generic subscriptions is outlined on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
+The following diagram and table demonstrates the way in which generic subscription rules work:
 
 <div id="subImageContainer" >
 	<img id="sub-background" src="images/subscription/generic/background.png">
@@ -74,8 +75,12 @@ Currently the Subscription API does not support the configuration of generic sub
 			<input type="checkbox" onclick='handleClick(this, "gp-gp-3");'> GP 3 <br/>
 			<input type="checkbox" onclick='handleClick(this, "gp-gp-4");'> GP 4 <br/>
 		</td>
-		<td class="pc-la-head"><input type="checkbox" onclick='handleClick(this, "pc-la");'> LACode1</td>
-		<td class="hss-head"><input type="checkbox" onclick='handleClick(this, "hss");'> National patients</td>
+		<td class="pc-la-head">
+			<input type="checkbox" onclick='handleClick(this, "pc-la");'> LACode1
+		</td>
+		<td class="hss-head">
+			<input type="checkbox" onclick='handleClick(this, "hss");'> National patients
+		</td>
 	</tr>
 	<tr>
 		<td></td>
@@ -86,6 +91,10 @@ Currently the Subscription API does not support the configuration of generic sub
 		<td id="hss-detail">The national subscription rule will send all requested events to the mailbox specified in the subscription rule.</td>
 	</tr>
 </table>
+
+
+The Subscription API does not support the configuration of generic subscriptions. Generic subscriptions are currently setup by NHS Digital to meet IG requirements, therefore if you wish to use generic subscriptions a request needs to be sent to NHS Digital.
+
 
 ## Subscription matching and message delivery ##
 
