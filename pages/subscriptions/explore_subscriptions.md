@@ -10,9 +10,9 @@ summary: "Types of Subscription and how they are used"
 To receive event messages a consumer will need to subscribe to events they want to receive. The flow of event messages from publishers to subscribers is described on the [Messaging Architecture Overview](overview_msg_architecture.html) page.
 
 
-## Types of Subscription ##
+# Types of Subscription #
 
-### Explicit Subscriptions ###
+## Explicit Subscriptions ##
 
 An explicit subscription relates to where a subscriber wishes to receive event messages for a specific patient, for example, a Pharmacist wishing to receive hospital admission and discharge events for a specific Patient.
 
@@ -21,7 +21,7 @@ Explicit event message subscriptions for patients can be created using the Subsc
 Explicit subscriptions SHOULD only be active for patients under the subscribing organisations direct care. Explicit subscriptions for a patient should be stopped when the patient leaves the subscribing organisations direct care. This can be done either by removing the explicit subscription using the Delete Subscription API interaction or by including the `end` element as part of the subscription resource.
 
 
-### Rule-Based (Generic) Subscriptions ###
+## Rule-Based (Generic) Subscriptions ##
 
 A rule-based subscription relates to where a subscriber wishes to receive events that meet a particular rule set rather than for a specific patient. There is currently two specific types of rule-based subscriptions:
 
@@ -30,6 +30,31 @@ A rule-based subscription relates to where a subscriber wishes to receive events
   A geographical rule based subscription will result in a subscriber receiving events for any patients within the specified geographical area, therefore a subscriber wishing to use this form of subscription must demonstrate that they have a legitimate relationship with all patients in the area. If a provider is only responsible for a subset of patients within a geographical area, then geographical subscriptions are not appropriate as the provider will receive information for patients with which they do not have a legitimate relationship. In this scenario the provider should use explicit subscriptions to receive events for the patients with which they have a legitimate relationship.
   
 - Registered Org: Subscriptions that relate to individuals who are registered with a specific organisation (currently only applicable for GP organisations).
+
+The following rule types are currently available for use within Generic Rule Based Subscriptions:
+
+### Patients Postcode within CCGs area of responsibility
+
+The NEMS matches the patients home postcode, from their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+
+### Patients Registered GPs Postcode within area of CCGs area of responsibility
+
+The NEMS matches the postcode of the registered GP for the patient, within their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients registered GPs postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+
+### Patients Registered GP Code matches GP Code
+
+The NEMS matches the patients registered GP Code, from their PDS record, to generic subscription rules which contain the same GP Code. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+
+### Patients Postcode within LAs area of responsibility
+
+The NEMS matches the patients home postcode, from their PDS record, to a specific LA based the areas of responsible for the different LAs. The NEMS then looks for generic subscription rules which contain an LA Code that matches the LA responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+
+### All Patients in England
+
+The NEMS will match all patients who live in England to generic subscription rules which specify the rule type of National. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+
+
+### Examples
 
 The following diagram and table demonstrates the way in which generic subscription rules work:
 
@@ -62,12 +87,12 @@ The following diagram and table demonstrates the way in which generic subscripti
 			<button type="button" onClick="clearAllCheckboxes()">Clear All</button>
 		</td>
 		<td class="pc-ccg-head">
-			<input type="checkbox" onclick='handleClick(this, "pc-ccg-1");'> ODSCode1 <br/>
-			<input type="checkbox" onclick='handleClick(this, "pc-ccg-2");'> ODSCode2
+			<input type="checkbox" onclick='handleClick(this, "pc-ccg-1");'> CCGCode1 <br/>
+			<input type="checkbox" onclick='handleClick(this, "pc-ccg-2");'> CCGCode2
 		</td>
 		<td class="gp-ccg-head">
-			<input type="checkbox" onclick='handleClick(this, "gp-ccg-1");'> ODSCode1<br/>
-			<input type="checkbox" onclick='handleClick(this, "gp-ccg-2");'> ODSCode2
+			<input type="checkbox" onclick='handleClick(this, "gp-ccg-1");'> CCGCode1<br/>
+			<input type="checkbox" onclick='handleClick(this, "gp-ccg-2");'> CCGCode2
 		</td>
 		<td class="gp-gp-head">
 			<input type="checkbox" onclick='handleClick(this, "gp-gp-1");'> GP 1 <br/>
@@ -82,23 +107,15 @@ The following diagram and table demonstrates the way in which generic subscripti
 			<input type="checkbox" onclick='handleClick(this, "hss");'> National patients
 		</td>
 	</tr>
-	<tr>
-		<td></td>
-		<td id="pc-ccg-detail">The NEMS matches the patients home postcode, from their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
-		<td id="gp-ccg-detail">The NEMS matches the postcode of the registered GP for the patient, within their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients registered GPs postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
-		<td id="gp-gp-detail">The NEMS matches the patients registered GP Code, from their PDS record, to generic subscription rules which contain the same GP Code. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
-		<td id="pc-ccg-detail">The NEMS matches the patients home postcode, from their PDS record, to a specific LA based the areas of responsible for the different LAs. The NEMS then looks for generic subscription rules which contain an LA Code that matches the LA responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
-		<td id="hss-detail">The NEMS will match all patients who live in England to generic subscription rules which specify the rule type of National. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.</td>
-	</tr>
 </table>
 
 
 The Subscription API does not support the configuration of generic subscriptions. Generic subscriptions are currently setup by NHS Digital to meet IG requirements, therefore if you wish to use generic subscriptions a request needs to be sent to NHS Digital.
 
 
-## Subscription matching and message delivery ##
+# Subscription matching and message delivery #
 
-### Multiple matched subscriptions ###
+## Multiple matched subscriptions ##
 
 A subscriber may create a number of different subscriptions, some explicit and some generic. If an event message published to the National Events Management Service (NEMS) matches the criteria of multiple subscriptions for a single receiving MESH mailbox, the NEMS will only send one copy of the event message to the receiving mailbox.
 
