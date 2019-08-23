@@ -15,7 +15,7 @@ If a publisher or subscriber experience an issues with the NEMS un-related to a 
 
 ## Process
 
-<a href="images/overview/event_life_cycle.png" target="_blank"><img src="images/overview/feedback_process.png"></a>
+<a href="images/overview/feedback_process.png" target="_blank"><img src="images/overview/feedback_process.png"></a>
 
 1. The publisher constructs the event message include contact information that should be used if a subscriber wishes to raise an issue for that specific event message and publishes the event to the NEMS.
 2. The NEMS will forward the event message on to any subscribers with matching subscriptions.
