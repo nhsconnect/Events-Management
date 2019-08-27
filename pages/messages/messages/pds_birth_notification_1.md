@@ -128,7 +128,7 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 | extension(patient-birthTime) | 1..1 | The delivery time for the birth |
 | deceased | 0..1 | Deceased dateTime of the baby has died |
 | extension(deathNotificationStatus) | 0..1 | The death notification status if the baby has died |
-| address.line | 1..* | The address for the baby. Note: the address lines SHALL appear in the the resource in order, i.e. Address line 1 first, line 2 second, etc. |
+| address.line | 1..* | The address for the baby. Note: the address lines SHALL appear in the resource in order, i.e. Address line 1 first, line 2 second, etc. |
 | address.postalcode | 0..1 | address post code |
 | multipleBirthInteger | 1..1 | The multiple birth indicator will be an number indicating the position in the order of births, i.e. the first baby would be `1`, a second baby for example in twins would be `2` |
 | extension(birthPlace) | 0..1 | The address of the place where the baby was born |

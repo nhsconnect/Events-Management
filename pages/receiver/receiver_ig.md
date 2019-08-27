@@ -20,7 +20,7 @@ Any data which is received via the NEMS SHALL only be used for the purposes of d
 The provider system must audit all event messages it attempts to process, even if the event message is discarded. The auditing done within a receiving systems must contain enough information to:
 
 - identify which systems have consumed data received via the NEMS
-- identify how the the data received has been used, such as has the data being consumed into the patient record, ignored, etc.
+- identify how the data received has been used, such as has the data being consumed into the patient record, ignored, etc.
 - identify who has had accessed the data received via the NEMS
 - identify when the data was received
 - identify when the data was accessed
