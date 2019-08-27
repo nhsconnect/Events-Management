@@ -10,7 +10,7 @@ summary: "These are a set of generic requirements which are applicable to all ev
 # Event Message Structure
 
 Each event message which passes through the NEMS will carry a standard set of event information to allow the receiver to identify:
-- the the patient who is the focus of the event
+- the patient who is the focus of the event
 - information about the provider who published the event message, including [contact details](overview_msg_architecture_feedback.html) for issues with the event message
 - information about the event that occurred
 - information to allow receivers to perform [message sequencing](overview_msg_architecture_sequencing.html)
