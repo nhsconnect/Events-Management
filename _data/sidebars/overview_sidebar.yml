@@ -67,7 +67,7 @@ entries:
           url: /pds_death_notification.html
           output: web
         - title: PDS Record Change
-          url: /pds_record_change.html
+          url: /pds_record_change_1.html
           output: web
           
   - title: Subscription Management
