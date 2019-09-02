@@ -7,16 +7,16 @@ permalink: pds_record_change_1.html
 summary: "Guidance for the PDS Record Change event message"
 ---
 
-The `PDS Record Change` event is intended to notify subscribers that a Spine PDS record associated with an NHS they are subscribed to has been changed in some way, so that the subscriber can perform any required tasks such as performing a PDS synchronisation and updating their subscriptions where the change might include a change to the patients NHS number.
+The `PDS Record Change` event is intended to notify subscribers that a Spine PDS record associated with an NHS Number they are subscribed to has been changed in some way, so that the subscriber can perform any required tasks such as performing a PDS synchronisation and updating their subscriptions where the change might include a change to the patients NHS number.
 
-This event has been added to the NEMS with the intention of enabling a reduction of the risk introduced when a patients NHS within their PDS record is changed or their PDS record is invalidated (an I flag is added to the record) at which point subscribers to that patient and NHS Number will stop receiving event messages as future event messages will be being published against a different NHS Number. This event allows the subscriber to check their record when it changes on PDS and make sure they have a valid NHS Number for the patient and make changes where required to subscriptions so they don't miss events for that patients in the future.
+This event has been created to reduce the risk of providers have subscriptions to NHS Numbers which have been superseded or where the patients PDS record has been invalidated (an I flag is added to the record). The risk being that if an NHS Number is changed and the providers subscription are not updated the subscriber will stop receiving event messages for that patient, as future event messages will be published against a different NHS Number. This event is intended to notify subscribers that the PDS record has changed and allows them check their record and make sure they have a valid NHS Number for the patient, making any required changes to subscriptions so they don't miss events for that patients in the future.
 
 
 ## Event Message Content
 
 The event message will not contain any detail relating to the change that has been made to the patients PDS record, the event only indicates that the PDS record has changed.
 
-Where the PDS record change is related to a change in the patients NHS, for example the patients NHS number has been superseded the event will be sent against the previous NHS Number as this will be the NHS Number that providers will have used in their subscriptions.
+Where the change is related to the patients NHS Number, for example the patients NHS number has been superseded the event will be sent against the previous NHS Number as this will be the NHS Number that providers will have used for their subscriptions.
 
 
 ## Bundle structure
@@ -26,7 +26,9 @@ Where the PDS record change is related to a change in the patients NHS, for exam
 
 ## Event Life Cycle ##
 
-The `PDS Record Change` event message will always contain a `messageEventType` extension with value `new` in the MessageHeader resource. There will be no `update` or `delete` version of this event message. The date and time the PDS record was updated will be indicated by the meta.lastUpdated element within the MessageHeader resource.
+The `PDS Record Change` event message will always contain a `messageEventType` extension with value `new` in the MessageHeader resource. There will be no `update` or `delete` version of this event message.
+
+The date and time the PDS record was updated will be indicated by the meta.lastUpdated element within the MessageHeader resource.
 
 
 ## Onward Delivery ##

@@ -11,7 +11,7 @@ The `encounter` event is a event message which represent an encounter between a 
 
 ## Event Message Content
 
-The `encounter` event is intended to be a ["linked data"](overview_msg_architecture_event_content.html) event message, as described on the [Message Content](overview_msg_architecture_event_content.html) page, where the supporting information for the event should not be included in the encounter event but rather made available via an API and the event message would contain a pointer to that API. Within the encounter event the pointers to supporting information should be included in the form of DocumentReference resources. The DocumentReference resources that are included in the event message should shares the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
+The `encounter` event is intended to be a ["linked data"](overview_msg_architecture_event_content.html) event message, as described on the [Message Content](overview_msg_architecture_event_content.html) page, where the supporting information for the event should not be included in the encounter event but rather made available via an API and the event message would contain a pointer to that API. Within the encounter event the pointers to supporting information should be included in the form of DocumentReference resources. The DocumentReference resources that are included in the event message should share the pointer model and retrieval mechanism with those defined by the [National Record Locator](https://developer.nhs.uk/apis/nrl/index.html) service.
 
 The focus of the event message is an `Encounter` resource which will contain elements and references that give context to the encounter event.
 
