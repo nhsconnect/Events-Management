@@ -80,3 +80,49 @@
     render[settings.showEffect]();
   };
 })(jQuery);
+
+
+$( document ).ready(function() {
+
+	// Handle Tab Panel Functionality -------------------------------------------------------------------------------------------------------------------
+	
+	// Add OnClick to tabPanelHeaders used in event messages pages for diagrams to toggle the visible tab body
+	$(".tabPanel .tabHeadings .tabHeading").click(function() {  
+		toggleTabPanel( $(this).attr("id") ); 
+	});
+	// Set first tabs to visible
+	toggleTabPanel($(".tabPanel .tabHeadings .tabHeading").first().attr("id"));
+
+});
+
+
+function toggleTabPanel(panelID) {
+	// Clear all panels
+	$(".tabBodies .tabBody").css("display","none");
+	
+	// Set the selected one as visible
+	var panelBodyID = "#" + panelID + "Body";
+	$(panelBodyID).css("display", "block");
+	
+	// Set the tab header to selected
+	$(".tabPanel .tabHeadings .tabHeading").removeClass("tabActive");
+	$("#" + panelID).addClass("tabActive");
+};
+
+function handleClick(checkbox, imageID) {
+	if (checkbox.checked) {
+		$("#"+imageID).css("display", "block");
+	} else {
+		$("#"+imageID).css("display", "none");
+	}
+}
+
+function selectAllCheckboxes() {
+	$("input[type=checkbox]").prop('checked', false);
+	$("input[type=checkbox]").click(); // This reverses the check hence false above
+}
+
+function clearAllCheckboxes() {
+	$("input[type=checkbox]").prop('checked', true);
+	$("input[type=checkbox]").click(); // This reverses the check hence true above
+}

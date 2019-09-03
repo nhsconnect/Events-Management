@@ -21,30 +21,7 @@ $( document ).ready(function() {
      */
     anchors.add('h2,h3,h4,h5');
 
-
-	// Handle Tab Panel Functionality -------------------------------------------------------------------------------------------------------------------
-	
-	// Add OnClick to tabPanelHeaders used in event messages pages for diagrams to toggle the visible tab body
-	$(".tabPanel .tabHeadings .tabHeading").click(function() {  
-		toggleTabPanel( $(this).attr("id") ); 
-	});
-	// Set first tabs to visible
-	toggleTabPanel($(".tabPanel .tabHeadings .tabHeading").first().attr("id"));
-
 });
-
-function toggleTabPanel(panelID) {
-	// Clear all panels
-	$(".tabBodies .tabBody").css("display","none");
-	
-	// Set the selected one as visible
-	var panelBodyID = "#" + panelID + "Body";
-	$(panelBodyID).css("display", "block");
-	
-	// Set the tab header to selected
-	$(".tabPanel .tabHeadings .tabHeading").removeClass("tabActive");
-	$("#" + panelID).addClass("tabActive");
-};
 
 // needed for nav tabs on pages. See Formatting > Nav tabs for more details.
 // script from http://stackoverflow.com/questions/10523433/how-do-i-keep-the-current-tab-active-with-twitter-bootstrap-after-a-page-reload
