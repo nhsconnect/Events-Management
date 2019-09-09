@@ -129,3 +129,10 @@ The DocumentReference resource(s) included in the event message should conform t
 | --- | --- | --- |
 | subject | 1..1 | This will reference the patient resource representing the patient who is the subject of this event. |
 | context.encounter | 1..1 | A reference to the encounter this document reference pointer is related to. |
+
+
+## Examples
+
+[Example 1](pages/messages/examples/encounter_1_1.xml)
+
+[Example 2](pages/messages/examples/encounter_1_2.xml)

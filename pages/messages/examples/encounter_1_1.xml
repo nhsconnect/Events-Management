@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="60fe6b0b-69f2-47d3-84a7-e3e5d0c5442a"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
+	</meta>
+	<type value="message"/>
+	<entry>
+		<fullUrl value="urn:uuid:8bb85c96-d8b7-4995-94ed-72845b85cf14"/>
+		<resource>
+			<MessageHeader>
+				<id value="8bb85c96-d8b7-4995-94ed-72845b85cf14"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2017-11-01T15:00:33+00:00"/>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
+				</meta>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
+					<extension url="nhsNumber">
+						<valueIdentifier>
+							<system value="https://fhir.nhs.uk/Id/nhs-number"/>
+							<value value="9912003888"/>
+						</valueIdentifier>
+					</extension>
+					<extension url="name">
+						<valueHumanName>
+							<use value="official"/>
+							<family value="DAWKINS"/>
+							<given value="Jack"/>
+						</valueHumanName>
+					</extension>
+					<extension url="birthDateTime">
+						<valueDateTime value="2017-10-02T12:00:00+00:00"/>
+					</extension>
+				</extension>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-MessageEventType-1">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
+							<code value="new"/>
+							<display value="New event message"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<event>
+					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
+					<code value="​encounter-1"/>
+					<display value="Encounter"/>
+				</event>
+				<timestamp value="2017-11-01T15:00:00+00:00"/>
+				<source>
+					<contact>
+						<system value="email"/>
+						<value value="helpdesk@supplier.co.uk"/>
+					</contact>
+				</source>
+				<responsible>
+					<reference value="urn:uuid:8a3e3de0-02b7-4b31-b671-b9410cda98e9"/>
+					<display value="Example Supplier"/>
+				</responsible>
+				<focus>
+					<reference value="urn:uuid:12779557-9033-4213-876f-69a670cdf35d"/>
+				</focus>
+			</MessageHeader>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:12779557-9033-4213-876f-69a670cdf35d"/>
+		<resource>
+			<Encounter>
+				<id value="12779557-9033-4213-876f-69a670cdf35d"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"/>
+				</meta>
+				<status value="finished"/>
+				<type>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="185229005"/>
+						<display value="Seen in diabetic clinic"/>
+					</coding>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="754081000000109"/>
+						<display value="Diabetic dietary review"/>
+					</coding>
+				</type>
+				<subject>
+					<reference value="urn:uuid:dffd2ca0-dc21-11e7-9296-cec278b6b50a"/>
+					<display value="DAWKINS, Jack"/>
+				</subject>
+				<episodeOfCare>
+					<reference value="urn:uuid:b13f45db-bd6d-48ef-bf30-3a4c0904a777"/>
+				</episodeOfCare>
+				<participant>
+					<type>
+						<coding>
+							<system value="http://hl7.org/fhir/v3/ParticipationType"/>
+							<code value="PPRF"/>
+							<display value="primary performer"/>
+						</coding>
+					</type>
+					<individual>
+						<reference value="urn:uuid:285e33ce-918f-406b-b971-f253fe53160e"/>
+						<display value="EMMANUEL, Gladys"/>
+					</individual>
+				</participant>
+				<period>
+					<start value="2017-10-31T14:00:00+00:00"/>
+					<end value="2017-10-31T15:00:00+00:00"/>
+				</period>
+				<location>
+					<location>
+						<reference value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f18fde7"/>
+						<display value="SILVERDALE FAMILY PRACTICE"/>
+					</location>
+				</location>
+			</Encounter>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:8a3e3de0-02b7-4b31-b671-b9410cda98e9"/>
+		<resource>
+			<Organization>
+				<id value="8a3e3de0-02b7-4b31-b671-b9410cda98e9"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"/>
+				</meta>
+				<identifier>
+					<system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+					<value value="ABC123"/>
+				</identifier>
+				<name value="Example Supplier"/>
+			</Organization>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:dffd2ca0-dc21-11e7-9296-cec278b6b50a"/>
+		<resource>
+			<Patient>
+				<id value="dffd2ca0-dc21-11e7-9296-cec278b6b50a"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"/>
+				</meta>
+				<identifier>
+					<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1">
+						<valueCodeableConcept>
+							<coding>
+								<system value="https://fhir.hl7.org.uk/STU3/CareConnect-NHSNumberVerificationStatus-1"/>
+								<code value="01"/>
+								<display value="Number present and verified"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<system value="https://fhir.nhs.uk/Id/nhs-number"/>
+					<value value="9912003888"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<family value="DAWKINS"/>
+					<given value="Jack"/>
+				</name>
+				<gender value="male"/>
+				<birthDate value="2017-10-02">
+					<extension url="http://hl7.org/fhir/StructureDefinition/patient-birthTime">
+						<valueDateTime value="2017-10-02T20:12:00+00:00"/>
+					</extension>
+				</birthDate>
+				<address>
+					<use value="home"/>
+					<line value="4 Sandmoor Drive"/>
+					<city value="LEEDS"/>
+					<postalCode value="LS17 7DF"/>
+				</address>
+			</Patient>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:b13f45db-bd6d-48ef-bf30-3a4c0904a777"/>
+		<resource>
+			<EpisodeOfCare>
+				<id value="b13f45db-bd6d-48ef-bf30-3a4c0904a777"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1"/>
+				</meta>
+				<status value="active"/>
+				<type>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="408443003"/>
+						<display value="General medical practice (qualifier value)"/>
+					</coding>
+				</type>
+				<patient>
+					<reference value="urn:uuid:dffd2ca0-dc21-11e7-9296-cec278b6b50a"/>
+					<display value="DAWKINS, Jack"/>
+				</patient>
+				<managingOrganization>
+					<reference value="urn:uuid:8a3e3de0-02b7-4b31-b671-b9410cda98e9"/>
+					<display value="Example Supplier"/>
+				</managingOrganization>
+				<period>
+					<start value="2015-10-09T15:00:00+00:00"/>
+				</period>
+			</EpisodeOfCare>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:285e33ce-918f-406b-b971-f253fe53160e"/>
+		<resource>
+			<Practitioner>
+				<id value="285e33ce-918f-406b-b971-f253fe53160e"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1"/>
+				</meta>
+				<identifier>
+					<system value="https://fhir.nhs.uk/Id/sds-role-profile-id"/>
+					<value value="PT2468"/>
+				</identifier>
+				<name>
+					<family value="EMMANUEL"/>
+					<given value="Gladys"/>
+					<prefix value="Dr."/>
+				</name>
+			</Practitioner>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f18fde7"/>
+		<resource>
+			<Location>
+				<id value="e3177167-40fc-4f1a-80f2-a2f17f18fde7"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1"/>
+				</meta>
+				<identifier>
+					<system value="https://fhir.nhs.uk/Id/ods-site-code"/>
+					<value value="A83627"/>
+				</identifier>
+				<name value="SILVERDALE FAMILY PRACTICE"/>
+			</Location>
+		</resource>
+	</entry>
+	<entry>
+		<resource>
+			<DocumentReference>
+				<meta>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1"/>
+				</meta>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="170777000"/>
+						<display value="Diabetic annual review"/>
+					</coding>
+				</type>
+				<class>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="229059009"/>
+						<display value="Report"/>
+					</coding>
+				</class>
+				<subject>
+					<reference value="urn:uuid:dffd2ca0-dc21-11e7-9296-cec278b6b50a"/>
+				</subject>
+				<author>
+					<reference value="urn:uuid:8a3e3de0-02b7-4b31-b671-b9410cda98e9"/>
+				</author>
+				<custodian>
+					<reference value="urn:uuid:8a3e3de0-02b7-4b31-b671-b9410cda98e9"/>
+				</custodian>
+				<content>
+					<attachment>
+						<contentType value="application/pdf"/>
+						<url value="https://spine-proxy.national.ncrs.nhs.uk/https%3A%2F%2Fsupplier.co.uk%2Fdr-report-3456b95a-3b36-4b6a-adc5-b119884d854d.pdf"/>
+						<creation value="2016-03-08T15:26:00+01:00"/>
+					</attachment>
+					<format>
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-FormatCode-1"/>
+						<code value="urn:nhs-ic:unstructured"/>
+						<display value="Unstructured Document"/>
+					</format>
+					<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NRL-ContentStability-1">
+						<valueCodeableConcept>
+							<coding>
+								<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-ContentStability-1"/>
+								<code value="static"/>
+								<display value="Static"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+				</content>
+				<context>
+					<encouter>
+						<reference value="urn:uuid:12779557-9033-4213-876f-69a670cdf35d"/>
+					</encouter>
+					<practiceSetting>
+						<coding>
+							<system value="http://snomed.info/sct"/>
+							<code value="1060971000000108 "/>
+							<display value="General practice service"/>
+						</coding>
+					</practiceSetting>
+				</context>
+			</DocumentReference>
+		</resource>
+	</entry>
+		<entry>
+		<resource>
+			<DocumentReference>
+				<meta>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1"/>
+				</meta>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="33879002"/>
+						<display value="Vaccination"/>
+					</coding>
+				</type>
+				<class>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="71388002"/>
+						<display value="Procedure"/>
+					</coding>
+				</class>
+				<subject>
+					<reference value="urn:uuid:dffd2ca0-dc21-11e7-9296-cec278b6b50a"/>
+				</subject>
+				<author>
+					<reference value="urn:uuid:8a3e3de0-02b7-4b31-b671-b9410cda98e9"/>
+				</author>
+				<custodian>
+					<reference value="urn:uuid:8a3e3de0-02b7-4b31-b671-b9410cda98e9"/>
+				</custodian>
+				<content>
+					<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NRL-ContentStability-1">
+						<valueCodeableConcept>
+							<coding>
+								<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-ContentStability-1"/>
+								<code value="dynamic"/>
+								<display value="Dynamic"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<attachment>
+						<contentType value="application/xml"/>
+						<url value="https://spine-proxy.national.ncrs.nhs.uk/https%3A%2F%2Fsupplier.co.uk%2FImmunization%2F3456b95a-3b36-4b6a-adc5-b119884d854e"/>
+					</attachment>
+					<format>
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-FormatCode-1"/>
+						<code value="NHSD-Vaccination-1"/>
+						<display value="Structured Vaccination"/>
+					</format>
+				</content>
+				<context>
+					<encouter>
+						<reference value="urn:uuid:12779557-9033-4213-876f-69a670cdf35d"/>
+					</encouter>
+					<practiceSetting>
+						<coding>
+							<system value="http://snomed.info/sct"/>
+							<code value="1060971000000108 "/>
+							<display value="General practice service"/>
+						</coding>
+					</practiceSetting>
+				</context>
+			</DocumentReference>
+		</resource>
+	</entry>
+</Bundle>
