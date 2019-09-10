@@ -18,15 +18,11 @@ summary: Summary release notes of the versions released in National Events Manag
 [Message Content](overview_msg_architecture_event_content.html)
 - Page added to explain message content, contained data, linked data and missed messages
 
-[PDS Record Change](pds_record_change_1.html)
-- PDS Record Change event added to specification
-
 [Subscriptions Overview](explore_subscriptions.html)
 - Additional information regarding generic subscriptions added
 
 [Supported Event Messages](overview_supported_events.html)
 - Encounter event added to supported event messages
-- PDS Record Change event added to supported event messages
 
 
 ## 2.0.1-Beta (09/08/2019) ##

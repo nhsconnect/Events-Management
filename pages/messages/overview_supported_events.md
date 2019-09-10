@@ -26,7 +26,6 @@ The following are event messages currently supported by the NEMS:
 | [PDS Change of Address](pds_change_of_address.html) | pds-change-of-address-1 | &#10060; | &#9989; | March 2019 |
 | [PDS Change of GP](pds_change_of_gp.html) | pds-change-of-gp-1 | &#10060; | &#9989; | March 2019 |
 | [PDS Death Notification](pds_death_notification.html) | pds-death-notification-1 | &#10060; | &#9989; | March 2019 |
-| [PDS Record Change](pds_record_change_1.html) | pds-record-change-1 | &#10060; | &#9989; | October 2019 |
 
 
 ### DCH Event Messages
