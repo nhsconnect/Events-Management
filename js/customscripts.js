@@ -53,21 +53,3 @@ $(function() {
         }
     });
 });
-
-function handleClick(checkbox, imageID) {
-	if (checkbox.checked) {
-		$("#"+imageID).css("display", "block");
-	} else {
-		$("#"+imageID).css("display", "none");
-	}
-}
-
-function selectAllCheckboxes() {
-	$("input[type=checkbox]").prop('checked', false);
-	$("input[type=checkbox]").click(); // This reverses the check hence false above
-}
-
-function clearAllCheckboxes() {
-	$("input[type=checkbox]").prop('checked', true);
-	$("input[type=checkbox]").click(); // This reverses the check hence true above
-}
