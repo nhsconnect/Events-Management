@@ -57,6 +57,8 @@ The NEMS will match all patients who live in England to generic subscription rul
 ### Examples
 
 The following diagram and table demonstrates the way in which generic subscription rules work:
+- the circles on the diagram represent the areas of responsibility for the different CCGs and LA
+- the location of the stick men and GP practices represents where they are located within the area of responsibility for the CCGs and LA, e.g. where a stick man is within a circle it means that they live within the area of responsibility for that CCG and/or LA
 
 <div id="subImageContainer" >
 	<img id="sub-background" src="images/subscription/generic/background.png">
@@ -80,6 +82,14 @@ The following diagram and table demonstrates the way in which generic subscripti
 		<th class="gp-gp-head">Patients Registered GP Code matches GP Code</th>
 		<th class="pc-la-head">Patients Postcode within LAs area of responsibility</th>
 		<th class="hss-head">All Patients in England</th>
+	</tr>
+	<tr class="subTableHeading">
+		<td>Rule Name</td>
+		<td class="pc-ccg-head">Residential CHO</td>
+		<td class="gp-ccg-head">CHO of registration</td>
+		<td class="gp-gp-head">GP</td>
+		<td class="pc-la-head">HVS</td>
+		<td class="hss-head">HSS</td>
 	</tr>
 	<tr class="subTableHeading">
 		<td>
