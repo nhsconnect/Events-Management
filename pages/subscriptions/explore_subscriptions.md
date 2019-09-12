@@ -37,9 +37,9 @@ The following rule types are currently available for use within Generic Rule Bas
 
 The NEMS matches the patients home postcode, from their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### Patients Registered GPs Postcode within area of CCGs area of responsibility
+### Patients Registered GPs is a child of the CCG
 
-The NEMS matches the postcode of the registered GP for the patient, within their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients registered GPs postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+The NEMS looks up the patients registered GP within their PDS record, then finds the parent CCG for that GP practice. The NEMS checks the generic subscriptions for any rules which contain a CCG Code that matches the parent CCG of the patients GP, A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
 ### Patients Registered GP Code matches GP Code
 
@@ -78,7 +78,7 @@ The following diagram and table demonstrates the way in which generic subscripti
 	<tr class="subTableHeading">
 		<th>Subscription Rule</th>
 		<th class="pc-ccg-head">Patients Postcode within CCGs area of responsibility</th>
-		<th class="gp-ccg-head">Patients Registered GPs Postcode within area of CCGs area of responsibility</th>
+		<th class="gp-ccg-head">Patients Registered GPs is a child of the CCG</th>
 		<th class="gp-gp-head">Patients Registered GP Code matches GP Code</th>
 		<th class="pc-la-head">Patients Postcode within LAs area of responsibility</th>
 		<th class="hss-head">All Patients in England</th>
