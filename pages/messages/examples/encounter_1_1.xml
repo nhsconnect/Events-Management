@@ -293,9 +293,9 @@
 					</extension>
 				</content>
 				<context>
-					<encouter>
+					<encounter>
 						<reference value="urn:uuid:12779557-9033-4213-876f-69a670cdf35d"/>
-					</encouter>
+					</encounter>
 					<practiceSetting>
 						<coding>
 							<system value="http://snomed.info/sct"/>
@@ -358,9 +358,9 @@
 					</format>
 				</content>
 				<context>
-					<encouter>
+					<encounter>
 						<reference value="urn:uuid:12779557-9033-4213-876f-69a670cdf35d"/>
-					</encouter>
+					</encounter>
 					<practiceSetting>
 						<coding>
 							<system value="http://snomed.info/sct"/>

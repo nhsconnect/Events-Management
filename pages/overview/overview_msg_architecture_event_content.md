@@ -30,7 +30,7 @@ The example diagram below shows the publisher publishing an encounter event cont
 
 ## "Linked information" Event Message
 
-A "Linked information" type event message is an event which carries minimal event-related information but instead carries information on where the full set of event-related information can be retrieved. The event message should only contain contextual information such as what type event it is, maybe where it happened and who with but none of the clinical event-related information related to the event. To share the event-related information the event message will include National Record Locator (NRL) format pointers which link to an API endpoint exposed by the publisher where the full set of event-related information available can be retrieved when it is needed.
+A "Linked information" type event message is an event which carries minimal event-related information but instead carries information on where the full set of event-related information can be retrieved. The event message should only contain contextual information such as what type event it is, maybe where it happened and who with but none of the clinical event-related information related to the event. To share the event-related information the event message will include National Record Locator (NRL) format pointers which link to endpoint URLs exposed by the publisher where the full set of event-related information available can be retrieved when it is needed.
 
 This approach does not completely mitigate the risk that the content of the event may become out of date, but the chance of this happening within the linked information event message and the risk associated with it is much less than in a contained information event message as there is less content and the content included is only contextual information.
 
@@ -38,10 +38,10 @@ Carrying pointers to the information rather than the information means that the 
 
 This linked information approach is also advantageous for messages where the nature and scope of the data could be very broad (e.g. encounters). Using the linked information approach allows for greater control around authenticated and authorised on retrieval of information such as in situations where information may be considered sensitive.
 
-In the example diagram below the event message is sent with some contextual information such as what type event it is, where it happened and who with but none of the clinical event-related information. The message also includes a pointer to an API exposed by the provider where the event-related information can be retrieved. At the point of receiving the event message the subscriber does not have any event-related information but has information on how to retrieve the information from the publisher, when it is needed. The diagram below shows the National Record Locator (NRL) retrieval mechanism which uses the national Spine Security Proxy (SSP) to handle the security between the publisher and subscriber. The NRL pointer carried in the event contains information on the retrieval mechanism and the format of the information that can be retrieved.
+In the example diagram below the event message is sent with some contextual information such as what type event it is, where it happened and who with but none of the clinical event-related information. The message also includes a pointer to an endpoint URL exposed by the provider where the event-related information can be retrieved. At the point of receiving the event message the subscriber does not have any event-related information but has information on how to retrieve the information from the publisher, when it is needed. The diagram below shows the National Record Locator (NRL) retrieval mechanism which uses the national Spine Security Proxy (SSP) to handle the security between the publisher and subscriber. The NRL pointer carried in the event contains information on the retrieval mechanism and the format of the information that can be retrieved.
  
  <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/overview/msg_full_fat.png" target="_blank"><img src="images/overview/msg_light_weight.png"></a>
+	<a href="images/overview/msg_light_weight.png" target="_blank"><img src="images/overview/msg_light_weight.png"></a>
 </div>
  
 
@@ -58,8 +58,8 @@ The main benefits of calling the NRL:
 - the NRL will contain pointers to information which will not flow through the NEMS as an event message, meaning that more information may be available to consumers
 - subscribers can get information from events which they missed or did not receive
 
-The example diagram below shows a provider creating a pointer on the NRL. The consumer then requesting pointers from the NRL and receiving the pointers including the one for the providers API. The consumer then makes a request to the provider API endpoint for information through the SSP. In this example the SSP manages authentication and authorisation between the consumer and provider and is the retrieval mechanism required by NRL.
+The example diagram below shows a provider creating a pointer on the NRL. The consumer then requesting pointers from the NRL and receiving the pointers including the one for the providers endpoint URL. The consumer then makes a request to the provider endpoint URL for information through the SSP. In this example the SSP manages authentication and authorisation between the consumer and provider and is the retrieval mechanism required by NRL.
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/overview/msg_full_fat.png" target="_blank"><img src="images/overview/msg_missed.png"></a>
+	<a href="images/overview/msg_missed.png" target="_blank"><img src="images/overview/msg_missed.png"></a>
 </div>
