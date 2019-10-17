@@ -15,6 +15,9 @@ summary: Summary release notes of the versions released in National Events Manag
 [Event Receiver Requirements](receiver_requirements.html)
 - Generic subscription information moved to [Subscriptions Overview](explore_subscriptions.html) page.
 
+[Generic Event Message Requirements](explore_genreic_event_requirements.html)
+- Guidance added for population of dateTime elements and the use of time zone offsets.
+
 [Message Content](overview_msg_architecture_event_content.html)
 - Page added to explain message content, contained data, linked data and missed messages
 

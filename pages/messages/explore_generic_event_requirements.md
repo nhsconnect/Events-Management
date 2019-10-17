@@ -76,3 +76,18 @@ Organization resources included in event messages SHALL conform to the [CareConn
 | --- | --- | --- |
 | name | 0..1 | A human readable name for the organization SHOULD be included in the organization resource |
 | identifier | 0..1 | The organization ODS code SHOULD be included within the `odsOrganizationCode` identifier slice |
+
+
+# Data Type Population
+
+## "dateTime" Elements
+
+Population of a `dateTime` element within FHIR resource should conform to the requirements within the [FHIR specification](http://hl7.org/fhir/stu3/datatypes.html#datetime), so where a time is included the time zone MUST be populate to represent the offset of the include time from Coordinated Universal Time (UTC).
+
+For a date and time within **BST** such as "27th July 2019" at "14:22" the dateTime should be included in the FHIR resource either with a time zone offset or with the time changed to GMT:
+
+`2019-07-27T14:22:00+01:00` or `2019-07-27T13:22:00+00:00`
+
+For a date and time within **GMT** such as "14th January 2019" at "13:35" the dateTime should be included in the FHIR resource with a time zone offset of zero hours and minutes:
+
+`2019-01-14T13:35:00+00:00`
