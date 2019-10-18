@@ -16,40 +16,37 @@ To receive event messages a consumer will need to subscribe to events they want 
 
 An explicit subscription relates to where a subscriber wishes to receive event messages for a specific patient, for example, a Pharmacist wishing to receive hospital admission and discharge events for a specific Patient.
 
-Explicit event message subscriptions for patients can be created using the Subscription API, using the [Create Subscription](explore_create_subscription.html) interaction. The organizations MESH mailbox must be configured to receive the required event message types as per the requirements on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
-
 Explicit subscriptions SHOULD only be active for patients under the subscribing organisations direct care. Explicit subscriptions for a patient should be stopped when the patient leaves the subscribing organisations direct care. This can be done either by removing the explicit subscription using the Delete Subscription API interaction or by including the `end` element as part of the subscription resource.
-
 
 ## Rule-Based (Generic) Subscriptions ##
 
-A rule-based subscription relates to where a subscriber wishes to receive events that meet a particular rule set rather than for a specific patient. There is currently two specific types of rule-based subscriptions:
+Rule-based subscriptions relate to where a subscriber wishes to receive events that meet a particular rule set rather than for a specific patient. There is currently two specific types of rule-based subscriptions:
 
-- Geographical: Subscriptions that relate to individuals who lives in or are registered with a GP that is located within the geographic boundaries of a specific organisation (For example, a Health Visiting Service wishing to view events for all children within a specific local authorities area of responsibility). 
+- **Geographical**: Subscriptions that relate to individuals who lives in or are registered with a GP that is located within the geographic boundaries of a specific organisation (For example, a Health Visiting Service wishing to view events for all children within a specific local authorities area of responsibility). 
   
-  A geographical rule based subscription will result in a subscriber receiving events for any patients within the specified geographical area, therefore a subscriber wishing to use this form of subscription must demonstrate that they have a legitimate relationship with all patients in the area. If a provider is only responsible for a subset of patients within a geographical area, then geographical subscriptions are not appropriate as the provider will receive information for patients with which they do not have a legitimate relationship. In this scenario the provider should use explicit subscriptions to receive events for the patients with which they have a legitimate relationship.
+  A geographical rule based subscription will result in a subscriber receiving events for any patients within the specified geographical area, therefore a subscriber wishing to use this form of subscription must have a legitimate relationship with all patients in the area. If a provider is only responsible for a subset of patients within a geographical area, then geographical subscriptions are not appropriate as the provider will receive information for patients with which they do not have a legitimate relationship. In this scenario the provider should use explicit subscriptions to receive events for the patients with which they have a legitimate relationship.
   
-- Registered Org: Subscriptions that relate to individuals who are registered with a specific organisation (currently only applicable for GP organisations).
+- **Registered Org**: Subscriptions that relate to individuals who are registered with a specific organisation (currently only applicable for GP organisations).
 
 The following rule types are currently available for use within Generic Rule Based Subscriptions:
 
-### Patients Postcode within CCGs area of responsibility
+### Patients Postcode within CCGs area of responsibility (Residential CHO)
 
 The NEMS matches the patients home postcode, from their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### Patients Registered GPs is a child of the CCG
+### Patients Registered GPs is a child of the CCG (CHO of registration)
 
 The NEMS looks up the patients registered GP within their PDS record, then finds the parent CCG for that GP practice. The NEMS checks the generic subscriptions for any rules which contain a CCG Code that matches the parent CCG of the patients GP, A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### Patients Registered GP Code matches GP Code
+### Patients Registered GP Code matches GP Code (GP)
 
 The NEMS matches the patients registered GP Code, from their PDS record, to generic subscription rules which contain the same GP Code. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### Patients Postcode within LAs area of responsibility
+### Patients Postcode within LAs area of responsibility (HVS)
 
 The NEMS matches the patients home postcode, from their PDS record, to a specific LA based the areas of responsible for the different LAs. The NEMS then looks for generic subscription rules which contain an LA Code that matches the LA responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### All Patients in England
+### All Patients in England (HSS)
 
 The NEMS will match all patients who live in England to generic subscription rules which specify the rule type of National. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
@@ -120,7 +117,9 @@ The following diagram and table demonstrates the way in which generic subscripti
 </table>
 
 
-The Subscription API does not support the configuration of generic subscriptions. Generic subscriptions are currently setup by NHS Digital to meet IG requirements, therefore if you wish to use generic subscriptions a request needs to be sent to NHS Digital.
+# Managing Subscriptions
+
+Subscriptions can be created using the Subscription API [Create Subscription](explore_create_subscription.html) interaction. The organizations MESH mailbox must be configured to receive the required event message types as per the requirements on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
 
 
 # Subscription matching and message delivery #

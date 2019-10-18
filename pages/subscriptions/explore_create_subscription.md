@@ -59,29 +59,27 @@ Once submitted, additional metadata will automatically be added to the Subscript
 
 The create request MUST NOT include the fields above, as they can only be added by the NEMS (see Create Example below).
 
-Once the subscription has been created it may require IG review prior to becoming active, at which point the status of the Subscription resource will be changed by the NEMS to 'active'.
-
-
 ### Criteria Components ###
 
-The criteria element of the Subscription will use the FHIR search string format using the following components:
+The criteria element of the Subscription will use the FHIR search string format using the following components. Information on the difference between `explicit` and `generic` subscriptions can be found on the [Subscriptions Overview](explore_subscriptions.html) page.
 
-| Component                       | Cardinality | Description |
-| ------------------------------- | --- | ----------- |
-| /Bundle?type=message            | 1..1 | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
-| serviceType=[CODE]     | 0..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Personal Child Health Record services |
-| Patient.identifier=[IDENTIFIER] | 1..1 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/><br/>For example: "```&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|[NHS Number]```" |
-| MessageHeader.event=[CODE]      | 1..* |  This is the type of event to subscribe to (see the [Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EventType-1)). <br/><br/>For example: <br/> "```&amp;MessageHeader.event=pds-birth-notification-1&amp;MessageHeader.event=vaccinations-1&amp;MessageHeader.event=pds-change-of-address-1```" <br/><br/> is an expression to specify events where the MessageHeader.event is of type "pds-birth-notification-1", "vaccinations-1" or "pds-change-of-address-1" |
-| Patient.age=[AGE]               | 0..2 |  This is a filter to only match events where the age of the patient meets the criteria supplied. <br/><br/>Examples:<br/> - "```&amp;Patient.age=lt14```"<br/> - "```&amp;Patient.age=gt60```"<br/> - "```&amp;Patient.age=gt5&amp;Patient.age=lt19```" <br/><br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
-
+| Component | Explicit Subscription Cardinality | Generic Subscription Cardinality | Description |
+| ------------------------------- | --- | --- | ----------- |
+| /Bundle?type=message            | 1..1 | 1..1 | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
+| serviceType=[CODE]     | 0..1 | 0..1 | This element identifies the service type making the subscription. Current accepted values are:<br/><br/>**GP** - GP Practice related services<br/>**CHO** - Child Health Organisation related services<br/>**UHV** - Health Visitor related services<br/>**EPCHR** - Electronic Personal Child Health Record services |
+| Patient.identifier=[IDENTIFIER] | 1..1 | 0..0 |  This is used for Explicit Subscriptions for an individual patient. The [IDENTIFIER] is the NHS Number for the patient. <br/><br/>For example: "```&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|[NHS Number]```" |
+| MessageHeader.event=[CODE]      | 1..* | 1..* |  This is the type of event to subscribe to (see the [Event Types](https://fhir.nhs.uk/STU3/CodeSystem/EventType-1)). <br/><br/>For example: <br/> "```&amp;MessageHeader.event=pds-birth-notification-1&amp;MessageHeader.event=vaccinations-1&amp;MessageHeader.event=pds-change-of-address-1```" <br/><br/> is an expression to specify events where the MessageHeader.event is of type "pds-birth-notification-1", "vaccinations-1" or "pds-change-of-address-1" |
+| Patient.age=[AGE]               | 0..2 |  0..2 | This is a filter to only match events where the age of the patient meets the criteria supplied. <br/><br/>Examples:<br/> - "```&amp;Patient.age=lt14```"<br/> - "```&amp;Patient.age=gt60```"<br/> - "```&amp;Patient.age=gt5&amp;Patient.age=lt19```" <br/><br/>For more detail see the Search Parameter [EMS Patient Age](https://fhir.nhs.uk/STU3/SearchParameter/EMS-PatientAge-1)|
+| subscriptionRuleType=[CODE] | 0..0 | 1..1 | This identifies the type of matching the NEMS will do between the patient demographics and the organisation code specified in the "Organization.identifier" criteria component. Current accepted values are:<br/><br/>**GP_GP_GP** - This will be a match if the patients registered GP matches the GP Practice code within the "Organization.identifier" criteria component.<br/><br/>**UHV_POSTCODE_LACODE** - This will be a match if the Local Authority Code responsible for the geographical location of the patients post code matches the code within the "Organization.identifier" criteria component.<br/><br/>**CHO_GP_CCG** - This will be a match if the CCG Code responsible for the geographical location of the patients registered GP matches the code within the "Organization.identifier" criteria component.<br/><br/>**CHO_POSTCODE_CCG** - This will be a match if the CCG Code responsible for the geographical location of the patients postcode matches the code within the "Organization.identifier" criteria component.<br/><br/>**HSS** - National subscription, subscription criteria is a match for any patients in England.<br/> |
+| Organization.identifier=[CODE]  | 0..0 | 0..1 |  This element is required as part of the generic subscription to specify the organisation code which the NEMS will match to, based on the rule specified within the subscriptionRuleType criteria component. |
 
 
 ## Criteria Examples ##
 
-| Scenario                             | Subscribing Organisation | Subscription Type | Criteria String                     |
-|--------------------------------------|--------------------------|-------------------|------------------------------------|
-| A PHR system subscribing to change of address events for a specific patient registered for a PHR | N/A | Explicit | ```/Bundle?type=message&amp;serviceType=GP&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919&amp;MessageHeader.event=pds-change-of-address-1``` |
-
+| Scenario                             | Subscription Type | Criteria String                     |
+|--------------------------------------|-------------------|------------------------------------|
+| A PHR system subscribing to change of address events for a specific patient registered for a PHR | Explicit | ```/Bundle?type=message&amp;serviceType=GP&amp;```<br/>```Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919```<br/>```&amp;MessageHeader.event=pds-change-of-address-1``` |
+| A child health service subscribing to events for patients who's postcode is within the catchment area of a CCG with the ID "X2458" | Generic | ```/Bundle?type=message&amp;subscriptionRuleType=```<br/>```CHO_POSTCODE_CCG&amp;Organization.identifier=```<br/>```X2458&amp;MessageHeader.event=PDS001&amp;MessageHeader.event=PDS002``` |
 
 ## Error Handling ##
 
