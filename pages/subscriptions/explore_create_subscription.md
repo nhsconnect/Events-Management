@@ -61,7 +61,7 @@ The create request MUST NOT include the fields above, as they can only be added 
 
 ### Criteria Components ###
 
-The criteria element of the Subscription will use the FHIR search string format using the following components:
+The criteria element of the Subscription will use the FHIR search string format using the following components. Information on the difference between `explicit` and `generic` subscriptions can be found on the [Subscriptions Overview](explore_subscriptions.html) page.
 
 | Component | Explicit Subscription Cardinality | Generic Subscription Cardinality | Description |
 | ------------------------------- | --- | --- | ----------- |
