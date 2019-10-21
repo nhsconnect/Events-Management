@@ -65,7 +65,7 @@ Patient resources included in the event message SHALL conform to the [CareConnec
 | identifier | 1..1 | Patient NHS Number SHALL be included within the `nhsNumber` identifier slice |
 | name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the `official` name element slice |
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
-| address | 0..* | If an address is included in the patient resource the publisher **SHALL** included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
+| address | 0..* | If an address is included in the patient resource the publisher SHOULD included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
 
 
 ## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
