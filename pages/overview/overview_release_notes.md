@@ -24,6 +24,9 @@ summary: Summary release notes of the versions released in National Events Manag
 [Message Content](overview_msg_architecture_event_content.html)
 - Page added to explain message content, contained data, linked data and missed messages
 
+[Publish an Event Message](publication_publish.html)
+- Addition of guidance related to the maximum event message size that could be accepted by the NEMS
+
 [Subscriptions Overview](explore_subscriptions.html)
 - Additional information regarding generic subscriptions added
 
