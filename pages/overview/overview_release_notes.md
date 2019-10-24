@@ -15,6 +15,9 @@ summary: Summary release notes of the versions released in National Events Manag
 [Encounter](encounter_1.html)
 - Encounter event requirements and guidance added to specification
 
+[Event Message Sequencing](overview_msg_architecture_sequencing.html)
+- Added additional guidance around the use of sequence numbers in relation to update type event messages.
+
 [Event Receiver Requirements](receiver_requirements.html)
 - Generic subscription information moved to [Subscriptions Overview](explore_subscriptions.html) page.
 
