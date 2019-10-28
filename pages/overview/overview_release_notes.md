@@ -11,6 +11,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Create Subscription](explore_create_subscription.html)
 - enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
+- updated age criteria to include clarification on use of years
 
 [Encounter](encounter_1.html)
 - Encounter event requirements and guidance added to specification
