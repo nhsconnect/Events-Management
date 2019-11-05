@@ -324,5 +324,6 @@ The HealthcareService resource included in the event message SHALL conform to th
 
 ## PDS Birth Notification Example ##
 
-<script src="https://gist.github.com/IOPS-DEV/baad58296da6bb0f7b06997001ded728.js"></script>
-
+```xml
+{% include_relative examples/PDS-Birth-Notification-ems-example.xml %}
+```

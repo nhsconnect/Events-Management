@@ -131,8 +131,15 @@ The DocumentReference resource(s) included in the event message **MUST** conform
 | context.encounter | 1..1 | A reference to the encounter this document reference pointer is related to. |
 
 
-## Examples
+#### Example 1 ####
 
-[Example 1](pages/messages/examples/encounter_1_1.xml)
+```xml
+{% include_relative examples/encounter_1_1.xml %}
+```
 
-[Example 2](pages/messages/examples/encounter_1_2.xml)
+
+#### Example 2 ####
+
+```xml
+{% include_relative examples/encounter_1_2.xml %}
+```

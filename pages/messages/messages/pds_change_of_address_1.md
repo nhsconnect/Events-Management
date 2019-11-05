@@ -145,5 +145,6 @@ The HealthcareService resource included in the event message SHALL conform to th
 
 ## PDS Change of Address Example ##
 
-<script src="https://gist.github.com/IOPS-DEV/828562b2e3edaec1ed43f48645f5376a.js"></script>
-
+```xml
+{% include_relative examples/PDS-Change-Of-Address-ems-example.xml %}
+```
