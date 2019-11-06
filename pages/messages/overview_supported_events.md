@@ -21,12 +21,12 @@ The following are event messages currently supported by the NEMS:
 
 | Event | Event Code | Publication API | Subscription API | Date Available |
 |---|---|:---:|:---:|---|
-| [Encounter](encounter_1.html) | encounter-1 | &#9989; | &#9989; | October 2019 |
+| [Encounter](encounter_1.html) | encounter-1 | &#9989; | &#9989; | TBC |
 | [PDS Birth Notification](pds_birth_notification.html) | pds-birth-notification-1 | &#10060; | &#9989; | March 2019 |
 | [PDS Change of Address](pds_change_of_address.html) | pds-change-of-address-1 | &#10060; | &#9989; | March 2019 |
 | [PDS Change of GP](pds_change_of_gp.html) | pds-change-of-gp-1 | &#10060; | &#9989; | March 2019 |
 | [PDS Death Notification](pds_death_notification.html) | pds-death-notification-1 | &#10060; | &#9989; | March 2019 |
-
+| [Professional Responsibility Notification](professional_responsibility_notification_1.html) | professional-responsibility-notification-1 | &#9989; | &#9989; | TBC |
 
 ### DCH Event Messages
 

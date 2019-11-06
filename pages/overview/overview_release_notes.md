@@ -28,6 +28,9 @@ summary: Summary release notes of the versions released in National Events Manag
 [Message Content](overview_msg_architecture_event_content.html)
 - Page added to explain message content, contained data, linked data and missed messages
 
+[Professional Responsibility Notification](professional_responsibility_notification_1.html)
+- Added new Professional Responsibility Notification event message
+
 [Publish an Event Message](publication_publish.html)
 - Addition of guidance related to the maximum event message size that could be accepted by the NEMS
 
@@ -36,6 +39,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Supported Event Messages](overview_supported_events.html)
 - Encounter event added to supported event messages
+- Professional Responsibility Notification event added to supported event messages
 
 
 ## 2.0.1-Beta (09/08/2019) ##

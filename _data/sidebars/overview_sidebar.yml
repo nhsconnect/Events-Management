@@ -66,6 +66,9 @@ entries:
         - title: PDS Death Notification
           url: /pds_death_notification.html
           output: web
+        - title: Professional Responsibility Notification
+          url: /professional_responsibility_notification_1.html
+          output: web
           
   - title: Subscription Management
     output: web,pdf
