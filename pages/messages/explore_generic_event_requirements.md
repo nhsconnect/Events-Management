@@ -23,6 +23,24 @@ This page provides common FHIR resource population requirements for all event me
 
 
 
+# New, Update, Delete and use of Identifiers
+
+The `MessageHeader` resource in all event messages contain the `messageEventType` extension that indicates if the event message is a `new`, `update` or `delete` version of the event message. This element and its value  indicates if this event relates to new information, a change to the information sent in a previous event or a delete of information previously sent.
+
+As this extension allows for subsequent changes to information to be sent by publishers, it is necessary for a consumer to be able to link the information sent in one message with the information sent in another message. To do this the individual bits of information needs to have an identifier which is persisted across event messages by the publisher which can be used by the subscriber.
+
+## Message ID
+The event message ID sent within the `MessageHeader.id` element must be unique to that specific event message, for use in support functions (e.g. I received event message xyz and there’s a problem with it) and for duplicate message identification by subscribers. The message ID should not be re-used within subsequent event messages or referenced from `update` and `delete` event messages.
+
+## Identifiers
+To link data between event messages, for the purposes of managing updates and deletes, the `identifier` elements within the individual resources should be use.
+
+For example, if a `new` event message is published containing a `Procedure` resource, representing a test performed on the patient, this procedure should contain an `identifier` (which could be an internal supplier ID, an approach agreed with BIDA). If an update is made to that test information within the publishing system, then the publishing system would be able to publish an `update` event message containing the updated `Procedure` resource with the same `identifier`, allowing the consumer to link the data to the data sent in the previous event message.
+
+## Use of New, Update and Delete
+Publishers MUST use the appropriate `messageEventType` values to indicate the information that is being published. For example a publisher must not use a `new` message to send an update to a previously sent data.
+
+
 # Resource Population
 
 ## [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)

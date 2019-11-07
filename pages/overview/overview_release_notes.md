@@ -24,6 +24,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Generic Event Message Requirements](explore_genreic_event_requirements.html)
 - Guidance added for population of dateTime elements and the use of time zone offsets.
+- Added a section on use of `new`, `update` and `delete` versions of event messages and how that links to the use of `identifiers`.
 
 [Message Content](overview_msg_architecture_event_content.html)
 - Page added to explain message content, contained data, linked data and missed messages
