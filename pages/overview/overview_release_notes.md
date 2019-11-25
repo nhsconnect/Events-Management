@@ -13,9 +13,6 @@ summary: Summary release notes of the versions released in National Events Manag
 - enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
 - updated age criteria to include clarification on use of years
 
-[Encounter](encounter_1.html)
-- Encounter event requirements and guidance added to specification
-
 [Event Message Sequencing](overview_msg_architecture_sequencing.html)
 - Added additional guidance around the use of sequence numbers in relation to update type event messages.
 
@@ -39,7 +36,6 @@ summary: Summary release notes of the versions released in National Events Manag
 - Additional information regarding generic subscriptions added
 
 [Supported Event Messages](overview_supported_events.html)
-- Encounter event added to supported event messages
 - Professional Responsibility Notification event added to supported event messages
 
 

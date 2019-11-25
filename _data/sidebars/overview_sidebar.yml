@@ -51,9 +51,6 @@ entries:
       - title: Messages
         output: web
         subfolderitems:
-        - title: Encounter
-          url: /encounter_1.html
-          output: web
         - title: PDS Birth Notification
           url: /pds_birth_notification.html
           output: web
