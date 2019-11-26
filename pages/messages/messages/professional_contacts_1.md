@@ -27,9 +27,21 @@ The diagram below shows the referencing between FHIR resources within the profes
 
 ## Event Life Cycle ##
 
-The information carried in the `Professional Contacts` event message allows the `current` state of the organisations professional responsibility for a patient to be expressed clearly, so in most use cases the use of the `messageEventType` extension within the `MessageHeader` resource will only include the `new` value. Use of the `update` or `delete` values relates to changes to the original event message and should not be used to indicate an update or removal of the organisations professional responsibility for the patient.
+### New, Update & Delete
 
-As an organisations professional responsibility for a patient will change over time, organisations will most likely published this event multiple times for each patient. To allow a consumer to perform message sequencing, if required, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date event message is.
+The information carried in the `Professional Contacts` event message allows the `current` state of the organisations professional responsibility for a patient to be expressed clearly, so in most use cases the use of the `messageEventType` extension within the `MessageHeader` resource will include the `new` value.
+
+Use of the `update` and `delete` values is intended for corrections to information sent in a previous event message. The `update` and `delete` values should not be used to convey an update or removal of the organisations professional responsibility for the patient, this should be done in a `new` type event message with the resources populated to indicate the new state of the organisations professional responsibility.
+
+| Event Type | Description |
+| --- | --- |
+| new | The `new` value must be used where new information about a organisations professional responsibility is being shared, e.g. taking responsibility for the patient, removing responsibility or changing responsibility. |
+| update | The `update` value must be used when information sent in a previous `Professional Contacts` event was incorrect and needs correcting. To allow subscribers to identify which information has changed, the event message must contain the following:<br/><br/>**Identifiers** - The different resources included in the event message need to contain identifiers which will be maintained between event messages.<br/><br/>**Removing Information** - Where a resource was included incorrectly and needs removing the resource should still be included in the event message but the resource should contain a `status` element to indicate that the resource was `entered-in-error` to allow subscribers to identify the data which may have originally been consumed. |
+| delete | The `delete` value must be used when the Professional Contacts information was shared incorrectly for the patient, for example if the information was shared for the wrong patient. To allow the subscriber link information to the information in the last `new` or `update` type event message the resources within the event message must contain `identifier` elements. Resources should not be removed from the event when sending a `delete` event message, all the resources should be include as per the `new` or `update` event message with which the `delete` message relates to. |
+
+### Message Sequencing
+
+As an organisations professional responsibility for a patient will change over time, the organisation will most likely publish multiple `professional contacts` events for each patient. To allow a consumer to perform message sequencing, if required, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date event message is.
 
 
 ## Onward Delivery ##
@@ -77,6 +89,7 @@ The EpisodeOfCare resource included in the event message SHALL conform to the [C
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
+| identifier | 1..1 | A publisher defined unique identifier for the episode of care which will be maintained across related event messages to allow subscribers to be identify the information within `update` or `delete` event messages. |
 | status | 1..1 | The `status` element MUST represent the current status of the organisations responsibility for the patient. |
 | type | 1..* | The `type` element MUST represent the type of care/service the organisation is providing during this episode of care. For example "Health visiting service (1078501000000104)"  |
 | managingOrganization | 1..1  | This MUST reference the organisation who is responsibility for this episode of care. |
