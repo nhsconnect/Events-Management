@@ -31,13 +31,13 @@ The diagram below shows the referencing between FHIR resources within the profes
 
 The information carried in the `Professional Contacts` event message allows the `current` state of the organisations professional responsibility for a patient to be expressed clearly, so in most use cases the use of the `messageEventType` extension within the `MessageHeader` resource will include the `new` value.
 
-Use of the `update` and `delete` values is intended for corrections to information sent in a previous event message. The `update` and `delete` values should not be used to convey an update or removal of the organisations professional responsibility for the patient, this should be done in a `new` type event message with the resources populated to indicate the new state of the organisations professional responsibility.
+Use of the `update` and `delete` values is intended for corrections to information sent in a previous event message. The `update` and `delete` values **MUST NOT** be used to convey an update or removal of the organisations professional responsibility for the patient, this should be done in a `new` type event message with the resources populated to indicate the new state of the organisations professional responsibility.
 
 | Event Type | Description |
 | --- | --- |
 | new | The `new` value must be used where new information about a organisations professional responsibility is being shared, e.g. taking responsibility for the patient, removing responsibility or changing responsibility. |
-| update | The `update` value must be used when information sent in a previous `Professional Contacts` event was incorrect and needs correcting. To allow subscribers to identify which information has changed, the event message must contain the following:<br/><br/>**Identifiers** - The different resources included in the event message need to contain identifiers which will be maintained between event messages.<br/><br/>**Removing Information** - Where a resource was included incorrectly and needs removing the resource should still be included in the event message but the resource should contain a `status` element to indicate that the resource was `entered-in-error` to allow subscribers to identify the data which may have originally been consumed. |
-| delete | The `delete` value must be used when the Professional Contacts information was shared incorrectly for the patient, for example if the information was shared for the wrong patient. To allow the subscriber link information to the information in the last `new` or `update` type event message the resources within the event message must contain `identifier` elements. Resources should not be removed from the event when sending a `delete` event message, all the resources should be include as per the `new` or `update` event message with which the `delete` message relates to. |
+| update | The `update` value must be used when information sent in a previous `Professional Contacts` event was incorrect and needs correcting. To allow subscribers to identify which information has changed, the event message must contain the following:<br/><br/>**Identifiers** - The different resources included in the event message need to contain identifiers which will be maintained between event messages.<br/><br/>**Removing Information** - Where a resource was included incorrectly and needs removing, where possible, the resource should be included in the event message and the resource should contain a `status` element to indicate that the resource was `entered-in-error`, some resources do not contain a `status` element in which case the resource may just be removed. |
+| delete | The `delete` value must be used when the Professional Contacts information was shared incorrectly for the patient, for example if the information was shared for the wrong patient. <br/><br/>To allow subscribers to link information to the `new` or `update` event message, the resources within the event message must contain `identifier` elements. All resources should be include as per the `new` or `update` event message with which the `delete` message relates. |
 
 ### Message Sequencing
 
@@ -106,7 +106,7 @@ Within the bundle there will be multiple organization resources, including one f
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| identifier | 1..1 | The organization ODS code SHALL be included within the odsOrganizationCode identifier slice. |
+| identifier | 1..* | The organization ODS code SHALL be included within the odsOrganizationCode identifier slice. |
 | name | 1..1 | A human readable name for the organization SHALL be included in the organization resource. |
 | **telecom** | 0..* | Where the Organisation resource represents the organisation responsible for the EpisodeOfCare, referenced from the `EpisodeOfCare` resource `managingOrganization` element, the Organisation resource **MUST** include contact details for use by consumers in relation to communications about this episode of care. |
 
