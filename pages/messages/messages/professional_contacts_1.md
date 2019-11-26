@@ -152,3 +152,10 @@ The CareConnect-Practitioner-1 resource included as part of the event message SH
 The CareConnect-PractitionerRole-1 resource included as part of the event message SHALL conform to the [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1) constrained FHIR profile.
 
 | Resource Cardinality | 0..* |
+
+
+## Professional Contacts Example ##
+
+```xml
+{% include_relative examples/Professional-Contacts-example.xml %}
+```
