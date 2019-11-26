@@ -35,7 +35,7 @@ The event message ID sent within the `MessageHeader.id` element must be unique t
 ## Identifiers
 To link data between event messages, for the purposes of managing updates and deletes, the `identifier` elements within the individual resources should be use.
 
-For example, if a `new` event message is published containing a `Procedure` resource, representing a test performed on the patient, this procedure should contain an `identifier` (which could be an internal supplier ID, an approach agreed with BIDA). If an update is made to that test information within the publishing system, then the publishing system would be able to publish an `update` event message containing the updated `Procedure` resource with the same `identifier`, allowing the consumer to link the data to the data sent in the previous event message.
+For example, if a `new` event message is published containing a `Procedure` resource, representing a test performed on the patient, this procedure should contain an `identifier` (which could be an internal supplier ID). If an update is made to that test information within the publishing system, then the publishing system would be able to publish an `update` event message containing the updated `Procedure` resource with the same `identifier`, allowing the consumer to link the data to the data sent in the previous event message.
 
 ## Use of New, Update and Delete
 Publishers MUST use the appropriate `messageEventType` values to indicate the information that is being published. For example a publisher must not use a `new` message to send an update to a previously sent data.
