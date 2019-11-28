@@ -30,15 +30,21 @@ The diagram below shows the referencing between FHIR resources within the profes
 
 ### New, Update & Delete
 
-The information carried in the `Professional Contacts` event message allows the `current` state of the organisations professional responsibility for a patient to be expressed clearly, so in most use cases the use of the `messageEventType` extension within the `MessageHeader` resource will include the `new` value.
+The information carried in the `Professional Contacts` event message should represent the `current` state of the organisations professional responsibility for a patient. When information is shared using the `Professional Contacts` event message the `messageEventType` extension within the `MessageHeader` resource shall contain the values as per the table below:
 
-Use of the `update` and `delete` values is intended for corrections to information sent in a previous event message. The `update` and `delete` values **MUST NOT** be used to convey an update or removal of the organisations professional responsibility for the patient, this should be done in a `new` type event message with the resources populated to indicate the new state of the organisations professional responsibility.
-
-| Event Type | Description |
+| Event Type Value | Description |
 | --- | --- |
-| new | The `new` value must be used where new information about a organisations professional responsibility is being shared, e.g. taking responsibility for the patient, removing responsibility or changing responsibility. |
-| update | The `update` value must be used when information sent in a previous `Professional Contacts` event was incorrect and needs correcting. To allow subscribers to identify which information has changed, the event message must contain the following:<br/><br/>**Identifiers** - The resources included in the event message need to contain identifiers which are maintained between event messages.<br/><br/>**Removing Information** - Where a resource was included incorrectly and needs removing, where possible, the resource should be included in the event message and the resource should contain a `status` element to indicate that the resource was `entered-in-error`, some resources do not contain a `status` element in which case these resource may just be removed. |
-| delete | The `delete` value must be used when the Professional Contacts information was shared incorrectly for the patient, for example if the information was shared for the wrong patient. <br/><br/>To allow subscribers to link information to the `new` or `update` event message, the resources within the event message must contain `identifier` elements and all resources should be include as per the `new` or `update` event message which the `delete` message relates to. |
+| new |  The `new` value must be used when information is being shared in the event message is being shared for the first time. |
+| update | The `update` value must be used when information which had previously been shared in an event message has changed and the new information is being communicated. |
+| delete | The `delete` value must be used when the information shared was incorrect and should not have been sent and should not be used, for example if the information was shared for the wrong patient. |
+
+### Identifying Information
+
+To allow subscribers to identify information between `new`, `update` and `delete` types of event messages, the resources within the event message must contain the following:
+
+| Identifiers | The resources included in the event message need to contain identifiers which are maintained between event messages. |
+| Status | Where a resource was included incorrectly or needs removing, but the overall event message is still relevant, where possible the resource which needs to be removed should still be included in `update` and `delete` type messages, but contain a `status` element to indicate that the resource was `entered-in-error`, some resources do not contain a `status` element in which case these resource may just be removed. |
+
 
 ### Message Sequencing
 
@@ -77,7 +83,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. |
-| extension(messageEventType) | 1..1 | In most use cases the `new` value should be used, but see the "Event Life Cycle" section above. |
+| extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. |
 | event | 1..1 | Fixed Value: professional-contacts-1 (Professional Contacts) |
 | focus | 1..1 | This will reference the `CareConnect-EpisodeOfCare-1` resource which contains information outlining the professional responsibility for the patient. |
 
