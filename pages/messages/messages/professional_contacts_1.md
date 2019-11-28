@@ -28,27 +28,28 @@ The diagram below shows the referencing between FHIR resources within the profes
 
 ## Event Life Cycle ##
 
-### New, Update & Delete
+The information carried in a `Professional Contacts` event message must represent the `current` state of the organisations professional responsibility for a patient.
 
-The information carried in the `Professional Contacts` event message should represent the `current` state of the organisations professional responsibility for a patient. When information is shared using the `Professional Contacts` event message the `messageEventType` extension within the `MessageHeader` resource shall contain the values as per the table below:
+The contents of the `EpisodeOfCare` resource and its supporting resources conveys the current state of the organisations professional responsibility for the patient, such as if it is active, finished, cancelled, etc.
 
-| Event Type Value | Description |
+The `MessageHeader` resource contains the `messageEventType` extension which represents the action the event message represents at a resource level, for example the `EpisodeOfCare` being shared is new, the `EpisodeOfCare` or supporting resources have been updated or the `EpisodeOfCare` has been deleted. The `messageEventType` extension shall contain a values as per the table below:
+
+| Value | Description |
 | --- | --- |
-| new |  The `new` value must be used when information is being shared for the first time. |
-| update | The `update` value must be used when information which has previously been shared, has changed and the updated information is being shared. |
-| delete | The `delete` value must be used when the information shared in a previous event was incorrect and should not have been shared. For example if the information was shared for the wrong patient. |
+| new |  The `new` value must be used when the EpisodeOfCare is being shared for the first time. |
+| update | The `update` value must be used when the EpisodeOfCare and supporting resources have previously been shared, but have updated and the updated resources are being shared. |
+| delete | The `delete` value must be used when the EpisodeOfCare record has been delete and the record no longer exists. |
 
 ### Identifying Information
 
-To allow subscribers to identify information between `new`, `update` and `delete` types of event messages, the resources within the event message must contain the following:
+To allow subscribers to identify information between `new`, `update` and `delete` event messages the publisher must:
 
-| Identifiers | The resources included in the event message need to contain identifiers which are maintained between event messages. |
-| Status | Where a resource was included incorrectly or needs removing, but the overall event message is still relevant, where possible the resource which needs to be removed should still be included in the `update` or `delete` messages, but contain a `status` element to indicate that the resource was `entered-in-error`, some resources do not contain a `status` element in which case these resource may just be removed. |
-
+- publish a complete event message for all event types
+- included identifiers within resources which are maintained between different event messages
 
 ### Message Sequencing
 
-As an organisations professional responsibility for a patient will change over time, the organisation will most likely publish multiple `professional contacts` events for a single patient over a period of time. To allow a consumer to perform message sequencing, if required, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date event message is.
+As an organisations professional responsibility for a patient will change over time, the organisation will most likely publish multiple `professional contacts` events. To allow a consumer to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
 
 
 ## Onward Delivery ##
