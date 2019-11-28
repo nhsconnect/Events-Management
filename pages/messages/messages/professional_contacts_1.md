@@ -43,7 +43,7 @@ The information carried in the `Professional Contacts` event message should repr
 To allow subscribers to identify information between `new`, `update` and `delete` types of event messages, the resources within the event message must contain the following:
 
 | Identifiers | The resources included in the event message need to contain identifiers which are maintained between event messages. |
-| Status | Where a resource was included incorrectly or needs removing, but the overall event message is still relevant, where possible the resource which needs to be removed should still be included in `update` and `delete` type messages, but contain a `status` element to indicate that the resource was `entered-in-error`, some resources do not contain a `status` element in which case these resource may just be removed. |
+| Status | Where a resource was included incorrectly or needs removing, but the overall event message is still relevant, where possible the resource which needs to be removed should still be included in the `update` or `delete` messages, but contain a `status` element to indicate that the resource was `entered-in-error`, some resources do not contain a `status` element in which case these resource may just be removed. |
 
 
 ### Message Sequencing
