@@ -35,8 +35,8 @@ The information carried in the `Professional Contacts` event message should repr
 | Event Type Value | Description |
 | --- | --- |
 | new |  The `new` value must be used when information is being shared in the event message is being shared for the first time. |
-| update | The `update` value must be used when information which had previously been shared in an event message has changed and the new information is being communicated. |
-| delete | The `delete` value must be used when the information shared was incorrect and should not have been sent and should not be used, for example if the information was shared for the wrong patient. |
+| update | The `update` value must be used when information which had previously been shared in a Professional Contacts event message has changed and the updated information is being shared. |
+| delete | The `delete` value must be used when the information shared was incorrect and should not have been shared, for example if the information was shared for the wrong patient. |
 
 ### Identifying Information
 
