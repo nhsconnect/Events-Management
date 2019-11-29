@@ -108,7 +108,9 @@ The EpisodeOfCare resource included in the event message represents the organisa
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
-Within the bundle there will be multiple organization resources, including one for the organisation taking responsibility for the patients care. Other Organization resources may be included when referenced from within other resources in the bundle.
+Within the bundle there may be multiple organization resources, including one for the organisation taking responsibility for the patients care. Other Organization resources may be included when referenced from within other resources in the bundle.
+
+To satisfy a number of use cases for the professional contacts event, the contact details for the organisation taking professional responsibility for the patient are required. Contact details for other organisations included in the event message bundle are not required.
 
 The Organization resources included in the bundle SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
