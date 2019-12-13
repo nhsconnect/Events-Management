@@ -51,15 +51,6 @@ entries:
       - title: Messages
         output: web
         subfolderitems:
-        - title: Blood Spot Test Outcome
-          url: /overview_supported_events.html#dch-event-messages
-          output: web
-        - title: Newborn Hearing
-          url: /overview_supported_events.html#dch-event-messages
-          output: web
-        - title: NIPE Outcome
-          url: /overview_supported_events.html#dch-event-messages
-          output: web
         - title: PDS Birth Notification
           url: /pds_birth_notification.html
           output: web
