@@ -166,7 +166,6 @@ The Encounter resource included as part of the event message SHALL conform to th
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | Encounter.type | 1..* | The encounter type SHALL include a value from the [EncounterType-1](https://fhir.nhs.uk/STU3/ValueSet/EncounterType-1) value set |
-| Encounter.reason | 1..* | The encounter reason SHALL use a value from the [AdmissionReason-1](https://fhir.nhs.uk/STU3/ValueSet/AdmissionReason-1) value set |
 | location | 0..1 | Reference to the location at which the encounter took place |
 | subject | 1..1 | A reference to the patient resource representing the subject of this event |
 
