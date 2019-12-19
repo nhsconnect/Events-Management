@@ -66,6 +66,9 @@ entries:
         - title: Professional Contacts
           url: /professional_contacts_1.html
           output: web
+        - title: Vaccinations
+          url: /vaccinations_1.html
+          output: web
           
   - title: Subscription Management
     output: web,pdf

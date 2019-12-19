@@ -37,7 +37,7 @@ The `MessageHeader` resource contains the `messageEventType` extension which rep
 | Value | Description |
 | --- | --- |
 | new |  The `new` value must be used when the EpisodeOfCare is being shared for the first time. |
-| update | The `update` value must be used when the EpisodeOfCare and supporting resources have previously been shared, but have updated and the updated resources are being shared. |
+| update | The `update` value must be used when the EpisodeOfCare and supporting resources have previously been shared, but have been updated and the updated resources are being shared. |
 | delete | The `delete` value must be used when the EpisodeOfCare record has been delete and the record no longer exists. |
 
 ### Identifying Information

@@ -37,6 +37,10 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Supported Event Messages](overview_supported_events.html)
 - Professional Contacts event added to supported event messages
+- Vaccinations event added to the supported event messages
+
+[Vaccinations](vaccinations_1.html)
+- Addition of the Vaccinations event message
 
 
 ## 2.0.1-Beta (09/08/2019) ##
