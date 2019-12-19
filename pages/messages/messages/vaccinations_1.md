@@ -196,5 +196,5 @@ The Location resources included as part of the event message SHALL conform to th
 ## Vaccinations Event Example ##
 
 ```xml
-
+{% include_relative examples/vaccinations-1-example.xml %}
 ```
