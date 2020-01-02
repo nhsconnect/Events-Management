@@ -10,6 +10,7 @@ summary: Summary release notes of the versions released in National Events Manag
 ## 2.1.0-Beta () ##
 
 [Create Subscription](explore_create_subscription.html)
+- enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
 - updated age criteria to include clarification on use of years
 
 [Event Message Sequencing](overview_msg_architecture_sequencing.html)
