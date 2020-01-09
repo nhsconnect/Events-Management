@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.1.0-Beta () ##
+## 2.1.0-Beta (09/01/2020) ##
 
 [Create Subscription](explore_create_subscription.html)
 - updated age criteria to include clarification on use of years
