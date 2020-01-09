@@ -17,6 +17,7 @@ To protect data quality of information passing through the NEMS:
 
   Due to the wide variety of system architectures used by provider it is impractical and possibly unsafe to filter out these message loops centrally within the NEMS, therefore it is the responsibility of the system/provider to filter out these loop back messages where necessary to avoid duplicate data being created within their system.
 
+The NEMS will only accept event message up to a maximum size of 3MB, in order to maintain service performance and reliability. It is unlikely any published event message will ever come close to this size limit but it is worth noting as a restriction of the service.
 
 ## Pre-requisites ##
 

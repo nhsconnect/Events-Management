@@ -7,8 +7,6 @@ permalink: index.html
 toc: false
 ---
 
-{% include important.html content="This specification contains requirements and guidance for the current version of the National Events Management Service (NEMS), for reference the previous major version of the NEMS specification is available [here](https://developer.nhs.uk/apis/ems-beta-previous/)." %}
-
 {% include warning.html content="This site is under active development by NHS Digital, iterative updates to the content may be done on a regular basis. Changes to this specification will be documented on the [Release Notes](overview_release_notes.html) page." %}
 
 

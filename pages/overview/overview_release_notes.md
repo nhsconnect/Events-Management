@@ -7,6 +7,41 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.1.0-Beta (09/01/2020) ##
+
+[Create Subscription](explore_create_subscription.html)
+- updated age criteria to include clarification on use of years
+
+[Event Message Sequencing](overview_msg_architecture_sequencing.html)
+- Added additional guidance around the use of sequence numbers in relation to update type event messages.
+
+[Event Receiver Requirements](receiver_requirements.html)
+- Generic subscription information moved to [Subscriptions Overview](explore_subscriptions.html) page.
+
+[Generic Event Message Requirements](explore_genreic_event_requirements.html)
+- Guidance added for population of dateTime elements and the use of time zone offsets.
+- Added a section on use of `new`, `update` and `delete` versions of event messages and how that links to the use of `identifiers`.
+
+[Message Content](overview_msg_architecture_event_content.html)
+- Page added to explain message content, contained data, linked data and missed messages
+
+[Professional Contacts](professional_contacts_1.html)
+- Added new Professional Contacts event message
+
+[Publish an Event Message](publication_publish.html)
+- Addition of guidance related to the maximum event message size that could be accepted by the NEMS
+
+[Subscriptions Overview](explore_subscriptions.html)
+- Additional information regarding generic subscriptions added
+
+[Supported Event Messages](overview_supported_events.html)
+- Professional Contacts event added to supported event messages
+- Vaccinations event added to the supported event messages
+
+[Vaccinations](vaccinations_1.html)
+- Addition of the Vaccinations event message
+
+
 ## 2.0.1-Beta (09/08/2019) ##
 
 [Event Message Sequencing](overview_msg_architecture_sequencing.html)

@@ -23,6 +23,24 @@ This page provides common FHIR resource population requirements for all event me
 
 
 
+# New, Update, Delete and use of Identifiers
+
+The `MessageHeader` resource in all event messages contain the `messageEventType` extension that indicates if the event message is a `new`, `update` or `delete` version of the event message. This element and its value  indicates if this event relates to new information, a change to the information sent in a previous event or a delete of information previously sent.
+
+As this extension allows for subsequent changes to information to be sent by publishers, it is necessary for a consumer to be able to link the information sent in one message with the information sent in another message. To do this the individual bits of information needs to have an identifier which is persisted across event messages by the publisher which can be used by the subscriber.
+
+## Message ID
+The event message ID sent within the `MessageHeader.id` element must be unique to that specific event message, for use in support functions (e.g. I received event message xyz and there’s a problem with it) and for duplicate message identification by subscribers. The message ID should not be re-used within subsequent event messages or referenced from `update` and `delete` event messages.
+
+## Identifiers
+To link data between event messages, for the purposes of managing updates and deletes, the `identifier` elements within the individual resources should be use.
+
+For example, if a `new` event message is published containing a `Procedure` resource, representing a test performed on the patient, this procedure should contain an `identifier` (which could be an internal supplier ID). If an update is made to that test information within the publishing system, then the publishing system would be able to publish an `update` event message containing the updated `Procedure` resource with the same `identifier`, allowing the consumer to link the data to the data sent in the previous event message.
+
+## Use of New, Update and Delete
+Publishers MUST use the appropriate `messageEventType` values to indicate the information that is being published. For example a publisher must not use a `new` message to send an update to a previously sent data.
+
+
 # Resource Population
 
 ## [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
@@ -40,7 +58,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | --- | --- | --- |
 | extension(routingDemographics) | 1..1 | The extension MUST contain the details of the patient who is the focus of this event message. |
 | extension(routingDemographics)<br/>**.extension(nhsNumber)** | 1..1 | The extension MUST contain the patient's NHS Number identifier and is used by the NEMS for routing event messages to subscribers. |
-| extension(routingDemographics)<br/>**.extension(name)** | 1..1 | The extension MUST contain the human name element containing the patient's official `given` and `family` names as recognised by PDS, and match the NHS number in the routingDemographics extension. |
+| extension(routingDemographics)<br/>**.extension(name)** | 1..1 | The extension MUST contain the human name element containing the patient's official names as recognised by PDS, and match the NHS number in the routingDemographics extension. |
 | extension(routingDemographics)<br/>**.extension(birthDateTime)** | 1..1 | The extension MUST contain the patient's Date Of Birth which matches the NHS number in the routingDemographics extension. |
 | meta.versionId | 0..1 | **Message Sequencing** - A sequence number for the purpose of ordering messages for processing. The sequence number must be an integer which is patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient. |
 | meta.lastUpdated | 0..1 | **Message Sequencing** - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
@@ -65,7 +83,7 @@ Patient resources included in the event message SHALL conform to the [CareConnec
 | identifier | 1..1 | Patient NHS Number SHALL be included within the `nhsNumber` identifier slice |
 | name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the `official` name element slice |
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
-| address | 0..* | If an address is included in the patient resource the publisher **SHALL** included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
+| address | 0..* | If an address is included in the patient resource the publisher SHOULD included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
 
 
 ## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
@@ -76,3 +94,18 @@ Organization resources included in event messages SHALL conform to the [CareConn
 | --- | --- | --- |
 | name | 0..1 | A human readable name for the organization SHOULD be included in the organization resource |
 | identifier | 0..1 | The organization ODS code SHOULD be included within the `odsOrganizationCode` identifier slice |
+
+
+# Data Type Population
+
+## "dateTime" Elements
+
+Population of a `dateTime` element within FHIR resource should conform to the requirements within the [FHIR specification](http://hl7.org/fhir/stu3/datatypes.html#datetime), so where a time is included the time zone MUST be populate to represent the offset of the include time from Coordinated Universal Time (UTC).
+
+For a date and time within **BST** such as "27th July 2019" at "14:22" the dateTime should be included in the FHIR resource either with a time zone offset or with the time changed to GMT:
+
+`2019-07-27T14:22:00+01:00` or `2019-07-27T13:22:00+00:00`
+
+For a date and time within **GMT** such as "14th January 2019" at "13:35" the dateTime should be included in the FHIR resource with a time zone offset of zero hours and minutes:
+
+`2019-01-14T13:35:00+00:00`

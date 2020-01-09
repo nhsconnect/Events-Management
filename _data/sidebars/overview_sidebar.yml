@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 2.0.1-Beta
+  version: 2.1.0-Beta
   levels: one
   folders:
 
@@ -24,6 +24,9 @@ entries:
     folderitems:
     - title: Overview
       url: /overview_msg_architecture.html
+      output: web
+    - title: Message Content
+      url: /overview_msg_architecture_event_content.html
       output: web
     - title: Message Sequencing
       url: /overview_msg_architecture_sequencing.html
@@ -59,6 +62,12 @@ entries:
           output: web
         - title: PDS Death Notification
           url: /pds_death_notification.html
+          output: web
+        - title: Professional Contacts
+          url: /professional_contacts_1.html
+          output: web
+        - title: Vaccinations
+          url: /vaccinations_1.html
           output: web
           
   - title: Subscription Management
