@@ -34,7 +34,7 @@ The `MessageHeader` resource contains the `messageEventType` extension which rep
 | --- | --- |
 | new |  The `new` value must be used when the Vaccination is being shared for the first time. |
 | update | The `update` value must be used when the Vaccination and supporting resources have previously been shared, but have been updated and the updated resources are being shared. |
-| delete | The `delete` value must be used when the Vaccination record has been delete and the record no longer exists. |
+| delete | The `delete` value must be used when the Vaccination record has been deleted and the record no longer exists. |
 
 ### Identifying Information
 
@@ -165,7 +165,7 @@ The Encounter resource included as part of the event message SHALL conform to th
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| Encounter.type | 1..* | The encounter type SHALL include a value from the [EncounterType-1](https://fhir.nhs.uk/STU3/ValueSet/EncounterType-1) value set |
+| Encounter.type | 1..* | The encounter type SHOULD include a value from the [EncounterType-1](https://fhir.nhs.uk/STU3/ValueSet/EncounterType-1) value set. This value set is extensible so additional values and code systems may be added where required. |
 | location | 0..1 | Reference to the location at which the encounter took place |
 | subject | 1..1 | A reference to the patient resource representing the subject of this event |
 
