@@ -7,6 +7,16 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.1.1-Beta () ##
+
+[PDS Birth Notification](pds_birth_notification.html)
+- {% include warning.html content="A change to element cardinalities within some resources" %}
+   
+   A birth can be registered on PDS without the mothers details, including her NHS Number. Previously the publication of these birth registrations as a `PDS Birth Notification` event messages resulted in an invalid event message being sent to subscribers. The `PDS Birth Notification` event message has been updated to support birth registrations without the mothers details, through relaxation of the cardinalities within some resources. Changes have been made to the `routingDemographic` extension in the `MessageHeader` resource and within the `Patient` resource representing the mother.
+   
+   For `PDS Birth Notification` event messages where there is no NHS number for the mother, these event messages will only be sent to subscribers who have a geographic based generic subscription and will not be sent to subscribers based on an explicit subscription.
+
+
 ## 2.1.0-Beta (09/01/2020) ##
 
 [Create Subscription](explore_create_subscription.html)

@@ -1,0 +1,218 @@
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="85b9d933-b3e2-41a7-a8f2-f5ee7be4ee82"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
+    </meta>
+    <type value="message"/>
+    <!--Entry for MessageHeader with id, timestamp, event type, source, responsible/publishing organization, communication-->
+    <entry>
+        <fullUrl value="urn:uuid:7165ecd5-4abb-4dbe-922b-7c7db71accd4"/>
+        <resource>
+            <MessageHeader>
+                <id value="7165ecd5-4abb-4dbe-922b-7c7db71accd4"/>
+                <meta>
+                    <versionId value="1"/>
+                    <lastUpdated value="2017-11-01T15:00:33+00:00"/>
+                    <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
+                </meta>
+                <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
+                    <extension url="nhsNumber">
+                        <valueIdentifier>
+                            <system value="https://fhir.nhs.uk/Id/nhs-number"/>
+                            <value value="1112223330"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="name">
+                        <valueHumanName>
+                            <use value="official"/>
+                            <family value="DAWKINS"/>
+                            <given value="Sally"/>
+                        </valueHumanName>
+                    </extension>
+                    <extension url="birthDateTime">
+                        <valueDateTime value="1987-10-02"/>
+                    </extension>
+                </extension>
+                <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-MessageEventType-1">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
+                            <code value="new"/>
+                            <display value="New event message"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <event>
+                    <system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
+                    <code value="​pds-birth-notification-1"/>
+                    <display value="PDS Birth Notification"/>
+                </event>
+                <timestamp value="2017-10-02T20:20:00+00:00"/>
+                <enterer>
+                    <reference value="urn:uuid:60ed27f9-ff3a-4085-aa79-e4295e0f7c65"/>
+                </enterer>
+                <source>
+                    <contact>
+                        <system value="email"/>
+                        <value value="ssd.nationalservicedesk@nhs.net"/>
+                    </contact>
+                    <endpoint value="urn:nhs:addressing:asid:477121000323"/>
+                </source>
+                <responsible>
+                    <reference value="urn:uuid:bd9ede5e-78ea-421a-990f-a80e0bbf2692"/>
+                </responsible>
+                <focus>
+                    <reference value="urn:uuid:4bbf44f9-1179-4e93-a949-01a39e711de9"/>
+                </focus>
+            </MessageHeader>
+        </resource>
+    </entry>
+    <!--Entry for communication for the event message, with reference to subject and payload-->
+    <entry>
+        <fullUrl value="urn:uuid:4bbf44f9-1179-4e93-a949-01a39e711de9"/>
+        <resource>
+            <Communication>
+                <id value="4bbf44f9-1179-4e93-a949-01a39e711de9"/>
+                <meta>
+                    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1"/>
+                </meta>
+                <status value="completed"/>
+                <subject>
+                        <reference value="urn:uuid:70e10b4b-9296-4cc7-816f-97b6fa676a04"/>
+                        <display value="DAWKINS, Sally"/>
+                </subject>
+                <sent value="2018-02-01"/>
+                <sender>
+                    <reference value="urn:uuid:bd9ede5e-78ea-421a-990f-a80e0bbf2692"/>
+                </sender>
+            </Communication>
+        </resource>
+    </entry>
+    <!--Entry for the Mother of Patient.-->
+    <entry>
+        <fullUrl value="urn:uuid:70e10b4b-9296-4cc7-816f-97b6fa676a04"/>
+        <resource>
+            <Patient>
+                <id value="70e10b4b-9296-4cc7-816f-97b6fa676a04"/>
+                <meta>
+                    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"/>
+                </meta>
+                <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RegistrationDetails-1">
+                    <extension url="registrationPeriod">
+                        <valuePeriod>
+                            <start value="2017-10-02T20:20:00+00:00"/>
+                        </valuePeriod>
+                    </extension>
+                </extension>
+                <identifier>
+                    <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="https://fhir.hl7.org.uk/STU3/CareConnect-NHSNumberVerificationStatus-1"/>
+                                <code value="01"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    <system value="https://fhir.nhs.uk/Id/nhs-number"/>
+                    <value value="1112223330"/>
+                </identifier>
+                <name>
+                    <use value="official"/>
+                    <family value="DAWKINS"/>
+                    <given value="Sally"/>
+                </name>
+                <birthDate value="1987-10-02"/>
+                <generalPractitioner>
+                    <reference value="https://directory.spineservices.nhs.uk/STU3/Organization/B86056"/>
+                    <display value="SHADWELL MEDICAL CENTRE"/>
+                </generalPractitioner>
+                <link>
+                    <other>
+                        <reference value="urn:uuid:d93aeee8-91bf-4da5-8658-ce86cfee4751"/>
+                    </other>
+                    <type value="seealso"/>
+                </link>
+            </Patient>
+        </resource>
+    </entry>
+    <!--Entry for RelatedPerson relationship between mother and baby.-->
+    <entry>
+        <fullUrl value="urn:uuid:d93aeee8-91bf-4da5-8658-ce86cfee4751"/>
+        <resource>
+            <RelatedPerson>
+                <id value="d93aeee8-91bf-4da5-8658-ce86cfee4751"/>
+                <meta>
+                    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-RelatedPerson-1"/>
+                </meta>
+                <patient>
+                    <reference value="urn:uuid:dffd3330-dc21-11e7-9296-cec278b6b50a"/>
+                </patient>
+                <relationship>
+                    <coding>
+                        <system value="https://fhir.nhs.uk/STU3/CodeSystem/PersonRelationshipType-1"/>
+                        <code value="12"/>
+                    </coding>
+                </relationship>
+            </RelatedPerson>
+        </resource>
+    </entry>
+    <!--Entry for the Baby.-->
+    <entry>
+        <fullUrl value="urn:uuid:dffd3330-dc21-11e7-9296-cec278b6b50a"/>
+        <resource>
+            <Patient>
+                <id value="dffd3330-dc21-11e7-9296-cec278b6b50a"/>
+                <meta>
+                    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"/>
+                </meta>
+                <extension url="http://hl7.org/fhir/StructureDefinition/birthPlace">
+                    <valueAddress>
+                        <city value="LEEDS"/>
+                        <district value="WEST YORKSHIRE"/>
+                        <country value="ENGLAND"/>
+                    </valueAddress>
+                </extension>
+                <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="https://fhir.hl7.org.uk/STU3/CareConnect-EthnicCategory-1"/>
+                            <code value="A"/>
+                            <display value="British, Mixed British"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <identifier>
+                    <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="https://fhir.hl7.org.uk/STU3/CareConnect-NHSNumberVerificationStatus-1"/>
+                                <code value="01"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    <system value="https://fhir.nhs.uk/Id/nhs-number"/>
+                    <value value="9912003888"/>
+                </identifier>
+                <name>
+                    <use value="official"/>
+                    <family value="DAWKINS"/>
+                    <given value="Jack"/>
+                    <prefix value="Master"/>
+                </name>
+                <gender value="male"/>
+                <birthDate value="2017-10-02">
+                    <extension url="http://hl7.org/fhir/StructureDefinition/patient-birthTime">
+                        <valueDateTime value="2017-10-02T20:12:00+00:00"/>
+                    </extension>
+                </birthDate>
+                <address>
+                    <line value="4 Sandmoor Drive"/>
+                    <line value="LEEDS"/>
+                    <postalCode value="LS17 7DF"/>
+                </address>
+                <multipleBirthInteger value="1"/>
+            </Patient>
+        </resource>
+    </entry>
+	...........
+</Bundle>
