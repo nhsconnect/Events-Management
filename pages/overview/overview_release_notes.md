@@ -9,6 +9,9 @@ summary: Summary release notes of the versions released in National Events Manag
 
 ## 2.1.1-Beta () ##
 
+[Create Subscription](explore_create_subscription.html)
+- enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
+
 [PDS Birth Notification](pds_birth_notification.html)
 - {% include warning.html content="A change to element cardinalities within some resources" %}
    
