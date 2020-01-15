@@ -7,6 +7,12 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.2.0-Beta () ##
+
+[Create Subscription](explore_create_subscription.html)
+- enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
+
+
 ## 2.1.1-Beta (15/01/2020) ##
 
 [PDS Birth Notification](pds_birth_notification.html)
