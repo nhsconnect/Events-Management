@@ -7,6 +7,11 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.1.2-Beta (17/01/2020) ##
+
+[PDS Birth Notification](pds_birth_notification.html)
+- Correction to birth notification example where mothers NHS Number is not included. Also made example full message rather than just parts which were considered different to the example for where mothers details were included.
+
 ## 2.1.1-Beta (15/01/2020) ##
 
 [PDS Birth Notification](pds_birth_notification.html)
