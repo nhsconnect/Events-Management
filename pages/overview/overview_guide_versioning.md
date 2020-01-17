@@ -7,6 +7,9 @@ permalink: overview_guide_versioning.html
 summary: An overview of this implementation guide is versioned.
 ---
 
+This page outlines the versioning and maturity label attached to this specification. The maturity and stabibility of specific events is outlined and described on the [Supported Event Messages](overview_supported_events.html) page.
+
+
 ## Semantic Versioning ##
 
 Given a version number MAJOR.MINOR.PATCH, increment the:
@@ -32,4 +35,4 @@ These labels will be taken from the GDS development process stages, and will be 
  - **Live**: Release live APIs
  - **Discontinued**: APIs which have been discontinued and should not be used for new development.
 
-
+This indicates the maturity of the NEMS as a service rather than a label relating to the maturity of the NEMS specification version.
