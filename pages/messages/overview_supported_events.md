@@ -16,13 +16,13 @@ Requirements and population guidance within the event message specific pages sho
 
 #### Event Maturity
 
-The maturity of the event messages are indicated within the tables below. These event maturity labels are intended to indicate the expected stabibility of the event messages as follows:
+The maturity of the event messages are indicated within the tables below. These event maturity labels are intended to indicate the expected stability of the event messages as follows:
 
 | Event Maturity | Description |
 | --- | --- |
 | Alpha | Early proposal for an event message, high risk of change. |
 | Beta | The event design has been agreed and is intended to become the release candidate but has not been proved through development and testing, therefore there is a risk that changes may be required. |
-| Release Candidate | The event has been through a development and testing phase, followed by a stabibility period in live use. The event message should not change unless as a result of a live issue. |
+| Release Candidate | The event has been through a development and testing phase, followed by a stability period in live use. The event message should not change unless as a result of a live issue. |
 | Released | Event is being widely used and is unlikely to change, unless a changes is required as a result of a live issue. |
 
 
