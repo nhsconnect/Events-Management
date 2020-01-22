@@ -9,9 +9,6 @@ summary: Summary release notes of the versions released in National Events Manag
 
 ## 2.2.0-Beta () ##
 
-[Create Subscription](explore_create_subscription.html)
-- enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
-
 [PDS Birth Notification](pds_birth_notification.html)
 - Correction to birth notification example where mothers NHS Number is not included. Also made example full message rather than just parts which were considered different to the example for where mothers details were included.
 

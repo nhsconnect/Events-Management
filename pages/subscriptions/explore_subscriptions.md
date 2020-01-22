@@ -119,7 +119,9 @@ The following diagram and table demonstrates the way in which generic subscripti
 
 # Managing Subscriptions
 
-Subscriptions can be created using the Subscription API [Create Subscription](explore_create_subscription.html) interaction. The organizations MESH mailbox must be configured to receive the required event message types as per the requirements on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
+Explicit subscriptions can be created using the Subscription API [Create Subscription](explore_create_subscription.html) interaction. The organizations MESH mailbox must be configured to receive the required event message types as per the requirements on the [Event Receiver Requirements](receiver_requirements.html#mesh-mailbox-configuration) page.
+
+Currently generic subscriptions need to be manually created by NHS Digital and are not supported through the subscription API, a request should be made to NHS digital for any generic subscriptions required.
 
 
 # Subscription matching and message delivery #
