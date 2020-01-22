@@ -99,7 +99,7 @@ The EpisodeOfCare resource included in the event message represents the organisa
 | --- | --- | --- |
 | identifier | 1..1 | A publisher defined unique identifier for the episode of care which will be maintained across different event messages to allow subscribers to be identify the information within `update` or `delete` event messages. |
 | status | 1..1 | The `status` element MUST represent the current status of the organisations responsibility for the patient. |
-| type | 1..* | The `type` element MUST represent the type of care/service the organisation is providing during this episode of care. For example "Health visiting service (1078501000000104)"  |
+| type | 1..* | The `type` element MUST represent the type of care/service the organisation is providing during this episode of care.<br/><br/>The resource MUST contain a `type` from the SNOMED `refset ^ 999000381000000107 | Correspondence care setting type simple reference set (foundation metadata concept) |` <br/><br/>For example "Health visiting service (1078501000000104)"  |
 | managingOrganization | 1..1  | This MUST reference the organisation who is responsibility for this episode of care, which contains contact details for that organisation in relation to this episode of care. |
 | period.start | 0..1 | Date on which the organisation took responsibility for the patients care. |
 | period.end | 0..1 | Date on which the organisation stopped being responsible for the patients care. |
