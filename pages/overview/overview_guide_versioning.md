@@ -7,26 +7,20 @@ permalink: overview_guide_versioning.html
 summary: An overview of this implementation guide is versioned.
 ---
 
-This page outlines the versioning and maturity label attached to this specification. The maturity and stabibility of specific events is outlined and described on the [Supported Event Messages](overview_supported_events.html) page.
-
+This page outlines the versioning and maturity label attached to this specification. The maturity and stability of specific events is outlined and described on the [Supported Event Messages](overview_supported_events.html) page.
 
 ## Semantic Versioning ##
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
+The specification uses version numbering as follows, MAJOR.MINOR.PATCH which is incremented as follows:
 
 - MAJOR version when you make incompatible API changes,
 - MINOR version when you add functionality in a backwards-compatible manner, and
 - PATCH version when you make backwards-compatible bug fixes.
 
-Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-A pre-release version MAY be denoted by appending a hyphen (refer to [Semantic Versioning - Item 9](http://semver.org/#spec-item-9){:target="_blank"})
+## NEMS Service Maturity Label ##
 
-For examples: 1.0.0-alpha.1 is a valid pre-release version.
-
-## Pre-release Labels ##
-
-These labels will be taken from the GDS development process stages, and will be one of:
+The maturity label on this specification indicates the maturity of the NEMS as a service rather than an indication of the maturity of the specific specification version. The labels are taken from the GDS development process stages, and will be one of:
 
  - **Experimental**: Early development/POC version of an API for early sight during discovery
  - **Alpha**: Initial test APIs, likely to change substantially, or be discontinued as the project develops
@@ -34,5 +28,3 @@ These labels will be taken from the GDS development process stages, and will be 
  - **Release Candidate**: APIs that are largely complete, unlikely to change substantially, but still need further testing before becoming live
  - **Live**: Release live APIs
  - **Discontinued**: APIs which have been discontinued and should not be used for new development.
-
-This indicates the maturity of the NEMS as a service rather than a label relating to the maturity of the NEMS specification version.
