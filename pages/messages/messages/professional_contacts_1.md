@@ -44,7 +44,7 @@ The `MessageHeader` resource contains the `messageEventType` extension which rep
 
 To allow subscribers to identify information between `new`, `update` and `delete` event messages the publisher must:
 
-- publish a complete event message for all event types
+- publish a complete event message for all types, `new`, `update` and `delete`,  not just the delta
 - included identifiers within resources which are maintained between different event messages
 
 ### Message Sequencing
