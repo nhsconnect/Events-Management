@@ -94,7 +94,7 @@ The Immunization resource included as part of the event message SHALL conform to
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| extension(vaccinationProcedure) | 1..1 |  Free text field should be used if no coded text available using vaccinationProcedure.coding.text |
+| extension(vaccinationProcedure) | 1..1 |  Free text field should be used if no coded text available using `extension(vaccinationProcedure).valueCodeableConcept.text` |
 | identifier | 1..1 | A publisher defined unique identifier for the vaccination which will be maintained across different event messages to allow subscribers to be identify the information within update or delete event messages. |
 | notGiven | 1..1 | Value SHALL be `FALSE` when the vaccination was given or reported as given, `TRUE` when not given |
 | vaccineCode | 1..1 | Immunization.vaccineCode SHALL use a value from  the [CareConnect-VaccineCode-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-VaccineCode-1) value set |
