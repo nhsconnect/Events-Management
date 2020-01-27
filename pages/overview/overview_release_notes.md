@@ -12,6 +12,18 @@ summary: Summary release notes of the versions released in National Events Manag
 [Create Subscription](explore_create_subscription.html)
 - enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
 
+## 2.2.1-Beta (23/01/2020) ##
+
+[Professional Contacts](professional_contacts_1.html)
+- Added guidance on the use of a value set for the episode of care type
+
+[Generic Publication API Guidance](publication_general_api_guidance.html)
+- update "sub" claim case to reflect expectation.
+
+[Vaccinations](vaccinations_1.html)
+- Corrected unclear guidance around the vaccinationProcedure extension.
+- Added missing identifier to the example
+
 
 ## 2.2.0-Beta (22/01/2020) ##
 
