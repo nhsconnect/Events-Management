@@ -7,6 +7,19 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.2.1-Beta (23/01/2020) ##
+
+[Professional Contacts](professional_contacts_1.html)
+- Added guidance on the use of a value set for the episode of care type
+
+[Publish an Event Message](publication_publish.html)
+- update "sub" claim case to reflect expectation.
+
+[Vaccinations](vaccinations_1.html)
+- Corrected unclear guidance around the vaccinationProcedure extension.
+- Added missing identifier to the example
+
+
 ## 2.2.0-Beta (22/01/2020) ##
 
 [PDS Birth Notification](pds_birth_notification.html)
