@@ -12,7 +12,7 @@ summary: Summary release notes of the versions released in National Events Manag
 [Professional Contacts](professional_contacts_1.html)
 - Added guidance on the use of a value set for the episode of care type
 
-[Publish an Event Message](publication_publish.html)
+[Generic Publication API Guidance](publication_general_api_guidance.html)
 - update "sub" claim case to reflect expectation.
 
 [Vaccinations](vaccinations_1.html)
