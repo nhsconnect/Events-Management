@@ -1,4 +1,5 @@
 <Bundle xmlns="http://hl7.org/fhir">
+	<id value="6e824ff8-9b0a-11e8-9eb6-529269fb1459"/>
 	<meta>
 		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
 	</meta>

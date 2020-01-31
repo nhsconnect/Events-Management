@@ -12,6 +12,20 @@ summary: Summary release notes of the versions released in National Events Manag
 [Create Subscription](explore_create_subscription.html)
 - enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
 
+[PDS Birth Notification](pds_birth_notification.html)
+- Updated example to remove XML prolog for specification consistency.
+
+[PDS Death Notification](pds_death_notification.html)
+- Updated examples to remove XML prolog for specification consistency.
+- Update example to add the bundle resource id element
+
+[Professional Contacts](professional_contacts_1.html)
+- Updated example to remove XML prolog for specification consistency.
+
+[Vaccinations](vaccinations_1.html)
+- Update example to add the bundle resource id element
+
+
 ## 2.2.1-Beta (23/01/2020) ##
 
 [Professional Contacts](professional_contacts_1.html)
