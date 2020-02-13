@@ -32,21 +32,12 @@ The following are event messages currently supported by the NEMS:
 
 | Event | Event Code | Publication API | Subscription API | Date Available | Event Maturity |
 |---|---|:---:|:---:|---|---|
+| [Blood Spot Test Outcome](blood_spot_test_outcome_1.html) | blood-spot-test-outcome-1 | &#9989; | &#9989; | October 2019 | Release Candidate |
+| [Newborn Hearing](newborn_hearing_1.html) | newborn-hearing-1 | &#9989; | &#9989; | October 2019 | Release Candidate |
+| [NIPE Outcome](nipe_outcome_1.html) | nipe-outcome-1 | &#9989; | &#9989; | October 2019 | Release Candidate |
 | [PDS Birth Notification](pds_birth_notification.html) | pds-birth-notification-1 | &#10060; | &#9989; | March 2019 | Release Candidate |
 | [PDS Change of Address](pds_change_of_address.html) | pds-change-of-address-1 | &#10060; | &#9989; | March 2019 | Release Candidate |
 | [PDS Change of GP](pds_change_of_gp.html) | pds-change-of-gp-1 | &#10060; | &#9989; | March 2019 | Release Candidate |
 | [PDS Death Notification](pds_death_notification.html) | pds-death-notification-1 | &#10060; | &#9989; | March 2019 | Release Candidate |
 | [Professional Contacts](professional_contacts_1.html) | professional-contacts-1 | &#9989; | &#9989; | February 2020 | Beta |
 | [Vaccinations](vaccinations_1.html) | vaccinations-1 | &#9989; | &#9989; | February 2020 | Beta |
-
-### DCH Event Messages
-
-The following event message are supported by the NEMS but have been defined by Digital Child Health.
-
-**Note:** The requirements and guidance for these event is hosted on an external page, but all the generic requirements and guidance outlined within this specification still apply to these events.
-
-| Event | Event Code | Publication API | Subscription API | Date Available | Event Maturity |
-|---|---|:---:|:---:|---|---|
-| [Blood Spot Test Outcome](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_blood_spot_test_outcome.html) | blood-spot-test-outcome-1 | &#9989; | &#9989; | October 2019 | Release Candidate |
-| [Newborn Hearing](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_newborn_hearing.html) | newborn-hearing-1 | &#9989; | &#9989; | October 2019 | Release Candidate |
-| [NIPE Outcome](https://nhsconnect.github.io/Digital-Child-Health-CareConnect/explore_nipe_outcome.html) | nipe-outcome-1 | &#9989; | &#9989; | October 2019 | Release Candidate |

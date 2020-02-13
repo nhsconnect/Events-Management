@@ -7,9 +7,9 @@ permalink: professional_contacts_1.html
 summary: "Guidance and requirements for the Professional Contacts event message"
 ---
 
-The `Professional Contacts` event is a event message which represent a episode of care in which an organisation has or had a responsibility of care for a patient.
-
 ## Event Message Content
+
+The `Professional Contacts` event is a event message which represent a episode of care in which an organisation has or had a responsibility of care for a patient.
 
 All "Professional Contacts" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
 
