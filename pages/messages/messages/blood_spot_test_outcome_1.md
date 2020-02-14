@@ -10,7 +10,9 @@ summary: "The FHIR profiles used for the Blood Spot Test Outcome Event Message B
 
 ## Event Message Content
 
-The `Blood Spot Test Outcome` event message represents a change to a record of a blood spot test outcome in relation to a patient, creation, an update or deletion of the record. All "Blood Spot Test Outcome" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
+The `Blood Spot Test Outcome` event message represents a record of a blood spot test outcome in relation to a patient. Either creation, an update or deletion of the record.
+
+ All "Blood Spot Test Outcome" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
 
 
 ## Bundle Structure
@@ -27,7 +29,7 @@ The diagram below shows the referencing between FHIR resources within the event 
 
 ## Event Life Cycle ##
 
-The MessageHeader resource contains the messageEventType extension which represents the action the event message represents at a resource level, for example the `Blood Spot Test Outcome` being shared is new or has been updated, or the `Blood Spot Test Outcome` has been deleted. The messageEventType extension shall contain a values as per the table below:
+The `MessageHeader` resource contains the `messageEventType` extension which represents the action the event message represents at a resource level, for example the `Blood Spot Test Outcome` being shared is new or has been updated, or the `Blood Spot Test Outcome` has been deleted. The `messageEventType` extension shall contain a values as per the table below:
 
 | Value | Description |
 | --- | --- |
@@ -38,38 +40,37 @@ The MessageHeader resource contains the messageEventType extension which rep
 
 ### Identifying Information
 
-For new and update event message all procedures, results and other information should be included within each event message. The information included in this event message should be treated as atomic and stored under the `identifier` included within focus `CareConnect-Encounter-1` resource. Where a `new` type event message is received with the same `identifier` the previous information should overwritten with the details in the later event message as identified by the `MessageHeader.meta.lastUpdated` element within the event message.
+To support the event life cycle outlined above the following requirements MUST be followed:
 
-In a `delete` type event message the full event message should be populated with the payload of the original new (or update) message where possible, to allow for additional validation of the information being removed. Where this is not possible the event message may be populated with a minimum set of resources, including the MessageHeader and the focus `CareConnect-Encounter-1` resource.
+- For `new` and `update` type event messages, all procedures, results and other information MUST be included within each of the event messages.
+
+- The information included in the `Blood Spot Test Outcome` event message should be treated as atomic and stored under the `identifier` included within focus `CareConnect-Encounter-1` resource. Where a `new` type event message is received with the same `identifier` the previous information should be overwritten with the information in the later event message as identified by the `MessageHeader.meta.lastUpdated` element within the event message.
+
+- In a `delete` type event message the event message should be populated with the payload of the original new (or update) message where possible, to allow for additional validation of the information being removed. Where this is not possible the event message SHALL including, as a minimum, the `MessageHeader` resource and the focus `CareConnect-Encounter-1` resource. It is important that the `CareConnect-Encounter-1` resource includes the relevant `identifier` element, as included in new (or update) event messages so the subscriber can identify the `Blood Spot Test Outcome` the delete realtes to.
 
 
 ### Message Sequencing
 
-As the Blood Spot Test Outcome shared using the `Blood Spot Test Outcome` event message may change and this would be represented by multiple `new` and `delete` types event messages. To allow a subscribers to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
+As the Blood Spot Test Outcome may change in the source system, this would be represented by multiple `new` and `delete` type event messages being published. To allow a subscribers to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
 
 
+## Onward Delivery ##
 
-## Blood Spot Test Outcome Event data item mapping to FHIR profiles ##
+The delivery of the `Blood Spot Test Outcome` event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
-The Child Health Event data items are fulfilled by elements within the FHIR resources listed below.
-
-| DCH Data Item                                            | FHIR resource element             | Mandatory/Required/Optional |
-|----------------------------------------------------------|-----------------------------------|-----------------------------|
-| Date of Blood Test Outcome Received                      | CareConnect-DiagnosticReport-1.issued     | Mandatory                   |
-| Procedure Outcome <br/> for each Procedure               | CareConnect-Procedure-1.outcome | Mandatory                   |
-| Comment                                                  | CareConnect-Communication-1   						| Optional                    | 
+| MESH WorkflowID | `BLOODSPOTTESTOUTCOME_1` |
 
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the data item mapping above and in the [Event Header](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) requirements page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
 
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
 The Bundle resource included as part of the event message SHALL conform to the [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 1..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -80,7 +81,7 @@ The Bundle resource included as part of the event message SHALL conform to the [
 
 The Event-MessageHeader-1 resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 1..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -105,7 +106,7 @@ The Event-MessageHeader-1 resource included as part of the event message SHALL c
 
 The CareConnect-Organization-1 resource included as part of the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..* Mandatory|
+| Resource Cardinality | 1..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -118,7 +119,7 @@ The CareConnect-Organization-1 resource included as part of the event message SH
 
 The CareConnect-HealthcareService-1 resource included as part of the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..1 Required |
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -131,7 +132,7 @@ The CareConnect-HealthcareService-1 resource included as part of the event messa
 
 The CareConnect-Patient-1 resource included as part of the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -144,7 +145,7 @@ The CareConnect-Patient-1 resource included as part of the event message SHALL c
 
 The CareConnect-Encounter-1 resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 1..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -160,14 +161,14 @@ The CareConnect-Encounter-1 resource included as part of the event message SHALL
 
 The CareConnect-Location-1 resource included as part of the event message SHALL conform to the [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..1 Optional |
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
 
 
 ### [CareConnect-DiagnosticReport-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-DiagnosticReport-1)
 
 The CareConnect-DiagnosticReport-1 resource included as part of the event message SHALL conform to the [CareConnect-DiagnosticReport-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-DiagnosticReport-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -179,7 +180,7 @@ The CareConnect-DiagnosticReport-1 resource included as part of the event messag
 
 The CareConnect-Procedure-1 resource included as part of the event message SHALL conform to the [CareConnect-Procedure-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..9 Required |
+| Resource Cardinality | 0..9 (new) | 0..9 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -274,7 +275,7 @@ For each of the Procedure resources representing a Test Outcome:
 
 The CareConnect-Communication-1 resource included as part of the event message SHALL conform to the [CareConnect-Communication-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..1 Optional |
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -287,33 +288,26 @@ The CareConnect-Communication-1 resource included as part of the event message S
 
 ## DCH Blood Spot Test Outcome Example ##
 
-<script src="https://gist.github.com/IOPS-DEV/52d8bc5a3299890d15b90a8b9b39b4be.js"></script>
+<ul id="profileTabs" class="nav nav-tabs">
+    <li class="active"><a href="#profile" data-toggle="tab">new</a></li>
+    <li><a href="#about" data-toggle="tab">update</a></li>
+    <li><a href="#match" data-toggle="tab">delete</a></li>
+</ul>
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="profile">
+		<h2>`new` Example</h2>
+		<script src="https://gist.github.com/IOPS-DEV/52d8bc5a3299890d15b90a8b9b39b4be.js"></script>
+	</div>
 
-## Profile Change Mappings for Blood Spot Test Outcome ##
+	<div role="tabpanel" class="tab-pane" id="about">
+		<h2>`update` Example</h2>
+		<p>Lorem ipsum ...</p>
+	</div>
+	
+	<div role="tabpanel" class="tab-pane" id="match">
+		<h2>`delete` Example</h2>
+		<p>Vel vehicula ....</p>
+	</div>
+</div>
 
-Profiles used in [Demographics Update Event Messages 1.2.1-Release Candidate](https://developer.nhs.uk/apis/demographicupdates-120-rc/index.html) are replaced with:
-
-| Demographic-Event-Messages | Demographic-Event-Messages-CareConnect |
-|----------------------------|----------------------------------------|
-| DCH-Bundle-1 | Bundle |
-| DCH-MessageHeader-1 | Event-MessageHeader-1 |
-| CareConnect-Organization-1 | CareConnect-Organization-1 |
-| DCH-HealthcareService-1 | CareConnect-HealthcareService-1 |
-| CareConnect-DCH-Patient-1 | CareConnect-Patient-1 |
-| CareConnect-DCH-Encounter-1 | CareConnect-Encounter-1 |
-| CareConnect-Location-1 | CareConnect-Location-1 |
-| DCH-NewbornBloodSpotScreening-DiagnosticReport-1 | CareConnect-DiagnosticReport-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningPKU-Procedure-1 | CareConnect-Procedure-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningSCD-Procedure-1 | CareConnect-Procedure-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningCF-Procedure-1 | CareConnect-Procedure-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningCHT-Procedure-1 | CareConnect-Procedure-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningMCADD-Procedure-1 | CareConnect-Procedure-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningHCU-Procedure-1 | CareConnect-Procedure-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningMSUD-Procedure-1 | CareConnect-Procedure-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningGA1-Procedure-1 | CareConnect-Procedure-1 |
-| CareConnect-DCH-NewbornBloodSpotScreeningIVA-Procedure-1 | CareConnect-Procedure-1 |
-| DCH-ProfessionalComment-Communication-1 | CareConnect-Communication-1 |
-
-
-<hr/>
 
