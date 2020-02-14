@@ -1,0 +1,96 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="0817373d-d299-496e-9465-0cc7ec36b125"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
+	</meta>
+	<type value="message"/>
+	<entry>
+		<fullUrl value="urn:uuid:acdfd531-06da-4856-95e9-77182ee6d0ad"/>
+		<resource>
+			<MessageHeader>
+				<id value="acdfd531-06da-4856-95e9-77182ee6d0ad"/>
+				<meta>
+					<lastUpdated value="2017-11-01T16:00:22+00:00"/>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
+				</meta>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
+					<extension url="nhsNumber">
+						<valueIdentifier>
+							<system value="https://fhir.nhs.uk/Id/nhs-number"/>
+							<value value="9912003888"/>
+						</valueIdentifier>
+					</extension>
+				</extension>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-MessageEventType-1">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
+							<code value="delete"/>
+							<display value="Delete event message"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<event>
+					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
+					<code value="blood-spot-test-outcome-1"/>
+					<display value="Blood Spot Test Outcome"/>
+				</event>
+				<timestamp value="2017-11-01T15:00:00+00:00"/>
+				<source>
+					<name value="UNIVERSITY HOSPITAL OF NORTH DURHAM"/>
+					<contact>
+						<system value="phone"/>
+						<value value="0191 1231234"/>
+					</contact>
+					<endpoint value="urn:nhs:addressing:asid:300000000161"/>
+				</source>
+				<responsible>
+					<reference value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ebc6ea"/>
+					<display value="UNIVERSITY HOSPITAL OF NORTH DURHAM"/>
+				</responsible>
+				<focus>
+					<reference value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
+				</focus>
+			</MessageHeader>
+		</resource>
+	</entry>
+	<!--Responsible Org Blood Spot-->
+	<entry>
+		<fullUrl value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ebc6ea"/>
+		<resource>
+			<Organization>
+				<id value="33a33b58-648a-4453-b981-e21ea9ebc6ea"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"/>
+				</meta>
+				<identifier>
+					<system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+					<value value="RR8"/>
+				</identifier>
+				<name value="UNIVERSITY HOSPITAL OF NORTH DURHAM"/>
+				<address>
+					<line value="NORTH ROAD"/>
+					<city value="DURHAM"/>
+					<district value="COUNTY DURHAM"/>
+					<postalCode value="DH1 5TW"/>
+				</address>
+			</Organization>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
+		<resource>
+			<Encounter>
+				<id value="1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"/>
+				</meta>
+				<identifier>
+					<system value="https://supplierABC/identifiers"/>
+					<value value="abc1111"/>
+				</identifier>
+				<status value="finished"/>
+			</Encounter>
+		</resource>
+	</entry>
+</Bundle>

@@ -83,23 +83,39 @@ The Event-MessageHeader-1 resource included as part of the event message SHALL c
 
 | Resource Cardinality | 1..1 (new) | 1..1 (delete) |
 
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| id | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
-| extension(routingDemographics) | 1..1 | The extension MUST contain the details of the patient who is the focus of this event message. |
-| extension(routingDemographics)<br>.extension(nhsNumber) | 1..1 | The extension MUST contain the patient’s NHS Number identifier and is used by the NEMS for routing event messages to subscribers. |
-| extension(routingDemographics)<br>.extension(name) | 1..1 | The extension MUST contain the human name element containing the patient’s official given and family names as recognised by PDS, and match the NHS number in the routingDemographics extension. |
-| extension(routingDemographics)<br>.extension(birthDateTime) | 1..1 | The extension MUST contain the patient’s Date Of Birth which matches the NHS number in the routingDemographics extension. |
-| meta.lastUpdated | 1..1 | Message Sequencing - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
-| extension(messageEventType) | 1..1 |  |
-| event | 1..1 | Fixed Value: blood-spot-test-outcome-1 (Blood Spot Test Outcome) |
-| source | 1..1 | The IT system which holds the information that originated the event |
-| source.name | 1..1 | A human readable name for the IT system which holds the information that originated the event |
-| source.contact | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for any issues with event message. Additional requirements and information available on the Event Feedback Mechanism page |
-| source.contact.system | 1..1 | Must contain a value of phone or email matching the included contact method within the value element |
-| source.contact.value | 1..1 | A phone number or email address |
-| responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
-| focus | 1..1 | The focus element will reference the CareConnect-Encounter-1 resource which contains information relating to the event message. |
+| Element | Cardinality `new` | Cardinality `delete` | Additional Guidance |
+| --- | --- | --- | --- |
+| id | 1..1 | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
+| extension(routingDemographics) | 1..1 | 1..1 | The extension MUST contain the details of the patient who is the focus of this event message. |
+| extension(routingDemographics)<br>.extension(nhsNumber) | 1..1 | 1..1 | The extension MUST contain the patient’s NHS Number identifier and is used by the NEMS for routing event messages to subscribers. |
+| extension(routingDemographics)<br>.extension(name) | 1..1 | 0..1 | The extension MUST contain the human name element containing the patient’s official given and family names as recognised by PDS, and match the NHS number in the routingDemographics extension. |
+| extension(routingDemographics)<br>.extension(birthDateTime) | 1..1 | 0..1 | The extension MUST contain the patient’s Date Of Birth which matches the NHS number in the routingDemographics extension. |
+| meta.lastUpdated | 1..1 | 1..1 | Message Sequencing - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
+| extension(messageEventType) | 1..1 | 1..1 |  |
+| event | 1..1 | 1..1 | Fixed Value: blood-spot-test-outcome-1 (Blood Spot Test Outcome) |
+| source | 1..1 | 1..1 | The IT system which holds the information that originated the event |
+| source.name | 1..1 | 1..1 | A human readable name for the IT system which holds the information that originated the event |
+| source.contact | 1..1 | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for any issues with event message. Additional requirements and information available on the Event Feedback Mechanism page |
+| source.contact.system | 1..1 | 1..1 | Must contain a value of phone or email matching the included contact method within the value element |
+| source.contact.value | 1..1 | 1..1 | A phone number or email address |
+| responsible | 1..1 | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
+| focus | 1..1 | 1..1 | The focus element will reference the CareConnect-Encounter-1 resource which contains information relating to the event message. |
+
+
+### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
+
+The CareConnect-Encounter-1 resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 (new) | 1..1 (delete) |
+
+| Element | Cardinality `new` | Cardinality `delete` | Additional Guidance |
+| --- | --- | --- | --- |
+| identifier | 1..1 | 1..1 | A publisher defined unique identifier for the Blood Spot Test Outcome which will be maintained across different event messages to allow subscribers to be identify the information within subsequent new (i.e. updated) or delete event messages. |
+| Encounter.type.coding(childHealthEncounterType) | 1..1 | 0..1 | Encounter.type.coding(childHealthEncounterType) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-ChildHealthEncounterType-1 |
+| Encounter.reason.coding(snomedCT) | 0..1 | 0..1 | Encounter.reason.coding(snomedCT) SHOULD use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-AdmissionReason-1 |
+| serviceProvider | 1..1 | 0..1 | This will reference the Organisation resource hosting the Encounter |
+| location | 0..1 | 0..1 | This will reference the Encounter's Location |
+| subject | 1..1 | 0..1 | This will reference the patient resource representing the subject of this event |
 
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
@@ -115,19 +131,6 @@ The CareConnect-Organization-1 resource included as part of the event message SH
 | name | 1..1 | Organisation’s Name |
 
 
-### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
-
-The CareConnect-HealthcareService-1 resource included as part of the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| providedBy | 1..1 | This will reference the ‘sender’ organization of the event message. |
-| type | 1..1 | This will represent the type of service responsible for the event message. This will have a fixed value from the ValueSet [CareConnect-CareSettingType-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-CareSettingType-1) |
-| specialty | 1..1 | HealthcareService.specialty SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-Specialty-1 |
-
-
 ### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
 
 The CareConnect-Patient-1 resource included as part of the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
@@ -141,20 +144,17 @@ The CareConnect-Patient-1 resource included as part of the event message SHALL c
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
 
 
-### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
+### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
 
-The CareConnect-Encounter-1 resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
+The CareConnect-HealthcareService-1 resource included as part of the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 (new) | 1..1 (delete) |
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| identifier | 1..1 | A publisher defined unique identifier for the Blood Spot Test Outcome which will be maintained across different event messages to allow subscribers to be identify the information within subsequent new (i.e. updated) or delete event messages. |
-| Encounter.type.coding(childHealthEncounterType) | 1..1 | Encounter.type.coding(childHealthEncounterType) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-ChildHealthEncounterType-1 |
-| Encounter.reason.coding(snomedCT) | 0..1 | Encounter.reason.coding(snomedCT) SHOULD use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-AdmissionReason-1 |
-| serviceProvider | 1..1 | This will reference the Organisation resource hosting the Encounter |
-| location | 0..1 Required | This will reference the Encounter's Location |
-| subject | 1..1 | This will reference the patient resource representing the subject of this event |
+| providedBy | 1..1 | This will reference the ‘sender’ organization of the event message. |
+| type | 1..1 | This will represent the type of service responsible for the event message. This will have a fixed value from the ValueSet [CareConnect-CareSettingType-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-CareSettingType-1) |
+| specialty | 1..1 | HealthcareService.specialty SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-Specialty-1 |
 
 
 ### [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)
@@ -288,26 +288,22 @@ The CareConnect-Communication-1 resource included as part of the event message S
 
 ## DCH Blood Spot Test Outcome Example ##
 
-<ul id="profileTabs" class="nav nav-tabs">
-    <li class="active"><a href="#profile" data-toggle="tab">new</a></li>
-    <li><a href="#about" data-toggle="tab">update</a></li>
-    <li><a href="#match" data-toggle="tab">delete</a></li>
-</ul>
-<div class="tab-content">
-	<div role="tabpanel" class="tab-pane active" id="profile">
-		<h2>`new` Example</h2>
-		<script src="https://gist.github.com/IOPS-DEV/52d8bc5a3299890d15b90a8b9b39b4be.js"></script>
-	</div>
+Blood Spot Test Outcome - `new` example
 
-	<div role="tabpanel" class="tab-pane" id="about">
-		<h2>`update` Example</h2>
-		<p>Lorem ipsum ...</p>
-	</div>
-	
-	<div role="tabpanel" class="tab-pane" id="match">
-		<h2>`delete` Example</h2>
-		<p>Vel vehicula ....</p>
-	</div>
-</div>
+```xml
+{% include_relative examples/blood-spot-test-outcome-1-new.xml %}
+```
 
 
+Blood Spot Test Outcome - `update` example
+
+```xml
+{% include_relative examples/blood-spot-test-outcome-1-update.xml %}
+```
+
+
+Blood Spot Test Outcome - `delete` example
+
+```xml
+{% include_relative examples/blood-spot-test-outcome-1-delete.xml %}
+```
