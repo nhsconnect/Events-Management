@@ -19,7 +19,6 @@ The `Blood Spot Test Outcome` event message represents a record of a blood spot 
 
 The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references a `Encounter` resource as the focus of the event message. The bloodspot test procedures, results and comment are linked to this encounter focus resource within the event message.
 
-
 The diagram below shows the referencing between FHIR resources within the event message bundle:
 
 <div style="text-align:center; margin-bottom:20px" >
@@ -46,7 +45,7 @@ To support the event life cycle outlined above the following requirements MUST b
 
 - The information included in the `Blood Spot Test Outcome` event message should be treated as atomic and stored under the `identifier` included within focus `CareConnect-Encounter-1` resource. Where a `new` type event message is received with the same `identifier` the previous information should be overwritten with the information in the later event message as identified by the `MessageHeader.meta.lastUpdated` element within the event message.
 
-- In a `delete` type event message the event message should be populated with the payload of the original new (or update) message where possible, to allow for additional validation of the information being removed. Where this is not possible the event message SHALL including, as a minimum, the `MessageHeader` resource and the focus `CareConnect-Encounter-1` resource. It is important that the `CareConnect-Encounter-1` resource includes the relevant `identifier` element, as included in new (or update) event messages so the subscriber can identify the `Blood Spot Test Outcome` the delete realtes to.
+- In a `delete` type event message the event message should be populated with the payload of the original new (or update) message where possible, to allow for additional validation of the information being removed. Where this is not possible the event message SHALL including, as a minimum, the `MessageHeader` resource and the focus `CareConnect-Encounter-1` resource. It is important that the `CareConnect-Encounter-1` resource includes the relevant `identifier` element, as included in new (or update) event messages so the subscriber can identify the `Blood Spot Test Outcome` that the delete relates to.
 
 
 ### Message Sequencing

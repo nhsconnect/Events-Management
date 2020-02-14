@@ -7,16 +7,19 @@ permalink: newborn_hearing_1.html
 summary: "The FHIR profiles used for the Newborn Hearing Event Message Bundle"
 ---
 
+
 ## Event Message Content
 
-The `Newborn Hearing` event message represents ...
+The `Newborn Hearing` event message represents a record of a Newborn Hearing test in relation to a patient. Either creation, an update or deletion of the record.
 
 All "Newborn Hearing" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
 
 
 ## Bundle Structure
 
-Specifies referencing within the Event Message Bundle.
+The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references a `Encounter` resource as the focus of the event message. The test procedures, results and comment are linked to this encounter focus resource within the event message.
+
+The diagram below shows the referencing between FHIR resources within the event message bundle:
 
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/messages/newborn_hearing_bundle.png" target="_blank"><img src="images/messages/newborn_hearing_bundle.png"></a><br/>
@@ -27,34 +30,50 @@ Specifies referencing within the Event Message Bundle.
 </div>
 
 
-### Newborn Hearing Event data item mapping to FHIR profiles ###
+## Event Life Cycle ##
 
-This Mapping table defines the FHIR elements that SHALL be used to encode the Healthy Child Event Specification data items for each DCH Event Message payload.  
-Some common data item mappings, such as patient, publisher or Date/Time of event information, are defined within the [Header mapping table](./explore_event_header_design.html) and SHALL be considered in parallel with the payload mapping.
+The `MessageHeader` resource contains the `messageEventType` extension which represents the action the event message represents at a resource level, for example the `Newborn Hearing` results being shared are new or have been updated, or the `Newborn Hearing` results have been deleted. The `messageEventType` extension shall contain a values as per the table below:
 
-The Child Health Event data items are fulfilled by elements within the FHIR resources listed below:
-                                                                     
-| DCH Data Item                  | FHIR resource element                               | Mandatory/<br/>Required/<br/>Optional | Note                 |
-|--------------------------------|-----------------------------------------------------|---------------------------------------|----------------------|
-| Date/Time                      | CareConnect-Encounter-1.period.start                | Mandatory                             |  |
-| Location (ODS Site Code)       | CareConnect-Location-1.identifier                   | Required                              |  |
-| Performing Professional        | CareConnect-Practitioner-1.name                     | Required                              |  |
-| SDS Job Role Name              | CareConnect-PractitionerRole-1.codeableConcept      | Required                              |  |
-| Hearing Test Results (AABR)    | CareConnect-Procedure-1.outcome | Required                              | two occurrences of this resource are required, one for each ear |
-| Hearing Test Result (AOAE)     | CareConnect-Procedure-1.outcome |Required                               | up to four occurrences of this resource are required, with two for each test performed |
-| Summary Outcome                | CareConnect-Observation-1.valueCodeableConcept      | Mandatory                             |  |
-| Comment                        | CareConnect-Communication-1.payload.content[x]      | Optional                              |  |
+| Value | Description |
+| --- | --- |
+| new | The `new` value must be used when the `Newborn Hearing` is being shared for the first time, or is being shared because of an update to the information. |
+| update | A value of `update` will not be used for this type of event due to the way the Newborn Hearing is recorded and managed within the current National Screening Service, a value of `new` shall be used instead. |
+| delete | The `delete` value must be used when the Newborn Hearing record has been deleted and the record no longer exists. |
+
+
+### Identifying Information
+
+To support the event life cycle outlined above the following requirements MUST be followed:
+
+- For `new` and `update` type event messages, all procedures, results and other information MUST be included within each of the event messages.
+
+- The information included in the `Newborn Hearing` event message should be treated as atomic and stored under the `identifier` included within focus `CareConnect-Encounter-1` resource. Where a `new` type event message is received with the same `identifier` the previous information should be overwritten with the information in the later event message as identified by the `MessageHeader.meta.lastUpdated` element within the event message.
+
+- In a `delete` type event message the event message should be populated with the payload of the original new (or update) message where possible, to allow for additional validation of the information being removed. Where this is not possible the event message SHALL including, as a minimum, the `MessageHeader` resource and the focus `CareConnect-Encounter-1` resource. It is important that the `CareConnect-Encounter-1` resource includes the relevant `identifier` element, as included in new (or update) event messages so the subscriber can identify the `Newborn Hearing` that the delete relates to.
+
+
+### Message Sequencing
+
+As the Newborn Hearing may change in the source system, this would be represented by multiple `new` and `delete` type event messages being published. To allow a subscribers to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
+
+
+## Onward Delivery ##
+
+The delivery of the `Newborn Hearing` event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
+
+| MESH WorkflowID | `NEWBORNHEARING_1` |
 
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the data item mapping above and in the [Event Header](https://developer.nhs.uk/apis/ems-beta/explore_event_header_information.html) requirements page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
+
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
 The Bundle resource included as part of the event message SHALL conform to the [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 1..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -65,33 +84,49 @@ The Bundle resource included as part of the event message SHALL conform to the [
 
 The Event-MessageHeader-1 resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 1..1 (delete) |
 
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| id | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
-| extension(routingDemographics) | 1..1 | The extension MUST contain the details of the patient who is the focus of this event message. |
-| extension(routingDemographics)<br>.extension(nhsNumber) | 1..1 | The extension MUST contain the patient’s NHS Number identifier and is used by the NEMS for routing event messages to subscribers. |
-| extension(routingDemographics)<br>.extension(name) | 1..1 | The extension MUST contain the human name element containing the patient’s official given and family names as recognised by PDS, and match the NHS number in the routingDemographics extension. |
-| extension(routingDemographics)<br>.extension(birthDateTime) | 1..1 | The extension MUST contain the patient’s Date Of Birth which matches the NHS number in the routingDemographics extension. |
-| meta.versionId | 0..1 | Message Sequencing - A sequence number for the purpose of ordering messages for processing. The sequence number must be an integer which is patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient. |
-| meta.lastUpdated | 0..1 | Message Sequencing - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
-| extension(eventMessageType) | 1..1  |
-| event | 1..1 | Fixed Value: ​newborn-hearing-1 (Newborn Hearing) |
-| source | 1..1 | The IT system which holds the information that originated the event |
-| source.name | 1..1 | A human readable name for the IT system which holds the information that originated the event |
-| source.contact | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for any issues with event message. Additional requirements and information available on the Event Feedback Mechanism page |
-| source.contact.system | 1..1 | Must contain a value of phone or email matching the included contact method within the value element |
-| source.contact.value | 1..1 | A phone number or email address |
-| responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
-| focus | 1..1 | The focus element will reference the CareConnect-Encounter-1 resource which contains information relating to the event message. |
+| Element | Cardinality `new` | Cardinality `delete` | Additional Guidance |
+| --- | --- | --- | --- |
+| id | 1..1 | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
+| extension(routingDemographics) | 1..1 | 1..1 | The extension MUST contain the details of the patient who is the focus of this event message. |
+| extension(routingDemographics)<br>.extension(nhsNumber) | 1..1 | 1..1 | The extension MUST contain the patient’s NHS Number identifier and is used by the NEMS for routing event messages to subscribers. |
+| extension(routingDemographics)<br>.extension(name) | 1..1 | 0..1 | The extension MUST contain the human name element containing the patient’s official given and family names as recognised by PDS, and match the NHS number in the routingDemographics extension. |
+| extension(routingDemographics)<br>.extension(birthDateTime) | 1..1 | 0..1 | The extension MUST contain the patient’s Date Of Birth which matches the NHS number in the routingDemographics extension. |
+| meta.lastUpdated | 1..1 | 1..1 | Message Sequencing - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
+| extension(eventMessageType) | 1..1 | 1..1 | |
+| event | 1..1 | 1..1 | Fixed Value: ​newborn-hearing-1 (Newborn Hearing) |
+| source | 1..1 | 1..1 | The IT system which holds the information that originated the event |
+| source.name | 1..1 | 1..1 | A human readable name for the IT system which holds the information that originated the event |
+| source.contact | 1..1 | 1..1 | The email address or telephone number to be used by subscribers to contact the publisher for any issues with event message. Additional requirements and information available on the Event Feedback Mechanism page |
+| source.contact.system | 1..1 | 1..1 | Must contain a value of phone or email matching the included contact method within the value element |
+| source.contact.value | 1..1 | 1..1 | A phone number or email address |
+| responsible | 1..1 | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
+| focus | 1..1 | 1..1 | The focus element will reference the CareConnect-Encounter-1 resource which contains information relating to the event message. |
+
+
+### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
+
+The CareConnect-Encounter-1 resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 (new) | 1..1 (delete) |
+
+| Element | Cardinality `new` | Cardinality `delete` | Additional Guidance |
+| --- | --- | --- | --- |
+| identifier | 1..1 | 1..1 | A publisher defined unique identifier for the Newborn Hearing which will be maintained across different event messages to allow subscribers to be identify the information within subsequent new (i.e. updated) or delete event messages. |
+| Encounter.type.coding(childHealthEncounterType) | 1..1 | 0..1 | Encounter.type.coding(childHealthEncounterType) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-ChildHealthEncounterType-1 |
+| Encounter.reason.coding(snomedCT) | 0..1 | 0..1 | Encounter.reason.coding(snomedCT) SHOULD use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-AdmissionReason-1 |
+| serviceProvider | 1..1 | 0..1 | This will reference the Organisation resource hosting the Encounter |
+| location |  0..1 | 0..1 | This will reference the Encounter's Location |
+| subject | 1..1 | 0..1 | This will reference the patient resource representing the subject of this event |
+| period.start | 1..1 | 0..1 | Date/Time |
 
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
 The CareConnect-Organization-1 resource included as part of the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..* Mandatory |
+| Resource Cardinality | 1..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -100,24 +135,11 @@ The CareConnect-Organization-1 resource included as part of the event message SH
 | name | 1..1 | Organisation’s Name |
 
 
-### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
-
-The CareConnect-HealthcareService-1 resource included as part of the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 0..1 Required |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| providedBy | 1..1 | This will reference the ‘sender’ organization of the event message. |
-| type | 1..1 | This will represent the type of service responsible for the event message. This will have a fixed value from the ValueSet [CareConnect-CareSettingType-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-CareSettingType-1) |
-| specialty | 1..1 | HealthcareService.specialty SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-Specialty-1 |
-
-
 ### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
 
 The CareConnect-Patient-1 resource included as part of the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -126,40 +148,27 @@ The CareConnect-Patient-1 resource included as part of the event message SHALL c
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
 
 
-### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
-
-The CareConnect-Encounter-1 resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 1..1 Mandatory |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| Encounter.type.coding(childHealthEncounterType) | 1..1 | Encounter.type.coding(childHealthEncounterType) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-ChildHealthEncounterType-1 |
-| Encounter.reason.coding(snomedCT) | 0..1 | Encounter.reason.coding(snomedCT) SHOULD use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-AdmissionReason-1 |
-| serviceProvider | 1..1 | This will reference the Organisation resource hosting the Encounter |
-| location |  0..1 Required  | This will reference the Encounter's Location |
-| subject | 1..1 | This will reference the patient resource representing the subject of this event |
-
-
 ### [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)
 
 The CareConnect-Location-1 resource included as part of the event message SHALL conform to the [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..1 Required |
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
+
 
 
 ### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
 
 The CareConnect-Practitioner-1 resource included as part of the event message SHALL conform to the [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..1 Required |
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
+
 
 
 ### [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1)
 
 The CareConnect-PractitionerRole-1 resource included as part of the event message SHALL conform to the [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..1 Required |
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -168,11 +177,26 @@ The CareConnect-PractitionerRole-1 resource included as part of the event messag
 | PractitionerRole.code(careProfessionalType) | 1..1 | PractitionerRole.code(careProfessionalType) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-ProfessionalType-1 |
 
 
+
+### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
+
+The CareConnect-HealthcareService-1 resource included as part of the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| providedBy | 1..1 | This will reference the ‘sender’ organization of the event message. |
+| type | 1..1 | This will represent the type of service responsible for the event message. This will have a fixed value from the ValueSet [CareConnect-CareSettingType-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-CareSettingType-1) |
+| specialty | 1..1 | HealthcareService.specialty SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-Specialty-1 |
+
+
+
 ### [CareConnect-Procedure-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1)
 
 The CareConnect-Procedure-1 resource included as part of the event message SHALL conform to the [CareConnect-Procedure-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..6 Required |
+| Resource Cardinality | 0..6 Required (new) | 0..6 Required (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -181,6 +205,8 @@ The CareConnect-Procedure-1 resource included as part of the event message SHALL
 For each of the Procedure resources representing a Test Outcome:
 
 ### CareConnect-Procedure-1 (AABR Hearing Test)
+
+| Resource Cardinality | 0..2 Required | Two occurrences of this resource are required, one for each ear |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -191,6 +217,9 @@ For each of the Procedure resources representing a Test Outcome:
 
 
 ### CareConnect-Procedure-1 (AOAE  Hearing Test)
+
+| Resource Cardinality | 0..4 Required | Up to four occurrences of this resource are required, with two for each test performed (one for each ear) |
+
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -204,7 +233,7 @@ For each of the Procedure resources representing a Test Outcome:
 
 The CareConnect-Observation-1 resource included as part of the event message SHALL conform to the [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 Mandatory |
+| Resource Cardinality | 1..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -216,7 +245,7 @@ The CareConnect-Observation-1 resource included as part of the event message SHA
 
 The CareConnect-Communication-1 resource included as part of the event message SHALL conform to the [CareConnect-Communication-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..1 Optional |
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -231,28 +260,4 @@ The CareConnect-Communication-1 resource included as part of the event message S
 ## DCH Newborn Hearing Example ##
 
 <script src="https://gist.github.com/IOPS-DEV/73c9eeb482f397d2c745440f4bb9a75b.js"></script>
-
-
-## Profile Change Mappings for Newborn Hearing ##
-
-Profiles used in [Demographics Update Event Messages 1.2.1-Release Candidate](https://developer.nhs.uk/apis/demographicupdates-120-rc/index.html) are replaced with:
-
-| Demographic-Event-Messages | Demographic-Event-Messages-CareConnect |
-|----------------------------|----------------------------------------|
-| DCH-Bundle-1                                                   | Bundle |
-| DCH-MessageHeader-1                                            | Event-MessageHeader-1 |
-| CareConnect-Organization-1                                     | CareConnect-Organization-1 |
-| DCH-HealthcareService-1                                        | CareConnect-HealthcareService-1 |
-| CareConnect-DCH-Patient-1                                      | CareConnect-Patient-1 |
-| CareConnect-DCH-Encounter-1                                    | CareConnect-Encounter-1 |
-| CareConnect-Location-1                                         | CareConnect-Location-1 |
-| CareConnect-DCH-Practitioner-1                                 | CareConnect-Practitioner-1 |
-| CareConnect-DCH-PractitionerRole-1                             | CareConnect-PractitionerRole-1 |
-| CareConnect-DCH-AABRHearingTest-Procedure-1                    | CareConnect-Procedure-1 |
-| CareConnect-DCH-AOAEHearingTest-Procedure-1                    | CareConnect-Procedure-1 |
-| CareConnect-DCH-HearingScreeningSummaryOutcome-Observation-1   | CareConnect-Observation-1 |
-| DCH-ProfessionalComment-Communication-1                        | CareConnect-Communication-1 |
-
-
-<hr/>
 
