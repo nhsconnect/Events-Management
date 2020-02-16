@@ -1,5 +1,5 @@
 ---
-title: Newborn Hearing Event Message Bundle
+title: Newborn Hearing
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
@@ -259,5 +259,23 @@ The CareConnect-Communication-1 resource included as part of the event message S
 
 ## DCH Newborn Hearing Example ##
 
-<script src="https://gist.github.com/IOPS-DEV/73c9eeb482f397d2c745440f4bb9a75b.js"></script>
+Newborn Hearing - `new` example
+
+```xml
+{% include_relative examples/newborn-hearing-1-new.xml %}
+```
+
+
+Newborn Hearing - `update` example
+
+```xml
+{% include_relative examples/newborn-hearing-1-update.xml %}
+```
+
+
+Newborn Hearing - `delete` example
+
+```xml
+{% include_relative examples/newborn-hearing-1-delete.xml %}
+```
 

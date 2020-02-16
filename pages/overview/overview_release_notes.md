@@ -12,6 +12,15 @@ summary: Summary release notes of the versions released in National Events Manag
 [Create Subscription](explore_create_subscription.html)
 - enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
 
+[Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
+- Added event message to specification with addition of event life cycle
+
+[Newborn Hearing](newborn_hearing_1.html)
+- Added event message to specification with addition of event life cycle
+
+[NIPE Outcome](nipe_outcome_1.html)
+- Added event message to specification with addition of event life cycle
+
 [PDS Birth Notification](pds_birth_notification.html)
 - Updated example to remove XML prolog for specification consistency.
 

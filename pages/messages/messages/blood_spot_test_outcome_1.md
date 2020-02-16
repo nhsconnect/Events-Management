@@ -1,5 +1,5 @@
 ---
-title: Blood Spot Test Outcome Event Message Bundle
+title: Blood Spot Test Outcome
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar

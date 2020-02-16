@@ -1,5 +1,5 @@
 ---
-title: NIPE Outcome Event Message Bundle
+title: NIPE Outcome
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
@@ -259,4 +259,22 @@ The CareConnect-Communication-1 resource included as part of the event message S
 
 ## DCH NIPE Outcome Example ##
 
-<script src="https://gist.github.com/IOPS-DEV/a90f09a24af78a977cae93b5c392ab3f.js"></script>
+NIPE Outcome - `new` example
+
+```xml
+{% include_relative examples/nipe-outcome-1-new.xml %}
+```
+
+
+NIPE Outcome - `update` example
+
+```xml
+{% include_relative examples/nipe-outcome-1-update.xml %}
+```
+
+
+NIPE Outcome - `delete` example
+
+```xml
+{% include_relative examples/nipe-outcome-1-delete.xml %}
+```
