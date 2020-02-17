@@ -1,16 +1,16 @@
 <Bundle xmlns="http://hl7.org/fhir">
-	<id value="6e824ff8-9b0a-11e8-9eb6-529269fb1459"/>
+	<id value="3dd1142f-5089-4488-a33f-60d7d61c74e5"/>
 	<meta>
 		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
 	</meta>
 	<type value="message"/>
 	<entry>
-		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa66218"/>
+		<fullUrl value="urn:uuid:8af8fec0-2599-47ad-9165-c163ca112612"/>
 		<resource>
 			<MessageHeader>
-				<id value="85c8a1c5-a8a1-41c9-bb99-20956fa66218"/>
+				<id value="8af8fec0-2599-47ad-9165-c163ca112612"/>
 				<meta>
-					<lastUpdated value="2017-11-01T15:00:33+00:00"/>
+					<lastUpdated value="2017-11-01T15:06:31+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
 				</meta>
 				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
@@ -35,8 +35,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
-							<code value="new"/>
-							<display value="New event message"/>
+							<code value="update"/>
+							<display value="Update event message"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
@@ -45,7 +45,7 @@
 					<code value="vaccinations-1"/>
 					<display value="Vaccinations"/>
 				</event>
-				<timestamp value="2017-02-14T15:00:00+00:00"/>
+				<timestamp value="2017-02-14T15:06:32+00:00"/>
 				<source>
 					<contact>
 						<system value="phone"/>
@@ -105,7 +105,7 @@
 				<location>
 					<reference value="urn:uuid:e19a8932-7ccd-4b4a-bed2-b13f5e924698"/>
 				</location>
-				<lotNumber value="CCJN12M"/>
+				<lotNumber value="CCJN12Mb"/>
 				<site>
 					<coding>
 						<system value="http://snomed.info/sct"/>
@@ -251,8 +251,8 @@
 				<type>
 					<coding>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/>
-						<code value="0019"/>
-						<display value="2-2 ½ Year Early Years Progress"/>
+						<code value="0012"/>
+						<display value="12 week immunisations"/>
 					</coding>
 				</type>
 				<subject>

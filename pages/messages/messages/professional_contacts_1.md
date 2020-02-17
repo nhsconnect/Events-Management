@@ -163,8 +163,22 @@ The CareConnect-PractitionerRole-1 resource included as part of the event messag
 | Resource Cardinality | 0..* |
 
 
-## Professional Contacts Example ##
+## Example - new
 
 ```xml
-{% include_relative examples/Professional-Contacts-example.xml %}
+{% include_relative examples/Professional-Contacts-1-new.xml %}
+```
+
+
+## Example - update
+
+```xml
+{% include_relative examples/Professional-Contacts-1-update.xml %}
+```
+
+
+## Example - delete
+
+```xml
+{% include_relative examples/Professional-Contacts-1-delete.xml %}
 ```

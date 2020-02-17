@@ -193,8 +193,23 @@ The Location resources included as part of the event message SHALL conform to th
 | --- | --- | --- |
 | identifier | 0..* | Where available the ODS Site Code slice should be populated |
 
-## Vaccinations Event Example ##
+
+## Example - new
 
 ```xml
-{% include_relative examples/vaccinations-1-example.xml %}
+{% include_relative examples/vaccinations-1-new.xml %}
+```
+
+
+## Example - update
+
+```xml
+{% include_relative examples/vaccinations-1-update.xml %}
+```
+
+
+## Example - delete
+
+```xml
+{% include_relative examples/vaccinations-1-delete.xml %}
 ```

@@ -257,23 +257,21 @@ The CareConnect-Communication-1 resource included as part of the event message S
 | Communication.category.coding.display | 1..1 | Fixed Value: Newborn Hearing Screening |
 
 
-## DCH Newborn Hearing Example ##
-
-Newborn Hearing - `new` example
+## Example - new
 
 ```xml
 {% include_relative examples/newborn-hearing-1-new.xml %}
 ```
 
 
-Newborn Hearing - `update` example
+## Example - update
 
 ```xml
 {% include_relative examples/newborn-hearing-1-update.xml %}
 ```
 
 
-Newborn Hearing - `delete` example
+## Example - delete
 
 ```xml
 {% include_relative examples/newborn-hearing-1-delete.xml %}

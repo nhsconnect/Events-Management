@@ -285,23 +285,22 @@ The CareConnect-Communication-1 resource included as part of the event message S
 | Communication.category.coding.code | 1..1 | Fixed Value: 007 |
 | Communication.category.coding.display | 1..1 | Fixed Value: Newborn Blood Spot Screening |
 
-## DCH Blood Spot Test Outcome Example ##
 
-Blood Spot Test Outcome - `new` example
+## Example - new
 
 ```xml
 {% include_relative examples/blood-spot-test-outcome-1-new.xml %}
 ```
 
 
-Blood Spot Test Outcome - `update` example
+## Example - update
 
 ```xml
 {% include_relative examples/blood-spot-test-outcome-1-update.xml %}
 ```
 
 
-Blood Spot Test Outcome - `delete` example
+## Example - delete
 
 ```xml
 {% include_relative examples/blood-spot-test-outcome-1-delete.xml %}

@@ -30,9 +30,11 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Professional Contacts](professional_contacts_1.html)
 - Updated example to remove XML prolog for specification consistency.
+- Added examples of `update` and `delete` type event messages
 
 [Vaccinations](vaccinations_1.html)
 - Update example to add the bundle resource id element
+- Added examples of `update` and `delete` type event messages
 
 
 ## 2.2.1-Beta (23/01/2020) ##

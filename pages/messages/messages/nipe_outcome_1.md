@@ -257,23 +257,22 @@ The CareConnect-Communication-1 resource included as part of the event message S
 | Communication.category.coding.display | 1..1 | 'Newborn and Infant Physical Examination (72 hours)' OR 'Newborn and Infant Physical Examination (6-8 Weeks)' |
 
 
-## DCH NIPE Outcome Example ##
 
-NIPE Outcome - `new` example
+## Example - new
 
 ```xml
 {% include_relative examples/nipe-outcome-1-new.xml %}
 ```
 
 
-NIPE Outcome - `update` example
+## Example - update
 
 ```xml
 {% include_relative examples/nipe-outcome-1-update.xml %}
 ```
 
 
-NIPE Outcome - `delete` example
+## Example - delete
 
 ```xml
 {% include_relative examples/nipe-outcome-1-delete.xml %}
