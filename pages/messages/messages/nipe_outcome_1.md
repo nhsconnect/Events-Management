@@ -12,7 +12,7 @@ summary: "The FHIR profiles used for the NIPE Outcome Event Message Bundle"
 
 The `NIPE Outcome` event message represents a record of a New Born Physical Examination outcome in relation to a patient. Either creation, an update or deletion of the record.
 
-All "NIPE Outcome" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
+All "NIPE Outcome" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page. Where requirements on this page contradict the requirements on the Generic Event Message Requirements page, then the requirements on this page take precedence.
 
 
 ## Bundle Structure
@@ -32,8 +32,8 @@ The `MessageHeader` resource contains the `messageEventType` extension which
 
 | Value | Description |
 | --- | --- |
-| new | The `new` value must be used when the `NIPE Outcome` is being shared for the first time, or is being shared because of an update to the information. |
-| update | A value of `update` will not be used for this type of event due to the way the NIPE tests are recorded and managed within the current National Screening Service, a value of `new` shall be used instead. |
+| new | The `new` value must be used when the `NIPE Outcome` is being shared for the first time, or is being shared because of an `update` to the information. |
+| update | A value of `update` **will not** be used for this type of event due to the way the NIPE tests are recorded and managed within the current National Screening Service, a value of **new** shall be used instead. |
 | delete | The `delete` value must be used when the NIPE Outcome record has been deleted and the record no longer exists. |
 
 
@@ -50,7 +50,7 @@ To support the event life cycle outlined above the following requirements MUST b
 
 ### Message Sequencing
 
-As the NIPE Outcome may change in the source system, this would be represented by multiple `new` and `delete` type event messages being published. To allow a subscribers to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
+As the NIPE Outcome may change in the source system, this would be represented by multiple `new`, `new (update)` and `delete` type event messages being published. To allow a subscribers to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
 
 
 ## Onward Delivery ##

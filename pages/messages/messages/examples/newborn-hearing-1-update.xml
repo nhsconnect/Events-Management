@@ -36,8 +36,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
-							<code value="update"/>
-							<display value="Update event message"/>
+							<code value="new"/>
+							<display value="New event message"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
