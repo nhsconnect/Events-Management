@@ -113,7 +113,7 @@ The CareConnect-Encounter-1 resource included as part of the event message SHALL
 
 | Element | Cardinality `new` | Cardinality `delete` | Additional Guidance |
 | --- | --- | --- | --- |
-| identifier | 1..1 | 1..1 | A publisher defined unique identifier for the Newborn Hearing which will be maintained across different event messages to allow subscribers to be identify the information within subsequent new (i.e. updated) or delete event messages. |
+| identifier | 1..1 | 1..1 | A publisher defined unique identifier for the Newborn Hearing which will be maintained across different event messages to allow subscribers to identify the information within subsequent new (i.e. updated) or delete event messages. |
 | Encounter.type.coding(childHealthEncounterType) | 1..1 | 0..1 | Encounter.type.coding(childHealthEncounterType) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-ChildHealthEncounterType-1 |
 | Encounter.reason.coding(snomedCT) | 0..1 | 0..1 | Encounter.reason.coding(snomedCT) SHOULD use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-AdmissionReason-1 |
 | serviceProvider | 1..1 | 0..1 | This will reference the Organisation resource hosting the Encounter |
