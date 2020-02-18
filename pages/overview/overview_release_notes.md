@@ -24,6 +24,10 @@ summary: Summary release notes of the versions released in National Events Manag
 [PDS Birth Notification](pds_birth_notification.html)
 - Updated example to remove XML prolog for specification consistency.
 
+[PDS Change of Address](pds_change_of_address.html)
+- Added guidance around intended use of the event and risk as a result in difference in address format
+- Corrected guidance and example of address lines and how they will be included (city and district)
+
 [PDS Death Notification](pds_death_notification.html)
 - Updated examples to remove XML prolog for specification consistency.
 - Update example to add the bundle resource id element

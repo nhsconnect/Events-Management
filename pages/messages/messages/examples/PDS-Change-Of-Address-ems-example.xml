@@ -153,7 +153,7 @@
                 <address>
                     <use value="old"/>
                     <line value="3 WELLHOUSE CLOSE"/>
-                    <city value="WAKEFIELD"/>
+					<line value="WAKEFIELD"/>
                     <postalCode value="WF14 0BQ"/>
                     <period>
                         <start value="2019-10-02"/>
@@ -164,7 +164,7 @@
                 <address>
                     <use value="home"/>
                     <line value="4 SANDMOOR DRIVE"/>
-                    <city value="LEEDS"/>
+					<line value="LEEDS"/>
                     <postalCode value="LS17 7DF"/>
                     <period>
                         <start value="2019-11-01"/>

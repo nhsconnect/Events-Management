@@ -132,7 +132,7 @@
                 <address>
                     <use value="home"/>
                     <line value="4 Sandmoor Drive"/>
-                    <city value="LEEDS"/>
+					<line value="LEEDS"/>
                     <postalCode value="LS17 7DF"/>
                 </address>
             </Patient>
