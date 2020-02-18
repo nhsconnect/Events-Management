@@ -14,7 +14,7 @@ summary: "The FHIR profiles used for the PDS Change of Address event message bun
 The `PDS Change of Address` event message is intended for the purpose of notifying subscribers that a patients address has been updated on PDS, and should be used as follows:
 - The address details contained within the event message should only be used for the purpose of determining if the subscriber should take some action as a result of the address change.
 - The address format within the event message may be different to the format of the address within PDS, due to contraints of FHIR, therefore the address received in the event message should not be used in place of PDS synchronisation.
-- Subscribers receiving the change of address event message MUST not update PDS with the address details or format received in the event message as this may result in the address flip flop issue highlighted below.
+- Subscribers receiving the change of address event message MUST not update PDS with the address details or format received in the event message as this may result in the address flip flop issue highlighted above.
 
 
 ## Bundle structure
