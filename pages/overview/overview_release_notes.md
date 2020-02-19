@@ -36,6 +36,12 @@ summary: Summary release notes of the versions released in National Events Manag
 - Updated example to remove XML prolog for specification consistency.
 - Added examples of `update` and `delete` type event messages
 
+[Publish an Event Message](publication_publish.html)
+- Updated requirements around `interactionID` and the event code to include as there was a miss alignment between the specification, what is accepted by the NEMS and what current publishers are using.
+
+[Supported Event Messages](overview_supported_events.html)
+- Updated interaction event codes in Event messages table to match the expectation in NEMS and what current publishers are sending with the request.
+
 [Vaccinations](vaccinations_1.html)
 - Update example to add the bundle resource id element
 - Added examples of `update` and `delete` type event messages

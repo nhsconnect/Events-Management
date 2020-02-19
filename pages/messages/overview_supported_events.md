@@ -30,14 +30,14 @@ The maturity of the event messages are indicated within the tables below. These 
 
 The following are event messages currently supported by the NEMS:
 
-| Event | Event Code | Publication API | Subscription API | Date Available | Event Maturity |
+| Event | Publish Interaction Event Code | Publication API | Subscription API | Date Available | Event Maturity |
 |---|---|:---:|:---:|---|---|
-| [Blood Spot Test Outcome](blood_spot_test_outcome_1.html) | blood-spot-test-outcome-1 | &#9989; | &#9989; | October 2019 | Release Candidate |
-| [Newborn Hearing](newborn_hearing_1.html) | newborn-hearing-1 | &#9989; | &#9989; | October 2019 | Release Candidate |
-| [NIPE Outcome](nipe_outcome_1.html) | nipe-outcome-1 | &#9989; | &#9989; | October 2019 | Release Candidate |
-| [PDS Birth Notification](pds_birth_notification.html) | pds-birth-notification-1 | &#10060; | &#9989; | March 2019 | Release Candidate |
-| [PDS Change of Address](pds_change_of_address.html) | pds-change-of-address-1 | &#10060; | &#9989; | March 2019 | Release Candidate |
-| [PDS Change of GP](pds_change_of_gp.html) | pds-change-of-gp-1 | &#10060; | &#9989; | March 2019 | Release Candidate |
-| [PDS Death Notification](pds_death_notification.html) | pds-death-notification-1 | &#10060; | &#9989; | March 2019 | Release Candidate |
-| [Professional Contacts](professional_contacts_1.html) | professional-contacts-1 | &#9989; | &#9989; | February 2020 | Beta |
-| [Vaccinations](vaccinations_1.html) | vaccinations-1 | &#9989; | &#9989; | February 2020 | Beta |
+| [Blood Spot Test Outcome](blood_spot_test_outcome_1.html) | Bloodspottestoutcome | &#9989; | &#9989; | October 2019 | Release Candidate |
+| [Newborn Hearing](newborn_hearing_1.html) | Newbornhearing | &#9989; | &#9989; | October 2019 | Release Candidate |
+| [NIPE Outcome](nipe_outcome_1.html) | Nipeoutcome | &#9989; | &#9989; | October 2019 | Release Candidate |
+| [PDS Birth Notification](pds_birth_notification.html) | N/A | &#10060; | &#9989; | March 2019 | Release Candidate |
+| [PDS Change of Address](pds_change_of_address.html) | N/A | &#10060; | &#9989; | March 2019 | Release Candidate |
+| [PDS Change of GP](pds_change_of_gp.html) | N/A | &#10060; | &#9989; | March 2019 | Release Candidate |
+| [PDS Death Notification](pds_death_notification.html) | N/A | &#10060; | &#9989; | March 2019 | Release Candidate |
+| [Professional Contacts](professional_contacts_1.html) | Professionalcontacts | &#9989; | &#9989; | February 2020 | Beta |
+| [Vaccinations](vaccinations_1.html) | Vaccinations | &#9989; | &#9989; | February 2020 | Beta |
