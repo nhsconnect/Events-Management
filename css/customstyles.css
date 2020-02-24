@@ -1194,6 +1194,7 @@ div.box.box1 {
 	font-size: 0.8em;
     display: contents;
     white-space: pre-wrap;
+	background-color: white;
 }
 
 .tabPanel {
