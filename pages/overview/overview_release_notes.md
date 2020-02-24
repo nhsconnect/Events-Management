@@ -45,6 +45,7 @@ summary: Summary release notes of the versions released in National Events Manag
 [Vaccinations](vaccinations_1.html)
 - Update example to add the bundle resource id element
 - Added examples of `update` and `delete` type event messages
+- Added example of Immunization Not Given
 
 
 ## 2.2.1-Beta (23/01/2020) ##
