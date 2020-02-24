@@ -84,7 +84,7 @@
 					<system value="https://supplierABC/identifiers"/>
 					<value value="abc1111"/>
 				</identifier>
-				<status value="completed"/>
+				<status value="entered-in-error"/>
 				<notGiven value="false"/>
 				<vaccineCode>
 					<coding>

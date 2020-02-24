@@ -136,7 +136,7 @@
 					<system value="https://supplierABC/identifiers"/>
 					<value value="abc1111"/>
 				</identifier>
-				<status value="active"/>
+				<status value="entered-in-error"/>
 				<type>
 					<coding>
 						<system value="http://snomed.info/sct"/>

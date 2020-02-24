@@ -89,7 +89,7 @@
 					<system value="https://supplierABC/identifiers"/>
 					<value value="abc1111"/>
 				</identifier>
-				<status value="finished"/>
+				<status value="entered-in-error"/>
 			</Encounter>
 		</resource>
 	</entry>

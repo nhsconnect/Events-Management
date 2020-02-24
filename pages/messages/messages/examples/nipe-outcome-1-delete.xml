@@ -1,17 +1,16 @@
 <Bundle xmlns="http://hl7.org/fhir">
-	<id value="51f167b8-339c-4933-9595-78e3fd213dc0"/>
+	<id value="9d978fac-c12a-4169-b01c-b2ff7fe14e83"/>
 	<meta>
 		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
 	</meta>
 	<type value="message"/>
-	<!--Message Header-->
 	<entry>
-		<fullUrl value="urn:uuid:21982188-a0a2-4755-87ca-2f6ab7a37926"/>
+		<fullUrl value="urn:uuid:b021dc92-d6f7-4c7d-ad8a-df4174fda1ee"/>
 		<resource>
 			<MessageHeader>
-				<id value="21982188-a0a2-4755-87ca-2f6ab7a37926"/>
+				<id value="b021dc92-d6f7-4c7d-ad8a-df4174fda1ee"/>
 				<meta>
-					<lastUpdated value="2017-11-03T05:03:00+00:00"/>
+					<lastUpdated value="2017-11-02T09:11:01+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
 				</meta>
 				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
@@ -43,12 +42,12 @@
 				</extension>
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="newborn-hearing-1"/>
-					<display value="Newborn Hearing"/>
+					<code value="​nipe-outcome-1"/>
+					<display value="NIPE outcome"/>
 				</event>
-				<timestamp value="2017-11-03T05:03:00+00:00"/>
+				<timestamp value="2017-11-02T09:11:01+00:00"/>
 				<source>
-					<name value="SILVERDALE FAMILY PRACTICE"/>
+					<name value="UNIVERSITY HOSPITAL OF NORTH DURHAM"/>
 					<contact>
 						<system value="phone"/>
 						<value value="0191 1231234"/>
@@ -56,45 +55,44 @@
 					<endpoint value="urn:nhs:addressing:asid:300000000161"/>
 				</source>
 				<responsible>
-					<reference value="urn:uuid:3ff6d789-af64-4d9c-aa1d-0087d29e9e1c"/>
-					<display value="SILVERDALE FAMILY PRACTICE"/>
+					<reference value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ebc6ea"/>
+					<display value="UNIVERSITY HOSPITAL OF NORTH DURHAM"/>
 				</responsible>
 				<focus>
-					<reference value="urn:uuid:12779557-9033-4213-876f-69a670cdf35d"/>
+					<reference value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
 				</focus>
 			</MessageHeader>
 		</resource>
 	</entry>
-	<!--Responsible Org (MessageHeader.responsible)-->
+	<!--Responsible for message content-->
 	<entry>
-		<fullUrl value="urn:uuid:3ff6d789-af64-4d9c-aa1d-0087d29e9e1c"/>
+		<fullUrl value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ebc6ea"/>
 		<resource>
 			<Organization>
-				<id value="3ff6d789-af64-4d9c-aa1d-0087d29e9e1c"/>
+				<id value="33a33b58-648a-4453-b981-e21ea9ebc6ea"/>
 				<meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"/>
 				</meta>
 				<identifier>
 					<system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
-					<value value="A83627"/>
+					<value value="RX3EP"/>
 				</identifier>
-				<name value="SILVERDALE FAMILY PRACTICE"/>
+				<name value="UNIVERSITY HOSPITAL OF NORTH DURHAM"/>
 				<address>
-					<line value="FRONT STREET"/>
-					<line value="SOUTH HETTON"/>
+					<line value="NORTH ROAD"/>
 					<city value="DURHAM"/>
 					<district value="COUNTY DURHAM"/>
-					<postalCode value="DH6 2TH"/>
+					<postalCode value="DH1 5TW"/>
 				</address>
 			</Organization>
 		</resource>
 	</entry>
-	<!--Encounter details-->
+	<!--Birth Encounter details-->
 	<entry>
-		<fullUrl value="urn:uuid:12779557-9033-4213-876f-69a670cdf35d"/>
+		<fullUrl value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
 		<resource>
 			<Encounter>
-				<id value="12779557-9033-4213-876f-69a670cdf35d"/>
+				<id value="1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
 				<meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"/>
 				</meta>
@@ -102,7 +100,7 @@
 					<system value="https://supplierABC/identifiers"/>
 					<value value="abc1111"/>
 				</identifier>
-				<status value="finished"/>
+				<status value="entered-in-error"/>
 			</Encounter>
 		</resource>
 	</entry>
