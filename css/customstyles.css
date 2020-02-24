@@ -1190,6 +1190,12 @@ div.box.box1 {
 	margin-top: 2px;
 }
 
+.tabBodies code {
+	font-size: 0.8em;
+    display: contents;
+    white-space: pre-wrap;
+}
+
 .tabPanel {
 	margin-top: 20px;
 	margin-bottom: 20px;

@@ -250,23 +250,30 @@ The CareConnect-Communication-1 resource included as part of the event message S
 | Communication.category.coding.display | 1..1 | Fixed Value: Newborn Hearing Screening |
 
 
-## Example - new
+## Examples
 
-```xml
-{% include_relative examples/newborn-hearing-1-new.xml %}
-```
+<div class="tabPanel">
 
-
-## Example - update
-
-```xml
-{% include_relative examples/newborn-hearing-1-update.xml %}
-```
-
-
-## Example - delete
-
-```xml
-{% include_relative examples/newborn-hearing-1-delete.xml %}
-```
+	<div class="tabHeadings">
+		<span class="tabHeading" id="new">New</span>
+		<span class="tabHeading" id="update">Update</span>
+		<span class="tabHeading" id="delete">Delete</span>
+	</div>
+	
+	<div class="tabBodies">
+	
+		<div class="tabBody" id="newBody" markdown="span">
+			```{% include_relative examples/newborn-hearing-1-new.xml %}```
+		</div>
+		
+		<div class="tabBody" id="updateBody" markdown="span">
+			```{% include_relative examples/newborn-hearing-1-update.xml %}```
+		</div>
+		
+		<div class="tabBody" id="deleteBody" markdown="span">
+			```{% include_relative examples/newborn-hearing-1-delete.xml %}```
+		</div>
+		
+	</div>
+</div>
 

@@ -194,28 +194,35 @@ The Location resources included as part of the event message SHALL conform to th
 | identifier | 0..* | Where available the ODS Site Code slice should be populated |
 
 
-## Example - new (Immunization Given)
+## Examples
 
-```xml
-{% include_relative examples/vaccinations-1-new.xml %}
-```
+<div class="tabPanel">
 
-## Example - new (Immunization Not-Given)
+	<div class="tabHeadings">
+		<span class="tabHeading" id="new-given">New (Given)</span>
+		<span class="tabHeading" id="new-notgiven">New (Not Given)</span>
+		<span class="tabHeading" id="update">Update</span>
+		<span class="tabHeading" id="delete">Delete</span>
+	</div>
+	
+	<div class="tabBodies">
+	
+		<div class="tabBody" id="new-givenBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-new.xml %}```
+		</div>
+		
+		<div class="tabBody" id="new-notgivenBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-notgiven-new.xml %}```
+		</div>
+		
+		<div class="tabBody" id="updateBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-update.xml %}```
+		</div>
+		
+		<div class="tabBody" id="deleteBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-delete.xml %}```
+		</div>
+		
+	</div>
+</div>
 
-```xml
-{% include_relative examples/vaccinations-1-notgiven-new.xml %}
-```
-
-
-## Example - update
-
-```xml
-{% include_relative examples/vaccinations-1-update.xml %}
-```
-
-
-## Example - delete
-
-```xml
-{% include_relative examples/vaccinations-1-delete.xml %}
-```

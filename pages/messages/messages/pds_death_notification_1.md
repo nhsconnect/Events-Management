@@ -134,22 +134,31 @@ The HealthcareService resource included in the event message SHALL conform to th
 | providedBy | 1..1 | This will reference the 'sender' organization of the event message. |
 | type | 1..1 | Fixed value: PDS (Personal Demographics Service)<br/>This will represent the type of service responsible for the event message. This will have a value from the ValueSet [EMS-HealthcareServiceType-1](https://fhir.nhs.uk/STU3/ValueSet/EMS-HealthcareServiceType-1) |
 
-### PDS Death Notification Example ###
 
-#### PDS-PersonDeath-Bundle-Example-1a.xml (Formal) ####
+## Examples
 
-```xml
-{% include_relative examples/PDS-Death-Notification-formal-ems-example.xml %}
-```
+<div class="tabPanel">
 
-#### PDS-PersonDeath-Bundle-Example-1b.xml (Informal) ####
+	<div class="tabHeadings">
+		<span class="tabHeading" id="formal">Formal</span>
+		<span class="tabHeading" id="informal">Informal</span>
+		<span class="tabHeading" id="removed">Removed</span>
+	</div>
+	
+	<div class="tabBodies">
+	
+		<div class="tabBody" id="formalBody" markdown="span">
+			```{% include_relative examples/PDS-Death-Notification-formal-ems-example.xml %}```
+		</div>
+		
+		<div class="tabBody" id="informalBody" markdown="span">
+			```{% include_relative examples/PDS-Death-Notification-informal-ems-example.xml %}```
+		</div>
+		
+		<div class="tabBody" id="removedBody" markdown="span">
+			```{% include_relative examples/PDS-Death-Notification-removed-ems-example.xml %}```
+		</div>
+		
+	</div>
+</div>
 
-```xml
-{% include_relative examples/PDS-Death-Notification-informal-ems-example.xml %}
-```
-
-#### PDS-PersonDeath-Bundle-Example-1c.xml (Removed) ####
-
-```xml
-{% include_relative examples/PDS-Death-Notification-removed-ems-example.xml %}
-```

@@ -279,22 +279,30 @@ The CareConnect-Communication-1 resource included as part of the event message S
 | Communication.category.coding.display | 1..1 | Fixed Value: Newborn Blood Spot Screening |
 
 
-## Example - new
+## Examples
 
-```xml
-{% include_relative examples/blood-spot-test-outcome-1-new.xml %}
-```
+<div class="tabPanel">
 
+	<div class="tabHeadings">
+		<span class="tabHeading" id="new">New</span>
+		<span class="tabHeading" id="update">Update</span>
+		<span class="tabHeading" id="delete">Delete</span>
+	</div>
+	
+	<div class="tabBodies">
+	
+		<div class="tabBody" id="newBody" markdown="span">
+			```{% include_relative examples/blood-spot-test-outcome-1-new.xml %}```
+		</div>
+		
+		<div class="tabBody" id="updateBody" markdown="span">
+			```{% include_relative examples/blood-spot-test-outcome-1-update.xml %}```
+		</div>
+		
+		<div class="tabBody" id="deleteBody" markdown="span">
+			```{% include_relative examples/blood-spot-test-outcome-1-delete.xml %}```
+		</div>
+		
+	</div>
+</div>
 
-## Example - update
-
-```xml
-{% include_relative examples/blood-spot-test-outcome-1-update.xml %}
-```
-
-
-## Example - delete
-
-```xml
-{% include_relative examples/blood-spot-test-outcome-1-delete.xml %}
-```
