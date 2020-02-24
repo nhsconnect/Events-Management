@@ -63,6 +63,9 @@ The create request MUST NOT include the fields above, as they can only be added 
 
 The criteria element of the Subscription will use the FHIR search string format using the following components. Information on the difference between `explicit` and `generic` subscriptions can be found on the [Subscriptions Overview](explore_subscriptions.html) page.
 
+{% include warning.html content="Generic subscriptions are stored against a key made up of the `\"Event type\"`, `\"subscriptionRuleType\"`, `\"Organisation Identifier\"`, `\"Mailbox ID\"` and `\"Service Provider ID\"`. As a result if you create a generic subscription with the same set of components as an existing subscription, the original one will be overwritten by the new subscription." %}
+
+
 | Component | Explicit Subscription Cardinality | Generic Subscription Cardinality | Description |
 | ------------------------------- | --- | --- | ----------- |
 | /Bundle?type=message            | 1..1 | 1..1 | This identifies that we are interested in events (which are sent as Bundles in FHIR), of type "message" |
