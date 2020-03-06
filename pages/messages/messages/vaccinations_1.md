@@ -57,7 +57,7 @@ The delivery of the `Vaccinations` event messages to subscribers via MESH will u
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](https://developer.nhs.uk/apis/ems-beta/explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
 
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
@@ -193,8 +193,36 @@ The Location resources included as part of the event message SHALL conform to th
 | --- | --- | --- |
 | identifier | 0..* | Where available the ODS Site Code slice should be populated |
 
-## Vaccinations Event Example ##
 
-```xml
-{% include_relative examples/vaccinations-1-example.xml %}
-```
+## Examples
+
+<div class="tabPanel">
+
+	<div class="tabHeadings">
+		<span class="tabHeading" id="new-given">New (Given)</span>
+		<span class="tabHeading" id="new-notgiven">New (Not Given)</span>
+		<span class="tabHeading" id="update">Update</span>
+		<span class="tabHeading" id="delete">Delete</span>
+	</div>
+	
+	<div class="tabBodies">
+	
+		<div class="tabBody" id="new-givenBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-new.xml %}```
+		</div>
+		
+		<div class="tabBody" id="new-notgivenBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-notgiven-new.xml %}```
+		</div>
+		
+		<div class="tabBody" id="updateBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-update.xml %}```
+		</div>
+		
+		<div class="tabBody" id="deleteBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-delete.xml %}```
+		</div>
+		
+	</div>
+</div>
+

@@ -1,15 +1,16 @@
 <Bundle xmlns="http://hl7.org/fhir">
+	<id value="b2dcd41c-4302-4b01-a509-fb502f3e0f6f"/>
 	<meta>
 		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
 	</meta>
 	<type value="message"/>
 	<entry>
-		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa66218"/>
+		<fullUrl value="urn:uuid:3a9334c6-7872-41a8-969f-8fe4331d009c"/>
 		<resource>
 			<MessageHeader>
-				<id value="85c8a1c5-a8a1-41c9-bb99-20956fa66218"/>
+				<id value="3a9334c6-7872-41a8-969f-8fe4331d009c"/>
 				<meta>
-					<lastUpdated value="2017-11-01T15:00:33+00:00"/>
+					<lastUpdated value="2017-11-01T15:07:45+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
 				</meta>
 				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
@@ -34,8 +35,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
-							<code value="new"/>
-							<display value="New event message"/>
+							<code value="delete"/>
+							<display value="Delete event message"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
@@ -44,7 +45,7 @@
 					<code value="vaccinations-1"/>
 					<display value="Vaccinations"/>
 				</event>
-				<timestamp value="2017-02-14T15:00:00+00:00"/>
+				<timestamp value="2017-02-14T15:07:45+00:00"/>
 				<source>
 					<contact>
 						<system value="phone"/>
@@ -83,7 +84,7 @@
 					<system value="https://supplierABC/identifiers"/>
 					<value value="abc1111"/>
 				</identifier>
-				<status value="completed"/>
+				<status value="entered-in-error"/>
 				<notGiven value="false"/>
 				<vaccineCode>
 					<coding>
@@ -104,7 +105,7 @@
 				<location>
 					<reference value="urn:uuid:e19a8932-7ccd-4b4a-bed2-b13f5e924698"/>
 				</location>
-				<lotNumber value="CCJN12M"/>
+				<lotNumber value="CCJN12Mb"/>
 				<site>
 					<coding>
 						<system value="http://snomed.info/sct"/>
@@ -250,8 +251,8 @@
 				<type>
 					<coding>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/>
-						<code value="0019"/>
-						<display value="2-2 ½ Year Early Years Progress"/>
+						<code value="0012"/>
+						<display value="12 week immunisations"/>
 					</coding>
 				</type>
 				<subject>

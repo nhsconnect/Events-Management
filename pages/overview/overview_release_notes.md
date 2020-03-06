@@ -7,6 +7,47 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.3.0-Beta (06/03/2020) ##
+
+[Create Subscription](explore_create_subscription.html)
+- enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
+
+[Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
+- Added event message to specification with addition of event life cycle
+
+[Newborn Hearing](newborn_hearing_1.html)
+- Added event message to specification with addition of event life cycle
+
+[NIPE Outcome](nipe_outcome_1.html)
+- Added event message to specification with addition of event life cycle
+
+[PDS Birth Notification](pds_birth_notification.html)
+- Updated example to remove XML prolog for specification consistency.
+
+[PDS Change of Address](pds_change_of_address.html)
+- Added guidance around intended use of the event and risk as a result in difference in address format
+- Corrected guidance and example of address lines and how they will be included (city and district)
+
+[PDS Death Notification](pds_death_notification.html)
+- Updated examples to remove XML prolog for specification consistency.
+- Update example to add the bundle resource id element
+
+[Professional Contacts](professional_contacts_1.html)
+- Updated example to remove XML prolog for specification consistency.
+- Added examples of `update` and `delete` type event messages
+
+[Publish an Event Message](publication_publish.html)
+- Updated requirements around `interactionID` and the event code to include as there was a miss alignment between the specification, what is accepted by the NEMS and what current publishers are using.
+
+[Supported Event Messages](overview_supported_events.html)
+- Updated interaction event codes in Event messages table to match the expectation in NEMS and what current publishers are sending with the request.
+
+[Vaccinations](vaccinations_1.html)
+- Update example to add the bundle resource id element
+- Added examples of `update` and `delete` type event messages
+- Added example of Immunization Not Given
+
+
 ## 2.2.1-Beta (23/01/2020) ##
 
 [Professional Contacts](professional_contacts_1.html)

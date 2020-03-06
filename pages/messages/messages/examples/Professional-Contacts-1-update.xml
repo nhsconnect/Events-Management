@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir">
-	<id value="6e824ff8-9b0a-11e8-9eb6-529269fb1459"/>
+	<id value="4c777ef1-84ee-4f82-9a4d-9393afda1c8a"/>
 	<meta>
 		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
 	</meta>
 	<type value="message"/>
 	<entry>
-		<fullUrl value="urn:uuid:6e825372-9b0a-11e8-9eb6-529269fb1459"/>
+		<fullUrl value="urn:uuid:d27a4405-6f9e-4b63-98ff-a61294d98ef8"/>
 		<resource>
 			<MessageHeader>
-				<id value="6e825372-9b0a-11e8-9eb6-529269fb1459"/>
+				<id value="d27a4405-6f9e-4b63-98ff-a61294d98ef8"/>
 				<meta>
-					<lastUpdated value="2017-11-01T15:00:33+00:00"/>
+					<lastUpdated value="2017-11-01T15:08:00+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
 				</meta>
 				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
@@ -36,8 +35,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
-							<code value="new"/>
-							<display value="New event message"/>
+							<code value="update"/>
+							<display value="Update event message"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
@@ -46,7 +45,7 @@
 					<code value="professional-contacts-1"/>
 					<display value="Professional Contacts"/>
 				</event>
-				<timestamp value="2018-11-30T09:00:00+00:00"/>
+				<timestamp value="2017-11-01T15:08:00+00:00"/>
 				<source>
 					<contact>
 						<system value="phone"/>
@@ -187,27 +186,27 @@
 						</coding>
 					</role>
 					<member>
-						<reference value="urn:uuid:829139e2-7af5-4de1-a073-c351d4b6c531"/>
+						<reference value="urn:uuid:6a563c94-f377-4213-a640-a38344257e99"/>
 					</member>
 				</participant>
 			</CareTeam>
 		</resource>
 	</entry>
 	<entry>
-		<fullUrl value="urn:uuid:829139e2-7af5-4de1-a073-c351d4b6c531"/>
+		<fullUrl value="urn:uuid:6a563c94-f377-4213-a640-a38344257e99"/>
 		<resource>
 			<Practitioner>
-				<id value="829139e2-7af5-4de1-a073-c351d4b6c531"/>
+				<id value="6a563c94-f377-4213-a640-a38344257e99"/>
 				<meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1"/>
 				</meta>
 				<identifier>
 					<system value="https://supplierABC/identifiers"/>
-					<value value="abc3333"/>
+					<value value="abc1234"/>
 				</identifier>
 				<name>
-					<family value="Daniels"/>
-					<given value="Defoe"/>
+					<family value="Smith"/>
+					<given value="John"/>
 					<prefix value="Mr."/>
 				</name>
 			</Practitioner>

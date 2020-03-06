@@ -7,9 +7,9 @@ permalink: professional_contacts_1.html
 summary: "Guidance and requirements for the Professional Contacts event message"
 ---
 
-The `Professional Contacts` event is a event message which represent a episode of care in which an organisation has or had a responsibility of care for a patient.
-
 ## Event Message Content
+
+The `Professional Contacts` event is a event message which represent a episode of care in which an organisation has or had a responsibility of care for a patient.
 
 All "Professional Contacts" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
 
@@ -61,7 +61,7 @@ The delivery of the `Professional Contacts` event messages to subscribers via ME
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](https://developer.nhs.uk/apis/ems-beta/explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
 
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
@@ -163,8 +163,30 @@ The CareConnect-PractitionerRole-1 resource included as part of the event messag
 | Resource Cardinality | 0..* |
 
 
-## Professional Contacts Example ##
+## Examples
 
-```xml
-{% include_relative examples/Professional-Contacts-example.xml %}
-```
+<div class="tabPanel">
+
+	<div class="tabHeadings">
+		<span class="tabHeading" id="new">New</span>
+		<span class="tabHeading" id="update">Update</span>
+		<span class="tabHeading" id="delete">Delete</span>
+	</div>
+	
+	<div class="tabBodies">
+	
+		<div class="tabBody" id="newBody" markdown="span">
+			```{% include_relative examples/Professional-Contacts-1-new.xml %}```
+		</div>
+		
+		<div class="tabBody" id="updateBody" markdown="span">
+			```{% include_relative examples/Professional-Contacts-1-update.xml %}```
+		</div>
+		
+		<div class="tabBody" id="deleteBody" markdown="span">
+			```{% include_relative examples/Professional-Contacts-1-delete.xml %}```
+		</div>
+		
+	</div>
+</div>
+
