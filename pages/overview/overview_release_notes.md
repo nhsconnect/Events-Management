@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.3.0-Beta () ##
+## 2.3.0-Beta (06/03/2020) ##
 
 [Create Subscription](explore_create_subscription.html)
 - enhanced subscriptions API to allow generic rule based subscriptions to be created using the NEMS subscription API
