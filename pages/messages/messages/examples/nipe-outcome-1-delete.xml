@@ -87,7 +87,7 @@
 			</Organization>
 		</resource>
 	</entry>
-	<!--Birth Encounter details-->
+	<!--NIPE Encounter details-->
 	<entry>
 		<fullUrl value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
 		<resource>
@@ -101,6 +101,13 @@
 					<value value="abc1111"/>
 				</identifier>
 				<status value="entered-in-error"/>
+				<type> 
+					<coding>
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/> 
+						<code value="006"/> 
+						<display value="Newborn Infant Physical Examination"/>
+					</coding> 
+				</type>
 			</Encounter>
 		</resource>
 	</entry>

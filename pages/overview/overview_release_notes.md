@@ -7,6 +7,19 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.3.1-Beta () ##
+
+[Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
+- Added missing encounter type to examples
+
+[Newborn Hearing](newborn_hearing_1.html)
+- Updated encounter type in examples
+
+[NIPE Outcome](nipe_outcome_1.html)
+- Added missing encounter type to examples
+
+
+
 ## 2.3.0-Beta (06/03/2020) ##
 
 [Create Subscription](explore_create_subscription.html)
