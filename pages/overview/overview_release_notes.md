@@ -17,7 +17,16 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [NIPE Outcome](nipe_outcome_1.html)
 - Added missing encounter type to examples
+- Removed non ascii character from examples
 
+[PDS Birth Notification](pds_birth_notification.html)
+- Removed non ascii character from examples
+
+[PDS Change of GP](pds_change_of_gp.html)
+- Removed non ascii character from examples
+
+[PDS Death Notification](pds_death_notification.html)
+- Removed non ascii character from examples
 
 
 ## 2.3.0-Beta (06/03/2020) ##
