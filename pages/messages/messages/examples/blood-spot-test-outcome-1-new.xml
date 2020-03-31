@@ -535,6 +535,13 @@
 					<value value="abc1111"/>
 				</identifier>
 				<status value="finished"/>
+				<type>
+					<coding> 
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/> 
+						<code value="008"/> 
+						<display value="Newborn Blood Spot Screening"/> 
+					</coding> 
+				</type>
 				<subject>
 					<reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
 					<display value="DAWKINS, Jack"/>

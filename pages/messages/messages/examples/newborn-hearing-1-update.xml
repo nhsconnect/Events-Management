@@ -192,8 +192,8 @@
 				<type>
 					<coding>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/>
-						<code value="0028"/>
-						<display value="GP Appointment"/>
+						<code value="007"/>
+						<display value="Newborn Hearing Screening"/>
 					</coding>
 				</type>
 				<subject>

@@ -90,6 +90,13 @@
 					<value value="abc1111"/>
 				</identifier>
 				<status value="entered-in-error"/>
+				<type>
+					<coding> 
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/> 
+						<code value="008"/> 
+						<display value="Newborn Blood Spot Screening"/> 
+					</coding> 
+				</type>
 			</Encounter>
 		</resource>
 	</entry>

@@ -44,7 +44,7 @@
 				</extension>
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="​pds-birth-notification-1"/>
+					<code value="pds-birth-notification-1"/>
 					<display value="PDS Birth Notification"/>
 				</event>
 				<timestamp value="2017-10-02T20:20:00+00:00"/>

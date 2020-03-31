@@ -45,7 +45,7 @@
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
 					<code value="pds-change-of-gp-1"/>
-					<display value="​PDS Change of GP"/>
+					<display value="PDS Change of GP"/>
 				</event>
 				<timestamp value="2019-11-01T15:00:00+00:00"/>
 				<source>
