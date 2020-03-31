@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.3.1-Beta () ##
+## 2.3.1-Beta (31/03/2020) ##
 
 [Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
 - Added missing encounter type to examples
