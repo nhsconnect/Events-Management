@@ -106,6 +106,13 @@
 					<value value="abc1111"/>
 				</identifier>
 				<status value="entered-in-error"/>
+				<type>
+					<coding>
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/>
+						<code value="007"/>
+						<display value="Newborn Hearing Screening"/>
+					</coding>
+				</type>
 			</Encounter>
 		</resource>
 	</entry>

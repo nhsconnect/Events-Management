@@ -42,7 +42,7 @@
 				</extension>
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="​nipe-outcome-1"/>
+					<code value="nipe-outcome-1"/>
 					<display value="NIPE outcome"/>
 				</event>
 				<timestamp value="2017-11-01T15:00:00+00:00"/>
@@ -342,7 +342,7 @@
 			</Procedure>
 		</resource>
 	</entry>
-	<!--Birth Encounter details-->
+	<!--NIPE Encounter details-->
 	<entry>
 		<fullUrl value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
 		<resource>
@@ -356,6 +356,13 @@
 					<value value="abc1111"/>
 				</identifier>
 				<status value="finished"/>
+				<type> 
+					<coding>
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/> 
+						<code value="006"/> 
+						<display value="Newborn Infant Physical Examination"/>
+					</coding> 
+				</type>
 				<subject>
 					<reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
 					<display value="DAWKINS, Jack"/>
