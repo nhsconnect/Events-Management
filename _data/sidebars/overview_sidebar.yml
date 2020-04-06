@@ -54,6 +54,9 @@ entries:
         - title: Blood Spot Test Outcome
           url: /blood_spot_test_outcome_1.html
           output: web
+        - title: FailSafe Message
+          url: /failsafe_message.html
+          output: web
         - title: Newborn Hearing
           url: /newborn_hearing_1.html
           output: web
