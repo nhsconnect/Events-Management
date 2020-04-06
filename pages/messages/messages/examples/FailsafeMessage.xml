@@ -50,8 +50,8 @@
 				<!--the ##FailsafeEventType##-->
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="​failsafe-message-bloodspot-1"/>
-					<display value="Failsafe Message Bloodspot"/>
+					<code value="​failsafe-message-bloodspot-outcome-1"/>
+					<display value="Failsafe Message Bloodspot Outcome"/>
 				</event>
 				<!--the time the message was sent - this could the same as meta.lateUpdated-->
 				<timestamp value="2020-03-01T15:00:33+00:00"/>
@@ -78,11 +78,14 @@
 		<fullUrl value="urn:uuid:6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
 		<resource>
 			<Task>
-				<!--the Task.id is the uuid to be quoted on any response ##UUID##-->
 				<id value="6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
 				<meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1"/>
 				</meta>
+				<!--the Task.identifier is the uuid to be quoted on any response ##Identifier##-->
+				<identifier>
+					<value value="6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
+				</identifier>
 				<!--an extension to allow for increment number ##IncrementNumber##-->
 				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-IncrementNumber-1">
 					<valueInteger value="1"/>
@@ -95,8 +98,8 @@
 				<code>
 					<coding>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-						<code value="​failsafe-message-bloodspot-1"/>
-						<display value="Failsafe Message Bloodspot"/>
+						<code value="​failsafe-message-bloodspot-outcome-1"/>
+						<display value="Failsafe Message Bloodspot Outcome"/>
 					</coding>
 				</code>
 				<!--a link to the Patient-->

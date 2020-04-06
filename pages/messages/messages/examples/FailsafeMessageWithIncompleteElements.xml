@@ -50,8 +50,8 @@
 				<!--the ##FailsafeEventType##-->
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="​failsafe-message-nipe-1"/>
-					<display value="Failsafe Message NIPE"/>
+					<code value="​failsafe-message-nipe-newborn-1"/>
+					<display value="Failsafe Message NIPE Newborn"/>
 				</event>
 				<!--the time the message was sent - this could the same as meta.lateUpdated-->
 				<timestamp value="2020-03-01T15:00:33+00:00"/>
@@ -65,7 +65,7 @@
 				</source>
 				<!--a link to the responsible organisation - always X26 | NHS DIGITAL-->
 				<responsible>
-					<reference value="urn:uuid:bd9ede5e-78ea-421a-990f-a80e0bbf2692"/>
+					<reference value="urn:uuid:3a9dbead-4e16-4f72-8b56-e8a72d20ccc4"/>
 				</responsible>
 				<!--focus links to the Task resource-->
 				<focus>
@@ -78,13 +78,16 @@
 		<fullUrl value="urn:uuid:6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
 		<resource>
 			<Task>
-				<!--the Task.id is the uuid to be quoted on any response ##UUID##-->
 				<id value="6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
 				<meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1"/>
 				</meta>
+				<!--the Task.identifier is the uuid to be quoted on any response ##Identifier##-->				
+				<identifier>
+					<value value="6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
+				</identifier>
 				<!--an extension to allow for increment number ##IncrementNumber##-->
-				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-IncrementNumber-1-1">
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-IncrementNumber-1">
 					<valueInteger value="2"/>
 				</extension>				
 				<!--fixed value for mandatory item-->
@@ -95,8 +98,8 @@
 				<code>
 					<coding>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-						<code value="​failsafe-message-nipe-1"/>
-						<display value="Failsafe Message NIPE"/>
+						<code value="​failsafe-message-nipe-newborn-1"/>
+						<display value="Failsafe Message NIPE Newborn"/>
 					</coding>
 				</code>
 				<!--a link to the Patient-->
@@ -172,7 +175,7 @@
 	<entry>
 		<fullUrl value="urn:uuid:1ca6b77f-5e2f-45a2-9ff9-0e0512c8e294"/>
 		<resource>
-			<!--the demofraphic information-->
+			<!--the demographic information-->
 			<Patient>
 				<id value="1ca6b77f-5e2f-45a2-9ff9-0e0512c8e294"/>
 				<meta>
