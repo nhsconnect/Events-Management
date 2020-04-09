@@ -7,17 +7,16 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.3.2-Beta (06/04/2020) ##
+## 2.4.0-Beta (09/04/2020) ##
 
-New page created. Event Messages > Messages > Failsafe Message
+[Failsafe Message](failsafe_message.html)
+- Added new page for the Failsafe Message guidance
+- New profile created > CareConnect-Task-1 as a copy of the base Task resource 
+- New extension created linked to the Task resource > Extension-CareConnect-IncrementNumber-1
 
-New profile created > CareConnect-Task-1 as a copy of the base Task resource 
+i.	Failsafe message added to specification
 
-New extension created linked to the Task resource> Extension-CareConnect-IncrementNumber-1
-
-New entries have been added to the EventType CodeSystem for Failsafe messages.
-
-Add to https://fhir.nhs.uk/STU3/CodeSystem/EventType-1 
+ii.	New entries have been added to the `EventType` CodeSystem (https://fhir.nhs.uk/STU3/CodeSystem/EventType-1) for Failsafe messages. 
 
 | Code | Display |
 | failsafe-message-gp-1 | Failsafe Message GP |

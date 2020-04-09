@@ -142,7 +142,7 @@
 	<entry>
 		<fullUrl value="urn:uuid:1ca6b77f-5e2f-45a2-9ff9-0e0512c8e294"/>
 		<resource>
-			<!--the demofraphic information-->
+			<!--the demographic information-->
 			<Patient>
 				<id value="1ca6b77f-5e2f-45a2-9ff9-0e0512c8e294"/>
 				<meta>
