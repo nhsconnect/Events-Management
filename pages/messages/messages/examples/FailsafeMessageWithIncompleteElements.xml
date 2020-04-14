@@ -87,7 +87,7 @@
 					<value value="6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
 				</identifier>
 				<!--an extension to allow for increment number ##IncrementNumber##-->
-				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-IncrementNumber-1">
+				<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-IncrementNumber-1">
 					<valueInteger value="2"/>
 				</extension>				
 				<!--fixed value for mandatory item-->
