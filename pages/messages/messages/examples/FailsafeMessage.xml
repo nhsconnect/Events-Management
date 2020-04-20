@@ -50,7 +50,7 @@
 				<!--the ##FailsafeEventType##-->
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="​failsafe-message-bloodspot-outcome-1"/>
+					<code value="failsafe-message-bloodspot-outcome-1"/>
 					<display value="Failsafe Message Bloodspot Outcome"/>
 				</event>
 				<!--the time the message was sent - this could the same as meta.lateUpdated-->
@@ -98,7 +98,7 @@
 				<code>
 					<coding>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-						<code value="​failsafe-message-bloodspot-outcome-1"/>
+						<code value="failsafe-message-bloodspot-outcome-1"/>
 						<display value="Failsafe Message Bloodspot Outcome"/>
 					</coding>
 				</code>
