@@ -92,7 +92,7 @@
 				</extension>	
 				<!--an extension to allow for failsafeRuleVersion-->
 				<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-FailsafeRuleVersion-1">
-					<valueString value="failsaferule-1"/>
+					<valueString value="failsaferule4-1"/>
 				</extension>								
 				<!--fixed value for mandatory item-->
 				<status value="requested"/>
