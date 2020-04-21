@@ -89,7 +89,11 @@
 				<!--an extension to allow for increment number ##IncrementNumber##-->
 				<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-IncrementNumber-1">
 					<valueInteger value="1"/>
-				</extension>				
+				</extension>			
+				<!--an extension to allow for failsafeRuleVersion-->
+                <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-FailsafeRuleVersion-1">
+                    <valueString value="bloodspot-incomplete-sicklecell"/>
+                </extension>				
 				<!--fixed value for mandatory item-->
 				<status value="requested"/>
 				<!--fixed value for mandatory item-->				
