@@ -114,11 +114,6 @@
 						<reference value="urn:uuid:3a9dbead-4e16-4f72-8b56-e8a72d20ccc4"/>
 					</agent>
 				</requester>
-				<!--the Failsafe rule version ##FailsafeRuleVersion-->
-				<!--As there's no valueSet defined, the rule version or name goes in CodeableConcept.text ##FailsafeRuleVersion-->
-				<reason>
-					<text value="bloodspot-incomplete-sicklecell"/>
-				</reason>
 			</Task>
 		</resource>
 	</entry>
