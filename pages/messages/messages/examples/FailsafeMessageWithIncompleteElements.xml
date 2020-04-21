@@ -89,7 +89,11 @@
 				<!--an extension to allow for increment number ##IncrementNumber##-->
 				<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-IncrementNumber-1">
 					<valueInteger value="2"/>
-				</extension>				
+				</extension>	
+				<!--an extension to allow for failsafeRuleVersion-->
+				<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-FailsafeRuleVersion-1">
+					<valueString value="NIPE-incomplete"/>
+				</extension>								
 				<!--fixed value for mandatory item-->
 				<status value="requested"/>
 				<!--fixed value for mandatory item-->				
@@ -114,11 +118,6 @@
 						<reference value="urn:uuid:3a9dbead-4e16-4f72-8b56-e8a72d20ccc4"/>
 					</agent>
 				</requester>				
-				<!--the Failsafe rule version ##FailsafeRuleVersion-->
-				<!--As there's no valueSet defined, the rule version or name goes in CodeableConcept.text ##FailsafeRuleVersion-->
-				<reason>
-					<text value="NIPE-incomplete"/>
-				</reason>
 				<!--showing 2 incomplete elements for the physical exam ##IncompleteElements##-->
 				<input>
 					<!--as there's no valueSet for the incomplete elements, use CodeableConcept.text-->
