@@ -64,7 +64,19 @@ The delivery of the `NIPE Outcome` event messages to subscribers via MESH will u
 
 The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
 
+## Resource Mapping Overview  ##
 
+| Element Name            | FHIR resource element                                            | Description                                                                                                                                  |
+|-------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Date/Time               | CareConnect-Encounter-1.period.start                             | The date the examination took place                                                                                                          |
+| Location                | CareConnect-Location-1.identifier (ODS Site Code)                | The location recorded as to where the NIPE took place                                                                                        |
+| Performing Professional | CareConnect-Practitioner-1.name                                  | Name of the Healthcare Professional performing the examination                                                                               |
+| SDS Job Role Name       | CareConnect-PractitionerRole-1.code (SDS Job Role Name)          | The professional role that the Healthcare Professional has in relation to the person (e.g. Nursery Nurse, Health Visitor, School Nurse etc.) |
+| Outcome Status Hips     | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with hips                                                                                 |
+| Outcome Status Eyes     | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with eyes                                                                                 |
+| Outcome Status Testes   | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with the testes                                                                           |
+| Outcome Status Heart    | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with the heart                                                                            |
+| Comment                 | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken.                                               |
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
