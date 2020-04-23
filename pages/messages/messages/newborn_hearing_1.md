@@ -68,6 +68,18 @@ The delivery of the `Newborn Hearing` event messages to subscribers via MESH wil
 
 The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
 
+## Resource Mapping Overview  ##
+
+| Element Name                                               | FHIR resource element                                            | Description                                                                                                                                  |
+|------------------------------------------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Date/Time                                                  | CareConnect-Encounter-1.period.start                             | The date the screening test took place                                                                                                       |
+| Location                                                   | CareConnect-Location-1.identifier                                | The location that is recorded as to where the newborn hearing screening examination took place                                               |
+| Performing Professional                                    | CareConnect-Practitioner-1.name                                  | The name of the Healthcare Professional responsible for the person                                                                           |
+| SDS Job Role Name                                          | CareConnect-PractitionerRole-1.codeableConcept                   | The professional role that the Healthcare Professional has in relation to the person (e.g. Nursery Nurse, Health Visitor, School Nurse etc.) |
+| Hearing Test Result                                        | CareConnect-Procedure-1.outcome                                  | The outcome of the individual screening test performed                                                                                       |
+| CareConnect-Procedure-1.Procedure.outcome.coding(snomedCT) |                                                                  |                                                                                                                                              |
+| Summary Outcome                                            | CareConnect-Observation-1.valueCodeableConcept                   | Overall outcome of the newborn hearing screening                                                                                             |
+| Comments                                                   | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken.                                               |
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
