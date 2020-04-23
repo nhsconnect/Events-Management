@@ -13,6 +13,8 @@ summary: Summary release notes of the versions released in National Events Manag
 - Added new page for the Failsafe Message guidance
 - New profile created > CareConnect-Task-1 as a copy of the base Task resource 
 - New extension created linked to the Task resource > Extension-CareConnect-IncrementNumber-1
+- New extension created linked to the Task resource > Extension-CareConnect-FailsafeRuleVersion-1
+- Resource Mapping Overview tables added to Blood Spot Test Outcome, Failsafe Message, Newborn Hearing and NIPE Outcome
 
 i.	Failsafe message added to specification
 
