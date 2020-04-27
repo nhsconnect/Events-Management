@@ -9,6 +9,9 @@ summary: Summary release notes of the versions released in National Events Manag
 
 ## 2.4.0-Beta (09/04/2020) ##
 
+[Create Subscription](explore_create_subscription.html)
+- Updated examples for generic subscription criteria
+
 [Failsafe Message](failsafe_message.html)
 - Added new page for the Failsafe Message guidance
 - New profile created > CareConnect-Task-1 as a copy of the base Task resource 

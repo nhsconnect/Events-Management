@@ -81,8 +81,8 @@ The criteria element of the Subscription will use the FHIR search string format 
 
 | Scenario                             | Subscription Type | Criteria String                     |
 |--------------------------------------|-------------------|------------------------------------|
-| A PHR system subscribing to change of address events for a specific patient registered for a PHR | Explicit | ```/Bundle?type=message&amp;serviceType=GP&amp;```<br/>```Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919```<br/>```&amp;MessageHeader.event=pds-change-of-address-1``` |
-| A child health service subscribing to events for patients who's postcode is within the catchment area of a CCG with the ID "X2458" | Generic | ```/Bundle?type=message&amp;subscriptionRuleType=```<br/>```CHO_POSTCODE_CCG&amp;Organization.identifier=```<br/>```X2458&amp;MessageHeader.event=PDS001``` |
+| A PHR system subscribing to change of address event for a specific patient registered for a PHR | Explicit | ```/Bundle?type=message&amp;serviceType=GP&amp;```<br/>```Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919```<br/>```&amp;MessageHeader.event=pds-change-of-address-1``` |
+| A child health service subscribing to change of address event for patients who's postcode is within the catchment area of a CCG with the ID "X2458" | Generic | ```/Bundle?type=message&amp;subscriptionRuleType=```<br/>```CHO_POSTCODE_CCG&amp;Organization.identifier=```<br/>```X2458&amp;MessageHeader.event=pds-change-of-address-1``` |
 
 ## Error Handling ##
 
@@ -143,7 +143,7 @@ The OperationOutcome resource will contain one or more issue elements, one for e
 
 ## Create Subscription Example ##
 
-### HTTP request ###
+### HTTP request (explicit subscription) ###
 
 ```xml
 POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
@@ -160,6 +160,30 @@ POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
 	</contact>
 	<reason value="Health visiting service responsible for Leeds"/>
 	<criteria value="/Bundle?type=message&amp;serviceType=UHV&amp;Patient.identifier=http://fhir.nhs.net/Id/nhs-number|9434765919&amp;MessageHeader.event=pds-change-of-address-1" />
+	<channel>
+		<type value="message"/>
+		<endpoint value="Mailbox1234"/>
+	</channel>
+</Subscription>
+```
+
+### HTTP request (generic subscription) ###
+
+```xml
+POST https://clinicals.spineservices.nhs.uk/STU3/Subscription HTTP/1.1
+
+<Subscription xmlns="http://hl7.org/fhir">
+	<meta>
+		<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/EMS-Subscription-1"/>
+	</meta>
+	<status value="requested"/>
+	<contact>
+		<system value="url"/>
+		<value value="https://directory.spineservices.nhs.uk/STU3/Organization/RR8"/>
+		<use value="work"/>
+	</contact>
+	<reason value="Health visiting service responsible for Leeds"/>
+	<criteria value="/Bundle?type=message&amp;subscriptionRuleType=CHO_POSTCODE_CCG&amp;Organization.identifier=X2458&amp;MessageHeader.event=pds-change-of-address-1" />
 	<channel>
 		<type value="message"/>
 		<endpoint value="Mailbox1234"/>
