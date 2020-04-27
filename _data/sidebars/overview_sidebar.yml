@@ -42,7 +42,7 @@ entries:
     output: web
     folderitems:
     - title: Generic Requirements
-      url: /explore_genreic_event_requirements.html
+      url: /explore_generic_event_requirements.html
       output: web
     - title: Supported Messages
       url: /overview_supported_events.html

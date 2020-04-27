@@ -97,7 +97,7 @@
 				<!--fixed value for mandatory item-->
 				<status value="requested"/>
 				<!--fixed value for mandatory item-->				
-				<intent value="order"/>
+				<intent value="proposal"/>
 				<!--the event type is repeated here so that the task resource has all the necessary data-->
 				<code>
 					<coding>

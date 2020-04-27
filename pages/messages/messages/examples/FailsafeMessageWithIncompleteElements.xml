@@ -97,7 +97,7 @@
 				<!--fixed value for mandatory item-->
 				<status value="requested"/>
 				<!--fixed value for mandatory item-->				
-				<intent value="order"/>
+				<intent value="proposal"/>
 				<!--the event type is repeated here so that the task resource has all the necessary data-->
 				<code>
 					<coding>
@@ -127,9 +127,11 @@
 					</type>
 					<!--this code is from the NIPE message sent to Failsafe-->
 					<valueCodeableConcept>
+					  <coding>
 						<code value="988611000000101"/>
 						<system value="http://snomed.info/sct"/>
 						<display value="Newborn and Infant Physical Examination Screening Programme, heart examination incomplete"/>
+					  </coding>
 					</valueCodeableConcept>
 				</input>
 				<input>
@@ -137,9 +139,11 @@
 						<text value="Incomplete element"/>
 					</type>
 					<valueCodeableConcept>
+					  <coding>					
 						<code value="989011000000103"/>
 						<system value="http://snomed.info/sct"/>
-						<display value="Newborn and Infant Physical Examination Screening Programme, eye examination not done "/>
+						<display value="Newborn and Infant Physical Examination Screening Programme, eye examination not done"/>
+					  </coding>
 					</valueCodeableConcept>
 				</input>		
 				<!--where Failsafe doesn't have any information about the incomplete element, then text is used rather than a SNOMED CT code-->		
@@ -148,7 +152,7 @@
 						<text value="Incomplete element"/>
 					</type>
 					<valueCodeableConcept>
-						<text value="Hips element not received"/>
+					    <text value="Hips element not received"/>
 					</valueCodeableConcept>
 				</input>					
 			</Task>
