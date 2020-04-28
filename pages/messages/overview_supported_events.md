@@ -41,3 +41,4 @@ The following are event messages currently supported by the NEMS:
 | [PDS Death Notification](pds_death_notification.html) | N/A | &#10060; | &#9989; | March 2019 | Release Candidate |
 | [Professional Contacts](professional_contacts_1.html) | Professionalcontacts | &#9989; | &#9989; | February 2020 | Beta |
 | [Vaccinations](vaccinations_1.html) | Vaccinations | &#9989; | &#9989; | February 2020 | Beta |
+| [Failsafe Message](failsafe_message.html) | Failsafe Message | &#10060; | &#9989; | April 2020 | Beta |

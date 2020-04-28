@@ -3,11 +3,21 @@ title: Generic Event Message Requirements
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
-permalink: explore_genreic_event_requirements.html
+permalink: explore_generic_event_requirements.html
 summary: "These are a set of generic requirements which are applicable to all evet messages passing through the NEMS"
 ---
 
-# Event Message Structure
+## Glossary of terms ##
+
+The following terms are used throughout the Messages specifications:
+
+| Term                    | Description                                       |
+|-------------------------|---------------------------------------------------|
+| Healthcare Professional | The care professional / clinician / health worker |
+| Individual              | The parent/carer for the patient                  |
+| Person                  | The patient                                       |
+
+## Event Message Structure ##
 
 Each event message which passes through the NEMS will carry a standard set of event information to allow the receiver to identify:
 - the patient who is the focus of the event
@@ -21,39 +31,37 @@ The `MessageHeader` resource will contain the NHS Number, Forename, Surname and 
 
 This page provides common FHIR resource population requirements for all event messages, which should be followed in addition to the requirements outlined in the individual [event message specific](overview_supported_events.html) guidance pages.
 
-
-
-# New, Update, Delete and use of Identifiers
+## New, Update, Delete and use of Identifiers ##
 
 The `MessageHeader` resource in all event messages contain the `messageEventType` extension that indicates if the event message is a `new`, `update` or `delete` version of the event message. This element and its value  indicates if this event relates to new information, a change to the information sent in a previous event or a delete of information previously sent.
 
 As this extension allows for subsequent changes to information to be sent by publishers, it is necessary for a consumer to be able to link the information sent in one message with the information sent in another message. To do this the individual bits of information in the event message need to have identifiers which are persisted across event messages by the publisher and can be used by the subscriber.
 
-## Message ID
+## Message ID ##
 
 The event message ID sent within the `MessageHeader.id` element must be unique to that specific event message, for use in support functions (e.g. I received event message xyz and there’s a problem with it) and for duplicate message identification by subscribers. The message ID should not be re-used within subsequent event messages or referenced from `update` and `delete` event messages.
 
-## Identifiers
+## Identifiers ##
 
 To link data between event messages, for the purposes of managing updates and deletes, the `identifier` elements within the individual resources should be use.
 
 For example, if a `new` event message is published containing a `Procedure` resource, representing a test performed on the patient, this procedure should contain an `identifier` (which could be an internal supplier ID). If an update is made to that test information within the publishing system, then the publishing system would be able to publish an `update` event message containing the updated `Procedure` resource with the same `identifier`, allowing the consumer to link the data to the data sent in the previous event message.
 
-## Use of New, Update and Delete
+## Use of New, Update and Delete ##
 
 Publishers MUST use the appropriate `messageEventType` values to indicate the information that is being published. For example a publisher must not use a `new` message to send an update to a previously sent data.
 
 
-# Resource Population
+## Resource Population ##
 
-## [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
+## [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) ##
 
 The event Bundle resource which contains the event message resources SHALL conform to the [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) base FHIR profile and be of type `message`.
 
 This follows the [HL7 FHIR specification](http://hl7.org/fhir/bundle.html#message) for the Bundle resource when being used for messaging, which states that 'A message bundle (type = "message") consists of a series of entries, the first of which is a MessageHeader.'
 
 
-## [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
+## [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) ##
 
 The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
 
@@ -77,7 +85,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
 
 
-## [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
+## [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) ##
 
 Patient resources included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
@@ -89,7 +97,7 @@ Patient resources included in the event message SHALL conform to the [CareConnec
 | address | 0..* | If an address is included in the patient resource the publisher SHOULD included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
 
 
-## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
+## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) ##
 
 Organization resources included in event messages SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
@@ -99,9 +107,9 @@ Organization resources included in event messages SHALL conform to the [CareConn
 | identifier | 0..1 | The organization ODS code SHOULD be included within the `odsOrganizationCode` identifier slice |
 
 
-# Data Type Population
+## Data Type Population ##
 
-## "dateTime" Elements
+## "dateTime" Elements ##
 
 Population of a `dateTime` element within FHIR resource should conform to the requirements within the [FHIR specification](http://hl7.org/fhir/stu3/datatypes.html#datetime), so where a time is included the time zone MUST be populate to represent the offset of the include time from Coordinated Universal Time (UTC).
 

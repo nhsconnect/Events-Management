@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This example does have "incomplete elements"-->
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="7ffe59f6-262b-4971-89ee-f1898a54edb9"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
+	</meta>
+	<type value="message"/>
+	<!--Entry for MessageHeader with id, timestamp, event type, source, responsible/publishing organization, communication-->
+	<entry>
+		<fullUrl value="urn:uuid:7165ecd5-4abb-4dbe-922b-7c7db71accd4"/>
+		<resource>
+			<MessageHeader>
+				<id value="7165ecd5-4abb-4dbe-922b-7c7db71accd4"/>
+				<meta>
+					<versionId value="1"/>
+					<!--when the message generated on Failsafe ##DateAndTimeRaised##-->
+					<lastUpdated value="2020-03-01T15:00:33+00:00"/>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
+				</meta>
+				<!--the standard routing demographics extension-->
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
+					<extension url="nhsNumber">
+						<valueIdentifier>
+							<system value="https://fhir.nhs.uk/Id/nhs-number"/>
+							<value value="1112223330"/>
+						</valueIdentifier>
+					</extension>
+					<extension url="name">
+						<valueHumanName>
+							<use value="official"/>
+							<family value="DAWKINS"/>
+							<given value="Sally"/>
+						</valueHumanName>
+					</extension>
+					<extension url="birthDateTime">
+						<valueDateTime value="2019-10-02T16:04:34+00:00"/>
+					</extension>
+				</extension>
+				<!--the standard new/update/delete extension - always "new" for FailsafeMessage-->
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-MessageEventType-1">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
+							<code value="new"/>
+							<display value="New event message"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<!--the ##FailsafeEventType##-->
+				<event>
+					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
+					<code value="failsafe-message-nipe-newborn-1"/>
+					<display value="Failsafe Message NIPE Newborn"/>
+				</event>
+				<!--the time the message was sent - this could the same as meta.lateUpdated-->
+				<timestamp value="2020-03-01T15:00:33+00:00"/>
+				<!--standard contact details-->
+				<source>
+					<contact>
+						<system value="email"/>
+						<value value="ssd.nationalservicedesk@nhs.net"/>
+					</contact>
+					<endpoint value="urn:nhs:addressing:asid:477121000323"/>
+				</source>
+				<!--a link to the responsible organisation - always X26 | NHS DIGITAL-->
+				<responsible>
+					<reference value="urn:uuid:3a9dbead-4e16-4f72-8b56-e8a72d20ccc4"/>
+				</responsible>
+				<!--focus links to the Task resource-->
+				<focus>
+					<reference value="urn:uuid:6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
+				</focus>
+			</MessageHeader>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
+		<resource>
+			<Task>
+				<id value="6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1"/>
+				</meta>
+				<!--the Task.identifier is the uuid to be quoted on any response ##Identifier##-->				
+				<identifier>
+					<value value="6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>
+				</identifier>
+				<!--an extension to allow for increment number ##IncrementNumber##-->
+				<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-IncrementNumber-1">
+					<valueInteger value="2"/>
+				</extension>	
+				<!--an extension to allow for failsafeRuleVersion-->
+				<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-FailsafeRuleVersion-1">
+					<valueString value="failsaferule4-1"/>
+				</extension>								
+				<!--fixed value for mandatory item-->
+				<status value="requested"/>
+				<!--fixed value for mandatory item-->				
+				<intent value="proposal"/>
+				<!--the event type is repeated here so that the task resource has all the necessary data-->
+				<code>
+					<coding>
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
+						<code value="failsafe-message-nipe-newborn-1"/>
+						<display value="Failsafe Message NIPE Newborn"/>
+					</coding>
+				</code>
+				<!--a link to the Patient-->
+				<for>
+					<reference value="urn:uuid:1ca6b77f-5e2f-45a2-9ff9-0e0512c8e294"/>
+				</for>				
+				<!--the datetime the the trigger was evaluated ##EvaluatedDateTime##-->
+				<authoredOn value="2020-03-01T15:00:33+00:00"/>
+				<!--the requester is the same as the responsible organisation in the MessageHeader-->
+				<requester>
+					<agent>
+						<reference value="urn:uuid:3a9dbead-4e16-4f72-8b56-e8a72d20ccc4"/>
+					</agent>
+				</requester>				
+				<!--showing 2 incomplete elements for the physical exam ##IncompleteElements##-->
+				<input>
+					<!--as there's no valueSet for the incomplete elements, use CodeableConcept.text-->
+					<!--the type can be fixed to "Incomplete element"-->
+					<type>
+						<text value="Incomplete element"/>
+					</type>
+					<!--this code is from the NIPE message sent to Failsafe-->
+					<valueCodeableConcept>
+					  <coding>
+						<code value="988611000000101"/>
+						<system value="http://snomed.info/sct"/>
+						<display value="Newborn and Infant Physical Examination Screening Programme, heart examination incomplete"/>
+					  </coding>
+					</valueCodeableConcept>
+				</input>
+				<input>
+					<type>
+						<text value="Incomplete element"/>
+					</type>
+					<valueCodeableConcept>
+					  <coding>					
+						<code value="989011000000103"/>
+						<system value="http://snomed.info/sct"/>
+						<display value="Newborn and Infant Physical Examination Screening Programme, eye examination not done"/>
+					  </coding>
+					</valueCodeableConcept>
+				</input>		
+				<!--where Failsafe doesn't have any information about the incomplete element, then text is used rather than a SNOMED CT code-->		
+				<input>
+					<type>
+						<text value="Incomplete element"/>
+					</type>
+					<valueCodeableConcept>
+					    <text value="Hips element not received"/>
+					</valueCodeableConcept>
+				</input>					
+			</Task>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:3a9dbead-4e16-4f72-8b56-e8a72d20ccc4"/>
+		<resource>
+			<Organization>
+				<id value="3a9dbead-4e16-4f72-8b56-e8a72d20ccc4"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"/>
+				</meta>
+				<!--identifier is fixed to the current Failsafe owning org - currently X26 & name fixed to NHS DIGITAL ##OriginatingOrganisation##-->
+				<identifier>
+					<system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+					<value value="X26"/>
+				</identifier>
+				<name value="NHS DIGITAL"/>
+			</Organization>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:1ca6b77f-5e2f-45a2-9ff9-0e0512c8e294"/>
+		<resource>
+			<!--the demographic information-->
+			<Patient>
+				<id value="1ca6b77f-5e2f-45a2-9ff9-0e0512c8e294"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"/>
+				</meta>
+				<!--NHS number ##NHSNumber##-->
+				<identifier>
+					<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1">
+						<valueCodeableConcept>
+							<coding>
+								<system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1"/>
+								<code value="01"/>
+								<display value="Number present and verified"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<system value="https://fhir.nhs.uk/Id/nhs-number"/>
+					<value value="1112223330"/>
+				</identifier>
+				<!--name ##Forename## ##Surname##-->
+				<name>
+					<use value="official"/>
+					<family value="DAWKINS"/>
+					<given value="Sally"/>
+				</name>
+				<!--Date of Birth (showing the optional birth time extension) ##DoB##-->
+				<birthDate value="2019-10-02">
+					<extension url="http://hl7.org/fhir/StructureDefinition/patient-birthTime">
+						<valueDateTime value="2019-10-02T16:04:34+00:00"/>
+					</extension>
+				</birthDate>
+			</Patient>
+		</resource>
+	</entry>
+</Bundle>

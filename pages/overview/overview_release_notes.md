@@ -7,6 +7,29 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.4.0-Beta (09/04/2020) ##
+
+[Create Subscription](explore_create_subscription.html)
+- Updated examples for generic subscription criteria
+
+[Failsafe Message](failsafe_message.html)
+- Added new page for the Failsafe Message guidance
+- New profile created > CareConnect-Task-1 as a copy of the base Task resource 
+- New extension created linked to the Task resource > Extension-CareConnect-IncrementNumber-1
+- New extension created linked to the Task resource > Extension-CareConnect-FailsafeRuleVersion-1
+- Resource Mapping Overview tables added to Blood Spot Test Outcome, Failsafe Message, Newborn Hearing and NIPE Outcome
+
+i.	Failsafe message added to specification
+
+ii.	New entries have been added to the `EventType` CodeSystem (https://fhir.nhs.uk/STU3/CodeSystem/EventType-1) for Failsafe messages. 
+
+| Code | Display |
+| failsafe-message-gp-1 | Failsafe Message GP |
+| failsafe-message-hvs-1 | Failsafe Message HVS |
+| failsafe-message-bloodspot-outcome-1 | Failsafe Message Bloodspot Outcome |
+| failsafe-message-nipe-newborn-1 | Failsafe Message NIPE Newborn |
+| failsafe-message-newborn-hearing-1 | Failsafe Message Newborn Hearing |
+
 ## 2.3.1-Beta (31/03/2020) ##
 
 [Blood Spot Test Outcome](blood_spot_test_outcome_1.html)

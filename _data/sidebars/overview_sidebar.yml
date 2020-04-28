@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 2.3.1-Beta
+  version: 2.4.0-Beta
   levels: one
   folders:
 
@@ -42,7 +42,7 @@ entries:
     output: web
     folderitems:
     - title: Generic Requirements
-      url: /explore_genreic_event_requirements.html
+      url: /explore_generic_event_requirements.html
       output: web
     - title: Supported Messages
       url: /overview_supported_events.html
@@ -53,6 +53,9 @@ entries:
         subfolderitems:
         - title: Blood Spot Test Outcome
           url: /blood_spot_test_outcome_1.html
+          output: web
+        - title: Failsafe Message
+          url: /failsafe_message.html
           output: web
         - title: Newborn Hearing
           url: /newborn_hearing_1.html
