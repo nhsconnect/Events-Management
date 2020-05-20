@@ -23,7 +23,7 @@ Specifies mandatory referencing within the Event Message Bundle
 	<a href="images/messages/failsafe_message_response.png" target="_blank"><img src="images/messages/failsafe_message_response.png"></a>
 </div>
 
-## Failsafe Response Event Message Types ##
+## Failsafe Message Response Event Message Types ##
 
 The Failsafe Message Response will be sent by an organisation or service in response to a Failsafe Message. The Failsafe Message Response event message type should be the “equivalent” to the Failsafe Message being responded to.
 
@@ -40,9 +40,9 @@ The MessageHeader resource contains the messageEventType extension which represe
 ## Identifying Information ##
 
 To support the event life cycle outlined above the following requirements MUST be followed:
-•	For new and update messageEventTypes, all Failsafe Message Response information MUST be included within the messages.
-•	For update and delete message EventTypes, the same Task identifier MUST be used (in CareConnect-Task-1.identifier) as was used in the original NEW message AND the original Failsafe Message identifier quoted (in CareConnect-Task-1.groupIdentifier – see below).Only the originator of the Failsafe Message Response can send an update or delete to a given Failsafe Message Response
-•	The information included in the Failsafe Message Response event message should be treated as atomic and stored under the identifier included within 
+*	For new and update messageEventTypes, all Failsafe Message Response information MUST be included within the messages.
+*	For update and delete message EventTypes, the same Task identifier MUST be used (in CareConnect-Task-1.identifier) as was used in the original NEW message AND the original Failsafe Message identifier quoted (in CareConnect-Task-1.groupIdentifier – see below).Only the originator of the Failsafe Message Response can send an update or delete to a given Failsafe Message Response
+*	The information included in the Failsafe Message Response event message should be treated as atomic and stored under the identifier included within 
 
 | Failsafe Message Response Newborn Hearing | FAILSAFE_MESSAGE_RESPONSE_NEWBORN_HEARING | FAILSAFEMESSAGERESPONSENEWBORNHEARING_1 |
 
@@ -67,14 +67,15 @@ The following requirements and resource population guidance should be followed i
 |                                      | CareConnect-Task-1.code                                                                                                                                      | 1..1 |                                                                                                                                                                                                                                                                                                                                                                                  |
 | Identifier                           | CareConnect-Task-1.identifier                                                                                                                                | 1..1 | A publisher defined unique identifier for the Failsafe Message Response which will be maintained across different event messages to allow subscribers to identify the information within subsequent new (i.e. updated) or delete event messages                                                                                                                                  |
 | End Date                             | CareConnect-Task-1.restriction.period.end                                                                                                                    | 0..1 |                                                                                                                                                                                                                                                                                                                                                                                  |
-| Required                             | The date until which the Failsafe Message Response publisher advised that the task cannot be fulfilled or pursued (i.e. activity can resume on the end date) |      |                                                                                                                                                                                                                                                                                                                                                                                  |
+| Required                             |  |      |                                                                                                                                                                                                                                                                                                                                                                              The date until which the Failsafe Message Response publisher advised that the task cannot be fulfilled or pursued (i.e. activity can resume on the end date)    |
 | Failsafe Response Reason             | CareConnect-Task-1.reason                                                                                                                                    | 1..1 | The reason the Failsafe Message Response has been generated. By preference this should be a coded value from the valueSet FailsafeResponseReason-1, however if no code exists for the intended reason, then the code of “other” should be used, and the text element of the CodeableConcept should be used to carry a reason for the generation of the Failsafe Message Response |
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
 The Bundle resource is the container for the event message and SHALL conform to the Bundle FHIR profile.
 
-| Resource Cardinality | 1..1        |                      |
+| Resource Cardinality | 1..1        |
+
 |----------------------|-------------|----------------------|
 | Element              | Cardinality | Additional Guidance  |
 | type                 | 1..1        | Fixed value: message |
@@ -83,7 +84,8 @@ The Bundle resource is the container for the event message and SHALL conform to 
 
 The MessageHeader resource included as part of the event message SHALL conform to the Event-MessageHeader-1 constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality           | 1..1        |                                                                                                             |
+| Resource Cardinality           | 1..1        |  
+
 |--------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
 | Element                        | Cardinality | Additional Guidance                                                                                         |
 | meta.lastUpdated               | 1..1        | The dateTime when the message was created.                                                                  |
@@ -95,19 +97,12 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | responsible                    | 1..1        | A link to the responsible organisation                                                                      |
 | focus                          | 1..1        | This will reference the CareConnect-Task-1 resource.                                                        |
 
-
-
-
-
-
-
-
-
 ### [CareConnect-Task-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1)
 
 The Task shall conform the CareConnect-Task-1 constrained FHIR profile and the additional guidance as per the table below:
 
-| Resource Cardinality   | 1..1        |                                                                                                                                                                                                                                                              |
+| Resource Cardinality   | 1..1 |
+
 |------------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Element                | Cardinality | Additional Guidance                                                                                                                                                                                                                                          |
 | identifier             | 1..1        | A publisher defined unique identifier for the Failsafe Message Response. This must be re-quoted for all subsequent update and delete messages                                                                                                                |
@@ -125,7 +120,8 @@ The Task shall conform the CareConnect-Task-1 constrained FHIR profile and the a
 
 The Organization resources included in the bundle SHALL conform to the CareConnect-Organization-1 constrained FHIR profile and the additional population guidance as per the table below. Both Organization references (Event-MessageHeader-1.responsible & CareConnect-Task-1.requester.onBehalfOf) reference the same Organization.
 
-| Resource Cardinality | 1..1        |                                                                                                           |
+| Resource Cardinality | 1..1        |  
+
 |----------------------|-------------|-----------------------------------------------------------------------------------------------------------|
 | Element              | Cardinality | Additional Guidance                                                                                       |
 | identifier           | 1..1        | The ODS code of the organization or service issuing the Failsafe Message Response                         |
@@ -136,7 +132,8 @@ The Organization resources included in the bundle SHALL conform to the CareConne
 
 The Practitioner shall conform the CareConnect-Practitioner-1 constrained FHIR profile and the additional guidance as per the table below:
 
-| Resource Cardinality | 1..1        |                                                                                          |
+| Resource Cardinality | 1..1        |  
+
 |----------------------|-------------|------------------------------------------------------------------------------------------|
 | Element              | Cardinality | Additional Guidance                                                                      |
 | identifier           | 1..1        | The SDS User Id of the healthcare Professional who created the Failsafe Message Response |
@@ -146,7 +143,8 @@ The Practitioner shall conform the CareConnect-Practitioner-1 constrained FHIR p
 
 The Care Team shall conform the CareConnect-CareTeam-1 constrained FHIR profile and the additional guidance as per the table below:
 
-| Resource Cardinality   | 0..1        |                                                                                                        |
+| Resource Cardinality   | 0..1        |      
+
 |------------------------|-------------|--------------------------------------------------------------------------------------------------------|
 | Element                | Cardinality | Additional Guidance                                                                                    |
 | name                   | 1..1        | The name of the care team                                                                              |
@@ -157,7 +155,8 @@ The Care Team shall conform the CareConnect-CareTeam-1 constrained FHIR profile 
 
 The Patient resource included as part of the event message SHALL conform to the CareConnect-Patient-1 constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1        |                                                                                                                                                                                |
+| Resource Cardinality | 1..1        |                 
+
 |----------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Element              | Cardinality | Additional Guidance                                                                                                                                                            |
 | identifier           | 1..1        | Patient NHS Number SHALL be included within the NHSNumberidentifier slice                                                                                                      |

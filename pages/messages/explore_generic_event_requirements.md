@@ -4,7 +4,7 @@ keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
 permalink: explore_generic_event_requirements.html
-summary: "These are a set of generic requirements which are applicable to all evet messages passing through the NEMS"
+summary: "These are a set of generic requirements which are applicable to all event messages passing through the NEMS"
 ---
 
 ## Glossary of terms ##
