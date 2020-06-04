@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 2.4.0-Beta
+  version: 2.5.0-Beta
   levels: one
   folders:
 
@@ -10,6 +10,10 @@ entries:
     folderitems:
     - title: Introduction
       url: /index.html
+      output: web, pdf
+      type: homepage
+    - title: Controller Catalogue
+      url: /controller_catalogue.html
       output: web, pdf
       type: homepage
     - title: Guide Versioning
