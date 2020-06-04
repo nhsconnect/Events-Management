@@ -7,6 +7,12 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.5.0-Beta (04/06/2020) ##
+
+[Controller Catalogue](controller_catalogue.html)
+- Added a controller catalogue to help providers meeting their information governance obligations.
+
+
 ## 2.4.0-Beta (09/04/2020) ##
 
 [Create Subscription](explore_create_subscription.html)
