@@ -316,7 +316,7 @@
 				<code>
 					<coding>
 						<system value="http://snomed.info/sct"/>
-						<code value="9988351000000107"/>
+						<code value="988351000000107"/>
 						<display value="Newborn and Infant Physical Examination Screening Programme, heart examination"/>
 					</coding>
 				</code>
