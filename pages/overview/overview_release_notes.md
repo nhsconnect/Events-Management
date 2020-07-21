@@ -7,6 +7,11 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.5.1-Beta (21/07/2020) ##
+
+[Failsafe Message Response](failsafe_message_response.html)
+- Added new page for the Failsafe Message Response guidance
+
 ## 2.5.0-Beta (04/06/2020) ##
 
 [Controller Catalogue](controller_catalogue.html)
