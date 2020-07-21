@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--This example is a Failsafe Response to a Failsafe Message with an identifier 6e5c9c23-6d60-4119-8569-9c0113a8cf45-->
+<!--This example is a Failsafe Message Response to a Failsafe Message with an identifier 6e5c9c23-6d60-4119-8569-9c0113a8cf45-->
 <Bundle xmlns="http://hl7.org/fhir">
 	<id value="5aafb39c-2978-492d-8ac5-df3e1bc7b2c5"/>
 	<meta>
@@ -37,7 +37,7 @@
 						<valueDateTime value="2019-10-02T16:04:34+00:00"/>
 					</extension>
 				</extension>
-				<!--the standard new/update/delete extension - always "new" for FailsafeMessage-->
+				<!--the standard new/update/delete extension-->
 				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-MessageEventType-1">
 					<valueCodeableConcept>
 						<coding>
@@ -78,7 +78,7 @@
 				<meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1"/>
 				</meta>
-				<!--the Task.identifier is the unique identifier for this Failsafe Response ##Idetifier##-->
+				<!--the Task.identifier is the unique identifier for this Failsafe Message Response ##Identifier##-->
 				<identifier>
 					<value value="fb6fefa9-571a-40fd-a46a-0df2082c6381"/>
 				</identifier>
@@ -102,7 +102,7 @@
 				<for>
 					<reference value="urn:uuid:1ca6b77f-5e2f-45a2-9ff9-0e0512c8e294"/>
 				</for>				
-				<!--the datetime the Failsafe Response was raised ##Date and Time created##-->
+				<!--the datetime the Failsafe Message Response was raised ##Date and Time created##-->
 				<authoredOn value="2020-04-12T15:00:33+00:00"/>
 				<!--the requester is the same as the responsible organisation in the MessageHeader-->
 				<requester>
@@ -115,13 +115,13 @@
 						<reference value="urn:uuid:be6ff6b0-d299-495e-9919-ebc796b71020"/>
 					</onBehalfOf>
 				</requester>				
-				<!--the reason the Failsafe Response was raised ##Failsafe Response Reason##-->
+				<!--the reason the Failsafe Message Response was raised ##Failsafe Message Response Reason##-->
 				<!--if no suitable code exists, then the text element of CodeableConcept should be used to carry an "other" reason as text-->
 				<reason>
 					<coding>
 						<code value="unwell"/>
 						<display value="Person is in Neonatal Unit/Hospital/unwell"/>
-						<system value="https://fhir.nhs.uk/STU3/CodeSystem/FailsafeResponseReason-1"/>
+						<system value="https://fhir.nhs.uk/STU3/ValueSet/EMS-FailsafeResponseReason-1"/>
 					</coding>
 				</reason>
 				<!--the date time from which NFMS should re-start Failsafe Messages for this trigger ##Time Period##-->
@@ -137,7 +137,7 @@
 	<entry>
 		<fullUrl value="urn:uuid:be6ff6b0-d299-495e-9919-ebc796b71020"/>
 		<resource>
-			<!--the organisation that generated the Failsafe Response-->
+			<!--the organisation that generated the Failsafe Message Response-->
 			<Organization>
 				<id value="be6ff6b0-d299-495e-9919-ebc796b71020"/>
 				<meta>
@@ -160,7 +160,7 @@
 	<entry>
 		<fullUrl value="urn:uuid:69d845c8-67ad-4995-972b-008efc466a22"/>
 		<resource>
-			<!--the healthcare professional raising the Failsafe Response-->
+			<!--the healthcare professional raising the Failsafe Message Response-->
 			<Practitioner>
 				<id value="69d845c8-67ad-4995-972b-008efc466a22"/>
 				<meta>
@@ -183,7 +183,7 @@
 	<entry>
 		<fullUrl value="urn:uuid:e810b1e4-57c9-435e-a447-424d402c322f"/>
 		<resource>
-			<!--the healthcare professional raising the Failsafe Response-->
+			<!--the healthcare professional raising the Failsafe Message Response-->
 			<PractitionerRole>
 				<id value="e810b1e4-57c9-435e-a447-424d402c322f"/>
 				<meta>
@@ -206,11 +206,11 @@
 			</PractitionerRole>
 		</resource>
 	</entry>
-	<!--if the ##User## is a teaml, then use CareConnect-CareTeam-1 to document the ##User##-->
+	<!--if the ##User## is a team, then use CareConnect-CareTeam-1 to document the ##Team##-->
 	<entry>
 		<fullUrl value="urn:uuid:08fcb778-6098-43bf-a32e-e16c3ebf2006"/>
 		<resource>
-			<!--the healthcare professional raising the Failsafe Response-->
+			<!--the care team of the healthcare professional raising the Failsafe Message Response-->
 			<CareTeam>
 				<id value="08fcb778-6098-43bf-a32e-e16c3ebf2006"/>
 				<meta>
