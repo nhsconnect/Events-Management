@@ -56,8 +56,12 @@
 				<!--the time the message was sent - this could the same as meta.lateUpdated-->
 				<timestamp value="2020-04-12T15:00:33+00:00"/>
 				<!--standard contact details-->
-				<source>
-					<endpoint value="urn:nhs:addressing:ods:01DAM"/>
+								<source>
+					<contact>
+						<system value="phone"/>
+						<value value="0191 1231234"/>
+					</contact>
+					<endpoint value="urn:nhs:addressing:asid:300000000161"/>
 				</source>
 				<!--a link to the responsible organisation-->
 				<responsible>
@@ -80,8 +84,9 @@
 				</meta>
 				<!--the Task.identifier is the unique identifier for this Failsafe Message Response ##Identifier##-->
 				<identifier>
-					<value value="fb6fefa9-571a-40fd-a46a-0df2082c6381"/>
-				</identifier>
+					<system value="https://supplierABC/identifiers"/>
+					<value value="abc1111"/>
+				</identifier>				
 				<!--the Failsafe Message being responded to ##Original Failsafe Message Identifier##-->
 				<groupIdentifier>
 					<value value="6e5c9c23-6d60-4119-8569-9c0113a8cf45"/>

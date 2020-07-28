@@ -26,18 +26,6 @@ The diagram below shows the referencing between FHIR resources within the event 
 
 For the Failsafe Message the messageEventType will always be set to “new”
 
-## Onward Delivery ##
-
-The delivery of the Failsafe Message to subscribers via MESH will use the following WorkflowID within the MESH control file. This WorkflowID will need to be added to the receiving MESH mailbox configuration before event messages can be received. 
-
-
-| Event type | Workflow Group | Workflow ID |
-| Failsafe Message GP | FAILSAFE_MESSAGE_GP | FAILSAFEMESSAGEGP_1 |
-| Failsafe Message HVS | FAILSAFE_MESSAGE _HVS | FAILSAFEMESSAGEHVS_1 |
-| Failsafe Message Bloodspot Outcome | FAILSAFE_MESSAGE _BLOODSPOT_OUTCOME | FAILSAFEMESSAGEBLOODSPOTOUTCOME_1 |
-| Failsafe Message NIPE Newborn | FAILSAFE_MESSAGE _NIPE_NEWBORN | FAILSAFEMESSAGENIPENEWBORN_1 |
-| Failsafe Message Newborn Hearing | FAILSAFE_MESSAGE_NEWBORN_HEARING | FAILSAFEMESSAGENEWBORNHEARING_1 |
-
 ## Resource Population Requirements and Guidance ##
 
 The following requirements and resource population guidance should be followed in addition to the requirements and guidance outlined in the Generic Requirements page. 
