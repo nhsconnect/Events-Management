@@ -55,6 +55,9 @@ entries:
       - title: Messages
         output: web
         subfolderitems:
+        - title: Allergies and Adverse Reactions
+          url: /allergies_and_adverse_reactions.html
+          output: web        
         - title: Blood Spot Test Outcome
           url: /blood_spot_test_outcome_1.html
           output: web
@@ -69,6 +72,9 @@ entries:
           output: web
         - title: NIPE Outcome
           url: /nipe_outcome_1.html
+          output: web
+        - title: Observations
+          url: /observations.html
           output: web
         - title: PDS Birth Notification
           url: /pds_birth_notification.html

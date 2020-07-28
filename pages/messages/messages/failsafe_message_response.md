@@ -186,20 +186,31 @@ The Patient resource included as part of the event message SHALL conform to the 
 | name (official)      | 1..1        | Patients name as registered on PDS, included within the resource as the official name element slice                                                                            |
 | birthDate            | 1..1        | The patient birth date shall be included in the patient resource. If the time of birth is known, then the birthDateTime extension should also be sent along with the birthDate |
 
-## Example
+
+
+## Examples
 
 <div class="tabPanel">
 
 	<div class="tabHeadings">
-		<span class="tabHeading" id="new">FailsafeMessageResponse</span>
+		<span class="tabHeading" id="new">New</span>
+		<span class="tabHeading" id="update">Update</span>
+		<span class="tabHeading" id="delete">Delete</span>
 	</div>
 	
 	<div class="tabBodies">
 	
 		<div class="tabBody" id="newBody" markdown="span">
-			```{% include_relative examples/FailsafeResponse.xml %}```
+			```{% include_relative examples/FailsafeResponse-new.xml %}```
+		</div>
+		
+		<div class="tabBody" id="updateBody" markdown="span">
+			```{% include_relative examples/FailsafeResponse-update.xml %}```
+		</div>
+		
+		<div class="tabBody" id="deleteBody" markdown="span">
+			```{% include_relative examples/FailsafeResponse-delete.xml %}```
 		</div>
 		
 	</div>
 </div>
-
