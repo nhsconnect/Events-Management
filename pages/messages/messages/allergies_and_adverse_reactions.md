@@ -9,23 +9,18 @@ summary: "The FHIR profiles used for the Allergies and Adverse Reactions Event M
 
 ## Event Message Content
 
-The `Allergies and Adverse Reactions` event message represents .................
+The `Allergies and Adverse Reactions` event message represents a single allergy or adverse reaction finding for a patient and relevant supporting information.
 
-All "Allergies and Adverse Reactions" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
-
-
-
-
-
-
-
+All “Allergy and Adverse Reaction” event messages that are published to the NEMS MUST be created in line with guidance and requirements specified on this page and on the [Generic Event Message Requirements](https://developer.nhs.uk/apis/ems-beta/explore_generic_event_requirements.html) page.
 
 ## Bundle structure
 
-The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references a `Immunization` resource as the focus of the event message. The `Immunization` represents the vaccination that was given or not given to the patient.
-
+The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The `MessageHeader` resource references an `AllergyIntolerance` resource as the focus of the event message. The `AllergyIntolerance` represents the allergy or adverse reaction finding that was recoded.
 
 The diagram below shows the referencing between FHIR resources within the event message bundle:
+
+
+
 
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/messages/vaccinations_1.png" target="_blank"><img src="images/messages/vaccinations_1.png"></a>
@@ -34,7 +29,7 @@ The diagram below shows the referencing between FHIR resources within the event 
 
 ## Event Life Cycle ##
 
-The `MessageHeader` resource contains the `messageEventType` extension which represents the action the event message represents at a resource level, for example the `Vaccination` being shared is new, the `Vaccination` or supporting resources have been updated or the `Vaccination` has been deleted. The `messageEventType` extension shall contain a values as per the table below:
+The `MessageHeader` resource contains the `messageEventType` extension which represents the action the event message represents at a resource level, for example the `AllergyIntolerance` being shared is new, the `AllergyIntolerance` or supporting resources have been updated or the `AllergyIntolerance` has been deleted. The `messageEventType` extension shall contain a values as per the table below:
 
 | Value | Description |
 | --- | --- |
@@ -51,19 +46,20 @@ To allow subscribers to identify information between `new`, `update` and `delete
 
 ### Message Sequencing
 
-As vaccinations shared using the vaccinations event message may change and therefore `new`, `update` and `delete` types of the event are supported. To allow a consumer to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
+As `AllergyIntolerance` shared using the `AllergyIntolerance` event message may change and therefore `new`, `update` and `delete` types of the event are supported. To allow a consumer to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
 
 
 ## Onward Delivery ##
 
-The delivery of the `Vaccinations` event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
+The delivery of the `AllergyIntolerance` event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
 | MESH WorkflowID | `VACCINATIONS_1` |
 
+????????????????????????????????????????????????
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
 
 ## Resource Mapping Overview  ##
 
