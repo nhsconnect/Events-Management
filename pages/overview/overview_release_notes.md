@@ -7,6 +7,15 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.6.0-Beta () ##
+
+[Onboarding & Assurance](assurance_overview.html)
+- Added guidance around the on-boarding and assurance process
+
+[PDS Record Change](pds_record_change.html)
+- Added PDS Record Change event
+
+
 ## 2.5.1-Beta (21/07/2020) ##
 
 [Failsafe Message Response](failsafe_message_response.html)
