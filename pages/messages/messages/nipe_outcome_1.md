@@ -12,7 +12,7 @@ summary: "The FHIR profiles used for the NIPE Outcome Event Message Bundle"
 
 The `NIPE Outcome` event message represents a record of a New Born Physical Examination outcome in relation to a patient. Either creation, an update or deletion of the record.
 
-All "NIPE Outcome" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page. Where requirements on this page contradict the requirements on the Generic Event Message Requirements page, then the requirements on this page take precedence.
+All "NIPE Outcome" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_generic_event_requirements.html) page. Where requirements on this page contradict the requirements on the Generic Event Message Requirements page, then the requirements on this page take precedence.
 
 
 ## Bundle Structure
@@ -62,7 +62,7 @@ The delivery of the `NIPE Outcome` event messages to subscribers via MESH will u
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
 
 ## Resource Mapping Overview  ##
 

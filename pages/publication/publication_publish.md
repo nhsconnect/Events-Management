@@ -29,7 +29,7 @@ In addition to the guidance on this page the guidance and requirement on the [Ge
 
 To send an event message to the National Events Management Service (NEMS) the publisher MUST:
 
-1. construct an event message which conforms to the [NEMS message architecture requirements](explore_genreic_event_requirements.html) and one of the [event message](overview_supported_events.html) specific population requirements pages.
+1. construct an event message which conforms to the [NEMS message architecture requirements](explore_generic_event_requirements.html) and one of the [event message](overview_supported_events.html) specific population requirements pages.
 2. POST the event message to the National Events Management Service via the "$process-message" FHIR operation endpoint on the Spine
 
 ```http

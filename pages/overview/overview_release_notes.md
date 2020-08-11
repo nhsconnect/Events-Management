@@ -156,7 +156,7 @@ ii.	New entries have been added to the `EventType` CodeSystem (https://fhir.nhs.
 [Event Receiver Requirements](receiver_requirements.html)
 - Generic subscription information moved to [Subscriptions Overview](explore_subscriptions.html) page.
 
-[Generic Event Message Requirements](explore_genreic_event_requirements.html)
+[Generic Event Message Requirements](explore_generic_event_requirements.html)
 - Guidance added for population of dateTime elements and the use of time zone offsets.
 - Added a section on use of `new`, `update` and `delete` versions of event messages and how that links to the use of `identifiers`.
 
@@ -226,7 +226,7 @@ ii.	New entries have been added to the `EventType` CodeSystem (https://fhir.nhs.
 [Generic Publication API Requirements](publication_general_api_guidance.html)
 - Added clarification on level of NHS Number validation required for NHS numbers used in the event messages.
 
-[Generic Requirements](explore_genreic_event_requirements.html)
+[Generic Requirements](explore_generic_event_requirements.html)
 - Name of page and content changes to match new concept of message header, making this just generic population requirements. Name changed from `Event Header Information` -> `Generic Requirements`
 - FHIR Resource profiles updated to use CareConnect profiles rather than EMS profiled fhir resources (**Breaking Change**)
 - Added information about sequencing elements in MessageHeader resource

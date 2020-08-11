@@ -1,17 +1,23 @@
 ---
-title: Vaccinations
-keywords:  messaging, bundles
+title: Observations
+keywords:  messaging, bundles, observations
 tags: [fhir,messaging]
 sidebar: overview_sidebar
-permalink: vaccinations_1.html
-summary: "Guidance and requirements for the Vaccinations event message"
+permalink: observations.html
+summary: "The FHIR profiles used for the Observations Event Message Bundle"
 ---
 
 ## Event Message Content
 
-The `Vaccinations` event message represents a single vaccination given or not-given to a patient and any relevant supporting information.
+The `Observations` event message represents .................
 
-All "Vaccinations" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_generic_event_requirements.html) page.
+All "Observations" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
+
+
+
+
+
+
 
 
 ## Bundle structure
@@ -57,7 +63,21 @@ The delivery of the `Vaccinations` event messages to subscribers via MESH will u
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
+
+## Resource Mapping Overview  ##
+
+| DCH Data Item           | FHIR resource element                                            | Description                                                                                                                                                                                                                                                                                                                                                      |
+|-------------------------|------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Date/Time Recorded      | CareConnect-AllergyIntolerance-1.assertedDate                    |                                                                                                                                                                                                                                                                                                                                                                  |
+| Causative Agent         | CareConnect-AllergyIntolerance-1.code                            | Where a SNOMED CT code for a Causative Agent is not available, then code.text should be used to contain a text representation of the Causative Agent                                                                                                                                                                                                             |
+| Description of Reaction | CareConnect-AllergyIntolerance-1.reaction.manifestation.coding   | When no code manifestation coded value is available, a description of the manifestation should be entered in manifestation.code.text                                                                                                                                                                                                                             |
+| Type of Reaction        | CareConnect-AllergyIntolerance-1.type                            |                                                                                                                                                                                                                                                                                                                                                                  |
+| Certainty               | CareConnect-AllergyIntolerance-1.verficationStatus               | Use the mapping defined in the verificationStatus valueSet (http:hl7.org/fhir/ValueSet/allergy-verification-status) to find the actual values to flow. When no code for certainty is available (or a more detailed certainty description is needed), a free text representation in CareConnect-AllergyIntolerance-1.note should be sent*                         |
+| Severity                | CareConnect-AllergyIntolerance-1.reaction.manifestation.severity | Use the mapping defined in the CareConnect-ReactionEventServerity-1 valueSet (http:hl7.org/STU3/ValueSet/CareConnect-ReactionEventSeverity-1) to find the actual values to flow. When no code for severity is available (or a more detailed severity description is needed), a free text representation in CareConnect-AllergyIntolerance-1.note should be sent* |
+| Evidence                | CareConnect-AllergyIntolerance-1.note*                           |                                                                                                                                                                                                                                                                                                                                                                  |
+| Date First Experienced  | CareConnect-AllergyIntolerance-1.onset                           |                                                                                                                                                                                                                                                                                                                                                                  |
+| Comment                 | CareConnect-AllergyIntolerance-1.note*                           |                                                                                                                                                                                                                                                                                                                                                                  |
 
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
@@ -225,4 +245,3 @@ The Location resources included as part of the event message SHALL conform to th
 		
 	</div>
 </div>
-
