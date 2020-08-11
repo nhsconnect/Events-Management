@@ -46,4 +46,4 @@ A subscriber can use the [subscription API](explore_create_subscription.html) wi
 
 Onward delivery of event messages to subscribers will be over [Message Exchange for Social Care and Health (MESH)](https://digital.nhs.uk/message-exchange-social-care-health).
 
-The event messages have a common set of [Generic Requirements](explore_genreic_event_requirements.html) which allows the receiving system of the event message to identify the patient this event relates to, the type of event message and additional meta data about the event message such as the originating organisation.
+The event messages have a common set of [Generic Requirements](explore_generic_event_requirements.html) which allows the receiving system of the event message to identify the patient this event relates to, the type of event message and additional meta data about the event message such as the originating organisation.

@@ -11,7 +11,7 @@ summary: "Guidance and requirements for the Vaccinations event message"
 
 The `Vaccinations` event message represents a single vaccination given or not-given to a patient and any relevant supporting information.
 
-All "Vaccinations" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
+All "Vaccinations" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_generic_event_requirements.html) page.
 
 
 ## Bundle structure
@@ -57,7 +57,7 @@ The delivery of the `Vaccinations` event messages to subscribers via MESH will u
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
 
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)

@@ -12,7 +12,7 @@ summary: "The FHIR profiles used for the Newborn Hearing Event Message Bundle"
 
 The `Newborn Hearing` event message represents a record of a Newborn Hearing test in relation to a patient. Either creation, an update or deletion of the record.
 
-All "Newborn Hearing" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page. Where requirements on this page contradict the requirements on the Generic Event Message Requirements page, then the requirements on this page take precedence.
+All "Newborn Hearing" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_generic_event_requirements.html) page. Where requirements on this page contradict the requirements on the Generic Event Message Requirements page, then the requirements on this page take precedence.
 
 
 ## Bundle Structure
@@ -66,7 +66,7 @@ The delivery of the `Newborn Hearing` event messages to subscribers via MESH wil
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
 
 ## Resource Mapping Overview  ##
 
