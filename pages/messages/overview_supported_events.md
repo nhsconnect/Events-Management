@@ -12,7 +12,7 @@ The following event messages are supported by the NEMS for either publication an
 
 | &#9989; Supported | &#10060; Not Supported |
 
-Requirements and population guidance within the event message specific pages should be followed in addition to the [Generic Event Message Requirements](explore_genreic_event_requirements.html) within this specification.
+Requirements and population guidance within the event message specific pages should be followed in addition to the [Generic Event Message Requirements](explore_generic_event_requirements.html) within this specification.
 
 #### Event Maturity
 

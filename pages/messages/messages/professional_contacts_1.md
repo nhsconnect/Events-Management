@@ -11,7 +11,7 @@ summary: "Guidance and requirements for the Professional Contacts event message"
 
 The `Professional Contacts` event is a event message which represent a episode of care in which an organisation has or had a responsibility of care for a patient.
 
-All "Professional Contacts" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
+All "Professional Contacts" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_generic_event_requirements.html) page.
 
 
 ## Bundle structure
@@ -61,7 +61,7 @@ The delivery of the `Professional Contacts` event messages to subscribers via ME
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
 
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
