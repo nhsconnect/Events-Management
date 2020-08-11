@@ -73,6 +73,9 @@ entries:
         - title: NIPE Outcome
           url: /nipe_outcome_1.html
           output: web
+        - title: Observations
+          url: /observations.html
+          output: web
         - title: PDS Birth Notification
           url: /pds_birth_notification.html
           output: web

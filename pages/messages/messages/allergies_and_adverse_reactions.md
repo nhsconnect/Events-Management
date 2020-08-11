@@ -66,8 +66,8 @@ The following requirements and resource population guidance must be followed in 
 | Causative Agent         | CareConnect-AllergyIntolerance-1.code                            | Where a SNOMED CT code for a Causative Agent is not available, then code.text should be used to contain a text representation of the Causative Agent                                                                                                                                                                                                             |
 | Description of Reaction | CareConnect-AllergyIntolerance-1.reaction.manifestation.coding   | When no code manifestation coded value is available, a description of the manifestation should be entered in manifestation.code.text                                                                                                                                                                                                                             |
 | Type of Reaction        | CareConnect-AllergyIntolerance-1.type                            |                                                                                                                                                                                                                                                                                                                                                                  |
-| Certainty               | CareConnect-AllergyIntolerance-1.verficationStatus               | Use the mapping defined in the verificationStatus valueSet (http:hl7.org/fhir/ValueSet/allergy-verification-status) to find the actual values to flow. When no code for certainty is available (or a more detailed certainty description is needed), a free text representation in CareConnect-AllergyIntolerance-1.note should be sent*                         |
-| Severity                | CareConnect-AllergyIntolerance-1.reaction.manifestation.severity | Use the mapping defined in the CareConnect-ReactionEventServerity-1 valueSet (http:hl7.org/STU3/ValueSet/CareConnect-ReactionEventSeverity-1) to find the actual values to flow. When no code for severity is available (or a more detailed severity description is needed), a free text representation in CareConnect-AllergyIntolerance-1.note should be sent* |
+| Certainty               | CareConnect-AllergyIntolerance-1.verficationStatus               | Use the mapping defined in the verificationStatus valueSet (<a href="https://hl7.org/fhir/2018Jan/valueset-allergy-verification-status.html" target="_blank">https://hl7.org/fhir/2018Jan/valueset-allergy-verification-status.html</a>) to find the actual values to flow. When no code for certainty is available (or a more detailed certainty description is needed), a free text representation in CareConnect-AllergyIntolerance-1.note should be sent*                         |
+| Severity                | CareConnect-AllergyIntolerance-1.reaction.manifestation.severity | Use the mapping defined in the AllergyIntoleranceSeverity valueSet (<a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ReactionEventSeverity-1" target="_blank">https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ReactionEventSeverity-1</a>) to find the actual values to flow. When no code for severity is available (or a more detailed severity description is needed), a free text representation in CareConnect-AllergyIntolerance-1.note should be sent* |
 | Evidence                | CareConnect-AllergyIntolerance-1.note*                           |                                                                                                                                                                                                                                                                                                                                                                  |
 | Date First Experienced  | CareConnect-AllergyIntolerance-1.onset                           |                                                                                                                                                                                                                                                                                                                                                                  |
 | Comment                 | CareConnect-AllergyIntolerance-1.note*                           |                                                                                                                                                                                                                                                                                                                                                                  |
@@ -95,8 +95,35 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | --- | --- | --- |
 | meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. |
 | extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. |
-| event | 1..1 | Fixed Value: vaccinations-1 (Vaccinations) |
-| focus | 1..1 | This will reference the `CareConnect-Immunization-1` resource which contains information about the vaccination this event relates to. |
+| event | 1..1 | Fixed Value: allergies-and-adverse-reactions-1 (Allergies and Adverse Reactions) |
+| focus | 1..1 | This will reference the `CareConnect-AllergyIntolerance-1` resource which contains information about the Allergies and Adverse Reactions this event relates to. |
+
+
+
+
+
+### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
+
+The MessageHeader resource included as part of the event message SHALL conform to the Event-MessageHeader-1 constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
+
+|--------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
+| Element                        | Cardinality | Additional Guidance                                                                                         |
+|--------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
+| id                             | 1..1        | Globally unique identifier as a UUID                                                                        |
+| meta.lastUpdated               | 1..1        | The dateTime when the message was created.                                                                  |
+| extension(RoutingDemographics) | 1..1        | Common to all EMS messages                                                                                  |
+| extension(messageEventType)    | 1..1        | See the “Event Life Cycle” section above.                                                                   |
+| event                          | 1..1        | Fixed Value: allergies-and-adverse-reactions-1 (Allergies and Adverse Reactions)                            |
+| focus                          | 1..1        | This will reference the `CareConnect-AllergyIntolerance-1` resource which contains information about the Allergies and Adverse Reactions this event relates to. |
+
+
+
+
+
+
+
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 

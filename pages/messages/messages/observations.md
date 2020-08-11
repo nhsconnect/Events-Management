@@ -9,38 +9,30 @@ summary: "The FHIR profiles used for the Observations Event Message Bundle"
 
 ## Event Message Content
 
-The `Observations` event message represents .................
+The `Allergies and Adverse Reactions` event message represents a single allergy or adverse reaction finding for a patient and relevant supporting information.
 
-All "Observations" event messages that are published to the NEMS **MUST** be created inline with guidance and requirements specified on this page and on the [Generic Event Message Requirements](explore_genreic_event_requirements.html) page.
-
-
-
-
-
-
-
+All “Allergy and Adverse Reaction” event messages that are published to the NEMS MUST be created in line with guidance and requirements specified on this page and on the [Generic Event Message Requirements](https://developer.nhs.uk/apis/ems-beta/explore_generic_event_requirements.html) page.
 
 ## Bundle structure
 
-The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references a `Immunization` resource as the focus of the event message. The `Immunization` represents the vaccination that was given or not given to the patient.
-
+The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The `MessageHeader` resource references an `AllergyIntolerance` resource as the focus of the event message. The `AllergyIntolerance` represents the allergy or adverse reaction finding that was recorded.
 
 The diagram below shows the referencing between FHIR resources within the event message bundle:
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/messages/vaccinations_1.png" target="_blank"><img src="images/messages/vaccinations_1.png"></a>
+	<a href="images/messages/allergies-adverse-reactions.png" target="_blank"><img src="images/messages/allergies-adverse-reactions.png"></a>
 </div>
 
 
 ## Event Life Cycle ##
 
-The `MessageHeader` resource contains the `messageEventType` extension which represents the action the event message represents at a resource level, for example the `Vaccination` being shared is new, the `Vaccination` or supporting resources have been updated or the `Vaccination` has been deleted. The `messageEventType` extension shall contain a values as per the table below:
+The `MessageHeader` resource contains the `messageEventType` extension which represents the action the event message represents at a resource level, for example the resource being shared is new, the resource or supporting resources have been updated or the resource has been deleted. The `messageEventType` extension shall contain a value as per the table below:
 
 | Value | Description |
 | --- | --- |
-| new |  The `new` value must be used when the Vaccination is being shared for the first time. |
-| update | The `update` value must be used when the Vaccination and supporting resources have previously been shared, but have been updated and the updated resources are being shared. |
-| delete | The `delete` value must be used when the Vaccination record has been deleted and the record no longer exists. |
+| new |  The `new` value must be used when the resource is being shared for the first time. |
+| update | The `update` value must be used when the resource and supporting resources have previously been shared, but have been updated and the updated resources are being shared. |
+| delete | The `delete` value must be used when the resource record has been deleted and the record no longer exists. |
 
 ### Identifying Information
 
@@ -51,33 +43,40 @@ To allow subscribers to identify information between `new`, `update` and `delete
 
 ### Message Sequencing
 
-As vaccinations shared using the vaccinations event message may change and therefore `new`, `update` and `delete` types of the event are supported. To allow a consumer to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
-
+As the event message may change and therefore `new`, `update` and `delete` types of the event are supported. To allow a consumer to perform message sequencing, the event MUST include the `meta.lastUpdated` element within the `MessageHeader` resource allowing the consumer to identify the latest and most up to date information.
 
 ## Onward Delivery ##
 
-The delivery of the `Vaccinations` event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
+The delivery of the event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
-| MESH WorkflowID | `VACCINATIONS_1` |
-
+| MESH WorkflowID | `OBSERVATIONS_1` |
 
 ## Resource Population Requirements and Guidance ##
 
-The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_genreic_event_requirements.html) page.
+The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
 
 ## Resource Mapping Overview  ##
 
-| DCH Data Item           | FHIR resource element                                            | Description                                                                                                                                                                                                                                                                                                                                                      |
-|-------------------------|------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Date/Time Recorded      | CareConnect-AllergyIntolerance-1.assertedDate                    |                                                                                                                                                                                                                                                                                                                                                                  |
-| Causative Agent         | CareConnect-AllergyIntolerance-1.code                            | Where a SNOMED CT code for a Causative Agent is not available, then code.text should be used to contain a text representation of the Causative Agent                                                                                                                                                                                                             |
-| Description of Reaction | CareConnect-AllergyIntolerance-1.reaction.manifestation.coding   | When no code manifestation coded value is available, a description of the manifestation should be entered in manifestation.code.text                                                                                                                                                                                                                             |
-| Type of Reaction        | CareConnect-AllergyIntolerance-1.type                            |                                                                                                                                                                                                                                                                                                                                                                  |
-| Certainty               | CareConnect-AllergyIntolerance-1.verficationStatus               | Use the mapping defined in the verificationStatus valueSet (http:hl7.org/fhir/ValueSet/allergy-verification-status) to find the actual values to flow. When no code for certainty is available (or a more detailed certainty description is needed), a free text representation in CareConnect-AllergyIntolerance-1.note should be sent*                         |
-| Severity                | CareConnect-AllergyIntolerance-1.reaction.manifestation.severity | Use the mapping defined in the CareConnect-ReactionEventServerity-1 valueSet (http:hl7.org/STU3/ValueSet/CareConnect-ReactionEventSeverity-1) to find the actual values to flow. When no code for severity is available (or a more detailed severity description is needed), a free text representation in CareConnect-AllergyIntolerance-1.note should be sent* |
-| Evidence                | CareConnect-AllergyIntolerance-1.note*                           |                                                                                                                                                                                                                                                                                                                                                                  |
-| Date First Experienced  | CareConnect-AllergyIntolerance-1.onset                           |                                                                                                                                                                                                                                                                                                                                                                  |
-| Comment                 | CareConnect-AllergyIntolerance-1.note*                           |                                                                                                                                                                                                                                                                                                                                                                  |
+| DCH Data   Item            | FHIR resource element                 | Description                                                                                                                                                                       |
+|----------------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Date and   Time            | CareConnect-Observation-1             | The date and time on which the   observation was recorded                                                                                                                         |
+| ODS/ORD Site Code          | CareConnect-Organization-1.identifier | The location   where the observation was recorded                                                                                                                                 |
+| Performing Professional    | CareConnect-Practitioner-1.name       | Name of the   professional performing the observation                                                                                                                             |
+| SDS Job Role Name          | CareConnect-PractitionerRole-1.code   | The job role   associated with the person                                                                                                                                         |
+| Birth Weight               | CareConnect-Observation-1             | Weight of baby   in kg (to 3 decimal places) at Birth                                                                                                                             |
+| Head   Circumference       | CareConnect-Observation-1             | Head   Circumference in cm (to 1 decimal place)                                                                                                                                   |
+| Weight                     | CareConnect-Observation-1             | Weight in kg (to   3 decimal places)                                                                                                                                              |
+| Height /Length             | CareConnect-Observation-1             | Height /Length   in cm (to 1 decimal place)                                                                                                                                       |
+| BMI   centile              | CareConnect-Observation-1             | BMI centile calculated using the   height/weight/gender and age of the person using the UK90 and WHO data   tables. The result will be a percentage from 0-100 to 1 decimal place |
+| Systolic   Blood Pressure  | CareConnect-Observation-1             | The Systolic Blood Pressure   reading of the person                                                                                                                               |
+| Diastolic Blood Pressure   | CareConnect-Observation-1             | The Diastolic   Blood Pressure reading of the person                                                                                                                              |
+| Heart Rate (bpm)           | CareConnect-Observation-1             | The beat of the   heart as felt through the walls of a peripheral artery measured in bpm                                                                                          |
+| Temperature                | CareConnect-Observation-1             | The measurement   of the person's temperature in Celsius (OC)                                                                                                                     |
+| Respiration rate           | CareConnect-Observation-1             | The numbers of   breaths taken by minute, measured by counting the number of times the chest   rises                                                                              |
+| Oxygen Saturation          | CareConnect-Observation-1             | The measurement   of oxygen within the blood (expressed as a percentage of 100)                                                                                                   |
+| NCMP   Withdrawal Reason   | CareConnect-Observation-1             | Reason for child   being withdrawn from the measurement as part of the National Child   Measurement Programme                                                                     |
+
+
 
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
@@ -89,7 +88,6 @@ The Bundle resource is the container for the event message and SHALL conform to 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | type | 1..1 | Fixed value: `message` |
-
 
 ### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
 
@@ -104,31 +102,6 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | event | 1..1 | Fixed Value: vaccinations-1 (Vaccinations) |
 | focus | 1..1 | This will reference the `CareConnect-Immunization-1` resource which contains information about the vaccination this event relates to. |
 
-
-
-### [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1)
-
-The Immunization resource included as part of the event message SHALL conform to the [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 1..1 |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| extension(vaccinationProcedure) | 1..1 |  Free text field should be used if no coded text available using `extension(vaccinationProcedure).valueCodeableConcept.text` |
-| identifier | 1..1 | A publisher defined unique identifier for the vaccination which will be maintained across different event messages to allow subscribers to be identify the information within update or delete event messages. |
-| notGiven | 1..1 | Value SHALL be `FALSE` when the vaccination was given or reported as given, `TRUE` when not given |
-| vaccineCode | 1..1 | Immunization.vaccineCode SHALL use a value from  the [CareConnect-VaccineCode-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-VaccineCode-1) value set |
-| date | 1..1 | The date or partial date that the vaccination was administered, or reported vaccination was given in the opinion of the child and/or parent carer |
-| primarySource | 1..1 | Value should be `FALSE` if the vaccination was reported, `TRUE` if the vaccination was administered |
-| reportOrigin | 0..1 | If the vaccination was reported then the original source should be include |
-| manufacturer | 0..1 | Where available this should be included |
-| site | 0..1 | Where available this should be included |
-| route | 0..1 | Where available this should be included |
-| explanation.reasonNotGiven | 0..1 | If the vaccination was `notGiven` then the `reasonNotGiven` element SHALL be included |
-| vaccinationProtocol.doseSequence | 0..1 | Where available the `doesSequence` should be include |
-
-
-
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
 All Organization resources included in the bundle SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
@@ -139,8 +112,6 @@ All Organization resources included in the bundle SHALL conform to the [CareConn
 | --- | --- | --- |
 | identifier | 1..* | The organization ODS code identifier SHALL be included within the `odsOrganizationCode` identifier slice. |
 | name | 1..1 | A human readable name for the organization SHALL be included in the organization resource. |
-
-
 
 ### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
 
@@ -154,14 +125,11 @@ The patient resource included in the event message SHALL conform to the [CareCon
 | name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the official name element slice |
 | birthDate | 1..1 | The patients date of birth |
 
-
-
 ### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
 
 The Practitioner resources included as part of the event message SHALL conform to the [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1) constrained FHIR profile.
 
 | Resource Cardinality | 0..* |
-
 
 ### [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1)
 
@@ -176,7 +144,6 @@ The PractitionerRole resources included as part of the event message SHALL confo
 | code | 1..* | The practitioner role SHALL included a value from the [ProfessionalType-1](https://fhir.nhs.uk/STU3/ValueSet/ProfessionalType-1) value set. The PractitionerRole.code should also include the SDS Job Role name where available. |
 | specialty | 1..1 | PractitionerRole.specialty SHALL use a value from [Specialty-1](https://fhir.nhs.uk/STU3/ValueSet/Specialty-1) value set |
 
-
 ### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
 
 The Encounter resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
@@ -188,8 +155,6 @@ The Encounter resource included as part of the event message SHALL conform to th
 | Encounter.type | 1..* | The encounter type SHOULD include a value from the [EncounterType-1](https://fhir.nhs.uk/STU3/ValueSet/EncounterType-1) value set. This value set is extensible so additional values and code systems may be added where required. |
 | location | 0..1 | Reference to the location at which the encounter took place |
 | subject | 1..1 | A reference to the patient resource representing the subject of this event |
-
-
 
 ### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
 
@@ -213,34 +178,38 @@ The Location resources included as part of the event message SHALL conform to th
 | --- | --- | --- |
 | identifier | 0..* | Where available the ODS Site Code slice should be populated |
 
+### [CareConnect-AllergyIntolerance-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1)
+
+The CareConnect-AllergyIntolerance-1 resource included as part of the event message SHALL conform to the [CareConnect-AllergyIntolerance-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..* |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| patient | 1..1 | This will reference the patient resource representing the subject of this event |
 
 ## Examples
 
 <div class="tabPanel">
 
 	<div class="tabHeadings">
-		<span class="tabHeading" id="new-given">New (Given)</span>
-		<span class="tabHeading" id="new-notgiven">New (Not Given)</span>
+		<span class="tabHeading" id="new">New</span>
 		<span class="tabHeading" id="update">Update</span>
 		<span class="tabHeading" id="delete">Delete</span>
 	</div>
 	
 	<div class="tabBodies">
 	
-		<div class="tabBody" id="new-givenBody" markdown="span">
-			```{% include_relative examples/vaccinations-1-new.xml %}```
-		</div>
-		
-		<div class="tabBody" id="new-notgivenBody" markdown="span">
-			```{% include_relative examples/vaccinations-1-notgiven-new.xml %}```
+		<div class="tabBody" id="newBody" markdown="span">
+			```{% include_relative examples/allergies-adverse-reactions-new.xml %}```
 		</div>
 		
 		<div class="tabBody" id="updateBody" markdown="span">
-			```{% include_relative examples/vaccinations-1-update.xml %}```
+			```{% include_relative examples/allergies-adverse-reactions-update.xml %}```
 		</div>
 		
 		<div class="tabBody" id="deleteBody" markdown="span">
-			```{% include_relative examples/vaccinations-1-delete.xml %}```
+			```{% include_relative examples/allergies-adverse-reactions-delete.xml %}```
 		</div>
 		
 	</div>
