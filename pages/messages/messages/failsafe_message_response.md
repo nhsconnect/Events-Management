@@ -100,7 +100,8 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 |--------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
 | Element                        | Cardinality | Additional Guidance                                                                                         |
-| --- | --- | --- |
+|--------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
+| id                             | 1..1        | Globally unique identifier as a UUID                                                                        |
 | meta.lastUpdated               | 1..1        | The dateTime when the message was created.                                                                  |
 | extension(RoutingDemographics) | 1..1        | Common to all EMS messages                                                                                  |
 | extension(messageEventType)    | 1..1        | See the “Event Life Cycle” section above.                                                                   |
