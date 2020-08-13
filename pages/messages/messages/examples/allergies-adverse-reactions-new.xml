@@ -74,24 +74,27 @@
                 <code>
                     <coding>
                         <system value="http://snomed.info/sct"/>
-                        <code value="105590001"/>
-                        <display value="Substance"/>
+                        <code value="71181003"/>
+                        <display value="LAIV vaccine"/>
                     </coding>
                 </code>
                 <patient>
                     <reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
                 </patient>
-                <onsetString value="In Childhood"/>
-                <assertedDate value="2018-01-29"/>
+                <onsetdateTime value="2020-10-01"/>
+                <assertedDate value="2020-10-02"/>
                 <note>
-                    <text value="Evidence: Reacted badly to penicillin prescription as a child&#xd;&#xa;Comment: Prescribe alternative an antibiotic group"/>
+                    <text value="Hypersensitivity test confirmed"/>
+                </note>
+				<note>
+                    <text value="To avoid Egg based vaccine"/>
                 </note>
                 <reaction>
                     <manifestation>
                         <coding>
                             <system value="http://snomed.info/sct"/>
-                            <code value="421581006"/>
-                            <display value="Pharyngeal swelling"/>
+                            <code value="278528006"/>
+                            <display value="Facial swelling (finding)"/>
                     </coding>                    
                     </manifestation>
                     <severity value="moderate"/>
