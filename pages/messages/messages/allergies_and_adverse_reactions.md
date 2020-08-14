@@ -210,6 +210,6 @@ The Location resources included as part of the event message SHALL conform to th
 		<div class="tabBody" id="deleteBody" markdown="span">
 			```{% include_relative examples/allergies-adverse-reactions-delete.xml %}```
 		</div>
-		
+	
 	</div>
 </div>

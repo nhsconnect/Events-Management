@@ -69,10 +69,10 @@
                     <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1"/>
                 </meta>
                 <clinicalStatus value="active"/>
-                <verificationStatus value="confirmed"/>
-                <type value="allergy"/>
+                <verificationStatus value="confirmed"/><!--Certainty-->
+                <type value="allergy"/><!--Type of Reaction-->
                 <code>
-                    <coding>
+                    <coding><!--Causative agent-->
                         <system value="http://snomed.info/sct"/>
                         <code value="71181003"/>
                         <display value="LAIV vaccine"/>
@@ -81,23 +81,23 @@
                 <patient>
                     <reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
                 </patient>
-                <onsetdateTime value="2020-10-01"/>
-                <assertedDate value="2020-10-02"/>
-                <note>
+                <onsetdateTime value="2020-10-01"/><!--Date first experienced-->
+                <assertedDate value="2020-10-02"/><!--Date recorded-->
+                <note><!--Evidence-->
                     <text value="Hypersensitivity test confirmed"/>
                 </note>
-				<note>
+				<note><!--Comment-->
                     <text value="To avoid Egg based vaccine"/>
                 </note>
                 <reaction>
-                    <manifestation>
+                    <manifestation><!--Description of Reaction-->
                         <coding>
                             <system value="http://snomed.info/sct"/>
                             <code value="278528006"/>
                             <display value="Facial swelling (finding)"/>
                     </coding>                    
                     </manifestation>
-                    <severity value="moderate"/>
+                    <severity value="moderate"/><!--Severity-->
                 </reaction>
             </AllergyIntolerance>		
 		</resource>
