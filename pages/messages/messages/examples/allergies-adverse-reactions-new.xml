@@ -1,5 +1,9 @@
 <Bundle xmlns="http://hl7.org/fhir">
 	<id value="6e824ff8-9b0a-11e8-9eb6-529269lk5765"/>
+	<identifier>
+		<system value="https://supplierABC/identifiers"/>
+		<value value="aaaa1234"/>
+	</identifier>
 	<type value="message"/>
 	<entry>
 		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa77808"/>
@@ -68,6 +72,10 @@
                 <meta>
                     <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1"/>
                 </meta>
+				<identifier>
+					<system value="https://supplierABC/identifiers"/>
+					<value value="aaaa1111"/>
+				</identifier>
                 <clinicalStatus value="active"/>
                 <verificationStatus value="confirmed"/><!--Certainty-->
                 <type value="allergy"/><!--Type of Reaction-->
@@ -86,15 +94,12 @@
                 <note><!--Evidence-->
                     <text value="Hypersensitivity test confirmed"/>
                 </note>
-				<note><!--Comment-->
-                    <text value="To avoid Egg based vaccine"/>
-                </note>
                 <reaction>
                     <manifestation><!--Description of Reaction-->
                         <coding>
                             <system value="http://snomed.info/sct"/>
-                            <code value="278528006"/>
-                            <display value="Facial swelling (finding)"/>
+                            <code value="247441003"/>
+                            <display value="Erythema (finding)"/>
                     </coding>                    
                     </manifestation>
                     <severity value="moderate"/><!--Severity-->
