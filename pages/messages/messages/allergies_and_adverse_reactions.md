@@ -83,6 +83,7 @@ The Bundle resource is the container for the event message and SHALL conform to 
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
+| identifier | 1..1 | A publisher defined unique identifier which will be maintained across different event messages to allow subscribers to identify the information within update or delete event messages. |
 | type | 1..1 | Fixed value: `message` |
 
 ### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
@@ -109,6 +110,7 @@ The ***CareConnect-AllergyIntolerance-1*** resource included as part of the even
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
+| identifier | 1..1 | A publisher defined unique identifier which will be maintained across different event messages to allow subscribers to identify the information within update or delete event messages. |
 | patient | 1..1 | This will reference the patient resource representing the subject of this event |
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
@@ -188,6 +190,15 @@ The Location resources included as part of the event message SHALL conform to th
 | identifier | 0..* | Where available the ODS Site Code slice should be populated |
 
 ## Examples
+
+The following section provides messaging examples for the following scenarios:
+
+Example 1 (New): An adverse reaction of a skin rash (erythema) is recorded following administration of an LAIV Vaccination
+
+Example 2 (Update): The causative agent of that erythema is amended via an update message to note that it was Ovalbumin rather than the LAIV Vaccination
+
+Example 3 (Delete): A previously sent message detailing an adverse reaction to a wasp sting has been identified as being incorrectly published and a delete message has been sent to correct this
+
 
 <div class="tabPanel">
 

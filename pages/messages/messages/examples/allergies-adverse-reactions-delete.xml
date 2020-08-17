@@ -1,5 +1,9 @@
 <Bundle xmlns="http://hl7.org/fhir">
 	<id value="6e824ff8-9b0a-11e8-9eb6-529269lk5765"/>
+	<identifier>
+		<system value="https://supplierABC/identifiers"/>
+		<value value="aaaa1235"/>
+	</identifier>
 	<type value="message"/>
 	<entry>
 		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa77809"/>
@@ -68,6 +72,10 @@
                 <meta>
                     <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1"/>
                 </meta>
+				<identifier>
+					<system value="https://supplierABC/identifiers"/>
+					<value value="aaad1111"/>
+				</identifier>
                 <clinicalStatus value="active"/>
                 <verificationStatus value="confirmed"/><!--Certainty-->
                 <type value="allergy"/><!--Type of Reaction-->
