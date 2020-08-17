@@ -82,7 +82,7 @@
                 <code>
                     <coding><!--Causative agent-->
                         <system value="http://snomed.info/sct"/>
-                        <code value="71181003"/>
+                        <code value="19699211000001101"/>
                         <display value="LAIV vaccine"/>
                     </coding>
                 </code>
