@@ -7,15 +7,17 @@ permalink: observations.html
 summary: "The FHIR profiles used for the Observations Event Message Bundle"
 ---
 
+UNDER CONSTRUCTION
+
 ## Event Message Content
 
-The `Allergies and Adverse Reactions` event message represents a single allergy or adverse reaction finding for a patient and relevant supporting information.
+The ***Observations*** event message represents an observation for a patient and relevant supporting information.
 
-All “Allergy and Adverse Reaction” event messages that are published to the NEMS MUST be created in line with guidance and requirements specified on this page and on the [Generic Event Message Requirements](https://developer.nhs.uk/apis/ems-beta/explore_generic_event_requirements.html) page.
+All ***Observation*** event messages that are published to the NEMS MUST be created in line with guidance and requirements specified on this page and on the [Generic Event Message Requirements](https://developer.nhs.uk/apis/ems-beta/explore_generic_event_requirements.html) page.
 
 ## Bundle structure
 
-The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The `MessageHeader` resource references an `AllergyIntolerance` resource as the focus of the event message. The `AllergyIntolerance` represents the allergy or adverse reaction finding that was recorded.
+The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The `MessageHeader` resource references an ***Observation*** resource as the focus of the event message. The ***Observation*** represents the **observation** finding that was recorded.
 
 The diagram below shows the referencing between FHIR resources within the event message bundle:
 
@@ -49,13 +51,13 @@ As the event message may change and therefore `new`, `update` and `delete` types
 
 The delivery of the event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
-| MESH WorkflowID | `OBSERVATIONS_1` |
+| MESH WorkflowID | ***OBSERVATIONS_1*** |
 
 ## Resource Population Requirements and Guidance ##
 
 The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
 
-## Resource Mapping Overview  ##
+## Resource Mapping Overview - ***Observations*** ##
 
 | DCH Data   Item            | FHIR resource element                 | Description                                                                                                                                                                       |
 |----------------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -76,9 +78,6 @@ The following requirements and resource population guidance must be followed in 
 | Oxygen Saturation          | CareConnect-Observation-1             | The measurement   of oxygen within the blood (expressed as a percentage of 100)                                                                                                   |
 | NCMP   Withdrawal Reason   | CareConnect-Observation-1             | Reason for child   being withdrawn from the measurement as part of the National Child   Measurement Programme                                                                     |
 
-
-
-
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
 The Bundle resource is the container for the event message and SHALL conform to the [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) FHIR profile.
@@ -91,16 +90,29 @@ The Bundle resource is the container for the event message and SHALL conform to 
 
 ### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
 
-The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
+The MessageHeader resource included as part of the event message SHALL conform to the Event-MessageHeader-1 constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
+|--------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
+| Element                        | Cardinality | Additional Guidance                                                                                         |
+|--------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
+| id                             | 1..1        | Globally unique identifier as a UUID                                                                        |
+| meta.lastUpdated               | 1..1        | The dateTime when the message was created.                                                                  |
+| extension(RoutingDemographics) | 1..1        | Common to all EMS messages                                                                                  |
+| extension(messageEventType)    | 1..1        | See the “Event Life Cycle” section above.                                                                   |
+| event                          | 1..1        | Fixed Value: ***observations-1 (Observations)***                            |
+| focus                          | 1..1        | This will reference the ***CareConnect-Observation-1*** resource which contains information about the ***Observations*** this event relates to. |
+
+### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1)
+
+The ***CareConnect-Observation-1*** resource included as part of the event message SHALL conform to the [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..* |
+
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. |
-| extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. |
-| event | 1..1 | Fixed Value: vaccinations-1 (Vaccinations) |
-| focus | 1..1 | This will reference the `CareConnect-Immunization-1` resource which contains information about the vaccination this event relates to. |
+| patient | 1..1 | This will reference the patient resource representing the subject of this event |
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
@@ -178,16 +190,6 @@ The Location resources included as part of the event message SHALL conform to th
 | --- | --- | --- |
 | identifier | 0..* | Where available the ODS Site Code slice should be populated |
 
-### [CareConnect-AllergyIntolerance-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1)
-
-The CareConnect-AllergyIntolerance-1 resource included as part of the event message SHALL conform to the [CareConnect-AllergyIntolerance-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 1..* |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| patient | 1..1 | This will reference the patient resource representing the subject of this event |
-
 ## Examples
 
 <div class="tabPanel">
@@ -201,16 +203,16 @@ The CareConnect-AllergyIntolerance-1 resource included as part of the event mess
 	<div class="tabBodies">
 	
 		<div class="tabBody" id="newBody" markdown="span">
-			```{% include_relative examples/allergies-adverse-reactions-new.xml %}```
+			```{% include_relative examples/observations-new.xml %}```
 		</div>
 		
 		<div class="tabBody" id="updateBody" markdown="span">
-			```{% include_relative examples/allergies-adverse-reactions-update.xml %}```
+			```{% include_relative examples/observations-new.xml %}```
 		</div>
 		
 		<div class="tabBody" id="deleteBody" markdown="span">
-			```{% include_relative examples/allergies-adverse-reactions-delete.xml %}```
+			```{% include_relative examples/observations-new.xml %}```
 		</div>
-		
+	
 	</div>
 </div>
