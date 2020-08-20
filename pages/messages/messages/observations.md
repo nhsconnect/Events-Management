@@ -22,9 +22,8 @@ The event message will contain a mandatory `MessageHeader` resource as the first
 The diagram below shows the referencing between FHIR resources within the event message bundle:
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/messages/allergies-adverse-reactions.png" target="_blank"><img src="images/messages/allergies-adverse-reactions.png"></a>
+	<a href="images/messages/observations.png" target="_blank"><img src="images/messages/observations.png"></a>
 </div>
-
 
 ## Event Life Cycle ##
 
@@ -61,22 +60,22 @@ The following requirements and resource population guidance must be followed in 
 
 | DCH Data   Item            | FHIR resource element                 | Description                                                                                                                                                                       |
 |----------------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Date and   Time            | CareConnect-Observation-1             | The date and time on which the   observation was recorded                                                                                                                         |
+| Date and   Time            | CareConnect-Observation-1.effectiveDateTime              | The date and time on which the   observation was recorded                                                                                                                         |
 | ODS/ORD Site Code          | CareConnect-Organization-1.identifier | The location   where the observation was recorded                                                                                                                                 |
 | Performing Professional    | CareConnect-Practitioner-1.name       | Name of the   professional performing the observation                                                                                                                             |
 | SDS Job Role Name          | CareConnect-PractitionerRole-1.code   | The job role   associated with the person                                                                                                                                         |
-| Birth Weight               | CareConnect-Observation-1             | Weight of baby   in kg (to 3 decimal places) at Birth                                                                                                                             |
-| Head   Circumference       | CareConnect-Observation-1             | Head   Circumference in cm (to 1 decimal place)                                                                                                                                   |
-| Weight                     | CareConnect-Observation-1             | Weight in kg (to   3 decimal places)                                                                                                                                              |
-| Height /Length             | CareConnect-Observation-1             | Height /Length   in cm (to 1 decimal place)                                                                                                                                       |
-| BMI   centile              | CareConnect-Observation-1             | BMI centile calculated using the   height/weight/gender and age of the person using the UK90 and WHO data   tables. The result will be a percentage from 0-100 to 1 decimal place |
-| Systolic   Blood Pressure  | CareConnect-Observation-1             | The Systolic Blood Pressure   reading of the person                                                                                                                               |
-| Diastolic Blood Pressure   | CareConnect-Observation-1             | The Diastolic   Blood Pressure reading of the person                                                                                                                              |
-| Heart Rate (bpm)           | CareConnect-Observation-1             | The beat of the   heart as felt through the walls of a peripheral artery measured in bpm                                                                                          |
-| Temperature                | CareConnect-Observation-1             | The measurement   of the person's temperature in Celsius (OC)                                                                                                                     |
-| Respiration rate           | CareConnect-Observation-1             | The numbers of   breaths taken by minute, measured by counting the number of times the chest   rises                                                                              |
-| Oxygen Saturation          | CareConnect-Observation-1             | The measurement   of oxygen within the blood (expressed as a percentage of 100)                                                                                                   |
-| NCMP   Withdrawal Reason   | CareConnect-Observation-1             | Reason for child   being withdrawn from the measurement as part of the National Child   Measurement Programme                                                                     |
+| Birth Weight               | CareConnect-Observation-1.valueQuantity             | Weight of baby   in kg (to 3 decimal places) at Birth                                                                                                                             |
+| Head   Circumference       | CareConnect-Observation-1.valueQuantity             | Head   Circumference in cm (to 1 decimal place)                                                                                                                                   |
+| Weight                     | CareConnect-Observation-1.valueQuantity             | Weight in kg (to   3 decimal places)                                                                                                                                              |
+| Height /Length             | CareConnect-Observation-1.valueQuantity             | Height /Length   in cm (to 1 decimal place)                                                                                                                                       |
+| BMI   centile              | CareConnect-Observation-1.valueQuantity             | BMI centile calculated using the   height/weight/gender and age of the person using the UK90 and WHO data   tables. The result will be a percentage from 0-100 to 1 decimal place |
+| Systolic   Blood Pressure  | CareConnect-Observation-1.valueQuantity             | The Systolic Blood Pressure   reading of the person                                                                                                                               |
+| Diastolic Blood Pressure   | CareConnect-Observation-1.valueQuantity             | The Diastolic   Blood Pressure reading of the person                                                                                                                              |
+| Heart Rate (bpm)           | CareConnect-Observation-1.valueQuantity             | The beat of the   heart as felt through the walls of a peripheral artery measured in bpm                                                                                          |
+| Temperature                | CareConnect-Observation-1.valueQuantity             | The measurement   of the person's temperature in Celsius (OC)                                                                                                                     |
+| Respiration rate           | CareConnect-Observation-1.valueQuantity             | The numbers of   breaths taken by minute, measured by counting the number of times the chest   rises                                                                              |
+| Oxygen Saturation          | CareConnect-Observation-1.valueQuantity             | The measurement   of oxygen within the blood (expressed as a percentage of 100)                                                                                                   |
+| NCMP   Withdrawal Reason   | CareConnect-Observation-1.valueCodeableConcept.Coding.code             | Reason for child   being withdrawn from the measurement as part of the National Child   Measurement Programme                                                                     |
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
@@ -86,6 +85,7 @@ The Bundle resource is the container for the event message and SHALL conform to 
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
+| identifier | 1..1 | A publisher defined unique identifier which will be maintained across different event messages to allow subscribers to identify the information within update or delete event messages. |
 | type | 1..1 | Fixed value: `message` |
 
 ### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
