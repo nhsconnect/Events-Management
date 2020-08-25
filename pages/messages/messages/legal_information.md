@@ -1,19 +1,19 @@
 ---
-title: Observations
-keywords:  messaging, bundles, observations
+title: Legal Information
+keywords:  messaging, bundles, legal, information
 tags: [fhir,messaging]
 sidebar: overview_sidebar
-permalink: observations.html
-summary: "The FHIR profiles used for the Observations Event Message Bundle"
+permalink: legal_information.html
+summary: "The FHIR profiles used for the Legal Information Event Message Bundle"
 ---
 
 UNDER CONSTRUCTION
 
 ## Event Message Content
 
-The ***Observations*** event message represents an observation for a patient and relevant supporting information.
+The ***Legal Information*** event message represents legal information for a patient and relevant supporting information.
 
-All ***Observation*** event messages that are published to the NEMS MUST be created in line with guidance and requirements specified on this page and on the [Generic Event Message Requirements](https://developer.nhs.uk/apis/ems-beta/explore_generic_event_requirements.html) page.
+All ***Legal Information*** event messages that are published to the NEMS MUST be created in line with guidance and requirements specified on this page and on the [Generic Event Message Requirements](https://developer.nhs.uk/apis/ems-beta/explore_generic_event_requirements.html) page.
 
 ## Bundle structure
 

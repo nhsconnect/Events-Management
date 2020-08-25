@@ -1,17 +1,17 @@
 <Bundle xmlns="http://hl7.org/fhir">
-	<id value="6e824ff8-9b0a-11e8-9eb6-529269lk5765"/>
+	<id value="6e824ff8-9b0a-11e8-9eb6-529269lk5766"/>
 	<identifier>
 		<system value="https://supplierABC/identifiers"/>
 		<value value="obs1234"/>
 	</identifier>
 	<type value="message"/>
 	<entry>
-		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa77809"/>
+		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa77811"/>
 		<resource>
 			<MessageHeader>
-				<id value="85c8a1c5-a8a1-41c9-bb99-20956fa77809"/>
+				<id value="85c8a1c5-a8a1-41c9-bb99-20956fa77811"/>
 				<meta>
-					<lastUpdated value="2020-08-20T15:00:33+00:00"/>
+					<lastUpdated value="2020-08-24T15:00:33+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
 				</meta>
 				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
@@ -36,8 +36,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
-							<code value="new"/>
-							<display value="New event message"/>
+							<code value="delete"/>
+							<display value="Delete event message"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
@@ -76,22 +76,22 @@
                 <code><!-- Observation.code, NCMP Withdrawal Reason -->
                     <coding>
                         <system value="http://snomed.info/sct"/>
-                        <code value="364589006"/>
-                        <display value="Birth weight"/>
+                        <code value="386725007"/>
+                        <display value="Body temperature (observable entity)"/>
                     </coding>
                 </code>
                 <subject><!-- Patient -->
                     <reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
                 </subject>
-                <effectiveDateTime value="2020-08-14"/><!-- Date and Time -->
+                <effectiveDateTime value="2020-08-18"/><!-- Date and Time -->
                 <performer><!-- Performing Professional, SDS Job Role Name -->
                     <reference value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
                 </performer>
                 <valueQuantity><!-- Birth Weight, Head Circumference, Weight, Height/Length, BMI centile, Systolic Blood Pressure, Diastolic Blood Pressure, Heart Rate (bpm), Temperature, Respiration rate, Oxygen Saturation -->
-                    <value value="9.0"/>
-                    <unit value="kilogram"/>
+                    <value value="38.2"/>
+                    <unit value="degree Celcius"/>
                     <system value="http://unitsofmeasure.org"/>
-                    <code value="kg"/>
+                    <code value="cel"/>
                 </valueQuantity>
             </Observation>		
 		</resource>
