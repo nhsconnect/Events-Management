@@ -6,12 +6,12 @@
 	</identifier>
 	<type value="message"/>
 	<entry>
-		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa77811"/>
+		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa77810"/>
 		<resource>
 			<MessageHeader>
-				<id value="85c8a1c5-a8a1-41c9-bb99-20956fa77811"/>
+				<id value="85c8a1c5-a8a1-41c9-bb99-20956fa77810"/>
 				<meta>
-					<lastUpdated value="2020-08-24T15:00:33+00:00"/>
+					<lastUpdated value="2020-08-26T15:00:33+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
 				</meta>
 				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
@@ -36,15 +36,15 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
-							<code value="delete"/>
-							<display value="Delete event message"/>
+							<code value="new"/>
+							<display value="New event message"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="observations-1"/>
-					<display value="Observations"/>
+					<code value="legal-information-1"/>
+					<display value="Legal Information"/>
 				</event>
 				<timestamp value="2020-07-30T15:00:00+00:00"/>
 				<source>
@@ -73,17 +73,21 @@
                     <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1"/>
                 </meta>
                 <status value="final"/>
-                <code><!-- Observation.code, NCMP Withdrawal Reason -->
+                <code><!-- Observation.code -->
                     <coding>
                         <system value="http://snomed.info/sct"/>
-                        <code value="376251000000101"/>
-                        <display value="Excluded from national child measurement programme (finding)"/>
+                        <code value="764841000000100"/>
+                        <display value="Looked after child (finding)"/>
                     </coding>
                 </code>
                 <subject><!-- Patient -->
                     <reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
                 </subject>
-                <effectiveDateTime value="2020-08-18"/><!-- Date and Time -->
+                <effectiveDateTime value="2020-08-26"/><!-- Date and Time -->
+				<effectivePeriod> <!-- Looked After Child Start Date, Looked After Child End Date, Child Protection Plan Start Date, Child Protection Plan End Date -->
+					<start value="2020-08-26T10:30:10+01:00"/>
+					<end value="2020-08-26T10:30:10+01:00"/>
+				</effectivePeriod> 
                 <performer><!-- Performing Professional, SDS Job Role Name -->
                     <reference value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
                 </performer>

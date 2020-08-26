@@ -17,12 +17,12 @@ All ***Legal Information*** event messages that are published to the NEMS MUST b
 
 ## Bundle structure
 
-The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The `MessageHeader` resource references an ***Observation*** resource as the focus of the event message. The ***Observation*** represents the **observation** finding that was recorded.
+The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The `MessageHeader` resource references an ***Observation*** resource as the focus of the event message. The ***Observation*** represents the **Legal Information** finding that was recorded.
 
 The diagram below shows the referencing between FHIR resources within the event message bundle:
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/messages/observations.png" target="_blank"><img src="images/messages/observations.png"></a>
+	<a href="images/messages/legal_information.png" target="_blank"><img src="images/messages/legal_information.png"></a>
 </div>
 
 ## Event Life Cycle ##
@@ -50,32 +50,27 @@ As the event message may change and therefore `new`, `update` and `delete` types
 
 The delivery of the event messages to subscribers via MESH will use the following `WorkflowID` within the MESH control file. This `WorkflowID` will need to be added to the receiving MESH mailbox configuration before event messages can be received.
 
-| MESH WorkflowID | ***OBSERVATIONS_1*** |
+| MESH WorkflowID | ***LEGAL_INFORMATION_1*** |
 
 ## Resource Population Requirements and Guidance ##
 
 The following requirements and resource population guidance must be followed in addition to the requirements and guidance outlined in the [Generic Requirements](explore_generic_event_requirements.html) page.
 
-## Resource Mapping Overview - ***Observations*** ##
+## Resource Mapping Overview - ***Legal Information*** ##
 
-| DCH Data   Item            | FHIR resource element                 | Description                                                                                                                                                                       |
-|----------------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Date and   Time            | CareConnect-Observation-1.effectiveDateTime              | The date and time on which the   observation was recorded                                                                                                                         |
-| ODS/ORD Site Code          | CareConnect-Organization-1.identifier | The location   where the observation was recorded                                                                                                                                 |
-| Performing Professional    | CareConnect-Practitioner-1.name       | Name of the   professional performing the observation                                                                                                                             |
-| SDS Job Role Name          | CareConnect-PractitionerRole-1.code   | The job role   associated with the person                                                                                                                                         |
-| Birth Weight               | CareConnect-Observation-1.valueQuantity             | Weight of baby   in kg (to 3 decimal places) at Birth                                                                                                                             |
-| Head   Circumference       | CareConnect-Observation-1.valueQuantity             | Head   Circumference in cm (to 1 decimal place)                                                                                                                                   |
-| Weight                     | CareConnect-Observation-1.valueQuantity             | Weight in kg (to   3 decimal places)                                                                                                                                              |
-| Height /Length             | CareConnect-Observation-1.valueQuantity             | Height /Length   in cm (to 1 decimal place)                                                                                                                                       |
-| BMI   centile              | CareConnect-Observation-1.valueQuantity             | BMI centile calculated using the   height/weight/gender and age of the person using the UK90 and WHO data   tables. The result will be a percentage from 0-100 to 1 decimal place |
-| Systolic   Blood Pressure  | CareConnect-Observation-1.valueQuantity             | The Systolic Blood Pressure   reading of the person                                                                                                                               |
-| Diastolic Blood Pressure   | CareConnect-Observation-1.valueQuantity             | The Diastolic   Blood Pressure reading of the person                                                                                                                              |
-| Heart Rate (bpm)           | CareConnect-Observation-1.valueQuantity             | The beat of the   heart as felt through the walls of a peripheral artery measured in bpm                                                                                          |
-| Temperature                | CareConnect-Observation-1.valueQuantity             | The measurement   of the person's temperature in Celsius (OC)                                                                                                                     |
-| Respiration rate           | CareConnect-Observation-1.valueQuantity             | The numbers of   breaths taken by minute, measured by counting the number of times the chest   rises                                                                              |
-| Oxygen Saturation          | CareConnect-Observation-1.valueQuantity             | The measurement   of oxygen within the blood (expressed as a percentage of 100)                                                                                                   |
-| NCMP   Withdrawal Reason   | CareConnect-Observation-1.code             | Reason for child   being withdrawn from the measurement as part of the National Child   Measurement Programme                                                                     |
+| DCH   Data Item                                      | FHIR resource   element                         | Description                                                                   |
+|------------------------------------------------------|-------------------------------------------------|-------------------------------------------------------------------------------|
+| Date and Time                                        | CareConnect-Observation-1.dateTime              | The   date and time on which the legal information was recorded               |
+| Looked After Child Start Date                        | CareConnect-Observation-1.effectivePeriod.start | Start   date of a Looked After Child                                          |
+| Looked After Child End Date                          | CareConnect-Observation-1.effectivePeriod.end   | End   date of a Looked After Child if not ended then status should be open    |
+| Local Authority (LAC)                                | CareConnect-Organization-1.name                 | The   named Local Authority responsible for the Looked After Child            |
+| Local Authority Emergency Duty Team Telephone Number | CareConnect-Organization-1.contact.telecom      | The   LAC Local Authority Emergency Duty Team telephone number                |
+| Local Authority Office Hours Telephone Number        | CareConnect-Organization-1.telecom              | The   LAC Local Authority Emergency Duty Team telephone number                |
+| Child Protection Plan Start Date                     | CareConnect-Observation-1.effectivePeriod.start | Start   date of a child protection plan                                       |
+| Child Protection Plan End Date                       | CareConnect-Observation-1.effectivePeriod.end   | End   date of a child protection plan if not ended then status should be open |
+| Local Authority (CPP)                                | CareConnect-Organization-1.name                 | The   named Local Authority responsible for the Child Protection Plan         |
+| Local Authority Emergency Duty Team Telephone Number | CareConnect-Organization-1.contact.telecom      | The   CP-IS Local Authority Emergency Duty Team telephone number              |
+| Local Authority Office Hours Telephone Number        | CareConnect-Organization-1.telecom              | The   CPIS Local Authority Emergency Duty Team telephone number               |
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
@@ -101,8 +96,8 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | meta.lastUpdated               | 1..1        | The dateTime when the message was created.                                                                  |
 | extension(RoutingDemographics) | 1..1        | Common to all EMS messages                                                                                  |
 | extension(messageEventType)    | 1..1        | See the “Event Life Cycle” section above.                                                                   |
-| event                          | 1..1        | Fixed Value: ***observations-1 (Observations)***                            |
-| focus                          | 1..1        | This will reference the ***CareConnect-Observation-1*** resource which contains information about the ***Observations*** this event relates to. |
+| event                          | 1..1        | Fixed Value: ***legal-information-1 (Observations)***                            |
+| focus                          | 1..1        | This will reference the ***CareConnect-Observation-1*** resource which contains information about the ***Legal Information*** this event relates to. |
 
 ### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1)
 
@@ -204,15 +199,15 @@ The Location resources included as part of the event message SHALL conform to th
 	<div class="tabBodies">
 	
 		<div class="tabBody" id="newBody" markdown="span">
-			```{% include_relative examples/observations-new.xml %}```
+			```{% include_relative examples/legal-information-new.xml %}```
 		</div>
 		
 		<div class="tabBody" id="updateBody" markdown="span">
-			```{% include_relative examples/observations-update.xml %}```
+			```{% include_relative examples/legal-information-new.xml %}```
 		</div>
 		
 		<div class="tabBody" id="deleteBody" markdown="span">
-			```{% include_relative examples/observations-delete.xml %}```
+			```{% include_relative examples/legal-information-new.xml %}```
 		</div>
 	
 	</div>
