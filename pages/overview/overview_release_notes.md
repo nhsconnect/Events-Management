@@ -7,6 +7,11 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.6.0-Beta () ##
+
+[Onboarding & Assurance](assurance_overview.html)
+- Added guidance around the on-boarding and assurance process
+
 ## 2.5.0-Beta (04/06/2020) ##
 
 [Controller Catalogue](controller_catalogue.html)
