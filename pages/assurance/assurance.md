@@ -13,7 +13,7 @@ Onboarding for the NEMS starts with a provider contacting <a href="mailto:intero
 
 The provider will be asked about their use cases and the purpose for the information sharing, to make sure it aligns with the direction and information governance requirements of the NEMS.
 
-Once the use case has been assessed by live service the provider will be given an Onboarding Guide (<a href="https://github.com/nhsconnect/Events-Management/raw/master/downloads/NEMS%20Onboarding%20Guide.docx" >Download Guide</a>), which outlines the onboarding and assurance steps as shown on this page but in more detail.
+Once the use case has been assessed by live service the provider will be given an Onboarding Guide (<a href="https://github.com/nhsconnect/Events-Management/raw/Downloads/NEMS%20Onboarding%20Guide.docx" >Download Guide</a>), which outlines the onboarding and assurance steps as shown on this page but in more detail.
 
 
 ## Assurance
