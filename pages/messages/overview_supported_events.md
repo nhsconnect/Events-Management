@@ -44,3 +44,5 @@ The following are event messages currently supported by the NEMS:
 | [Vaccinations](vaccinations_1.html) | Vaccinations | &#9989; | &#9989; | February 2020 | Beta |
 | [Failsafe Message](failsafe_message.html) | Failsafe Message | &#10060; | &#9989; | April 2020 | Beta |
 | [Failsafe Message Response](failsafe_message_response.html) | Failsafe Message Response | &#10060; | &#9989; | July 2020 | Beta |
+| [Allergies and Adverse Reactions](allergies_and_adverse_reactions.html) | Allergies and Adverse Reactions | &#9989; | &#9989; | August 2020 | Beta |
+| [Observations](observations.html) | Observations | &#9989; | &#9989; | August 2020 | Beta |

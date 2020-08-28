@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 2.6.0-Beta
+  version: 2.7.0-Beta
   levels: one
   folders:
 
@@ -64,11 +64,17 @@ entries:
         - title: Failsafe Message Response
           url: /failsafe_message_response.html
           output: web
+        - title: Legal Information
+          url: /legal_information.html
+          output: web
         - title: Newborn Hearing
           url: /newborn_hearing_1.html
           output: web
         - title: NIPE Outcome
           url: /nipe_outcome_1.html
+          output: web
+        - title: Observations
+          url: /observations.html
           output: web
         - title: PDS Birth Notification
           url: /pds_birth_notification.html
