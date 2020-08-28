@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 2.5.1-Beta
+  version: 2.7.0-Beta
   levels: one
   folders:
 
@@ -145,6 +145,13 @@ entries:
       url: /receiver_ig.html
       output: web
 
+  - title: Onboarding & Assurance
+    output: web,pdf
+    folderitems:
+    - title: Overview
+      url: /assurance_overview.html
+      output: web
+      
   - title: Help & Support
     output: web
     folderitems:
