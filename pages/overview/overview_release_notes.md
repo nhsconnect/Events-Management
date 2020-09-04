@@ -15,6 +15,9 @@ summary: Summary release notes of the versions released in National Events Manag
 [Event Receiver Requirements](receiver_requirements.html)
 - Added information on how the new optional subscription `tag` criteria will be shared with the subscriber when they receive event messages, so that they can identify which subscriptions resulted in the event message being sent to the MESH mailbox.
 
+[Receiver Information Governance](receiver_ig.html)
+- Added additional detail about the current Access Control requirements, to improve clarity and make clear the requirements for access to information received via NEMS.
+
 
 ## 2.6.0-Beta (28/08/2020) ##
 
