@@ -33,7 +33,7 @@ Mex-Partnerid: [subscription_id]|[tag_value]
 
 ### Multiple Subscriptions ###
 
-It is possibly that an event message may match multiple subscriptions which deliver to the same MESH Mailbox. When this happens the NEMS de-duplicates the message and sends one copy of the event message to the MESH mailbox.
+It is possible that an event message may match multiple subscriptions which deliver to the same MESH Mailbox. When this happens the NEMS de-duplicates the message and sends one copy of the event message to the MESH mailbox.
 
 In this scenario the `SubscriptionID` and `tag` value for any subscriptions that matched the event message and contain a `tag` criteria element will be included and will be delimited with the value `~~~` as follows:
 

@@ -54,7 +54,7 @@ Technical requirements and guidance associated with the use of NHS Smartcards, c
 
 Where access is being given to a citizen the following requirements must be met:
 
-- A subscribing system must authenticate the citizen to the DCB3051 Identity Verification and Authentication Standard for Digital Health and Care Services (as used by [NHS Identity](https://digital.nhs.uk/services/nhs-identity)).
+- A subscribing system must authenticate the citizen to the DCB3051 Identity Verification and Authentication Standard for Digital Health and Care Services (as used by [NHS Login](https://digital.nhs.uk/services/nhs-login)).
 - A subscribing system must authenticate to the standards. defined in the [Good Practice Guide No. 44: Authentication and Credentials for use with HMG Online Services](https://www.gov.uk/government/publications/authentication-credentials-for-online-government-services).
 
 
