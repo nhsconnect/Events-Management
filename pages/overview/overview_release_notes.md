@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.7.0-Beta (04/09/2020) ##
+## 2.7.0-Beta (17/09/2020) ##
 
 [Create Subscription](explore_create_subscription.html)
 - Added optional `tag` criteria element requirements to the subscription
