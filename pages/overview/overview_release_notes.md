@@ -13,6 +13,9 @@ summary: Summary release notes of the versions released in National Events Manag
 [Failsafe Message](failsafe_message.html)
 - Removed until required for use
 
+[PDS Record Change](pds_record_change.html)
+- Added PDS Record Change event
+
 
 ## 2.7.0-Beta (17/09/2020) ##
 
@@ -30,9 +33,6 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Onboarding & Assurance](assurance_overview.html)
 - Added guidance around the on-boarding and assurance process
-
-[PDS Record Change](pds_record_change.html)
-- Added PDS Record Change event
 
 
 ## 2.5.0-Beta (04/06/2020) ##
