@@ -10,8 +10,8 @@ summary: Summary release notes of the versions released in National Events Manag
 
 ## 2.8.0-Beta () ##
 
-[Failsafe Message Response](failsafe_message_response.html)
-- Added new page for the Failsafe Message Response guidance
+[Failsafe Message](failsafe_message.html)
+- Removed until required for use
 
 
 ## 2.7.0-Beta (17/09/2020) ##
