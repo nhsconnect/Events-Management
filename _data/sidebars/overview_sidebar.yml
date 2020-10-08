@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 2.7.0-Beta
+  version: 2.7.1-Beta
   levels: one
   folders:
 
@@ -57,9 +57,6 @@ entries:
         subfolderitems:
         - title: Blood Spot Test Outcome
           url: /blood_spot_test_outcome_1.html
-          output: web
-        - title: Failsafe Message
-          url: /failsafe_message.html
           output: web
         - title: Newborn Hearing
           url: /newborn_hearing_1.html

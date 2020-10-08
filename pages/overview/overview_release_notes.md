@@ -7,6 +7,18 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+
+## 2.7.1-Beta (08/10/2020) ##
+
+[Generic Event Message Requirements](explore_generic_event_requirements.html)
+- Imporved guidance around identifier use
+- Updated event type extension name in MessageHeader to match FHIR profile name
+- Added guidance around dateTime format as the FHIR spec regex has been updated and now contains an error
+
+[Supported Event Messages](overview_supported_events.html)
+- Changed the status of the "Professional Contacts" and "Vaccinations" events to release candidate from beta
+
+
 ## 2.7.0-Beta (17/09/2020) ##
 
 [Create Subscription](explore_create_subscription.html)
@@ -23,6 +35,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Onboarding & Assurance](assurance_overview.html)
 - Added guidance around the on-boarding and assurance process
+
 
 ## 2.5.0-Beta (04/06/2020) ##
 
