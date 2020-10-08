@@ -4,7 +4,7 @@ keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
 permalink: explore_generic_event_requirements.html
-summary: "These are a set of generic requirements which are applicable to all event messages passing through the NEMS"
+summary: "These are a set of generic requirements applicable to all event messages passing through the NEMS."
 ---
 
 ## Glossary of terms ##
@@ -43,14 +43,13 @@ The event message ID sent within the `MessageHeader.id` element must be unique t
 
 ## Identifiers ##
 
-To link data between event messages, for the purposes of managing updates and deletes, the `identifier` elements within the individual resources should be use.
+`identifier` elements present within resources should be used to link data between event messages, for the purposes of managing updates and deletes.
 
 For example, if a `new` event message is published containing a `Procedure` resource, representing a test performed on the patient, this procedure should contain an `identifier` (which could be an internal supplier ID). If an update is made to that test information within the publishing system, then the publishing system would be able to publish an `update` event message containing the updated `Procedure` resource with the same `identifier`, allowing the consumer to link the data to the data sent in the previous event message.
 
 ## Use of New, Update and Delete ##
 
 Publishers MUST use the appropriate `messageEventType` values to indicate the information that is being published. For example a publisher must not use a `new` message to send an update to a previously sent data.
-
 
 ## Resource Population ##
 
@@ -59,7 +58,6 @@ Publishers MUST use the appropriate `messageEventType` values to indicate the in
 The event Bundle resource which contains the event message resources SHALL conform to the [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) base FHIR profile and be of type `message`.
 
 This follows the [HL7 FHIR specification](http://hl7.org/fhir/bundle.html#message) for the Bundle resource when being used for messaging, which states that 'A message bundle (type = "message") consists of a series of entries, the first of which is a MessageHeader.'
-
 
 ## [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) ##
 
@@ -73,7 +71,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | extension(routingDemographics)<br/>**.extension(birthDateTime)** | 1..1 | The extension MUST contain the patient's Date Of Birth which matches the NHS number in the routingDemographics extension. |
 | meta.versionId | 0..1 | **Message Sequencing** - A sequence number for the purpose of ordering messages for processing. The sequence number must be an integer which is patient and event-type specific and the publisher must increment the sequence number each time a new event of the same type is issued by the same system for the same patient. |
 | meta.lastUpdated | 0..1 | **Message Sequencing** - A FHIR instant (time stamp with sub-second accuracy) which represents the point in time that the change occurred which should be used for ordering messages for processing. |
-| extension(eventMessageType) | 1..1 | The type value which shall appear in this element will be defined within the separate event message implementation guide for each of the event messages, as the value will depend on the life cycle of the specific event message. |
+| extension(messageEventType) | 1..1 | The type value which shall appear in this element will be defined within the separate event message implementation guide for each of the event messages, as the value will depend on the life cycle of the specific event message. |
 | id | 1..1 | An originator/publisher unique publication reference, which will use a UUID format |
 | event | 1..1 | **Event Type** - The type of event as specified within the event message implementation guides, e.g. PDS Birth Notification, Failsafe Alert |
 | source | 1..1 | The IT system which holds the information that originated the event |
@@ -84,7 +82,6 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
 | focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
 
-
 ## [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) ##
 
 Patient resources included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
@@ -94,8 +91,7 @@ Patient resources included in the event message SHALL conform to the [CareConnec
 | identifier | 1..1 | Patient NHS Number SHALL be included within the `nhsNumber` identifier slice |
 | name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the `official` name element slice |
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
-| address | 0..* | If an address is included in the patient resource the publisher SHOULD included as a minimum the `text` element containing the full address. The address SHOULD also be included as structured data if all elements of the address can be populated, a minimum of the `line` and `postalCode` elements are required. |
-
+| address | 0..* | If an address is included, the publisher SHOULD use the structured data elements if possible, ideally including a minimum of `line` and `postalCode`. |
 
 ## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) ##
 
@@ -105,7 +101,6 @@ Organization resources included in event messages SHALL conform to the [CareConn
 | --- | --- | --- |
 | name | 0..1 | A human readable name for the organization SHOULD be included in the organization resource |
 | identifier | 0..1 | The organization ODS code SHOULD be included within the `odsOrganizationCode` identifier slice |
-
 
 ## Data Type Population ##
 
@@ -120,3 +115,8 @@ For a date and time within **BST** such as "27th July 2019" at "14:22" the dateT
 For a date and time within **GMT** such as "14th January 2019" at "13:35" the dateTime should be included in the FHIR resource with a time zone offset of zero hours and minutes:
 
 `2019-01-14T13:35:00+00:00`
+
+### "dateTime" regex ###
+
+To check if a dateTime field is in a valid format, the following regex can be used:
+- `([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?`
