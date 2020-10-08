@@ -8,11 +8,15 @@ summary: Summary release notes of the versions released in National Events Manag
 ---
 
 
-## 2.8.0-Beta () ##
+## 2.7.1-Beta (08/10/2020) ##
 
-[Failsafe Message Response](failsafe_message_response.html)
-- Added new page for the Failsafe Message Response guidance
+[Generic Event Message Requirements](explore_generic_event_requirements.html)
+- Imporved guidance around identifier use
+- Updated event type extension name in MessageHeader to match FHIR profile name
+- Added guidance around dateTime format as the FHIR spec regex has been updated and now contains an error
 
+[Supported Event Messages](overview_supported_events.html)
+- Changed the status of the "Professional Contacts" and "Vaccinations" events to release candidate from beta
 
 ## 2.7.0-Beta (17/09/2020) ##
 
