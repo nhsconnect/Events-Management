@@ -75,8 +75,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="http://snomed.info/sct"/>
-							<code value="170433008"/>
-							<display value="Measles mumps and rubella vaccination - second dose (procedure)"/>
+							<code value="61761000000109"/>
+							<display value="Second measles, mumps and rubella vaccination not done"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
@@ -88,9 +88,9 @@
 				<notGiven value="true"/>
 				<vaccineCode>
 					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="34925411000001109"/>
-						<display value="Priorix vaccine powder and solvent for solution for injection 0.5ml pre-filled syringes (GlaxoSmithKline UK Ltd) 1 pre-filled disposable injection (product)"/>
+						<system value="http://hl7.org/fhir/v3/NullFlavor"/>
+						<code value="NA"/>
+						<display value="Not Applicable"/>
 					</coding>
 				</vaccineCode>
 				<patient>
