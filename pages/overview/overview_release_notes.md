@@ -7,6 +7,10 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.7.2-Beta (07/12/2020) ##
+
+[Vaccinations](vaccinations_1.html)
+- Updated guidance on given and not given procedure use in the event message
 
 ## 2.7.1-Beta (08/10/2020) ##
 
