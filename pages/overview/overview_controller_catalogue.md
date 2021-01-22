@@ -15,6 +15,6 @@ The following documents make up the controller catalogue:
 
 | Document | Description | Link |
 | --- | --- | --- |
-| Events & Stakeholder Summary | List the events shared on the National Event Management Service (NEMS) and those stakeholders who are publishing, subscribing or both publishing and subscribing to the events. | <a href="https://github.com/nhsconnect/Events-Management/raw/Downloads/Events%20%26%20Stakeholder%20Summary.Pdf" >Download PDF</a> |
-| Purpose & Lawful Basis | Describes the purpose and lawful basis for the sharing of the events with the stakeholders. | <a href="https://github.com/nhsconnect/Events-Management/raw/Downloads/Purpose%20%26%20Lawful%20Basis.Pdf" >Download PDF</a> |
-| End User Orgs | Lists the organisations using the National Event Management Service (NEMS) and indicates which events an organisation is publishing or subscribing to or both publishing and subscribing to. | <a href="https://github.com/nhsconnect/Events-Management/raw/Downloads/End%20User%20Orgs.Pdf" >Download PDF</a> |
+| Events & Stakeholder Summary | List the events shared on the National Event Management Service (NEMS) and those stakeholders who are publishing, subscribing or both publishing and subscribing to the events. | <a href="https://github.com/nhsconnect/Events-Management/raw/Downloads/Events%20%26%20Stakeholder%20Summary.pdf" >Download PDF</a> |
+| Purpose & Lawful Basis | Describes the purpose and lawful basis for the sharing of the events with the stakeholders. | <a href="https://github.com/nhsconnect/Events-Management/raw/Downloads/Purpose%20%26%20Lawful%20Basis.pdf" >Download PDF</a> |
+| End User Orgs | Lists the organisations using the National Event Management Service (NEMS) and indicates which events an organisation is publishing or subscribing to or both publishing and subscribing to. | <a href="https://github.com/nhsconnect/Events-Management/raw/Downloads/End%20User%20Orgs.pdf" >Download PDF</a> |
