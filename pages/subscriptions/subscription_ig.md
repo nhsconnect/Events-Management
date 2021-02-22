@@ -35,3 +35,8 @@ The audit data MUST include:
 - who or what triggered the subscription create, read or delete
 - the date and time when the subscription was created / read / deleted
 - details about the subscription such as the event type, the start and end dates for the subscriptions if included and the NHS Number the subscription was for
+
+
+### Spine PDS Flags
+
+The NEMS will not flow event messages for a patient if the Spine PDS record for that patient has been marked with an 'S' or 'I' flag.
