@@ -11,6 +11,8 @@ summary: Summary release notes of the versions released in National Events Manag
 
 - Removal of Beta status from project
 
+[Subscription Information Governance](subscription_ig.html)
+- Added S-Flag and I-Flag guidance to improve clarity in the specification
 
 ## 2.7.2-Beta (07/12/2020) ##
 
