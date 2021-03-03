@@ -7,6 +7,11 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.7.4 (TBC) ##
+
+[Generic Event Message Requirements](explore_generic_event_requirements.html)
+- Added additional guidance around element order within FHIR resources and conformance to schemas.
+
 ## 2.7.3 (22/02/2021) ##
 
 - Removal of Beta status from project
