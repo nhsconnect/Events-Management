@@ -7,11 +7,6 @@ permalink: index.html
 toc: false
 ---
 
-{% include warning.html content="This site is under active development by NHS Digital, iterative updates to the content may be done on a regular basis. Changes to this specification will be documented on the [Release Notes](overview_release_notes.html) page." %}
-
-
-<a href="images/overview/overview_message_diagram.png" target="_blank"><img src="images/overview/overview_message_diagram.png"></a>
-
 
 ## Introduction
 
@@ -24,6 +19,9 @@ The NEMS is designed to be a generic transport mechanism which can support a var
 - [Subscription Management](explore_subscriptions.html)
 - [Event Publication](publication_publish.html)
 - [Event Receiver Requirements](receiver_requirements.html) 
+
+
+<a href="images/overview/overview_message_diagram.png" target="_blank"><img src="images/overview/overview_message_diagram.png"></a>
 
 
 ## NEMS Events

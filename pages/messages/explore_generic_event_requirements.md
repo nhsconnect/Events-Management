@@ -53,13 +53,39 @@ Publishers MUST use the appropriate `messageEventType` values to indicate the in
 
 ## Resource Population ##
 
-## [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) ##
+### Element order in Resources
+
+{% include important.html content="The order of elements in resources must conform to the FHIR resource schemas" %}
+
+The base FHIR resource schemas contain the “xs:sequence” tag which indicates the elements must be in the specified order. The CareConnect profiles which we use in the NEMS spec are built on these base FHIR resources, so the event messages must be valid against these schemas to be compliant with the NEMS publisher requirements. The FHIR Schema for each of the different resources can be found on the individual HL7 base FHIR resource pages.
+
+Examples:
+
+**MessageHeader**
+
+| Resource Page | [https://www.hl7.org/fhir/stu3/messageheader.html](https://www.hl7.org/fhir/stu3/messageheader.html) |
+| Schema | [https://www.hl7.org/fhir/stu3/messageheader.xsd](https://www.hl7.org/fhir/stu3/messageheader.xsd) |
+
+
+**Patient**
+
+| Resource | [https://www.hl7.org/fhir/stu3/patient.html](https://www.hl7.org/fhir/stu3/patient.html) |
+| Schema | [https://www.hl7.org/fhir/stu3/patient.xsd](https://www.hl7.org/fhir/stu3/patient.xsd) |
+
+**Organization**
+
+| Resource | [https://www.hl7.org/fhir/stu3/organization.html](https://www.hl7.org/fhir/stu3/organization.html) |
+| Schema | [https://www.hl7.org/fhir/stu3/organization.xsd](https://www.hl7.org/fhir/stu3/organization.xsd) |
+
+
+
+### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) ##
 
 The event Bundle resource which contains the event message resources SHALL conform to the [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) base FHIR profile and be of type `message`.
 
 This follows the [HL7 FHIR specification](http://hl7.org/fhir/bundle.html#message) for the Bundle resource when being used for messaging, which states that 'A message bundle (type = "message") consists of a series of entries, the first of which is a MessageHeader.'
 
-## [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) ##
+### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) ##
 
 The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
 
@@ -82,7 +108,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
 | focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
 
-## [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) ##
+### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) ##
 
 Patient resources included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
@@ -93,7 +119,7 @@ Patient resources included in the event message SHALL conform to the [CareConnec
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
 | address | 0..* | If an address is included, the publisher SHOULD use the structured data elements if possible, ideally including a minimum of `line` and `postalCode`. |
 
-## [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) ##
+### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) ##
 
 Organization resources included in event messages SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
@@ -104,7 +130,7 @@ Organization resources included in event messages SHALL conform to the [CareConn
 
 ## Data Type Population ##
 
-## "dateTime" Elements ##
+### "dateTime" Elements ##
 
 Population of a `dateTime` element within FHIR resource should conform to the requirements within the [FHIR specification](http://hl7.org/fhir/stu3/datatypes.html#datetime), so where a time is included the time zone MUST be populate to represent the offset of the include time from Coordinated Universal Time (UTC).
 
@@ -116,7 +142,7 @@ For a date and time within **GMT** such as "14th January 2019" at "13:35" the da
 
 `2019-01-14T13:35:00+00:00`
 
-### "dateTime" regex ###
+#### "dateTime" regex ###
 
 To check if a dateTime field is in a valid format, the following regex can be used:
 ```
