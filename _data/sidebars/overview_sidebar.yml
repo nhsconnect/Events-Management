@@ -76,7 +76,7 @@ entries:
         - title: PDS Death Notification
           url: /pds_death_notification.html
           output: web
-        - title: PDS Record Change
+        - title: PDS Record Change Notification
           url: /pds_record_change.html
           output: web
         - title: Professional Contacts
