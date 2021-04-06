@@ -53,38 +53,44 @@
 					<endpoint value="urn:nhs:addressing:asid:477121000323"/>
 				</source>
 				<responsible>
-					<reference value=" urn:uuid:28eab940-1b40-4425-a292-b45e7d689556"/>
+					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/X26"/>
 					<display value="NHS DIGITAL"/>
 				</responsible>
 				<focus>
-					<reference value="urn:uuid:3f98da8c-3fe9-430e-8e7c-6edd078622f0"/>
+					<reference value="urn:uuid:7b0c7720-d1ed-11e8-a8d5-f2801f1b9fd1"/>
 				</focus>
 			</MessageHeader>
 		</resource>
 	</entry>
 	<entry>
-		<fullUrl value="urn:uuid:3f98da8c-3fe9-430e-8e7c-6edd078622f0"/>
+		<fullUrl value="urn:uuid:7b0c7720-d1ed-11e8-a8d5-f2801f1b9fd1"/>
 		<resource>
-			<List>
-                <status value="current"/>
-                <mode value="snapshot"/>
-            </List>
-		</resource>
-	</entry>
-	<entry>
-		<fullUrl value="urn:uuid:28eab940-1b40-4425-a292-b45e7d689556"/>
-		<resource>
-			<Organization>
-                <id value="3ff6d789-af64-4d9c-aa1d-0087d29e9e1c"/>
-                <meta>
-                    <profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"/>
-                </meta>
-                <identifier>
-                    <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
-                    <value value="X26"/>
-                </identifier>
-                <name value="NHS Digital"/>
-            </Organization>
+			<Patient>
+				<id value="7b0c7720-d1ed-11e8-a8d5-f2801f1b9fd1"/>
+				<meta>
+					<versionId value="1"/>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"/>
+				</meta>
+				<identifier>
+					<extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1">
+						<valueCodeableConcept>
+							<coding>
+								<system value="https://fhir.hl7.org.uk/STU3/CareConnect-NHSNumberVerificationStatus-1"/>
+								<code value="01"/>
+								<display value="Number present and verified"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<system value="https://fhir.nhs.uk/Id/nhs-number"/>
+					<value value="9912003888"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<family value="DAWKINS"/>
+					<given value="Jack"/>
+				</name>
+				<birthDate value="2017-10-02"/>
+			</Patient>
 		</resource>
 	</entry>
 </Bundle> 

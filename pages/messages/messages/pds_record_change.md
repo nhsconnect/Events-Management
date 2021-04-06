@@ -1,13 +1,13 @@
 ---
-title: PDS Record Change Notification
+title: PDS Record Change
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
 permalink: pds_record_change.html
-summary: "The PDS Record Change Notification event"
+summary: "The PDS Record Change event"
 ---
 
-The `PDS Record Change Notification` event message is generated and published by the Spine, when a change is made to a patient record within the Patient Demographics Service (PDS). The event message does not contain all the PDS information as the event message is only intended to be a notification that the reference patient record has changed, and allow the subscriber to perform their existing PDS synchronisation processes.
+The `PDS Record Change` event message is generated and published by the Spine, when a change is made to a patient record within the Patient Demographics Service (PDS). The event message does not contain all the PDS information as the event message is only intended to be a notification that the reference patient record has changed, and allow the subscriber to perform their existing PDS synchronisation processes.
 
 Any change to a patients PDS record will trigger the publication of this event, some example of changes that would trigger this event are:
 
@@ -22,8 +22,7 @@ Any change to a patients PDS record will trigger the publication of this event, 
 The following is the FHIR event message structure for the PDS Record Change event.
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/messages/pds_change_bundle.png" target="_blank"><img src="images/messages/pds_change_bundle.png"></a>
-	<p>PDS Record Change Bundle <a href="images/messages/pds_change_bundle.png" target="_blank">(open in new TAB)</a></p>
+	<a href="images/messages/pds_record_change.png" target="_blank"><img src="images/messages/pds_record_change.png"></a>
 </div>
 
 
@@ -77,10 +76,10 @@ The following table outlines the key elements which will be included, but additi
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| meta.versionId | 0..1 | This element will contain the serial change number (SCN) of the patient's record within Spine at the time this event was published. |
-| identifier | 0..1 | The NHS Number of the patient will be included in the nhsNumber identifier slice. If the event message is the result of the PDS record being superseeded this will be the NHS Number of the record being superseded and not the record which is superseding it. |
-| name (official) | 0..1 | The patient's name as registered on PDS, included within the resource as the `official` name element slice |
-| birthDate | 0..1 | The patients date of birth. |
+| meta.versionId | 1..1 | This element will contain the serial change number (SCN) of the patient's record within Spine at the time this event was published. |
+| identifier | 1..1 | The NHS Number of the patient will be included in the nhsNumber identifier slice. If the event message is the result of the PDS record being superseeded this will be the NHS Number of the record being superseded and not the record which is superseding it. |
+| name (official) | 1..1 | The patient's name as registered on PDS, included within the resource as the `official` name element slice |
+| birthDate | 1..1 | The patients date of birth. |
 
 
 

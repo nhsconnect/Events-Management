@@ -12,6 +12,9 @@ summary: Summary release notes of the versions released in National Events Manag
 [Generic Event Message Requirements](explore_generic_event_requirements.html)
 - Added additional guidance around element order within FHIR resources and conformance to schemas.
 
+[PDS Record Change](pds_record_change.html)
+- Added PDS Record Change event
+
 ## 2.7.3 (22/02/2021) ##
 
 - Removal of Beta status from project
@@ -33,9 +36,6 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Supported Event Messages](overview_supported_events.html)
 - Changed the status of the "Professional Contacts" and "Vaccinations" events to release candidate from beta
-
-[PDS Record Change](pds_record_change.html)
-- Added PDS Record Change event
 
 
 ## 2.7.0-Beta (17/09/2020) ##
