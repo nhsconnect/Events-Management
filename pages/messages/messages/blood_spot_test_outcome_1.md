@@ -78,6 +78,7 @@ The following requirements and resource population guidance must be followed in 
 | Outcome - MAPLE SYRUP URINE DISEASE                      | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for MSUD                                                                                        |
 | Outcome - GLUTARIC ACIDURIA TYPE 1                       | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for GA1                                                                                         |
 | Outcome - ISOVALERIC ACIDAEMIA                           | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for IVA                                                                                         |
+| Outcome - SEVERE COMBINED IMMUNODEFICIENCY DISEASE | CareConnect-Procedure-1.Procedure.outcome | Outcome of screening for SCID |
 | Comments                                                 | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken.                       |
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
@@ -274,6 +275,16 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 940151000000102 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Blood spot isovaleric acidaemia screening test |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+
+
+### CareConnect-Procedure-1 (Blood Spot Screening, Severe combined immunodeficiency disease)
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
+| Procedure.code.coding.code | 1..1 | Fixed Value: 1239891000000106 |
+| Procedure.code.coding.display | 1..1 | Fixed Value: Severe combined immunodeficiency screening test |
 | Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
 
 
