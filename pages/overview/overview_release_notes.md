@@ -15,6 +15,10 @@ summary: Summary release notes of the versions released in National Events Manag
 [Generic Event Message Requirements](explore_generic_event_requirements.html)
 - Added additional guidance around element order within FHIR resources and conformance to schemas.
 
+[NIPE Outcome](nipe_outcome_1.html)
+- Addition of BCG Eligibility Status to theevent message
+
+
 ## 2.7.3 (22/02/2021) ##
 
 - Removal of Beta status from project

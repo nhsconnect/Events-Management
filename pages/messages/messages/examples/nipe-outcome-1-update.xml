@@ -461,4 +461,36 @@
 			</Location>
 		</resource>
 	</entry>
+	<!--BCG Eligibility Status-->
+	<entry>
+		<fullUrl value="urn:uuid:3b229a9e-9dca-11eb-a8b3-0242ac130003"/>
+		<resource>
+			<Observation>
+				<id value="3b229a9e-9dca-11eb-a8b3-0242ac130003"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1"/>
+				</meta>
+				<status value="final"/>
+				<code>
+					<coding>
+						<system value="TBC" />
+						<code value="eligible-for-bcg"/>
+						<display value="Eligible for BCG"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
+				</subject>
+				<context>
+					<reference value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
+				</context>
+				<performer>
+					<actor>
+						<reference value="urn:uuid:9a53ead6-ffbb-4914-b877-5026f947cfaa"/>
+					</actor>
+				</performer>
+				<valueBoolean value="true"/>
+			</Observation>
+		</resource>
+	</entry>
 </Bundle>
