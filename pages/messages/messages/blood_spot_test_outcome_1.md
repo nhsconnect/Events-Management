@@ -66,20 +66,21 @@ The following requirements and resource population guidance must be followed in 
 
 ## Resource Mapping Overview  ##
 
-| Element Name                                             | FHIR resource element                                            | Description                                                                                                          |
-|----------------------------------------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Date of Blood Test Outcome Received                      | CareConnect-DiagnosticReport-1.issued                            | The date that a Blood Spot Test outcome (status) was received by a Health Care Provider from the testing laboratory. |
-| Outcome - PHENYLKETONURIA                                | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for PKU                                                                                         |
-| Outcome - SICKLE CELL DISEASE                            | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for SCD                                                                                         |
-| Outcome - CYSTIC FIBROSIS                                | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for CF                                                                                          |
-| Outcome - CONGENITAL HYPOTHYROIDISM                      | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for CHT                                                                                         |
-| Outcome - MEDIUM CHAIN ACYL-COA DEHYDROGENASE DEFICIENCY | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for MCADD                                                                                       |
-| Outcome - HOMOCYSTINURIA                                 | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for HCU                                                                                         |
-| Outcome - MAPLE SYRUP URINE DISEASE                      | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for MSUD                                                                                        |
-| Outcome - GLUTARIC ACIDURIA TYPE 1                       | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for GA1                                                                                         |
-| Outcome - ISOVALERIC ACIDAEMIA                           | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for IVA                                                                                         |
-| Outcome - SEVERE COMBINED IMMUNODEFICIENCY DISEASE | CareConnect-Procedure-1.Procedure.outcome | Outcome of screening for SCID |
-| Comments                                                 | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken.                       |
+| Element Name                                             | FHIR resource element                                            | Description |
+|---|---|---|
+| Date of Blood Test Outcome Received | CareConnect-DiagnosticReport-1.issued | The date that a Blood Spot Test outcome (status) was received by a Health Care Provider from the testing laboratory. |
+| Outcome - PHENYLKETONURIA                                | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for PKU   |
+| Outcome - SICKLE CELL DISEASE                            | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for SCD   |
+| Outcome - CYSTIC FIBROSIS                                | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for CF    |
+| Outcome - CONGENITAL HYPOTHYROIDISM                      | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for CHT   |
+| Outcome - MEDIUM CHAIN ACYL-COA DEHYDROGENASE DEFICIENCY | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for MCADD |
+| Outcome - HOMOCYSTINURIA                                 | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for HCU   |
+| Outcome - MAPLE SYRUP URINE DISEASE                      | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for MSUD  |
+| Outcome - GLUTARIC ACIDURIA TYPE 1                       | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for GA1   |
+| Outcome - ISOVALERIC ACIDAEMIA                           | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for IVA   |
+| Outcome - SEVERE COMBINED IMMUNODEFICIENCY               | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for SCID  |
+| Comments | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken. |
+
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
@@ -188,7 +189,7 @@ The CareConnect-DiagnosticReport-1 resource included as part of the event messag
 
 The CareConnect-Procedure-1 resource included as part of the event message SHALL conform to the [CareConnect-Procedure-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..9 (new) | 0..9 (delete) |
+| Resource Cardinality | 0..10 (new) | 0..10 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -278,7 +279,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
 
 
-### CareConnect-Procedure-1 (Blood Spot Screening, Severe combined immunodeficiency disease)
+### CareConnect-Procedure-1 (Blood Spot Screening, Severe Combined Immunodeficiency)
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
