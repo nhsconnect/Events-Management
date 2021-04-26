@@ -76,7 +76,7 @@ The following requirements and resource population guidance must be followed in 
 | Outcome Status Eyes     | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with eyes                                                                                 |
 | Outcome Status Testes   | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with the testes                                                                           |
 | Outcome Status Heart    | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with the heart                                                                            |
-| Eligible for BCG | CareConnect-Observation-1.valueBoolean | Whether the patient is eligible for the BCG vaccine |
+| Eligible for BCG | CareConnect-Observation-1.valueCodeableConcept | Whether the patient is eligible for the BCG vaccine |
 | Comment                 | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken.                                               |
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
@@ -256,10 +256,12 @@ The CareConnect-Observation-1 resource included as part of the event message SHA
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | subject | 1..1 | This will reference the patient resource representing the subject of this event |
-| code.coding.system | 1..1 | Fixed Value: TBC |
-| code.coding.code | 1..1 | Fixed Value: "eligible-for-bcg" |
-| code.coding.display | 1..1 | Fixed Value: "Eligible for BCG" |
-| valueBoolean | 1..1 | `true` where the child is eligible for the BCG vaccine, `false` when the child is not eligible |
+| code.coding.code | 1..1 | Fixed Value: "bcg-eligibility" |
+| code.coding.display | 1..1 | Fixed Value: "Eligibility for BCG" |
+| valueCodeableConcept | 1..1 | Indication of if a child is eligible for BCG |
+| valueCodeableConcept.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
+| valueCodeableConcept.coding.code | 1..1 | Where the child is eligible for BCG the message should include the code `{TBC}`, where the child is **NOT** eligible for BCG the message should include the code value `{TBC}` |
+| valueCodeableConcept.coding.display | 1..1 | Where the child is eligible for BCG the message should include the value `Eligible for BCG`, where the child is **NOT** eligible for BCG the message should include the value `Not eligible for BCG` |
 
 
 

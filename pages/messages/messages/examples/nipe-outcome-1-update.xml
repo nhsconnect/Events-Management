@@ -356,12 +356,12 @@
 					<value value="abc1111"/>
 				</identifier>
 				<status value="finished"/>
-				<type> 
+				<type>
 					<coding>
-						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/> 
-						<code value="006"/> 
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/>
+						<code value="006"/>
 						<display value="Newborn Infant Physical Examination"/>
-					</coding> 
+					</coding>
 				</type>
 				<subject>
 					<reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
@@ -473,9 +473,9 @@
 				<status value="final"/>
 				<code>
 					<coding>
-						<system value="TBC" />
-						<code value="eligible-for-bcg"/>
-						<display value="Eligible for BCG"/>
+						<system value="http://snomed.info/sct"/>
+						<code value="TBC"/>
+						<display value="BCG Eligibility"/>
 					</coding>
 				</code>
 				<subject>
@@ -489,7 +489,13 @@
 						<reference value="urn:uuid:9a53ead6-ffbb-4914-b877-5026f947cfaa"/>
 					</actor>
 				</performer>
-				<valueBoolean value="true"/>
+				<valueCodeableConcept>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="TBC"/>
+						<display value="Eligible for BCG"/>
+					</coding>
+				</valueCodeableConcept>
 			</Observation>
 		</resource>
 	</entry>

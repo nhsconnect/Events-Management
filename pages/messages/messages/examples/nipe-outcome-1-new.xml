@@ -473,9 +473,9 @@
 				<status value="final"/>
 				<code>
 					<coding>
-						<system value="TBC" />
-						<code value="eligible-for-bcg"/>
-						<display value="Eligible for BCG"/>
+						<system value="http://snomed.info/sct" />
+						<code value="TBC"/>
+						<display value="BCG Eligibility"/>
 					</coding>
 				</code>
 				<subject>
@@ -489,7 +489,13 @@
 						<reference value="urn:uuid:9a53ead6-ffbb-4914-b877-5026f947cfaa"/>
 					</actor>
 				</performer>
-				<valueBoolean value="true"/>
+				<valueCodeableConcept>
+					<coding>
+						<system value="http://snomed.info/sct" />
+						<code value="TBC"/>
+						<display value="Eligible for BCG"/>
+					</coding>
+				</valueCodeableConcept>
 			</Observation>
 		</resource>
 	</entry>
