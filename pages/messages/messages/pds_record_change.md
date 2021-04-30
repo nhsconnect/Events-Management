@@ -7,7 +7,7 @@ permalink: pds_record_change.html
 summary: "The PDS Record Change event"
 ---
 
-The `PDS Record Change` event message is generated and published by the Spine, when a change is made to a patient record within the Patient Demographics Service (PDS). The event message does not contain all the PDS information as the event message is only intended to be a notification that the reference patient record has changed, and allow the subscriber to perform their existing PDS synchronisation processes.
+The `PDS Record Change` event message is generated and published by the Spine, when a change is made to a patient record within the Patient Demographics Service (PDS). The event message does not contain all the PDS information as the event message is only intended to be a notification that the referenced patient record has changed, and allow the subscriber to perform their existing PDS synchronisation processes.
 
 Any change to a patients PDS record will trigger the publication of this event, some example of changes that would trigger this event are:
 
