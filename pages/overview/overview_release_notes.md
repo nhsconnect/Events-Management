@@ -9,11 +9,18 @@ summary: Summary release notes of the versions released in National Events Manag
 
 ## 2.7.4 (TBC) ##
 
+[Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
+- Addition of SCID procedure outcome to event message
+
 [Generic Event Message Requirements](explore_generic_event_requirements.html)
 - Added additional guidance around element order within FHIR resources and conformance to schemas.
 
+[NIPE Outcome](nipe_outcome_1.html)
+- Addition of BCG Eligibility Status to theevent message
+
 [PDS Record Change](pds_record_change.html)
 - Added PDS Record Change event
+
 
 ## 2.7.3 (22/02/2021) ##
 
