@@ -259,9 +259,8 @@ The CareConnect-Observation-1 resource included as part of the event message SHA
 | code.coding.code | 1..1 | Fixed Value: "bcg-eligibility" |
 | code.coding.display | 1..1 | Fixed Value: "Eligibility for BCG" |
 | valueCodeableConcept | 1..1 | Indication of if a child is eligible for BCG |
-| valueCodeableConcept.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
-| valueCodeableConcept.coding.code | 1..1 | Where the child is eligible for BCG the message should include the code `{TBC}`, where the child is **NOT** eligible for BCG the message should include the code value `{TBC}` |
-| valueCodeableConcept.coding.display | 1..1 | Where the child is eligible for BCG the message should include the value `Eligible for BCG`, where the child is **NOT** eligible for BCG the message should include the value `Not eligible for BCG` |
+| valueCodeableConcept.coding.code | 1..1 | Where the child **is** eligible for BCG the message MUST include the code value: "eligible-for-bcg"<br/><br/>Where the child **is NOT** eligible for BCG the message MUST include the code value: "not-eligible-for-bcg" |
+| valueCodeableConcept.coding.display | 1..1 | Where the child **is** eligible for BCG the message MUST include the value: "Eligible for BCG"<br/><br/>Where the child **is NOT** eligible for BCG the message MUST include the value: "Not eligible for BCG" |
 
 
 
