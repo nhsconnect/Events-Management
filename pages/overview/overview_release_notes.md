@@ -15,8 +15,15 @@ summary: Summary release notes of the versions released in National Events Manag
 [Generic Event Message Requirements](explore_generic_event_requirements.html)
 - Added additional guidance around element order within FHIR resources and conformance to schemas.
 
+[Newborn Hearing](newborn_hearing_1.html)
+- Correction of wording around the encounter date to remove incorrect implication around what the date represents
+
 [NIPE Outcome](nipe_outcome_1.html)
-- Addition of BCG Eligibility Status to theevent message
+- Addition of BCG Eligibility Status to the event message
+- Correction of wording around the encounter date to remove incorrect implication around what the date represents
+
+[PDS Change of GP](pds_change_of_gp.html)
+- Correction of element and resource cardinalities to reflect the event messages published by PDS. Scenarios where there was no previous GP, such as first GP registration, and scenarios where there is no new GP, such as in a de-registration.
 
 
 ## 2.7.3 (22/02/2021) ##
