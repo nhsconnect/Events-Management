@@ -72,7 +72,7 @@ The following requirements and resource population guidance must be followed in 
 
 | Element Name                                               | FHIR resource element                                            | Description                                                                                                                                  |
 |------------------------------------------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| Date/Time                                                  | CareConnect-Encounter-1.period.start                             | The date the screening test took place                                                                                                       |
+| Date/Time                                                  | CareConnect-Encounter-1.period.start                             | The start date of the encounter in which the screening test took place                                                                                                       |
 | Location                                                   | CareConnect-Location-1.identifier                                | The location that is recorded as to where the newborn hearing screening examination took place                                               |
 | Performing Professional                                    | CareConnect-Practitioner-1.name                                  | The name of the Healthcare Professional responsible for the person                                                                           |
 | SDS Job Role Name                                          | CareConnect-PractitionerRole-1.codeableConcept                   | The professional role that the Healthcare Professional has in relation to the person (e.g. Nursery Nurse, Health Visitor, School Nurse etc.) |
@@ -124,7 +124,7 @@ The CareConnect-Encounter-1 resource included as part of the event message SHALL
 | serviceProvider | 1..1 | 0..1 | This will reference the Organisation resource hosting the Encounter |
 | location |  0..1 | 0..1 | This will reference the Encounter's Location |
 | subject | 1..1 | 0..1 | This will reference the patient resource representing the subject of this event |
-| period.start | 1..1 | 0..1 | Date/Time |
+| period.start | 1..1 | 0..1 | The start date of the encounter in which the screening test took place |
 
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)

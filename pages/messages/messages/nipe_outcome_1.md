@@ -68,7 +68,7 @@ The following requirements and resource population guidance must be followed in 
 
 | Element Name            | FHIR resource element                                            | Description                                                                                                                                  |
 |-------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| Date/Time               | CareConnect-Encounter-1.period.start                             | The date the examination took place                                                                                                          |
+| Date/Time               | CareConnect-Encounter-1.period.start                             | The start date of the encounter in which the examination took place                                                                                                          |
 | Location                | CareConnect-Location-1.identifier (ODS Site Code)                | The location recorded as to where the NIPE took place                                                                                        |
 | Performing Professional | CareConnect-Practitioner-1.name                                  | Name of the Healthcare Professional performing the examination                                                                               |
 | SDS Job Role Name       | CareConnect-PractitionerRole-1.code (SDS Job Role Name)          | The professional role that the Healthcare Professional has in relation to the person (e.g. Nursery Nurse, Health Visitor, School Nurse etc.) |
@@ -122,7 +122,7 @@ The CareConnect-Encounter-1 resource included as part of the event message SHALL
 | serviceProvider | 1..1 | 0..1 | This will reference the Organisation resource hosting the Encounter |
 | location | 0..1 | 0..1 | This will reference the Encounter's Location |
 | subject | 1..1 | 0..1 | This will reference the patient resource representing the subject of this event |
-| period.start | 1..1 | 0..1 | Date/Time |
+| period.start | 1..1 | 0..1 | The start date of the encounter in which the examination took place |
 
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
@@ -259,9 +259,8 @@ The CareConnect-Observation-1 resource included as part of the event message SHA
 | code.coding.code | 1..1 | Fixed Value: "bcg-eligibility" |
 | code.coding.display | 1..1 | Fixed Value: "Eligibility for BCG" |
 | valueCodeableConcept | 1..1 | Indication of if a child is eligible for BCG |
-| valueCodeableConcept.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
-| valueCodeableConcept.coding.code | 1..1 | Where the child is eligible for BCG the message should include the code `{TBC}`, where the child is **NOT** eligible for BCG the message should include the code value `{TBC}` |
-| valueCodeableConcept.coding.display | 1..1 | Where the child is eligible for BCG the message should include the value `Eligible for BCG`, where the child is **NOT** eligible for BCG the message should include the value `Not eligible for BCG` |
+| valueCodeableConcept.coding.code | 1..1 | Where the child **is** eligible for BCG the message MUST include the code value: "eligible-for-bcg"<br/><br/>Where the child **is NOT** eligible for BCG the message MUST include the code value: "not-eligible-for-bcg" |
+| valueCodeableConcept.coding.display | 1..1 | Where the child **is** eligible for BCG the message MUST include the value: "Eligible for BCG"<br/><br/>Where the child **is NOT** eligible for BCG the message MUST include the value: "Not eligible for BCG" |
 
 
 
