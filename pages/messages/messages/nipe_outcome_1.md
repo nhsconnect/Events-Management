@@ -68,7 +68,7 @@ The following requirements and resource population guidance must be followed in 
 
 | Element Name            | FHIR resource element                                            | Description                                                                                                                                  |
 |-------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| Date/Time               | CareConnect-Encounter-1.period.start                             | The date the examination took place                                                                                                          |
+| Date/Time               | CareConnect-Encounter-1.period.start                             | The start date of the encounter in which the examination took place                                                                                                          |
 | Location                | CareConnect-Location-1.identifier (ODS Site Code)                | The location recorded as to where the NIPE took place                                                                                        |
 | Performing Professional | CareConnect-Practitioner-1.name                                  | Name of the Healthcare Professional performing the examination                                                                               |
 | SDS Job Role Name       | CareConnect-PractitionerRole-1.code (SDS Job Role Name)          | The professional role that the Healthcare Professional has in relation to the person (e.g. Nursery Nurse, Health Visitor, School Nurse etc.) |
@@ -76,6 +76,7 @@ The following requirements and resource population guidance must be followed in 
 | Outcome Status Eyes     | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with eyes                                                                                 |
 | Outcome Status Testes   | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with the testes                                                                           |
 | Outcome Status Heart    | CareConnect-Procedure-1.outcome                                  | Whether or not a problem was detected or suspected with the heart                                                                            |
+| Eligible for BCG | CareConnect-Observation-1.valueCodeableConcept | Whether the patient is eligible for the BCG vaccine |
 | Comment                 | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken.                                               |
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
@@ -121,7 +122,7 @@ The CareConnect-Encounter-1 resource included as part of the event message SHALL
 | serviceProvider | 1..1 | 0..1 | This will reference the Organisation resource hosting the Encounter |
 | location | 0..1 | 0..1 | This will reference the Encounter's Location |
 | subject | 1..1 | 0..1 | This will reference the patient resource representing the subject of this event |
-| period.start | 1..1 | 0..1 | Date/Time |
+| period.start | 1..1 | 0..1 | The start date of the encounter in which the examination took place |
 
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
@@ -206,7 +207,7 @@ The CareConnect-Procedure-1 resource included as part of the event message SHALL
 For each of the Procedure resources representing a Test Outcome:
 
 
-### CareConnect-Procedure-1 (Physical Examination, Hips)
+#### CareConnect-Procedure-1 (Physical Examination, Hips)
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -216,7 +217,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/NIPE-Outcome-1 |
 
 
-### CareConnect-Procedure-1 (Physical Examination, Eyes)
+#### CareConnect-Procedure-1 (Physical Examination, Eyes)
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -226,7 +227,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/NIPE-Outcome-1 |
 
 
-### CareConnect-Procedure-1 (Physical Examination, Testes)
+#### CareConnect-Procedure-1 (Physical Examination, Testes)
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -236,7 +237,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/NIPE-Outcome-1 |
 
 
-### CareConnect-Procedure-1 (Physical Examination, Heart)
+#### CareConnect-Procedure-1 (Physical Examination, Heart)
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -244,6 +245,24 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.code | 1..1 | Fixed Value: 988351000000107 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Newborn and Infant Physical Examination Screening Programme, heart examination |
 | Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/NIPE-Outcome-1 |
+
+
+### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1)
+
+The CareConnect-Observation-1 resource included as part of the event message SHALL conform to the [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 0..1 (new) | 0..1 (delete) |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| subject | 1..1 | This will reference the patient resource representing the subject of this event |
+| code.coding.code | 1..1 | Fixed Value: "bcg-eligibility" |
+| code.coding.display | 1..1 | Fixed Value: "Eligibility for BCG" |
+| valueCodeableConcept | 1..1 | Indication of if a child is eligible for BCG |
+| valueCodeableConcept.coding.code | 1..1 | Where the child **is** eligible for BCG the message MUST include the code value: "eligible-for-bcg"<br/><br/>Where the child **is NOT** eligible for BCG the message MUST include the code value: "not-eligible-for-bcg" |
+| valueCodeableConcept.coding.display | 1..1 | Where the child **is** eligible for BCG the message MUST include the value: "Eligible for BCG"<br/><br/>Where the child **is NOT** eligible for BCG the message MUST include the value: "Not eligible for BCG" |
+
+
 
 
 ### [CareConnect-Communication-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1)

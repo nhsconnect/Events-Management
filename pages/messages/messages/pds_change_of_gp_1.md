@@ -90,7 +90,7 @@ The patient resource included in the event message SHALL conform to the [CareCon
 | --- | --- | --- |
 | meta.versionId | 1..1 | This element will contain the serial change number (SCN) of the patient record within Spine at the time this event was published. |
 | identifier | 1..1 | Patient NHS Number SHALL be included within the nhsNumber identifier slice |
-| generalPractitioner | 1..1 | References to an organization representing the new GP Practice which is the current primary care provider for the patient. |
+| generalPractitioner | 0..1 | References to an organization representing the new GP Practice which is the current primary care provider for the patient. In a de-registration scenario where a new GP is not applied to the patients record, this element will not be included. |
 
 The `generalPractitioner` element does not contain a date indicating when the patient was registered at their new GP practice. The `timestamp` within the MessageHeader resource may be considered the effective date for the new GP Practice as this is the date when the patient's GP registration was changed to the new GP on the Spine.
 
@@ -111,9 +111,11 @@ Within the bundle there will be multiple organization resources, including one f
 
 ### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1)
 
-The EpisodeOfCare resource included in the event message SHALL conform to the [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) constrained FHIR profile and the additional population guidance as per the table below:
+The EpisodeOfCare resource included in the event message SHALL conform to the [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) constrained FHIR profile and the additional population guidance as per the table below.
 
-| Resource Cardinality | 1..1 |
+Where a new GP is registered on the patient record, but there was no previous GP, this resource will not be included in the message.
+
+| Resource Cardinality | 0..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |

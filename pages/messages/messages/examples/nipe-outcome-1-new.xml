@@ -356,12 +356,12 @@
 					<value value="abc1111"/>
 				</identifier>
 				<status value="finished"/>
-				<type> 
+				<type>
 					<coding>
-						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/> 
-						<code value="006"/> 
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/DCH-ChildHealthEncounterType-1"/>
+						<code value="006"/>
 						<display value="Newborn Infant Physical Examination"/>
-					</coding> 
+					</coding>
 				</type>
 				<subject>
 					<reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
@@ -459,6 +459,42 @@
 					<value value="RX3EP"/>
 				</identifier>
 			</Location>
+		</resource>
+	</entry>
+	<!--BCG Eligibility Status-->
+	<entry>
+		<fullUrl value="urn:uuid:3b229a9e-9dca-11eb-a8b3-0242ac130003"/>
+		<resource>
+			<Observation>
+				<id value="3b229a9e-9dca-11eb-a8b3-0242ac130003"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1"/>
+				</meta>
+				<status value="final"/>
+				<code>
+					<coding>
+						<code value="bcg-eligibility"/>
+						<display value="Eligibility for BCG"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
+				</subject>
+				<context>
+					<reference value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
+				</context>
+				<performer>
+					<actor>
+						<reference value="urn:uuid:9a53ead6-ffbb-4914-b877-5026f947cfaa"/>
+					</actor>
+				</performer>
+				<valueCodeableConcept>
+					<coding>
+						<code value="eligible-for-bcg"/>
+						<display value="Eligible for BCG"/>
+					</coding>
+				</valueCodeableConcept>
+			</Observation>
 		</resource>
 	</entry>
 </Bundle>
