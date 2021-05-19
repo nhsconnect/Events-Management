@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.7.4 (TBC) ##
+## 2.8.0 (17/05/2021) ##
 
 [Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
 - Addition of SCID procedure outcome to event message
