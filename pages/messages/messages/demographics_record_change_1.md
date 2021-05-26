@@ -72,11 +72,43 @@ The event message will contain an "NRL-DocumentReference-1" Resource, which acts
 
 | Resource Cardinality | 1..1 |
 
-The DocumentReference resource **MUST**:
+The DocumentReference resource **MUST** conform to the following requirements:
 
-- conform to the requirements in the [National Record Locator (NRL)](https://developer.nhs.uk/apis/nrl/) specification 
-- be a [pointer](https://developer.nhs.uk/apis/nrl//pointer_data_model_overview.html) containing the `information type` ["Demographics"](https://nrl-data-format-draft.netlify.app/supported_pointer_types.html)
-- point to demographics information and support at least the [FHIR R4 Patient](https://developer.nhs.uk/apis/nrl/retrieval_fhir_r4_patient.html) retrieval format and interaction
+|Data Item|[FHIRPath](https://hl7.org/fhirpath/)|Cardinality|Population Guidance|
+|----|---------|----|-----------|-----|
+| Master identifier | `masterIdentifier` | 1..1 | The master identifier MUST be unique for each pointer. |
+| | `masterIdentifier.system` | 1..1 | The namespace for the identifier. |
+| | `masterIdentifier.value` | 1..1 | The unique value of the identifier. |
+| Patient | `subject.reference` | 1..1 | The NHS Number reference **MUST** follow the structure: `https://demographics.spineservices.nhs.uk/STU3/Patient/[nhsNumber]`. |
+| Profile | `meta.profile` | 1..1 | The value **MUST** be `https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1`. |
+| Pointer owner | `custodian.reference` | 1..1 | The organization reference **MUST** follow the structure: `https://directory.spineservices.nhs.uk/STU3/Organization/[ODS Code]`. |
+| Pointer status | `status` | 1..1 | All pointers created **MUST** have the status `current`. |
+| Information category | `class` | 1..1 | `class.coding` is bound to the [NRL-RecordClass-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-RecordClass-1) ValueSet. |
+| | `class.coding.system` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordClass-1` |
+| | `class.coding.code` | 1..1 | Fixed value: `record-heading` |
+| | `class.coding.display` | 1..1 | Fixed value: `Record Heading` |
+| Information type | `type` | 1..1 | `type.coding` is bound to the [NRL-RecordType-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-RecordType-1) ValueSet. |
+| | `type.coding.system` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordType-1`. |
+| | `type.coding.code` | 1..1 | Fixed value: `demographics` |
+| | `type.coding.display` | 1..1 | Fixed value: `Demographics` |
+| Clinical setting | `context.practiceSetting` | 1..1 | `context.practiceSetting.coding` is bound to the [NRL-PracticeSetting-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-PracticeSetting-1) ValueSet. Note that this ValueSet refers to a SNOMED CT reference set and all SNOMED CT concepts that are members of this reference set are valid clinical setting codes. |
+| | `context.practiceSetting.coding.system` | 1..1 | Identity of the terminology system. |
+| | `context.practiceSetting.coding.code` | 1..1 | Symbol in syntax defined by the system. |
+| | `context.practiceSetting.coding.display` | 1..1 | Representation defined by the system. The display value **MUST** be the preferred term and one of the synonyms for the concept, not the Fully Specified Name, as described in the [FHIR guidance for usage of SNOMED CT](https://www.hl7.org/fhir/STU3/snomedct.html). Display values are case sensitive and **MUST** only have the first word capitalised. |
+| Information owner | `author.reference` | 1..1 | The organization reference **MUST** follow the structure: `https://directory.spineservices.nhs.uk/STU3/Organization/[ODS Code]`. |
+| Retrieval URL | `content.attachment.url` | 1..1 | URL where the information can be retrieved in the associated retrieval format. |
+| Retrieval format | `content.format` | 1..1 | Bound to the [NRL-FormatCode-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-FormatCode-1) ValueSet. |
+| | `content.format.system` | 1..1 | Identity of the terminology system. |
+| | `content.format.code` | 1..1 | Symbol in syntax defined by the system. |
+| | `content.format.display` | 1..1 | Representation defined by the system. |
+| Retrieval MIME type | `content.attachment.contentType` | 1..1 | The MIME type of the content available at the `content.attachment.url` (e.g. [unstructured document supported MIME types](retrieval_unstructured_document.html#content-type).)<br /><br />Where more than one data format is available for the content, there will be multiple `content` entries, one for each MIME type (which may share the same URL). |
+| Information Stability | `content.extension:contentStability` | 1..1 | Information stability extension. |
+| | `content.extension:contentStability`<br/>`.url` | 1..1 | Identifies the meaning of the extension. The value **MUST** be `https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NRL-ContentStability-1`. |
+| | `content.extension:contentStability`<br/>`.valueCodeableConcept` | 1..1 | `content.extension:contentStability.valueCodeableConcept.coding` is bound to the [NRL-ContentStability-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-ContentStability-1) ValueSet. |
+| | `content.extension:contentStability`<br/>`.valueCodeableConcept.coding.system` | 1..1 | Identity of the terminology system. |
+| | `content.extension:contentStability`<br/>`.valueCodeableConcept.coding.code` | 1..1 | Symbol in syntax defined by the system. |
+| | `content.extension:contentStability`<br/>`.valueCodeableConcept.coding.display` | 1..1 | Representation defined by the system. |
+
 
 
 ## Demographics Record Change Example ##
