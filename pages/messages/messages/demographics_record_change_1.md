@@ -75,27 +75,30 @@ The DocumentReference resource **MUST** conform to the [NRL-DocumentReference-1]
 
 |Data Item|[FHIRPath](https://hl7.org/fhirpath/)|Cardinality|Population Guidance|
 |----|---------|----|-----------|-----|
-| Master identifier | `masterIdentifier` | 1..1 | The master identifier MUST be unique for each pointer. |
-| Patient | `subject.reference` | 1..1 | The NHS Number reference **MUST** follow the structure: `https://demographics.spineservices.nhs.uk/STU3/Patient/[nhsNumber]`. |
-| Profile | `meta.profile` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1`. |
-| Pointer owner | `custodian.reference` | 1..1 | The organization reference **MUST** follow the structure: `https://directory.spineservices.nhs.uk/STU3/Organization/[ODS Code]`. |
-| Pointer status | `status` | 1..1 | Fixed value: `current`. |
-| Information category | `class` | 1..1 | `class.coding` is bound to the [NRL-RecordClass-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-RecordClass-1) ValueSet. |
+| Master identifier | `masterIdentifier` | 1..1 | The master identifier MUST be unique for each pointer |
+| Patient | `subject.reference` | 1..1 | The NHS Number reference **MUST** follow the structure: `https://demographics.spineservices.nhs.uk/STU3/Patient/[nhsNumber]` |
+| Profile | `meta.profile` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1` |
+| Pointer owner | `custodian.reference` | 1..1 | The organization reference **MUST** follow the structure: `https://directory.spineservices.nhs.uk/STU3/Organization/[ODS Code]` |
+| Pointer status | `status` | 1..1 | Fixed value: `current` |
+| Information category | `class` | 1..1 | `class.coding` is bound to the [NRL-RecordClass-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-RecordClass-1) ValueSet |
 | | `class.coding.system` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordClass-1` |
 | | `class.coding.code` | 1..1 | Fixed value: `record-heading` |
 | | `class.coding.display` | 1..1 | Fixed value: `Record Heading` |
-| Information type | `type` | 1..1 | `type.coding` is bound to the [NRL-RecordType-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-RecordType-1) ValueSet. |
-| | `type.coding.system` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordType-1`. |
+| Information type | `type` | 1..1 | `type.coding` is bound to the [NRL-RecordType-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-RecordType-1) ValueSet |
+| | `type.coding.system` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordType-1` |
 | | `type.coding.code` | 1..1 | Fixed value: `demographics` |
 | | `type.coding.display` | 1..1 | Fixed value: `Demographics` |
-| Clinical setting | `context.practiceSetting` | 1..1 | `context.practiceSetting.coding` is bound to the [NRL-PracticeSetting-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-PracticeSetting-1) ValueSet. Note that this ValueSet refers to a SNOMED CT reference set and all SNOMED CT concepts that are members of this reference set are valid clinical setting codes. |
-| Information owner | `author.reference` | 1..1 | The organization reference **MUST** follow the structure: `https://directory.spineservices.nhs.uk/STU3/Organization/[ODS Code]`. |
-| Retrieval URL | `content.attachment.url` | 1..1 | URL where the information can be retrieved in the associated retrieval format. |
-| Retrieval format | `content.format` | 1..1 | Bound to the [NRL-FormatCode-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-FormatCode-1) ValueSet. |
-| Retrieval MIME type | `content.attachment.contentType` | 1..1 | The MIME type of the content available at the `content.attachment.url` (e.g. [unstructured document supported MIME types](retrieval_unstructured_document.html#content-type).)<br /><br />Where more than one data format is available for the content, there will be multiple `content` entries, one for each MIME type (which may share the same URL). |
-| Information Stability | `content.extension:contentStability` | 1..1 | Information stability extension. |
+| Clinical setting | `context.practiceSetting` | 1..1 | `context.practiceSetting.coding` is bound to the [NRL-PracticeSetting-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-PracticeSetting-1) ValueSet. Note that this ValueSet refers to a SNOMED CT reference set and all SNOMED CT concepts that are members of this reference set are valid clinical setting codes |
+| Information owner | `author.reference` | 1..1 | The organization reference **MUST** follow the structure: `https://directory.spineservices.nhs.uk/STU3/Organization/[ODS Code]` |
+| Retrieval URL | `content.attachment.url` | 1..1 | URL where the information can be retrieved in the associated retrieval format |
+| Retrieval format | `content.format` | 1..1 | Bound to the [NRL-FormatCode-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-FormatCode-1) ValueSet |
+| Retrieval MIME type | `content.attachment.contentType` | 1..1 | The MIME type of the content available at the `content.attachment.url` (e.g. [unstructured document supported MIME types](retrieval_unstructured_document.html#content-type).)<br /><br />Where more than one data format is available for the content, there will be multiple `content` entries, one for each MIME type (which may share the same URL) |
+| Information Stability | `content.extension:contentStability` | 1..1 | Information stability extension |
 
 
 
 ## Demographics Record Change Example ##
 
+```
+{% include_relative examples/demographics-record-change-1.xml %}
+```
