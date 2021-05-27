@@ -74,15 +74,15 @@
 				<status value="current"/>
 				<type>
 					<coding>
-						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordType-1"/>
-						<code value="demographics"/>
-						<display value="Demographics"/>
+						<system value="http://snomed.info/sct"/>
+						<code value="886731000000109"/>
+						<display value="Patient demographics"/>
 					</coding>
 				</type>
 				<class>
 					<coding>
-						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordClass-1"/>
-						<code value="record-heading"/>
+						<system value="http://snomed.info/sct"/>
+						<code value="716931000000107"/>
 						<display value="Record headings"/>
 					</coding>
 				</class>
@@ -104,7 +104,7 @@
 					<format>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-FormatCode-1"/>
 						<code value="urn:nhsd:fhir:r4:patient"/>
-						<display value="FHIR Patient R4"/>
+						<display value="FHIR R4 Patient"/>
 					</format>
 					<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NRL-ContentStability-1">
 						<valueCodeableConcept>
@@ -124,7 +124,7 @@
 					<format>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-FormatCode-1"/>
 						<code value="urn:nhsd:fhir:r4:patient"/>
-						<display value="FHIR Patient R4"/>
+						<display value="FHIR R4 Patient"/>
 					</format>
 					<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NRL-ContentStability-1">
 						<valueCodeableConcept>

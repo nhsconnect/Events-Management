@@ -81,13 +81,13 @@ The DocumentReference resource **MUST** conform to the [NRL-DocumentReference-1]
 | Pointer owner | `custodian.reference` | 1..1 | The organization reference **MUST** follow the structure: `https://directory.spineservices.nhs.uk/STU3/Organization/[ODS Code]` |
 | Pointer status | `status` | 1..1 | Fixed value: `current` |
 | Information category | `class` | 1..1 | `class.coding` is bound to the [NRL-RecordClass-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-RecordClass-1) ValueSet |
-| | `class.coding.system` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordClass-1` |
-| | `class.coding.code` | 1..1 | Fixed value: `record-heading` |
-| | `class.coding.display` | 1..1 | Fixed value: `Record Heading` |
+| | `class.coding.system` | 1..1 | Fixed value: `http://snomed.info/sct` |
+| | `class.coding.code` | 1..1 | Fixed value: `716931000000107` |
+| | `class.coding.display` | 1..1 | Fixed value: `Record headings` |
 | Information type | `type` | 1..1 | `type.coding` is bound to the [NRL-RecordType-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-RecordType-1) ValueSet |
-| | `type.coding.system` | 1..1 | Fixed value: `https://fhir.nhs.uk/STU3/CodeSystem/NRL-RecordType-1` |
-| | `type.coding.code` | 1..1 | Fixed value: `demographics` |
-| | `type.coding.display` | 1..1 | Fixed value: `Demographics` |
+| | `type.coding.system` | 1..1 | Fixed value: `http://snomed.info/sct` |
+| | `type.coding.code` | 1..1 | Fixed value: `886731000000109` |
+| | `type.coding.display` | 1..1 | Fixed value: `Patient demographics` |
 | Clinical setting | `context.practiceSetting` | 1..1 | `context.practiceSetting.coding` is bound to the [NRL-PracticeSetting-1](https://fhir.nhs.uk/STU3/ValueSet/NRL-PracticeSetting-1) ValueSet. Note that this ValueSet refers to a SNOMED CT reference set and all SNOMED CT concepts that are members of this reference set are valid clinical setting codes |
 | Information owner | `author.reference` | 1..1 | The organization reference **MUST** follow the structure: `https://directory.spineservices.nhs.uk/STU3/Organization/[ODS Code]` |
 | Retrieval URL | `content.attachment.url` | 1..1 | URL where the information can be retrieved in the associated retrieval format |
