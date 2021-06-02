@@ -58,9 +58,6 @@ entries:
         - title: Blood Spot Test Outcome
           url: /blood_spot_test_outcome_1.html
           output: web
-        - title: Demographics Record Change
-          url: /demographics_record_change_1.html
-          output: web
         - title: Newborn Hearing
           url: /newborn_hearing_1.html
           output: web
