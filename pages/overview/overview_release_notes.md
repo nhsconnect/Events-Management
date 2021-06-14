@@ -7,6 +7,11 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.8.1 (14/06/2021) ##
+
+[NIPE Outcome](nipe_outcome_1.html)
+- Updated example as performer in the observation contained an actor element when it should not.
+
 ## 2.8.0 (17/05/2021) ##
 
 [Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
