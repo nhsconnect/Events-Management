@@ -484,9 +484,7 @@
 					<reference value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
 				</context>
 				<performer>
-					<actor>
-						<reference value="urn:uuid:9a53ead6-ffbb-4914-b877-5026f947cfaa"/>
-					</actor>
+					<reference value="urn:uuid:9a53ead6-ffbb-4914-b877-5026f947cfaa"/>
 				</performer>
 				<valueCodeableConcept>
 					<coding>
