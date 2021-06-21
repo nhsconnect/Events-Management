@@ -13,6 +13,10 @@ summary: Summary release notes of the versions released in National Events Manag
 [Vaccinations](vaccinations_1.html)
 - Changed wording to highlight profile requirements
 
+[PDS Record Change](pds_record_change.html)
+- Added PDS Record Change event
+
+
 ## 2.8.1 (14/06/2021) ##
 
 [NIPE Outcome](nipe_outcome_1.html)
