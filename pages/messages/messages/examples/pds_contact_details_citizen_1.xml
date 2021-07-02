@@ -41,8 +41,8 @@
 				</extension>
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="pds-record-changed-1"/>
-					<display value="PDS Record Changed"/>
+					<code value="pds-contact-details-citizen-1"/>
+					<display value="PDS Change of Contact Details by Citizen"/>
 				</event>
 				<timestamp value="2019-11-01T15:00:00+00:00"/>
 				<source>
@@ -89,8 +89,17 @@
 					<family value="DAWKINS"/>
 					<given value="Jack"/>
 				</name>
+				<telecom>
+					<system value="phone"/>
+					<value value="0300 123 4567"/>
+					<use value="home"/>
+				</telecom>
+				<telecom>
+					<system value="email"/>
+					<value value="jackdawkins@gmail.com"/>
+				</telecom>
 				<birthDate value="2017-10-02"/>
 			</Patient>
 		</resource>
 	</entry>
-</Bundle> 
+</Bundle>

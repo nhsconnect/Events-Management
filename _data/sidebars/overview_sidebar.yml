@@ -73,6 +73,9 @@ entries:
         - title: PDS Change of GP
           url: /pds_change_of_gp.html
           output: web
+        - title: PDS Change of Contact Details by Citizen
+          url: /pds_contact_details_citizen_1.html
+          output: web
         - title: PDS Death Notification
           url: /pds_death_notification.html
           output: web
