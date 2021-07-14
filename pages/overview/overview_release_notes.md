@@ -13,9 +13,6 @@ summary: Summary release notes of the versions released in National Events Manag
 [Vaccinations](vaccinations_1.html)
 - Changed wording to highlight profile requirements
 
-[PDS Change of Contact Details by Citizen](pds_contact_details_citizen_1.html)
-- Added PDS Change of Contact Details by Citizen event
-
 [PDS Record Change](pds_record_change.html)
 - Added PDS Record Change event
 
