@@ -93,4 +93,27 @@
 			</Patient>
 		</resource>
 	</entry>
-</Bundle> 
+	<entry>
+		<fullUrl value="urn:uuid:7bc8c1bc-e54c-11eb-ba80-0242ac130004"/>
+		<resource>
+			<Provenance>
+				<id value="7bc8c1bc-e54c-11eb-ba80-0242ac130004"/>
+				<target>
+					<reference value="urn:uuid:7b0c7720-d1ed-11e8-a8d5-f2801f1b9fd1"/>
+				</target>
+				<recorded value="2021-07-15T08:39:24+00:00"/>
+				<agent>
+					<role>
+						<coding>
+							<system value="http://hl7.org/fhir/v3/ParticipationType"/>
+							<code value="AUT"/>
+						</coding>
+					</role>
+					<whoReference>
+						<reference value="urn:uuid:7b0c7720-d1ed-11e8-a8d5-f2801f1b9fd1"/>
+					</whoReference>
+				</agent>
+			</Provenance>
+		</resource>
+	</entry>
+</Bundle>

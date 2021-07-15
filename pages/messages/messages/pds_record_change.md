@@ -83,6 +83,21 @@ The following table outlines the key elements which will be included, but additi
 | birthDate | 1..1 | The patients date of birth. |
 
 
+### [Provenance](https://www.hl7.org/fhir/stu3/provenance.html)
+
+The Provenance resource will be included to indicate who changed the PDS record which trigged the publish of this event message. The resource SHALL conform to the [Provenance](https://www.hl7.org/fhir/stu3/provenance.html) FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
+
+The following table outlines the key elements which will be included, but additional elements and extensions may be included in the resource.
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| target | 1..1 | The target will reference the Patient resource |
+| recorded | 1..1 | The date and time the change was made to the record |
+| agent | 1..* | The agent which performed the change to the PDS record |
+| agent.whoReference | 1..1 | This will reference the agent who updated the record.<br/><br/>When the record was updated by the patient this will reference the patient resource within the message.<br/><br/>For other agents this will reference appropriate resources inline with the constraints of the profile. |
+
 
 ## PDS Record Change Example ##
 
