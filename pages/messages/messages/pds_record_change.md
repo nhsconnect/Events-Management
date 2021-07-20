@@ -85,9 +85,9 @@ The following table outlines the key elements which will be included, but additi
 
 ### [Provenance](https://www.hl7.org/fhir/stu3/provenance.html)
 
-The Provenance resource will be included to indicate who changed the PDS record which trigged the publish of this event message. The resource SHALL conform to the [Provenance](https://www.hl7.org/fhir/stu3/provenance.html) FHIR profile and the additional population guidance as per the table below:
+The Provenance resource will be included where appropriate to indicate who performed the change in PDS which trigged the publish of this event message. The resource SHALL conform to the [Provenance](https://www.hl7.org/fhir/stu3/provenance.html) FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 1..1 |
+| Resource Cardinality | 0..1 |
 
 The following table outlines the key elements which will be included, but additional elements and extensions may be included in the resource.
 
