@@ -89,6 +89,14 @@
 					<family value="DAWKINS"/>
 					<given value="Jack"/>
 				</name>
+				<telecom>
+					<system value="phone"/>
+					<value value="01234567890"/>
+				</telecom>
+				<telecom>
+					<system value="email"/>
+					<value value="jackdawkins@gmail.com"/>
+				</telecom>
 				<birthDate value="2017-10-02"/>
 			</Patient>
 		</resource>
