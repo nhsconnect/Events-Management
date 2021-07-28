@@ -97,7 +97,7 @@ The following table outlines the key elements which will be included, but additi
 | target | 1..1 | The target will reference the Patient resource |
 | recorded | 1..1 | The date and time the change was made to the record |
 | agent | 1..* | The agent which performed the change to the PDS record |
-| agent.whoReference | 1..1 | This will reference the agent who updated the record.<br/><br/>When the record was updated by the patient this will reference the patient resource within the message.<br/><br/>For other agents this will include an appropriate reference inline with the constraints of the FHIR profile. |
+| agent.whoReference | 1..1 | This will reference the agent who updated the record. |
 
 
 ## PDS Record Change Example ##

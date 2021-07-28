@@ -118,7 +118,7 @@
 						</coding>
 					</role>
 					<whoReference>
-						<reference value="urn:uuid:7b0c7720-d1ed-11e8-a8d5-f2801f1b9fd1"/>
+						<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/X26"/>
 					</whoReference>
 				</agent>
 			</Provenance>
