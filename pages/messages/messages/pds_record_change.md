@@ -30,9 +30,9 @@ The following is the FHIR event message structure for the PDS Record Change even
 
 The delivery of the PDS Record Change event messages to subscribers via MESH will use the following WorkflowID within the MESH control file. This WorkflowID will need to be added to the receiving MESH mailbox configuration before event messages can be received. 
 
-| MESH WorkflowID | NEMS_EVENT_1 |
+| MESH WorkflowID | PDS_RECORD_CHANGE_1 |
 
-{% include important.html content="This workflow ID is generic for multiple NEMS event messages. Subscribers will need to identify the type of event by looking at the '`event`' element within the '`MessageHeader`' resource." %}
+
 
 ## Resource Population Guidance 
 
@@ -97,10 +97,16 @@ The following table outlines the key elements which will be included, but additi
 | target | 1..1 | The target will reference the Patient resource |
 | recorded | 1..1 | The date and time the change was made to the record |
 | agent | 1..* | The agent which performed the change to the PDS record |
-| agent.whoReference | 1..1 | This will reference the agent who updated the record. |
+| agent.whoReference | 1..1 | This will reference the agent who updated the record.<br/><br/>When this is a citizen updating their own PDS record this will reference the Patient resource in the event message.<br/><br/>Otherwise this will be the organisation who updated the event message, with reference to the ODS API. |
 
 
-## PDS Record Change Example ##
+### Citizen Update Example
+
+```xml
+{% include_relative examples/PDS-Record-Change-Citizen.xml %}
+```
+
+### Organization Update Example
 
 ```xml
 {% include_relative examples/PDS-Record-Change.xml %}
