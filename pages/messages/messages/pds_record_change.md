@@ -100,14 +100,25 @@ The following table outlines the key elements which will be included, but additi
 | agent.whoReference | 1..1 | This will reference the agent who updated the record.<br/><br/>When this is a citizen updating their own PDS record this will reference the Patient resource in the event message.<br/><br/>Otherwise this will be the organisation who updated the event message, with reference to the ODS API. |
 
 
-### Citizen Update Example
 
-```xml
-{% include_relative examples/PDS-Record-Change-Citizen.xml %}
-```
+## Examples
 
-### Organization Update Example
+<div class="tabPanel">
 
-```xml
-{% include_relative examples/PDS-Record-Change.xml %}
-```
+	<div class="tabHeadings">
+		<span class="tabHeading" id="citizenUpdate">Citizen Update</span>
+		<span class="tabHeading" id="orgUpdate">Organization Update</span>
+	</div>
+	
+	<div class="tabBodies">
+	
+		<div class="tabBody" id="citizenUpdateBody" markdown="span">
+			```{% include_relative examples/PDS-Record-Change-Citizen.xml %}```
+		</div>
+		
+		<div class="tabBody" id="orgUpdateBody" markdown="span">
+			```{% include_relative examples/PDS-Record-Change.xml %}```
+		</div>
+				
+	</div>
+</div>
