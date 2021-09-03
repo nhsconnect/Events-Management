@@ -61,7 +61,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | extension(routingDemographics).extension(name) | 1..1 | The extension MUST contain the human name element containing the patient’s official names as recognised by PDS, and match the NHS number in the routingDemographics extension. |
 | extension(routingDemographics).extension(birthDateTime) | 1..1 | The extension MUST contain the patient’s Date Of Birth which matches the NHS number in the routingDemographics extension. |
 | extension(messageEventType) | 1..1 | Fixed value: `new` |
-| event | 1..1 | Fixed Value: pds-record-changed-1 (PDS Record Changed) |
+| event | 1..1 | Fixed Value: pds-record-change-1 (PDS Record Change) |
 | focus | 1..1 | This will reference the focus “Patient” resource. |
 
 **Note:** Where the event message relates to a PDS record being superseded by another, the patient details included in the event will be for the record which is being superceeded rather than the record which is superseding it.

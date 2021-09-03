@@ -41,8 +41,8 @@
 				</extension>
 				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
-					<code value="pds-record-changed-1"/>
-					<display value="PDS Record Changed"/>
+					<code value="pds-record-change-1"/>
+					<display value="PDS Record Change"/>
 				</event>
 				<timestamp value="2019-11-01T15:00:00+00:00"/>
 				<source>
