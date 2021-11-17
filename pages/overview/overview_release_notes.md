@@ -10,6 +10,9 @@ summary: Summary release notes of the versions released in National Events Manag
 
 ## 2.9.0 () ##
 
+[Create Subscription](explore_create_subscription.html)
+- Update to HSS generic subscription rule to make acceptable values more clear
+
 [Vaccinations](vaccinations_1.html)
 - Changed wording to highlight profile requirements
 

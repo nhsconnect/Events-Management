@@ -48,7 +48,7 @@ The NEMS matches the patients home postcode, from their PDS record, to a specifi
 
 ### All Patients in England (HSS)
 
-The NEMS will match all patients who live in England to generic subscription rules which specify the rule type of National. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+The NEMS matches the patients home postcode, from their PDS record, to the country specified in the subscription. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
 
 ### Examples
