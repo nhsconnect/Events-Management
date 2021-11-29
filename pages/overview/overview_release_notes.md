@@ -19,11 +19,15 @@ summary: Summary release notes of the versions released in National Events Manag
 [PDS Record Change](pds_record_change.html)
 - Added PDS Record Change event
 
+[Newborn Hearing](newborn_hearing_1.html)
+- Added details around the inclusion of the procedure performed date and time and the observation outcome date and time to help consumers identify the latest procedure results.
+
 
 ## 2.8.1 (14/06/2021) ##
 
 [NIPE Outcome](nipe_outcome_1.html)
 - Updated example as performer in the observation contained an actor element when it should not.
+
 
 ## 2.8.0 (17/05/2021) ##
 

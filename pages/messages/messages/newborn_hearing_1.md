@@ -206,6 +206,7 @@ The CareConnect-Procedure-1 resource included as part of the event message SHALL
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | subject | 1..1 | This will reference the patient resource representing the subject of this event |
+| performedDateTime | 1..1 | The Date and time that hearing screening test was entered into the screening application |
 
 For each of the Procedure resources representing a Test Outcome:
 
@@ -243,7 +244,8 @@ The CareConnect-Observation-1 resource included as part of the event message SHA
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | subject | 1..1 | The Hearing Screening Summary Outome observation will reference the patient resource. |
-| Observation.valueCodeableConcept | 1..1 | Observation.valueCodeableConcept SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-HearingScreeningOutcome-1 |
+| valueCodeableConcept | 1..1 | Observation.valueCodeableConcept SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-HearingScreeningOutcome-1 |
+| effectiveDateTime | 1..1 | Date and time that screening outcome was set in the screening application |
 
 
 ### [CareConnect-Communication-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1)
