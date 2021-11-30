@@ -46,9 +46,9 @@ The NEMS matches the patients registered GP Code, from their PDS record, to gene
 
 The NEMS matches the patients home postcode, from their PDS record, to a specific LA based the areas of responsible for the different LAs. The NEMS then looks for generic subscription rules which contain an LA Code that matches the LA responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### All Patients in England (HSS)
+### All Patients in Country (HSS)
 
-The NEMS will match all patients who live in England to generic subscription rules which specify the rule type of National. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+The NEMS matches the patients home postcode, from their PDS record, to the country specified in the subscription. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
 
 ### Examples
