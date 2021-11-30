@@ -97,7 +97,7 @@ The Immunization resource included as part of the event message SHALL conform to
 | extension(vaccinationProcedure) | 1..1 |  A code from the SNOMED Clinical Terminology UK coding system, to record a vaccination procedure that is either given or not given.<br/><br/>If a vaccination is given, then an immunisation procedure concept or an immunisation situation (given) concept SHALL be used.<br/><br/>If a vaccination has not been given, then an immunisation situation (not done) concept SHALL be used.<br/><br/>Free text field should be used if no coded text available using `extension(vaccinationProcedure).valueCodeableConcept.text` |
 | identifier | 1..1 | A publisher defined unique identifier for the vaccination which will be maintained across different event messages to allow subscribers to be identify the information within update or delete event messages. |
 | notGiven | 1..1 | Value SHALL be `FALSE` when the vaccination was given or reported as given, `TRUE` when not given |
-| vaccineCode | 1..1 | Immunization.vaccineCode SHALL use a value from  the [CareConnect-VaccineCode-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-VaccineCode-1) value set |
+| vaccineCode | 1..1 | Immunization.vaccineCode should use a value from  the [CareConnect-VaccineCode-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-VaccineCode-1) value set |
 | date | 1..1 | The date or partial date that the vaccination was administered, or reported vaccination was given in the opinion of the child and/or parent carer |
 | primarySource | 1..1 | Value should be `FALSE` if the vaccination was reported, `TRUE` if the vaccination was administered |
 | reportOrigin | 0..1 | If the vaccination was reported then the original source should be include |

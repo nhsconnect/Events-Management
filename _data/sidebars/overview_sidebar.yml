@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
   product: National Events Management Service (NEMS) 
-  version: 2.8.1
+  version: 2.9.0
   levels: one
   folders:
 
@@ -75,6 +75,9 @@ entries:
           output: web
         - title: PDS Death Notification
           url: /pds_death_notification.html
+          output: web
+        - title: PDS Record Change
+          url: /pds_record_change.html
           output: web
         - title: Professional Contacts
           url: /professional_contacts_1.html
