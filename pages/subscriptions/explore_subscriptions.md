@@ -46,7 +46,7 @@ The NEMS matches the patients registered GP Code, from their PDS record, to gene
 
 The NEMS matches the patients home postcode, from their PDS record, to a specific LA based the areas of responsible for the different LAs. The NEMS then looks for generic subscription rules which contain an LA Code that matches the LA responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### All Patients in Country (HSS)
+### All Patients in Country (COUNTRYCODE)
 
 The NEMS matches the patients home postcode, from their PDS record, to the country specified in the subscription. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
@@ -68,7 +68,7 @@ The following diagram and table demonstrates the way in which generic subscripti
 	<img class="overlay" id="gp-gp-3" src="images/subscription/generic/GP_GP3.png">
 	<img class="overlay" id="gp-gp-4" src="images/subscription/generic/GP_GP4.png">
 	<img class="overlay" id="pc-la" src="images/subscription/generic/PostCode_LA.png">
-	<img class="overlay" id="hss" src="images/subscription/generic/HSS.png">
+	<img class="overlay" id="COUNTRYCODE" src="images/subscription/generic/HSS.png">
 </div>
 
 <table id="subscriptionRuleTable">
@@ -78,7 +78,7 @@ The following diagram and table demonstrates the way in which generic subscripti
 		<th class="gp-ccg-head">Patients Registered GPs is a child of the CCG</th>
 		<th class="gp-gp-head">Patients Registered GP Code matches GP Code</th>
 		<th class="pc-la-head">Patients Postcode within LAs area of responsibility</th>
-		<th class="hss-head">All Patients in England</th>
+		<th class="COUNTRYCODE-head">All Patients in Country</th>
 	</tr>
 	<tr class="subTableHeading">
 		<td>Rule Name</td>
@@ -86,7 +86,7 @@ The following diagram and table demonstrates the way in which generic subscripti
 		<td class="gp-ccg-head">CHO of registration</td>
 		<td class="gp-gp-head">GP</td>
 		<td class="pc-la-head">HVS</td>
-		<td class="hss-head">HSS</td>
+		<td class="COUNTRYCODE-head">COUNTRYCODE</td>
 	</tr>
 	<tr class="subTableHeading">
 		<td>
@@ -110,8 +110,8 @@ The following diagram and table demonstrates the way in which generic subscripti
 		<td class="pc-la-head">
 			<input type="checkbox" onclick='handleClick(this, "pc-la");'> LACode1
 		</td>
-		<td class="hss-head">
-			<input type="checkbox" onclick='handleClick(this, "hss");'> National patients
+		<td class="COUNTRYCODE-head">
+			<input type="checkbox" onclick='handleClick(this, "COUNTRYCODE");'> England
 		</td>
 	</tr>
 </table>
