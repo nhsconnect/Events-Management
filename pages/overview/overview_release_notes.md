@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.9.1 (14/12/2021) ##
+## 2.9.1 (15/12/2021) ##
 
 [Create Subscription](explore_create_subscription.html)
 - Renamed "HSS" subscriptionRuleType to "COUNTRYCODE" to match the functionality that is present in the NEMS service
