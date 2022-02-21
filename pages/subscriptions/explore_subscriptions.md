@@ -30,13 +30,13 @@ Rule-based subscriptions relate to where a subscriber wishes to receive events t
 
 The following rule types are currently available for use within Generic Rule Based Subscriptions:
 
-### Patients Postcode within CCGs area of responsibility (Residential CHO)
+### Patients Postcode within ICSs area of responsibility (Residential CHO)
 
-The NEMS matches the patients home postcode, from their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+The NEMS matches the patients home postcode, from their PDS record, to a specific ICS based the areas of responsible for the different ICSs. The NEMS then looks for generic subscription rules which contain a ICS Code that matches the ICS responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### Patients Registered GPs is a child of the CCG (CHO of registration)
+### Patients Registered GPs is a child of the ICS (CHO of registration)
 
-The NEMS looks up the patients registered GP within their PDS record, then finds the parent CCG for that GP practice. The NEMS checks the generic subscriptions for any rules which contain a CCG Code that matches the parent CCG of the patients GP, A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
+The NEMS looks up the patients registered GP within their PDS record, then finds the parent ICS for that GP practice. The NEMS checks the generic subscriptions for any rules which contain a ICS Code that matches the parent ICS of the patients GP, A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
 ### Patients Registered GP Code matches GP Code (GP)
 
@@ -54,8 +54,8 @@ The NEMS matches the patients home postcode, from their PDS record, to the count
 ### Examples
 
 The following diagram and table demonstrates the way in which generic subscription rules work:
-- the circles on the diagram represent the areas of responsibility for the different CCGs and LA
-- the location of the stick men and GP practices represents where they are located within the area of responsibility for the CCGs and LA, e.g. where a stick man is within a circle it means that they live within the area of responsibility for that CCG and/or LA
+- the circles on the diagram represent the areas of responsibility for the different ICSs and LA
+- the location of the stick men and GP practices represents where they are located within the area of responsibility for the ICSs and LA, e.g. where a stick man is within a circle it means that they live within the area of responsibility for that ICS and/or LA
 
 <div id="subImageContainer" >
 	<img id="sub-background" src="images/subscription/generic/background.png">
@@ -74,8 +74,8 @@ The following diagram and table demonstrates the way in which generic subscripti
 <table id="subscriptionRuleTable">
 	<tr class="subTableHeading">
 		<th>Subscription Rule</th>
-		<th class="pc-ccg-head">Patients Postcode within CCGs area of responsibility</th>
-		<th class="gp-ccg-head">Patients Registered GPs is a child of the CCG</th>
+		<th class="pc-ccg-head">Patients Postcode within ICSs area of responsibility</th>
+		<th class="gp-ccg-head">Patients Registered GPs is a child of the ICS</th>
 		<th class="gp-gp-head">Patients Registered GP Code matches GP Code</th>
 		<th class="pc-la-head">Patients Postcode within LAs area of responsibility</th>
 		<th class="COUNTRYCODE-head">All Patients in Country</th>
@@ -94,12 +94,12 @@ The following diagram and table demonstrates the way in which generic subscripti
 			<button type="button" onClick="clearAllCheckboxes()">Clear All</button>
 		</td>
 		<td class="pc-ccg-head">
-			<input type="checkbox" onclick='handleClick(this, "pc-ccg-1");'> CCGCode1 <br/>
-			<input type="checkbox" onclick='handleClick(this, "pc-ccg-2");'> CCGCode2
+			<input type="checkbox" onclick='handleClick(this, "pc-ccg-1");'> ICSCode1 <br/>
+			<input type="checkbox" onclick='handleClick(this, "pc-ccg-2");'> ICSCode2
 		</td>
 		<td class="gp-ccg-head">
-			<input type="checkbox" onclick='handleClick(this, "gp-ccg-1");'> CCGCode1<br/>
-			<input type="checkbox" onclick='handleClick(this, "gp-ccg-2");'> CCGCode2
+			<input type="checkbox" onclick='handleClick(this, "gp-ccg-1");'> ICSCode1<br/>
+			<input type="checkbox" onclick='handleClick(this, "gp-ccg-2");'> ICSCode2
 		</td>
 		<td class="gp-gp-head">
 			<input type="checkbox" onclick='handleClick(this, "gp-gp-1");'> GP 1 <br/>
