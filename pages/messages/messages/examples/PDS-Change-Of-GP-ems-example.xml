@@ -178,7 +178,7 @@
 				<name value="SHADWELL MEDICAL CENTRE"/>
 				<partOf>
 					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/02V"/>
-					<display value="NHS LEEDS NORTH CCG"/>
+					<display value="NHS LEEDS NORTH ICS"/>
 				</partOf>
 			</Organization>
 		</resource>
