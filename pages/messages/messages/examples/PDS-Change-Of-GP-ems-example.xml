@@ -231,7 +231,7 @@
 				<name value="LIVERSEDGE MEDICAL CENTRE"/>
 				<partOf>
 					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/03J"/>
-					<display value="NHS NORTH KIRKLEES CCG"/>
+					<display value="NHS NORTH KIRKLEES ICS"/>
 				</partOf>
 			</Organization>
 		</resource>
