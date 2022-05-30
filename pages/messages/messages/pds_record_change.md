@@ -80,7 +80,6 @@ The following table outlines the key elements which will be included, but additi
 | meta.versionId | 1..1 | This element will contain the serial change number (SCN) of the patient's record within Spine at the time this event was published. |
 | identifier | 1..* | The NHS Number of the patient will be included in the nhsNumber identifier slice. If the event message is the result of the PDS record being superseeded this will include the NHS Number of the record being superseded and not the record which is superseding it. |
 | name | 1..* | The patient's name(s) registered on PDS. |
-| telecom | 0..* | Information such as email and telephone numbers held on PDS. |
 | birthDate | 1..1 | The patients date of birth. |
 
 
