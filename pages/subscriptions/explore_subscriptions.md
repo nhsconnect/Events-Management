@@ -30,23 +30,23 @@ Rule-based subscriptions relate to where a subscriber wishes to receive events t
 
 The following rule types are currently available for use within Generic Rule Based Subscriptions:
 
-### Patients Postcode within CCGs area of responsibility (Residential CHO)
+### Patients Postcode within CCGs area of responsibility
 
 The NEMS matches the patients home postcode, from their PDS record, to a specific CCG based the areas of responsible for the different CCGs. The NEMS then looks for generic subscription rules which contain a CCG Code that matches the CCG responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### Patients Registered GPs is a child of the CCG (CHO of registration)
+### Patients Registered GPs is a child of the CCG
 
 The NEMS looks up the patients registered GP within their PDS record, then finds the parent CCG for that GP practice. The NEMS checks the generic subscriptions for any rules which contain a CCG Code that matches the parent CCG of the patients GP, A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### Patients Registered GP Code matches GP Code (GP)
+### Patients Registered GP Code matches GP Code
 
 The NEMS matches the patients registered GP Code, from their PDS record, to generic subscription rules which contain the same GP Code. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### Patients Postcode within LAs area of responsibility (HVS)
+### Patients Postcode within LAs area of responsibility
 
 The NEMS matches the patients home postcode, from their PDS record, to a specific LA based the areas of responsible for the different LAs. The NEMS then looks for generic subscription rules which contain an LA Code that matches the LA responsible for the area in which the patients postcode resides. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
-### All Patients in Country (COUNTRYCODE)
+### All Patients in Country
 
 The NEMS matches the patients home postcode, from their PDS record, to the country specified in the subscription. A copy of the event message is sent to the mailboxes specified in those matching generic subscriptions.
 
@@ -82,10 +82,10 @@ The following diagram and table demonstrates the way in which generic subscripti
 	</tr>
 	<tr class="subTableHeading">
 		<td>Rule Name</td>
-		<td class="pc-ccg-head">Residential CHO</td>
-		<td class="gp-ccg-head">CHO of registration</td>
-		<td class="gp-gp-head">GP</td>
-		<td class="pc-la-head">HVS</td>
+		<td class="pc-ccg-head">CHO_POSTCODE_CCG</td>
+		<td class="gp-ccg-head">CHO_GP_CCG</td>
+		<td class="gp-gp-head">GP_GP_GP</td>
+		<td class="pc-la-head">UHV_POSTCODE_LACODE</td>
 		<td class="COUNTRYCODE-head">COUNTRYCODE</td>
 	</tr>
 	<tr class="subTableHeading">
