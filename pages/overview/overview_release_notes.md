@@ -7,6 +7,15 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.9.2 (15/12/2021) ##
+
+[PDS Record Change](pds_record_change.html)
+- Corrected example messages
+
+[Subscriptions Overview](explore_subscriptions.html)
+- Improved wording for rule types to make use more clear
+
+
 ## 2.9.1 (15/12/2021) ##
 
 [Create Subscription](explore_create_subscription.html)
