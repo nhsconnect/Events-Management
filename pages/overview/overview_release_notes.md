@@ -7,7 +7,16 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.9.2 (15/12/2021) ##
+## 2.10.0 (01/07/2022) ##
+
+[Subscriptions Overview](explore_subscriptions.html)
+- Updated CCG to ICB inline with the change from CCGs to ICBs
+
+[Create Subscription](explore_create_subscription.html)
+- Updated CCG to ICB inline with the change from CCGs to ICBs
+
+
+## 2.9.2 (30/5/2022) ##
 
 [PDS Record Change](pds_record_change.html)
 - Corrected example messages
