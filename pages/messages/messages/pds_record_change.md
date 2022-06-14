@@ -32,7 +32,6 @@ The delivery of the PDS Record Change event messages to subscribers via MESH wil
 
 | MESH WorkflowID | PDS_RECORD_CHANGE_1 |
 
-{% include important.html content="This WorkflowID will be used for multiple NEMS messages types, therefore consumers should check the `event` element in the `MessageHeader` to determin the event type." %}
 
 ## Resource Population Guidance 
 
