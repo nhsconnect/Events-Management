@@ -7,10 +7,11 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.9.2 (15/12/2021) ##
+## 2.9.2 (30/05/2025) ##
 
 [PDS Record Change](pds_record_change.html)
 - Corrected example messages
+- Update MESH WorkflowID
 
 [Subscriptions Overview](explore_subscriptions.html)
 - Improved wording for rule types to make use more clear
