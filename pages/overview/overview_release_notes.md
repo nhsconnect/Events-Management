@@ -16,10 +16,11 @@ summary: Summary release notes of the versions released in National Events Manag
 - Updated CCG to ICB inline with the change from CCGs to ICBs
 
 
-## 2.9.2 (30/5/2022) ##
+## 2.9.2 (30/05/2022) ##
 
 [PDS Record Change](pds_record_change.html)
 - Corrected example messages
+- Update MESH WorkflowID
 
 [Subscriptions Overview](explore_subscriptions.html)
 - Improved wording for rule types to make use more clear
