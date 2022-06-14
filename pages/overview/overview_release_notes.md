@@ -20,7 +20,6 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [PDS Record Change](pds_record_change.html)
 - Corrected example messages
-- Update MESH WorkflowID
 
 [Subscriptions Overview](explore_subscriptions.html)
 - Improved wording for rule types to make use more clear
