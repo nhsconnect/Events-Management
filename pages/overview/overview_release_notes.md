@@ -14,6 +14,7 @@ summary: Summary release notes of the versions released in National Events Manag
 
 [Create Subscription](explore_create_subscription.html)
 - Updated CCG to ICB inline with the change from CCGs to ICBs
+- Added "GPRegistration" criteria, which allows a subscriber to filter messages based on the GP registration status of the patient the event message is about.
 
 
 ## 2.9.2 (30/05/2022) ##
