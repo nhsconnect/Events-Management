@@ -30,9 +30,8 @@ The following is the FHIR event message structure for the PDS Record Change even
 
 The delivery of the PDS Record Change event messages to subscribers via MESH will use the following WorkflowID within the MESH control file. This WorkflowID will need to be added to the receiving MESH mailbox configuration before event messages can be received. 
 
-| MESH WorkflowID | NEMS_MESSAGE_1 |
+| MESH WorkflowID | PDS_RECORD_CHANGE_1 |
 
-{% include important.html content="This WorkflowID will be used for multiple NEMS messages types, therefore consumers should check the `event` element in the `MessageHeader` to determin the event type." %}
 
 ## Resource Population Guidance 
 
