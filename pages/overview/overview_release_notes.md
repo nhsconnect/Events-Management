@@ -7,6 +7,13 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+
+## 2.11.0 (08/09/2022) ##
+
+[Create Subscription](explore_create_subscription.html)
+- Added "GPRegistration" criteria, which allows a subscriber to filter messages based on the GP registration status of the patient the event message is about.
+
+
 ## 2.10.0 (01/07/2022) ##
 
 [Subscriptions Overview](explore_subscriptions.html)
