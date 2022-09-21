@@ -8,7 +8,7 @@ summary: Summary release notes of the versions released in National Events Manag
 ---
 
 
-## 2.11.0 (08/09/2022) ##
+## 2.11.0 (21/09/2022) ##
 
 [Create Subscription](explore_create_subscription.html)
 - Added "GPRegistration" criteria, which allows a subscriber to filter messages based on the GP registration status of the patient the event message is about.
