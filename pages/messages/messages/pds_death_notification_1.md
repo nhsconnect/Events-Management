@@ -23,15 +23,17 @@ The `extension(deathNotificationStatus)` and `deceasedDateTime` elements within 
 
 ## PDS Death Notification Event Message Types ##
 
-The PDS Death Notification event message will be sent by the NEMS, following an update to the patient death information on PDS. This information includes the death notification status which may be updated should the patient’s death notification status change. The event message behaviour following each update to the patient’s death notification status is demonstrated in the table below:
+The event message details send following an update to the patient’s death notification status in PDS is outlined in the table below. The table is included to highlight the different types of Death Notification event message you may receive and the key elements within resource which help identify the type of Death Notification event message you have received. Additional guidance around the content of the FHIR resources is outlined in the `Resource population requirements and guidance` section below.
 
-If a subscriber receives multiple `PDS Death Notification` event messages for the same patient, the latest event message as indicated by the `meta.lastUpdated` element within the MessageHeader resource should be considered the source of truth for the deathNotificationStatus element. This is the specific dateTime on which the deathNotificationStatus element was updated on PDS.
+The different types of death status change in PDS are: 
 
-The below table is included to highlight the different types of Death Notification event message you may receive and the key elements within resource which help identify the type of Death Notification event message you have received. Additional guidance around the content of the FHIR resources is outlined in the `Resource population requirements and guidance` section below.
+- **Informal death** - an administrative flag has been set by a Spine user in order to provide an early indication that a patient is believed to have died, prior to a death certificate being issued for them, in case organisations wish to supress communications to these patients and/or cancel their appointments.
+- **Formal death** - where a death certificate has been issued by the Registrar of Births and Deaths and the death has been notified to Spine via the Office for National Statistics (ONS), or where a maternity unit has recorded a still birth.
+- **Death status removed** - There are scenarios where a PDS record may be updated with a death status in error, where this happens the death status can be removed.
 
-|  | PDS Death Notification (Informal) | PDS Death Notification (Formal) | PDS Death Notification (Death Notification Status removed) |
+
+|  | Informal death | Formal death | Death Notification Status removed |
 | --- | --- | --- | --- |
-| | Death notice received via an update from a local NHS Organisation such as GP or Trust | Death notice received from Registrar of Deaths | A revoke of a patient death event, as the death was entered in error, i.e. the patient is _not dead_. |
 | **Event-MessageHeader-1 Resource** |
 | `extension(messageEventType)` | Fixed value: `new` | Fixed value: `new` | Fixed value: `new` |
 | `event` | Fixed value: `pds-death-notification-1` | Fixed value: `pds-death-notification-1` | Fixed value: `pds-death-notification-1` |
@@ -40,6 +42,10 @@ The below table is included to highlight the different types of Death Notificati
 | **CareConnect-Patient-1 Resource** |
 | `extension(deathNotificationStatus)` | Fixed value: 1 (Informal) | Fixed value: 2 (Formal) | Fixed value: U (Removed) |
 | `deceasedDateTime` | element populated with dateTime of death | element populated with dateTime of death | **element not included in resource** |
+
+
+If a subscriber receives multiple `PDS Death Notification` event messages for the same patient, the latest event message as indicated by the `meta.lastUpdated` element within the MessageHeader resource should be considered the source of truth for the deathNotificationStatus element. This is the specific dateTime on which the deathNotificationStatus element was updated on PDS.
+
 
 
 ## Onward Delivery ##
