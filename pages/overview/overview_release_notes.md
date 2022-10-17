@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.12.0 () ##
+## 2.12.0 (17/10/2022) ##
 
 [PDS Death Notification](pds_death_notification.html)
 - Improved wording around death notification status to make the difference between formal and informal more clear.
