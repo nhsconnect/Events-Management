@@ -7,6 +7,11 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.13.0 (08/11/2022) ##
+
+[Create Subscription](explore_create_subscription.html)
+- Improved wording around subscription contact details element.
+
 ## 2.12.0 (17/10/2022) ##
 
 [PDS Death Notification](pds_death_notification.html)
