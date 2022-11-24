@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.13.0 (23/11/2022) ##
+## 2.13.0 (24/11/2022) ##
 
 [Create Subscription](explore_create_subscription.html)
 - Improved wording around subscription contact details element.
