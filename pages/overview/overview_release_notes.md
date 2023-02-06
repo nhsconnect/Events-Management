@@ -7,6 +7,11 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.14.0 (06/02/2023) ##
+[PDS Record Change](pds_record_change.html)
+- Updated WorkflowID from "PDS_RECORD_CHANGE_1" to "PDSRECORDCHANGE_1"
+
+
 ## 2.13.0 (24/11/2022) ##
 
 [Create Subscription](explore_create_subscription.html)
