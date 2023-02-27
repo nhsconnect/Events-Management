@@ -7,8 +7,10 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
-## 2.14.1 (07/02/2023) ##
+## 2.14.2 (27/02/2023) ##
+
 [PDS Record Change](pds_record_change.html)
+- Updated example where Bundle fullUrl to include "urn:uuid:" as prefix
 - Updated example where Bundle profile contained "http://" rather than "https://"
 
 ## 2.14.1 (06/02/2023) ##

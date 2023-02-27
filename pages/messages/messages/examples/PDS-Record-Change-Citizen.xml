@@ -5,7 +5,7 @@
 	</meta>
 	<type value="message"/>
 	<entry>
-		<fullUrl value="3cfdf880-13e9-4f6b-8299-53e96ef5ec02"/>
+		<fullUrl value="urn:uuid:3cfdf880-13e9-4f6b-8299-53e96ef5ec02"/>
 		<resource>
 			<MessageHeader>
 				<id value="3cfdf880-13e9-4f6b-8299-53e96ef5ec02"/>
