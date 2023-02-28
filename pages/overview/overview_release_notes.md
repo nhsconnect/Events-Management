@@ -13,6 +13,9 @@ summary: Summary release notes of the versions released in National Events Manag
 - Updated example where Bundle fullUrl to include "urn:uuid:" as prefix
 - Updated example where Bundle profile contained "http://" rather than "https://"
 
+[PDS Change of Address](pds_change_of_address.html)
+- Added more detail on the way this event works with residential type generic subscription rules
+
 ## 2.14.1 (06/02/2023) ##
 [PDS Record Change](pds_record_change.html)
 - Updated WorkflowID from "PDS_RECORD_CHANGE_1" to "PDSRECORDCHANGE_1"
