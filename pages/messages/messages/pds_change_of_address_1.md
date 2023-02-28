@@ -16,6 +16,7 @@ The `PDS Change of Address` event message is intended for the purpose of notifyi
 - The address format within the event message may be different to the format of the address within PDS, due to contraints of FHIR, therefore the address received in the event message should not be used in place of PDS synchronisation.
 - Subscribers receiving the change of address event message MUST not update PDS with the address details or format received in the event message as this may result in the address flip flop issue highlighted above.
 
+Where a subscriber is using one of the [residential subscription rules](explore_subscriptions.html) for subscribing to the PDS Change of Address event, the event message will be sent to any subscibers which have a subscription that matches either the current address or previous address, which allows for notificaiton of movers in or movers out.
 
 ## Bundle structure
 
