@@ -108,9 +108,9 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | responsible | 1..1 | A reference to the organization resource which represents the organization responsible for the event. |
 | focus | 1..1 | The focus element will reference a resource as defined by the event message specific implementation guide for each specific event message. |
 
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) ##
+### [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) ##
 
-Patient resources included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+Patient resources included in the event message SHALL conform to the [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -119,9 +119,9 @@ Patient resources included in the event message SHALL conform to the [CareConnec
 | birthDate | 1..1 | The patient birth date shall be included in the patient resource |
 | address | 0..* | If an address is included, the publisher SHOULD use the structured data elements if possible, ideally including a minimum of `line` and `postalCode`. |
 
-### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) ##
+### [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) ##
 
-Organization resources included in event messages SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+Organization resources included in event messages SHALL conform to the [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |

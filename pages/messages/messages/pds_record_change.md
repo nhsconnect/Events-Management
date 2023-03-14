@@ -66,9 +66,9 @@ The MessageHeader resource included as part of the event message SHALL conform t
 **Note:** Where the event message relates to a PDS record being superseded by another, the patient details included in the event will be for the record which is being superceeded rather than the record which is superseding it.
 
 
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
+### [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1)
 
-This Patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+This Patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
