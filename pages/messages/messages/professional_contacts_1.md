@@ -75,9 +75,9 @@ The Bundle resource is the container for the event message and SHALL conform to 
 | type | 1..1 | Fixed value: `message` |
 
 
-### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
+### [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1)
 
-The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
+The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -89,9 +89,9 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | focus | 1..1 | This will reference the `CareConnect-EpisodeOfCare-1` resource which contains information outlining the professional responsibility for the patient. |
 
 
-### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1)
+### [CareConnect-EpisodeOfCare-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-EpisodeOfCare-1)
 
-The EpisodeOfCare resource included in the event message represents the organisations professional responsibility for the patient and SHALL conform to the [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) constrained FHIR profile and the additional population guidance as per the table below:
+The EpisodeOfCare resource included in the event message represents the organisations professional responsibility for the patient and SHALL conform to the [CareConnect-EpisodeOfCare-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-EpisodeOfCare-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -99,20 +99,20 @@ The EpisodeOfCare resource included in the event message represents the organisa
 | --- | --- | --- |
 | identifier | 1..1 | A publisher defined unique identifier for the episode of care which will be maintained across different event messages to allow subscribers to be identify the information within `update` or `delete` event messages. |
 | status | 1..1 | The `status` element MUST represent the current status of the organisations responsibility for the patient. |
-| type | 1..* | The `type` element MUST represent the type of care/service the organisation is providing during this episode of care.<br/><br/>The resource MUST contain a `type` from value set [CareConnect-CareSettingType-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-CareSettingType-1)<br/><br/>For example "Health visiting service (1078501000000104)"  |
+| type | 1..* | The `type` element MUST represent the type of care/service the organisation is providing during this episode of care.<br/><br/>The resource MUST contain a `type` from value set [CareConnect-CareSettingType-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/careconnect-caresettingtype-1)<br/><br/>For example "Health visiting service (1078501000000104)"  |
 | managingOrganization | 1..1  | This MUST reference the organisation who is responsibility for this episode of care, which contains contact details for that organisation in relation to this episode of care. |
 | period.start | 0..1 | Date on which the organisation took responsibility for the patients care. |
 | period.end | 0..1 | Date on which the organisation stopped being responsible for the patients care. |
 | team | 0..* | The EpisodeOfCare may reference specific care teams for this episode of care. |
 
 
-### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
+### [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1)
 
 Within the bundle there may be multiple organization resources, including one for the organisation taking responsibility for the patients care. Other Organization resources may be included when referenced from within other resources in the bundle.
 
 To satisfy a number of use cases for the professional contacts event, the contact details for the organisation taking professional responsibility for the patient are required. Contact details for other organisations included in the event message bundle are not required.
 
-The Organization resources included in the bundle SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+The Organization resources included in the bundle SHALL conform to the [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..* |
 
@@ -123,9 +123,9 @@ The Organization resources included in the bundle SHALL conform to the [CareConn
 | **telecom** | 0..* | Where the Organisation resource represents the organisation responsible for the EpisodeOfCare, referenced from the `EpisodeOfCare` resource `managingOrganization` element, the Organisation resource **MUST** include contact details for use by subscribers in relation to communications about this episode of care. |
 
 
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
+### [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1)
 
-The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -134,11 +134,11 @@ The patient resource included in the event message SHALL conform to the [CareCon
 | identifier | 1..1 | Patient NHS Number SHALL be included within the nhsNumber identifier slice |
 
 
-### [CareConnect-CareTeam-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-CareTeam-1)
+### [CareConnect-CareTeam-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-CareTeam-1)
 
 The CareConnect-CareTeam-1 resource may be included as part of the event message to give more detail on a specific team who is responsible for the patients care.
 
-Any CareTeam resource SHALL conform to the [CareConnect-CareTeam-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-CareTeam-1) constrained FHIR profile and the additional population guidance as per the table below:
+Any CareTeam resource SHALL conform to the [CareConnect-CareTeam-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-CareTeam-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 0..* |
 
@@ -149,16 +149,16 @@ Any CareTeam resource SHALL conform to the [CareConnect-CareTeam-1](https://fhir
 | participant | 0..* | The members of the care team may be referenced and should include their role within the care team. |
 
 
-### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
+### [CareConnect-Practitioner-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Practitioner-1)
 
-The CareConnect-Practitioner-1 resource included as part of the event message SHALL conform to the [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1) constrained FHIR profile.
+The CareConnect-Practitioner-1 resource included as part of the event message SHALL conform to the [CareConnect-Practitioner-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Practitioner-1) constrained FHIR profile.
 
 | Resource Cardinality | 0..* |
 
 
-### [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1)
+### [CareConnect-PractitionerRole-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-PractitionerRole-1)
 
-The CareConnect-PractitionerRole-1 resource included as part of the event message SHALL conform to the [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1) constrained FHIR profile.
+The CareConnect-PractitionerRole-1 resource included as part of the event message SHALL conform to the [CareConnect-PractitionerRole-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-PractitionerRole-1) constrained FHIR profile.
 
 | Resource Cardinality | 0..* |
 

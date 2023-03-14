@@ -71,9 +71,9 @@ The Bundle resource is the container for the event message and SHALL conform to 
 | type | 1..1 | Fixed value: `message` |
 
 
-### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
+### [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1)
 
-The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
+The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -86,9 +86,9 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 
 
-### [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1)
+### [CareConnect-Immunization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Immunization-1)
 
-The Immunization resource included as part of the event message SHALL conform to the [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1) constrained FHIR profile and the additional population guidance as per the table below:
+The Immunization resource included as part of the event message SHALL conform to the [CareConnect-Immunization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Immunization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -97,7 +97,7 @@ The Immunization resource included as part of the event message SHALL conform to
 | extension(vaccinationProcedure) | 1..1 |  A code from the SNOMED Clinical Terminology UK coding system, to record a vaccination procedure that is either given or not given.<br/><br/>If a vaccination is given, then an immunisation procedure concept or an immunisation situation (given) concept SHALL be used.<br/><br/>If a vaccination has not been given, then an immunisation situation (not done) concept SHALL be used.<br/><br/>Free text field should be used if no coded text available using `extension(vaccinationProcedure).valueCodeableConcept.text` |
 | identifier | 1..1 | A publisher defined unique identifier for the vaccination which will be maintained across different event messages to allow subscribers to be identify the information within update or delete event messages. |
 | notGiven | 1..1 | Value SHALL be `FALSE` when the vaccination was given or reported as given, `TRUE` when not given |
-| vaccineCode | 1..1 | Immunization.vaccineCode should use a value from  the [CareConnect-VaccineCode-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-VaccineCode-1) value set |
+| vaccineCode | 1..1 | Immunization.vaccineCode should use a value from  the [CareConnect-VaccineCode-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/careconnect-vaccinecode-1) value set |
 | date | 1..1 | The date or partial date that the vaccination was administered, or reported vaccination was given in the opinion of the child and/or parent carer |
 | primarySource | 1..1 | Value should be `FALSE` if the vaccination was reported, `TRUE` if the vaccination was administered |
 | reportOrigin | 0..1 | If the vaccination was reported then the original source should be include |
@@ -109,9 +109,9 @@ The Immunization resource included as part of the event message SHALL conform to
 
 
 
-### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
+### [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1)
 
-All Organization resources included in the bundle SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+All Organization resources included in the bundle SHALL conform to the [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..* |
 
@@ -122,9 +122,9 @@ All Organization resources included in the bundle SHALL conform to the [CareConn
 
 
 
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
+### [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1)
 
-The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -136,16 +136,16 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 
 
-### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
+### [CareConnect-Practitioner-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Practitioner-1)
 
-The Practitioner resources included as part of the event message SHALL conform to the [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1) constrained FHIR profile.
+The Practitioner resources included as part of the event message SHALL conform to the [CareConnect-Practitioner-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Practitioner-1) constrained FHIR profile.
 
 | Resource Cardinality | 0..* |
 
 
-### [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1)
+### [CareConnect-PractitionerRole-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-PractitionerRole-1)
 
-The PractitionerRole resources included as part of the event message SHALL conform to the [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1) constrained FHIR profile.
+The PractitionerRole resources included as part of the event message SHALL conform to the [CareConnect-PractitionerRole-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-PractitionerRole-1) constrained FHIR profile.
 
 | Resource Cardinality | 0..* |
 
@@ -157,9 +157,9 @@ The PractitionerRole resources included as part of the event message SHALL confo
 | specialty | 1..1 | PractitionerRole.specialty SHALL use a value from [Specialty-1](https://fhir.nhs.uk/STU3/ValueSet/Specialty-1) value set |
 
 
-### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
+### [CareConnect-Encounter-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Encounter-1)
 
-The Encounter resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
+The Encounter resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 0..1 |
 
@@ -171,21 +171,21 @@ The Encounter resource included as part of the event message SHALL conform to th
 
 
 
-### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
+### [CareConnect-HealthcareService-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-HealthcareService-1)
 
-The HealthcareService resource included as part of the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
+The HealthcareService resource included as part of the event message SHALL conform to the [CareConnect-HealthcareService-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 0..1 |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | providedBy | 1..1 | Reference to the organization who provides the healthcare service |
-| type | 1..1 | This will represent the type of service responsible for the event message. This will have a fixed value from the ValueSet [CareConnect-CareSettingType-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-CareSettingType-1) |
+| type | 1..1 | This will represent the type of service responsible for the event message. This will have a fixed value from the ValueSet [CareConnect-CareSettingType-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/careconnect-caresettingtype-1) |
 | specialty | 1..1 | The specialty SHALL be a value from the [Specialty-1](https://fhir.nhs.uk/STU3/ValueSet/Specialty-1) value set |
 
-### [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)
+### [CareConnect-Location-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Location-1)
 
-The Location resources included as part of the event message SHALL conform to the [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1) constrained FHIR profile and the additional population guidance as per the table below:
+The Location resources included as part of the event message SHALL conform to the [CareConnect-Location-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Location-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 0..* |
 
