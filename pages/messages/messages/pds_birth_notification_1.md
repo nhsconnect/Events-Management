@@ -51,9 +51,9 @@ The Bundle resource is the container for the event message and SHALL conform to 
 | type | 1..1 | Fixed value: `message` |
 
 
-### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
+### [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1)
 
-The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
+The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -72,9 +72,9 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | focus | 1..1 | This will reference the "CareConnect-Communication-1" resource which contains information relating to the event message. |
 
 
-### [CareConnect-Communication-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1)
+### [CareConnect-Communication-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Communication-1)
 
-The Communication resource included in the event message SHALL conform to the [CareConnect-Communication-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
+The Communication resource included in the event message SHALL conform to the [CareConnect-Communication-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -85,9 +85,9 @@ The Communication resource included in the event message SHALL conform to the [C
 | subject | 1..1 | This will reference the patient resource representing the mother who is the focus of this event. |
 
 
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) (Mother)
+### [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) (Mother)
 
-This Patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+This Patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -105,9 +105,9 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 | link | 1..1 | This will reference the RelatedPerson resource representing the relationship between mother and baby |
 
 
-### [CareConnect-RelatedPerson-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-RelatedPerson-1)
+### [CareConnect-RelatedPerson-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-RelatedPerson-1)
 
-This RelatedPerson resource included in the event message SHALL conform to the [CareConnect-RelatedPerson-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-RelatedPerson-1) constrained FHIR profile and the additional population guidance as per the table below:
+This RelatedPerson resource included in the event message SHALL conform to the [CareConnect-RelatedPerson-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-RelatedPerson-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -121,9 +121,9 @@ This RelatedPerson resource included in the event message SHALL conform to the [
 | relationship.coding.display | 1..1 | Fixed value: natural mother |
 
 
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) (Baby)
+### [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) (Baby)
 
-This Patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+This Patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -144,7 +144,7 @@ This Patient resource included in the event message SHALL conform to the [CareCo
 | extension(ethnicCategory) | 1..1 | The ethnicity of the baby |
 
 
-### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
+### [CareConnect-Practitioner-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Practitioner-1)
 
 | Resource Cardinality | 1..1 |
 
@@ -156,7 +156,7 @@ The notifying practitioner for this event message.
 | name.family | 1..1 | Practitioner family name |
 
 
-### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Number Of Births)
+### [CareConnect-Observation-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Observation-1) (Number Of Births)
 
 | Resource Cardinality | 1..1 |
 
@@ -169,7 +169,7 @@ The notifying practitioner for this event message.
 | valueQuantity | 1..1 | Number of Births in Confinement |
 
 
-### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Birth Weight)
+### [CareConnect-Observation-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Observation-1) (Birth Weight)
 
 | Resource Cardinality | 1..1 |
 
@@ -188,7 +188,7 @@ The notifying practitioner for this event message.
 | valueQuantity | 1..1 | The birth weight of the baby |
 
 
-### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Gestation Age)
+### [CareConnect-Observation-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Observation-1) (Gestation Age)
 
 | Resource Cardinality | 1..1 |
 
@@ -201,7 +201,7 @@ The notifying practitioner for this event message.
 | valueQuantity | 1..1 | Gestation Age of the baby |
 
 
-### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Stillborn Indicator)
+### [CareConnect-Observation-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Observation-1) (Stillborn Indicator)
 
 | Resource Cardinality | 1..1 |
 
@@ -216,7 +216,7 @@ The notifying practitioner for this event message.
 | valueCodeableConcept.coding.code | 1..1 | Relevant indicator code |
 
 
-### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) (Suspected Congenital Abnormality Indicator)
+### [CareConnect-Observation-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Observation-1) (Suspected Congenital Abnormality Indicator)
 
 | Resource Cardinality | 1..1 |
 
@@ -231,7 +231,7 @@ The notifying practitioner for this event message.
 | valueCodeableConcept.coding.code | 1..1 | Relevant indicator code |
 
 
-### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1)
+### [CareConnect-EpisodeOfCare-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-EpisodeOfCare-1)
 
 The Episode Of Care resources represent the association of the Patient (baby) with organisations for:
 - Delivery Place
@@ -240,7 +240,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 - Responsible Child Health Organisation
 
 
-### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Delivery Place)
+### [CareConnect-EpisodeOfCare-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-EpisodeOfCare-1) (Delivery Place)
 | Resource Cardinality | 0..1 |
 
 | Element | Cardinality | Additional Guidance |
@@ -251,7 +251,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 | managingOrganization | 1..1 | This will reference the associated Organization resource |
 
 
-### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Registering Authority)
+### [CareConnect-EpisodeOfCare-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-EpisodeOfCare-1) (Registering Authority)
 
 | Resource Cardinality | 1..1 |
 
@@ -263,7 +263,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 | managingOrganization | 1..1 | This will reference the associated Organization resource |
 
 
-### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Partner Child Health Organisation)
+### [CareConnect-EpisodeOfCare-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-EpisodeOfCare-1) (Partner Child Health Organisation)
 
 | Resource Cardinality | 0..1 |
 
@@ -275,7 +275,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 | managingOrganization | 1..1 | This will reference the associated Organization resource |
 
 
-### [CareConnect-EpisodeOfCare-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-EpisodeOfCare-1) (Responsible Child Health Organisation)
+### [CareConnect-EpisodeOfCare-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-EpisodeOfCare-1) (Responsible Child Health Organisation)
 
 
 | Resource Cardinality | 0..1 |
@@ -288,7 +288,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 | managingOrganization | 1..1 | This will reference the associated Organization resource |
 
 
-### [CareConnect-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Organization-1) (Delivery Place)
+### [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) (Delivery Place)
 
 | Resource Cardinality | 0..1 |
 
@@ -299,7 +299,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 | name | 0..1 | Delivery Place Name |
 
 
-### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) (Registering Authority)
+### [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) (Registering Authority)
 
 | Resource Cardinality | 1..1 |
 
@@ -309,7 +309,7 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 | identifier | 1..1 | Organisation identifier using the ODS identifier slice |
 
 
-### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) (Responsible, Sender, Partner Child Health Organisation, Responsible Child Health Organisation)
+### [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) (Responsible, Sender, Partner Child Health Organisation, Responsible Child Health Organisation)
 
 | Resource Cardinality | 1..* |
 
@@ -318,9 +318,9 @@ The Episode Of Care resources represent the association of the Patient (baby) wi
 | identifier | 1..1 | Organisation identifier using the ODS identifier slice |
 
 
-### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
+### [CareConnect-HealthcareService-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-HealthcareService-1)
 
-The HealthcareService resource included in the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
+The HealthcareService resource included in the event message SHALL conform to the [CareConnect-HealthcareService-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 0..1 |
 

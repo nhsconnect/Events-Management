@@ -7,6 +7,27 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.14.3 (14/03/2023) ##
+
+For all event message pages below, the links to the resource profiles have been updated to point to the new location where they are stored, no updates have been made to the profiles.
+
+- [Generic Event Message Requirements](explore_generic_event_requirements.html)
+- [PDS Birth Notification](pds_birth_notification.html)
+- [PDS Change of Address](pds_change_of_address.html)
+- [PDS Change of GP](pds_change_of_gp.html)
+- [PDS Death Notification](pds_death_notification.html)
+- [PDS Record Change](pds_record_change.html)
+- [Professional Contacts](professional_contacts_1.html)
+
+For the following pages, in addition to updating the links to the profiles new location, it is worth noting that the pages still references the [CareConnect-CareSettingType-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/careconnect-caresettingtype-1) value set, but we have been made aware that the the SNOMED ref set this value set references has been updated:
+
+- [Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
+- [Newborn Hearing](newborn_hearing_1.html)
+- [NIPE Outcome](nipe_outcome_1.html)
+- [Vaccinations](vaccinations_1.html)
+
+
+
 ## 2.14.2 (27/02/2023) ##
 
 [PDS Record Change](pds_record_change.html)

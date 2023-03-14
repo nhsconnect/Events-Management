@@ -62,9 +62,9 @@ The Bundle resource is the container for the event message and SHALL conform to 
 | type | 1..1 | Fixed value: `message` |
 
 
-### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
+### [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1)
 
-The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
+The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -77,9 +77,9 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | focus | 1..1 | This will reference the "CareConnect-Communication-1" resource which contains information relating to the event message. |
 
 
-### [CareConnect-Communication-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1)
+### [CareConnect-Communication-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Communication-1)
 
-The Communication resource included in the event message SHALL conform to the [CareConnect-Communication-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
+The Communication resource included in the event message SHALL conform to the [CareConnect-Communication-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Communication-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -90,9 +90,9 @@ The Communication resource included in the event message SHALL conform to the [C
 | subject | 1..1 | This will reference the patient resource representing the patient who is the subject of this event. |
 
 
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
+### [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1)
 
-The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 
@@ -116,9 +116,9 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 
 
-### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
+### [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1)
 
-The Organization resource(s) included in the event message SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
+The Organization resource(s) included in the event message SHALL conform to the [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..2 |
 
@@ -128,14 +128,14 @@ The Organization resource(s) included in the event message SHALL conform to the 
 | identifier.value | 1..1 | Organisation's ODS Organization Code |
 | name | 1..1 | Organisation's Name |
 
-**\*** Organization details may be retrieved using the [ODS Lookup API](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html) as [ODSAPI-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1) resources. These MUST then be transformed to [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) resources for use within the event message bundle.
+**\*** Organization details may be retrieved using the [ODS Lookup API](https://developer.nhs.uk/apis/ods/restfulapis_identification_organization.html) as [ODSAPI-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1) resources. These MUST then be transformed to [CareConnect-Organization-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Organization-1) resources for use within the event message bundle.
 
 **NB:** 'responsible' and 'sender' organisations may be the same or different organisations, therefore requiring a single or two CareConnect-Organization-1 resources within the event message bundle.
 
 
-### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
+### [CareConnect-HealthcareService-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-HealthcareService-1)
 
-The HealthcareService resource included in the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
+The HealthcareService resource included in the event message SHALL conform to the [CareConnect-HealthcareService-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 0..1 |
 
