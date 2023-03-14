@@ -52,9 +52,9 @@ The Bundle resource is the container for the event message and SHALL conform to 
 | type | 1..1 | Fixed value: `message` |
 
 
-### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
+### [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1)
 
-The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
+The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 1..1 |
 

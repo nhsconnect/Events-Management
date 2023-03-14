@@ -85,9 +85,9 @@ The event Bundle resource which contains the event message resources SHALL confo
 
 This follows the [HL7 FHIR specification](http://hl7.org/fhir/bundle.html#message) for the Bundle resource when being used for messaging, which states that 'A message bundle (type = "message") consists of a series of entries, the first of which is a MessageHeader.'
 
-### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) ##
+### [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1) ##
 
-The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
+The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://simplifier.net/Messaging/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table bellow:
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
