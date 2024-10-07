@@ -79,6 +79,7 @@ The following requirements and resource population guidance must be followed in 
 | Outcome - GLUTARIC ACIDURIA TYPE 1                       | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for GA1   |
 | Outcome - ISOVALERIC ACIDAEMIA                           | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for IVA   |
 | Outcome - SEVERE COMBINED IMMUNODEFICIENCY               | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for SCID  |
+| Outcome - TYROSINAEMIA TYPE 1                            | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for HT1   |
 | Comments | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken. |
 
 
@@ -288,6 +289,15 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.display | 1..1 | Fixed Value: Severe combined immunodeficiency screening test |
 | Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
 
+
+### CareConnect-Procedure-1 (Blood Spot Screening, Tyrosinaemia Type 1)
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
+| Procedure.code.coding.code | 1..1 | Fixed Value: 2201661000000107 |
+| Procedure.code.coding.display | 1..1 | Fixed Value: Tyrosinaemia type 1 screening test |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
 
 
 ### [CareConnect-Communication-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Communication-1)
