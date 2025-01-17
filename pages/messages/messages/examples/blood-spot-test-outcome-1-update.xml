@@ -530,6 +530,42 @@
 			</Procedure>
 		</resource>
 	</entry>
+	<!--Blood Spot Test HT1 Procedure-->
+	<entry>
+		<fullUrl value="urn:uuid:cd81a26e-357c-4327-a878-bb7c8e3abaaa"/>
+		<resource>
+			<Procedure>
+				<id value="cd81a26e-357c-4327-a878-bb7c8e3abaaa"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"/>
+				</meta>
+				<status value="completed"/>
+				<code>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="2201661000000107"/>
+						<display value="Tyrosinaemia type 1 screening test"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="urn:uuid:5d5845f3-398f-474b-af59-14882fc7b0ca"/>
+				</subject>
+				<context>
+					<reference value="urn:uuid:1bcb0151-4ddf-4084-9c06-e8a31fdcf25b"/>
+				</context>
+				<outcome>
+					<coding>
+						<system value="https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1"/>
+						<code value="2201881000000102"/>
+						<display value="Tyrosinaemia type 1 not suspected (situation)"/>
+					</coding>
+				</outcome>
+				<report>
+					<reference value="urn:uuid:4ae3b640-a32b-4879-8c6c-3896ac19da74"/>
+				</report>
+			</Procedure>
+		</resource>
+	</entry>		
 	<!--Blood Spot Diagnostic Report-->
 	<entry>
 		<fullUrl value="urn:uuid:4ae3b640-a32b-4879-8c6c-3896ac19da74"/>
