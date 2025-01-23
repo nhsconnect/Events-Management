@@ -255,8 +255,8 @@
 				<code>
 					<coding>
 						<system value="http://snomed.info/sct"/>
-						<code value="314080004"/>
-						<display value="Cystic fibrosis screening test"/>
+						<code value="171191008"/>
+						<display value="Cystic fibrosis screening"/>
 					</coding>
 				</code>
 				<subject>
