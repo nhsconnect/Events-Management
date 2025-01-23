@@ -11,7 +11,8 @@ Tyrosinaemia type 1 screening test added
 
 - [Blood Spot Test Outcome](blood_spot_test_outcome_1.html)
 
-Corrected code for Cystic fibrosis screening from "314080004 | Cystic fibrosis screening test" to correct code "171191008 | Cystic fibrosis screening"
+Corrected code for Cystic fibrosis screening from "314080004 \| Cystic fibrosis screening test" to correct code "171191008 \| Cystic fibrosis screening"
+
 
 
 ## 2.14.3 (14/03/2023) ##
