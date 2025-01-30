@@ -79,6 +79,7 @@ The following requirements and resource population guidance must be followed in 
 | Outcome - GLUTARIC ACIDURIA TYPE 1                       | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for GA1   |
 | Outcome - ISOVALERIC ACIDAEMIA                           | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for IVA   |
 | Outcome - SEVERE COMBINED IMMUNODEFICIENCY               | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for SCID  |
+| Outcome - TYROSINAEMIA TYPE 1                            | CareConnect-Procedure-1.Procedure.outcome                        | Outcome of screening for HT1   |
 | Comments | CareConnect-Communication-1.Communication.category.coding.system | Supporting text may be given covering regarding the screening test, outcome and actions taken. |
 
 
@@ -189,7 +190,7 @@ The CareConnect-DiagnosticReport-1 resource included as part of the event messag
 
 The CareConnect-Procedure-1 resource included as part of the event message SHALL conform to the [CareConnect-Procedure-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Procedure-1) constrained FHIR profile and the additional population guidance as per the table below:
 
-| Resource Cardinality | 0..10 (new) | 0..10 (delete) |
+| Resource Cardinality | 0..11 (new) | 0..11 (delete) |
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
@@ -204,7 +205,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 314081000 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Phenylketonuria screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Sickle Cell Disease)
 
@@ -213,16 +214,16 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 314090007 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Sickle cell disease screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Cystic Fibrosis)
 
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
-| Procedure.code.coding.code | 1..1 | Fixed Value: 314080004 |
-| Procedure.code.coding.display | 1..1 | Fixed Value: Cystic fibrosis screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.code.coding.code | 1..1 | Fixed Value: 171191008 |
+| Procedure.code.coding.display | 1..1 | Fixed Value: Cystic fibrosis screening |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Congenital Hypothyroidism)
 
@@ -231,7 +232,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 400984005 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Congenital hypothyroidism screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Medium-chain Acyl-Coenzyme A Dehydrogenase Deficiency)
 
@@ -240,7 +241,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 428056008 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Medium-chain acyl-coenzyme A dehydrogenase deficiency screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Homocystinuria)
 
@@ -249,7 +250,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 940201000000107 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Blood spot homocystinuria screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Maple Syrup Urine Disease)
 
@@ -258,7 +259,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 940221000000103 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Blood spot MSUD (maple syrup urine disease) screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Glutaric Aciduria Type 1)
 
@@ -267,7 +268,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 940131000000109 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Blood spot glutaric aciduria type 1 screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Isovaleric Acidaemia)
 
@@ -276,7 +277,7 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 940151000000102 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Blood spot isovaleric acidaemia screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 
 ### CareConnect-Procedure-1 (Blood Spot Screening, Severe Combined Immunodeficiency)
@@ -286,8 +287,17 @@ For each of the Procedure resources representing a Test Outcome:
 | Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
 | Procedure.code.coding.code | 1..1 | Fixed Value: 1239891000000106 |
 | Procedure.code.coding.display | 1..1 | Fixed Value: Severe combined immunodeficiency screening test |
-| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1 |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
+
+### CareConnect-Procedure-1 (Blood Spot Screening, Tyrosinaemia Type 1)
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| Procedure.code.coding.system | 1..1 | Fixed Value: http://snomed.info/sct |
+| Procedure.code.coding.code | 1..1 | Fixed Value: 2201661000000107 |
+| Procedure.code.coding.display | 1..1 | Fixed Value: Tyrosinaemia type 1 screening test |
+| Procedure.outcome.coding(snomedCT) | 1..1 | Procedure.outcome.coding(snomedCT) SHALL use a value from [https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1](https://fhir.nhs.uk/STU3/ValueSet/DCH-BloodSpotOutcome-1) |
 
 
 ### [CareConnect-Communication-1](https://simplifier.net/hl7fhircareconnectbaselineforstu3/CareConnect-Communication-1)
